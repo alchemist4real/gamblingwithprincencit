@@ -815,14 +815,14 @@
       stroke-width: 2.2;
     }
 
-    .dock-reveal-btn {
+    .dock-shuffle-btn, .dock-audio-btn {
       width: 36px;
       height: 36px;
       padding: 0;
       border-radius: 999px;
       border: 2px solid var(--primary-deep);
-      background-color: var(--primary);
-      color: var(--white);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -831,14 +831,19 @@
       flex-shrink: 0;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .dock-reveal-btn:hover {
+    .dock-shuffle-btn:hover, .dock-audio-btn:hover {
       background-color: var(--primary-deep);
+      color: var(--white);
       transform: scale(1.06);
     }
-    .dock-reveal-btn svg {
+    .dock-shuffle-btn svg, .dock-audio-btn svg {
       width: 16px;
       height: 16px;
       stroke-width: 2.2;
+    }
+    .dock-audio-btn.is-muted {
+      opacity: 0.65;
+      border-style: dashed;
     }
 
     /* RIGHT UTILITY PILL (NO EXTRA WRAPPER BORDER, CLEAN BUTTON) */
@@ -3070,173 +3075,263 @@
     }
 
     /* =======================================================
-       SETTINGS & PREFERENCES MODAL STYLES
+       SETTINGS & PREFERENCES POPOVER (DOCKED ABOVE DOCK)
+       NEVER COVERS 3D CARD ANIMATIONS • 100% UNOBSTRUCTED
        ======================================================= */
-    .settings-modal-overlay {
+    .settings-popover {
       position: fixed;
-      inset: 0;
-      z-index: 4200;
-      background-color: rgba(12, 23, 64, 0.96);
-      background-image: 
-        radial-gradient(rgba(49, 79, 186, 0.35) 1.5px, transparent 1.5px),
-        radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
-      background-size: 28px 28px;
-      background-position: 0 0, 14px 14px;
-      backdrop-filter: blur(16px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(14px, 3vw, 24px);
-    }
-    .settings-modal-overlay.active {
-      display: flex;
-    }
-    .settings-modal-card {
-      width: min(540px, 94vw);
-      max-height: min(700px, 90vh);
+      bottom: 78px;
+      right: clamp(14px, 3vw, 32px);
+      width: min(340px, calc(100vw - 28px));
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
-      border-radius: 24px;
-      box-shadow: 0 0 0 4px var(--white), 0 28px 80px rgba(12, 23, 64, 0.75);
-      display: flex;
+      border-radius: 20px;
+      box-shadow: 0 0 0 3px var(--white), 0 16px 40px rgba(12, 23, 64, 0.45);
+      z-index: 3500;
+      display: none;
       flex-direction: column;
       overflow: hidden;
       color: var(--primary-deep);
-      animation: lobbyModalPopIn 0.28s cubic-bezier(0.16, 1.15, 0.3, 1);
+      animation: settingsPopIn 0.2s cubic-bezier(0.16, 1.15, 0.3, 1);
     }
-    .settings-modal-header {
-      padding: 22px 24px 16px;
-      text-align: center;
-      border-bottom: 2.5px solid var(--primary-deep);
-      background-color: var(--white);
-      position: relative;
+    .settings-popover.active {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
     }
-    .settings-modal-header .settings-close-btn {
-      position: absolute;
-      top: 16px;
-      right: 18px;
+    @keyframes settingsPopIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
-    .settings-modal-body {
-      padding: 20px 24px;
+    .settings-popover-header {
+      padding: 12px 16px 10px;
+      border-bottom: 2px solid var(--primary-deep);
       background-color: #f6f8fe;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-      overflow-y: auto;
-    }
-    .settings-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .settings-group-title {
-      font-family: var(--font-display);
-      font-size: 12.5px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
     }
-    .settings-pills-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .settings-popover-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: var(--primary-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
     }
-    .settings-pill-btn {
-      flex: 1;
-      min-width: 90px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 2px solid var(--primary-deep);
+    .settings-popover-close {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1.5px solid var(--primary-deep);
       background-color: var(--white);
       color: var(--primary-deep);
-      font-family: var(--font-main);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: all 0.16s ease;
-      box-shadow: 0 2px 0 var(--primary-deep);
-      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.15s ease;
     }
-    .settings-pill-btn:hover {
-      border-color: var(--primary);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 0 var(--primary-deep);
-    }
-    .settings-pill-btn.active {
+    .settings-popover-close:hover {
       background-color: var(--primary-deep);
       color: var(--white);
-      border-color: var(--primary-deep);
-      transform: translateY(1px);
-      box-shadow: 0 1px 0 var(--primary-deep);
     }
-    .settings-pill-btn.active .settings-pill-badge {
+    .settings-popover-body {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       background-color: var(--white);
-      color: var(--primary-deep);
-      border-color: var(--white);
+      max-height: clamp(280px, 50vh, 420px);
+      overflow-y: auto;
     }
-    .settings-pill-badge {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 800;
-      padding: 2px 7px;
+    .settings-popover-body::-webkit-scrollbar {
+      width: 4px;
+    }
+    .settings-popover-body::-webkit-scrollbar-thumb {
+      background-color: #b8c7f2;
       border-radius: 999px;
-      background-color: #f0f2fb;
-      border: 1.5px solid var(--primary-deep);
-      color: var(--primary-deep);
     }
-    .settings-action-btn {
-      width: 100%;
-      padding: 11px 16px;
+
+    /* Settings Row (Compact, Clean) */
+    .settings-row {
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
       border-radius: 12px;
-      border: 2px solid var(--primary-deep);
-      background-color: var(--white);
-      color: var(--primary-deep);
-      font-family: var(--font-main);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      display: inline-flex;
+      padding: 10px 12px;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      transition: all 0.16s ease;
+      transition: all 0.15s ease;
+    }
+    .settings-row:hover {
+      background-color: var(--white);
       box-shadow: 0 2px 0 var(--primary-deep);
     }
-    .settings-action-btn:hover {
-      background-color: #f6f8fe;
+    .settings-row-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .settings-row-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-deep);
+      flex-shrink: 0;
+    }
+    .settings-row-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+    }
+    .settings-row-title {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      line-height: 1.2;
+    }
+    .settings-row-desc {
+      font-family: var(--font-main);
+      font-size: 10px;
+      color: #6173a8;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* Custom Dropdown Select */
+    .settings-select {
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 8px;
+      padding: 6px 26px 6px 10px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23172b7a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 10px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1.5px 0 var(--primary-deep);
+      flex-shrink: 0;
+      max-width: 145px;
+    }
+    .settings-select:hover,
+    .settings-select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    /* Toggle Switch (Saklar) */
+    .settings-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .settings-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .settings-slider {
+      position: absolute;
+      inset: 0;
+      background-color: #d6ddf3;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 2px rgba(12, 23, 64, 0.15);
+    }
+    .settings-slider::before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 2px;
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 50%;
+      transition: all 0.2s cubic-bezier(0.16, 1.15, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(12, 23, 64, 0.2);
+    }
+    .settings-switch input:checked + .settings-slider {
+      background-color: var(--primary);
+    }
+    .settings-switch input:checked + .settings-slider::before {
+      transform: translateX(18px);
+      background-color: var(--white);
+      border-color: var(--primary-deep);
+    }
+
+    /* Action Button */
+    .settings-btn-action {
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--primary-deep);
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1.5px 0 var(--primary-deep);
+      flex-shrink: 0;
+    }
+    .settings-btn-action:hover:not(:disabled) {
+      background-color: var(--primary-deep);
+      color: var(--white);
       transform: translateY(-1px);
-      box-shadow: 0 4px 0 var(--primary-deep);
+      box-shadow: 0 2.5px 0 var(--primary-deep);
     }
-    .settings-action-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 1px 0 var(--primary-deep);
-    }
-    .settings-action-btn:disabled {
-      opacity: 0.5;
+    .settings-btn-action:disabled {
+      opacity: 0.4;
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
     }
-    .settings-modal-footer {
-      padding: 16px 24px 20px;
+    .settings-badge {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .settings-btn-action:hover:not(:disabled) .settings-badge {
       background-color: var(--white);
-      border-top: 2.5px solid var(--primary-deep);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--primary-deep);
     }
   </style>
 </head>
@@ -3314,7 +3409,7 @@
       </button>
     </div>
 
-    <!-- Right Section: (🎲) + (👁) + (⊝) + (⏱) + (⚙️) (ICON-ONLY 36PX ROUND BUTTONS) -->
+    <!-- Right Section: (🎲 Random) + (🔀 Shuffle) + (🔊 Sound) + (⚙️ Settings) (ICON-ONLY 36PX ROUND BUTTONS) -->
     <div class="dock-section dock-right">
       <!-- Dedicated Pick Random Card Button (Icon-Only) -->
       <button class="btn-ctrl-round dock-random-btn" id="btnPickRandom" onclick="pickRandomCard()" title="Acak Sediaan [R / G]" aria-label="Acak Sediaan">
@@ -3329,38 +3424,29 @@
         <span class="gamepad-badge" title="Gamepad: R2">R2</span>
       </button>
 
-      <!-- Reveal Action Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-reveal-btn" id="btnRevealMain" onclick="openRevealModal()" title="Buka Detail Sediaan [Spasi]" aria-label="Buka Detail Sediaan">
+      <!-- Dedicated Shuffle Deck Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-shuffle-btn" id="btnShuffleDeck" onclick="startRealisticShuffle()" title="Shuffle Deck [S]" aria-label="Shuffle Deck">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-          <circle cx="12" cy="12" r="3"></circle>
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+          <line x1="4" y1="4" x2="9" y2="9"></line>
         </svg>
-        <span class="gamepad-badge" title="Gamepad: Cross">✕</span>
+        <span class="gamepad-badge" title="Hotkey: S">S</span>
       </button>
 
-      <!-- Remove Active Card Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-remove-btn" id="btnRemoveCard" onclick="removeCurrentCard()" title="Remove Card from Deck [Del / X]" aria-label="Remove Card from Deck">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="8" y1="12" x2="16" y2="12"></line>
+      <!-- Dedicated Sound Effects Mute Toggle Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-audio-btn" id="btnToggleAudio" onclick="toggleAudioMute()" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
+        <svg id="audioIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
         </svg>
-        <span class="gamepad-badge" title="Gamepad: Circle">○</span>
-      </button>
-
-      <!-- Review Mode Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-review-btn" id="btnReviewMode" onclick="openReviewConfig()" title="Review Mode (Exam Simulation) [M]" aria-label="Review Mode">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="13" r="8"></circle>
-          <line x1="12" y1="9" x2="12" y2="13"></line>
-          <line x1="12" y1="13" x2="14.5" y2="15.5"></line>
-          <line x1="12" y1="2" x2="12" y2="5"></line>
-          <line x1="10" y1="2" x2="14" y2="2"></line>
-        </svg>
-        <span class="gamepad-badge" title="Hotkey: M">M</span>
+        <span class="gamepad-badge" title="Sound">FX</span>
       </button>
 
       <!-- Settings Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-settings-btn" id="btnSettings" onclick="openSettingsModal()" title="Settings & Preferences [O]" aria-label="Settings & Preferences">
+      <button class="btn-ctrl-round dock-settings-btn" id="btnSettings" onclick="toggleSettingsModal()" title="Settings & Preferences [O]" aria-label="Settings & Preferences">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -3528,9 +3614,18 @@
         <!-- Rules Telemetry -->
         <div>
           <div class="review-telemetry-row">
-            <span class="review-telemetry-chip">⏱ 60s / CARD (STUDY)</span>
-            <span class="review-telemetry-chip">🔍 10s / CARD (REVEAL)</span>
-            <span class="review-telemetry-chip">🚫 NO PEEKING</span>
+            <span class="review-telemetry-chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><circle cx="12" cy="13" r="8"></circle><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="2" x2="12" y2="5"></line><line x1="10" y1="2" x2="14" y2="2"></line></svg>
+              60s / CARD (STUDY)
+            </span>
+            <span class="review-telemetry-chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              10s / CARD (REVEAL)
+            </span>
+            <span class="review-telemetry-chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+              NO PEEKING
+            </span>
           </div>
         </div>
       </div>
@@ -3545,94 +3640,124 @@
   </div>
 
   <!-- =======================================================
-       SETTINGS & PREFERENCES MODAL
+       SETTINGS & PREFERENCES POPOVER (DOCKED ABOVE DOCK)
+       NEVER COVERS 3D CARD ANIMATIONS
        ======================================================= -->
-  <div class="settings-modal-overlay" id="settingsModalOverlay" onclick="handleSettingsOverlayClick(event)">
-    <div class="settings-modal-card" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
-      <div class="settings-modal-header">
-        <button class="modal-close-btn settings-close-btn" onclick="closeSettingsModal()" title="Close [Esc]" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+  <div class="settings-popover" id="settingsModalOverlay" role="dialog" aria-modal="false" aria-labelledby="settingsPopoverTitle">
+    <div class="settings-popover-header">
+      <h3 class="settings-popover-title" id="settingsPopoverTitle">
+        <span class="title-tone-1">GAME</span>
+        <span class="title-tone-2">SETTINGS</span>
+      </h3>
+      <button class="settings-popover-close" onclick="closeSettingsModal()" title="Close [Esc / O]" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="settings-popover-body">
+      <!-- Row 1: Content Filter (Dropdown) -->
+      <div class="settings-row">
+        <div class="settings-row-left">
+          <div class="settings-row-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+          </div>
+          <div class="settings-row-text">
+            <div class="settings-row-title">CONTENT FILTER</div>
+            <div class="settings-row-desc">Show specific cards</div>
+          </div>
+        </div>
+        <select class="settings-select" id="selectSettingsFilter" onchange="applySettingsFilter(this.value)">
+          <option value="all">All Cards</option>
+          <option value="preparat">Specimens Only</option>
+          <option value="teori">Theory Only</option>
+        </select>
+      </div>
+
+      <!-- Row 2: Play Mode (Dropdown) -->
+      <div class="settings-row">
+        <div class="settings-row-left">
+          <div class="settings-row-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+            </svg>
+          </div>
+          <div class="settings-row-text">
+            <div class="settings-row-title">PLAY MODE</div>
+            <div class="settings-row-desc">Card order</div>
+          </div>
+        </div>
+        <select class="settings-select" id="selectSettingsMode" onchange="applySettingsMode(this.value)">
+          <option value="sequential">Ordered [U]</option>
+          <option value="shuffle">Shuffle [S]</option>
+        </select>
+      </div>
+
+      <!-- Row 3: Fullscreen (Saklar Toggle Switch) -->
+      <div class="settings-row">
+        <div class="settings-row-left">
+          <div class="settings-row-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+          </div>
+          <div class="settings-row-text">
+            <div class="settings-row-title">FULLSCREEN</div>
+            <div class="settings-row-desc">Expand view [F]</div>
+          </div>
+        </div>
+        <label class="settings-switch" title="Toggle Fullscreen [F]">
+          <input type="checkbox" id="toggleFullscreenSwitch" onchange="toggleFullScreen(); updateSettingsUI();">
+          <span class="settings-slider"></span>
+        </label>
+      </div>
+
+      <!-- Row 4: Review Mode (Exam Simulation Action) -->
+      <div class="settings-row">
+        <div class="settings-row-left">
+          <div class="settings-row-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="13" r="8"></circle>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="13" x2="14.5" y2="15.5"></line>
+              <line x1="12" y1="2" x2="12" y2="5"></line>
+              <line x1="10" y1="2" x2="14" y2="2"></line>
+            </svg>
+          </div>
+          <div class="settings-row-text">
+            <div class="settings-row-title">REVIEW MODE</div>
+            <div class="settings-row-desc">Exam simulation [M]</div>
+          </div>
+        </div>
+        <button class="settings-btn-action" id="btnSetOpenReview" onclick="closeSettingsModal(); openReviewConfig();" title="Start Review Simulation [M]">
+          <span>START</span>
         </button>
-        <h2 class="main-title" id="settingsModalTitle" style="font-size: 1.45rem; gap: 8px;">
-          <span class="title-tone-1">GAME</span>
-          <span class="title-tone-2">SETTINGS</span>
-        </h2>
-        <span class="lobby-pill">PREFERENCES // TABLE CONFIG</span>
       </div>
 
-      <div class="settings-modal-body">
-        <!-- Section 1: Content Filter -->
-        <div class="settings-group">
-          <div class="settings-group-title">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-            <span>FILTER SEDIAAN</span>
+      <!-- Row 5: Removed Cards (Action Button) -->
+      <div class="settings-row">
+        <div class="settings-row-left">
+          <div class="settings-row-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
           </div>
-          <div class="settings-pills-row">
-            <button class="settings-pill-btn active" id="btnSetFilterAll" onclick="applySettingsFilter('all')">
-              <span>SEMUA</span>
-              <span class="settings-pill-badge" id="setFilterCountAll">40</span>
-            </button>
-            <button class="settings-pill-btn" id="btnSetFilterPrep" onclick="applySettingsFilter('preparat')">
-              <span>HISTOPATOLOGI</span>
-              <span class="settings-pill-badge" id="setFilterCountPrep">34</span>
-            </button>
-            <button class="settings-pill-btn" id="btnSetFilterTeori" onclick="applySettingsFilter('teori')">
-              <span>TEORI & KASUS</span>
-              <span class="settings-pill-badge" id="setFilterCountTeori">6</span>
-            </button>
+          <div class="settings-row-text">
+            <div class="settings-row-title">REMOVED CARDS</div>
+            <div class="settings-row-desc">Hidden cards</div>
           </div>
         </div>
-
-        <!-- Section 2: Play Mode -->
-        <div class="settings-group">
-          <div class="settings-group-title">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line></svg>
-            <span>MODE PERMAINAN</span>
-          </div>
-          <div class="settings-pills-row">
-            <button class="settings-pill-btn active" id="btnSetModeSeq" onclick="applySettingsMode('sequential')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-              <span>BERURUTAN [U]</span>
-            </button>
-            <button class="settings-pill-btn" id="btnSetModeShuff" onclick="applySettingsMode('shuffle')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line></svg>
-              <span>ACAK / SHUFFLE [S]</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Section 3: Deck Management -->
-        <div class="settings-group">
-          <div class="settings-group-title">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-            <span>PENGELOLAAN SEDIAAN</span>
-          </div>
-          <button class="settings-action-btn" id="btnSetRestoreRemoved" onclick="resetRemovedCardsFromSettings()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-            <span>RESTORE SEMUA SEDIAAN YANG DIHAPUS</span>
-            <span class="settings-pill-badge" id="setRemovedBadge">0</span>
-          </button>
-        </div>
-
-        <!-- Section 4: Display Options -->
-        <div class="settings-group">
-          <div class="settings-group-title">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
-            <span>TAMPILAN LAYAR</span>
-          </div>
-          <button class="settings-action-btn" onclick="toggleFullScreen(); updateSettingsUI();">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
-            <span id="setFullscreenText">TOGGLE FULLSCREEN [F]</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="settings-modal-footer">
-        <button class="review-start-btn" onclick="closeSettingsModal()">
-          <span>DONE [ESC]</span>
+        <button class="settings-btn-action" id="btnSetRestoreRemoved" onclick="resetRemovedCardsFromSettings()" disabled title="Restore Removed Cards [Z]">
+          <span class="settings-badge" id="setRemovedBadge">0</span>
+          <span>RESTORE</span>
         </button>
       </div>
     </div>
@@ -3953,7 +4078,9 @@
             </div>
           </div>
           <div class="pack-cartridge-action">
-            <span class="pack-locked-badge">🔒 LOCKED</span>
+            <span class="pack-locked-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>LOCKED
+            </span>
           </div>
         </div>
         <div class="pack-item pack-item-upcoming">
@@ -4058,8 +4185,53 @@
     // CRISP AUDIO SYNTHESIZER (WEB AUDIO API)
     // =======================================================
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let isAudioMuted = false;
+    try {
+      isAudioMuted = localStorage.getItem('gambling_audio_muted') === 'true';
+    } catch(e) {}
+
+    function updateAudioIconUI() {
+      const btn = document.getElementById('btnToggleAudio');
+      const svg = document.getElementById('audioIconSvg');
+      if (!svg) return;
+      if (isAudioMuted) {
+        if (btn) {
+          btn.classList.add('is-muted');
+          btn.title = 'Sound Effects: MUTED (Click to Unmute)';
+        }
+        svg.innerHTML = `
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        `;
+      } else {
+        if (btn) {
+          btn.classList.remove('is-muted');
+          btn.title = 'Sound Effects: ACTIVE (Click to Mute)';
+        }
+        svg.innerHTML = `
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        `;
+      }
+    }
+
+    function toggleAudioMute() {
+      isAudioMuted = !isAudioMuted;
+      try {
+        localStorage.setItem('gambling_audio_muted', String(isAudioMuted));
+      } catch(e) {}
+      updateAudioIconUI();
+      if (!isAudioMuted) {
+        playTone(520, 'sine', 0.08);
+        showToast('Sound Effects', 'ACTIVE');
+      } else {
+        showToast('Sound Effects', 'MUTED');
+      }
+    }
 
     function playTone(freq, type = 'sine', duration = 0.07) {
+      if (isAudioMuted) return;
       try {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
@@ -4077,6 +4249,7 @@
 
     // Arcade Game Lobby Sound Effects
     function playLobbyEntranceSound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4084,6 +4257,7 @@
         notes.forEach((freq, idx) => {
           setTimeout(() => {
             try {
+              if (isAudioMuted) return;
               const now = audioCtx.currentTime;
               const osc = audioCtx.createOscillator();
               const gain = audioCtx.createGain();
@@ -4102,6 +4276,7 @@
     }
 
     function playLobbyHoverSound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4121,6 +4296,7 @@
     }
 
     function playLobbyDeploySound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4128,6 +4304,7 @@
         notes.forEach((freq, idx) => {
           setTimeout(() => {
             try {
+              if (isAudioMuted) return;
               const now = audioCtx.currentTime;
               const osc = audioCtx.createOscillator();
               const gain = audioCtx.createGain();
@@ -4147,6 +4324,7 @@
 
     // High-frequency crisp card riffle tick sound for rapid deck streaming
     function playRiffleTick(index) {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4175,6 +4353,7 @@
     }
 
     function playGatherSound() {
+      if (isAudioMuted) return;
       try {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const now = audioCtx.currentTime;
@@ -4193,12 +4372,14 @@
     }
 
     function playRiffleSound() {
+      if (isAudioMuted) return;
       try {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const snaps = 20;
         for (let i = 0; i < snaps; i++) {
           setTimeout(() => {
             try {
+              if (isAudioMuted) return;
               const now = audioCtx.currentTime;
               const bufferSize = Math.floor(audioCtx.sampleRate * 0.010);
               const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
@@ -4229,6 +4410,7 @@
     }
 
     function playWashSwirlSound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4250,6 +4432,7 @@
     }
 
     function playDeckSlap() {
+      if (isAudioMuted) return;
       try {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const now = audioCtx.currentTime;
@@ -4268,6 +4451,7 @@
     }
 
     function playChimeSound() {
+      if (isAudioMuted) return;
       try {
         playTone(659, 'sine', 0.10);
         setTimeout(() => playTone(987, 'sine', 0.16), 80);
@@ -4275,6 +4459,7 @@
     }
 
     function playDeckTapSound() {
+      if (isAudioMuted) return;
       try {
         if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
         playTone(210, 'triangle', 0.045);
@@ -4283,6 +4468,7 @@
     }
 
     function playWhooshSound() {
+      if (isAudioMuted) return;
       try {
         if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
         playTone(260, 'sine', 0.07);
@@ -4291,6 +4477,7 @@
     }
 
     function playEntranceFanSound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4307,6 +4494,7 @@
 
     // PowerPoint-style mechanical slide transition sound ("jgrek / click")
     function playSlideTransitionSound() {
+      if (isAudioMuted) return;
       try {
         if (!audioCtx) return;
         if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -4737,9 +4925,9 @@
                 <span class="review-diag-badge">DIAGNOSIS UTAMA</span>
                 <div class="review-diag-title">${card.diagnosis || ''}</div>
                 <div class="review-diag-meta">
-                  <span class="review-meta-item">📍 ${card.organ || '-'}</span>
-                  <span class="review-meta-item">🏷️ ${card.sifat || '-'}</span>
-                  ${card.asal ? `<span class="review-meta-item">🔬 ${card.asal}</span>` : ''}
+                  <span class="review-meta-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>${card.organ || '-'}</span>
+                  <span class="review-meta-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>${card.sifat || '-'}</span>
+                  ${card.asal ? `<span class="review-meta-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0-14 0"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>${card.asal}</span>` : ''}
                 </div>
               </div>
 
@@ -4862,7 +5050,7 @@
     }
 
     // =======================================================
-    // SETTINGS & PREFERENCES ENGINE
+    // SETTINGS & PREFERENCES ENGINE (DOCKED POPOVER)
     // =======================================================
     let isSettingsOpen = false;
 
@@ -4881,11 +5069,26 @@
       if (overlay) overlay.classList.remove('active');
     }
 
+    function toggleSettingsModal() {
+      if (isSettingsOpen) closeSettingsModal();
+      else openSettingsModal();
+    }
+
     function handleSettingsOverlayClick(e) {
       if (e.target.id === 'settingsModalOverlay') {
         closeSettingsModal();
       }
     }
+
+    // Dismiss popover when clicking outside of it and outside of btnSettings
+    document.addEventListener('pointerdown', (e) => {
+      if (!isSettingsOpen) return;
+      const overlay = document.getElementById('settingsModalOverlay');
+      const btnSettings = document.getElementById('btnSettings');
+      if (overlay && !overlay.contains(e.target) && btnSettings && !btnSettings.contains(e.target)) {
+        closeSettingsModal();
+      }
+    });
 
     function applySettingsFilter(filterType) {
       setFilter(filterType);
@@ -4903,42 +5106,39 @@
     }
 
     function updateSettingsUI() {
-      // 1. Content Filter Pills
-      const btnAll = document.getElementById('btnSetFilterAll');
-      const btnPrep = document.getElementById('btnSetFilterPrep');
-      const btnTeori = document.getElementById('btnSetFilterTeori');
-      if (btnAll) btnAll.classList.toggle('active', activeFilter === 'all');
-      if (btnPrep) btnPrep.classList.toggle('active', activeFilter === 'preparat');
-      if (btnTeori) btnTeori.classList.toggle('active', activeFilter === 'teori');
+      // 1. Content Filter Select & Option Counts
+      const selectFilter = document.getElementById('selectSettingsFilter');
+      if (selectFilter) {
+        selectFilter.value = activeFilter;
+        const optAll = selectFilter.querySelector('option[value="all"]');
+        const optPrep = selectFilter.querySelector('option[value="preparat"]');
+        const optTeori = selectFilter.querySelector('option[value="teori"]');
+        const totalCount = DATA_CARDS.length;
+        const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
+        const teoriCount = DATA_CARDS.filter(c => c.type === 'teori').length;
+        if (optAll) optAll.textContent = `All Cards (${totalCount})`;
+        if (optPrep) optPrep.textContent = `Specimens Only (${prepCount})`;
+        if (optTeori) optTeori.textContent = `Theory Only (${teoriCount})`;
+      }
 
-      // 2. Filter Counts
-      const totalCount = DATA_CARDS.length;
-      const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
-      const teoriCount = DATA_CARDS.filter(c => c.type === 'teori').length;
-      const countAllEl = document.getElementById('setFilterCountAll');
-      const countPrepEl = document.getElementById('setFilterCountPrep');
-      const countTeoriEl = document.getElementById('setFilterCountTeori');
-      if (countAllEl) countAllEl.textContent = totalCount;
-      if (countPrepEl) countPrepEl.textContent = prepCount;
-      if (countTeoriEl) countTeoriEl.textContent = teoriCount;
+      // 2. Play Mode Select
+      const selectMode = document.getElementById('selectSettingsMode');
+      if (selectMode) {
+        selectMode.value = currentPlayMode;
+      }
 
-      // 3. Play Mode Pills
-      const btnSeq = document.getElementById('btnSetModeSeq');
-      const btnShuff = document.getElementById('btnSetModeShuff');
-      if (btnSeq) btnSeq.classList.toggle('active', currentPlayMode === 'sequential');
-      if (btnShuff) btnShuff.classList.toggle('active', currentPlayMode === 'shuffle');
+      // 3. Fullscreen Switch (Saklar)
+      const toggleSwitch = document.getElementById('toggleFullscreenSwitch');
+      if (toggleSwitch) {
+        toggleSwitch.checked = !!document.fullscreenElement;
+      }
 
       // 4. Removed Cards
       const removedBadge = document.getElementById('setRemovedBadge');
       const btnRestore = document.getElementById('btnSetRestoreRemoved');
-      if (removedBadge) removedBadge.textContent = removedCardIds.size;
-      if (btnRestore) btnRestore.disabled = removedCardIds.size === 0;
-
-      // 5. Fullscreen Text
-      const fsText = document.getElementById('setFullscreenText');
-      if (fsText) {
-        fsText.textContent = document.fullscreenElement ? 'EXIT FULLSCREEN [F]' : 'TOGGLE FULLSCREEN [F]';
-      }
+      const count = removedCardIds.size;
+      if (removedBadge) removedBadge.textContent = count;
+      if (btnRestore) btnRestore.disabled = count === 0;
     }
 
     let toastTimer = null;
@@ -6837,7 +7037,9 @@
       : (availablePacks[0] || 'blok-3.1');
     loadCardPack(defaultPackId, false);
     renderInitialStackedStage();
-    setPlayMode('sequential');
+    currentPlayMode = 'sequential';
+    updateAudioIconUI();
+    updateSettingsUI();
 
     // Show "Pick a Block" onboarding screen so cards are not immediately shown
     openEntranceBlockPicker();
