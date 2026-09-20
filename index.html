@@ -1306,37 +1306,121 @@
       stroke-width: 2.2;
     }
 
-    /* TOAST NOTIFICATION (COLLECTIBLE BADGE PILL - POSITIONED ELEGANTLY ABOVE DOCK) */
+    /* =======================================================
+       GAME-STYLE CENTER SPLASH TOAST (DEAD CENTER, IMPACTFUL, ANIMATED)
+       PURE SOLID COLLECTIBLE CARD AESTHETIC - ZERO AI SLOP
+       ======================================================= */
     .toast-notice {
       position: fixed;
-      bottom: clamp(76px, 12vh, 98px);
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%) translateY(14px) scale(0.94);
-      background-color: var(--white);
-      color: var(--primary-deep);
-      padding: 6px 18px;
-      font-family: var(--font-main);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      border: 2.5px solid var(--primary-deep);
-      border-radius: 999px;
-      box-shadow: 0 4px 0 var(--primary-deep);
+      transform: translate(-50%, -50%) scale(0.65) rotate(-3deg);
       opacity: 0;
       pointer-events: none;
-      transition: transform 0.25s cubic-bezier(0.16, 1.2, 0.3, 1), opacity 0.2s ease;
-      z-index: 3000;
+      z-index: 3500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toast-notice.show {
+      animation: gameToastSplash 1.45s cubic-bezier(0.16, 1.25, 0.3, 1) forwards;
+    }
+
+    @keyframes gameToastSplash {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.60) rotate(-4deg);
+      }
+      18% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08) rotate(1deg);
+      }
+      26% {
+        transform: translate(-50%, -50%) scale(0.98) rotate(0deg);
+      }
+      34% {
+        transform: translate(-50%, -50%) scale(1.02) rotate(0deg);
+      }
+      42% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      82% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.14) translateY(-14px) rotate(1.5deg);
+      }
+    }
+
+    .toast-card-badge {
+      background-color: var(--white);
+      border: 3.5px solid var(--primary-deep);
+      border-radius: 24px;
+      padding: clamp(14px, 2.5vh, 22px) clamp(22px, 3.5vw, 36px);
+      box-shadow: 0 8px 0 var(--primary-deep), 0 0 0 6px var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: clamp(260px, 38vw, 380px);
       max-width: 90vw;
       text-align: center;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
+      user-select: none;
     }
-    .toast-notice.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0) scale(1);
+
+    .toast-emblem-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background-color: var(--primary);
+      border: 2.5px solid var(--primary-deep);
+      box-shadow: 0 0 0 2px var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .toast-emblem-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .toast-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .toast-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      line-height: 1.1;
+      -webkit-text-stroke: 0.5px var(--primary-deep);
+    }
+
+    .toast-subtext {
+      font-family: var(--font-main);
+      font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 3px 12px;
+      margin-top: 4px;
     }
 
     /* LIGHTBOX FOR FULL IMAGE ZOOM */
@@ -2121,7 +2205,20 @@
   </div>
 
   <!-- TOAST NOTICE (CLEAN SOLID BORDER, NO SHADOW) -->
-  <div class="toast-notice" id="toastNotice">Sequential Mode Active</div>
+    <!-- GAME-STYLE CENTER SPLASH TOAST -->
+  <div class="toast-notice" id="toastNotice" aria-live="polite">
+    <div class="toast-card-badge">
+      <div class="toast-emblem-wrap">
+        <svg class="toast-emblem-icon" viewBox="0 0 64 64" fill="currentColor">
+          <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
+        </svg>
+      </div>
+      <div class="toast-content">
+        <div class="toast-title" id="toastTitle">GAMBLING WITH PRINCE NCIT</div>
+        <div class="toast-subtext" id="toastSub">Ready to Play</div>
+      </div>
+    </div>
+  </div>
 
   <!-- SCRIPT & ENGINE -->
   <script>
@@ -2443,12 +2540,51 @@
       } catch(e) {}
     }
 
-    function showToast(text) {
-      toastNotice.textContent = text;
+    let toastTimer = null;
+    function showToast(titleOrText, sub = null) {
+      if (!toastNotice) return;
+
+      let title = titleOrText;
+      let subtext = sub;
+
+      if (!subtext && typeof titleOrText === 'string') {
+        if (titleOrText.includes(' • ')) {
+          const parts = titleOrText.split(' • ');
+          title = parts[0];
+          subtext = parts.slice(1).join(' • ');
+        } else if (titleOrText.includes(': ')) {
+          const parts = titleOrText.split(': ');
+          title = parts[0];
+          subtext = parts.slice(1).join(': ');
+        }
+      }
+
+      const toastTitleEl = document.getElementById('toastTitle');
+      const toastSubEl = document.getElementById('toastSub');
+
+      if (toastTitleEl) toastTitleEl.textContent = title;
+      if (toastSubEl) {
+        if (subtext) {
+          toastSubEl.textContent = subtext;
+          toastSubEl.style.display = 'inline-block';
+        } else {
+          toastSubEl.style.display = 'none';
+        }
+      }
+
+      // Trigger snappy animation restart
+      toastNotice.classList.remove('show');
+      void toastNotice.offsetWidth;
       toastNotice.classList.add('show');
-      setTimeout(() => {
+
+      // Play crisp game toast audio cue
+      playTone(587.33, 'sine', 0.08);
+      setTimeout(() => playTone(880, 'sine', 0.12), 70);
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
         toastNotice.classList.remove('show');
-      }, 2200);
+      }, 1450);
     }
 
     function shuffleCardsArray(array) {
