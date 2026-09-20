@@ -101,29 +101,31 @@
       align-items: center;
     }
 
-    /* PLAYFUL RETRO COLLECTIBLE MARQUEE TITLE (BOXED PLATE, 3D SHADOW, TILT) */
+    /* PLAYFUL RETRO COLLECTIBLE MARQUEE TITLE (CARTRIDGE PLATE, 3D SHADOW, TILT) */
     .title-marquee-plate {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: clamp(6px, 1.4vw, 12px);
       background-color: var(--white);
-      border: 3.5px solid var(--primary-deep);
-      border-radius: 999px;
-      padding: clamp(6px, 1.2vh, 10px) clamp(18px, 2.8vw, 30px);
-      box-shadow: 0 6px 0 var(--primary-deep), 0 0 0 5px var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 16px; /* RETRO CARTRIDGE BOX - PREVENTS OVAL DISTORTION */
+      padding: clamp(5px, 1.1vh, 9px) clamp(12px, 2.4vw, 24px);
+      box-shadow: 0 5px 0 var(--primary-deep), 0 0 0 4px var(--white);
       transform: rotate(-0.8deg);
       transition: transform 0.25s cubic-bezier(0.16, 1.25, 0.3, 1), box-shadow 0.2s ease;
       user-select: none;
+      max-width: 95vw;
+      box-sizing: border-box;
     }
     .title-marquee-plate:hover {
       transform: rotate(0.8deg) scale(1.02);
-      box-shadow: 0 8px 0 var(--primary-deep), 0 0 0 5px var(--white);
+      box-shadow: 0 7px 0 var(--primary-deep), 0 0 0 4px var(--white);
     }
 
     .title-spade-badge {
-      width: 28px;
-      height: 28px;
+      width: clamp(22px, 3vw, 26px);
+      height: clamp(22px, 3vw, 26px);
       border-radius: 999px;
       background-color: var(--primary);
       border: 2px solid var(--primary-deep);
@@ -134,44 +136,47 @@
       flex-shrink: 0;
     }
     .title-spade-badge svg {
-      width: 15px;
-      height: 15px;
+      width: clamp(12px, 1.6vw, 14px);
+      height: clamp(12px, 1.6vw, 14px);
     }
 
     h1.main-title {
       font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.4vw, 1.95rem);
+      font-size: clamp(1.1rem, 2.2vw, 1.85rem);
       font-weight: normal;
-      letter-spacing: 2px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      line-height: 1.1;
+      line-height: 1.15;
       margin: 0;
       display: inline-flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* PREVENTS AWKWARD BREAKING ON DESKTOP & TABLET */
       align-items: center;
       justify-content: center;
       gap: 8px;
+      color: var(--primary-deep); /* ALWAYS HIGH-CONTRAST VISIBLE */
+      white-space: nowrap;
     }
 
     .title-tone-1 {
       color: var(--primary-deep);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.8px;
       display: inline-block;
+      -webkit-text-stroke: 0.5px var(--primary-deep);
     }
 
     .title-tone-2 {
       color: #ffd15c; /* RETRO POP CANARY GOLD */
       -webkit-text-stroke: 1.5px var(--primary-deep);
       text-shadow: 0 3px 0 var(--primary-deep);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 2px;
       display: inline-block;
     }
 
     .sub-meta {
       font-family: var(--font-main);
-      font-size: 0.72rem;
+      font-size: clamp(0.68rem, 1.1vw, 0.74rem);
       font-weight: 700;
       color: var(--primary-deep);
       background-color: #f6f8fe;
@@ -180,8 +185,28 @@
       padding: 3px 14px;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      margin-top: clamp(8px, 1.4vh, 14px);
+      margin-top: clamp(6px, 1.2vh, 12px);
       box-shadow: 0 2px 0 var(--primary-deep);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 92vw;
+    }
+
+    @media (max-width: 600px) {
+      .title-marquee-plate {
+        border-radius: 12px;
+        padding: 5px 10px;
+        gap: 6px;
+      }
+      h1.main-title {
+        font-size: clamp(0.95rem, 4.4vw, 1.25rem);
+        letter-spacing: 1.2px;
+        gap: 5px;
+      }
+      .title-tone-1, .title-tone-2 {
+        letter-spacing: 1.2px;
+      }
     }
 
     /* PURE SVG ICON FILTER BUTTONS (COLLECTIBLE THEME) */
@@ -801,50 +826,78 @@
     }
 
     /* =======================================================
-       RAPID BROWSE / HIGH-SPEED HUD (COLLECTIBLE RETRO BADGE)
+       FULL-SCREEN SHADOW / SCRIM FOR TOAST & STREAM TOAST
+       MAKES TOAST & STREAM TOAST POP OUT DRAMATICALLY
        ======================================================= */
-    .rapid-stream-hud {
-      position: absolute;
-      top: clamp(6px, 1.5vh, 16px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-10px) scale(0.92);
+    .screen-scrim {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 20, 65, 0.65);
+      z-index: 3400; /* Just below toast and stream toast (3500) */
       opacity: 0;
       pointer-events: none;
-      z-index: 120;
-      transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1.2, 0.3, 1);
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(2.5px);
+      -webkit-backdrop-filter: blur(2.5px);
+    }
+    body.toast-active .screen-scrim,
+    body.rapid-stream-active .screen-scrim {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* =======================================================
+       STREAM TOAST / RAPID BROWSE HUD (FLOATING GAME WIDGET)
+       POPS PROMINENTLY OVER FULL-SCREEN SHADOW SCRIM
+       ======================================================= */
+    .rapid-stream-hud {
+      position: fixed;
+      top: clamp(14px, 3vh, 28px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-14px) scale(0.90);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3500; /* Above scrim */
+      transition: opacity 0.2s ease, transform 0.24s cubic-bezier(0.16, 1.25, 0.3, 1);
     }
     .rapid-stream-hud.active {
       opacity: 1;
-      transform: translateX(-50%) translateY(0) scale(1);
+      transform: translateX(-50%) translateY(0) scale(1.06);
     }
     .hud-pill {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 5px 14px;
+      gap: 10px;
+      padding: 7px 18px;
       border-radius: 999px;
       background-color: var(--white);
-      border: 2.5px solid var(--primary-deep);
-      box-shadow: 0 4px 0 var(--primary-deep);
+      border: 3px solid var(--primary-deep);
+      box-shadow: 0 6px 0 var(--primary-deep), 0 0 0 4px var(--white);
       color: var(--primary-deep);
-      font-family: var(--font-main);
-      font-size: 10.5px;
-      letter-spacing: 1.2px;
-      font-weight: 800;
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: normal;
       text-transform: uppercase;
       user-select: none;
     }
     .hud-icon {
-      width: 14px;
-      height: 14px;
-      stroke-width: 2.5;
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.8;
       color: var(--primary);
+      animation: hudIconBob 0.35s ease-in-out infinite alternate;
+    }
+    @keyframes hudIconBob {
+      from { transform: translateX(-2px); }
+      to { transform: translateX(2px); }
     }
     .hud-label {
-      font-size: 10px;
-      font-weight: 800;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: normal;
       color: var(--primary-deep);
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
     }
     .hud-divider {
       color: var(--primary);
@@ -852,12 +905,16 @@
     }
     .hud-counter {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 13px;
       color: var(--primary-deep);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      min-width: 48px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      min-width: 52px;
       text-align: center;
+      background: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 6px;
+      padding: 1px 6px;
     }
 
     @keyframes hudBoltPulse {
@@ -2218,8 +2275,10 @@
     <img class="lightbox-img" id="lightboxImg" src="" alt="Zoom Preparat">
   </div>
 
-  <!-- TOAST NOTICE (CLEAN SOLID BORDER, NO SHADOW) -->
-    <!-- GAME-STYLE CENTER SPLASH TOAST -->
+  <!-- FULL-SCREEN DRAMATIC SHADOW SCRIM FOR TOAST & STREAM TOAST -->
+  <div class="screen-scrim" id="screenScrim" aria-hidden="true"></div>
+
+  <!-- TOAST NOTICE (GAME-STYLE CENTER SPLASH TOAST WITH FULL-SCREEN SHADOW) -->
   <div class="toast-notice" id="toastNotice" aria-live="polite">
     <div class="toast-card-badge">
       <div class="toast-emblem-wrap">
@@ -2266,8 +2325,11 @@
       const headerPackName = document.getElementById('headerPackName');
       if (headerPackName) headerPackName.textContent = currentPack.badge || currentPack.packName || packId;
 
+      // PRESERVE TWO-TONE STYLED TITLE SPANS (NEVER OVERWRITE WITH PLAIN TEXT)
       const appMainTitle = document.getElementById('appMainTitle');
-      if (appMainTitle) appMainTitle.textContent = currentPack.title || 'GAMBLING WITH PRINCE NCIT';
+      if (appMainTitle && currentPack && currentPack.title && currentPack.title !== 'GAMBLING WITH PRINCE NCIT') {
+        appMainTitle.textContent = currentPack.title;
+      }
 
       const appSubMeta = document.getElementById('appSubMeta');
       if (appSubMeta) appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Sediaan`;
@@ -2586,7 +2648,8 @@
         }
       }
 
-      // Trigger snappy animation restart
+      // Trigger snappy animation restart with full-screen shadow scrim
+      document.body.classList.add('toast-active');
       toastNotice.classList.remove('show');
       void toastNotice.offsetWidth;
       toastNotice.classList.add('show');
@@ -2598,6 +2661,7 @@
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => {
         toastNotice.classList.remove('show');
+        document.body.classList.remove('toast-active');
       }, 1450);
     }
 
@@ -3114,7 +3178,7 @@
         playTone(440, 'sine', 0.08);
         rebuildStageCards();
         updateCardPositions(true);
-        showToast(`Sequential Mode • 1 to ${sessionCards.length}`);
+        showToast('Mode Berurutan', `1 sampai ${sessionCards.length} Sediaan`);
       } else {
         startRealisticShuffle();
       }
@@ -3142,7 +3206,7 @@
       currentIndex = 0;
       rebuildStageCards();
       updateCardPositions(false);
-      showToast(`Filter Active • ${sessionCards.length} Cards`);
+      showToast('Filter Sediaan', `${sessionCards.length} Sediaan`);
     }
 
     function rotateToIndex(idx) {
@@ -3224,6 +3288,7 @@
       // If held longer than 180ms, engage Rapid Stream Mode with acceleration
       rapidHoldDelayTimer = setTimeout(() => {
         isRapidStreaming = true;
+        document.body.classList.add('rapid-stream-active'); // Full-screen shadow for stream toast
 
         stage3D.classList.add('is-rapid-cycling');
         stage3D.classList.remove('rapid-dir-next', 'rapid-dir-prev');
@@ -3263,6 +3328,7 @@
 
       if (isRapidStreaming) {
         isRapidStreaming = false;
+        document.body.classList.remove('rapid-stream-active'); // Remove full-screen shadow
         stage3D.classList.remove('is-rapid-cycling', 'rapid-dir-next', 'rapid-dir-prev');
         if (rapidStreamHud) rapidStreamHud.classList.remove('active');
 
