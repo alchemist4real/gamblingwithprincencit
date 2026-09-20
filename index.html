@@ -2043,7 +2043,7 @@
     }
 
     .pack-modal-card {
-      width: min(840px, 94vw);
+      width: min(660px, 94vw);
       max-height: min(720px, 90vh);
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
@@ -2062,88 +2062,78 @@
 
     .pack-modal-header {
       flex-shrink: 0;
-      min-height: 60px;
-      border-bottom: 2px solid var(--primary-deep);
-      padding: 12px 24px;
+      border-bottom: 2.5px solid var(--primary-deep);
+      padding: 24px 24px 18px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      text-align: center;
       background-color: var(--white);
+      position: relative;
+      gap: 10px;
     }
-    .pack-modal-header-left {
+    .pack-modal-header .pack-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+    }
+    .lobby-brand-row {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      width: 100%;
+    }
+    .lobby-main-title {
+      font-size: clamp(1.35rem, 3.2vw, 1.95rem) !important;
+      letter-spacing: clamp(1.2px, 0.3vw, 2.2px) !important;
+      gap: clamp(6px, 1.2vw, 12px) !important;
+      margin: 0 !important;
+      line-height: 1.15 !important;
+    }
+    .lobby-meta-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       flex-wrap: wrap;
     }
-    .pack-modal-badge {
+    .lobby-pill {
       font-family: var(--font-display);
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: normal;
       border: 1.5px solid var(--primary-deep);
-      padding: 4px 11px;
+      padding: 3px 11px;
       border-radius: 999px;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       background-color: var(--primary);
       color: var(--white);
     }
-    .pack-modal-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: normal;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ARCADE LOBBY TICKER */
-    .pack-lobby-ticker {
-      background-color: #eef2ff;
-      border-bottom: 2px solid var(--primary-deep);
-      padding: 8px 24px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .lobby-subtext {
       font-family: var(--font-main);
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.8px;
       color: var(--primary-deep);
       text-transform: uppercase;
-      flex-shrink: 0;
-    }
-    .ticker-pulse {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background-color: var(--primary);
-      animation: tickerBlink 1s ease-in-out infinite alternate;
-      flex-shrink: 0;
-    }
-    @keyframes tickerBlink {
-      0% { opacity: 0.3; transform: scale(0.85); }
-      100% { opacity: 1; transform: scale(1.2); }
+      opacity: 0.85;
     }
 
     .pack-modal-body {
       flex: 1;
       overflow-y: auto;
-      padding: clamp(14px, 2.5vw, 24px);
+      padding: 20px 24px;
       background-color: #f6f8fe;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .pack-list {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     /* 3D CARTRIDGE / DECK BOX SLEEVE ITEM */
@@ -2151,15 +2141,16 @@
       background-color: var(--white);
       border: 2.5px solid var(--primary-deep);
       border-radius: 18px;
-      padding: 16px 20px;
+      padding: 14px 18px;
       cursor: pointer;
       display: grid;
-      grid-template-columns: 84px 1fr auto;
+      grid-template-columns: 74px 1fr auto;
       align-items: center;
-      gap: 18px;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 16px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       color: var(--primary-deep);
       position: relative;
+      box-shadow: 0 3px 0 var(--primary-deep);
     }
     .pack-item:hover {
       border-color: var(--primary);
@@ -2167,15 +2158,15 @@
       box-shadow: 0 6px 0 var(--primary-deep);
     }
     .pack-item.active {
-      border: 3px solid var(--primary-deep);
-      background-color: var(--white);
-      box-shadow: 0 6px 0 var(--primary-deep);
+      border: 2.5px solid var(--primary-deep);
+      background-color: #fcfdff;
+      box-shadow: 0 4px 0 var(--primary-deep);
     }
 
     /* Left: 3D Cartridge Box Graphic */
     .pack-cartridge-box {
-      width: 84px;
-      height: 94px;
+      width: 74px;
+      height: 80px;
       background-color: var(--primary);
       border: 2px solid var(--primary-deep);
       border-radius: 12px;
@@ -2183,48 +2174,53 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 4px;
+      padding: 5px 3px;
       color: var(--white);
-      box-shadow: 3px 3px 0 var(--primary-deep);
+      box-shadow: 2.5px 2.5px 0 var(--primary-deep);
       flex-shrink: 0;
     }
-    .cartridge-badge {
+    .pack-cartridge-badge {
       font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 1px;
+      font-size: 8.5px;
+      letter-spacing: 0.8px;
       border: 1px solid var(--white-75);
       border-radius: 999px;
       padding: 1px 6px;
       background: rgba(255, 255, 255, 0.15);
+      line-height: 1.1;
     }
-    .cartridge-crest {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cartridge-crest svg {
+    .pack-cartridge-crest {
       width: 28px;
       height: 28px;
-      fill: var(--white);
+      stroke: var(--white);
+      display: block;
     }
-    .cartridge-label {
+    .pack-cartridge-label {
       font-family: var(--font-main);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
-      letter-spacing: 1px;
-      opacity: 0.9;
+      letter-spacing: 0.8px;
+      opacity: 0.95;
+      line-height: 1;
     }
 
-    /* Middle: Telemetry Matrix & Title */
+    /* Middle: Title & Telemetry Chips */
     .pack-cartridge-info {
       display: flex;
       flex-direction: column;
       gap: 6px;
       min-width: 0;
     }
-    .pack-telemetry-row {
+    .pack-cartridge-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      line-height: 1.25;
+    }
+    .pack-cartridge-telemetry {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -2234,11 +2230,12 @@
       font-family: var(--font-main);
       font-size: 10px;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      padding: 2px 8px;
+      padding: 2.5px 8px;
       border-radius: 999px;
       border: 1.5px solid var(--primary-deep);
+      line-height: 1.2;
     }
     .chip-tier {
       background-color: var(--primary-deep);
@@ -2247,21 +2244,6 @@
     .chip-stat {
       background-color: #eef2ff;
       color: var(--primary-deep);
-    }
-    .pack-cartridge-title {
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: normal;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      line-height: 1.2;
-    }
-    .pack-cartridge-desc {
-      font-size: 12.5px;
-      color: var(--primary-deep);
-      opacity: 0.85;
-      line-height: 1.45;
     }
 
     /* Right: Arcade Deploy Button */
@@ -2272,19 +2254,19 @@
       flex-shrink: 0;
     }
     .pack-deploy-btn {
-      padding: 10px 18px;
+      padding: 9px 18px;
       background-color: var(--primary);
       color: var(--white);
       border: 2px solid var(--primary-deep);
       border-radius: 999px;
       font-family: var(--font-main);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.16s ease;
       box-shadow: 2px 2px 0 var(--primary-deep);
       text-transform: uppercase;
@@ -2299,27 +2281,27 @@
       box-shadow: 1px 1px 0 var(--primary-deep);
     }
     .deploy-play-icon {
-      font-size: 11px;
+      font-size: 10px;
     }
     .deploy-kbd-hint {
       font-family: var(--font-display);
-      font-size: 10px;
-      opacity: 0.8;
+      font-size: 9.5px;
+      opacity: 0.85;
       border: 1px solid var(--white-50);
-      padding: 1px 5px;
+      padding: 1px 4px;
       border-radius: 4px;
     }
 
     /* Upcoming Locked Decks */
     .pack-item.pack-item-upcoming {
-      opacity: 0.7;
+      opacity: 0.65;
       border-style: dashed;
       background-color: #fbfbfe;
       cursor: not-allowed;
     }
     .pack-item.pack-item-upcoming:hover {
       transform: none;
-      box-shadow: none;
+      box-shadow: 0 3px 0 var(--primary-deep);
     }
     .pack-item.pack-item-upcoming .pack-cartridge-box {
       background-color: #8fa0dd;
@@ -2327,14 +2309,53 @@
     }
     .pack-locked-badge {
       font-family: var(--font-main);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
-      letter-spacing: 1px;
-      padding: 6px 14px;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
       border: 1.5px solid var(--primary-deep);
       border-radius: 999px;
       color: var(--primary-deep);
       background-color: #f0f2fb;
+    }
+
+    @media (max-width: 600px) {
+      .pack-modal-card {
+        width: 95vw;
+        max-height: 92vh;
+        border-radius: 18px;
+      }
+      .pack-modal-header {
+        padding: 18px 14px 14px;
+        gap: 8px;
+      }
+      .lobby-main-title {
+        font-size: 1.25rem !important;
+        gap: 6px !important;
+      }
+      .pack-modal-body {
+        padding: 14px 12px;
+        gap: 10px;
+      }
+      .pack-item {
+        grid-template-columns: 62px 1fr;
+        gap: 12px;
+        padding: 12px 14px;
+      }
+      .pack-cartridge-box {
+        width: 62px;
+        height: 72px;
+      }
+      .pack-cartridge-action {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-top: 4px;
+      }
+      .pack-deploy-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 9px 14px;
+      }
     }
   </style>
 </head>
@@ -2587,20 +2608,22 @@
   <div class="pack-modal-overlay" id="packModalOverlay" onclick="handlePackOverlayClick(event)">
     <div class="pack-modal-card" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
       <div class="pack-modal-header">
-        <div class="pack-modal-header-left">
-          <span class="pack-modal-badge" id="packModalBadge">STAGE LOBBY // TABLE 01</span>
-          <h2 class="pack-modal-title" id="packModalTitle">SELECT COMBAT DECK</h2>
-        </div>
-        <button class="modal-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Close [Esc]" aria-label="Close">
+        <button class="modal-close-btn pack-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Close [Esc]" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
-      </div>
-      <div class="pack-lobby-ticker">
-        <span class="ticker-pulse"></span>
-        <span id="lobbyTickerText">SYSTEM READY • 1 DECK MOUNTED • PRESS [ENTER] OR TAP TO DEPLOY</span>
+        <div class="lobby-brand-row">
+          <h2 class="main-title lobby-main-title" id="packModalTitle">
+            <span class="title-tone-1">GAMBLING WITH</span>
+            <span class="title-tone-2">PRINCE NCIT</span>
+          </h2>
+        </div>
+        <div class="lobby-meta-row">
+          <span class="lobby-pill" id="packModalBadge">STAGE LOBBY // TABLE 01</span>
+          <span class="lobby-subtext" id="lobbyTickerText">PRESS [ENTER] TO DEPLOY</span>
+        </div>
       </div>
       <div class="pack-modal-body">
         <div class="pack-list" id="packListContainer">
@@ -2777,10 +2800,8 @@
         modal.classList.add('active', 'is-entrance');
         const badge = document.getElementById('packModalBadge');
         if (badge) badge.textContent = 'STAGE LOBBY // TABLE 01';
-        const title = document.getElementById('packModalTitle');
-        if (title) title.textContent = 'SELECT COMBAT DECK';
         const ticker = document.getElementById('lobbyTickerText');
-        if (ticker) ticker.textContent = 'SYSTEM READY • 1 DECK MOUNTED • PRESS [ENTER] OR TAP TO DEPLOY';
+        if (ticker) ticker.textContent = 'PRESS [ENTER] TO DEPLOY';
         const closeBtn = document.getElementById('packModalCloseBtn');
         if (closeBtn) closeBtn.style.display = 'none';
         playLobbyEntranceSound();
@@ -2798,10 +2819,8 @@
         modal.classList.remove('is-entrance');
         const badge = document.getElementById('packModalBadge');
         if (badge) badge.textContent = 'STAGE LOBBY // SWITCH DECK';
-        const title = document.getElementById('packModalTitle');
-        if (title) title.textContent = 'SELECT COMBAT DECK';
         const ticker = document.getElementById('lobbyTickerText');
-        if (ticker) ticker.textContent = 'STAGE PAUSED • CHOOSE ACTIVE DECK • PRESS [ESC] TO RESUME';
+        if (ticker) ticker.textContent = 'PRESS [ESC] TO RESUME';
         const closeBtn = document.getElementById('packModalCloseBtn');
         if (closeBtn) closeBtn.style.display = 'flex';
         playLobbyEntranceSound();
@@ -2849,14 +2868,12 @@
               <div class="pack-cartridge-label">${id.toUpperCase()}</div>
             </div>
             <div class="pack-cartridge-info">
+              <div class="pack-cartridge-title">${pack.packName || pack.title || 'Block 3.1: Pathology Anatomy'}</div>
               <div class="pack-cartridge-telemetry">
-                <span class="telemetry-chip chip-tier">TIER 1 • STANDARD</span>
                 <span class="telemetry-chip chip-stat">${total} CARDS</span>
                 <span class="telemetry-chip chip-stat">${prepCount} SPECIMENS</span>
                 <span class="telemetry-chip chip-stat">${teoriCount} THEORY</span>
               </div>
-              <div class="pack-cartridge-title">${pack.packName || pack.title || 'Block 3.1: Pathology Anatomy'}</div>
-              <div class="pack-cartridge-desc">${pack.description || pack.subtitle || 'Specimen identification and UKMPPD clinical station review.'}</div>
             </div>
             <div class="pack-cartridge-action">
               <button class="pack-deploy-btn" type="button" onclick="selectCardPack('${id}'); event.stopPropagation();">
@@ -2869,7 +2886,7 @@
         `;
       }
 
-      // Upcoming Locked Decks
+      // Upcoming Locked Decks (Clean, zero essay clutter)
       html += `
         <div class="pack-item pack-item-upcoming">
           <div class="pack-cartridge-box">
@@ -2881,12 +2898,11 @@
             <div class="pack-cartridge-label">DECK 02</div>
           </div>
           <div class="pack-cartridge-info">
-            <div class="pack-cartridge-telemetry">
-              <span class="telemetry-chip chip-tier">TIER 2 • EXPANSION</span>
-              <span class="telemetry-chip chip-stat">IN PREP</span>
-            </div>
             <div class="pack-cartridge-title">Block 3.2: Cardiovascular & Respiratory</div>
-            <div class="pack-cartridge-desc">Organ-specific histopathology modules in preparation.</div>
+            <div class="pack-cartridge-telemetry">
+              <span class="telemetry-chip chip-tier">EXPANSION</span>
+              <span class="telemetry-chip chip-stat">COMING SOON</span>
+            </div>
           </div>
           <div class="pack-cartridge-action">
             <span class="pack-locked-badge">🔒 LOCKED</span>
@@ -2902,12 +2918,11 @@
             <div class="pack-cartridge-label">CUSTOM</div>
           </div>
           <div class="pack-cartridge-info">
+            <div class="pack-cartridge-title">Custom Modular Deck</div>
             <div class="pack-cartridge-telemetry">
-              <span class="telemetry-chip chip-tier">MODULAR JSON</span>
+              <span class="telemetry-chip chip-tier">JSON PACK</span>
               <span class="telemetry-chip chip-stat">SDK</span>
             </div>
-            <div class="pack-cartridge-title">Custom Deck Slot</div>
-            <div class="pack-cartridge-desc">Place custom modular card packs in the <code>packs/</code> directory.</div>
           </div>
           <div class="pack-cartridge-action">
             <span class="pack-locked-badge">MOD SPEC</span>
