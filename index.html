@@ -762,10 +762,14 @@
       position: relative;
       flex-shrink: 0;
     }
-    .btn-ctrl-round:hover {
+    .btn-ctrl-round:hover, .btn-ctrl-round.active {
       background-color: var(--primary-deep);
       color: var(--white);
       border-color: var(--primary-deep);
+    }
+    .btn-ctrl-round.active .gamepad-badge {
+      background-color: var(--white);
+      color: var(--primary-deep);
     }
     .btn-ctrl-round:active, .btn-ctrl-round.is-holding-rapid {
       background-color: var(--primary-deep) !important;
@@ -3384,14 +3388,14 @@
       </button>
     </div>
 
-    <!-- Center Section: Navigation & Current Counter -->
+    <!-- Center Section: Filter & Sequential & Current Counter -->
     <div class="dock-section dock-center">
-      <!-- Prev Button -->
-      <button class="btn-ctrl-round" id="btnPrev" title="Sediaan Sebelumnya (← / A) [Tahan untuk geser cepat]" aria-label="Sediaan Sebelumnya">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polyline points="15 18 9 12 15 6"></polyline>
+      <!-- Filter Cycle Button (Icon-Only, Cycles All -> Specimen -> Theory) -->
+      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="cycleFilter()" title="Filter: All Cards [Click to cycle]" aria-label="Filter Cards">
+        <svg id="dockFilterIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
-        <span class="gamepad-badge" title="Gamepad: L1">L1</span>
+        <span class="gamepad-badge" id="dockFilterBadge" title="Filter">ALL</span>
       </button>
 
       <!-- Track Name & Counter -->
@@ -3400,12 +3404,16 @@
         <span class="dock-track-count" id="barSubCount">01 / 40</span>
       </div>
 
-      <!-- Next Button -->
-      <button class="btn-ctrl-round" id="btnNext" title="Sediaan Berikutnya (→ / D) [Tahan untuk geser cepat]" aria-label="Sediaan Berikutnya">
+      <!-- Sequential Mode Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-seq-btn active" id="btnDockSequential" onclick="startSequentialSort()" title="Sequential Order [U]" aria-label="Sequential Order">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polyline points="9 18 15 12 9 6"></polyline>
+          <line x1="3" y1="6" x2="15" y2="6"></line>
+          <line x1="3" y1="12" x2="12" y2="12"></line>
+          <line x1="3" y1="18" x2="9" y2="18"></line>
+          <polyline points="16 10 19 7 22 10"></polyline>
+          <line x1="19" y1="7" x2="19" y2="17"></line>
         </svg>
-        <span class="gamepad-badge" title="Gamepad: R1">R1</span>
+        <span class="gamepad-badge" title="Hotkey: U">U</span>
       </button>
     </div>
 
@@ -5416,6 +5424,7 @@
       if (typeof btnModeAcak !== 'undefined' && btnModeAcak) btnModeAcak.classList.add('active');
       if (typeof btnModeUrut !== 'undefined' && btnModeUrut) btnModeUrut.classList.remove('active');
       updateSettingsUI();
+      updatePlayModeButtonsUI();
 
       const styleToRun = forcedStyleIndex !== null 
         ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
@@ -5724,6 +5733,7 @@
       if (typeof btnModeUrut !== 'undefined' && btnModeUrut) btnModeUrut.classList.add('active');
       if (typeof btnModeAcak !== 'undefined' && btnModeAcak) btnModeAcak.classList.remove('active');
       updateSettingsUI();
+      updatePlayModeButtonsUI();
 
       const styleToRun = forcedStyleIndex !== null 
         ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
@@ -5904,6 +5914,41 @@
       setTimeout(onComplete, 1260);
     }
 
+    function updatePlayModeButtonsUI() {
+      const btnSeq = document.getElementById('btnDockSequential');
+      const btnShuff = document.getElementById('btnShuffleDeck');
+      if (btnSeq) btnSeq.classList.toggle('active', currentPlayMode === 'sequential');
+      if (btnShuff) btnShuff.classList.toggle('active', currentPlayMode === 'shuffle');
+    }
+
+    function updateDockFilterUI() {
+      const btn = document.getElementById('btnDockFilter');
+      const badge = document.getElementById('dockFilterBadge');
+      if (!btn) return;
+      if (activeFilter === 'all') {
+        btn.classList.remove('active');
+        btn.title = 'Filter: All Cards [Click to cycle]';
+        if (badge) badge.textContent = 'ALL';
+      } else if (activeFilter === 'preparat') {
+        btn.classList.add('active');
+        btn.title = 'Filter: Specimens Only [Click to cycle]';
+        if (badge) badge.textContent = 'PREP';
+      } else if (activeFilter === 'teori') {
+        btn.classList.add('active');
+        btn.title = 'Filter: Theory Only [Click to cycle]';
+        if (badge) badge.textContent = 'THRY';
+      }
+    }
+
+    function cycleFilter() {
+      if (isShuffling) return;
+      let nextFilter = 'all';
+      if (activeFilter === 'all') nextFilter = 'preparat';
+      else if (activeFilter === 'preparat') nextFilter = 'teori';
+      else nextFilter = 'all';
+      setFilter(nextFilter);
+    }
+
     // Toggle between Mode Urut (Sequential) and Mode Acak (Shuffle / Gambling)
     function setPlayMode(mode) {
       if (isShuffling) return;
@@ -5927,6 +5972,7 @@
       applyDeckFilterAndMode(true);
       showToast('Filter Applied', `${sessionCards.length} Cards`);
       updateSettingsUI();
+      updateDockFilterUI();
     }
 
     function removeCurrentCard() {
@@ -6969,9 +7015,7 @@
 
         // Share / Select (button 8): Cycle Filter (All -> Preparat -> Teori)
         onEdgePress(8, () => {
-          if (activeFilter === 'all') setFilter('preparat');
-          else if (activeFilter === 'preparat') setFilter('teori');
-          else setFilter('all');
+          cycleFilter();
         });
 
         // Left Analog Stick (Axes 0 & 1)
@@ -7040,6 +7084,8 @@
     currentPlayMode = 'sequential';
     updateAudioIconUI();
     updateSettingsUI();
+    updateDockFilterUI();
+    updatePlayModeButtonsUI();
 
     // Show "Pick a Block" onboarding screen so cards are not immediately shown
     openEntranceBlockPicker();
