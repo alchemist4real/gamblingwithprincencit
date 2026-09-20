@@ -802,17 +802,17 @@
     }
 
     /* =======================================================
-       RAPID STREAM / HIGH-SPEED HOLD ANIMATION & HUD
+       RAPID BROWSE / HIGH-SPEED HUD (COLLECTIBLE RETRO BADGE)
        ======================================================= */
     .rapid-stream-hud {
       position: absolute;
-      top: 10px;
+      top: clamp(6px, 1.5vh, 16px);
       left: 50%;
-      transform: translateX(-50%) translateY(-14px) scale(0.9);
+      transform: translateX(-50%) translateY(-10px) scale(0.92);
       opacity: 0;
       pointer-events: none;
       z-index: 120;
-      transition: opacity 0.15s ease, transform 0.18s cubic-bezier(0.18, 1.25, 0.3, 1);
+      transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1.2, 0.3, 1);
     }
     .rapid-stream-hud.active {
       opacity: 1;
@@ -821,44 +821,44 @@
     .hud-pill {
       display: flex;
       align-items: center;
-      gap: 9px;
-      padding: 5px 16px;
+      gap: 8px;
+      padding: 5px 14px;
       border-radius: 999px;
-      background-color: var(--primary-deep);
-      border: 2px solid var(--white);
-      color: var(--white);
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      font-weight: 700;
+      background-color: var(--white);
+      border: 2.5px solid var(--primary-deep);
+      box-shadow: 0 4px 0 var(--primary-deep);
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 10.5px;
+      letter-spacing: 1.2px;
+      font-weight: 800;
       text-transform: uppercase;
       user-select: none;
     }
-    .hud-bolt {
-      font-size: 13px;
-      animation: hudBoltPulse 0.16s infinite alternate;
-    }
-    .hud-arrows {
-      font-size: 10px;
-      letter-spacing: -1.5px;
-      color: var(--white-50);
-      transition: color 0.15s ease;
-    }
-    .hud-arrows.streaming {
-      color: var(--white);
-      animation: hudArrowFlash 0.14s infinite alternate;
-    }
-    .hud-counter {
-      font-size: 12.5px;
-      color: var(--white);
-      min-width: 56px;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .hud-icon {
+      width: 14px;
+      height: 14px;
+      stroke-width: 2.5;
+      color: var(--primary);
     }
     .hud-label {
-      font-size: 9.5px;
-      color: var(--white-75);
-      letter-spacing: 1.5px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--primary-deep);
+      letter-spacing: 1.2px;
+    }
+    .hud-divider {
+      color: var(--primary);
+      opacity: 0.5;
+    }
+    .hud-counter {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--primary-deep);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      min-width: 48px;
+      text-align: center;
     }
 
     @keyframes hudBoltPulse {
@@ -1306,32 +1306,37 @@
       stroke-width: 2.2;
     }
 
-    /* TOAST NOTIFICATION (TOP FLOATING PILL - ZERO INTERFERENCE) */
+    /* TOAST NOTIFICATION (COLLECTIBLE BADGE PILL - POSITIONED ELEGANTLY ABOVE DOCK) */
     .toast-notice {
       position: fixed;
-      top: max(16px, env(safe-area-inset-top));
+      bottom: clamp(76px, 12vh, 98px);
       left: 50%;
-      transform: translateX(-50%) translateY(-40px);
+      transform: translateX(-50%) translateY(14px) scale(0.94);
       background-color: var(--white);
-      color: var(--primary);
-      padding: 8px 24px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      border: 2px solid var(--primary-dark);
+      color: var(--primary-deep);
+      padding: 6px 18px;
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border: 2.5px solid var(--primary-deep);
       border-radius: 999px;
-      box-shadow: none;
+      box-shadow: 0 4px 0 var(--primary-deep);
       opacity: 0;
       pointer-events: none;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+      transition: transform 0.25s cubic-bezier(0.16, 1.2, 0.3, 1), opacity 0.2s ease;
       z-index: 3000;
       max-width: 90vw;
       text-align: center;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
     }
     .toast-notice.show {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(0) scale(1);
     }
 
     /* LIGHTBOX FOR FULL IMAGE ZOOM */
@@ -1877,11 +1882,13 @@
       <!-- Rapid Stream High-Speed HUD -->
       <div class="rapid-stream-hud" id="rapidStreamHud" aria-hidden="true">
         <div class="hud-pill">
-          <span class="hud-bolt">⚡</span>
-          <span class="hud-arrows hud-left-stream">◀◀◀</span>
+          <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="13 17 18 12 13 7"></polyline>
+            <polyline points="6 17 11 12 6 7"></polyline>
+          </svg>
+          <span class="hud-label">RAPID BROWSE</span>
+          <span class="hud-divider">&bull;</span>
           <span class="hud-counter" id="hudCounter">01 / 40</span>
-          <span class="hud-arrows hud-right-stream">▶▶▶</span>
-          <span class="hud-label">STREAM</span>
         </div>
       </div>
       <div class="card-stage-container" id="stage3D">
@@ -1895,7 +1902,7 @@
        ======================================================= -->
   <div class="active-specimen-indicator">
     <div class="active-specimen-title" id="activeIndicatorTitle">CARD 01 &bull; HISTOPATHOLOGY</div>
-    <div class="active-specimen-desc" id="activeIndicatorDesc">Observe microscopic slide &bull; Click card to reveal details</div>
+    <div class="active-specimen-desc" id="activeIndicatorDesc">Observe microscopic slide &bull; Click or press Space to reveal</div>
   </div>
 
   <!-- =======================================================
@@ -1946,11 +1953,11 @@
     <!-- Center Section: Navigation, Mode Controls & Current Counter -->
     <div class="dock-section dock-center">
       <!-- Prev Button -->
-      <button class="btn-ctrl-round" id="btnPrev" title="Previous Card (← / A) [Hold to stream]" aria-label="Previous Card">
+      <button class="btn-ctrl-round" id="btnPrev" title="Previous Card (← / A) [Hold for rapid browse]" aria-label="Previous Card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
-        <span class="gamepad-badge" title="Stick PS: L1">L1</span>
+        <span class="gamepad-badge" title="Gamepad: L1">L1</span>
       </button>
 
       <!-- Sequential Mode Button -->
@@ -1963,7 +1970,7 @@
           <line x1="3" y1="12" x2="3.01" y2="12"></line>
           <line x1="3" y1="18" x2="3.01" y2="18"></line>
         </svg>
-        <span class="gamepad-badge" title="Stick PS: Square">□</span>
+        <span class="gamepad-badge" title="Gamepad: Square">□</span>
       </button>
 
       <!-- Track Name & Counter -->
@@ -1981,15 +1988,15 @@
           <line x1="15" y1="15" x2="21" y2="21"></line>
           <line x1="4" y1="4" x2="9" y2="9"></line>
         </svg>
-        <span class="gamepad-badge" title="Stick PS: Triangle">△</span>
+        <span class="gamepad-badge" title="Gamepad: Triangle">△</span>
       </button>
 
       <!-- Next Button -->
-      <button class="btn-ctrl-round" id="btnNext" title="Next Card (→ / D) [Hold to stream]" aria-label="Next Card">
+      <button class="btn-ctrl-round" id="btnNext" title="Next Card (→ / D) [Hold for rapid browse]" aria-label="Next Card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
-        <span class="gamepad-badge" title="Stick PS: R1">R1</span>
+        <span class="gamepad-badge" title="Gamepad: R1">R1</span>
       </button>
     </div>
 
@@ -2006,7 +2013,7 @@
           <circle cx="16" cy="16" r="1.5" fill="currentColor"></circle>
         </svg>
         <span>RANDOM</span>
-        <span class="gamepad-badge" title="Stick PS: R2">R2</span>
+        <span class="gamepad-badge" title="Gamepad: R2">R2</span>
       </button>
 
       <!-- Reveal Action Pill -->
@@ -2016,7 +2023,7 @@
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
         <span class="dock-reveal-text">REVEAL</span>
-        <span class="gamepad-badge" title="Stick PS: Cross">✕</span>
+        <span class="gamepad-badge" title="Gamepad: Cross">✕</span>
       </button>
 
       <!-- Fullscreen Button -->
@@ -2049,7 +2056,7 @@
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
-          <span class="gamepad-badge" title="Stick PS: Circle">○</span>
+          <span class="gamepad-badge" title="Gamepad: Circle">○</span>
         </button>
       </div>
 
@@ -2334,15 +2341,6 @@
       if (hudCounter) {
         hudCounter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
       }
-      if (hudLeftStream && hudRightStream) {
-        if (dir === 'prev') {
-          hudLeftStream.classList.add('streaming');
-          hudRightStream.classList.remove('streaming');
-        } else {
-          hudRightStream.classList.add('streaming');
-          hudLeftStream.classList.remove('streaming');
-        }
-      }
     }
 
     function playGatherSound() {
@@ -2571,7 +2569,7 @@
           return;
         }
 
-        cardEl.style.opacity = (offset === 0) ? '1' : '0.72';
+        cardEl.style.opacity = '1'; /* ALL CARDS 100% SOLID - ZERO TRANSPARENCY */
         cardEl.style.pointerEvents = 'auto';
         cardEl.style.visibility = 'visible';
 
@@ -2640,8 +2638,8 @@
 
       activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATHOLOGY' : 'VIGNETTE'}`;
       activeIndicatorDesc.textContent = isPrep 
-        ? (isTouch ? 'Swipe cards • Hold arrows to stream' : 'Observe microscopic slide • Hold arrows to stream')
-        : (isTouch ? 'Theory question • Hold arrows to stream' : 'Review theory question • Hold arrows to stream');
+        ? (isTouch ? 'Swipe cards to browse • Tap to reveal details' : 'Observe microscopic slide • Click or press Space to reveal')
+        : (isTouch ? 'Clinical vignette • Tap to reveal details' : 'Review clinical vignette • Click or press Space to reveal');
 
       barTrackName.textContent = labelText;
       barSubCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
@@ -2691,7 +2689,7 @@
         triggerHaptic([15, 30, 20]);
         triggerControllerRumble(130, 0.45, 0.85);
         isShuffling = false;
-        showToast(`🃏 ${styleToRun.name} (${sessionCards.length} Cards)`);
+        showToast(`${styleToRun.name} • ${sessionCards.length} Cards`);
       });
     }
 
@@ -2967,7 +2965,7 @@
         playTone(440, 'sine', 0.08);
         rebuildStageCards();
         updateCardPositions(true);
-        showToast('Sequential Mode: Ordered (1 - ' + sessionCards.length + ')');
+        showToast(`Sequential Mode • 1 to ${sessionCards.length}`);
       } else {
         startRealisticShuffle();
       }
@@ -2995,7 +2993,7 @@
       currentIndex = 0;
       rebuildStageCards();
       updateCardPositions(false);
-      showToast(`Filter: ${sessionCards.length} active cards`);
+      showToast(`Filter Active • ${sessionCards.length} Cards`);
     }
 
     function rotateToIndex(idx) {
@@ -3333,7 +3331,7 @@
           playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
           triggerHaptic([30, 60]);
           isShuffling = false;
-          showToast(`🎲 RANDOM: CARD ${String(targetIdx + 1).padStart(2, '0')}`);
+          showToast(`Random Pick: Card ${String(targetIdx + 1).padStart(2, '0')}`);
         }
       }, 75);
     }
@@ -3625,14 +3623,14 @@
       isGamepadConnected = true;
       document.body.classList.add('gamepad-active');
       const gpName = e.gamepad.id || 'Stick PS';
-      showToast('🎮 Controller Connected: L1/R1: Stream • ✕: Reveal • ○: Close • △: Shuffle');
+      showToast('Controller Connected: L1/R1 Browse • ✕ Reveal • △ Shuffle');
       triggerControllerRumble(220, 0.5, 0.85);
     });
 
     window.addEventListener('gamepaddisconnected', () => {
       isGamepadConnected = false;
       document.body.classList.remove('gamepad-active');
-      showToast('🎮 Controller Disconnected');
+      showToast('Controller Disconnected');
     });
 
     function pollGamepad() {
