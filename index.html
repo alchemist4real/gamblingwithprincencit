@@ -2540,6 +2540,21 @@
       margin: 0 auto;
       flex-shrink: 0;
       z-index: 10;
+      gap: 12px;
+    }
+    .review-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-top-title {
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem) !important;
+      letter-spacing: 2px !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      text-shadow: 0 2px 0 var(--primary-deep) !important;
     }
     .review-phase-badge {
       font-family: var(--font-display);
@@ -2740,7 +2755,7 @@
       gap: clamp(14px, 2vw, 24px);
       align-items: stretch;
       max-width: 1100px;
-      max-height: clamp(380px, 70vh, 640px);
+      max-height: clamp(380px, 72vh, 640px);
       animation: studyCardFadeIn 0.25s ease-out;
     }
     .review-reveal-left {
@@ -2750,26 +2765,193 @@
       overflow: hidden;
       box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
       display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .review-reveal-card-header {
+      padding: 10px 16px;
+      background-color: rgba(255, 255, 255, 0.12);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .review-specimen-badge {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .review-reveal-media {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      background-color: #000;
+      position: relative;
     }
-    .review-reveal-left img {
+    .review-reveal-media img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background-color: #000;
+      display: block;
     }
+    .review-reveal-theory-content {
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 100%;
+      background-color: var(--primary-dark);
+    }
+    .review-reveal-theory-badge {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid var(--white-25);
+    }
+    .review-reveal-theory-text {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      font-weight: 700;
+      color: var(--white);
+    }
+
     .review-reveal-right {
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
       border-radius: 20px;
-      padding: clamp(16px, 2.5vh, 24px);
+      padding: clamp(14px, 2.2vh, 22px);
       overflow-y: auto;
       box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
       color: var(--primary-deep);
       display: flex;
       flex-direction: column;
       gap: 12px;
+    }
+    .review-reveal-right::-webkit-scrollbar {
+      width: 6px;
+    }
+    .review-reveal-right::-webkit-scrollbar-track {
+      background: #f6f8fe;
+      border-radius: 999px;
+    }
+    .review-reveal-right::-webkit-scrollbar-thumb {
+      background: #b8c7f2;
+      border-radius: 999px;
+    }
+    .review-reveal-right::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-deep);
+    }
+
+    /* Diagnosis Hero in Reveal */
+    .review-diag-hero {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .review-diag-badge {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      background-color: var(--primary-deep);
+      border-radius: 999px;
+      padding: 2px 8px;
+      align-self: flex-start;
+      text-transform: uppercase;
+    }
+    .review-diag-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      letter-spacing: 1px;
+      color: var(--primary-deep);
+      line-height: 1.25;
+    }
+    .review-diag-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .review-meta-item {
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 3px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Info Sections in Reveal */
+    .review-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .review-info-heading {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1.5px solid #d4def7;
+      padding-bottom: 3px;
+    }
+    .review-info-box {
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+    .review-point-list {
+      list-style-type: square;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+    }
+    .review-point-list li {
+      margin-bottom: 4px;
+    }
+    .review-point-list li:last-child {
+      margin-bottom: 0;
+    }
+    .review-point-list strong {
+      color: var(--primary-deep);
+      font-weight: 800;
+    }
+    .review-keywords-wrap {
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--primary-deep);
+      font-weight: 600;
     }
 
     /* 4. Complete Stage */
@@ -2881,10 +3063,174 @@
         font-size: 10.5px;
         padding: 5px 10px;
       }
-      .review-counter {
-        font-size: 12px;
-        padding: 4px 10px;
-      }
+    /* =======================================================
+       SETTINGS & PREFERENCES MODAL STYLES
+       ======================================================= */
+    .settings-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 4200;
+      background-color: rgba(12, 23, 64, 0.96);
+      background-image: 
+        radial-gradient(rgba(49, 79, 186, 0.35) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(14px, 3vw, 24px);
+    }
+    .settings-modal-overlay.active {
+      display: flex;
+    }
+    .settings-modal-card {
+      width: min(540px, 94vw);
+      max-height: min(700px, 90vh);
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      box-shadow: 0 0 0 4px var(--white), 0 28px 80px rgba(12, 23, 64, 0.75);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--primary-deep);
+      animation: lobbyModalPopIn 0.28s cubic-bezier(0.16, 1.15, 0.3, 1);
+    }
+    .settings-modal-header {
+      padding: 22px 24px 16px;
+      text-align: center;
+      border-bottom: 2.5px solid var(--primary-deep);
+      background-color: var(--white);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .settings-modal-header .settings-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+    }
+    .settings-modal-body {
+      padding: 20px 24px;
+      background-color: #f6f8fe;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+    }
+    .settings-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .settings-group-title {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .settings-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .settings-pill-btn {
+      flex: 1;
+      min-width: 90px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.16s ease;
+      box-shadow: 0 2px 0 var(--primary-deep);
+      text-transform: uppercase;
+    }
+    .settings-pill-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .settings-pill-btn.active {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-color: var(--primary-deep);
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 var(--primary-deep);
+    }
+    .settings-pill-btn.active .settings-pill-badge {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border-color: var(--white);
+    }
+    .settings-pill-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background-color: #f0f2fb;
+      border: 1.5px solid var(--primary-deep);
+      color: var(--primary-deep);
+    }
+    .settings-action-btn {
+      width: 100%;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.16s ease;
+      box-shadow: 0 2px 0 var(--primary-deep);
+    }
+    .settings-action-btn:hover {
+      background-color: #f6f8fe;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .settings-action-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 var(--primary-deep);
+    }
+    .settings-action-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .settings-modal-footer {
+      padding: 16px 24px 20px;
+      background-color: var(--white);
+      border-top: 2.5px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 </head>
@@ -2897,7 +3243,7 @@
     <div class="title-row">
       <h1 class="main-title" id="appMainTitle"><span class="title-tone-1">GAMBLING WITH</span> <span class="title-tone-2">PRINCE NCIT</span></h1>
     </div>
-    <div class="sub-meta" id="appSubMeta">Persiapan Ujian Identifikasi &amp; Praktikum Patologi Anatomi &bull; Ident Blok 3.1 &bull; 40 Sediaan</div>
+    <div class="sub-meta" id="appSubMeta">Persiapan Ujian Identifikasi &amp; Praktikum Kedokteran</div>
   </header>
 
   <!-- =======================================================
@@ -2920,62 +3266,24 @@
   </div>
 
   <!-- =======================================================
-       BOTTOM PILL PLAYER BAR (WITH SEQUENTIAL & SHUFFLE)
-       STRICT ALL BUTTONS: SVG ICONS ONLY, ZERO TEXT!
+       BOTTOM PILL PLAYER BAR (CONSOLIDATED & STREAMLINED)
+       CORE NAVIGATION & ACTIONS • LESS PRIORITIES IN SETTINGS [O]
        ======================================================= -->
   <nav class="bottom-player-bar" id="bottomPlayerDock">
-    <!-- Left Section: Pack Selector & Category Filters -->
+    <!-- Left Section: Deck Pack Selector -->
     <div class="dock-section dock-left">
       <button class="pack-badge-btn" id="btnPackSelector" onclick="openPackModal()" title="Pilih Paket Sediaan [P]" aria-label="Pilih Paket Sediaan">
         <svg class="pack-badge-emblem" viewBox="0 0 64 64" fill="currentColor" width="15" height="15" aria-hidden="true" style="flex-shrink: 0;">
           <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
         </svg>
-        <span class="pack-name-text" id="headerPackName">Ident Blok 3.1</span>
+        <span class="pack-name-text" id="headerPackName">IDENT DECK</span>
         <svg class="pack-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </button>
-
-      <div class="header-filters" id="headerFilters">
-        <button class="filter-icon-btn active" id="btnFilterAll" onclick="setFilter('all')" title="Semua Sediaan (40 Sediaan)" aria-label="Semua Sediaan">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <rect x="3" y="3" width="7" height="7"></rect>
-            <rect x="14" y="3" width="7" height="7"></rect>
-            <rect x="14" y="14" width="7" height="7"></rect>
-            <rect x="3" y="14" width="7" height="7"></rect>
-          </svg>
-        </button>
-        <button class="filter-icon-btn" id="btnFilterPrep" onclick="setFilter('preparat')" title="Sediaan Mikroskopik (34 Sediaan)" aria-label="Sediaan Mikroskopik">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M6 18h8"></path>
-            <path d="M3 22h18"></path>
-            <path d="M14 22a7 7 0 1 0 0-14h-1"></path>
-            <path d="M9 14h2"></path>
-            <path d="M9 12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2"></path>
-            <line x1="12" y1="6" x2="12" y2="7"></line>
-          </svg>
-        </button>
-        <button class="filter-icon-btn" id="btnFilterTeori" onclick="setFilter('teori')" title="Soal Teori & Kasus (6 Soal)" aria-label="Soal Teori & Kasus">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            <line x1="8" y1="7" x2="16" y2="7"></line>
-            <line x1="8" y1="11" x2="14" y2="11"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Restore / Reset Removed Cards (Revealed when cards are discarded) -->
-      <button class="btn-reset-removed" id="btnResetRemoved" onclick="resetRemovedCards()" title="Restore Removed Cards [Z]" aria-label="Restore Removed Cards">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polyline points="1 4 1 10 7 10"></polyline>
-          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-        </svg>
-        <span class="reset-count-badge" id="removedCountBadge">0</span>
-      </button>
     </div>
 
-    <!-- Center Section: Navigation, Mode Controls & Current Counter -->
+    <!-- Center Section: Navigation & Current Counter -->
     <div class="dock-section dock-center">
       <!-- Prev Button -->
       <button class="btn-ctrl-round" id="btnPrev" title="Sediaan Sebelumnya (← / A) [Tahan untuk geser cepat]" aria-label="Sediaan Sebelumnya">
@@ -2985,36 +3293,11 @@
         <span class="gamepad-badge" title="Gamepad: L1">L1</span>
       </button>
 
-      <!-- Sequential Mode Button -->
-      <button class="btn-ctrl-mode active" id="btnModeUrut" onclick="setPlayMode('sequential')" title="Mode Berurutan [U]" aria-label="Mode Berurutan">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        <span class="gamepad-badge" title="Gamepad: Square">□</span>
-      </button>
-
       <!-- Track Name & Counter -->
       <div class="dock-track-info">
         <span class="dock-track-name" id="barTrackName">SEDIAAN 01</span>
         <span class="dock-track-count" id="barSubCount">01 / 40</span>
       </div>
-
-      <!-- Shuffle Mode Button -->
-      <button class="btn-ctrl-mode" id="btnModeAcak" onclick="setPlayMode('shuffle')" title="Mode Acak [S]" aria-label="Mode Acak">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polyline points="16 3 21 3 21 8"></polyline>
-          <line x1="4" y1="20" x2="21" y2="3"></line>
-          <polyline points="21 16 21 21 16 21"></polyline>
-          <line x1="15" y1="15" x2="21" y2="21"></line>
-          <line x1="4" y1="4" x2="9" y2="9"></line>
-        </svg>
-        <span class="gamepad-badge" title="Gamepad: Triangle">△</span>
-      </button>
 
       <!-- Next Button -->
       <button class="btn-ctrl-round" id="btnNext" title="Sediaan Berikutnya (→ / D) [Tahan untuk geser cepat]" aria-label="Sediaan Berikutnya">
@@ -3025,7 +3308,7 @@
       </button>
     </div>
 
-    <!-- Right Section: (🎲) + (👁) + (⊝) + (⛶) (ICON-ONLY 36PX ROUND BUTTONS) -->
+    <!-- Right Section: (🎲) + (👁) + (⊝) + (⏱) + (⚙️) (ICON-ONLY 36PX ROUND BUTTONS) -->
     <div class="dock-section dock-right">
       <!-- Dedicated Pick Random Card Button (Icon-Only) -->
       <button class="btn-ctrl-round dock-random-btn" id="btnPickRandom" onclick="pickRandomCard()" title="Acak Sediaan [R / G]" aria-label="Acak Sediaan">
@@ -3070,11 +3353,13 @@
         <span class="gamepad-badge" title="Hotkey: M">M</span>
       </button>
 
-      <!-- Fullscreen Button -->
-      <button class="btn-ctrl-round" onclick="toggleFullScreen()" title="Layar Penuh [F]" aria-label="Layar Penuh">
+      <!-- Settings Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-settings-btn" id="btnSettings" onclick="openSettingsModal()" title="Settings & Preferences [O]" aria-label="Settings & Preferences">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
         </svg>
+        <span class="gamepad-badge" title="Hotkey: O">O</span>
       </button>
     </div>
   </nav>
@@ -3255,12 +3540,112 @@
   </div>
 
   <!-- =======================================================
+       SETTINGS & PREFERENCES MODAL
+       ======================================================= -->
+  <div class="settings-modal-overlay" id="settingsModalOverlay" onclick="handleSettingsOverlayClick(event)">
+    <div class="settings-modal-card" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+      <div class="settings-modal-header">
+        <button class="modal-close-btn settings-close-btn" onclick="closeSettingsModal()" title="Close [Esc]" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <h2 class="main-title" id="settingsModalTitle" style="font-size: 1.45rem; gap: 8px;">
+          <span class="title-tone-1">GAME</span>
+          <span class="title-tone-2">SETTINGS</span>
+        </h2>
+        <span class="lobby-pill">PREFERENCES // TABLE CONFIG</span>
+      </div>
+
+      <div class="settings-modal-body">
+        <!-- Section 1: Content Filter -->
+        <div class="settings-group">
+          <div class="settings-group-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            <span>FILTER SEDIAAN</span>
+          </div>
+          <div class="settings-pills-row">
+            <button class="settings-pill-btn active" id="btnSetFilterAll" onclick="applySettingsFilter('all')">
+              <span>SEMUA</span>
+              <span class="settings-pill-badge" id="setFilterCountAll">40</span>
+            </button>
+            <button class="settings-pill-btn" id="btnSetFilterPrep" onclick="applySettingsFilter('preparat')">
+              <span>HISTOPATOLOGI</span>
+              <span class="settings-pill-badge" id="setFilterCountPrep">34</span>
+            </button>
+            <button class="settings-pill-btn" id="btnSetFilterTeori" onclick="applySettingsFilter('teori')">
+              <span>TEORI & KASUS</span>
+              <span class="settings-pill-badge" id="setFilterCountTeori">6</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 2: Play Mode -->
+        <div class="settings-group">
+          <div class="settings-group-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line></svg>
+            <span>MODE PERMAINAN</span>
+          </div>
+          <div class="settings-pills-row">
+            <button class="settings-pill-btn active" id="btnSetModeSeq" onclick="applySettingsMode('sequential')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              <span>BERURUTAN [U]</span>
+            </button>
+            <button class="settings-pill-btn" id="btnSetModeShuff" onclick="applySettingsMode('shuffle')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line></svg>
+              <span>ACAK / SHUFFLE [S]</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 3: Deck Management -->
+        <div class="settings-group">
+          <div class="settings-group-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            <span>PENGELOLAAN SEDIAAN</span>
+          </div>
+          <button class="settings-action-btn" id="btnSetRestoreRemoved" onclick="resetRemovedCardsFromSettings()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            <span>RESTORE SEMUA SEDIAAN YANG DIHAPUS</span>
+            <span class="settings-pill-badge" id="setRemovedBadge">0</span>
+          </button>
+        </div>
+
+        <!-- Section 4: Display Options -->
+        <div class="settings-group">
+          <div class="settings-group-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+            <span>TAMPILAN LAYAR</span>
+          </div>
+          <button class="settings-action-btn" onclick="toggleFullScreen(); updateSettingsUI();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+            <span id="setFullscreenText">TOGGLE FULLSCREEN [F]</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-modal-footer">
+        <button class="review-start-btn" onclick="closeSettingsModal()">
+          <span>DONE [ESC]</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================
        FULL-SCREEN REVIEW STAGE OVERLAY
        ======================================================= -->
   <div class="review-fullscreen-overlay" id="reviewStageOverlay" aria-hidden="true">
     <!-- Top Bar -->
     <div class="review-top-bar">
-      <span class="review-phase-badge" id="reviewPhaseBadge">STUDY PHASE // 60s</span>
+      <div class="review-brand-left">
+        <h2 class="main-title review-top-title">
+          <span class="title-tone-1">GAMBLING WITH</span>
+          <span class="title-tone-2">PRINCE NCIT</span>
+        </h2>
+        <span class="review-phase-badge" id="reviewPhaseBadge">STUDY PHASE // 60s</span>
+      </div>
       <span class="review-counter" id="reviewCounter">CARD 01 / 20</span>
       <div class="review-top-actions">
         <button class="review-skip-btn" id="btnReviewSkip" onclick="skipReviewCard()" title="Next Card [Space]">
@@ -3336,7 +3721,7 @@
     // =======================================================
     // MODULAR CARD PACK ENGINE
     // =======================================================
-    let currentPackId = 'blok-3.1';
+    let currentPackId = Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1';
     let currentPack = null;
     let DATA_CARDS = [];
     let isPackModalOpen = false;
@@ -3527,7 +3912,7 @@
               </svg>
             </div>
             <div class="pack-cartridge-info">
-              <div class="pack-cartridge-title">${pack.packName || 'Ident Blok 3.1: Patologi Anatomi'}</div>
+              <div class="pack-cartridge-title">${pack.packName || pack.title || id}</div>
               <div class="pack-cartridge-telemetry">
                 <span class="telemetry-chip chip-tier">IDENTIFIKASI</span>
                 <span class="telemetry-chip chip-stat">${total} CARDS</span>
@@ -3607,7 +3992,7 @@
 
       if (wasEntrance) {
         runOpeningStageFlourish();
-        showToast('Ident Blok 3.1 Loaded', `${sessionCards.length} Cards Ready`);
+        showToast(`${currentPack?.badge || currentPack?.packName || 'Deck'} Loaded`, `${sessionCards.length} Cards Ready`);
       } else {
         playTone(523.25, 'triangle', 0.12);
       }
@@ -4308,14 +4693,30 @@
       const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
 
       if (body) {
+        const isPrep = card.type === 'preparat';
+        const cardNum = card.id ? String(card.id).padStart(2, '0') : String(reviewCurrentIndex + 1).padStart(2, '0');
+        const cardLabel = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+
         let leftContentHtml = '';
-        if (card.type === 'preparat' && card.image) {
-          leftContentHtml = `<img src="${card.image}" alt="Specimen">`;
+        if (isPrep && card.image) {
+          leftContentHtml = `
+            <div class="review-reveal-card-header">
+              <span class="review-specimen-badge">${cardLabel} // HISTOPATOLOGI</span>
+            </div>
+            <div class="review-reveal-media">
+              <img src="${card.image}" alt="${cardLabel}">
+            </div>
+          `;
         } else {
           leftContentHtml = `
-            <div style="padding: 24px; text-align: center; color: var(--white);">
-              <div style="font-family: var(--font-display); font-size: 13px; letter-spacing: 1.5px; opacity: 0.8; margin-bottom: 12px;">SOAL TEORI PRAKTIKUM</div>
-              <div style="font-size: 1.15rem; line-height: 1.5; font-weight: 700;">"${card.prompt}"</div>
+            <div class="review-reveal-card-header">
+              <span class="review-specimen-badge">${cardLabel} // SOAL TEORI</span>
+            </div>
+            <div class="review-reveal-media">
+              <div class="review-reveal-theory-content">
+                <span class="review-reveal-theory-badge">SOAL TEORI & KASUS</span>
+                <div class="review-reveal-theory-text">"${card.prompt}"</div>
+              </div>
             </div>
           `;
         }
@@ -4326,36 +4727,42 @@
               ${leftContentHtml}
             </div>
             <div class="review-reveal-right">
-              <div class="diag-title-row">
-                <div class="diag-heading">${card.diagnosis || ''}</div>
-                <div class="diag-organ">Organ / Lokasi: ${card.organ || '-'}</div>
-              </div>
-              <div class="id-grid-box">
-                <div class="id-grid-cell">
-                  <div class="cell-label">Klasifikasi / Sifat Jejas</div>
-                  <div class="cell-value">${card.sifat || '-'}</div>
-                </div>
-                <div class="id-grid-cell">
-                  <div class="cell-label">Asal Jaringan / Organ</div>
-                  <div class="cell-value">${card.asal || '-'}</div>
+              <!-- Hero Diagnosis Box -->
+              <div class="review-diag-hero">
+                <span class="review-diag-badge">DIAGNOSIS UTAMA</span>
+                <div class="review-diag-title">${card.diagnosis || ''}</div>
+                <div class="review-diag-meta">
+                  <span class="review-meta-item">📍 ${card.organ || '-'}</span>
+                  <span class="review-meta-item">🏷️ ${card.sifat || '-'}</span>
+                  ${card.asal ? `<span class="review-meta-item">🔬 ${card.asal}</span>` : ''}
                 </div>
               </div>
+
+              <!-- Ciri Khas Histopatologi -->
               ${ciriList ? `
-                <div class="section-block">
-                  <div class="section-heading">CIRI KHAS HISTOPATOLOGI</div>
-                  <div class="highlight-box"><ul class="point-list">${ciriList}</ul></div>
+                <div class="review-info-section">
+                  <div class="review-info-heading">CIRI KHAS IDENTIFIKASI</div>
+                  <div class="review-info-box">
+                    <ul class="review-point-list">${ciriList}</ul>
+                  </div>
                 </div>
               ` : ''}
+
+              <!-- Etiologi / Patogenesis -->
               ${mekanismeList ? `
-                <div class="section-block">
-                  <div class="section-heading">ETIOLOGI & PATOGENESIS</div>
-                  <div class="highlight-box"><ul class="point-list">${mekanismeList}</ul></div>
+                <div class="review-info-section">
+                  <div class="review-info-heading">ETIOLOGI & PATOGENESIS</div>
+                  <div class="review-info-box">
+                    <ul class="review-point-list">${mekanismeList}</ul>
+                  </div>
                 </div>
               ` : ''}
+
+              <!-- Kata Kunci Cepat -->
               ${card.keywords ? `
-                <div class="section-block">
-                  <div class="section-heading">KATA KUNCI IDENTIFIKASI</div>
-                  <div class="keyword-capsule-box">${card.keywords}</div>
+                <div class="review-info-section">
+                  <div class="review-info-heading">KATA KUNCI CEPAT</div>
+                  <div class="review-keywords-wrap">${card.keywords}</div>
                 </div>
               ` : ''}
             </div>
@@ -4447,6 +4854,86 @@
       if (configOverlay) configOverlay.classList.remove('active');
 
       playTone(400, 'sine', 0.08);
+    }
+
+    // =======================================================
+    // SETTINGS & PREFERENCES ENGINE
+    // =======================================================
+    let isSettingsOpen = false;
+
+    function openSettingsModal() {
+      if (isShuffling || isReviewActive) return;
+      isSettingsOpen = true;
+      updateSettingsUI();
+      const overlay = document.getElementById('settingsModalOverlay');
+      if (overlay) overlay.classList.add('active');
+      playLobbyEntranceSound();
+    }
+
+    function closeSettingsModal() {
+      isSettingsOpen = false;
+      const overlay = document.getElementById('settingsModalOverlay');
+      if (overlay) overlay.classList.remove('active');
+    }
+
+    function handleSettingsOverlayClick(e) {
+      if (e.target.id === 'settingsModalOverlay') {
+        closeSettingsModal();
+      }
+    }
+
+    function applySettingsFilter(filterType) {
+      setFilter(filterType);
+      updateSettingsUI();
+    }
+
+    function applySettingsMode(mode) {
+      setPlayMode(mode);
+      updateSettingsUI();
+    }
+
+    function resetRemovedCardsFromSettings() {
+      resetRemovedCards();
+      updateSettingsUI();
+    }
+
+    function updateSettingsUI() {
+      // 1. Content Filter Pills
+      const btnAll = document.getElementById('btnSetFilterAll');
+      const btnPrep = document.getElementById('btnSetFilterPrep');
+      const btnTeori = document.getElementById('btnSetFilterTeori');
+      if (btnAll) btnAll.classList.toggle('active', activeFilter === 'all');
+      if (btnPrep) btnPrep.classList.toggle('active', activeFilter === 'preparat');
+      if (btnTeori) btnTeori.classList.toggle('active', activeFilter === 'teori');
+
+      // 2. Filter Counts
+      const totalCount = DATA_CARDS.length;
+      const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
+      const teoriCount = DATA_CARDS.filter(c => c.type === 'teori').length;
+      const countAllEl = document.getElementById('setFilterCountAll');
+      const countPrepEl = document.getElementById('setFilterCountPrep');
+      const countTeoriEl = document.getElementById('setFilterCountTeori');
+      if (countAllEl) countAllEl.textContent = totalCount;
+      if (countPrepEl) countPrepEl.textContent = prepCount;
+      if (countTeoriEl) countTeoriEl.textContent = teoriCount;
+
+      // 3. Play Mode Pills
+      const btnSeq = document.getElementById('btnSetModeSeq');
+      const btnShuff = document.getElementById('btnSetModeShuff');
+      if (btnSeq) btnSeq.classList.toggle('active', currentPlayMode === 'sequential');
+      if (btnShuff) btnShuff.classList.toggle('active', currentPlayMode === 'shuffle');
+
+      // 4. Removed Cards
+      const removedBadge = document.getElementById('setRemovedBadge');
+      const btnRestore = document.getElementById('btnSetRestoreRemoved');
+      if (removedBadge) removedBadge.textContent = removedCardIds.size;
+      if (btnRestore) btnRestore.disabled = removedCardIds.size === 0;
+
+      // 5. Fullscreen Text
+      const fsText = document.getElementById('setFullscreenText');
+      if (fsText) {
+        fsText.textContent = document.fullscreenElement ? 'EXIT FULLSCREEN [F]' : 'TOGGLE FULLSCREEN [F]';
+      }
     }
 
     let toastTimer = null;
@@ -4721,8 +5208,9 @@
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'shuffle';
-      btnModeAcak.classList.add('active');
-      btnModeUrut.classList.remove('active');
+      if (typeof btnModeAcak !== 'undefined' && btnModeAcak) btnModeAcak.classList.add('active');
+      if (typeof btnModeUrut !== 'undefined' && btnModeUrut) btnModeUrut.classList.remove('active');
+      updateSettingsUI();
 
       const styleToRun = forcedStyleIndex !== null 
         ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
@@ -5028,8 +5516,9 @@
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'sequential';
-      btnModeUrut.classList.add('active');
-      btnModeAcak.classList.remove('active');
+      if (typeof btnModeUrut !== 'undefined' && btnModeUrut) btnModeUrut.classList.add('active');
+      if (typeof btnModeAcak !== 'undefined' && btnModeAcak) btnModeAcak.classList.remove('active');
+      updateSettingsUI();
 
       const styleToRun = forcedStyleIndex !== null 
         ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
@@ -5223,12 +5712,16 @@
     function setFilter(filterType) {
       if (isShuffling) return;
       activeFilter = filterType;
-      document.getElementById('btnFilterAll').classList.toggle('active', filterType === 'all');
-      document.getElementById('btnFilterPrep').classList.toggle('active', filterType === 'preparat');
-      document.getElementById('btnFilterTeori').classList.toggle('active', filterType === 'teori');
+      const btnAll = document.getElementById('btnFilterAll');
+      const btnPrep = document.getElementById('btnFilterPrep');
+      const btnTeori = document.getElementById('btnFilterTeori');
+      if (btnAll) btnAll.classList.toggle('active', filterType === 'all');
+      if (btnPrep) btnPrep.classList.toggle('active', filterType === 'preparat');
+      if (btnTeori) btnTeori.classList.toggle('active', filterType === 'teori');
 
       applyDeckFilterAndMode(true);
       showToast('Filter Applied', `${sessionCards.length} Cards`);
+      updateSettingsUI();
     }
 
     function removeCurrentCard() {
@@ -5513,7 +6006,7 @@
               <p style="margin-bottom: 12px;"><strong>Kasus / Skenario Soal:</strong></p>
               <p style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px;">"${card.prompt}"</p>
               <p style="font-size: 13.5px; color: var(--primary); font-weight: 600;">
-                Stasiun soal teori & identifikasi praktikum Patologi Anatomi Blok 3.1.
+                ${currentPack?.subtitle || currentPack?.packName || 'Stasiun soal teori & identifikasi praktikum.'}
               </p>
             </div>
           </div>
@@ -6016,6 +6509,16 @@
         return; // Block other normal controls during active review drill
       }
 
+      // Handle Settings Modal
+      if (isSettingsOpen) {
+        if (e.key === 'Escape' || e.key === 'o' || e.key === 'O') {
+          e.preventDefault();
+          closeSettingsModal();
+          return;
+        }
+        return;
+      }
+
       // Handle Review Config Modal
       const reviewConfigOverlay = document.getElementById('reviewConfigOverlay');
       if (reviewConfigOverlay && reviewConfigOverlay.classList.contains('active')) {
@@ -6035,7 +6538,7 @@
       if (isPackModalOpen) {
         if (e.key === ' ' || e.key === 'Enter') {
           e.preventDefault();
-          selectCardPack(currentPackId || 'blok-3.1');
+          selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1');
           return;
         }
         if (e.key === 'Escape') {
@@ -6050,6 +6553,7 @@
         return;
       }
 
+      if (e.key === 'o' || e.key === 'O') { openSettingsModal(); return; }
       if (e.key === 'm' || e.key === 'M') { openReviewConfig(); return; }
       if (e.key === 'p' || e.key === 'P') { openPackModal(); return; }
       if (e.key === 'Escape') {
@@ -6211,14 +6715,16 @@
 
         // Action Buttons
         onEdgePress(0, () => { // Cross (✕)
-          if (isReviewActive) {
+          if (isSettingsOpen) {
+            closeSettingsModal();
+          } else if (isReviewActive) {
             if (reviewPhase === 'prepare') startStudyPhase();
             else if (reviewPhase === 'study' || reviewPhase === 'reveal') skipReviewCard();
             else if (reviewPhase === 'complete') exitReviewMode();
           } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
             startReviewSimulation();
           } else if (isPackModalOpen) {
-            selectCardPack(currentPackId || 'blok-3.1');
+            selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1');
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
           } else if (isModalOpen) {
@@ -6229,7 +6735,9 @@
         });
 
         onEdgePress(1, () => { // Circle (○) - Back / Cancel / Remove Card
-          if (isReviewActive) {
+          if (isSettingsOpen) {
+            closeSettingsModal();
+          } else if (isReviewActive) {
             exitReviewMode();
           } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
             closeReviewConfig();
@@ -6318,7 +6826,11 @@
     try {
       savedPack = localStorage.getItem('activeCardPack');
     } catch (e) {}
-    loadCardPack(savedPack || 'blok-3.1', false);
+    const availablePacks = Object.keys(window.CARD_PACKS || {});
+    const defaultPackId = savedPack && (window.CARD_PACKS || {})[savedPack]
+      ? savedPack
+      : (availablePacks[0] || 'blok-3.1');
+    loadCardPack(defaultPackId, false);
     renderInitialStackedStage();
     setPlayMode('sequential');
 
