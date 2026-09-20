@@ -2341,10 +2341,542 @@
         width: 100%;
         margin-top: 4px;
       }
-      .pack-deploy-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 9px 14px;
+    /* =======================================================
+       REVIEW MODE (EXAM SIMULATION) STYLES
+       ======================================================= */
+    /* Review Config Modal */
+    .review-config-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 4100;
+      background-color: rgba(12, 23, 64, 0.96);
+      background-image: 
+        radial-gradient(rgba(49, 79, 186, 0.35) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(14px, 3vw, 24px);
+    }
+    .review-config-overlay.active {
+      display: flex;
+    }
+    .review-config-card {
+      width: min(580px, 94vw);
+      max-height: min(720px, 90vh);
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      box-shadow: 0 0 0 4px var(--white), 0 28px 80px rgba(12, 23, 64, 0.75);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--primary-deep);
+      animation: lobbyModalPopIn 0.28s cubic-bezier(0.16, 1.15, 0.3, 1);
+    }
+    .review-config-header {
+      padding: 22px 24px 16px;
+      text-align: center;
+      border-bottom: 2.5px solid var(--primary-deep);
+      background-color: var(--white);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .review-config-header .review-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+    }
+    .review-config-body {
+      padding: 20px 24px;
+      background-color: #f6f8fe;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+    }
+    .review-section-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .review-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .review-pill-btn {
+      flex: 1;
+      min-width: 80px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.16s ease;
+      box-shadow: 0 2px 0 var(--primary-deep);
+      text-transform: uppercase;
+    }
+    .review-pill-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .review-pill-btn.active {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-color: var(--primary-deep);
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 var(--primary-deep);
+    }
+    .review-telemetry-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .review-telemetry-chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1.5px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-config-footer {
+      padding: 16px 24px 20px;
+      background-color: var(--white);
+      border-top: 2.5px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-start-btn {
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 2.5px solid var(--primary-deep);
+      background-color: var(--primary);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 0 var(--primary-deep);
+      transition: all 0.16s ease;
+      text-transform: uppercase;
+    }
+    .review-start-btn:hover {
+      background-color: var(--primary-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 var(--primary);
+    }
+    .review-start-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 var(--primary-deep);
+    }
+
+    /* Full-Screen Review Stage */
+    .review-fullscreen-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 4600;
+      background-color: var(--primary);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(14px, 2.5vh, 28px) clamp(16px, 3vw, 36px);
+      overflow: hidden;
+      user-select: none;
+    }
+    .review-fullscreen-overlay.active {
+      display: flex;
+    }
+
+    /* Top Bar */
+    .review-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .review-phase-badge {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border: 2px solid var(--primary-deep);
+      box-shadow: 0 3px 0 var(--primary-deep);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .review-counter {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      text-shadow: 0 2px 0 var(--primary-deep);
+      background-color: rgba(23, 43, 122, 0.45);
+      border: 1.5px solid var(--white-25);
+      padding: 5px 16px;
+      border-radius: 999px;
+    }
+    .review-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .review-skip-btn, .review-exit-btn {
+      height: 36px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 0 var(--primary-deep);
+      transition: all 0.16s ease;
+      text-transform: uppercase;
+    }
+    .review-skip-btn:hover, .review-exit-btn:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .review-exit-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke-width: 2.5;
+    }
+
+    /* Stages (Prepare, Study, Reveal, Complete) */
+    .review-stage-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 1. Prepare Stage */
+    .review-prepare-box {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      padding: clamp(24px, 5vh, 44px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      max-width: 520px;
+      width: 90vw;
+      box-shadow: 0 0 0 4px var(--white), 0 20px 60px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: lobbyModalPopIn 0.3s cubic-bezier(0.16, 1.15, 0.3, 1);
+    }
+    .review-prepare-icon {
+      width: 64px;
+      height: 64px;
+      color: var(--primary);
+    }
+    .review-prepare-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .review-prepare-desc {
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+      opacity: 0.85;
+      font-weight: 500;
+    }
+    .review-prepare-countdown {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--primary);
+      border: 2.5px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 6px 24px;
+      background-color: #f6f8fe;
+      box-shadow: 0 3px 0 var(--primary-deep);
+    }
+
+    /* 2. Study Stage (Big Card Only, Zero Peeking) */
+    .review-study-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      animation: studyCardFadeIn 0.25s ease-out;
+    }
+    @keyframes studyCardFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .review-specimen-wrap {
+      max-height: clamp(340px, 64vh, 600px);
+      max-width: min(850px, 92vw);
+      background-color: var(--primary-deep);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px var(--white), 0 16px 40px rgba(12, 23, 64, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-specimen-img {
+      width: 100%;
+      height: 100%;
+      max-height: clamp(340px, 64vh, 600px);
+      object-fit: contain;
+      display: block;
+      background-color: #000;
+    }
+    .review-theory-wrap {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      padding: clamp(24px, 4vh, 40px) clamp(20px, 4vw, 44px);
+      max-width: 720px;
+      width: 90vw;
+      box-shadow: 0 0 0 3px var(--white), 0 16px 40px rgba(12, 23, 64, 0.6);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+    .review-theory-badge {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      align-self: center;
+    }
+    .review-theory-prompt {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      line-height: 1.6;
+      font-weight: 700;
+      color: var(--primary-deep);
+    }
+
+    /* 3. Reveal Stage (Image/Prompt + Complete Breakdown) */
+    .review-reveal-container {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(14px, 2vw, 24px);
+      align-items: stretch;
+      max-width: 1100px;
+      max-height: clamp(380px, 70vh, 640px);
+      animation: studyCardFadeIn 0.25s ease-out;
+    }
+    .review-reveal-left {
+      background-color: var(--primary-deep);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-reveal-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
+    }
+    .review-reveal-right {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      padding: clamp(16px, 2.5vh, 24px);
+      overflow-y: auto;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* 4. Complete Stage */
+    .review-complete-box {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      padding: clamp(28px, 5vh, 48px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      max-width: 500px;
+      width: 90vw;
+      box-shadow: 0 0 0 4px var(--white), 0 20px 60px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: lobbyModalPopIn 0.3s cubic-bezier(0.16, 1.15, 0.3, 1);
+    }
+    .review-complete-icon {
+      width: 68px;
+      height: 68px;
+      color: var(--primary);
+    }
+    .review-complete-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .review-complete-desc {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+      opacity: 0.9;
+    }
+
+    /* Bottom Timer Bar in Full-Screen */
+    .review-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .review-timer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--white);
+      border: 2.5px solid var(--primary-deep);
+      padding: 6px 18px 6px 10px;
+      border-radius: 999px;
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .review-timer-ring-box {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-timer-ring-box svg {
+      width: 44px;
+      height: 44px;
+      transform: rotate(-90deg);
+    }
+    .review-timer-ring-bg {
+      fill: none;
+      stroke: #e0e5f8;
+      stroke-width: 4;
+    }
+    .review-timer-ring-prog {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 125.6;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.95s linear;
+    }
+    .review-timer-seconds {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-deep);
+    }
+    .review-timer-label {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--primary-deep);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .review-reveal-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.2fr;
+        max-height: 74vh;
+      }
+      .review-top-bar {
+        gap: 6px;
+      }
+      .review-phase-badge {
+        font-size: 10.5px;
+        padding: 5px 10px;
+      }
+      .review-counter {
+        font-size: 12px;
+        padding: 4px 10px;
       }
     }
   </style>
@@ -2519,6 +3051,18 @@
         <span class="gamepad-badge" title="Gamepad: Circle">○</span>
       </button>
 
+      <!-- Review Mode Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-review-btn" id="btnReviewMode" onclick="openReviewConfig()" title="Review Mode (Exam Simulation) [M]" aria-label="Review Mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="13" r="8"></circle>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="13" x2="14.5" y2="15.5"></line>
+          <line x1="12" y1="2" x2="12" y2="5"></line>
+          <line x1="10" y1="2" x2="14" y2="2"></line>
+        </svg>
+        <span class="gamepad-badge" title="Hotkey: M">M</span>
+      </button>
+
       <!-- Fullscreen Button -->
       <button class="btn-ctrl-round" onclick="toggleFullScreen()" title="Layar Penuh [F]" aria-label="Layar Penuh">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -2626,6 +3170,127 @@
   <!-- LIGHTBOX FOR IMAGE ZOOM -->
   <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
     <img class="lightbox-img" id="lightboxImg" src="" alt="Zoom Preparat">
+  </div>
+
+  <!-- =======================================================
+       REVIEW MODE CONFIGURATION MODAL
+       ======================================================= -->
+  <div class="review-config-overlay" id="reviewConfigOverlay" onclick="handleReviewConfigOverlayClick(event)">
+    <div class="review-config-card" role="dialog" aria-modal="true" aria-labelledby="reviewConfigTitle">
+      <div class="review-config-header">
+        <button class="modal-close-btn review-close-btn" onclick="closeReviewConfig()" title="Close [Esc]" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <h2 class="main-title" id="reviewConfigTitle" style="font-size: 1.45rem; gap: 8px;">
+          <span class="title-tone-1">REVIEW</span>
+          <span class="title-tone-2">MODE</span>
+        </h2>
+        <span class="lobby-pill">EXAM SIMULATION // TIMED DRILL</span>
+      </div>
+
+      <div class="review-config-body">
+        <!-- Content Filter: ALL / SPECIMENS / THEORY -->
+        <div>
+          <div class="review-section-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            CONTENT FILTER
+          </div>
+          <div class="review-pills-row">
+            <button class="review-pill-btn active" id="btnRevFilterAll" onclick="setReviewFilter('all')">ALL</button>
+            <button class="review-pill-btn" id="btnRevFilterPrep" onclick="setReviewFilter('preparat')">SPECIMEN ONLY</button>
+            <button class="review-pill-btn" id="btnRevFilterTeori" onclick="setReviewFilter('teori')">THEORY ONLY</button>
+          </div>
+        </div>
+
+        <!-- Card Count Selection -->
+        <div>
+          <div class="review-section-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"></rect><path d="M7 2v20"></path></svg>
+            CARD COUNT
+          </div>
+          <div class="review-pills-row" id="reviewCountPills">
+            <!-- Dynamically populated buttons (e.g. 5, 10, 20, ALL) -->
+          </div>
+        </div>
+
+        <!-- Order Mode: Sequential vs Shuffle -->
+        <div>
+          <div class="review-section-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line></svg>
+            CARD ORDER
+          </div>
+          <div class="review-pills-row">
+            <button class="review-pill-btn active" id="btnRevOrderSeq" onclick="setReviewOrder('sequential')">SEQUENTIAL</button>
+            <button class="review-pill-btn" id="btnRevOrderShuff" onclick="setReviewOrder('shuffle')">SHUFFLE</button>
+          </div>
+        </div>
+
+        <!-- Rules Telemetry -->
+        <div>
+          <div class="review-telemetry-row">
+            <span class="review-telemetry-chip">⏱ 60s / CARD (STUDY)</span>
+            <span class="review-telemetry-chip">🔍 10s / CARD (REVEAL)</span>
+            <span class="review-telemetry-chip">🚫 NO PEEKING</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-config-footer">
+        <button class="review-start-btn" onclick="startReviewSimulation()">
+          <span>▶</span>
+          <span>START REVIEW</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       FULL-SCREEN REVIEW STAGE OVERLAY
+       ======================================================= -->
+  <div class="review-fullscreen-overlay" id="reviewStageOverlay" aria-hidden="true">
+    <!-- Top Bar -->
+    <div class="review-top-bar">
+      <span class="review-phase-badge" id="reviewPhaseBadge">STUDY PHASE // 60s</span>
+      <span class="review-counter" id="reviewCounter">CARD 01 / 20</span>
+      <div class="review-top-actions">
+        <button class="review-skip-btn" id="btnReviewSkip" onclick="skipReviewCard()" title="Next Card [Space]">
+          <span>SKIP</span>
+          <span>▶</span>
+        </button>
+        <button class="review-exit-btn" onclick="exitReviewMode()" title="Exit Review [Esc]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>EXIT</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic Stage Area -->
+    <div class="review-stage-body" id="reviewStageBody">
+      <!-- 1. Prepare Stage -->
+      <!-- 2. Study Stage -->
+      <!-- 3. Reveal Stage -->
+      <!-- 4. Complete Stage -->
+    </div>
+
+    <!-- Bottom Timer Bar -->
+    <div class="review-bottom-bar" id="reviewBottomBar">
+      <div class="review-timer-wrap">
+        <div class="review-timer-ring-box">
+          <svg viewBox="0 0 44 44">
+            <circle class="review-timer-ring-bg" cx="22" cy="22" r="20"></circle>
+            <circle class="review-timer-ring-prog" id="reviewTimerProg" cx="22" cy="22" r="20"></circle>
+          </svg>
+          <span class="review-timer-seconds" id="reviewTimerSec">60</span>
+        </div>
+        <span class="review-timer-label" id="reviewTimerLabel">SECONDS REMAINING</span>
+      </div>
+    </div>
   </div>
 
   <!-- FULL-SCREEN DRAMATIC SHADOW SCRIM FOR TOAST & STREAM TOAST -->
@@ -3241,6 +3906,540 @@
         setTimeout(() => playWhooshSound(), 160);
         setTimeout(() => playDeckSlap(), 420);
       } catch(e) {}
+    }
+
+    // PowerPoint-style mechanical slide transition sound ("jgrek / click")
+    function playSlideTransitionSound() {
+      try {
+        if (!audioCtx) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+
+        // 1. Initial mechanical slide latch click (sharp filtered noise burst)
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.012);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let j = 0; j < bufferSize; j++) {
+          data[j] = (Math.random() * 2 - 1) * Math.exp(-j / (bufferSize * 0.3));
+        }
+        const noise1 = audioCtx.createBufferSource();
+        noise1.buffer = buffer;
+        const filter1 = audioCtx.createBiquadFilter();
+        filter1.type = 'bandpass';
+        filter1.frequency.setValueAtTime(2200, now);
+        filter1.Q.setValueAtTime(3.0, now);
+        const gain1 = audioCtx.createGain();
+        gain1.gain.setValueAtTime(0.18, now);
+        gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.012);
+        noise1.connect(filter1);
+        filter1.connect(gain1);
+        gain1.connect(audioCtx.destination);
+        noise1.start(now);
+
+        // 2. Secondary slide latch chunk (32ms later)
+        setTimeout(() => {
+          try {
+            const t = audioCtx.currentTime;
+            const noise2 = audioCtx.createBufferSource();
+            noise2.buffer = buffer;
+            const filter2 = audioCtx.createBiquadFilter();
+            filter2.type = 'bandpass';
+            filter2.frequency.setValueAtTime(1400, t);
+            filter2.Q.setValueAtTime(2.5, t);
+            const gain2 = audioCtx.createGain();
+            gain2.gain.setValueAtTime(0.15, t);
+            gain2.gain.exponentialRampToValueAtTime(0.001, t + 0.015);
+            noise2.connect(filter2);
+            filter2.connect(gain2);
+            gain2.connect(audioCtx.destination);
+            noise2.start(t);
+
+            // Low pitch mechanical slide motor 'thump' / 'jgrek'
+            const osc = audioCtx.createOscillator();
+            const oscGain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(240, t);
+            osc.frequency.exponentialRampToValueAtTime(70, t + 0.045);
+            oscGain.gain.setValueAtTime(0.14, t);
+            oscGain.gain.exponentialRampToValueAtTime(0.001, t + 0.045);
+            osc.connect(oscGain);
+            oscGain.connect(audioCtx.destination);
+            osc.start(t);
+            osc.stop(t + 0.045);
+          } catch (e) {}
+        }, 32);
+      } catch (e) {}
+    }
+
+    // =======================================================
+    // REVIEW MODE (EXAM SIMULATION) ENGINE
+    // =======================================================
+    let isReviewActive = false;
+    let reviewPhase = 'idle'; // 'idle' | 'config' | 'prepare' | 'study' | 'reveal' | 'complete'
+    let reviewFilter = 'all'; // 'all' | 'preparat' | 'teori'
+    let reviewOrder = 'sequential'; // 'sequential' | 'shuffle'
+    let reviewSelectedCount = 10;
+    let reviewDeck = [];
+    let reviewCurrentIndex = 0;
+    let reviewTimerId = null;
+    let reviewSecondsLeft = 60;
+    let reviewTotalSeconds = 60;
+    let prepareCountdownTimer = null;
+
+    function openReviewConfig() {
+      if (isShuffling) return;
+      // Inherit current play mode & filter by default
+      reviewOrder = currentPlayMode || 'sequential';
+      reviewFilter = activeFilter || 'all';
+
+      // Update Order Pills
+      const btnSeq = document.getElementById('btnRevOrderSeq');
+      const btnShuff = document.getElementById('btnRevOrderShuff');
+      if (btnSeq) btnSeq.classList.toggle('active', reviewOrder === 'sequential');
+      if (btnShuff) btnShuff.classList.toggle('active', reviewOrder === 'shuffle');
+
+      // Update Filter Pills
+      const btnFAll = document.getElementById('btnRevFilterAll');
+      const btnFPrep = document.getElementById('btnRevFilterPrep');
+      const btnFTeori = document.getElementById('btnRevFilterTeori');
+      if (btnFAll) btnFAll.classList.toggle('active', reviewFilter === 'all');
+      if (btnFPrep) btnFPrep.classList.toggle('active', reviewFilter === 'preparat');
+      if (btnFTeori) btnFTeori.classList.toggle('active', reviewFilter === 'teori');
+
+      renderReviewCountPills();
+
+      const overlay = document.getElementById('reviewConfigOverlay');
+      if (overlay) overlay.classList.add('active');
+      playLobbyEntranceSound();
+    }
+
+    function closeReviewConfig() {
+      const overlay = document.getElementById('reviewConfigOverlay');
+      if (overlay) overlay.classList.remove('active');
+    }
+
+    function handleReviewConfigOverlayClick(e) {
+      if (e.target.id === 'reviewConfigOverlay') {
+        closeReviewConfig();
+      }
+    }
+
+    function setReviewFilter(filter) {
+      reviewFilter = filter;
+      const btnFAll = document.getElementById('btnRevFilterAll');
+      const btnFPrep = document.getElementById('btnRevFilterPrep');
+      const btnFTeori = document.getElementById('btnRevFilterTeori');
+      if (btnFAll) btnFAll.classList.toggle('active', reviewFilter === 'all');
+      if (btnFPrep) btnFPrep.classList.toggle('active', reviewFilter === 'preparat');
+      if (btnFTeori) btnFTeori.classList.toggle('active', reviewFilter === 'teori');
+      playLobbyHoverSound();
+      renderReviewCountPills();
+    }
+
+    function setReviewOrder(order) {
+      reviewOrder = order;
+      const btnSeq = document.getElementById('btnRevOrderSeq');
+      const btnShuff = document.getElementById('btnRevOrderShuff');
+      if (btnSeq) btnSeq.classList.toggle('active', reviewOrder === 'sequential');
+      if (btnShuff) btnShuff.classList.toggle('active', reviewOrder === 'shuffle');
+      playLobbyHoverSound();
+    }
+
+    function setReviewCount(count) {
+      reviewSelectedCount = count;
+      const container = document.getElementById('reviewCountPills');
+      if (container) {
+        container.querySelectorAll('.review-pill-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.count === String(count));
+        });
+      }
+      playLobbyHoverSound();
+    }
+
+    function renderReviewCountPills() {
+      const container = document.getElementById('reviewCountPills');
+      if (!container) return;
+
+      let pool = DATA_CARDS.filter(c => !removedCardIds.has(c.id));
+      if (reviewFilter !== 'all') {
+        pool = pool.filter(c => c.type === reviewFilter);
+      }
+      const totalAvail = pool.length;
+
+      const presetCounts = [5, 10, 20, 30].filter(n => n < totalAvail);
+      let html = '';
+
+      presetCounts.forEach(n => {
+        const isActive = reviewSelectedCount === n;
+        html += `<button class="review-pill-btn ${isActive ? 'active' : ''}" data-count="${n}" onclick="setReviewCount(${n})">${n} CARDS</button>`;
+      });
+
+      const isAllActive = reviewSelectedCount === 'all' || reviewSelectedCount >= totalAvail;
+      html += `<button class="review-pill-btn ${isAllActive ? 'active' : ''}" data-count="all" onclick="setReviewCount('all')">ALL (${totalAvail})</button>`;
+
+      container.innerHTML = html;
+
+      // Adjust selected count if previous exceeds current pool
+      if (typeof reviewSelectedCount === 'number' && reviewSelectedCount > totalAvail) {
+        reviewSelectedCount = 'all';
+      }
+    }
+
+    function startReviewSimulation() {
+      let pool = DATA_CARDS.filter(c => !removedCardIds.has(c.id));
+      if (reviewFilter !== 'all') {
+        pool = pool.filter(c => c.type === reviewFilter);
+      }
+
+      if (pool.length === 0) {
+        showToast('Review Mode', 'No cards available for selected filter');
+        return;
+      }
+
+      // Apply Order
+      if (reviewOrder === 'shuffle') {
+        reviewDeck = shuffleCardsArray(pool);
+      } else {
+        reviewDeck = [...pool].sort((a, b) => (a.id || 0) - (b.id || 0));
+      }
+
+      // Apply Count Limit
+      if (reviewSelectedCount !== 'all' && typeof reviewSelectedCount === 'number') {
+        reviewDeck = reviewDeck.slice(0, Math.min(reviewSelectedCount, reviewDeck.length));
+      }
+
+      closeReviewConfig();
+
+      isReviewActive = true;
+      const overlay = document.getElementById('reviewStageOverlay');
+      if (overlay) overlay.classList.add('active');
+
+      showPrepareScreen();
+    }
+
+    function showPrepareScreen() {
+      reviewPhase = 'prepare';
+      const bottomBar = document.getElementById('reviewBottomBar');
+      const btnSkip = document.getElementById('btnReviewSkip');
+      const phaseBadge = document.getElementById('reviewPhaseBadge');
+      const counter = document.getElementById('reviewCounter');
+      const body = document.getElementById('reviewStageBody');
+
+      if (bottomBar) bottomBar.style.display = 'none';
+      if (btnSkip) btnSkip.style.display = 'none';
+      if (phaseBadge) phaseBadge.textContent = 'PREPARATION // GET READY';
+      if (counter) counter.textContent = `${reviewDeck.length} CARDS TO REVIEW`;
+
+      let prepSec = 5;
+      if (body) {
+        body.innerHTML = `
+          <div class="review-prepare-box">
+            <svg class="review-prepare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <div class="review-prepare-title">PREPARE YOUR PAPER</div>
+            <div class="review-prepare-desc">
+              Siapkan kertas & pena untuk mencatat diagnosis sediaan.<br>
+              Tiap soal ditampilkan <strong>1 menit</strong> tanpa kunci jawaban.
+            </div>
+            <div class="review-prepare-countdown" id="prepCountdownText">${prepSec}</div>
+            <button class="review-start-btn" style="margin-top: 8px;" onclick="startStudyPhase()">
+              <span>START NOW ▶</span>
+            </button>
+          </div>
+        `;
+      }
+
+      playLobbyDeploySound();
+
+      clearInterval(prepareCountdownTimer);
+      prepareCountdownTimer = setInterval(() => {
+        prepSec--;
+        const el = document.getElementById('prepCountdownText');
+        if (el) el.textContent = prepSec;
+        playTone(440, 'sine', 0.04);
+        if (prepSec <= 0) {
+          clearInterval(prepareCountdownTimer);
+          startStudyPhase();
+        }
+      }, 1000);
+    }
+
+    function startStudyPhase() {
+      clearInterval(prepareCountdownTimer);
+      reviewPhase = 'study';
+      reviewCurrentIndex = 0;
+
+      const bottomBar = document.getElementById('reviewBottomBar');
+      const btnSkip = document.getElementById('btnReviewSkip');
+      if (bottomBar) bottomBar.style.display = 'flex';
+      if (btnSkip) btnSkip.style.display = 'inline-flex';
+
+      playSlideTransitionSound();
+      renderStudyCard();
+    }
+
+    function renderStudyCard() {
+      clearInterval(reviewTimerId);
+      const card = reviewDeck[reviewCurrentIndex];
+      if (!card) return;
+
+      const total = reviewDeck.length;
+      const phaseBadge = document.getElementById('reviewPhaseBadge');
+      const counter = document.getElementById('reviewCounter');
+      const body = document.getElementById('reviewStageBody');
+
+      if (phaseBadge) phaseBadge.textContent = 'STUDY PHASE // 60s';
+      if (counter) counter.textContent = `CARD ${String(reviewCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+
+      if (body) {
+        if (card.type === 'preparat') {
+          body.innerHTML = `
+            <div class="review-study-container">
+              <div class="review-specimen-wrap">
+                <img src="${card.image}" class="review-specimen-img" alt="Specimen ${card.id || ''}">
+              </div>
+            </div>
+          `;
+        } else {
+          body.innerHTML = `
+            <div class="review-study-container">
+              <div class="review-theory-wrap">
+                <div class="review-theory-badge">SOAL TEORI PRAKTIKUM</div>
+                <div class="review-theory-prompt">"${card.prompt}"</div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Reset & Start 60s Timer
+      reviewTotalSeconds = 60;
+      reviewSecondsLeft = 60;
+      updateReviewTimerUI();
+
+      reviewTimerId = setInterval(() => {
+        reviewSecondsLeft--;
+        updateReviewTimerUI();
+        if (reviewSecondsLeft <= 0) {
+          clearInterval(reviewTimerId);
+          advanceStudyCard();
+        }
+      }, 1000);
+    }
+
+    function updateReviewTimerUI() {
+      const secEl = document.getElementById('reviewTimerSec');
+      const progEl = document.getElementById('reviewTimerProg');
+      if (secEl) secEl.textContent = reviewSecondsLeft;
+      if (progEl) {
+        const circumference = 125.6; // 2 * pi * 20
+        const offset = circumference * (1 - (reviewSecondsLeft / reviewTotalSeconds));
+        progEl.style.strokeDashoffset = offset;
+      }
+    }
+
+    function advanceStudyCard() {
+      clearInterval(reviewTimerId);
+      reviewCurrentIndex++;
+      if (reviewCurrentIndex < reviewDeck.length) {
+        playSlideTransitionSound();
+        renderStudyCard();
+      } else {
+        // Study phase complete! Transition to Reveal Phase
+        startRevealPhase();
+      }
+    }
+
+    function startRevealPhase() {
+      clearInterval(reviewTimerId);
+      reviewPhase = 'reveal';
+      reviewCurrentIndex = 0;
+
+      playChimeSound();
+      showToast('Study Complete', 'Starting Reveal Phase • 10s per Card');
+
+      const bottomBar = document.getElementById('reviewBottomBar');
+      const btnSkip = document.getElementById('btnReviewSkip');
+      if (bottomBar) bottomBar.style.display = 'flex';
+      if (btnSkip) btnSkip.style.display = 'inline-flex';
+
+      playSlideTransitionSound();
+      renderRevealCard();
+    }
+
+    function renderRevealCard() {
+      clearInterval(reviewTimerId);
+      const card = reviewDeck[reviewCurrentIndex];
+      if (!card) return;
+
+      const total = reviewDeck.length;
+      const phaseBadge = document.getElementById('reviewPhaseBadge');
+      const counter = document.getElementById('reviewCounter');
+      const body = document.getElementById('reviewStageBody');
+
+      if (phaseBadge) phaseBadge.textContent = 'REVEAL PHASE // 10s';
+      if (counter) counter.textContent = `REVEAL ${String(reviewCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+
+      // Format Diagnosis Details (matches populateModalData)
+      const formatBold = (text) => text ? text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
+      const ciriItems = (card.ciri_kunci && card.ciri_kunci.length > 0)
+        ? card.ciri_kunci
+        : (card.struktur_khas || []);
+      const ciriList = ciriItems.map(s => `<li>${formatBold(s)}</li>`).join('');
+
+      let mekanismeItems = [];
+      if (card.mekanisme && Array.isArray(card.mekanisme) && card.mekanisme.length > 0) {
+        mekanismeItems = card.mekanisme;
+      } else if (card.etiologi) {
+        mekanismeItems = [card.etiologi];
+      }
+      const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
+
+      if (body) {
+        let leftContentHtml = '';
+        if (card.type === 'preparat' && card.image) {
+          leftContentHtml = `<img src="${card.image}" alt="Specimen">`;
+        } else {
+          leftContentHtml = `
+            <div style="padding: 24px; text-align: center; color: var(--white);">
+              <div style="font-family: var(--font-display); font-size: 13px; letter-spacing: 1.5px; opacity: 0.8; margin-bottom: 12px;">SOAL TEORI PRAKTIKUM</div>
+              <div style="font-size: 1.15rem; line-height: 1.5; font-weight: 700;">"${card.prompt}"</div>
+            </div>
+          `;
+        }
+
+        body.innerHTML = `
+          <div class="review-reveal-container">
+            <div class="review-reveal-left">
+              ${leftContentHtml}
+            </div>
+            <div class="review-reveal-right">
+              <div class="diag-title-row">
+                <div class="diag-heading">${card.diagnosis || ''}</div>
+                <div class="diag-organ">Organ / Lokasi: ${card.organ || '-'}</div>
+              </div>
+              <div class="id-grid-box">
+                <div class="id-grid-cell">
+                  <div class="cell-label">Klasifikasi / Sifat Jejas</div>
+                  <div class="cell-value">${card.sifat || '-'}</div>
+                </div>
+                <div class="id-grid-cell">
+                  <div class="cell-label">Asal Jaringan / Organ</div>
+                  <div class="cell-value">${card.asal || '-'}</div>
+                </div>
+              </div>
+              ${ciriList ? `
+                <div class="section-block">
+                  <div class="section-heading">CIRI KHAS HISTOPATOLOGI</div>
+                  <div class="highlight-box"><ul class="point-list">${ciriList}</ul></div>
+                </div>
+              ` : ''}
+              ${mekanismeList ? `
+                <div class="section-block">
+                  <div class="section-heading">ETIOLOGI & PATOGENESIS</div>
+                  <div class="highlight-box"><ul class="point-list">${mekanismeList}</ul></div>
+                </div>
+              ` : ''}
+              ${card.keywords ? `
+                <div class="section-block">
+                  <div class="section-heading">KATA KUNCI IDENTIFIKASI</div>
+                  <div class="keyword-capsule-box">${card.keywords}</div>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }
+
+      // Reset & Start 10s Timer
+      reviewTotalSeconds = 10;
+      reviewSecondsLeft = 10;
+      updateReviewTimerUI();
+
+      reviewTimerId = setInterval(() => {
+        reviewSecondsLeft--;
+        updateReviewTimerUI();
+        if (reviewSecondsLeft <= 0) {
+          clearInterval(reviewTimerId);
+          advanceRevealCard();
+        }
+      }, 1000);
+    }
+
+    function advanceRevealCard() {
+      clearInterval(reviewTimerId);
+      reviewCurrentIndex++;
+      if (reviewCurrentIndex < reviewDeck.length) {
+        playSlideTransitionSound();
+        renderRevealCard();
+      } else {
+        // Reveal phase complete!
+        showReviewComplete();
+      }
+    }
+
+    function showReviewComplete() {
+      clearInterval(reviewTimerId);
+      reviewPhase = 'complete';
+
+      const bottomBar = document.getElementById('reviewBottomBar');
+      const btnSkip = document.getElementById('btnReviewSkip');
+      const phaseBadge = document.getElementById('reviewPhaseBadge');
+      const counter = document.getElementById('reviewCounter');
+      const body = document.getElementById('reviewStageBody');
+
+      if (bottomBar) bottomBar.style.display = 'none';
+      if (btnSkip) btnSkip.style.display = 'none';
+      if (phaseBadge) phaseBadge.textContent = 'FINISH // COMPLETE';
+      if (counter) counter.textContent = 'DRILL FINISHED';
+
+      if (body) {
+        body.innerHTML = `
+          <div class="review-complete-box">
+            <svg class="review-complete-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="9 12 12 15 16 10"></polyline>
+            </svg>
+            <div class="review-complete-title">REVIEW COMPLETE</div>
+            <div class="review-complete-desc">
+              Selesai mereview <strong>${reviewDeck.length} sediaan</strong>.<br>
+              Silakan evaluasi catatan jawabanmu!
+            </div>
+            <button class="review-start-btn" onclick="exitReviewMode()">
+              <span>RETURN TO TABLE [ESC]</span>
+            </button>
+          </div>
+        `;
+      }
+
+      playLobbyDeploySound();
+    }
+
+    function skipReviewCard() {
+      if (reviewPhase === 'study') {
+        advanceStudyCard();
+      } else if (reviewPhase === 'reveal') {
+        advanceRevealCard();
+      }
+    }
+
+    function exitReviewMode() {
+      clearInterval(reviewTimerId);
+      clearInterval(prepareCountdownTimer);
+      isReviewActive = false;
+      reviewPhase = 'idle';
+
+      const stageOverlay = document.getElementById('reviewStageOverlay');
+      const configOverlay = document.getElementById('reviewConfigOverlay');
+      if (stageOverlay) stageOverlay.classList.remove('active');
+      if (configOverlay) configOverlay.classList.remove('active');
+
+      playTone(400, 'sine', 0.08);
     }
 
     let toastTimer = null;
@@ -4789,6 +5988,43 @@
     window.addEventListener('keydown', (e) => {
       if (isShuffling) return;
 
+      // Handle Review Mode Active State
+      if (isReviewActive) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          exitReviewMode();
+          return;
+        }
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          if (reviewPhase === 'prepare') {
+            startStudyPhase();
+          } else if (reviewPhase === 'study' || reviewPhase === 'reveal') {
+            skipReviewCard();
+          } else if (reviewPhase === 'complete') {
+            exitReviewMode();
+          }
+          return;
+        }
+        return; // Block other normal controls during active review drill
+      }
+
+      // Handle Review Config Modal
+      const reviewConfigOverlay = document.getElementById('reviewConfigOverlay');
+      if (reviewConfigOverlay && reviewConfigOverlay.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeReviewConfig();
+          return;
+        }
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          startReviewSimulation();
+          return;
+        }
+        return;
+      }
+
       if (isPackModalOpen) {
         if (e.key === ' ' || e.key === 'Enter') {
           e.preventDefault();
@@ -4807,6 +6043,7 @@
         return;
       }
 
+      if (e.key === 'm' || e.key === 'M') { openReviewConfig(); return; }
       if (e.key === 'p' || e.key === 'P') { openPackModal(); return; }
       if (e.key === 'Escape') {
         if (lightboxOverlay.classList.contains('active')) {
@@ -4967,7 +6204,13 @@
 
         // Action Buttons
         onEdgePress(0, () => { // Cross (✕)
-          if (isPackModalOpen) {
+          if (isReviewActive) {
+            if (reviewPhase === 'prepare') startStudyPhase();
+            else if (reviewPhase === 'study' || reviewPhase === 'reveal') skipReviewCard();
+            else if (reviewPhase === 'complete') exitReviewMode();
+          } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
+            startReviewSimulation();
+          } else if (isPackModalOpen) {
             selectCardPack(currentPackId || 'blok-3.1');
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
@@ -4979,7 +6222,11 @@
         });
 
         onEdgePress(1, () => { // Circle (○) - Back / Cancel / Remove Card
-          if (isPackModalOpen) {
+          if (isReviewActive) {
+            exitReviewMode();
+          } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
+            closeReviewConfig();
+          } else if (isPackModalOpen) {
             if (!isEntranceMode) closePackModal();
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
