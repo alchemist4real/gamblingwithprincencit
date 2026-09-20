@@ -12,7 +12,7 @@
   <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Righteous&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <script src="packs/blok-3.1.js"></script>
   <style>
     /* =======================================================
@@ -51,7 +51,7 @@
       --white-04: rgba(255, 255, 255, 0.04);
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --font-display: 'Special Elite', cursive, monospace, sans-serif;
+      --font-display: 'Titan One', 'Righteous', 'Plus Jakarta Sans', sans-serif;
     }
 
     * {
@@ -101,111 +101,141 @@
       align-items: center;
     }
 
-    /* PLAYFUL RETRO COLLECTIBLE MARQUEE TITLE (CARTRIDGE PLATE, 3D SHADOW, TILT) */
-    .title-marquee-plate {
+    /* =======================================================
+       PLAYFUL RETRO DISPLAY TITLE: MULTI-LAYERED OUTLINES & BORDERS
+       ZERO PLAIN BOX CONTAINER - PURE HEROIC TYPOGRAPHY & BRAND AESTHETIC
+       ======================================================= */
+    .title-row {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(6px, 1.4vw, 12px);
-      background-color: var(--white);
-      border: 3px solid var(--primary-deep);
-      border-radius: 16px; /* RETRO CARTRIDGE BOX - PREVENTS OVAL DISTORTION */
-      padding: clamp(5px, 1.1vh, 9px) clamp(12px, 2.4vw, 24px);
-      box-shadow: 0 5px 0 var(--primary-deep), 0 0 0 4px var(--white);
-      transform: rotate(-0.8deg);
-      transition: transform 0.25s cubic-bezier(0.16, 1.25, 0.3, 1), box-shadow 0.2s ease;
+      gap: clamp(8px, 1.8vw, 18px);
       user-select: none;
-      max-width: 95vw;
-      box-sizing: border-box;
-    }
-    .title-marquee-plate:hover {
-      transform: rotate(0.8deg) scale(1.02);
-      box-shadow: 0 7px 0 var(--primary-deep), 0 0 0 4px var(--white);
     }
 
-    .title-spade-badge {
-      width: clamp(22px, 3vw, 26px);
-      height: clamp(22px, 3vw, 26px);
+    .title-coin-badge {
+      width: clamp(28px, 3.2vw, 38px);
+      height: clamp(28px, 3.2vw, 38px);
       border-radius: 999px;
-      background-color: var(--primary);
-      border: 2px solid var(--primary-deep);
+      background-color: #ffd15c; /* CANARY GOLD COIN */
+      border: 2.5px solid var(--primary-deep);
+      box-shadow: 0 4px 0 var(--primary-deep), 0 0 0 2px var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white);
+      color: var(--primary-deep);
       flex-shrink: 0;
+      transition: transform 0.25s cubic-bezier(0.16, 1.25, 0.3, 1);
     }
-    .title-spade-badge svg {
-      width: clamp(12px, 1.6vw, 14px);
-      height: clamp(12px, 1.6vw, 14px);
+    .title-coin-badge:hover {
+      transform: scale(1.12) rotate(12deg);
+    }
+    .title-coin-badge svg {
+      width: 56%;
+      height: 56%;
     }
 
     h1.main-title {
       font-family: var(--font-display);
-      font-size: clamp(1.1rem, 2.2vw, 1.85rem);
+      font-size: clamp(1.4rem, 2.8vw, 2.45rem);
       font-weight: normal;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       line-height: 1.15;
       margin: 0;
       display: inline-flex;
-      flex-wrap: nowrap; /* PREVENTS AWKWARD BREAKING ON DESKTOP & TABLET */
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      color: var(--primary-deep); /* ALWAYS HIGH-CONTRAST VISIBLE */
-      white-space: nowrap;
+      gap: clamp(6px, 1.2vw, 14px);
+      color: var(--white);
+      text-align: center;
     }
 
+    /* TONE 1: GAMBLING WITH (CRISP WHITE WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
     .title-tone-1 {
-      color: var(--primary-deep);
-      font-weight: 800;
-      letter-spacing: 1.8px;
+      color: #ffffff;
+      -webkit-text-stroke: 1.8px var(--primary-deep);
+      text-shadow:
+        -2px -2px 0 var(--primary-deep),
+         0   -2px 0 var(--primary-deep),
+         2px -2px 0 var(--primary-deep),
+        -2px  0   0 var(--primary-deep),
+         2px  0   0 var(--primary-deep),
+        -2px  2px 0 var(--primary-deep),
+         0    2px 0 var(--primary-deep),
+         2px  2px 0 var(--primary-deep),
+        -3.5px -3.5px 0 #ffffff,
+         3.5px -3.5px 0 #ffffff,
+        -3.5px  3.5px 0 #ffffff,
+         3.5px  3.5px 0 #ffffff,
+         0px 4px 0 var(--primary-deep),
+         0px 7px 0 var(--primary-deep);
       display: inline-block;
-      -webkit-text-stroke: 0.5px var(--primary-deep);
+      transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
+    }
+    .title-tone-1:hover {
+      transform: translateY(-2px) rotate(-1deg);
     }
 
+    /* TONE 2: PRINCE NCIT (VIBRANT CANARY GOLD WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
     .title-tone-2 {
-      color: #ffd15c; /* RETRO POP CANARY GOLD */
-      -webkit-text-stroke: 1.5px var(--primary-deep);
-      text-shadow: 0 3px 0 var(--primary-deep);
-      font-weight: 800;
-      letter-spacing: 2px;
+      color: #ffd15c;
+      -webkit-text-stroke: 1.8px var(--primary-deep);
+      text-shadow:
+        -2px -2px 0 var(--primary-deep),
+         0   -2px 0 var(--primary-deep),
+         2px -2px 0 var(--primary-deep),
+        -2px  0   0 var(--primary-deep),
+         2px  0   0 var(--primary-deep),
+        -2px  2px 0 var(--primary-deep),
+         0    2px 0 var(--primary-deep),
+         2px  2px 0 var(--primary-deep),
+        -3.5px -3.5px 0 #ffffff,
+         3.5px -3.5px 0 #ffffff,
+        -3.5px  3.5px 0 #ffffff,
+         3.5px  3.5px 0 #ffffff,
+         0px 4px 0 var(--primary-deep),
+         0px 7px 0 var(--primary-deep);
       display: inline-block;
+      transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
+    }
+    .title-tone-2:hover {
+      transform: translateY(-2px) rotate(1deg);
     }
 
     .sub-meta {
       font-family: var(--font-main);
-      font-size: clamp(0.68rem, 1.1vw, 0.74rem);
-      font-weight: 700;
+      font-size: clamp(0.70rem, 1.1vw, 0.78rem);
+      font-weight: 800;
       color: var(--primary-deep);
       background-color: #f6f8fe;
-      border: 1.5px solid var(--primary-deep);
+      border: 2px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 3px 14px;
+      padding: 3px 16px;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       margin-top: clamp(6px, 1.2vh, 12px);
-      box-shadow: 0 2px 0 var(--primary-deep);
+      box-shadow: 0 3px 0 var(--primary-deep);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 92vw;
+      max-width: 94vw;
     }
 
     @media (max-width: 600px) {
-      .title-marquee-plate {
-        border-radius: 12px;
-        padding: 5px 10px;
+      h1.main-title {
+        font-size: clamp(1.15rem, 5vw, 1.55rem);
+        letter-spacing: 1.2px;
         gap: 6px;
       }
-      h1.main-title {
-        font-size: clamp(0.95rem, 4.4vw, 1.25rem);
-        letter-spacing: 1.2px;
-        gap: 5px;
+      .title-coin-badge {
+        width: 26px;
+        height: 26px;
       }
-      .title-tone-1, .title-tone-2 {
-        letter-spacing: 1.2px;
+      .sub-meta {
+        font-size: 0.68rem;
+        padding: 2px 10px;
       }
     }
 
@@ -2015,14 +2045,14 @@
        CENTERED HEADER (PURE SVG FILTER BUTTONS, ZERO TEXT ON BUTTONS)
        ======================================================= -->
   <header class="app-header">
-    <div class="title-marquee-plate">
-      <div class="title-spade-badge">
+    <div class="title-row">
+      <div class="title-coin-badge" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="currentColor">
           <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
         </svg>
       </div>
       <h1 class="main-title" id="appMainTitle"><span class="title-tone-1">GAMBLING WITH</span> <span class="title-tone-2">PRINCE NCIT</span></h1>
-      <div class="title-spade-badge">
+      <div class="title-coin-badge" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="currentColor">
           <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
         </svg>
