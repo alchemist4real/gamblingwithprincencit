@@ -107,21 +107,21 @@
       margin-bottom: 6px;
     }
 
-    /* PURE SVG ICON FILTER BUTTONS */
+    /* PURE SVG ICON FILTER BUTTONS (COLLECTIBLE THEME) */
     .header-filters {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: var(--white-08);
+      background-color: var(--white);
       padding: 3px 8px;
-      border: 1px solid var(--white-25);
+      border: 2px solid var(--primary-deep);
       border-radius: 999px;
     }
 
     .filter-icon-btn {
       background: transparent;
-      border: 1px solid transparent;
-      color: var(--white-75);
+      border: 1.5px solid transparent;
+      color: var(--primary-deep);
       width: 28px;
       height: 28px;
       display: inline-flex;
@@ -133,12 +133,13 @@
     }
     .filter-icon-btn:hover {
       color: var(--white);
-      background-color: var(--white-15);
+      background-color: var(--primary);
+      border-color: var(--primary);
     }
     .filter-icon-btn.active {
-      background-color: var(--white);
-      color: var(--primary);
-      border-color: var(--white);
+      background-color: var(--primary);
+      color: var(--white);
+      border-color: var(--primary-deep);
     }
     .filter-icon-btn svg {
       width: 15px;
@@ -164,7 +165,7 @@
     .viewport-3d {
       width: 100%;
       max-width: 1050px;
-      height: clamp(390px, 50vh, 460px);
+      height: clamp(350px, 45vh, 410px);
       perspective: 1000px;
       perspective-origin: 50% 50%;
       display: flex;
@@ -179,8 +180,8 @@
 
     .card-stage-container {
       position: relative;
-      width: 270px;
-      height: 400px;
+      width: 240px;
+      height: 355px;
       transform-style: preserve-3d;
     }
 
@@ -190,8 +191,8 @@
        ======================================================= */
     .big-card {
       position: absolute;
-      width: 270px;
-      height: 400px;
+      width: 240px;
+      height: 355px;
       left: 0;
       top: 0;
       border-radius: 22px;
@@ -600,14 +601,14 @@
       box-shadow: -4px 0 0 0 var(--white), -9px 0 0 0 var(--white-50) !important;
     }
 
-    /* MODE BUTTONS: MODE URUT & MODE ACAK */
+    /* MODE BUTTONS & REVEAL BUTTON (COLLECTIBLE THEME) */
     .btn-ctrl-mode {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      border: 1px solid var(--white-50);
+      border: 1.5px solid var(--primary-deep);
       background-color: transparent;
-      color: var(--white-75);
+      color: var(--primary-deep);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -616,18 +617,18 @@
     }
     .btn-ctrl-mode:hover {
       color: var(--white);
-      border-color: var(--white);
-      background-color: var(--white-15);
+      border-color: var(--primary-deep);
+      background-color: var(--primary-deep);
     }
     .btn-ctrl-mode.active {
-      background-color: var(--white);
-      color: var(--primary);
-      border-color: var(--white);
+      background-color: var(--primary);
+      color: var(--white);
+      border-color: var(--primary-deep);
     }
     .btn-ctrl-mode svg {
       width: 15px;
       height: 15px;
-      stroke-width: 2;
+      stroke-width: 2.2;
     }
 
     .player-right {
@@ -637,12 +638,12 @@
     }
 
     .btn-open-circle {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      border: 1px solid var(--white);
-      background-color: var(--white);
-      color: var(--primary);
+      border: 2px solid var(--primary-deep);
+      background-color: var(--primary);
+      color: var(--white);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -650,13 +651,14 @@
       transition: all 0.2s ease;
     }
     .btn-open-circle:hover {
-      background-color: transparent;
+      background-color: var(--primary-deep);
       color: var(--white);
+      transform: scale(1.08);
     }
     .btn-open-circle svg {
-      width: 16px;
-      height: 16px;
-      stroke-width: 2;
+      width: 15px;
+      height: 15px;
+      stroke-width: 2.2;
     }
 
     /* =======================================================
@@ -1109,11 +1111,12 @@
         gap: clamp(10px, 1.8vh, 16px);
       }
       .viewport-3d {
-        height: clamp(370px, 48vh, 420px);
+        height: clamp(330px, 44vh, 380px);
       }
       .card-stage-container, .big-card {
-        width: 250px;
-        height: 370px;
+        width: 220px;
+        height: 330px;
+        border-radius: 20px;
       }
       .modal-card {
         width: 94vw;
@@ -1127,12 +1130,12 @@
         padding: 14px;
       }
       .bottom-player-bar {
-        max-width: 500px;
-        height: 48px;
+        max-width: 480px;
+        height: 46px;
       }
       .btn-ctrl-round, .btn-ctrl-mode, .btn-open-circle {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
       }
     }
 
@@ -1165,8 +1168,8 @@
         gap: 6px;
       }
       .filter-icon-btn {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
       }
       .filter-icon-btn svg {
         width: 14px;
@@ -1179,51 +1182,51 @@
       }
       .viewport-3d {
         max-width: 100vw;
-        height: clamp(340px, 48vh, 385px);
+        height: clamp(310px, 44vh, 350px);
       }
       .card-stage-container, .big-card {
-        width: min(240px, 74vw);
-        height: min(350px, 46vh);
+        width: min(210px, 68vw);
+        height: min(315px, 44vh);
         border-radius: 18px;
-        padding: 8px 8px 8px 6px;
+        padding: 7px 7px 7px 5px;
       }
       .card-left-rail {
-        width: 20px;
-        margin-right: 5px;
+        width: 18px;
+        margin-right: 4px;
       }
       .card-pip {
-        width: 11px;
-        height: 11px;
+        width: 10px;
+        height: 10px;
       }
       .card-vertical-title {
-        font-size: 9.5px;
-        letter-spacing: 1.8px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
       }
       .card-bottom-banner {
-        height: 38px;
-        left: -10px;
-        padding: 0 8px 0 34px;
-        bottom: 6px;
+        height: 36px;
+        left: -8px;
+        padding: 0 6px 0 30px;
+        bottom: 5px;
       }
       .card-emblem-badge {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
         left: -4px;
       }
       .card-emblem-icon {
+        width: 20px;
+        height: 20px;
+      }
+      .card-banner-title {
+        font-size: 11.5px;
+      }
+      .card-banner-reveal-btn {
         width: 22px;
         height: 22px;
       }
-      .card-banner-title {
-        font-size: 12.5px;
-      }
-      .card-banner-reveal-btn {
-        width: 24px;
-        height: 24px;
-      }
       .card-banner-reveal-btn svg {
-        width: 12px;
-        height: 12px;
+        width: 11px;
+        height: 11px;
       }
 
       /* SPECIMEN INDICATOR */
@@ -1242,11 +1245,11 @@
       .bottom-player-bar {
         width: 100%;
         max-width: 100%;
-        height: 46px;
+        height: 44px;
         padding: 3px 12px;
       }
       .player-left {
-        min-width: 80px;
+        min-width: 75px;
       }
       .player-track-name {
         font-size: 0.75rem;
@@ -1255,12 +1258,12 @@
         font-size: 0.62rem;
       }
       .btn-ctrl-round, .btn-ctrl-mode, .btn-open-circle {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
       }
       .btn-ctrl-round svg, .btn-ctrl-mode svg, .btn-open-circle svg {
-        width: 14px;
-        height: 14px;
+        width: 13px;
+        height: 13px;
       }
 
       /* FULLSCREEN NATIVE APP SHEET MODAL ON ANDROID */
@@ -1277,10 +1280,12 @@
       }
       .mobile-drag-handle {
         display: block;
+        background-color: var(--primary-deep);
       }
       .modal-header {
         height: 48px;
         padding: 0 14px;
+        border-bottom: 2px solid var(--primary-deep);
       }
       .modal-type-badge {
         font-size: 10.5px;
@@ -1302,7 +1307,7 @@
       }
       .modal-left-pane {
         border-right: none;
-        border-bottom: 1px solid var(--white-25);
+        border-bottom: 2px solid var(--primary-deep);
         height: 220px;
         min-height: 220px;
         flex-shrink: 0;
@@ -1321,10 +1326,11 @@
       .modal-footer {
         height: 46px;
         padding: 0 14px;
+        border-top: 2px solid var(--primary-deep);
       }
       .modal-nav-btn {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
       }
       .modal-action-btn {
         padding: 5px 12px;
@@ -1393,22 +1399,22 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 3px 12px 3px 10px;
-      background-color: var(--white-08);
-      border: 1px solid var(--white-50);
+      padding: 4px 14px 4px 10px;
+      background-color: var(--white);
+      border: 2px solid var(--primary-deep);
       border-radius: 999px;
-      color: var(--white);
+      color: var(--primary-deep);
       cursor: pointer;
       font-size: 11px;
       letter-spacing: 1.2px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       transition: all 0.2s ease;
     }
     .pack-badge-btn:hover {
-      background-color: var(--white);
-      color: var(--primary);
-      border-color: var(--white);
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-color: var(--primary-deep);
     }
     .pack-badge-btn .pack-icon {
       font-size: 12px;
@@ -1441,23 +1447,24 @@
     .pack-modal-card {
       width: min(720px, 92vw);
       max-height: min(640px, 86vh);
-      background-color: var(--primary);
-      border: 2px solid var(--white);
-      border-radius: 20px;
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 22px;
       box-shadow: none;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      color: var(--primary-deep);
     }
     .pack-modal-header {
       flex-shrink: 0;
       height: 52px;
-      border-bottom: 1px solid var(--white-50);
+      border-bottom: 2px solid var(--primary-deep);
       padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: var(--primary-dark);
+      background-color: var(--white);
     }
     .pack-modal-header-left {
       display: flex;
@@ -1466,24 +1473,27 @@
     }
     .pack-modal-badge {
       font-size: 11px;
-      border: 1px solid var(--white-50);
+      font-weight: 800;
+      border: 1.5px solid var(--primary-deep);
       padding: 2px 8px;
       border-radius: 999px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      background-color: var(--white-08);
+      background-color: var(--primary);
+      color: var(--white);
     }
     .pack-modal-title {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
-      color: var(--white);
+      color: var(--primary-deep);
       text-transform: uppercase;
     }
     .pack-modal-body {
       flex: 1;
       overflow-y: auto;
       padding: 20px;
+      background-color: #f6f8fe;
     }
     .pack-list {
       display: grid;
@@ -1491,8 +1501,8 @@
       gap: 14px;
     }
     .pack-item {
-      background-color: var(--primary-dark);
-      border: 1.5px solid var(--white-25);
+      background-color: var(--white);
+      border: 2px solid var(--primary-deep);
       border-radius: 14px;
       padding: 16px 18px;
       cursor: pointer;
@@ -1500,15 +1510,17 @@
       flex-direction: column;
       gap: 6px;
       transition: all 0.2s ease;
+      color: var(--primary-deep);
     }
     .pack-item:hover {
-      border-color: var(--white);
-      background-color: var(--white-08);
+      border-color: var(--primary);
+      background-color: #eef2ff;
       transform: translateY(-2px);
     }
     .pack-item.active {
-      border: 2.5px solid var(--white);
-      background-color: var(--primary-deep);
+      border: 2.5px solid var(--primary-deep);
+      background-color: var(--primary);
+      color: var(--white);
     }
     .pack-item-top {
       display: flex;
@@ -1517,34 +1529,37 @@
     }
     .pack-item-badge {
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      border: 1px solid var(--white-50);
+      border: 1.5px solid currentColor;
       border-radius: 999px;
-      padding: 1px 7px;
+      padding: 2px 8px;
     }
     .pack-item-count {
       font-size: 11px;
-      color: var(--white-75);
+      color: inherit;
+      opacity: 0.85;
       letter-spacing: 0.8px;
+      font-weight: 600;
     }
     .pack-item-title {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1px;
-      color: var(--white);
+      color: inherit;
     }
     .pack-item-desc {
       font-size: 12.5px;
-      color: var(--white-75);
+      color: inherit;
+      opacity: 0.85;
       line-height: 1.4;
     }
     .pack-item-status {
       font-size: 10.5px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
-      color: var(--white);
+      color: inherit;
       margin-top: 4px;
       text-transform: uppercase;
     }
@@ -1555,8 +1570,8 @@
     }
     .pack-item-upcoming:hover {
       transform: none;
-      background-color: var(--primary-dark);
-      border-color: var(--white-25);
+      background-color: var(--white);
+      border-color: var(--primary-deep);
     }
   </style>
 </head>
@@ -2266,17 +2281,17 @@
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
         if (offset === 0) {
-          // ACTIVE CARD: Much larger prominent display with elevated 3D depth
+          // ACTIVE CARD: Balanced prominent display with elevated 3D depth
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isMobile ? 1.16 : (isTablet ? 1.20 : 1.25);
-          const activeZ = isMobile ? 25 : 42;
+          const activeScale = isMobile ? 1.08 : (isTablet ? 1.10 : 1.14);
+          const activeZ = isMobile ? 20 : 32;
 
           if (isRapid && rapidDir === 'next') {
-            cardEl.style.transform = `translateX(0px) translateY(-8px) translateZ(${activeZ + 10}px) rotateY(-12deg) rotateZ(3deg) scale(${activeScale + 0.02})`;
+            cardEl.style.transform = `translateX(0px) translateY(-6px) translateZ(${activeZ + 8}px) rotateY(-10deg) rotateZ(2.5deg) scale(${activeScale + 0.02})`;
           } else if (isRapid && rapidDir === 'prev') {
-            cardEl.style.transform = `translateX(0px) translateY(-8px) translateZ(${activeZ + 10}px) rotateY(12deg) rotateZ(-3deg) scale(${activeScale + 0.02})`;
+            cardEl.style.transform = `translateX(0px) translateY(-6px) translateZ(${activeZ + 8}px) rotateY(10deg) rotateZ(-2.5deg) scale(${activeScale + 0.02})`;
           } else {
             cardEl.style.transform = `translateX(0px) translateY(0px) translateZ(${activeZ}px) rotateY(0deg) rotateZ(0deg) scale(${activeScale})`;
           }
@@ -2287,22 +2302,22 @@
 
           let tx, tz, ry, sc, zi;
           if (absOff === 1) {
-            tx = dir * (isMobile ? 110 : (isTablet ? 155 : 180));
-            tz = isMobile ? -50 : -70;
+            tx = dir * (isMobile ? 95 : (isTablet ? 135 : 155));
+            tz = isMobile ? -45 : -60;
             ry = -dir * (isMobile ? 18 : 22);
             sc = isMobile ? 0.82 : (isTablet ? 0.84 : 0.85);
             zi = 40;
           } else if (absOff === 2) {
-            tx = dir * (isMobile ? 190 : (isTablet ? 270 : 315));
-            tz = isMobile ? -105 : -150;
-            ry = -dir * (isMobile ? 28 : 36);
+            tx = dir * (isMobile ? 165 : (isTablet ? 230 : 270));
+            tz = isMobile ? -95 : -130;
+            ry = -dir * (isMobile ? 28 : 34);
             sc = isMobile ? 0.68 : (isTablet ? 0.70 : 0.72);
             zi = 30;
           } else {
             // absOff === 3
-            tx = dir * (isMobile ? 260 : (isTablet ? 370 : 425));
-            tz = isMobile ? -160 : -230;
-            ry = -dir * (isMobile ? 38 : 46);
+            tx = dir * (isMobile ? 225 : (isTablet ? 310 : 360));
+            tz = isMobile ? -145 : -200;
+            ry = -dir * (isMobile ? 36 : 42);
             sc = isMobile ? 0.55 : (isTablet ? 0.58 : 0.60);
             zi = 20;
           }
