@@ -2635,10 +2635,12 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
-      overflow: hidden;
+      padding: 8px clamp(12px, 2.5vw, 24px);
+      overflow: visible;
       position: relative;
+      box-sizing: border-box;
     }
 
     /* 1. Prepare Stage */
@@ -2761,10 +2763,12 @@
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(14px, 2vw, 24px);
+      gap: clamp(14px, 2.5vw, 28px);
       align-items: stretch;
-      max-width: 1100px;
+      max-width: 1080px;
       max-height: clamp(380px, 72vh, 640px);
+      padding: 6px;
+      box-sizing: border-box;
       animation: studyCardFadeIn 0.25s ease-out;
     }
     .review-reveal-left {
@@ -2841,23 +2845,29 @@
       border: 3px solid var(--primary-deep);
       border-radius: 20px;
       padding: clamp(14px, 2.2vh, 22px);
+      padding-right: clamp(10px, 1.8vh, 18px);
       overflow-y: auto;
+      overflow-x: hidden;
       box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
       color: var(--primary-deep);
       display: flex;
       flex-direction: column;
       gap: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: #314fba #f0f4fd;
     }
     .review-reveal-right::-webkit-scrollbar {
-      width: 6px;
+      width: 8px;
     }
     .review-reveal-right::-webkit-scrollbar-track {
-      background: #f6f8fe;
+      background: #f0f4fd;
       border-radius: 999px;
+      margin: 14px 4px 14px 0;
     }
     .review-reveal-right::-webkit-scrollbar-thumb {
-      background: #b8c7f2;
+      background: #314fba;
       border-radius: 999px;
+      border: 2px solid #f0f4fd;
     }
     .review-reveal-right::-webkit-scrollbar-thumb:hover {
       background: var(--primary-deep);
@@ -3079,14 +3089,17 @@
     }
 
     /* =======================================================
-       SETTINGS & PREFERENCES POPOVER (DOCKED ABOVE DOCK)
+       SETTINGS & PREFERENCES POPOVER (SIDEBAR CENTERED)
        NEVER COVERS 3D CARD ANIMATIONS • 100% UNOBSTRUCTED
        ======================================================= */
     .settings-popover {
       position: fixed;
-      bottom: 78px;
+      top: 50%;
+      bottom: auto;
       right: clamp(14px, 3vw, 32px);
+      transform: translateY(-50%);
       width: min(340px, calc(100vw - 28px));
+      max-height: min(540px, calc(100vh - 40px));
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
       border-radius: 20px;
@@ -3104,11 +3117,11 @@
     @keyframes settingsPopIn {
       from {
         opacity: 0;
-        transform: translateY(12px) scale(0.95);
+        transform: translateY(calc(-50% + 12px)) scale(0.95);
       }
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(-50%) scale(1);
       }
     }
     .settings-popover-header {
