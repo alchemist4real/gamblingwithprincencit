@@ -12,30 +12,21 @@
   <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
   <script src="packs/blok-3.1.js"></script>
   <style>
     /* =======================================================
        STRICT MONOCHROMATIC 2-COLOR DESIGN:
        PRIMARY BLUE #314fba & WHITE #ffffff
-       DISPLAY FONT: 'EATER' (GOOGLE FONTS)
-       SECONDARY & READABILITY FONT: 'TIMES NEW ROMAN' (TNR)
+       STRICT 2 FONTS ONLY:
+       1. DISPLAY FONT: 'Special Elite'
+       2. BODY & UI FONT: 'Plus Jakarta Sans'
        STRICT ZERO GRADIENTS: PURE SOLID COLORS ONLY
        STRICT ZERO BLACK SHADOWS: NO AI SLOP SHADOWS
        STRICT ZERO TRANSPARENCY: ALL CARDS 100% SOLID
        STRICT ZERO OVERFLOW & ZERO CARD COLLISION
        STRICT ALL BUTTONS: PURE SVG ICONS ONLY, ZERO TEXT
-       STRICT ZERO SPOILERS ON CARD FRONT
        ======================================================= */
-    @font-face {
-      font-family: 'Botch';
-      src: url('fonts/botch.woff2') format('woff2'),
-           url('fonts/botch.otf') format('opentype'),
-           url('fonts/botch.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
 
     :root {
       --primary: #314fba;
@@ -50,7 +41,7 @@
       --white-08: rgba(255, 255, 255, 0.08);
       --white-04: rgba(255, 255, 255, 0.04);
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Special Elite', cursive, monospace, sans-serif;
     }
 
@@ -112,30 +103,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(8px, 1.8vw, 18px);
       user-select: none;
-    }
-
-    .title-coin-badge {
-      width: clamp(28px, 3.2vw, 38px);
-      height: clamp(28px, 3.2vw, 38px);
-      border-radius: 999px;
-      background-color: var(--white);
-      border: 2.5px solid var(--primary-deep);
-      box-shadow: 0 4px 0 var(--primary-deep), 0 0 0 2px var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-deep);
-      flex-shrink: 0;
-      transition: transform 0.25s cubic-bezier(0.16, 1.25, 0.3, 1);
-    }
-    .title-coin-badge:hover {
-      transform: scale(1.12) rotate(12deg);
-    }
-    .title-coin-badge svg {
-      width: 56%;
-      height: 56%;
     }
 
     h1.main-title,
@@ -146,7 +114,7 @@
     }
 
     h1.main-title {
-      font-size: clamp(1.45rem, 3.2vw, 2.6rem);
+      font-size: clamp(1.5rem, 3.4vw, 2.75rem);
       font-weight: normal;
       letter-spacing: clamp(1.5px, 0.4vw, 3px);
       text-transform: uppercase;
@@ -157,50 +125,42 @@
       align-items: center;
       justify-content: center;
       gap: clamp(8px, 1.5vw, 16px);
-      color: var(--white);
+      color: var(--primary-deep);
       text-align: center;
       user-select: none;
     }
 
-    /* TONE 1: GAMBLING WITH (CRISP WHITE WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
-    .title-tone-1 {
-      color: #ffffff;
-      -webkit-text-stroke: 1.2px var(--primary-deep);
+    /* OUTLINE PUTIH SANGAT BOLD, FILL UNGU KITA (#172b7a) */
+    .title-tone-1,
+    .title-tone-2 {
+      color: var(--primary-deep);
+      -webkit-text-fill-color: var(--primary-deep);
+      -webkit-text-stroke: 5px #ffffff;
+      paint-order: stroke fill;
       text-shadow:
-        -1.5px -1.5px 0 var(--primary-deep),
-         1.5px -1.5px 0 var(--primary-deep),
-        -1.5px  1.5px 0 var(--primary-deep),
-         1.5px  1.5px 0 var(--primary-deep),
-        -2px  0   0 var(--primary-deep),
-         2px  0   0 var(--primary-deep),
-         0   -2px 0 var(--primary-deep),
-         0    2px 0 var(--primary-deep),
-         0px  3.5px 0 var(--primary-deep),
-         0px  6px 0 var(--primary-deep);
+        -3px -3px 0 #ffffff,
+         3px -3px 0 #ffffff,
+        -3px  3px 0 #ffffff,
+         3px  3px 0 #ffffff,
+        -4px  0   0 #ffffff,
+         4px  0   0 #ffffff,
+         0   -4px 0 #ffffff,
+         0    4px 0 #ffffff,
+        -2px -3.5px 0 #ffffff,
+         2px -3.5px 0 #ffffff,
+        -2px  3.5px 0 #ffffff,
+         2px  3.5px 0 #ffffff,
+        -3.5px -2px 0 #ffffff,
+         3.5px -2px 0 #ffffff,
+        -3.5px  2px 0 #ffffff,
+         3.5px  2px 0 #ffffff,
+         0px  5px 0 rgba(19, 34, 96, 0.7),
+         0px  8px 0 rgba(19, 34, 96, 0.4);
       display: inline-block;
       transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
     }
     .title-tone-1:hover {
       transform: translateY(-2px) rotate(-1deg);
-    }
-
-    /* TONE 2: PRINCE NCIT (CRISP WHITE WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
-    .title-tone-2 {
-      color: #ffffff;
-      -webkit-text-stroke: 1.2px var(--primary-deep);
-      text-shadow:
-        -1.5px -1.5px 0 var(--primary-deep),
-         1.5px -1.5px 0 var(--primary-deep),
-        -1.5px  1.5px 0 var(--primary-deep),
-         1.5px  1.5px 0 var(--primary-deep),
-        -2px  0   0 var(--primary-deep),
-         2px  0   0 var(--primary-deep),
-         0   -2px 0 var(--primary-deep),
-         0    2px 0 var(--primary-deep),
-         0px  3.5px 0 var(--primary-deep),
-         0px  6px 0 var(--primary-deep);
-      display: inline-block;
-      transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
     }
     .title-tone-2:hover {
       transform: translateY(-2px) rotate(1deg);
@@ -232,9 +192,9 @@
         letter-spacing: 1.2px;
         gap: 6px;
       }
-      .title-coin-badge {
-        width: 26px;
-        height: 26px;
+      .title-tone-1,
+      .title-tone-2 {
+        -webkit-text-stroke: 3.5px #ffffff;
       }
       .sub-meta {
         font-size: 0.68rem;
@@ -1895,38 +1855,51 @@
       transform: translateY(1.5px);
     }
 
-    /* PACK MODAL OVERLAY */
+    /* PACK MODAL & ENTRANCE OVERLAY */
     .pack-modal-overlay {
       position: fixed;
       inset: 0;
-      z-index: 2000;
-      background-color: rgba(34, 60, 163, 0.96);
-      backdrop-filter: blur(8px);
+      z-index: 4000;
+      background-color: rgba(23, 43, 122, 0.94);
+      backdrop-filter: blur(14px);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: clamp(14px, 3vw, 24px);
     }
     .pack-modal-overlay.active {
       display: flex;
     }
+    .pack-modal-overlay.is-entrance {
+      z-index: 5000;
+      background-color: rgba(23, 43, 122, 0.97);
+      backdrop-filter: blur(18px);
+    }
+    .pack-modal-overlay.is-entrance .modal-close-btn {
+      display: none !important;
+    }
     .pack-modal-card {
-      width: min(720px, 92vw);
-      max-height: min(640px, 86vh);
+      width: min(740px, 94vw);
+      max-height: min(680px, 88vh);
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
       border-radius: 22px;
-      box-shadow: none;
+      box-shadow: 0 24px 64px rgba(23, 43, 122, 0.5);
       display: flex;
       flex-direction: column;
       overflow: hidden;
       color: var(--primary-deep);
+      animation: modalPopIn 0.32s cubic-bezier(0.16, 1.15, 0.3, 1);
+    }
+    @keyframes modalPopIn {
+      from { transform: scale(0.94); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
     .pack-modal-header {
       flex-shrink: 0;
-      height: 52px;
+      min-height: 56px;
       border-bottom: 2px solid var(--primary-deep);
-      padding: 0 20px;
+      padding: 10px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1941,7 +1914,7 @@
       font-size: 11px;
       font-weight: 800;
       border: 1.5px solid var(--primary-deep);
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -1950,7 +1923,7 @@
     }
     .pack-modal-title {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 19px;
       font-weight: normal;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -1959,8 +1932,19 @@
     .pack-modal-body {
       flex: 1;
       overflow-y: auto;
-      padding: 20px;
+      padding: clamp(14px, 2.5vw, 22px);
       background-color: #f6f8fe;
+    }
+    .pack-intro-banner {
+      background-color: #eef2ff;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+      font-weight: 500;
     }
     .pack-list {
       display: grid;
@@ -1970,13 +1954,13 @@
     .pack-item {
       background-color: var(--white);
       border: 2px solid var(--primary-deep);
-      border-radius: 14px;
-      padding: 16px 18px;
+      border-radius: 16px;
+      padding: 18px 20px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      transition: all 0.2s ease;
+      gap: 8px;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       color: var(--primary-deep);
     }
     .pack-item:hover {
@@ -1993,42 +1977,71 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .pack-item-badge {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       border: 1.5px solid currentColor;
       border-radius: 999px;
-      padding: 2px 8px;
+      padding: 2px 9px;
     }
     .pack-item-count {
-      font-size: 11px;
+      font-size: 11.5px;
       color: inherit;
-      opacity: 0.85;
+      opacity: 0.9;
       letter-spacing: 0.8px;
       font-weight: 600;
     }
     .pack-item-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: inherit;
     }
     .pack-item-desc {
-      font-size: 12.5px;
+      font-size: 13px;
       color: inherit;
-      opacity: 0.85;
-      line-height: 1.4;
+      opacity: 0.9;
+      line-height: 1.5;
     }
-    .pack-item-status {
-      font-size: 10.5px;
+    .pack-item-actions {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .pack-start-btn {
+      padding: 9px 20px;
+      background-color: var(--primary);
+      color: var(--white);
+      border: 2px solid var(--primary-deep);
+      border-radius: 999px;
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: 1.5px;
-      color: inherit;
-      margin-top: 4px;
-      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.18s ease;
+      width: fit-content;
+    }
+    .pack-start-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+    .pack-item.active .pack-start-btn {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border-color: var(--white);
+    }
+    .pack-item.active .pack-start-btn:hover {
+      background-color: #f0f4ff;
     }
     .pack-item-upcoming {
       opacity: 0.65;
@@ -2040,6 +2053,14 @@
       background-color: var(--white);
       border-color: var(--primary-deep);
     }
+    .pack-item-status {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: inherit;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
@@ -2049,17 +2070,7 @@
        ======================================================= -->
   <header class="app-header">
     <div class="title-row">
-      <div class="title-coin-badge" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="currentColor">
-          <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
-        </svg>
-      </div>
       <h1 class="main-title" id="appMainTitle"><span class="title-tone-1">GAMBLING WITH</span> <span class="title-tone-2">PRINCE NCIT</span></h1>
-      <div class="title-coin-badge" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="currentColor">
-          <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
-        </svg>
-      </div>
     </div>
     <div class="sub-meta" id="appSubMeta">Persiapan Ujian Identifikasi &amp; Praktikum Patologi Anatomi &bull; Blok 3.1 &bull; 40 Sediaan</div>
   </header>
@@ -2091,7 +2102,9 @@
     <!-- Left Section: Pack Selector & Category Filters -->
     <div class="dock-section dock-left">
       <button class="pack-badge-btn" id="btnPackSelector" onclick="openPackModal()" title="Pilih Paket Sediaan [P]" aria-label="Pilih Paket Sediaan">
-        <span class="pack-icon">♠</span>
+        <svg class="pack-badge-emblem" viewBox="0 0 64 64" fill="currentColor" width="15" height="15" aria-hidden="true" style="flex-shrink: 0;">
+          <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
+        </svg>
         <span class="pack-name-text" id="headerPackName">Blok 3.1</span>
         <svg class="pack-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="6 9 12 15 18 9"></polyline>
@@ -2273,10 +2286,10 @@
     <div class="pack-modal-card" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
       <div class="pack-modal-header">
         <div class="pack-modal-header-left">
-          <span class="pack-modal-badge">PAKET SEDIAAN</span>
-          <h2 class="pack-modal-title" id="packModalTitle">PILIH PAKET SEDIAAN</h2>
+          <span class="pack-modal-badge" id="packModalBadge">MODUL PRAKTIKUM</span>
+          <h2 class="pack-modal-title" id="packModalTitle">PILIH BLOK STUDI</h2>
         </div>
-        <button class="modal-close-btn" onclick="closePackModal()" title="Tutup [Esc]" aria-label="Tutup">
+        <button class="modal-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Tutup [Esc]" aria-label="Tutup">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -2284,6 +2297,9 @@
         </button>
       </div>
       <div class="pack-modal-body">
+        <div class="pack-intro-banner" id="packIntroBanner">
+          Pilih modul praktikum untuk memulai sesi belajar & kuis interaktif. Sediaan mikroskopik dan stasiun kasus UKMPPD siap dipelajari.
+        </div>
         <div class="pack-list" id="packListContainer">
           <!-- Dynamically populated from window.CARD_PACKS -->
         </div>
@@ -2399,23 +2415,51 @@
       }
     }
 
-    function openPackModal() {
-      if (isShuffling) return;
+    let isEntranceMode = false;
+
+    function openEntranceBlockPicker() {
+      isEntranceMode = true;
       isPackModalOpen = true;
       const modal = document.getElementById('packModalOverlay');
       if (modal) {
+        modal.classList.add('active', 'is-entrance');
+        const badge = document.getElementById('packModalBadge');
+        if (badge) badge.textContent = 'MODUL PRAKTIKUM';
+        const title = document.getElementById('packModalTitle');
+        if (title) title.textContent = 'PILIH BLOK STUDI';
+        const closeBtn = document.getElementById('packModalCloseBtn');
+        if (closeBtn) closeBtn.style.display = 'none';
         renderPackList();
+      }
+    }
+
+    function openPackModal() {
+      if (isShuffling) return;
+      isEntranceMode = false;
+      isPackModalOpen = true;
+      const modal = document.getElementById('packModalOverlay');
+      if (modal) {
         modal.classList.add('active');
+        modal.classList.remove('is-entrance');
+        const badge = document.getElementById('packModalBadge');
+        if (badge) badge.textContent = 'PAKET SEDIAAN';
+        const title = document.getElementById('packModalTitle');
+        if (title) title.textContent = 'PILIH PAKET SEDIAAN';
+        const closeBtn = document.getElementById('packModalCloseBtn');
+        if (closeBtn) closeBtn.style.display = 'flex';
+        renderPackList();
       }
     }
 
     function closePackModal() {
+      if (isEntranceMode) return; // Prevent closing entrance screen without choosing a block
       isPackModalOpen = false;
       const modal = document.getElementById('packModalOverlay');
-      if (modal) modal.classList.remove('active');
+      if (modal) modal.classList.remove('active', 'is-entrance');
     }
 
     function handlePackOverlayClick(e) {
+      if (isEntranceMode) return; // Prevent backdrop click dismissal on entrance
       if (e.target.id === 'packModalOverlay') {
         closePackModal();
       }
@@ -2429,31 +2473,45 @@
 
       for (const [id, pack] of Object.entries(packs)) {
         const isActive = id === currentPackId;
+        const prepCount = pack.cards ? pack.cards.filter(c => c.type === 'preparat').length : 0;
+        const teoriCount = pack.cards ? pack.cards.filter(c => c.type === 'teori').length : 0;
+
         html += `
           <div class="pack-item ${isActive ? 'active' : ''}" onclick="selectCardPack('${id}')">
             <div class="pack-item-top">
-              <span class="pack-item-badge">${pack.badge || 'PAKET'}</span>
-              <span class="pack-item-count">${pack.cards ? pack.cards.length : 0} Sediaan</span>
+              <span class="pack-item-badge">${pack.badge || 'PAKET UTAMA'}</span>
+              <span class="pack-item-count">${pack.cards ? pack.cards.length : 0} Sediaan (${prepCount} Mikroskopik • ${teoriCount} Teori)</span>
             </div>
             <div class="pack-item-title">${pack.packName || pack.title}</div>
-            <div class="pack-item-desc">${pack.description || pack.subtitle || ''}</div>
-            <div class="pack-item-status">
-              ${isActive ? '● SEDANG DIGUNAKAN' : 'KLIK UNTUK MEMILIH'}
+            <div class="pack-item-desc">${pack.description || pack.subtitle || 'Koleksi sediaan histopatologi dan stasiun kasus UKMPPD lengkap.'}</div>
+            <div class="pack-item-actions">
+              <button class="pack-start-btn" type="button" onclick="selectCardPack('${id}'); event.stopPropagation();">
+                ${isEntranceMode ? 'MULAI BELAJAR SEKARANG &rarr;' : (isActive ? '● SEDANG DIGUNAKAN (PILIH ULANG)' : 'PILIH PAKET INI &rarr;')}
+              </button>
             </div>
           </div>
         `;
       }
 
-      // Placeholder for next packs (Strictly Patologi Anatomi, non-dramatic)
+      // Placeholder for next packs (Strictly Patologi Anatomi / Upcoming)
       html += `
         <div class="pack-item pack-item-upcoming">
           <div class="pack-item-top">
             <span class="pack-item-badge">SEGERA HADIR</span>
-            <span class="pack-item-count">+</span>
+            <span class="pack-item-count">Modul Lanjutan</span>
           </div>
-          <div class="pack-item-title">Paket Sediaan Lainnya</div>
-          <div class="pack-item-desc">Paket sediaan Patologi Anatomi untuk blok lainnya dapat ditambahkan di folder <code>packs/</code></div>
-          <div class="pack-item-status">SEGERA HADIR</div>
+          <div class="pack-item-title">Blok 3.2: Sistem Kardiovaskular & Respirasi</div>
+          <div class="pack-item-desc">Paket sediaan histopatologi organ spesifik sedang dalam tahap kurasi praktikum.</div>
+          <div class="pack-item-status">DALAM PERSIAPAN</div>
+        </div>
+        <div class="pack-item pack-item-upcoming">
+          <div class="pack-item-top">
+            <span class="pack-item-badge">KUSTOM</span>
+            <span class="pack-item-count">Modular JSON</span>
+          </div>
+          <div class="pack-item-title">Tambah Paket Sediaan Mandiri</div>
+          <div class="pack-item-desc">Format modular pack sediaan dapat ditambahkan di folder <code>packs/</code>.</div>
+          <div class="pack-item-status">PANDUAN TERSEDIA</div>
         </div>
       `;
 
@@ -2461,13 +2519,45 @@
     }
 
     function selectCardPack(packId) {
-      if (packId === currentPackId) {
-        closePackModal();
+      const wasEntrance = isEntranceMode;
+      isEntranceMode = false;
+      isPackModalOpen = false;
+      const modal = document.getElementById('packModalOverlay');
+      if (modal) modal.classList.remove('active', 'is-entrance');
+
+      if (packId === currentPackId && !wasEntrance) {
         return;
       }
-      loadCardPack(packId);
-      closePackModal();
-      playTone(523.25, 'triangle', 0.12);
+
+      loadCardPack(packId, !wasEntrance);
+
+      if (wasEntrance) {
+        runOpeningStageFlourish();
+        showToast('Blok 3.1 Loaded', `${sessionCards.length} Sediaan Siap`);
+      } else {
+        playTone(523.25, 'triangle', 0.12);
+      }
+    }
+
+    function renderInitialStackedStage() {
+      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
+      cards.forEach((cardEl, idx) => {
+        cardEl.style.transition = 'none';
+        cardEl.style.opacity = '1';
+        cardEl.style.visibility = 'visible';
+        cardEl.style.transform = `translateX(0px) translateY(0px) translateZ(${idx * 0.35}px) scale(0.94)`;
+        cardEl.style.zIndex = `${idx + 1}`;
+      });
+    }
+
+    function runOpeningStageFlourish() {
+      playEntranceFanSound();
+      setTimeout(() => {
+        updateCardPositions(true, false);
+        playChimeSound();
+        triggerHaptic([20, 35]);
+        triggerControllerRumble(100, 0.4, 0.7);
+      }, 240);
     }
     let activeFilter = 'all';
     let currentPlayMode = 'sequential'; // 'sequential' or 'shuffle'
@@ -2632,14 +2722,14 @@
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(170, now);
-        osc.frequency.exponentialRampToValueAtTime(50, now + 0.09);
-        gain.gain.setValueAtTime(0.14, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+        osc.frequency.setValueAtTime(160, now);
+        osc.frequency.exponentialRampToValueAtTime(45, now + 0.11);
+        gain.gain.setValueAtTime(0.16, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
         osc.start(now);
-        osc.stop(now + 0.09);
+        osc.stop(now + 0.11);
       } catch(e) {}
     }
 
@@ -2653,8 +2743,8 @@
     function playDeckTapSound() {
       try {
         if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-        playTone(190, 'triangle', 0.04);
-        setTimeout(() => playTone(120, 'sine', 0.05), 18);
+        playTone(210, 'triangle', 0.045);
+        setTimeout(() => playTone(110, 'sine', 0.06), 18);
       } catch(e) {}
     }
 
@@ -2663,6 +2753,21 @@
         if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
         playTone(260, 'sine', 0.07);
         setTimeout(() => playTone(460, 'sine', 0.06), 35);
+      } catch(e) {}
+    }
+
+    function playEntranceFanSound() {
+      try {
+        if (!audioCtx) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const notes = [261.63, 392.00, 523.25, 659.25];
+        notes.forEach((freq, idx) => {
+          setTimeout(() => {
+            playTone(freq, 'triangle', 0.20);
+          }, idx * 55);
+        });
+        setTimeout(() => playWhooshSound(), 160);
+        setTimeout(() => playDeckSlap(), 420);
       } catch(e) {}
     }
 
@@ -3222,16 +3327,14 @@
     }
 
     // =======================================================
-    // SEQUENTIAL MODE CARDISTRY ALIGNMENT SUITE (3 DIVERSE STYLES)
-    // 1. Square-Up & Table Tap (Neat Deck Alignment)
-    // 2. Accordion Ribbon Cascade & Wave Ripple
-    // 3. Peacock Arc Unfurl & Sweep Gather
+    // DEALER & MAGICIAN SEQUENTIAL CARDISTRY SORT SUITE
+    // 1. Table Square-Up, Double Tap & Domino Turnover Wave
+    // 2. Triple Packet Stripping & Ordered Assembly
     // =======================================================
     let sequentialStyleIndex = 0;
     const SEQUENTIAL_STYLES = [
-      { id: 'square', name: 'Square-Up & Tap', fn: runSquareUpDeckAlign },
-      { id: 'accordion', name: 'Accordion Cascade', fn: runAccordionRibbonSort },
-      { id: 'unfurl', name: 'Peacock Fan', fn: runUnfurlFanSort },
+      { id: 'wave', name: 'Double Tap & Turnover Wave', fn: runRibbonTurnoverWaveSort },
+      { id: 'triple', name: 'Triple Packet Assembly', fn: runTriplePacketAssemblySort },
     ];
 
     function startSequentialSort(forcedStyleIndex = null) {
@@ -3260,135 +3363,163 @@
         triggerHaptic([15, 30, 20]);
         triggerControllerRumble(120, 0.4, 0.8);
         isShuffling = false;
-        showToast('Sequential Mode', `1 to ${sessionCards.length} Cards`);
+        showToast('Sequential Mode', `01 to ${sessionCards.length}`);
       });
     }
 
-    // STYLE 1: SQUARE-UP & DOUBLE TABLE TAP
-    function runSquareUpDeckAlign(cards, isMobile, isTablet, onComplete) {
+    // STYLE 1: TABLE SQUARE-UP, DOUBLE TABLE TAP & DOMINO TURNOVER WAVE
+    function runRibbonTurnoverWaveSort(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
+      const total = cards.length;
+
+      // Phase 1: Cards gather into a tight vertical stack at center
       cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.32s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
+        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
         card.style.opacity = '1';
         card.style.visibility = 'visible';
         card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
       });
 
-      // Lift deck slightly
-      setTimeout(() => {
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.18s ease-out';
-          card.style.transform = `translateX(0px) translateY(-22px) translateZ(${i * 0.3}px) scale(0.97)`;
-        });
-      }, 340);
-
-      // Knock 1 down against table
-      setTimeout(() => {
-        playDeckTapSound();
-        triggerHaptic([20, 30]);
-        triggerControllerRumble(70, 0.5, 0.8);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.2, 0, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
-        });
-      }, 540);
-
-      // Lift deck 2
+      // Phase 2: Lift deck 24px off table
       setTimeout(() => {
         cards.forEach((card, i) => {
           card.style.transition = 'transform 0.16s ease-out';
-          card.style.transform = `translateX(0px) translateY(-14px) translateZ(${i * 0.3}px) scale(0.96)`;
+          card.style.transform = `translateX(0px) translateY(-24px) translateZ(${i * 0.35}px) scale(0.97)`;
         });
-      }, 680);
+      }, 300);
 
-      // Knock 2 down sharp
+      // Phase 3: KNOCK 1 down sharp against the table felt! (Tap 1)
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic([20, 30]);
+        triggerControllerRumble(75, 0.5, 0.8);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.09s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) scale(0.95)`;
+        });
+      }, 480);
+
+      // Phase 4: Lift deck 14px (Tap 2 prep)
+      setTimeout(() => {
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.14s ease-out';
+          card.style.transform = `translateX(0px) translateY(-14px) translateZ(${i * 0.35}px) scale(0.96)`;
+        });
+      }, 610);
+
+      // Phase 5: KNOCK 2 down sharp against table felt! (Tap 2)
       setTimeout(() => {
         playDeckTapSound();
         triggerHaptic([25, 35]);
-        triggerControllerRumble(80, 0.6, 0.9);
+        triggerControllerRumble(85, 0.6, 0.9);
         cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.2, 0, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+          card.style.transition = 'transform 0.09s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) scale(0.95)`;
         });
-      }, 860);
+      }, 770);
 
-      setTimeout(onComplete, 1100);
-    }
+      // Phase 6: Dealer spreads the deck into a wide horizontal ribbon across the felt
+      setTimeout(() => {
+        playWhooshSound();
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.36s cubic-bezier(0.16, 1, 0.3, 1)';
+          const offset = i - (total / 2);
+          const tx = Math.max(-170, Math.min(170, offset * (isMobile ? 8.5 : 14.5)));
+          const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2 : 3.5);
+          card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -5 : 5}px) translateZ(${i * 0.35}px) rotateZ(${rz}deg) scale(0.92)`;
+        });
+      }, 920);
 
-    // STYLE 2: ACCORDION RIBBON CASCADE & WAVE RIPPLE
-    function runAccordionRibbonSort(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const total = cards.length;
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        const offsetFromMid = i - (total / 2);
-        const tx = Math.max(-140, Math.min(140, offsetFromMid * (isMobile ? 7 : 12)));
-        const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2.5 : 4);
-        card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -6 : 6}px) translateZ(${i * 0.4}px) rotateZ(${rz}deg) scale(0.92)`;
-      });
-
-      // Wave ripple across ribbon
+      // Phase 7: Domino Turnover Ripple Wave from card 01 to card 40!
+      const stepInterval = 14;
       setTimeout(() => {
         cards.forEach((card, i) => {
           setTimeout(() => {
             card.style.transition = 'transform 0.14s ease-out';
-            const offsetFromMid = i - (total / 2);
-            const tx = Math.max(-140, Math.min(140, offsetFromMid * (isMobile ? 7 : 12)));
-            card.style.transform = `translateX(${tx}px) translateY(-18px) translateZ(${15 + i * 0.5}px) rotateZ(0deg) scale(0.96)`;
-            if (i % 6 === 0) playTone(400 + i * 15, 'sine', 0.03);
+            const offset = i - (total / 2);
+            const tx = Math.max(-170, Math.min(170, offset * (isMobile ? 8.5 : 14.5)));
+            card.style.transform = `translateX(${tx}px) translateY(-24px) translateZ(${20 + i * 0.5}px) rotateX(16deg) rotateZ(0deg) scale(0.98)`;
+            playRiffleTick(i);
 
             setTimeout(() => {
               card.style.transition = 'transform 0.14s ease-in';
-              card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateZ(0deg) scale(0.95)`;
+              card.style.transform = `translateX(${tx}px) translateY(0px) translateZ(${i * 0.35}px) rotateX(0deg) scale(0.94)`;
             }, 120);
-          }, i * 14);
+          }, i * stepInterval);
         });
-      }, 380);
+      }, 1300);
 
+      // Phase 8: Scoop ribbon squarely together and settle
+      const waveDuration = total * stepInterval;
       setTimeout(() => {
         playDeckSlap();
-      }, 1050);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.22s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+        });
+      }, 1300 + waveDuration + 140);
 
-      setTimeout(onComplete, 1250);
+      setTimeout(onComplete, 1300 + waveDuration + 380);
     }
 
-    // STYLE 3: 360° PEACOCK ARC UNFURL & SWEEP GATHER
-    function runUnfurlFanSort(cards, isMobile, isTablet, onComplete) {
+    // STYLE 2: TRIPLE PACKET STRIPPING & ORDERED ASSEMBLY
+    function runTriplePacketAssemblySort(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      const total = cards.length;
+      const splitX = isMobile ? 90 : 135;
+
+      // Phase 1: Gather to center
       cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.38s cubic-bezier(0.16, 1.15, 0.3, 1)';
+        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
         card.style.opacity = '1';
         card.style.visibility = 'visible';
         card.style.zIndex = `${i + 1}`;
-        const norm = (i / (total - 1)) - 0.5;
-        const rot = norm * (isMobile ? 48 : 68);
-        const tx = norm * (isMobile ? 130 : 190);
-        const ty = Math.abs(norm) * (isMobile ? 18 : 28);
-        card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${i * 0.3}px) rotateZ(${rot}deg) scale(0.90)`;
+        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
       });
 
-      // Quick sweep gather into neat deck
+      // Phase 2: Split into 3 ordered packets across the felt
       setTimeout(() => {
-        playWhooshSound();
-        triggerHaptic([20, 30]);
+        playTone(340, 'triangle', 0.08);
+        triggerHaptic(18);
         cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.22s cubic-bezier(0.2, 1, 0.3, 1)';
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
-          }, (total - 1 - i) * 6);
+          card.style.transition = 'transform 0.32s cubic-bezier(0.16, 0.9, 0.28, 1)';
+          if (i >= 26) {
+            // Packet 3 (High): Right
+            card.style.transform = `translateX(${splitX}px) translateY(-15px) translateZ(20px) rotateZ(8deg) scale(0.92)`;
+          } else if (i >= 13) {
+            // Packet 2 (Mid): Center
+            card.style.transform = `translateX(0px) translateY(18px) translateZ(50px) scale(0.96)`;
+          } else {
+            // Packet 1 (Low 01-13): Left
+            card.style.transform = `translateX(${-splitX}px) translateY(-15px) translateZ(20px) rotateZ(-8deg) scale(0.92)`;
+          }
         });
-      }, 480);
+      }, 300);
 
+      // Phase 3: Packet 3 slides squarely under Packet 2
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic(15);
+        cards.forEach((card, i) => {
+          if (i >= 13) {
+            card.style.transition = 'transform 0.24s cubic-bezier(0.18, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
+          }
+        });
+      }, 680);
+
+      // Phase 4: Packet 1 (Sediaan 01) lands boldly on top of the stack!
       setTimeout(() => {
         playDeckSlap();
+        triggerHaptic([30, 45]);
+        triggerControllerRumble(90, 0.5, 0.8);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.22s cubic-bezier(0.15, 0, 0.25, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
+        });
       }, 980);
 
-      setTimeout(onComplete, 1180);
+      setTimeout(onComplete, 1260);
     }
 
     // Toggle between Mode Urut (Sequential) and Mode Acak (Shuffle / Gambling)
@@ -3738,16 +3869,15 @@
     }
 
     // =======================================================
-    // PICK RANDOM CARD ANIMATION SUITE (3 DIVERSE CASINO & CARDISTRY STYLES)
-    // 1. Slot Machine Reel (Inertia Deceleration Ticker)
-    // 2. Elevator Pop Cut (Cardistry Pop-Up Flourish)
-    // 3. Vegas Starburst (Radial Burst & Laser Focus)
+    // =======================================================
+    // DEALER & MAGICIAN PICK RANDOM CARD SUITE
+    // 1. Magician's Ribbon Spread, Slide-Out & Reveal
+    // 2. Casino Dealer's Table Cut & Blind Draw
     // =======================================================
     let randomPickStyleIndex = 0;
     const RANDOM_PICK_STYLES = [
-      { id: 'slot', name: 'Slot Machine Reel', fn: runSlotMachineReel },
-      { id: 'elevator', name: 'Elevator Pop Cut', fn: runElevatorPopDraw },
-      { id: 'starburst', name: 'Vegas Starburst', fn: runVegasStarburstDraw },
+      { id: 'ribbon-slide', name: 'Ribbon Spread & Slide-Out', fn: runRibbonSpreadSlideOut },
+      { id: 'dealer-cut', name: 'Table Cut & Blind Draw', fn: runDealerTableCutDraw },
     ];
 
     function pickRandomCard(forcedStyleIndex = null) {
@@ -3773,6 +3903,7 @@
         updateCardPositions(true, false);
         playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
         triggerHaptic([30, 60]);
+        triggerControllerRumble(130, 0.45, 0.85);
         isShuffling = false;
         const targetCard = sessionCards[targetIdx];
         const cardNum = targetCard && targetCard.id ? String(targetCard.id).padStart(2, '0') : String(targetIdx + 1).padStart(2, '0');
@@ -3780,89 +3911,147 @@
       });
     }
 
-    // STYLE 1: SLOT MACHINE REEL (PROGRESSIVE INERTIA DECELERATION)
-    function runSlotMachineReel(targetIdx, onComplete) {
-      const delays = [35, 40, 48, 58, 72, 92, 120, 160, 215, 280];
-      let step = 0;
-
-      function tick() {
-        if (step < delays.length) {
-          const tempIdx = Math.floor(Math.random() * sessionCards.length);
-          currentIndex = tempIdx;
-          updateCardPositions(true, true, 'next');
-          playTone(340 + step * 40, 'sine', 0.035);
-          triggerHaptic(8);
-          step++;
-          setTimeout(tick, delays[step - 1]);
-        } else {
-          onComplete();
-        }
-      }
-      tick();
-    }
-
-    // STYLE 2: CARDISTRY ELEVATOR POP-OUT CUT
-    function runElevatorPopDraw(targetIdx, onComplete) {
-      playWhooshSound();
+    // STYLE 1: MAGICIAN'S RIBBON SPREAD, SLIDE-OUT & TABLE SLAP
+    function runRibbonSpreadSlideOut(targetIdx, onComplete) {
+      playGatherSound();
       const cards = Array.from(stage3D.querySelectorAll('.big-card'));
       const isMobile = window.innerWidth <= 600;
-      const splitX = isMobile ? 80 : 125;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+      const total = cards.length;
 
-      // Split visible deck in two halves
+      // Phase 1: All cards cascade into a broad, sweeping ribbon spread
       cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)';
-        const offset = i - currentIndex;
-        if (offset <= 0) {
-          card.style.transform = `translateX(${-splitX}px) translateY(0px) translateZ(0px) rotateY(12deg) scale(0.90)`;
-        } else {
-          card.style.transform = `translateX(${splitX}px) translateY(0px) translateZ(0px) rotateY(-12deg) scale(0.90)`;
+        card.style.transition = 'transform 0.36s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.zIndex = `${i + 1}`;
+        const offset = i - (total / 2);
+        const tx = Math.max(-175, Math.min(175, offset * (isMobile ? 8.5 : 14.5)));
+        const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2 : 3.5);
+        card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -5 : 5}px) translateZ(${i * 0.35}px) rotateZ(${rz}deg) scale(0.92)`;
+      });
+      playWhooshSound();
+
+      // Phase 2: Chosen card physically nudged / slides forward 60px out from the line
+      setTimeout(() => {
+        playTone(480, 'triangle', 0.08);
+        triggerHaptic([25, 35]);
+        const targetCard = cards[targetIdx];
+        if (targetCard) {
+          targetCard.style.transition = 'transform 0.30s cubic-bezier(0.16, 1.25, 0.3, 1)';
+          targetCard.style.zIndex = '200';
+          const offset = targetIdx - (total / 2);
+          const currentTx = Math.max(-175, Math.min(175, offset * (isMobile ? 8.5 : 14.5)));
+          targetCard.style.transform = `translateX(${currentTx}px) translateY(${isMobile ? -48 : -65}px) translateZ(85px) rotateX(-12deg) scale(1.08)`;
         }
+      }, 420);
+
+      // Phase 3: Magician pulls the chosen card high into the 3D air, ribbon sweeps together
+      setTimeout(() => {
+        playWhooshSound();
+        triggerHaptic(20);
+        const targetCard = cards[targetIdx];
+        if (targetCard) {
+          targetCard.style.transition = 'transform 0.34s cubic-bezier(0.16, 1.15, 0.3, 1)';
+          targetCard.style.zIndex = '250';
+          targetCard.style.transform = `translateX(0px) translateY(${isMobile ? -55 : -80}px) translateZ(120px) rotateX(0deg) rotateY(0deg) scale(1.18)`;
+        }
+
+        // Ribbon sweeps together underneath it into center stack
+        cards.forEach((card, i) => {
+          if (i !== targetIdx) {
+            card.style.transition = 'transform 0.26s cubic-bezier(0.2, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateZ(0deg) scale(0.95)`;
+          }
+        });
+      }, 780);
+
+      // Phase 4: Chosen card slams down dead center onto the table felt!
+      setTimeout(() => {
+        playDeckSlap();
+        triggerHaptic([35, 55]);
+        triggerControllerRumble(95, 0.6, 0.9);
+        const targetCard = cards[targetIdx];
+        if (targetCard) {
+          targetCard.style.transition = 'transform 0.16s cubic-bezier(0.12, 0, 0.25, 1)';
+          targetCard.style.transform = `translateX(0px) translateY(0px) translateZ(46px) rotateY(0deg) rotateZ(0deg) scale(1.22)`;
+        }
+      }, 1120);
+
+      setTimeout(onComplete, 1340);
+    }
+
+    // STYLE 2: CASINO DEALER'S TABLE CUT & BLIND DRAW
+    function runDealerTableCutDraw(targetIdx, onComplete) {
+      playGatherSound();
+      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+      const splitX = isMobile ? 100 : (isTablet ? 140 : 180);
+
+      // Phase 1: All cards gather squarely into a center stack
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.zIndex = `${i + 1}`;
+        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
       });
 
-      // Target card pops high out of the elevator slot
+      // Phase 2: The Table Cut - Deck splits cleanly into Left and Right packets
       setTimeout(() => {
-        playTone(520, 'triangle', 0.10);
-        triggerHaptic([25, 45]);
-        currentIndex = targetIdx;
-        const activeCard = cards[targetIdx];
-        if (activeCard) {
-          activeCard.style.transition = 'transform 0.32s cubic-bezier(0.16, 1.25, 0.3, 1)';
-          activeCard.style.zIndex = '100';
-          activeCard.style.transform = `translateX(0px) translateY(${isMobile ? -45 : -70}px) translateZ(75px) rotateY(0deg) scale(1.18)`;
-        }
+        playTone(360, 'triangle', 0.09);
+        triggerHaptic(18);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.32s cubic-bezier(0.16, 0.9, 0.28, 1)';
+          if (i === targetIdx) {
+            // Target card stays poised between the cut
+            card.style.zIndex = '150';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(35px) scale(0.96)`;
+          } else if (i % 2 === 0) {
+            // Left cut packet
+            card.style.transform = `translateX(${-splitX}px) translateY(-10px) translateZ(${i * 0.3}px) rotateY(16deg) rotateZ(-6deg) scale(0.90)`;
+          } else {
+            // Right cut packet
+            card.style.transform = `translateX(${splitX}px) translateY(10px) translateZ(${i * 0.3}px) rotateY(-16deg) rotateZ(6deg) scale(0.90)`;
+          }
+        });
       }, 300);
 
-      // Snap back into place
+      // Phase 3: Target card slides horizontally out of cut gap and elevates toward viewer
+      setTimeout(() => {
+        playWhooshSound();
+        triggerHaptic([25, 40]);
+        triggerControllerRumble(75, 0.4, 0.6);
+        const targetCard = cards[targetIdx];
+        if (targetCard) {
+          targetCard.style.transition = 'transform 0.34s cubic-bezier(0.16, 1.25, 0.3, 1)';
+          targetCard.style.zIndex = '200';
+          const liftY = isMobile ? -55 : -80;
+          targetCard.style.transform = `translateX(0px) translateY(${liftY}px) translateZ(110px) rotateY(0deg) rotateZ(0deg) scale(1.18)`;
+        }
+      }, 640);
+
+      // Phase 4: Side packets slide back together, target card slams down onto the felt
       setTimeout(() => {
         playDeckSlap();
-        onComplete();
-      }, 720);
-    }
+        triggerHaptic([35, 50]);
+        triggerControllerRumble(95, 0.6, 0.9);
+        const targetCard = cards[targetIdx];
+        if (targetCard) {
+          targetCard.style.transition = 'transform 0.16s cubic-bezier(0.12, 0, 0.25, 1)';
+          targetCard.style.transform = `translateX(0px) translateY(0px) translateZ(46px) rotateY(0deg) rotateZ(0deg) scale(1.22)`;
+        }
+        // Packets close flush
+        cards.forEach((card, i) => {
+          if (i !== targetIdx) {
+            card.style.transition = 'transform 0.22s cubic-bezier(0.2, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+          }
+        });
+      }, 1000);
 
-    // STYLE 3: VEGAS STARBURST LASER DRAW
-    function runVegasStarburstDraw(targetIdx, onComplete) {
-      playWhooshSound();
-      triggerHaptic([30, 40]);
-      triggerControllerRumble(80, 0.4, 0.6);
-      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
-      const isMobile = window.innerWidth <= 600;
-
-      // Burst outward in starburst
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.30s cubic-bezier(0.16, 1.2, 0.3, 1)';
-        const dir = (i % 2 === 0 ? 1 : -1);
-        const dist = (isMobile ? 110 : 170) + (i % 4) * 20;
-        const ty = (i % 3 === 0 ? -35 : 35);
-        const rot = dir * (8 + (i % 5) * 4);
-        card.style.transform = `translateX(${dir * dist}px) translateY(${ty}px) translateZ(30px) rotateZ(${rot}deg) scale(0.85)`;
-      });
-
-      // Converge and slam onto target card
-      setTimeout(() => {
-        playTone(587.33, 'triangle', 0.12);
-        playDeckSlap();
-        onComplete();
-      }, 420);
+      setTimeout(onComplete, 1240);
     }
     
     // Alias for compatibility
@@ -4297,13 +4486,17 @@
     }
     requestAnimationFrame(pollGamepad);
 
-    // INITIAL LAUNCH: Load saved or default card pack
+    // INITIAL LAUNCH: Load card pack, set resting stack, and present "Pick a Block" entrance screen first!
     let savedPack = null;
     try {
       savedPack = localStorage.getItem('activeCardPack');
     } catch (e) {}
     loadCardPack(savedPack || 'blok-3.1', false);
+    renderInitialStackedStage();
     setPlayMode('sequential');
+
+    // Show "Pick a Block" onboarding screen so cards are not immediately shown
+    openEntranceBlockPicker();
   </script>
 </body>
 </html>
