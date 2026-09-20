@@ -117,7 +117,7 @@
       width: clamp(28px, 3.2vw, 38px);
       height: clamp(28px, 3.2vw, 38px);
       border-radius: 999px;
-      background-color: #ffd15c; /* CANARY GOLD COIN */
+      background-color: var(--white);
       border: 2.5px solid var(--primary-deep);
       box-shadow: 0 4px 0 var(--primary-deep), 0 0 0 2px var(--white);
       display: flex;
@@ -139,7 +139,7 @@
       font-family: var(--font-display);
       font-size: clamp(1.45rem, 3.2vw, 2.6rem);
       font-weight: normal;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       line-height: 1.18;
       margin: 0;
@@ -155,22 +155,14 @@
     /* TONE 1: GAMBLING WITH (CRISP WHITE WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
     .title-tone-1 {
       color: #ffffff;
-      -webkit-text-stroke: 1.8px var(--primary-deep);
+      -webkit-text-stroke: 1.5px var(--primary-deep);
       text-shadow:
-        -2px -2px 0 var(--primary-deep),
-         0   -2px 0 var(--primary-deep),
-         2px -2px 0 var(--primary-deep),
-        -2px  0   0 var(--primary-deep),
-         2px  0   0 var(--primary-deep),
-        -2px  2px 0 var(--primary-deep),
-         0    2px 0 var(--primary-deep),
-         2px  2px 0 var(--primary-deep),
-        -3.5px -3.5px 0 #ffffff,
-         3.5px -3.5px 0 #ffffff,
-        -3.5px  3.5px 0 #ffffff,
-         3.5px  3.5px 0 #ffffff,
-         0px 4px 0 var(--primary-deep),
-         0px 7px 0 var(--primary-deep);
+        -1.5px -1.5px 0 var(--primary-deep),
+         1.5px -1.5px 0 var(--primary-deep),
+        -1.5px  1.5px 0 var(--primary-deep),
+         1.5px  1.5px 0 var(--primary-deep),
+         0px 3px 0 var(--primary-deep),
+         0px 6px 0 var(--primary-deep);
       display: inline-block;
       transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
     }
@@ -178,25 +170,17 @@
       transform: translateY(-2px) rotate(-1deg);
     }
 
-    /* TONE 2: PRINCE NCIT (VIBRANT CANARY GOLD WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
+    /* TONE 2: PRINCE NCIT (CRISP WHITE WITH DEEP NAVY MULTI-LAYER OUTLINE & 3D SHADOW) */
     .title-tone-2 {
-      color: #ffd15c;
-      -webkit-text-stroke: 1.8px var(--primary-deep);
+      color: #ffffff;
+      -webkit-text-stroke: 1.5px var(--primary-deep);
       text-shadow:
-        -2px -2px 0 var(--primary-deep),
-         0   -2px 0 var(--primary-deep),
-         2px -2px 0 var(--primary-deep),
-        -2px  0   0 var(--primary-deep),
-         2px  0   0 var(--primary-deep),
-        -2px  2px 0 var(--primary-deep),
-         0    2px 0 var(--primary-deep),
-         2px  2px 0 var(--primary-deep),
-        -3.5px -3.5px 0 #ffffff,
-         3.5px -3.5px 0 #ffffff,
-        -3.5px  3.5px 0 #ffffff,
-         3.5px  3.5px 0 #ffffff,
-         0px 4px 0 var(--primary-deep),
-         0px 7px 0 var(--primary-deep);
+        -1.5px -1.5px 0 var(--primary-deep),
+         1.5px -1.5px 0 var(--primary-deep),
+        -1.5px  1.5px 0 var(--primary-deep),
+         1.5px  1.5px 0 var(--primary-deep),
+         0px 3px 0 var(--primary-deep),
+         0px 6px 0 var(--primary-deep);
       display: inline-block;
       transition: transform 0.2s cubic-bezier(0.16, 1.2, 0.3, 1);
     }
@@ -878,56 +862,56 @@
 
     /* =======================================================
        STREAM TOAST / RAPID BROWSE HUD (FLOATING GAME WIDGET)
-       POPS PROMINENTLY OVER FULL-SCREEN SHADOW SCRIM
+       DEAD CENTER OVER FULL-SCREEN SHADOW SCRIM
        ======================================================= */
     .rapid-stream-hud {
       position: fixed;
-      top: clamp(14px, 3vh, 28px);
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%) translateY(-14px) scale(0.90);
+      transform: translate(-50%, -50%) scale(0.82);
       opacity: 0;
       pointer-events: none;
-      z-index: 3500; /* Above scrim */
-      transition: opacity 0.2s ease, transform 0.24s cubic-bezier(0.16, 1.25, 0.3, 1);
+      z-index: 3600; /* Above scrim (3400) */
+      transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1.25, 0.3, 1);
     }
     .rapid-stream-hud.active {
       opacity: 1;
-      transform: translateX(-50%) translateY(0) scale(1.06);
+      transform: translate(-50%, -50%) scale(1.08);
     }
     .hud-pill {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 7px 18px;
+      gap: 12px;
+      padding: 12px 24px;
       border-radius: 999px;
       background-color: var(--white);
-      border: 3px solid var(--primary-deep);
-      box-shadow: 0 6px 0 var(--primary-deep), 0 0 0 4px var(--white);
+      border: 3.5px solid var(--primary-deep);
+      box-shadow: 0 8px 0 var(--primary-deep), 0 0 0 5px var(--white);
       color: var(--primary-deep);
       font-family: var(--font-display);
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      font-size: clamp(13px, 1.5vw, 16px);
+      letter-spacing: 1.8px;
       font-weight: normal;
       text-transform: uppercase;
       user-select: none;
     }
     .hud-icon {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       stroke-width: 2.8;
       color: var(--primary);
       animation: hudIconBob 0.35s ease-in-out infinite alternate;
     }
     @keyframes hudIconBob {
-      from { transform: translateX(-2px); }
-      to { transform: translateX(2px); }
+      from { transform: translateX(-3px); }
+      to { transform: translateX(3px); }
     }
     .hud-label {
       font-family: var(--font-display);
-      font-size: 12px;
+      font-size: clamp(13px, 1.5vw, 16px);
       font-weight: normal;
       color: var(--primary-deep);
-      letter-spacing: 1.5px;
+      letter-spacing: 1.8px;
     }
     .hud-divider {
       color: var(--primary);
@@ -935,16 +919,16 @@
     }
     .hud-counter {
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 15px;
       color: var(--primary-deep);
       font-weight: 800;
       letter-spacing: 0.8px;
-      min-width: 52px;
+      min-width: 58px;
       text-align: center;
       background: #f6f8fe;
-      border: 1.5px solid var(--primary-deep);
-      border-radius: 6px;
-      padding: 1px 6px;
+      border: 2px solid var(--primary-deep);
+      border-radius: 8px;
+      padding: 2px 8px;
     }
 
     @keyframes hudBoltPulse {
@@ -1407,7 +1391,7 @@
       transform: translate(-50%, -50%) scale(0.65) rotate(-3deg);
       opacity: 0;
       pointer-events: none;
-      z-index: 3500;
+      z-index: 3600;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2066,18 +2050,6 @@
        ======================================================= -->
   <section class="carousel-stage">
     <div class="viewport-3d" id="viewport3D">
-      <!-- Rapid Stream High-Speed HUD -->
-      <div class="rapid-stream-hud" id="rapidStreamHud" aria-hidden="true">
-        <div class="hud-pill">
-          <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="13 17 18 12 13 7"></polyline>
-            <polyline points="6 17 11 12 6 7"></polyline>
-          </svg>
-          <span class="hud-label">GESER CEPAT</span>
-          <span class="hud-divider">&bull;</span>
-          <span class="hud-counter" id="hudCounter">01 / 40</span>
-        </div>
-      </div>
       <div class="card-stage-container" id="stage3D">
         <!-- Big Cards inserted dynamically via JS -->
       </div>
@@ -2308,6 +2280,19 @@
   <!-- FULL-SCREEN DRAMATIC SHADOW SCRIM FOR TOAST & STREAM TOAST -->
   <div class="screen-scrim" id="screenScrim" aria-hidden="true"></div>
 
+  <!-- RAPID STREAM HIGH-SPEED HUD (DEAD CENTER OVER FULL-SCREEN SCRIM) -->
+  <div class="rapid-stream-hud" id="rapidStreamHud" aria-hidden="true">
+    <div class="hud-pill">
+      <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="13 17 18 12 13 7"></polyline>
+        <polyline points="6 17 11 12 6 7"></polyline>
+      </svg>
+      <span class="hud-label">RAPID BROWSE</span>
+      <span class="hud-divider">&bull;</span>
+      <span class="hud-counter" id="hudCounter">01 / 40</span>
+    </div>
+  </div>
+
   <!-- TOAST NOTICE (GAME-STYLE CENTER SPLASH TOAST WITH FULL-SCREEN SHADOW) -->
   <div class="toast-notice" id="toastNotice" aria-live="polite">
     <div class="toast-card-badge">
@@ -2384,7 +2369,7 @@
       if (currentPlayMode === 'shuffle') {
         sessionCards = shuffleCardsArray(filteredBase);
       } else {
-        sessionCards = [...filteredBase];
+        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
       }
 
       currentIndex = 0;
@@ -2646,6 +2631,22 @@
       } catch(e) {}
     }
 
+    function playDeckTapSound() {
+      try {
+        if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+        playTone(190, 'triangle', 0.04);
+        setTimeout(() => playTone(120, 'sine', 0.05), 18);
+      } catch(e) {}
+    }
+
+    function playWhooshSound() {
+      try {
+        if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+        playTone(260, 'sine', 0.07);
+        setTimeout(() => playTone(460, 'sine', 0.06), 35);
+      } catch(e) {}
+    }
+
     let toastTimer = null;
     function showToast(titleOrText, sub = null) {
       if (!toastNotice) return;
@@ -2717,15 +2718,14 @@
         cardEl.dataset.index = idx;
 
         let contentWindowHtml = '';
-        let bannerLabel = '';
+        const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
+        const bannerLabel = card.type === 'preparat' ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
 
         if (card.type === 'preparat') {
-          bannerLabel = `SEDIAAN ${String(idx + 1).padStart(2, '0')}`;
           contentWindowHtml = `
             <img src="${card.image}" alt="Sediaan Histopatologi" class="card-specimen-img">
           `;
         } else {
-          bannerLabel = `TEORI ${String(idx + 1).padStart(2, '0')}`;
           contentWindowHtml = `
             <div class="theory-window-wrap">
               <div class="theory-window-badge">SOAL TEORI PRAKTIKUM</div>
@@ -2876,7 +2876,8 @@
       const curCard = sessionCards[currentIndex];
       if (!curCard) return;
       const isPrep = curCard.type === 'preparat';
-      const labelText = isPrep ? `SEDIAAN ${currentIndex + 1}` : `SOAL TEORI ${currentIndex + 1}`;
+      const cardNum = curCard.id ? String(curCard.id).padStart(2, '0') : String(currentIndex + 1).padStart(2, '0');
+      const labelText = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
       const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
       activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATOLOGI' : 'TEORI & KASUS'}`;
@@ -2924,7 +2925,12 @@
       const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
       styleToRun.fn(cards, isMobile, isTablet, () => {
-        sessionCards = shuffleCardsArray(filteredBase);
+        let shuffled = shuffleCardsArray(filteredBase);
+        if (shuffled.length > 1 && shuffled[0].id === sessionCards[currentIndex]?.id) {
+          const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
+          [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
+        }
+        sessionCards = shuffled;
         currentIndex = 0;
         rebuildStageCards();
         updateCardPositions(true);
@@ -3196,19 +3202,181 @@
       setTimeout(onComplete, 1400);
     }
 
+    // =======================================================
+    // SEQUENTIAL MODE CARDISTRY ALIGNMENT SUITE (3 DIVERSE STYLES)
+    // 1. Square-Up & Table Tap (Neat Deck Alignment)
+    // 2. Accordion Ribbon Cascade & Wave Ripple
+    // 3. Peacock Arc Unfurl & Sweep Gather
+    // =======================================================
+    let sequentialStyleIndex = 0;
+    const SEQUENTIAL_STYLES = [
+      { id: 'square', name: 'Square-Up & Tap', fn: runSquareUpDeckAlign },
+      { id: 'accordion', name: 'Accordion Cascade', fn: runAccordionRibbonSort },
+      { id: 'unfurl', name: 'Peacock Fan', fn: runUnfurlFanSort },
+    ];
+
+    function startSequentialSort(forcedStyleIndex = null) {
+      if (isShuffling) return;
+      isShuffling = true;
+      currentPlayMode = 'sequential';
+      btnModeUrut.classList.add('active');
+      btnModeAcak.classList.remove('active');
+
+      const styleToRun = forcedStyleIndex !== null 
+        ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
+        : SEQUENTIAL_STYLES[sequentialStyleIndex % SEQUENTIAL_STYLES.length];
+      
+      sequentialStyleIndex = (sequentialStyleIndex + 1) % SEQUENTIAL_STYLES.length;
+
+      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+
+      styleToRun.fn(cards, isMobile, isTablet, () => {
+        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
+        currentIndex = 0;
+        rebuildStageCards();
+        updateCardPositions(true);
+        playChimeSound();
+        triggerHaptic([15, 30, 20]);
+        triggerControllerRumble(120, 0.4, 0.8);
+        isShuffling = false;
+        showToast('Sequential Mode', `1 to ${sessionCards.length} Cards`);
+      });
+    }
+
+    // STYLE 1: SQUARE-UP & DOUBLE TABLE TAP
+    function runSquareUpDeckAlign(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.32s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.zIndex = `${i + 1}`;
+        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+      });
+
+      // Lift deck slightly
+      setTimeout(() => {
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.18s ease-out';
+          card.style.transform = `translateX(0px) translateY(-22px) translateZ(${i * 0.3}px) scale(0.97)`;
+        });
+      }, 340);
+
+      // Knock 1 down against table
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic([20, 30]);
+        triggerControllerRumble(70, 0.5, 0.8);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+        });
+      }, 540);
+
+      // Lift deck 2
+      setTimeout(() => {
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.16s ease-out';
+          card.style.transform = `translateX(0px) translateY(-14px) translateZ(${i * 0.3}px) scale(0.96)`;
+        });
+      }, 680);
+
+      // Knock 2 down sharp
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic([25, 35]);
+        triggerControllerRumble(80, 0.6, 0.9);
+        cards.forEach((card, i) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+        });
+      }, 860);
+
+      setTimeout(onComplete, 1100);
+    }
+
+    // STYLE 2: ACCORDION RIBBON CASCADE & WAVE RIPPLE
+    function runAccordionRibbonSort(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const total = cards.length;
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.zIndex = `${i + 1}`;
+        const offsetFromMid = i - (total / 2);
+        const tx = Math.max(-140, Math.min(140, offsetFromMid * (isMobile ? 7 : 12)));
+        const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2.5 : 4);
+        card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -6 : 6}px) translateZ(${i * 0.4}px) rotateZ(${rz}deg) scale(0.92)`;
+      });
+
+      // Wave ripple across ribbon
+      setTimeout(() => {
+        cards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.14s ease-out';
+            const offsetFromMid = i - (total / 2);
+            const tx = Math.max(-140, Math.min(140, offsetFromMid * (isMobile ? 7 : 12)));
+            card.style.transform = `translateX(${tx}px) translateY(-18px) translateZ(${15 + i * 0.5}px) rotateZ(0deg) scale(0.96)`;
+            if (i % 6 === 0) playTone(400 + i * 15, 'sine', 0.03);
+
+            setTimeout(() => {
+              card.style.transition = 'transform 0.14s ease-in';
+              card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateZ(0deg) scale(0.95)`;
+            }, 120);
+          }, i * 14);
+        });
+      }, 380);
+
+      setTimeout(() => {
+        playDeckSlap();
+      }, 1050);
+
+      setTimeout(onComplete, 1250);
+    }
+
+    // STYLE 3: 360° PEACOCK ARC UNFURL & SWEEP GATHER
+    function runUnfurlFanSort(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const total = cards.length;
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.38s cubic-bezier(0.16, 1.15, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.zIndex = `${i + 1}`;
+        const norm = (i / (total - 1)) - 0.5;
+        const rot = norm * (isMobile ? 48 : 68);
+        const tx = norm * (isMobile ? 130 : 190);
+        const ty = Math.abs(norm) * (isMobile ? 18 : 28);
+        card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${i * 0.3}px) rotateZ(${rot}deg) scale(0.90)`;
+      });
+
+      // Quick sweep gather into neat deck
+      setTimeout(() => {
+        playWhooshSound();
+        triggerHaptic([20, 30]);
+        cards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.22s cubic-bezier(0.2, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
+          }, (total - 1 - i) * 6);
+        });
+      }, 480);
+
+      setTimeout(() => {
+        playDeckSlap();
+      }, 980);
+
+      setTimeout(onComplete, 1180);
+    }
+
     // Toggle between Mode Urut (Sequential) and Mode Acak (Shuffle / Gambling)
     function setPlayMode(mode) {
       if (isShuffling) return;
       if (mode === 'sequential') {
-        currentPlayMode = 'sequential';
-        btnModeUrut.classList.add('active');
-        btnModeAcak.classList.remove('active');
-        sessionCards = [...filteredBase];
-        currentIndex = 0;
-        playTone(440, 'sine', 0.08);
-        rebuildStageCards();
-        updateCardPositions(true);
-        showToast('Sequential Mode', `1 to ${sessionCards.length} Cards`);
+        startSequentialSort();
       } else {
         startRealisticShuffle();
       }
@@ -3230,7 +3398,7 @@
       if (currentPlayMode === 'shuffle') {
         sessionCards = shuffleCardsArray(filteredBase);
       } else {
-        sessionCards = [...filteredBase];
+        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
       }
 
       currentIndex = 0;
@@ -3426,8 +3594,10 @@
       const total = sessionCards.length;
 
       const isPrep = card.type === 'preparat';
+      const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
+      const cardLabel = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
       modalTypeBadge.textContent = isPrep ? 'SEDIAAN HISTOPATOLOGI' : 'SOAL TEORI & KASUS';
-      modalIndexText.textContent = `SEDIAAN ${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+      modalIndexText.textContent = `${cardLabel} • ${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
       // LEFT COLUMN: High-res image or Theory vignette box
       if (card.type === 'preparat' && card.image) {
@@ -3548,7 +3718,20 @@
       lightboxOverlay.classList.remove('active');
     }
 
-    function pickRandomCard() {
+    // =======================================================
+    // PICK RANDOM CARD ANIMATION SUITE (3 DIVERSE CASINO & CARDISTRY STYLES)
+    // 1. Slot Machine Reel (Inertia Deceleration Ticker)
+    // 2. Elevator Pop Cut (Cardistry Pop-Up Flourish)
+    // 3. Vegas Starburst (Radial Burst & Laser Focus)
+    // =======================================================
+    let randomPickStyleIndex = 0;
+    const RANDOM_PICK_STYLES = [
+      { id: 'slot', name: 'Slot Machine Reel', fn: runSlotMachineReel },
+      { id: 'elevator', name: 'Elevator Pop Cut', fn: runElevatorPopDraw },
+      { id: 'starburst', name: 'Vegas Starburst', fn: runVegasStarburstDraw },
+    ];
+
+    function pickRandomCard(forcedStyleIndex = null) {
       if (isShuffling || sessionCards.length <= 1) return;
       
       isShuffling = true;
@@ -3560,26 +3743,107 @@
         targetIdx = Math.floor(Math.random() * sessionCards.length);
       } while (targetIdx === currentIndex && sessionCards.length > 1);
 
-      // Exciting card riffle spin animation
-      const steps = 6;
+      const styleToRun = forcedStyleIndex !== null
+        ? RANDOM_PICK_STYLES[forcedStyleIndex % RANDOM_PICK_STYLES.length]
+        : RANDOM_PICK_STYLES[randomPickStyleIndex % RANDOM_PICK_STYLES.length];
+
+      randomPickStyleIndex = (randomPickStyleIndex + 1) % RANDOM_PICK_STYLES.length;
+
+      styleToRun.fn(targetIdx, () => {
+        currentIndex = targetIdx;
+        updateCardPositions(true, false);
+        playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
+        triggerHaptic([30, 60]);
+        isShuffling = false;
+        const targetCard = sessionCards[targetIdx];
+        const cardNum = targetCard && targetCard.id ? String(targetCard.id).padStart(2, '0') : String(targetIdx + 1).padStart(2, '0');
+        showToast('Picked Random Card', `Sediaan ${cardNum}`);
+      });
+    }
+
+    // STYLE 1: SLOT MACHINE REEL (PROGRESSIVE INERTIA DECELERATION)
+    function runSlotMachineReel(targetIdx, onComplete) {
+      const delays = [35, 40, 48, 58, 72, 92, 120, 160, 215, 280];
       let step = 0;
-      const interval = setInterval(() => {
-        step++;
-        const tempIdx = Math.floor(Math.random() * sessionCards.length);
-        currentIndex = tempIdx;
-        updateCardPositions(true, true, 'next');
-        playTone(380 + step * 50, 'sine', 0.04);
-        
-        if (step >= steps) {
-          clearInterval(interval);
-          currentIndex = targetIdx;
-          updateCardPositions(true, false);
-          playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
-          triggerHaptic([30, 60]);
-          isShuffling = false;
-          showToast('Picked Random Card', `Card ${String(targetIdx + 1).padStart(2, '0')}`);
+
+      function tick() {
+        if (step < delays.length) {
+          const tempIdx = Math.floor(Math.random() * sessionCards.length);
+          currentIndex = tempIdx;
+          updateCardPositions(true, true, 'next');
+          playTone(340 + step * 40, 'sine', 0.035);
+          triggerHaptic(8);
+          step++;
+          setTimeout(tick, delays[step - 1]);
+        } else {
+          onComplete();
         }
-      }, 75);
+      }
+      tick();
+    }
+
+    // STYLE 2: CARDISTRY ELEVATOR POP-OUT CUT
+    function runElevatorPopDraw(targetIdx, onComplete) {
+      playWhooshSound();
+      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
+      const isMobile = window.innerWidth <= 600;
+      const splitX = isMobile ? 80 : 125;
+
+      // Split visible deck in two halves
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)';
+        const offset = i - currentIndex;
+        if (offset <= 0) {
+          card.style.transform = `translateX(${-splitX}px) translateY(0px) translateZ(0px) rotateY(12deg) scale(0.90)`;
+        } else {
+          card.style.transform = `translateX(${splitX}px) translateY(0px) translateZ(0px) rotateY(-12deg) scale(0.90)`;
+        }
+      });
+
+      // Target card pops high out of the elevator slot
+      setTimeout(() => {
+        playTone(520, 'triangle', 0.10);
+        triggerHaptic([25, 45]);
+        currentIndex = targetIdx;
+        const activeCard = cards[targetIdx];
+        if (activeCard) {
+          activeCard.style.transition = 'transform 0.32s cubic-bezier(0.16, 1.25, 0.3, 1)';
+          activeCard.style.zIndex = '100';
+          activeCard.style.transform = `translateX(0px) translateY(${isMobile ? -45 : -70}px) translateZ(75px) rotateY(0deg) scale(1.18)`;
+        }
+      }, 300);
+
+      // Snap back into place
+      setTimeout(() => {
+        playDeckSlap();
+        onComplete();
+      }, 720);
+    }
+
+    // STYLE 3: VEGAS STARBURST LASER DRAW
+    function runVegasStarburstDraw(targetIdx, onComplete) {
+      playWhooshSound();
+      triggerHaptic([30, 40]);
+      triggerControllerRumble(80, 0.4, 0.6);
+      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
+      const isMobile = window.innerWidth <= 600;
+
+      // Burst outward in starburst
+      cards.forEach((card, i) => {
+        card.style.transition = 'transform 0.30s cubic-bezier(0.16, 1.2, 0.3, 1)';
+        const dir = (i % 2 === 0 ? 1 : -1);
+        const dist = (isMobile ? 110 : 170) + (i % 4) * 20;
+        const ty = (i % 3 === 0 ? -35 : 35);
+        const rot = dir * (8 + (i % 5) * 4);
+        card.style.transform = `translateX(${dir * dist}px) translateY(${ty}px) translateZ(30px) rotateZ(${rot}deg) scale(0.85)`;
+      });
+
+      // Converge and slam onto target card
+      setTimeout(() => {
+        playTone(587.33, 'triangle', 0.12);
+        playDeckSlap();
+        onComplete();
+      }, 420);
     }
     
     // Alias for compatibility
