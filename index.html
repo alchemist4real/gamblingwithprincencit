@@ -245,6 +245,51 @@
       stroke-width: 2;
     }
 
+    /* RESTORE / RESET REMOVED CARDS PILL (CLEAN DOCK BUTTON) */
+    .btn-reset-removed {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      height: 36px;
+      padding: 0 10px;
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 999px;
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      flex-shrink: 0;
+    }
+    .btn-reset-removed:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      transform: scale(1.04);
+    }
+    .btn-reset-removed svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.2;
+    }
+    .btn-reset-removed .reset-count-badge {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 1px 5px;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .btn-reset-removed:hover .reset-count-badge {
+      background-color: var(--white);
+      color: var(--primary-deep);
+    }
+
     /* =======================================================
        3D STAGE (SPACIOUS, ZERO COLLISION, HIGH IMPACT)
        ======================================================= */
@@ -570,6 +615,32 @@
       color: var(--white);
     }
     .card-banner-reveal-btn svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.2;
+    }
+
+    .card-banner-remove-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border: 1.5px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+      margin-left: 4px;
+    }
+    .card-banner-remove-btn:hover {
+      transform: scale(1.12);
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .card-banner-remove-btn svg {
       width: 13px;
       height: 13px;
       stroke-width: 2.2;
@@ -1055,6 +1126,32 @@
     .modal-close-btn svg {
       width: 16px;
       height: 16px;
+      stroke-width: 2.2;
+    }
+
+    .modal-remove-btn {
+      background: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 999px;
+      color: var(--primary-deep);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+    .modal-remove-btn:hover {
+      background: var(--primary-deep);
+      color: var(--white);
+      transform: scale(1.08);
+    }
+    .modal-remove-btn svg {
+      width: 15px;
+      height: 15px;
       stroke-width: 2.2;
     }
 
@@ -1637,6 +1734,15 @@
         width: 10px;
         height: 10px;
       }
+      .card-banner-remove-btn {
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
+      }
+      .card-banner-remove-btn svg {
+        width: 10px;
+        height: 10px;
+      }
 
       /* SPECIMEN INDICATOR */
       .active-specimen-indicator {
@@ -1680,6 +1786,20 @@
         width: 12px;
         height: 12px;
       }
+      .btn-reset-removed {
+        height: 28px;
+        padding: 0 6px;
+        font-size: 9.5px;
+        gap: 3px;
+      }
+      .btn-reset-removed svg {
+        width: 11px;
+        height: 11px;
+      }
+      .btn-reset-removed .reset-count-badge {
+        padding: 1px 4px;
+        font-size: 9px;
+      }
       .dock-track-info {
         padding: 2px 8px;
       }
@@ -1716,6 +1836,15 @@
       }
       .modal-card-idx {
         font-size: 13px;
+      }
+      .modal-remove-btn {
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+      }
+      .modal-remove-btn svg {
+        width: 13px;
+        height: 13px;
       }
       .modal-close-btn {
         width: 30px;
@@ -2139,6 +2268,15 @@
           </svg>
         </button>
       </div>
+
+      <!-- Restore / Reset Removed Cards (Revealed when cards are discarded) -->
+      <button class="btn-reset-removed" id="btnResetRemoved" onclick="resetRemovedCards()" title="Restore Removed Cards [Z]" aria-label="Restore Removed Cards">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        <span class="reset-count-badge" id="removedCountBadge">0</span>
+      </button>
     </div>
 
     <!-- Center Section: Navigation, Mode Controls & Current Counter -->
@@ -2191,7 +2329,7 @@
       </button>
     </div>
 
-    <!-- Right Section: (🎲) + (👁) + (⛶) (ICON-ONLY 36PX ROUND BUTTONS) -->
+    <!-- Right Section: (🎲) + (👁) + (⊝) + (⛶) (ICON-ONLY 36PX ROUND BUTTONS) -->
     <div class="dock-section dock-right">
       <!-- Dedicated Pick Random Card Button (Icon-Only) -->
       <button class="btn-ctrl-round dock-random-btn" id="btnPickRandom" onclick="pickRandomCard()" title="Acak Sediaan [R / G]" aria-label="Acak Sediaan">
@@ -2213,6 +2351,15 @@
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
         <span class="gamepad-badge" title="Gamepad: Cross">✕</span>
+      </button>
+
+      <!-- Remove Active Card Button (Icon-Only) -->
+      <button class="btn-ctrl-round dock-remove-btn" id="btnRemoveCard" onclick="removeCurrentCard()" title="Remove Card from Deck [Del / X]" aria-label="Remove Card from Deck">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+        <span class="gamepad-badge" title="Gamepad: Circle">○</span>
       </button>
 
       <!-- Fullscreen Button -->
@@ -2239,14 +2386,23 @@
           <span class="modal-type-badge" id="modalTypeBadge">SEDIAAN HISTOPATOLOGI</span>
           <span class="modal-card-idx" id="modalIndexText">SEDIAAN 01 / 40</span>
         </div>
-        <!-- Close Button (SVG Only) -->
-        <button class="modal-close-btn" onclick="closeModal()" title="Tutup (Esc)" aria-label="Tutup">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-          <span class="gamepad-badge" title="Gamepad: Circle">○</span>
-        </button>
+        <div style="display: flex; align-items: center;">
+          <!-- Remove from Deck Button (Inside Modal) -->
+          <button class="modal-remove-btn" onclick="removeCurrentCardFromModal()" title="Remove Card from Deck [Del / X]" aria-label="Remove Card from Deck">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </button>
+          <!-- Close Button (SVG Only) -->
+          <button class="modal-close-btn" onclick="closeModal()" title="Close [Esc]" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span class="gamepad-badge" title="Gamepad: Circle">○</span>
+          </button>
+        </div>
       </div>
 
       <!-- Body: 2 Columns -->
@@ -2259,13 +2415,13 @@
       <div class="modal-footer">
         <div class="modal-nav-group">
           <!-- Modal Prev Button (SVG Only) -->
-          <button class="modal-nav-btn" onclick="prevModalCard()" title="Sediaan Sebelumnya (A / ←)" aria-label="Sediaan Sebelumnya">
+          <button class="modal-nav-btn" onclick="prevModalCard()" title="Previous Card (A / ←)" aria-label="Previous Card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
           <!-- Modal Next Button (SVG Only) -->
-          <button class="modal-nav-btn" onclick="nextModalCard()" title="Sediaan Berikutnya (D / →)" aria-label="Sediaan Berikutnya">
+          <button class="modal-nav-btn" onclick="nextModalCard()" title="Next Card (D / →)" aria-label="Next Card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
@@ -2273,23 +2429,23 @@
         </div>
 
         <div style="font-size: 12px; color: var(--primary-deep); font-weight: 600;">
-          Tekan [Esc] untuk menutup &bull; [←] / [→] untuk mengganti sediaan
+          Press [Esc] to close &bull; [←] / [→] to browse &bull; [Del] to remove card
         </div>
       </div>
     </div>
   </div>
 
   <!-- =======================================================
-       CARD PACK SELECTOR MODAL (CLEAN SOLID, ZERO SHADOWS)
+       CARD PACK SELECTOR MODAL (GAME LOBBY / DECK SELECT)
        ======================================================= -->
   <div class="pack-modal-overlay" id="packModalOverlay" onclick="handlePackOverlayClick(event)">
     <div class="pack-modal-card" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
       <div class="pack-modal-header">
         <div class="pack-modal-header-left">
-          <span class="pack-modal-badge" id="packModalBadge">MODUL PRAKTIKUM</span>
-          <h2 class="pack-modal-title" id="packModalTitle">PILIH BLOK STUDI</h2>
+          <span class="pack-modal-badge" id="packModalBadge">DECK SELECTION</span>
+          <h2 class="pack-modal-title" id="packModalTitle">SELECT STUDY DECK</h2>
         </div>
-        <button class="modal-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Tutup [Esc]" aria-label="Tutup">
+        <button class="modal-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Close [Esc]" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -2298,7 +2454,7 @@
       </div>
       <div class="pack-modal-body">
         <div class="pack-intro-banner" id="packIntroBanner">
-          Pilih modul praktikum untuk memulai sesi belajar & kuis interaktif. Sediaan mikroskopik dan stasiun kasus UKMPPD siap dipelajari.
+          Choose an active card deck to enter the table. Standard competition rules apply.
         </div>
         <div class="pack-list" id="packListContainer">
           <!-- Dynamically populated from window.CARD_PACKS -->
@@ -2352,6 +2508,62 @@
     let currentPack = null;
     let DATA_CARDS = [];
     let isPackModalOpen = false;
+    let removedCardIds = new Set();
+
+    function loadRemovedCards(packId) {
+      try {
+        const raw = localStorage.getItem('removedCards_' + packId);
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+      } catch (e) {
+        return new Set();
+      }
+    }
+
+    function saveRemovedCards(packId) {
+      try {
+        localStorage.setItem('removedCards_' + packId, JSON.stringify(Array.from(removedCardIds)));
+      } catch (e) {}
+    }
+
+    function updateRemovedCounterUI() {
+      const btnReset = document.getElementById('btnResetRemoved');
+      const countBadge = document.getElementById('removedCountBadge');
+      const count = removedCardIds.size;
+      if (btnReset) {
+        if (count > 0) {
+          btnReset.style.display = 'inline-flex';
+          if (countBadge) countBadge.textContent = count;
+          btnReset.title = `Restore ${count} Removed Card${count > 1 ? 's' : ''} [Z]`;
+        } else {
+          btnReset.style.display = 'none';
+        }
+      }
+    }
+
+    function applyDeckFilterAndMode(resetIndex = true) {
+      if (activeFilter === 'all') {
+        filteredBase = [...DATA_CARDS];
+      } else {
+        filteredBase = DATA_CARDS.filter(c => c.type === activeFilter);
+      }
+
+      const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
+      if (currentPlayMode === 'shuffle') {
+        sessionCards = shuffleCardsArray(availableCards);
+      } else {
+        sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
+      }
+
+      if (resetIndex) {
+        currentIndex = 0;
+      } else if (currentIndex >= sessionCards.length) {
+        currentIndex = Math.max(0, sessionCards.length - 1);
+      }
+
+      rebuildStageCards();
+      updateCardPositions(false);
+      updateRemovedCounterUI();
+    }
 
     function loadCardPack(packId, notify = true) {
       const packs = window.CARD_PACKS || {};
@@ -2367,6 +2579,7 @@
       currentPackId = packId;
       currentPack = packs[packId];
       DATA_CARDS = currentPack.cards || [];
+      removedCardIds = loadRemovedCards(packId);
       try {
         localStorage.setItem('activeCardPack', packId);
       } catch (e) {}
@@ -2382,7 +2595,7 @@
       }
 
       const appSubMeta = document.getElementById('appSubMeta');
-      if (appSubMeta) appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Sediaan`;
+      if (appSubMeta) appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Cards`;
 
       // Update Filter Button Titles
       const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
@@ -2390,9 +2603,9 @@
       const btnAll = document.getElementById('btnFilterAll');
       const btnPrep = document.getElementById('btnFilterPrep');
       const btnTeori = document.getElementById('btnFilterTeori');
-      if (btnAll) btnAll.title = `Semua Sediaan (${DATA_CARDS.length} Sediaan)`;
-      if (btnPrep) btnPrep.title = `Sediaan Mikroskopik (${prepCount} Sediaan)`;
-      if (btnTeori) btnTeori.title = `Soal Teori & Kasus (${teoriCount} Soal)`;
+      if (btnAll) btnAll.title = `All Cards (${DATA_CARDS.length} Cards)`;
+      if (btnPrep) btnPrep.title = `Histopathology (${prepCount} Specimens)`;
+      if (btnTeori) btnTeori.title = `Theory & Cases (${teoriCount} Cards)`;
 
       // Reset Filter & Cards State
       activeFilter = 'all';
@@ -2400,18 +2613,10 @@
       if (btnPrep) btnPrep.classList.remove('active');
       if (btnTeori) btnTeori.classList.remove('active');
 
-      filteredBase = [...DATA_CARDS];
-      if (currentPlayMode === 'shuffle') {
-        sessionCards = shuffleCardsArray(filteredBase);
-      } else {
-        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
-      }
+      applyDeckFilterAndMode(true);
 
-      currentIndex = 0;
-      rebuildStageCards();
-      updateCardPositions(false);
       if (notify) {
-        showToast('Card Pack', `${currentPack.packName || packId} • ${DATA_CARDS.length} Cards`);
+        showToast('Card Pack', `${currentPack.packName || packId} • ${sessionCards.length} Cards`);
       }
     }
 
@@ -2424,9 +2629,11 @@
       if (modal) {
         modal.classList.add('active', 'is-entrance');
         const badge = document.getElementById('packModalBadge');
-        if (badge) badge.textContent = 'MODUL PRAKTIKUM';
+        if (badge) badge.textContent = 'DECK SELECTION';
         const title = document.getElementById('packModalTitle');
-        if (title) title.textContent = 'PILIH BLOK STUDI';
+        if (title) title.textContent = 'SELECT STUDY DECK';
+        const intro = document.getElementById('packIntroBanner');
+        if (intro) intro.textContent = 'Choose an active card deck to enter the table. Standard competition rules apply.';
         const closeBtn = document.getElementById('packModalCloseBtn');
         if (closeBtn) closeBtn.style.display = 'none';
         renderPackList();
@@ -2442,9 +2649,11 @@
         modal.classList.add('active');
         modal.classList.remove('is-entrance');
         const badge = document.getElementById('packModalBadge');
-        if (badge) badge.textContent = 'PAKET SEDIAAN';
+        if (badge) badge.textContent = 'STUDY DECKS';
         const title = document.getElementById('packModalTitle');
-        if (title) title.textContent = 'PILIH PAKET SEDIAAN';
+        if (title) title.textContent = 'SELECT STUDY DECK';
+        const intro = document.getElementById('packIntroBanner');
+        if (intro) intro.textContent = 'Switch to another study deck or reload the current active deck.';
         const closeBtn = document.getElementById('packModalCloseBtn');
         if (closeBtn) closeBtn.style.display = 'flex';
         renderPackList();
@@ -2475,43 +2684,44 @@
         const isActive = id === currentPackId;
         const prepCount = pack.cards ? pack.cards.filter(c => c.type === 'preparat').length : 0;
         const teoriCount = pack.cards ? pack.cards.filter(c => c.type === 'teori').length : 0;
+        const total = pack.cards ? pack.cards.length : 0;
 
         html += `
           <div class="pack-item ${isActive ? 'active' : ''}" onclick="selectCardPack('${id}')">
             <div class="pack-item-top">
-              <span class="pack-item-badge">${pack.badge || 'PAKET UTAMA'}</span>
-              <span class="pack-item-count">${pack.cards ? pack.cards.length : 0} Sediaan (${prepCount} Mikroskopik • ${teoriCount} Teori)</span>
+              <span class="pack-item-badge">${pack.badge || 'STANDARD 40'}</span>
+              <span class="pack-item-count">${total} Cards (${prepCount} Histopathology • ${teoriCount} Theory & Cases)</span>
             </div>
-            <div class="pack-item-title">${pack.packName || pack.title}</div>
-            <div class="pack-item-desc">${pack.description || pack.subtitle || 'Koleksi sediaan histopatologi dan stasiun kasus UKMPPD lengkap.'}</div>
+            <div class="pack-item-title">${pack.packName || pack.title || 'Block 3.1: Pathology Anatomy'}</div>
+            <div class="pack-item-desc">${pack.description || pack.subtitle || 'Specimen identification and UKMPPD clinical station review.'}</div>
             <div class="pack-item-actions">
               <button class="pack-start-btn" type="button" onclick="selectCardPack('${id}'); event.stopPropagation();">
-                ${isEntranceMode ? 'MULAI BELAJAR SEKARANG &rarr;' : (isActive ? '● SEDANG DIGUNAKAN (PILIH ULANG)' : 'PILIH PAKET INI &rarr;')}
+                ${isEntranceMode ? 'ENTER TABLE &rarr;' : (isActive ? '● ACTIVE (RELOAD)' : 'SELECT DECK &rarr;')}
               </button>
             </div>
           </div>
         `;
       }
 
-      // Placeholder for next packs (Strictly Patologi Anatomi / Upcoming)
+      // Placeholder for next packs (Strictly clean, game-lobby format)
       html += `
         <div class="pack-item pack-item-upcoming">
           <div class="pack-item-top">
-            <span class="pack-item-badge">SEGERA HADIR</span>
-            <span class="pack-item-count">Modul Lanjutan</span>
+            <span class="pack-item-badge">UPCOMING</span>
+            <span class="pack-item-count">Next Module</span>
           </div>
-          <div class="pack-item-title">Blok 3.2: Sistem Kardiovaskular & Respirasi</div>
-          <div class="pack-item-desc">Paket sediaan histopatologi organ spesifik sedang dalam tahap kurasi praktikum.</div>
-          <div class="pack-item-status">DALAM PERSIAPAN</div>
+          <div class="pack-item-title">Block 3.2: Cardiovascular & Respiratory</div>
+          <div class="pack-item-desc">Organ-specific histopathology modules in preparation.</div>
+          <div class="pack-item-status">LOCKED</div>
         </div>
         <div class="pack-item pack-item-upcoming">
           <div class="pack-item-top">
-            <span class="pack-item-badge">KUSTOM</span>
+            <span class="pack-item-badge">CUSTOM</span>
             <span class="pack-item-count">Modular JSON</span>
           </div>
-          <div class="pack-item-title">Tambah Paket Sediaan Mandiri</div>
-          <div class="pack-item-desc">Format modular pack sediaan dapat ditambahkan di folder <code>packs/</code>.</div>
-          <div class="pack-item-status">PANDUAN TERSEDIA</div>
+          <div class="pack-item-title">Load Custom JSON Deck</div>
+          <div class="pack-item-desc">Place custom modular card packs in the <code>packs/</code> directory.</div>
+          <div class="pack-item-status">DOCUMENTED</div>
         </div>
       `;
 
@@ -2533,7 +2743,7 @@
 
       if (wasEntrance) {
         runOpeningStageFlourish();
-        showToast('Blok 3.1 Loaded', `${sessionCards.length} Sediaan Siap`);
+        showToast('Block 3.1 Loaded', `${sessionCards.length} Cards Ready`);
       } else {
         playTone(523.25, 'triangle', 0.12);
       }
@@ -2880,6 +3090,12 @@
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
               </button>
+              <button class="card-banner-remove-btn" onclick="removeCurrentCard(); event.stopPropagation();" title="Remove Card from Deck [Del / X]" aria-label="Remove Card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+              </button>
             </div>
           </div>
         `;
@@ -3049,7 +3265,8 @@
       const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
       styleToRun.fn(cards, isMobile, isTablet, () => {
-        let shuffled = shuffleCardsArray(filteredBase);
+        const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
+        let shuffled = shuffleCardsArray(availableCards);
         if (shuffled.length > 1 && shuffled[0].id === sessionCards[currentIndex]?.id) {
           const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
           [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
@@ -3355,7 +3572,8 @@
       const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
       styleToRun.fn(cards, isMobile, isTablet, () => {
-        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
+        const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
+        sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
         currentIndex = 0;
         rebuildStageCards();
         updateCardPositions(true);
@@ -3539,22 +3757,71 @@
       document.getElementById('btnFilterPrep').classList.toggle('active', filterType === 'preparat');
       document.getElementById('btnFilterTeori').classList.toggle('active', filterType === 'teori');
 
-      if (filterType === 'all') {
-        filteredBase = [...DATA_CARDS];
-      } else {
-        filteredBase = DATA_CARDS.filter(c => c.type === filterType);
-      }
-
-      if (currentPlayMode === 'shuffle') {
-        sessionCards = shuffleCardsArray(filteredBase);
-      } else {
-        sessionCards = [...filteredBase].sort((a, b) => (a.id || 0) - (b.id || 0));
-      }
-
-      currentIndex = 0;
-      rebuildStageCards();
-      updateCardPositions(false);
+      applyDeckFilterAndMode(true);
       showToast('Filter Applied', `${sessionCards.length} Cards`);
+    }
+
+    function removeCurrentCard() {
+      if (isShuffling || sessionCards.length === 0) return;
+      const cardToRemove = sessionCards[currentIndex];
+      if (!cardToRemove) return;
+
+      removedCardIds.add(cardToRemove.id);
+      saveRemovedCards(currentPackId);
+
+      playTone(240, 'triangle', 0.12);
+      triggerHaptic(25);
+      triggerControllerRumble(80, 0.4, 0.2);
+
+      const cardLabel = cardToRemove.type === 'preparat' 
+        ? `Sediaan ${String(cardToRemove.id).padStart(2, '0')}` 
+        : `Soal ${String(cardToRemove.id).padStart(2, '0')}`;
+      showToast('Card Removed', `${cardLabel} hidden (${removedCardIds.size} discarded)`);
+
+      const activeCardEl = stage3D.querySelector('.big-card.is-active');
+      if (activeCardEl) {
+        activeCardEl.style.transition = 'transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease';
+        activeCardEl.style.opacity = '0';
+        activeCardEl.style.transform += ' translateY(50px) scale(0.85)';
+      }
+
+      setTimeout(() => {
+        applyDeckFilterAndMode(false);
+        if (sessionCards.length > 0) {
+          updateCardPositions(true);
+        } else {
+          if (activeIndicatorTitle) activeIndicatorTitle.textContent = 'ALL CARDS REMOVED';
+          if (activeIndicatorDesc) activeIndicatorDesc.textContent = 'Click "RESET" in the dock to restore all cards.';
+          if (barTrackName) barTrackName.textContent = 'EMPTY';
+          if (barSubCount) barSubCount.textContent = '00 / 00';
+        }
+      }, 250);
+    }
+
+    function resetRemovedCards() {
+      if (removedCardIds.size === 0) return;
+      const count = removedCardIds.size;
+      removedCardIds.clear();
+      saveRemovedCards(currentPackId);
+
+      playChimeSound();
+      triggerHaptic([20, 35]);
+      showToast('Deck Restored', `Restored ${count} card${count > 1 ? 's' : ''}`);
+
+      applyDeckFilterAndMode(true);
+      updateCardPositions(true);
+    }
+
+    function removeCurrentCardFromModal() {
+      if (sessionCards.length === 0) return;
+      removeCurrentCard();
+      setTimeout(() => {
+        if (sessionCards.length === 0) {
+          closeModal();
+        } else {
+          populateModalData(currentIndex);
+        }
+      }, 260);
     }
 
     function rotateToIndex(idx) {
@@ -4286,6 +4553,24 @@
         return;
       }
 
+      if (e.key === 'Delete' || e.key === 'Backspace' || e.key === 'x' || e.key === 'X') {
+        e.preventDefault();
+        if (isModalOpen) {
+          removeCurrentCardFromModal();
+        } else {
+          removeCurrentCard();
+        }
+        return;
+      }
+
+      if (e.key === 'z' || e.key === 'Z') {
+        if (removedCardIds.size > 0) {
+          e.preventDefault();
+          resetRemovedCards();
+          return;
+        }
+      }
+
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
         if (isModalOpen) {
@@ -4295,7 +4580,7 @@
         }
       } else if (e.key === 'u' || e.key === 'U' || e.key === 'o' || e.key === 'O') {
         setPlayMode('sequential');
-      } else if (e.key === 's' || e.key === 'S' || e.key === 'r' || e.key === 'R') {
+      } else if (e.key === 's' || e.key === 'S') {
         startRealisticShuffle();
       } else if (e.key === 'r' || e.key === 'R' || e.key === 'g' || e.key === 'G') {
         pickRandomCard();
@@ -4409,11 +4694,13 @@
           }
         });
 
-        onEdgePress(1, () => { // Circle (○) - Back / Cancel
+        onEdgePress(1, () => { // Circle (○) - Back / Cancel / Remove Card
           if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
           } else if (isModalOpen) {
             closeModal();
+          } else {
+            removeCurrentCard();
           }
         });
 
