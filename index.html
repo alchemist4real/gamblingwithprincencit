@@ -66,8 +66,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between; /* BALANCED VERTICAL DISTRIBUTION ACROSS EVERY DEVICE */
-      padding: clamp(14px, 2.5vh, 30px) clamp(16px, 3vw, 36px);
+      justify-content: center; /* PERFECTLY BALANCED VERTICAL COMPOSITION */
+      padding: clamp(26px, 4.5vh, 48px) clamp(16px, 3vw, 36px) clamp(18px, 3vh, 34px);
       user-select: none;
       box-sizing: border-box;
       width: 100vw;
@@ -88,7 +88,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: clamp(4px, 1vh, 10px);
+      margin-bottom: clamp(10px, 2vh, 22px);
     }
 
     h1.main-title {
@@ -160,20 +160,19 @@
     .carousel-stage {
       width: 100%;
       max-width: 1100px;
-      flex: 1;
-      min-height: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: visible;
+      min-height: 0;
     }
 
     .viewport-3d {
       width: 100%;
       max-width: 1100px;
-      height: clamp(260px, 42vh, 370px);
+      height: clamp(280px, 40vh, 360px);
       perspective: 1000px;
       perspective-origin: 50% 50%;
       display: flex;
@@ -431,7 +430,8 @@
        ======================================================= */
     .active-specimen-indicator {
       text-align: center;
-      margin: clamp(3px, 0.8vh, 8px) 0;
+      margin-top: clamp(6px, 1.2vh, 12px);
+      margin-bottom: clamp(10px, 2vh, 20px);
       flex-shrink: 0;
       z-index: 10;
     }
@@ -1236,7 +1236,10 @@
         max-width: fit-content;
         height: 48px;
       }
-      .btn-ctrl-round, .btn-ctrl-mode, 
+      .btn-ctrl-round, .btn-ctrl-mode {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     /* =======================================================
@@ -2410,12 +2413,12 @@
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
         if (offset === 0) {
-          // ACTIVE CARD: Balanced prominent landscape display
+          // ACTIVE CARD: Significantly enlarged, prominent hero landscape display
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isMobile ? 1.06 : (isTablet ? 1.08 : 1.12);
-          const activeZ = isMobile ? 18 : 28;
+          const activeScale = isMobile ? 1.12 : (isTablet ? 1.16 : 1.22);
+          const activeZ = isMobile ? 26 : 46;
 
           if (isRapid && rapidDir === 'next') {
             cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(${activeZ + 8}px) rotateY(-8deg) rotateZ(2deg) scale(${activeScale + 0.02})`;
@@ -2431,23 +2434,23 @@
 
           let tx, tz, ry, sc, zi;
           if (absOff === 1) {
-            tx = dir * (isMobile ? 130 : (isTablet ? 165 : 195));
-            tz = isMobile ? -40 : -55;
-            ry = -dir * (isMobile ? 16 : 20);
-            sc = isMobile ? 0.82 : (isTablet ? 0.84 : 0.85);
+            tx = dir * (isMobile ? 135 : (isTablet ? 175 : 215));
+            tz = isMobile ? -45 : -60;
+            ry = -dir * (isMobile ? 16 : 22);
+            sc = isMobile ? 0.80 : (isTablet ? 0.82 : 0.84);
             zi = 40;
           } else if (absOff === 2) {
-            tx = dir * (isMobile ? 220 : (isTablet ? 280 : 330));
-            tz = isMobile ? -85 : -120;
-            ry = -dir * (isMobile ? 26 : 32);
-            sc = isMobile ? 0.68 : (isTablet ? 0.70 : 0.72);
+            tx = dir * (isMobile ? 230 : (isTablet ? 295 : 355));
+            tz = isMobile ? -90 : -130;
+            ry = -dir * (isMobile ? 26 : 34);
+            sc = isMobile ? 0.65 : (isTablet ? 0.68 : 0.70);
             zi = 30;
           } else {
             // absOff === 3
-            tx = dir * (isMobile ? 295 : (isTablet ? 370 : 440));
-            tz = isMobile ? -130 : -180;
-            ry = -dir * (isMobile ? 34 : 40);
-            sc = isMobile ? 0.55 : (isTablet ? 0.58 : 0.60);
+            tx = dir * (isMobile ? 310 : (isTablet ? 390 : 470));
+            tz = isMobile ? -140 : -190;
+            ry = -dir * (isMobile ? 34 : 42);
+            sc = isMobile ? 0.52 : (isTablet ? 0.55 : 0.58);
             zi = 20;
           }
 
