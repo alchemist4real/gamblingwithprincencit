@@ -568,6 +568,39 @@
       stroke-width: 2.2;
     }
 
+    /* RANDOM PICK ACTION BUTTON */
+    .dock-random-btn {
+      height: 30px;
+      padding: 0 10px 0 8px;
+      border-radius: 999px;
+      border: 1.5px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      font-family: var(--font-main);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dock-random-btn:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      transform: scale(1.04);
+    }
+    .dock-random-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke-width: 2.2;
+    }
+
     /* REVEAL ACTION PILL BUTTON (HARMONIZED WITH PACK BUTTON ON LEFT) */
     .dock-reveal-btn {
       height: 30px;
@@ -1832,26 +1865,23 @@
       </button>
     </div>
 
-    <!-- Right Section: Utility Pill & Reveal Action Pill (Symmetrically balances Left) -->
+    <!-- Right Section: [🎲 RANDOM] + [👁 REVEAL] + (⛶) -->
     <div class="dock-section dock-right">
-      <div class="dock-utility-group" id="dockUtilityGroup">
-        <button class="utility-icon-btn" onclick="gambleRandomCard()" title="Gamble! Pick Random Card [G]" aria-label="Random Card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-            <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle>
-            <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle>
-            <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
-            <circle cx="8" cy="16" r="1.5" fill="currentColor"></circle>
-            <circle cx="16" cy="16" r="1.5" fill="currentColor"></circle>
-          </svg>
-        </button>
-        <button class="utility-icon-btn" onclick="toggleFullScreen()" title="Fullscreen [F]" aria-label="Fullscreen">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-          </svg>
-        </button>
-      </div>
+      <!-- Dedicated Pick Random Card Button -->
+      <button class="dock-random-btn" id="btnPickRandom" onclick="pickRandomCard()" title="Pick Random Card [R / G]" aria-label="Pick Random Card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+          <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle>
+          <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+          <circle cx="8" cy="16" r="1.5" fill="currentColor"></circle>
+          <circle cx="16" cy="16" r="1.5" fill="currentColor"></circle>
+        </svg>
+        <span>RANDOM</span>
+        <span class="gamepad-badge" title="Stick PS: R2">R2</span>
+      </button>
 
+      <!-- Reveal Action Pill -->
       <button class="dock-reveal-btn" id="btnRevealMain" onclick="openRevealModal()" title="Reveal Details (Space / Enter)" aria-label="Reveal Details">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -1859,6 +1889,13 @@
         </svg>
         <span class="dock-reveal-text">REVEAL</span>
         <span class="gamepad-badge" title="Stick PS: Cross">✕</span>
+      </button>
+
+      <!-- Fullscreen Button -->
+      <button class="btn-ctrl-round" onclick="toggleFullScreen()" title="Fullscreen [F]" aria-label="Fullscreen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
       </button>
     </div>
   </nav>
@@ -3138,15 +3175,43 @@
       lightboxOverlay.classList.remove('active');
     }
 
-    function gambleRandomCard() {
+    function pickRandomCard() {
       if (isShuffling || sessionCards.length <= 1) return;
-      playTone(587.33, 'triangle', 0.1);
-      let randIdx;
+      
+      isShuffling = true;
+      triggerHaptic([20, 30, 40]);
+      
+      // Select random card different from current
+      let targetIdx;
       do {
-        randIdx = Math.floor(Math.random() * sessionCards.length);
-      } while (randIdx === currentIndex && sessionCards.length > 1);
-      rotateToIndex(randIdx);
-      showToast(`🎲 GAMBLE: CARD ${String(randIdx + 1).padStart(2, '0')}`);
+        targetIdx = Math.floor(Math.random() * sessionCards.length);
+      } while (targetIdx === currentIndex && sessionCards.length > 1);
+
+      // Exciting card riffle spin animation
+      const steps = 6;
+      let step = 0;
+      const interval = setInterval(() => {
+        step++;
+        const tempIdx = Math.floor(Math.random() * sessionCards.length);
+        currentIndex = tempIdx;
+        updateCardPositions(true, true, 'next');
+        playTone(380 + step * 50, 'sine', 0.04);
+        
+        if (step >= steps) {
+          clearInterval(interval);
+          currentIndex = targetIdx;
+          updateCardPositions(true, false);
+          playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
+          triggerHaptic([30, 60]);
+          isShuffling = false;
+          showToast(`🎲 RANDOM: CARD ${String(targetIdx + 1).padStart(2, '0')}`);
+        }
+      }, 75);
+    }
+    
+    // Alias for compatibility
+    function gambleRandomCard() {
+      pickRandomCard();
     }
 
     function toggleFullScreen() {
@@ -3387,8 +3452,8 @@
         setPlayMode('sequential');
       } else if (e.key === 's' || e.key === 'S' || e.key === 'r' || e.key === 'R') {
         startRealisticShuffle();
-      } else if (e.key === 'g' || e.key === 'G') {
-        gambleRandomCard();
+      } else if (e.key === 'r' || e.key === 'R' || e.key === 'g' || e.key === 'G') {
+        pickRandomCard();
       } else if (e.key === 'f' || e.key === 'F') {
         toggleFullScreen();
       }
