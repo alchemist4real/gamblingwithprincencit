@@ -2288,7 +2288,7 @@
       </div>
       <div class="toast-content">
         <div class="toast-title" id="toastTitle">GAMBLING WITH PRINCE NCIT</div>
-        <div class="toast-subtext" id="toastSub">Persiapan Ujian Identifikasi PA</div>
+        <div class="toast-subtext" id="toastSub">Ready to Play</div>
       </div>
     </div>
   </div>
@@ -2361,7 +2361,7 @@
       rebuildStageCards();
       updateCardPositions(false);
       if (notify) {
-        showToast(`Paket Sediaan: ${currentPack.packName || packId}`, `${DATA_CARDS.length} Sediaan Patologi Anatomi`);
+        showToast('Card Pack', `${currentPack.packName || packId} • ${DATA_CARDS.length} Cards`);
       }
     }
 
@@ -2902,7 +2902,7 @@
         triggerHaptic([15, 30, 20]);
         triggerControllerRumble(130, 0.45, 0.85);
         isShuffling = false;
-        showToast(`Kocok Sediaan`, `${sessionCards.length} Sediaan Patologi Anatomi`);
+        showToast('Card Shuffled', `${sessionCards.length} Cards`);
       });
     }
 
@@ -3178,7 +3178,7 @@
         playTone(440, 'sine', 0.08);
         rebuildStageCards();
         updateCardPositions(true);
-        showToast('Mode Berurutan', `1 sampai ${sessionCards.length} Sediaan`);
+        showToast('Sequential Mode', `1 to ${sessionCards.length} Cards`);
       } else {
         startRealisticShuffle();
       }
@@ -3206,7 +3206,7 @@
       currentIndex = 0;
       rebuildStageCards();
       updateCardPositions(false);
-      showToast('Filter Sediaan', `${sessionCards.length} Sediaan`);
+      showToast('Filter Applied', `${sessionCards.length} Cards`);
     }
 
     function rotateToIndex(idx) {
@@ -3547,7 +3547,7 @@
           playTone(659.25, 'triangle', 0.18); // E5 celebratory chime
           triggerHaptic([30, 60]);
           isShuffling = false;
-          showToast(`Sediaan Acak`, `Preparat ${String(targetIdx + 1).padStart(2, '0')}`);
+          showToast('Picked Random Card', `Card ${String(targetIdx + 1).padStart(2, '0')}`);
         }
       }, 75);
     }
@@ -3839,14 +3839,14 @@
       isGamepadConnected = true;
       document.body.classList.add('gamepad-active');
       const gpName = e.gamepad.id || 'Stick PS';
-      showToast('Gamepad Terhubung', 'L1/R1 Geser • ✕ Buka • △ Acak');
+      showToast('Gamepad Connected', 'L1/R1 Browse • ✕ Reveal • △ Shuffle');
       triggerControllerRumble(220, 0.5, 0.85);
     });
 
     window.addEventListener('gamepaddisconnected', () => {
       isGamepadConnected = false;
       document.body.classList.remove('gamepad-active');
-      showToast('Gamepad Terputus');
+      showToast('Gamepad Disconnected');
     });
 
     function pollGamepad() {
