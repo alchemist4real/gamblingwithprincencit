@@ -4035,7 +4035,9 @@
 
     function loadSelectedCardPacks(notify = false) {
       const packs = window.CARD_PACKS || {};
+      const allPackKeys = Object.keys(packs);
       let packIds = [];
+
       try {
         const stored = localStorage.getItem('selectedCardPacks');
         if (stored) {
@@ -4047,11 +4049,23 @@
       } catch (e) {}
 
       if (packIds.length === 0) {
-        const defaultId = localStorage.getItem('activeCardPack') || Object.keys(packs)[0] || '';
-        packIds = defaultId ? [defaultId] : [];
+        const activePack = localStorage.getItem('activeCardPack');
+        if (activePack && packs[activePack]) {
+          packIds = [activePack];
+        } else if (allPackKeys.length > 0) {
+          packIds = [...allPackKeys];
+        }
       }
 
-      currentPackId = packIds[0];
+      // Self-heal localStorage so state is always valid across lobby and modes
+      if (packIds.length > 0) {
+        try {
+          localStorage.setItem('selectedCardPacks', JSON.stringify(packIds));
+          localStorage.setItem('activeCardPack', packIds[0]);
+        } catch (e) {}
+      }
+
+      currentPackId = packIds[0] || (allPackKeys[0] || '');
       currentPack = packs[currentPackId] || {};
 
       // Merge cards from all selected packs
@@ -4082,8 +4096,10 @@
       if (headerPackName) {
         if (packIds.length === 1) {
           headerPackName.textContent = currentPack.badge || currentPack.packName || currentPackId;
-        } else {
+        } else if (packIds.length > 1) {
           headerPackName.textContent = `${packIds.length} DECKS COMBINED`;
+        } else {
+          headerPackName.textContent = 'NO DECKS';
         }
       }
 
@@ -4091,9 +4107,11 @@
       if (appSubMeta) {
         if (packIds.length === 1) {
           appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Cards`;
-        } else {
+        } else if (packIds.length > 1) {
           const names = packIds.map(pId => packs[pId]?.badge || packs[pId]?.packName || pId).join(' + ');
           appSubMeta.textContent = `${names} • ${DATA_CARDS.length} Cards Total`;
+        } else {
+          appSubMeta.textContent = '0 Cards Available';
         }
       }
 
@@ -4126,27 +4144,6 @@
         localStorage.setItem('activeCardPack', packId);
       } catch (e) {}
       loadSelectedCardPacks(notify);
-    }
-
-    function renderInitialStackedStage() {
-      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
-      cards.forEach((cardEl, idx) => {
-        cardEl.style.transition = 'none';
-        cardEl.style.opacity = '1';
-        cardEl.style.visibility = 'visible';
-        cardEl.style.transform = `translateX(0px) translateY(0px) translateZ(${idx * 0.35}px) scale(0.94)`;
-        cardEl.style.zIndex = `${idx + 1}`;
-      });
-    }
-
-    function runOpeningStageFlourish() {
-      playEntranceFanSound();
-      setTimeout(() => {
-        updateCardPositions(true, false);
-        playChimeSound();
-        triggerHaptic([20, 35]);
-        triggerControllerRumble(100, 0.4, 0.7);
-      }, 240);
     }
     let activeFilter = 'all';
     let currentPlayMode = 'sequential'; // 'sequential' or 'shuffle'
@@ -7116,25 +7113,30 @@
     }
     requestAnimationFrame(pollGamepad);
 
-    if (window.whenPacksReady) {
-      window.whenPacksReady(function(packs) {
-        loadSelectedCardPacks(false);
-        renderInitialStackedStage();
-        currentPlayMode = 'sequential';
-        updateAudioIconUI();
-        updateSettingsUI();
-        updateDockFilterUI();
-        updatePlayModeButtonsUI();
-      });
-    } else {
+    function initCasualApp() {
       loadSelectedCardPacks(false);
-      renderInitialStackedStage();
       currentPlayMode = 'sequential';
       updateAudioIconUI();
       updateSettingsUI();
       updateDockFilterUI();
       updatePlayModeButtonsUI();
+      updateCardPositions(false);
     }
+
+    if (window.whenPacksReady) {
+      window.whenPacksReady(function(packs) {
+        initCasualApp();
+      });
+    } else {
+      initCasualApp();
+    }
+
+    // Safety fallback in case card packs ready event dispatched
+    window.addEventListener('cardPacksReady', function() {
+      if (!DATA_CARDS || DATA_CARDS.length === 0) {
+        initCasualApp();
+      }
+    });
   </script>
 </body>
 </html>
