@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#314fba">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>EXAM MODE • GAMBLING WITH PRINCE NCIT</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23314fba'/%3E%3Cpath d='M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
+  <script src="packs/blok-3.1.js"></script>
+  <script src="packs/template-pack.js"></script>
+  <style>
+    /* =======================================================
+       STRICT MONOCHROMATIC 2-COLOR DESIGN:
+       PRIMARY BLUE #314fba & WHITE #ffffff
+       FONTS: 'Special Elite' & 'Plus Jakarta Sans'
+       ZERO GRADIENTS • ZERO BLACK SHADOW SLOP
+       ======================================================= */
+    :root {
+      --primary: #314fba;
+      --primary-dark: #223ca3;
+      --primary-deep: #172b7a;
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.90);
+      --white-75: rgba(255, 255, 255, 0.75);
+      --white-50: rgba(255, 255, 255, 0.50);
+      --white-25: rgba(255, 255, 255, 0.25);
+      --white-15: rgba(255, 255, 255, 0.15);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Special Elite', cursive, monospace, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      overflow: hidden;
+      background-color: var(--primary);
+      color: var(--white);
+      font-family: var(--font-main);
+      user-select: none;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      position: relative;
+    }
+
+    /* Common Typography & Buttons */
+    .main-title {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .title-tone-1 {
+      color: var(--primary-deep);
+      background-color: var(--white);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 2px solid var(--primary-deep);
+      font-weight: 900;
+    }
+    .title-tone-2 {
+      color: var(--white);
+      text-shadow: -1.5px -1.5px 0 var(--primary-deep), 1.5px -1.5px 0 var(--primary-deep), -1.5px 1.5px 0 var(--primary-deep), 1.5px 1.5px 0 var(--primary-deep);
+      font-weight: 900;
+    }
+    .modal-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      text-decoration: none;
+    }
+    .modal-close-btn:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .lobby-pill {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .lobby-subtext {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(23, 43, 122, 0.75);
+    }
+    .gamepad-badge {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 800;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      padding: 1px 4px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    /* =======================================================
+       STAGE 1: EXAM SETUP STAGE
+       ======================================================= */
+    .exam-stage-view {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(16px, 3vh, 32px);
+      box-sizing: border-box;
+      animation: viewFadeIn 0.22s ease-out;
+    }
+    @keyframes viewFadeIn {
+      from { opacity: 0; transform: scale(0.985); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .exam-setup-card {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      box-shadow: 0 0 0 4px var(--white), 0 20px 50px rgba(12, 23, 64, 0.55);
+      width: 100%;
+      max-width: 580px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: var(--primary-deep);
+    }
+    .exam-setup-header {
+      padding: 16px 20px 14px;
+      border-bottom: 2px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      position: relative;
+      text-align: center;
+    }
+    .exam-back-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+    }
+    .exam-setup-body {
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .exam-setup-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .review-section-title {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .review-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .review-pill-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .review-pill-btn:hover {
+      background-color: #eef3ff;
+      transform: translateY(-1px);
+    }
+    .review-pill-btn.active {
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .review-telemetry-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+    .review-telemetry-chip {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      background-color: #f0f4fd;
+      border: 1px solid rgba(49, 79, 186, 0.25);
+      border-radius: 8px;
+      padding: 5px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .exam-setup-footer {
+      padding: 14px 22px 18px;
+      border-top: 2px solid #edf1fb;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .exam-back-outline-btn {
+      height: 44px;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 2px solid var(--primary-deep);
+      background-color: transparent;
+      color: var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .exam-back-outline-btn:hover {
+      background-color: #f0f4fd;
+    }
+    .review-start-btn {
+      flex: 1;
+      height: 44px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 2px solid var(--primary-deep);
+      background-color: var(--primary-deep);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 3px 0 rgba(12, 23, 64, 0.4);
+      transition: all 0.15s ease;
+    }
+    .review-start-btn:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* =======================================================
+       STAGE 2: ACTIVE EXAM SIMULATION (PREPARE, STUDY, REVEAL, COMPLETE)
+       ======================================================= */
+    .exam-active-stage {
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(14px, 2.5vh, 24px) clamp(16px, 3vw, 36px);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    /* Top Bar */
+    .review-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .review-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .review-top-title {
+      font-size: 1.25rem;
+    }
+    .review-phase-badge {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border: 2px solid var(--primary-deep);
+      font-weight: 700;
+    }
+    .review-counter {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--white);
+      background-color: var(--primary-deep);
+      border: 2px solid var(--white);
+      border-radius: 999px;
+      padding: 4px 14px;
+      letter-spacing: 0.5px;
+    }
+    .review-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .review-skip-btn, .review-exit-btn {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 2px solid var(--white);
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .review-skip-btn:hover, .review-exit-btn:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-color: var(--primary-deep);
+    }
+
+    /* Stage Body Area */
+    .review-stage-body {
+      flex: 1;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+
+    /* 1. Prepare Stage */
+    .review-prepare-box {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      padding: clamp(24px, 4vh, 40px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      max-width: 480px;
+      width: 90vw;
+      box-shadow: 0 0 0 4px var(--white), 0 20px 60px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .review-prepare-icon {
+      width: 60px;
+      height: 60px;
+      color: var(--primary);
+    }
+    .review-prepare-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .review-prepare-desc {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+      opacity: 0.9;
+    }
+    .review-prepare-countdown {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--primary);
+      border: 2.5px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 6px 24px;
+      background-color: #f6f8fe;
+      box-shadow: 0 3px 0 var(--primary-deep);
+    }
+
+    /* 2. Study Phase (60s Specimen/Theory + Universal Prompts) */
+    .review-study-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(14px, 2.5vw, 28px);
+      align-items: stretch;
+      max-width: 1080px;
+      max-height: clamp(380px, 72vh, 640px);
+      padding: 4px;
+      box-sizing: border-box;
+      animation: studyCardFadeIn 0.25s ease-out;
+    }
+    @keyframes studyCardFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .review-study-left {
+      background-color: var(--primary-deep);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .review-study-media {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: #000;
+      position: relative;
+    }
+    .review-specimen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .review-study-theory-content {
+      padding: clamp(20px, 3vh, 32px) clamp(18px, 3vw, 28px);
+      text-align: center;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      height: 100%;
+      background-color: var(--primary-dark);
+      box-sizing: border-box;
+    }
+    .review-study-theory-badge {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid var(--white-25);
+    }
+    .review-study-theory-text {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      line-height: 1.6;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .review-study-right {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--primary-deep);
+    }
+    .review-q-card-header {
+      padding: 12px 18px;
+      background-color: #f6f8fe;
+      border-bottom: 2px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .review-q-card-header svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .review-q-title {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      letter-spacing: 1.5px;
+      color: var(--primary-deep);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .review-q-card-body {
+      flex: 1;
+      padding: clamp(10px, 1.8vh, 16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      overflow-y: auto;
+    }
+    .review-q-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 10px;
+      background-color: #f8faff;
+      border: 1.5px solid rgba(49, 79, 186, 0.15);
+      border-radius: 12px;
+      transition: background-color 0.15s ease;
+    }
+    .review-q-item:hover {
+      background-color: #eef3ff;
+      border-color: rgba(49, 79, 186, 0.35);
+    }
+    .review-q-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background-color: var(--primary);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .review-q-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .review-q-label {
+      font-family: var(--font-display);
+      font-size: 9.5px;
+      letter-spacing: 1px;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .review-q-text {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      line-height: 1.35;
+    }
+    .review-q-card-footer {
+      padding: 9px 14px;
+      background-color: #f0f4fd;
+      border-top: 1.5px solid rgba(49, 79, 186, 0.18);
+      font-size: 11px;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      line-height: 1.35;
+    }
+    .review-q-card-footer svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* 3. Reveal Phase (Structured Answer Key) */
+    .review-reveal-container {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(14px, 2.5vw, 28px);
+      align-items: stretch;
+      max-width: 1080px;
+      max-height: clamp(380px, 72vh, 640px);
+      padding: 4px;
+      box-sizing: border-box;
+      animation: studyCardFadeIn 0.25s ease-out;
+    }
+    .review-reveal-left {
+      background-color: var(--primary-deep);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .review-reveal-card-header {
+      padding: 10px 16px;
+      background-color: rgba(255, 255, 255, 0.12);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .review-specimen-badge {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .review-reveal-media {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: #000;
+      position: relative;
+    }
+    .review-reveal-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      cursor: pointer;
+    }
+    .review-reveal-right {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      padding: clamp(14px, 2.2vh, 22px);
+      overflow-y: auto;
+      box-shadow: 0 0 0 3px var(--white), 0 12px 30px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .review-diag-hero {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .review-diag-badge {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      background-color: var(--primary-deep);
+      border-radius: 999px;
+      padding: 2px 8px;
+      align-self: flex-start;
+      text-transform: uppercase;
+    }
+    .review-diag-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      letter-spacing: 1px;
+      color: var(--primary-deep);
+      line-height: 1.25;
+    }
+    .review-diag-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .review-meta-item {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 3px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .review-info-heading {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      border-bottom: 1.5px solid #d4def7;
+      padding-bottom: 3px;
+    }
+    .review-info-box {
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+    .review-point-list {
+      list-style-type: square;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+    }
+    .review-point-list li {
+      margin-bottom: 4px;
+    }
+    .review-point-list strong {
+      color: var(--primary-deep);
+      font-weight: 800;
+    }
+    .review-keywords-wrap {
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--primary-deep);
+      font-weight: 600;
+    }
+    .review-nav-btn {
+      padding: 7px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .review-nav-btn:hover:not(:disabled) {
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+
+    /* 4. Complete Phase */
+    .review-complete-box {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 24px;
+      padding: clamp(28px, 5vh, 48px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      max-width: 500px;
+      width: 90vw;
+      box-shadow: 0 0 0 4px var(--white), 0 20px 60px rgba(12, 23, 64, 0.5);
+      color: var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .review-complete-icon {
+      width: 68px;
+      height: 68px;
+      color: var(--primary);
+    }
+    .review-complete-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .review-complete-desc {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--primary-deep);
+      opacity: 0.9;
+    }
+
+    /* Bottom Timer Bar */
+    .review-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .review-timer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--white);
+      border: 2.5px solid var(--primary-deep);
+      padding: 6px 18px 6px 10px;
+      border-radius: 999px;
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+    .review-timer-ring-box {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-timer-ring-box svg {
+      width: 44px;
+      height: 44px;
+      transform: rotate(-90deg);
+    }
+    .review-timer-ring-bg {
+      fill: none;
+      stroke: #e0e5f8;
+      stroke-width: 4;
+    }
+    .review-timer-ring-prog {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 125.6;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.95s linear;
+    }
+    .review-timer-seconds {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-deep);
+    }
+    .review-timer-label {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--primary-deep);
+      text-transform: uppercase;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(12, 23, 64, 0.85);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      cursor: pointer;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      border: 3px solid var(--white);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Toast Notification Container */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      z-index: 3000;
+      pointer-events: none;
+    }
+    .toast-message {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border: 2px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(12, 23, 64, 0.35);
+      animation: toastIn 0.18s ease-out, toastOut 0.22s ease-in 2.4s forwards;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes toastOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-8px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .review-study-grid,
+      .review-reveal-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.15fr;
+        max-height: 74vh;
+      }
+      .review-top-bar {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .exam-setup-footer {
+        flex-direction: column;
+      }
+      .exam-back-outline-btn,
+      .review-start-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================
+       1. EXAM SETUP STAGE
+       ======================================================= -->
+  <div class="exam-stage-view" id="examSetupStage">
+    <div class="exam-setup-card">
+      <div class="exam-setup-header">
+        <a class="modal-close-btn exam-back-btn" href="index.html" title="Return to Lobby [Esc]" aria-label="Return to Lobby">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </a>
+        <div class="title-row">
+          <h2 class="main-title" style="font-size: 1.3rem;">
+            <span class="title-tone-1">EXAM MODE //</span>
+            <span class="title-tone-2">PRACTICAL SIMULATION</span>
+          </h2>
+        </div>
+        <div style="margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span class="lobby-pill" id="examSetupDeckBadge">IDENT 3.1</span>
+          <span class="lobby-subtext" id="examSetupDeckTitle">Ident Blok 3.1: Patologi Anatomi</span>
+        </div>
+      </div>
+
+      <div class="exam-setup-body">
+        <!-- Section 1: Dynamic Category Filter -->
+        <div class="exam-setup-section">
+          <div class="review-section-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            <span>CATEGORY FILTER</span>
+          </div>
+          <div class="review-pills-row" id="examFilterPillsContainer">
+            <!-- Dynamically populated from currentPack.filters -->
+          </div>
+        </div>
+
+        <!-- Section 2: Number of Questions -->
+        <div class="exam-setup-section">
+          <div class="review-section-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>NUMBER OF QUESTIONS</span>
+          </div>
+          <div class="review-pills-row" id="examCountPills">
+            <button class="review-pill-btn" data-count="5" onclick="setExamCount(5)">5 QUESTIONS</button>
+            <button class="review-pill-btn" data-count="10" onclick="setExamCount(10)">10 QUESTIONS</button>
+            <button class="review-pill-btn active" data-count="20" onclick="setExamCount(20)">20 QUESTIONS</button>
+            <button class="review-pill-btn" data-count="all" onclick="setExamCount('all')">ALL</button>
+          </div>
+        </div>
+
+        <!-- Section 3: Question Order -->
+        <div class="exam-setup-section">
+          <div class="review-section-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+            <span>QUESTION ORDER</span>
+          </div>
+          <div class="review-pills-row">
+            <button class="review-pill-btn active" id="btnExamOrderSeq" onclick="setExamOrder('sequential')">SEQUENTIAL (1..N)</button>
+            <button class="review-pill-btn" id="btnExamOrderShuff" onclick="setExamOrder('shuffle')">RANDOM (SHUFFLE)</button>
+          </div>
+        </div>
+
+        <!-- Telemetry Preview -->
+        <div class="review-telemetry-row">
+          <span class="review-telemetry-chip">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span id="examEstTimeText">20 Minutes (60s / Question)</span>
+          </span>
+          <span class="review-telemetry-chip">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+            <span id="examPoolStatsText">40 Questions in Pool</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="exam-setup-footer">
+        <a class="exam-back-outline-btn" href="index.html">
+          <span>BACK TO LOBBY</span>
+        </a>
+        <button class="review-start-btn" onclick="startExamSimulation()">
+          <span>START EXAM (60s / QUESTION) ▶</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       2. ACTIVE EXAM SIMULATION STAGE
+       ======================================================= -->
+  <div class="exam-active-stage" id="examActiveStage">
+    <!-- Top Bar -->
+    <div class="review-top-bar">
+      <div class="review-brand-left">
+        <h2 class="main-title review-top-title">
+          <span class="title-tone-1">EXAM</span>
+          <span class="title-tone-2">MODE</span>
+        </h2>
+        <span class="review-phase-badge" id="examPhaseBadge">STUDY PHASE // 60s</span>
+      </div>
+      <span class="review-counter" id="examCounter">QUESTION 01 / 20</span>
+      <div class="review-top-actions">
+        <button class="review-skip-btn" id="btnExamSkip" onclick="skipExamCard()" title="Skip Question [Space]">
+          <span>SKIP QUESTION ▶</span>
+        </button>
+        <button class="review-exit-btn" onclick="exitToLobby()" title="Exit Exam [Esc]">
+          <span>EXIT TO LOBBY</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stage Body: Prepare / Study / Reveal / Complete -->
+    <div class="review-stage-body" id="examStageBody"></div>
+
+    <!-- Bottom Bar with Circular Timer Ring -->
+    <div class="review-bottom-bar" id="examBottomBar">
+      <div class="review-timer-wrap">
+        <div class="review-timer-ring-box">
+          <svg width="44" height="44" viewBox="0 0 44 44">
+            <circle class="review-timer-ring-bg" cx="22" cy="22" r="20"></circle>
+            <circle class="review-timer-ring-prog" id="examTimerProg" cx="22" cy="22" r="20"></circle>
+          </svg>
+          <span class="review-timer-seconds" id="examTimerSec">60</span>
+        </div>
+        <span class="review-timer-label" id="examTimerLabel">SECONDS REMAINING</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Enlarged Specimen">
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Standalone Script for Exam Simulation -->
+  <script>
+    /* =======================================================
+       AUDIO SYNTHESIZER
+       ======================================================= */
+    let audioCtx = null;
+    let isAudioMuted = localStorage.getItem('isAudioMuted') === 'true';
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(freq, type = 'sine', duration = 0.08, vol = 0.15) {
+      if (isAudioMuted) return;
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(vol, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function playSlideTransitionSound() {
+      if (isAudioMuted) return;
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(580, now + 0.09);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.09);
+      } catch (e) {}
+    }
+
+    function playLobbyDeploySound() {
+      if (isAudioMuted) return;
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+        const notes = [261.63, 329.63, 392.00, 523.25];
+        notes.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.05);
+          gain.gain.setValueAtTime(0.14, now + idx * 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.05 + 0.14);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.05);
+          osc.stop(now + idx * 0.05 + 0.15);
+        });
+      } catch (e) {}
+    }
+
+    /* =======================================================
+       TOAST NOTIFICATIONS
+       ======================================================= */
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'toast-message';
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 2400);
+    }
+
+    /* =======================================================
+       EXAM SIMULATION ENGINE
+       ======================================================= */
+    let currentPackId = localStorage.getItem('activeCardPack') || Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1';
+    let currentPack = null;
+    let examFilter = 'all';
+    let examCount = 20;
+    let examOrder = 'sequential';
+    let examDeck = [];
+    let examCurrentIndex = 0;
+    let examPhase = 'setup';
+    let examTimerId = null;
+    let prepareCountdownTimer = null;
+    let examTotalSeconds = 60;
+    let examSecondsLeft = 60;
+
+    function initExamSetup() {
+      const packs = window.CARD_PACKS || {};
+      currentPack = packs[currentPackId] || packs[Object.keys(packs)[0]];
+      if (!currentPack) return;
+
+      const badgeEl = document.getElementById('examSetupDeckBadge');
+      const titleEl = document.getElementById('examSetupDeckTitle');
+      const statsEl = document.getElementById('examPoolStatsText');
+
+      if (badgeEl) badgeEl.textContent = currentPack.badge || 'PACK';
+      if (titleEl) titleEl.textContent = currentPack.packName || currentPack.title || 'Deck Pack';
+      if (statsEl) statsEl.textContent = `${currentPack.cards ? currentPack.cards.length : 0} Questions in Pool`;
+
+      renderExamFilterPills();
+      updateExamTelemetryUI();
+    }
+
+    function renderExamFilterPills() {
+      const container = document.getElementById('examFilterPillsContainer');
+      if (!container) return;
+
+      const filters = (currentPack && currentPack.filters) ? currentPack.filters : [
+        { id: 'all', label: 'All Cards' },
+        { id: 'preparat', label: 'Specimens Only' },
+        { id: 'teori', label: 'Theory Only' }
+      ];
+
+      container.innerHTML = filters.map(f => `
+        <button class="review-pill-btn ${f.id === examFilter ? 'active' : ''}" data-filter="${f.id}" onclick="setExamFilter('${f.id}')">
+          ${f.label.toUpperCase()}
+        </button>
+      `).join('');
+    }
+
+    function setExamFilter(filterId) {
+      examFilter = filterId;
+      const container = document.getElementById('examFilterPillsContainer');
+      if (container) {
+        container.querySelectorAll('.review-pill-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === filterId);
+        });
+      }
+      updateExamTelemetryUI();
+      playTone(520, 'sine', 0.05);
+    }
+
+    function setExamCount(count) {
+      examCount = count;
+      const container = document.getElementById('examCountPills');
+      if (container) {
+        container.querySelectorAll('.review-pill-btn').forEach(btn => {
+          const c = btn.dataset.count;
+          btn.classList.toggle('active', (c === 'all' && count === 'all') || (parseInt(c, 10) === count));
+        });
+      }
+      updateExamTelemetryUI();
+      playTone(520, 'sine', 0.05);
+    }
+
+    function setExamOrder(order) {
+      examOrder = order;
+      const btnSeq = document.getElementById('btnExamOrderSeq');
+      const btnShuff = document.getElementById('btnExamOrderShuff');
+      if (btnSeq) btnSeq.classList.toggle('active', order === 'sequential');
+      if (btnShuff) btnShuff.classList.toggle('active', order === 'shuffle');
+      playTone(520, 'sine', 0.05);
+    }
+
+    function updateExamTelemetryUI() {
+      if (!currentPack || !currentPack.cards) return;
+
+      let pool = currentPack.cards;
+      if (examFilter !== 'all') {
+        pool = pool.filter(c => c.type === examFilter);
+      }
+
+      const effectiveCount = examCount === 'all' ? pool.length : Math.min(examCount, pool.length);
+      const timeEl = document.getElementById('examEstTimeText');
+      const statsEl = document.getElementById('examPoolStatsText');
+
+      if (timeEl) timeEl.textContent = `${effectiveCount} Minutes (60s / Question)`;
+      if (statsEl) statsEl.textContent = `${pool.length} Questions Available`;
+    }
+
+    function startExamSimulation() {
+      if (!currentPack || !currentPack.cards || currentPack.cards.length === 0) {
+        showToast('No questions available in selected pack');
+        return;
+      }
+
+      let pool = [...currentPack.cards];
+      if (examFilter !== 'all') {
+        pool = pool.filter(c => c.type === examFilter);
+      }
+
+      if (pool.length === 0) {
+        showToast('No questions match the selected filter');
+        return;
+      }
+
+      if (examOrder === 'shuffle') {
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+      } else {
+        pool.sort((a, b) => (a.id || 0) - (b.id || 0));
+      }
+
+      const count = examCount === 'all' ? pool.length : Math.min(examCount, pool.length);
+      examDeck = pool.slice(0, count);
+      examCurrentIndex = 0;
+
+      document.getElementById('examSetupStage').style.display = 'none';
+      document.getElementById('examActiveStage').style.display = 'flex';
+
+      showToast(`Exam Started: ${examDeck.length} Questions`);
+      startExamPrepare();
+    }
+
+    function startExamPrepare() {
+      examPhase = 'prepare';
+      let prepSec = 5;
+
+      const phaseBadge = document.getElementById('examPhaseBadge');
+      const counter = document.getElementById('examCounter');
+      const bottomBar = document.getElementById('examBottomBar');
+      const btnSkip = document.getElementById('btnExamSkip');
+      const body = document.getElementById('examStageBody');
+
+      if (phaseBadge) phaseBadge.textContent = 'PREPARATION // GET READY';
+      if (counter) counter.textContent = `TOTAL: ${examDeck.length} QUESTIONS`;
+      if (bottomBar) bottomBar.style.display = 'none';
+      if (btnSkip) btnSkip.style.display = 'none';
+
+      if (body) {
+        body.innerHTML = `
+          <div class="review-prepare-box">
+            <svg class="review-prepare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <div class="review-prepare-title">PREPARE YOUR PAPER</div>
+            <div class="review-prepare-desc">
+              Get your paper and pen ready to record your diagnosis and findings.<br>
+              Each question is displayed for <strong>60 seconds</strong> with 4 identification prompts.
+            </div>
+            <div class="review-prepare-countdown" id="prepCountdownText">${prepSec}</div>
+            <button class="review-start-btn" style="margin-top: 8px;" onclick="startExamStudy()">
+              <span>START NOW ▶</span>
+            </button>
+          </div>
+        `;
+      }
+
+      playLobbyDeploySound();
+
+      clearInterval(prepareCountdownTimer);
+      prepareCountdownTimer = setInterval(() => {
+        prepSec--;
+        const el = document.getElementById('prepCountdownText');
+        if (el) el.textContent = prepSec;
+        playTone(440, 'sine', 0.04);
+        if (prepSec <= 0) {
+          clearInterval(prepareCountdownTimer);
+          startExamStudy();
+        }
+      }, 1000);
+    }
+
+    function startExamStudy() {
+      clearInterval(prepareCountdownTimer);
+      examPhase = 'study';
+      examCurrentIndex = 0;
+
+      const bottomBar = document.getElementById('examBottomBar');
+      const btnSkip = document.getElementById('btnExamSkip');
+      if (bottomBar) bottomBar.style.display = 'flex';
+      if (btnSkip) btnSkip.style.display = 'inline-flex';
+
+      playSlideTransitionSound();
+      renderStudyCard();
+    }
+
+    function renderStudyCard() {
+      clearInterval(examTimerId);
+      const card = examDeck[examCurrentIndex];
+      if (!card) return;
+
+      const total = examDeck.length;
+      const phaseBadge = document.getElementById('examPhaseBadge');
+      const counter = document.getElementById('examCounter');
+      const body = document.getElementById('examStageBody');
+
+      if (phaseBadge) phaseBadge.textContent = 'STUDY PHASE // 60s';
+      if (counter) counter.textContent = `QUESTION ${String(examCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+
+      const cardLabel = `QUESTION ${String(examCurrentIndex + 1).padStart(2, '0')}`;
+      const isPrep = card.type === 'preparat';
+
+      let leftMediaHtml = '';
+      if (isPrep) {
+        leftMediaHtml = `
+          <div class="review-study-left">
+            <div class="review-reveal-card-header">
+              <span class="review-specimen-badge">${cardLabel} // ${card.category || 'SPECIMEN'}</span>
+              <span class="review-specimen-badge" style="opacity: 0.85; font-size: 10.5px;">60 SECONDS</span>
+            </div>
+            <div class="review-study-media">
+              <img src="${card.image}" class="review-specimen-img" alt="${card.diagnosis || 'Specimen'}">
+            </div>
+          </div>
+        `;
+      } else {
+        leftMediaHtml = `
+          <div class="review-study-left">
+            <div class="review-reveal-card-header">
+              <span class="review-specimen-badge">${cardLabel} // ${card.category || 'THEORY QUESTION'}</span>
+              <span class="review-specimen-badge" style="opacity: 0.85; font-size: 10.5px;">60 SECONDS</span>
+            </div>
+            <div class="review-study-media">
+              <div class="review-study-theory-content">
+                <span class="review-study-theory-badge">CASE SCENARIO &amp; QUESTION</span>
+                <div class="review-study-theory-text">"${card.prompt}"</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      const questions = (currentPack && currentPack.generalQuestions && Array.isArray(currentPack.generalQuestions))
+        ? currentPack.generalQuestions
+        : [
+            { num: '01', label: 'PRIMARY DIAGNOSIS', text: 'What specimen / diagnosis / topic is this?' },
+            { num: '02', label: 'KEY CHARACTERISTIC CELLS', text: 'What cells or structures are characteristic of this?' },
+            { num: '03', label: 'KEY FEATURES & FINDINGS', text: 'What are the key microscopic features or findings?' },
+            { num: '04', label: 'ETIOLOGY & PATHOGENESIS', text: 'What is the underlying etiology or pathogenesis?' }
+          ];
+
+      const questionsBoxHtml = `
+        <div class="review-study-right">
+          <div class="review-q-card-header">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span class="review-q-title">IDENTIFICATION STUDY PROMPTS</span>
+          </div>
+          <div class="review-q-card-body">
+            ${questions.map(q => `
+              <div class="review-q-item">
+                <div class="review-q-badge">${q.num}</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">${q.label}</div>
+                  <div class="review-q-text">${q.text}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="review-q-card-footer">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>Write your answers on paper. Answer keys will be revealed in the next phase!</span>
+          </div>
+        </div>
+      `;
+
+      if (body) {
+        body.innerHTML = `
+          <div class="review-study-grid">
+            ${leftMediaHtml}
+            ${questionsBoxHtml}
+          </div>
+        `;
+      }
+
+      examTotalSeconds = 60;
+      examSecondsLeft = 60;
+      updateExamTimerUI();
+
+      examTimerId = setInterval(() => {
+        examSecondsLeft--;
+        updateExamTimerUI();
+        if (examSecondsLeft <= 0) {
+          clearInterval(examTimerId);
+          advanceStudyCard();
+        }
+      }, 1000);
+    }
+
+    function updateExamTimerUI() {
+      const secEl = document.getElementById('examTimerSec');
+      const progEl = document.getElementById('examTimerProg');
+      if (secEl) secEl.textContent = examSecondsLeft;
+      if (progEl) {
+        const circumference = 125.6;
+        const offset = circumference * (1 - (examSecondsLeft / examTotalSeconds));
+        progEl.style.strokeDashoffset = offset;
+      }
+    }
+
+    function advanceStudyCard() {
+      clearInterval(examTimerId);
+      examCurrentIndex++;
+      if (examCurrentIndex < examDeck.length) {
+        playSlideTransitionSound();
+        renderStudyCard();
+      } else {
+        startRevealPhase();
+      }
+    }
+
+    function skipExamCard() {
+      advanceStudyCard();
+    }
+
+    function startRevealPhase() {
+      clearInterval(examTimerId);
+      examPhase = 'reveal';
+      examCurrentIndex = 0;
+
+      const phaseBadge = document.getElementById('examPhaseBadge');
+      const bottomBar = document.getElementById('examBottomBar');
+      const btnSkip = document.getElementById('btnExamSkip');
+
+      if (phaseBadge) phaseBadge.textContent = 'ANSWER KEY // REVEAL PHASE';
+      if (bottomBar) bottomBar.style.display = 'none';
+      if (btnSkip) btnSkip.style.display = 'none';
+
+      playLobbyDeploySound();
+      showToast('Study phase complete! Reviewing answer keys.');
+      renderRevealCard();
+    }
+
+    function renderRevealCard() {
+      const card = examDeck[examCurrentIndex];
+      if (!card) return;
+
+      const total = examDeck.length;
+      const counter = document.getElementById('examCounter');
+      const body = document.getElementById('examStageBody');
+
+      if (counter) counter.textContent = `KEY ${String(examCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+
+      const isPrep = card.type === 'preparat';
+      const cardLabel = `QUESTION ${String(examCurrentIndex + 1).padStart(2, '0')}`;
+
+      let leftContentHtml = '';
+      if (isPrep) {
+        leftContentHtml = `
+          <div class="review-reveal-card-header">
+            <span class="review-specimen-badge">${cardLabel} // ${card.category || 'SPECIMEN'}</span>
+          </div>
+          <div class="review-reveal-media">
+            <img src="${card.image}" alt="${card.diagnosis || 'Specimen'}" onclick="openLightbox('${card.image}')">
+          </div>
+        `;
+      } else {
+        leftContentHtml = `
+          <div class="review-reveal-card-header">
+            <span class="review-specimen-badge">${cardLabel} // ${card.category || 'THEORY QUESTION'}</span>
+          </div>
+          <div class="review-reveal-media">
+            <div class="review-reveal-theory-content">
+              <span class="review-reveal-theory-badge">CASE SCENARIO &amp; QUESTION</span>
+              <div class="review-reveal-theory-text">"${card.prompt}"</div>
+            </div>
+          </div>
+        `;
+      }
+
+      const ciriItems = card.struktur_khas || card.ciri_kunci || card.mikroskopis || [];
+      const ciriList = Array.isArray(ciriItems)
+        ? ciriItems.map(item => `<li>${item}</li>`).join('')
+        : (ciriItems ? `<li>${ciriItems}</li>` : '');
+
+      const mekanismeItems = card.etiologi || card.mekanisme || [];
+      const mekanismeList = Array.isArray(mekanismeItems)
+        ? mekanismeItems.map(item => `<li>${item}</li>`).join('')
+        : (mekanismeItems ? `<li>${mekanismeItems}</li>` : '');
+
+      if (body) {
+        body.innerHTML = `
+          <div class="review-reveal-container">
+            <div class="review-reveal-left">
+              ${leftContentHtml}
+            </div>
+            <div class="review-reveal-right">
+              <div class="review-diag-hero">
+                <span class="review-diag-badge">PRIMARY DIAGNOSIS</span>
+                <div class="review-diag-title">${card.diagnosis || ''}</div>
+                <div class="review-diag-meta">
+                  <span class="review-meta-item">Organ: ${card.organ || '-'}</span>
+                  <span class="review-meta-item">Type: ${card.sifat || '-'}</span>
+                </div>
+              </div>
+
+              ${ciriList ? `
+                <div class="review-info-section">
+                  <div class="review-info-heading">KEY CHARACTERISTICS</div>
+                  <div class="review-info-box">
+                    <ul class="review-point-list">${ciriList}</ul>
+                  </div>
+                </div>
+              ` : ''}
+
+              ${mekanismeList ? `
+                <div class="review-info-section">
+                  <div class="review-info-heading">ETIOLOGY &amp; PATHOGENESIS</div>
+                  <div class="review-info-box">
+                    <ul class="review-point-list">${mekanismeList}</ul>
+                  </div>
+                </div>
+              ` : ''}
+
+              ${card.keywords ? `
+                <div class="review-info-section">
+                  <div class="review-info-heading">QUICK KEYWORDS</div>
+                  <div class="review-keywords-wrap">${card.keywords}</div>
+                </div>
+              ` : ''}
+
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 14px; gap: 8px;">
+                <button class="review-nav-btn" onclick="prevRevealCard()" ${examCurrentIndex === 0 ? 'disabled style="opacity: 0.4;"' : ''}>
+                  ◀ PREV
+                </button>
+                <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--primary-deep);">
+                  ${examCurrentIndex + 1} of ${total}
+                </span>
+                <button class="review-nav-btn" onclick="nextRevealCard()">
+                  ${examCurrentIndex === total - 1 ? 'FINISH EXAM ▶' : 'NEXT ▶'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function prevRevealCard() {
+      if (examCurrentIndex > 0) {
+        examCurrentIndex--;
+        playTone(400, 'sine', 0.05);
+        renderRevealCard();
+      }
+    }
+
+    function nextRevealCard() {
+      if (examCurrentIndex < examDeck.length - 1) {
+        examCurrentIndex++;
+        playTone(560, 'sine', 0.05);
+        renderRevealCard();
+      } else {
+        showExamComplete();
+      }
+    }
+
+    function showExamComplete() {
+      examPhase = 'complete';
+      const phaseBadge = document.getElementById('examPhaseBadge');
+      const counter = document.getElementById('examCounter');
+      const body = document.getElementById('examStageBody');
+
+      if (phaseBadge) phaseBadge.textContent = 'EXAM COMPLETED';
+      if (counter) counter.textContent = `${examDeck.length} / ${examDeck.length} REVIEWED`;
+
+      if (body) {
+        body.innerHTML = `
+          <div class="review-complete-box">
+            <svg class="review-complete-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <div class="review-complete-title">EXAM COMPLETED</div>
+            <div class="review-complete-desc">
+              Outstanding work! You reviewed all <strong>${examDeck.length} examination questions</strong>.<br>
+              Reviewing your notes against the answer keys builds high-yield pattern recognition.
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 14px;">
+              <button class="exam-back-outline-btn" onclick="restartExam()">
+                <span>RETAKE EXAM</span>
+              </button>
+              <a class="review-start-btn" href="index.html" style="text-decoration: none;">
+                <span>BACK TO LOBBY ▶</span>
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      playLobbyDeploySound();
+      showToast('Exam simulation completed!');
+    }
+
+    function restartExam() {
+      clearInterval(examTimerId);
+      clearInterval(prepareCountdownTimer);
+      document.getElementById('examSetupStage').style.display = 'flex';
+      document.getElementById('examActiveStage').style.display = 'none';
+      initExamSetup();
+    }
+
+    function exitToLobby() {
+      clearInterval(examTimerId);
+      clearInterval(prepareCountdownTimer);
+      window.location.href = 'index.html';
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightboxOverlay');
+      const img = document.getElementById('lightboxImg');
+      if (lb && img) {
+        img.src = src;
+        lb.style.display = 'flex';
+      }
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightboxOverlay');
+      if (lb) lb.style.display = 'none';
+    }
+
+    /* =======================================================
+       KEYBOARD SHORTCUTS
+       ======================================================= */
+    window.addEventListener('keydown', (e) => {
+      const isLightboxOpen = document.getElementById('lightboxOverlay').style.display === 'flex';
+      if (e.key === 'Escape') {
+        if (isLightboxOpen) { closeLightbox(); return; }
+        exitToLobby();
+        return;
+      }
+
+      if (examPhase === 'study') {
+        if (e.key === ' ') {
+          e.preventDefault();
+          skipExamCard();
+        }
+      } else if (examPhase === 'reveal') {
+        if (e.key === ' ' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          nextRevealCard();
+        } else if (e.key === 'ArrowLeft') {
+          prevRevealCard();
+        }
+      } else if (examPhase === 'setup') {
+        if (e.key === 'Enter') {
+          startExamSimulation();
+        }
+      }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      initExamSetup();
+    });
+  </script>
+</body>
+</html>
