@@ -3527,15 +3527,12 @@
         <span class="gamepad-badge" title="Hotkey: H">H</span>
       </a>
 
-      <button class="pack-badge-btn" id="btnPackSelector" onclick="openPackModal()" title="Pilih Paket Sediaan [P]" aria-label="Pilih Paket Sediaan">
+      <a class="pack-badge-btn" id="btnPackDisplay" href="index.html" title="Active Deck: Change in Lobby [H]" aria-label="Active Deck (Change in Lobby [H])" style="text-decoration: none;">
         <svg class="pack-badge-emblem" viewBox="0 0 64 64" fill="currentColor" width="15" height="15" aria-hidden="true" style="flex-shrink: 0;">
           <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
         </svg>
         <span class="pack-name-text" id="headerPackName">IDENT DECK</span>
-        <svg class="pack-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
+      </a>
 
       <!-- Filter Cycle Button (Icon-Only, Cycles All -> Specimen -> Theory) -->
       <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="cycleFilter()" title="Filter: All Cards [Click to cycle]" aria-label="Filter Cards">
@@ -3677,36 +3674,6 @@
     </div>
   </div>
 
-  <!-- =======================================================
-       CARD PACK SELECTOR MODAL (ARCADE GAME LOBBY)
-       ======================================================= -->
-  <div class="pack-modal-overlay" id="packModalOverlay" onclick="handlePackOverlayClick(event)">
-    <div class="pack-modal-card" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
-      <div class="pack-modal-header">
-        <button class="modal-close-btn pack-close-btn" id="packModalCloseBtn" onclick="closePackModal()" title="Close [Esc]" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <div class="lobby-brand-row">
-          <h2 class="main-title lobby-main-title" id="packModalTitle">
-            <span class="title-tone-1">GAMBLING WITH</span>
-            <span class="title-tone-2">PRINCE NCIT</span>
-          </h2>
-        </div>
-        <div class="lobby-meta-row">
-          <span class="lobby-pill" id="packModalBadge">STAGE LOBBY // TABLE 01</span>
-          <span class="lobby-subtext" id="lobbyTickerText">PRESS [ENTER] TO DEPLOY</span>
-        </div>
-      </div>
-      <div class="pack-modal-body">
-        <div class="pack-list" id="packListContainer">
-          <!-- Dynamically populated from window.CARD_PACKS -->
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- LIGHTBOX FOR IMAGE ZOOM -->
   <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
@@ -4009,7 +3976,6 @@
     let currentPackId = Object.keys(window.CARD_PACKS || {})[0] || '';
     let currentPack = null;
     let DATA_CARDS = [];
-    let isPackModalOpen = false;
     let removedCardIds = new Set();
 
     function loadRemovedCards(packId) {
@@ -4160,169 +4126,6 @@
         localStorage.setItem('activeCardPack', packId);
       } catch (e) {}
       loadSelectedCardPacks(notify);
-    }
-
-    let isEntranceMode = false;
-
-    function openEntranceBlockPicker() {
-      isEntranceMode = true;
-      isPackModalOpen = true;
-      const modal = document.getElementById('packModalOverlay');
-      if (modal) {
-        modal.classList.add('active', 'is-entrance');
-        const badge = document.getElementById('packModalBadge');
-        if (badge) badge.textContent = 'STAGE LOBBY // TABLE 01';
-        const ticker = document.getElementById('lobbyTickerText');
-        if (ticker) ticker.textContent = 'PRESS [ENTER] TO DEPLOY';
-        const closeBtn = document.getElementById('packModalCloseBtn');
-        if (closeBtn) closeBtn.style.display = 'none';
-        playLobbyEntranceSound();
-        renderPackList();
-      }
-    }
-
-    function openPackModal() {
-      if (isShuffling) return;
-      isEntranceMode = false;
-      isPackModalOpen = true;
-      const modal = document.getElementById('packModalOverlay');
-      if (modal) {
-        modal.classList.add('active');
-        modal.classList.remove('is-entrance');
-        const badge = document.getElementById('packModalBadge');
-        if (badge) badge.textContent = 'STAGE LOBBY // SWITCH DECK';
-        const ticker = document.getElementById('lobbyTickerText');
-        if (ticker) ticker.textContent = 'PRESS [ESC] TO RESUME';
-        const closeBtn = document.getElementById('packModalCloseBtn');
-        if (closeBtn) closeBtn.style.display = 'flex';
-        playLobbyEntranceSound();
-        renderPackList();
-      }
-    }
-
-    function closePackModal() {
-      if (isEntranceMode) return; // Prevent closing entrance screen without choosing a block
-      isPackModalOpen = false;
-      const modal = document.getElementById('packModalOverlay');
-      if (modal) modal.classList.remove('active', 'is-entrance');
-    }
-
-    function handlePackOverlayClick(e) {
-      if (isEntranceMode) return; // Prevent backdrop click dismissal on entrance
-      if (e.target.id === 'packModalOverlay') {
-        closePackModal();
-      }
-    }
-
-    function renderPackList() {
-      const container = document.getElementById('packListContainer');
-      if (!container) return;
-      const packs = window.CARD_PACKS || {};
-      let html = '';
-
-      for (const [id, pack] of Object.entries(packs)) {
-        const isActive = id === currentPackId;
-        const prepCount = pack.cards ? pack.cards.filter(c => c.type === 'preparat').length : 0;
-        const teoriCount = pack.cards ? pack.cards.filter(c => c.type === 'teori').length : 0;
-        const total = pack.cards ? pack.cards.length : 0;
-
-        html += `
-          <div class="pack-item ${isActive ? 'active' : ''}" onclick="selectCardPack('${id}')" onmouseenter="playLobbyHoverSound()">
-            <div class="pack-cartridge-box">
-              <svg class="pack-cartridge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="5" width="14" height="16" rx="2" />
-                <path d="M7 2h12a2 2 0 0 1 2 2v14" />
-                <path d="M7 9h6" />
-                <path d="M7 13h4" />
-              </svg>
-            </div>
-            <div class="pack-cartridge-info">
-              <div class="pack-cartridge-title">${pack.packName || pack.title || id}</div>
-              <div class="pack-cartridge-telemetry">
-                <span class="telemetry-chip chip-tier">IDENTIFIKASI</span>
-                <span class="telemetry-chip chip-stat">${total} CARDS</span>
-                <span class="telemetry-chip chip-stat">${prepCount} SPECIMENS</span>
-                <span class="telemetry-chip chip-stat">${teoriCount} THEORY</span>
-              </div>
-            </div>
-            <div class="pack-cartridge-action">
-              <button class="pack-deploy-btn" type="button" onclick="selectCardPack('${id}'); event.stopPropagation();">
-                <span class="deploy-play-icon">▶</span>
-                <span>${isEntranceMode ? 'ENTER TABLE' : (isActive ? 'RELOAD' : 'DEPLOY')}</span>
-                <span class="deploy-kbd-hint">ENTER</span>
-              </button>
-            </div>
-          </div>
-        `;
-      }
-
-      // Upcoming Locked Decks (Clean, zero essay clutter)
-      html += `
-        <div class="pack-item pack-item-upcoming">
-          <div class="pack-cartridge-box">
-            <svg class="pack-cartridge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-          </div>
-          <div class="pack-cartridge-info">
-            <div class="pack-cartridge-title">Ident Blok 3.2: Kardiorespirasi</div>
-            <div class="pack-cartridge-telemetry">
-              <span class="telemetry-chip chip-tier">EXPANSION</span>
-              <span class="telemetry-chip chip-stat">COMING SOON</span>
-            </div>
-          </div>
-          <div class="pack-cartridge-action">
-            <span class="pack-locked-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>LOCKED
-            </span>
-          </div>
-        </div>
-        <div class="pack-item pack-item-upcoming">
-          <div class="pack-cartridge-box">
-            <svg class="pack-cartridge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="12" y1="18" x2="12" y2="12" />
-              <line x1="9" y1="15" x2="15" y2="15" />
-            </svg>
-          </div>
-          <div class="pack-cartridge-info">
-            <div class="pack-cartridge-title">Custom Modular Deck</div>
-            <div class="pack-cartridge-telemetry">
-              <span class="telemetry-chip chip-tier">JSON PACK</span>
-              <span class="telemetry-chip chip-stat">SDK</span>
-            </div>
-          </div>
-          <div class="pack-cartridge-action">
-            <span class="pack-locked-badge">MOD SPEC</span>
-          </div>
-        </div>
-      `;
-
-      container.innerHTML = html;
-    }
-
-    function selectCardPack(packId) {
-      const wasEntrance = isEntranceMode;
-      isEntranceMode = false;
-      isPackModalOpen = false;
-      const modal = document.getElementById('packModalOverlay');
-      if (modal) modal.classList.remove('active', 'is-entrance');
-
-      if (packId === currentPackId && !wasEntrance) {
-        return;
-      }
-
-      playLobbyDeploySound();
-      loadCardPack(packId, !wasEntrance);
-
-      if (wasEntrance) {
-        runOpeningStageFlourish();
-        showToast(`${currentPack?.badge || currentPack?.packName || 'Deck'} Loaded`, `${sessionCards.length} Cards Ready`);
-      } else {
-        playTone(523.25, 'triangle', 0.12);
-      }
     }
 
     function renderInitialStackedStage() {
@@ -7046,27 +6849,12 @@
         return;
       }
 
-      if (isPackModalOpen) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || '');
-          return;
-        }
-        if (e.key === 'Escape') {
-          e.preventDefault();
-          if (!isEntranceMode) closePackModal();
-          return;
-        }
-        if (e.key === 'p' || e.key === 'P') {
-          if (!isEntranceMode) closePackModal();
-          return;
-        }
-        return;
-      }
-
       if (e.key === 'h' || e.key === 'H') { window.location.href = 'index.html'; return; }
       if (e.key === 'o' || e.key === 'O') { openSettingsModal(); return; }
-      if (e.key === 'p' || e.key === 'P') { openPackModal(); return; }
+      if (e.key === 'p' || e.key === 'P') {
+        showToast('Deck Selection', 'Pilih atau gabungkan deck di Lobby [H]');
+        return;
+      }
       if (e.key === 'Escape') {
         if (lightboxOverlay.classList.contains('active')) {
           closeLightbox();
@@ -7236,8 +7024,6 @@
             else if (reviewPhase === 'complete') exitReviewMode();
           } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
             startReviewSimulation();
-          } else if (isPackModalOpen) {
-            selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || '');
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
           } else if (isModalOpen) {
@@ -7254,8 +7040,6 @@
             exitReviewMode();
           } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
             closeReviewConfig();
-          } else if (isPackModalOpen) {
-            if (!isEntranceMode) closePackModal();
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
           } else if (isModalOpen) {
@@ -7332,14 +7116,25 @@
     }
     requestAnimationFrame(pollGamepad);
 
-    // INITIAL LAUNCH: Load multi-deck selection directly from Lobby!
-    loadSelectedCardPacks(false);
-    renderInitialStackedStage();
-    currentPlayMode = 'sequential';
-    updateAudioIconUI();
-    updateSettingsUI();
-    updateDockFilterUI();
-    updatePlayModeButtonsUI();
+    if (window.whenPacksReady) {
+      window.whenPacksReady(function(packs) {
+        loadSelectedCardPacks(false);
+        renderInitialStackedStage();
+        currentPlayMode = 'sequential';
+        updateAudioIconUI();
+        updateSettingsUI();
+        updateDockFilterUI();
+        updatePlayModeButtonsUI();
+      });
+    } else {
+      loadSelectedCardPacks(false);
+      renderInitialStackedStage();
+      currentPlayMode = 'sequential';
+      updateAudioIconUI();
+      updateSettingsUI();
+      updateDockFilterUI();
+      updatePlayModeButtonsUI();
+    }
   </script>
 </body>
 </html>

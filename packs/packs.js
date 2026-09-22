@@ -1,11 +1,6 @@
 /**
  * Modular Card Packs Central Registry & Dynamic Loader
  * Single source of truth for card pack discovery and registration.
- * 
- * To add a new card pack:
- * 1. Create your pack file in packs/ (e.g. packs/blok-3.3.js)
- * 2. Add the relative path to CARD_PACK_REGISTRY below
- * 3. It will automatically load across Lobby, Casual Mode, and Exam Mode!
  */
 (function() {
   window.CARD_PACKS = window.CARD_PACKS || {};
@@ -16,9 +11,54 @@
     'packs/blok-3.2.js'
   ];
 
-  // Dynamically load each registered pack script synchronously during HTML parse
-  // so window.CARD_PACKS is ready immediately for all page scripts
+  let loadedCount = 0;
+  const total = window.CARD_PACK_REGISTRY.length;
+  window.CARD_PACKS_READY = false;
+
+  function markReady() {
+    window.CARD_PACKS_READY = true;
+    window.dispatchEvent(new CustomEvent('cardPacksReady', { detail: window.CARD_PACKS }));
+  }
+
+  // Global helper to safely execute callbacks once all packs are ready
+  window.whenPacksReady = function(callback) {
+    if (window.CARD_PACKS_READY || (window.CARD_PACKS && Object.keys(window.CARD_PACKS).length >= total && total > 0)) {
+      callback(window.CARD_PACKS);
+    } else {
+      window.addEventListener('cardPacksReady', function() {
+        callback(window.CARD_PACKS);
+      }, { once: true });
+
+      // Interval fallback polling
+      const poll = setInterval(function() {
+        if (window.CARD_PACKS && Object.keys(window.CARD_PACKS).length >= total && total > 0) {
+          clearInterval(poll);
+          if (!window.CARD_PACKS_READY) markReady();
+          callback(window.CARD_PACKS);
+        }
+      }, 40);
+    }
+  };
+
+  if (total === 0) {
+    markReady();
+    return;
+  }
+
+  // Dynamically load scripts with async = false to preserve order
   window.CARD_PACK_REGISTRY.forEach(function(src) {
-    document.write('<script src="' + src + '"><\/script>');
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    script.onload = function() {
+      loadedCount++;
+      if (loadedCount >= total) markReady();
+    };
+    script.onerror = function() {
+      console.warn('Could not load card pack:', src);
+      loadedCount++;
+      if (loadedCount >= total) markReady();
+    };
+    document.head.appendChild(script);
   });
 })();
