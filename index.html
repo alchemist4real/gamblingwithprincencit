@@ -17,7 +17,7 @@
        PRIMARY BLUE #314fba & WHITE #ffffff
        ACCENT NAVY #172b7a
        FONTS: 'Special Elite' (Display) & 'Plus Jakarta Sans' (Body)
-       TASTEFUL SPACING • ZERO OVERFLOW CLIPPING • ZERO COLLISION
+       ARCADE GAME-STYLE STREAMLINED LOBBY
        ======================================================= */
 
     :root {
@@ -61,9 +61,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: clamp(24px, 4vh, 44px) clamp(16px, 3vw, 36px) 100px;
-      gap: clamp(20px, 3vh, 32px);
+      justify-content: center;
+      padding: clamp(20px, 4vh, 40px) clamp(16px, 3vw, 32px) 96px;
+      gap: clamp(18px, 3vh, 28px);
       box-sizing: border-box;
     }
 
@@ -73,7 +73,7 @@
     header.app-header {
       text-align: center;
       width: 100%;
-      max-width: 980px;
+      max-width: 660px;
       flex-shrink: 0;
       z-index: 10;
       display: flex;
@@ -96,7 +96,7 @@
     }
 
     h1.main-title {
-      font-size: clamp(1.5rem, 3.4vw, 2.75rem);
+      font-size: clamp(1.5rem, 3.4vw, 2.5rem);
       font-weight: normal;
       letter-spacing: clamp(1.5px, 0.4vw, 3px);
       text-transform: uppercase;
@@ -106,7 +106,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: clamp(8px, 1.5vw, 16px);
+      gap: clamp(8px, 1.5vw, 14px);
       color: var(--primary-deep);
       text-align: center;
       user-select: none;
@@ -149,12 +149,12 @@
 
     .sub-meta {
       font-family: var(--font-main);
-      font-size: clamp(0.72rem, 1.15vw, 0.84rem);
+      font-size: clamp(0.72rem, 1.15vw, 0.82rem);
       font-weight: 700;
       color: var(--white-90);
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: clamp(8px, 1.2vh, 12px);
+      margin-top: clamp(6px, 1vh, 10px);
       text-shadow: 0 1px 3px rgba(13, 26, 69, 0.6);
       white-space: nowrap;
       overflow: hidden;
@@ -178,53 +178,50 @@
     }
 
     /* =======================================================
-       MAIN LOBBY CONTENT CONTAINER
+       ARCADE CONSOLE CARD (PUNCHY, STREAMLINED GAME LAUNCHER)
        ======================================================= */
-    main.lobby-main-wrap {
+    main.arcade-console-wrap {
       width: 100%;
-      max-width: 980px;
+      max-width: 660px;
+      z-index: 5;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      box-sizing: border-box;
-      z-index: 5;
+      align-items: center;
     }
 
-    /* =======================================================
-       ACTIVE BUNDLE SHOWCASE (INTEGRATED COMMAND CENTER)
-       ======================================================= */
-    .active-bundle-card {
+    .arcade-console-card {
       width: 100%;
       background-color: var(--white);
-      border: 3px solid var(--primary-deep);
-      border-radius: 20px;
-      box-shadow: 0 5px 0 var(--primary-deep);
-      padding: clamp(16px, 2.4vh, 22px) clamp(16px, 2.5vw, 26px);
+      border: 3.5px solid var(--primary-deep);
+      border-radius: 24px;
+      box-shadow: 0 8px 0 var(--primary-deep);
+      padding: clamp(20px, 3.2vh, 32px) clamp(18px, 3.2vw, 32px);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 20px;
       color: var(--primary-deep);
       box-sizing: border-box;
+      position: relative;
     }
 
-    .bundle-card-top {
+    /* Console Top Header */
+    .console-top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #edf1fc;
+      padding-bottom: 14px;
+      border-bottom: 2.5px solid #edf1fc;
     }
 
-    .bundle-badge-group {
+    .console-badge-group {
       display: flex;
       align-items: center;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
-    .bundle-badge-main {
+    .console-badge-main {
       font-family: var(--font-display);
       font-size: 11px;
       letter-spacing: 1.5px;
@@ -236,7 +233,7 @@
       text-transform: uppercase;
     }
 
-    .bundle-status-pill {
+    .console-status-pill {
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 800;
@@ -249,454 +246,289 @@
       text-transform: uppercase;
     }
 
-    .bundle-decks-badges {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .bundle-deck-chip {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 1px;
-      background-color: var(--primary-deep);
-      color: var(--white);
+    .console-packs-detected {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary-deep);
+      background-color: #edf1fc;
       padding: 3px 10px;
       border-radius: 6px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      letter-spacing: 0.5px;
     }
 
-    .bundle-content {
+    /* Field Blocks */
+    .game-field-group {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 8px;
+      width: 100%;
     }
 
-    .bundle-title {
+    .game-field-label {
       font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      font-size: 11.5px;
+      font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--primary-deep);
-      line-height: 1.25;
-    }
-
-    .bundle-subtitle {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: rgba(23, 43, 122, 0.75);
-    }
-
-    .bundle-stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .bundle-stat-box {
-      background-color: #f6f8fe;
-      border: 2px solid var(--primary-deep);
-      border-radius: 12px;
-      padding: 10px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      align-items: flex-start;
-    }
-
-    .bundle-stat-num {
-      font-family: var(--font-mono);
-      font-size: 18px;
-      font-weight: 900;
-      color: var(--primary-deep);
-      letter-spacing: 0.5px;
-    }
-
-    .bundle-stat-lbl {
-      font-family: var(--font-display);
-      font-size: 9.5px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(23, 43, 122, 0.75);
-      font-weight: 700;
-    }
-
-    /* =======================================================
-       SECTION 1: DECK SELECTOR (TACTILE CARTRIDGE SHELF)
-       ======================================================= */
-    .deck-shelf-card {
-      width: 100%;
-      background-color: var(--white);
-      border: 3px solid var(--primary-deep);
-      border-radius: 20px;
-      box-shadow: 0 5px 0 var(--primary-deep);
-      padding: clamp(16px, 2.4vh, 22px) clamp(16px, 2.5vw, 26px);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      color: var(--primary-deep);
-      box-sizing: border-box;
-    }
-
-    .deck-shelf-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding-bottom: 4px;
-      border-bottom: 2px solid #edf1fc;
+      gap: 7px;
     }
 
-    .deck-shelf-title-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .shelf-badge {
-      font-family: var(--font-display);
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      background-color: var(--primary-deep);
-      color: var(--white);
-      padding: 3px 12px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .shelf-telemetry-chip {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-    }
-
-    .shelf-actions-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-shelf-action {
-      background-color: #f6f8fe;
-      border: 2px solid var(--primary-deep);
-      border-radius: 999px;
-      padding: 4px 12px;
-      font-family: var(--font-main);
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--primary-deep);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.16s ease;
-      user-select: none;
-    }
-    .btn-shelf-action:hover {
-      background-color: var(--primary-deep);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-    .btn-shelf-action svg {
-      width: 13px;
-      height: 13px;
-      stroke-width: 2.4;
-    }
-
-    /* Deck Cartridges Grid */
-    .deck-cartridge-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 12px;
-      width: 100%;
-    }
-
-    .deck-cartridge-item {
-      background-color: #f6f8fe;
-      border: 2.5px solid var(--primary-deep);
-      border-radius: 14px;
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      cursor: pointer;
-      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-      user-select: none;
-      position: relative;
-    }
-    .deck-cartridge-item:hover {
-      transform: translateY(-2px);
-      background-color: #edf2fd;
-      box-shadow: 0 4px 0 var(--primary-deep);
-    }
-    .deck-cartridge-item.is-active {
-      background-color: var(--primary-deep);
-      border-color: var(--primary-deep);
-      color: var(--white);
-      box-shadow: 0 0 0 2.5px var(--white), 0 0 0 5px var(--primary-deep);
-    }
-    .deck-cartridge-item.is-active .deck-item-sub {
-      color: var(--white-75);
-    }
-    .deck-cartridge-item.is-active .deck-item-badge {
-      background-color: var(--white);
-      color: var(--primary-deep);
-    }
-    .deck-cartridge-item.is-active .deck-checkbox-box {
-      background-color: var(--white);
-      color: var(--primary-deep);
-      border-color: var(--white);
-    }
-
-    .deck-item-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .deck-checkbox-box {
-      width: 24px;
-      height: 24px;
-      border-radius: 7px;
-      border: 2px solid var(--primary-deep);
-      background-color: var(--white);
-      color: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all 0.15s ease;
-    }
-    .deck-checkbox-box svg {
-      width: 15px;
-      height: 15px;
-      stroke-width: 3;
-    }
-
-    .deck-item-info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      min-width: 0;
-    }
-    .deck-item-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .deck-item-badge {
-      font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 1px;
-      background-color: var(--primary-deep);
-      color: var(--white);
-      padding: 1px 7px;
-      border-radius: 4px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .deck-item-title {
-      font-size: 13.5px;
-      font-weight: 800;
-      line-height: 1.25;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .deck-item-sub {
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(23, 43, 122, 0.75);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .deck-item-count-pill {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background-color: rgba(23, 43, 122, 0.10);
-      color: var(--primary-deep);
-      flex-shrink: 0;
-    }
-    .deck-cartridge-item.is-active .deck-item-count-pill {
-      background-color: rgba(255, 255, 255, 0.20);
-      color: var(--white);
-    }
-
-    /* =======================================================
-       SECTION 2: MODE LAUNCH ARENA (TASTEFUL, FUNCTIONAL CARDS)
-       ======================================================= */
-    .lobby-mode-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(16px, 2.5vw, 24px);
-      width: 100%;
-    }
-
-    .lobby-mode-card {
-      background-color: var(--white);
-      border: 3px solid var(--primary-deep);
-      border-radius: 20px;
-      box-shadow: 0 5px 0 var(--primary-deep);
-      padding: clamp(18px, 2.8vh, 26px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      color: var(--primary-deep);
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .lobby-mode-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 0 var(--primary-deep);
-    }
-    .lobby-mode-card:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 0 var(--primary-deep);
-    }
-
-    .mode-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    .mode-card-badge {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      background-color: var(--primary-deep);
-      color: var(--white);
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .mode-key-hint {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 800;
-      background-color: #f6f8fe;
-      color: var(--primary-deep);
-      border: 1.5px solid var(--primary-deep);
-      padding: 2px 7px;
-      border-radius: 6px;
-    }
-
-    .mode-card-body {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .mode-card-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      line-height: 1.2;
-    }
-    .mode-card-desc {
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: rgba(23, 43, 122, 0.85);
-      font-weight: 500;
-    }
-
-    .mode-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-    }
-    .mode-tag-pill {
-      font-size: 10.5px;
-      font-weight: 700;
-      background-color: #f6f8fe;
-      border: 1.5px solid rgba(23, 43, 122, 0.3);
-      border-radius: 6px;
-      padding: 3px 8px;
-      color: var(--primary-deep);
-    }
-
-    .mode-card-launch-btn {
-      width: 100%;
-      height: 44px;
-      border-radius: 999px;
-      background-color: var(--primary-deep);
-      color: var(--white);
-      border: 2px solid var(--primary-deep);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: var(--font-display);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: all 0.18s ease;
-      margin-top: 4px;
-    }
-    .lobby-mode-card:hover .mode-card-launch-btn {
-      background-color: var(--primary);
-      border-color: var(--primary);
-      transform: scale(1.02);
-    }
-    .mode-card-launch-btn svg {
+    .game-field-label svg {
       width: 15px;
       height: 15px;
       stroke-width: 2.5;
+      color: var(--primary);
     }
 
-    @media (max-width: 768px) {
-      .lobby-mode-grid {
-        grid-template-columns: 1fr;
-      }
+    /* Custom Styled Arcade Dropdown */
+    .game-select-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .game-select {
+      width: 100%;
+      height: clamp(52px, 6.8vh, 58px);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      border: 2.5px solid var(--primary-deep);
+      border-radius: 14px;
+      padding: 0 46px 0 16px;
+      font-family: var(--font-main);
+      font-size: clamp(13px, 1.8vw, 14.5px);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .game-select:hover {
+      background-color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .game-select:focus {
+      background-color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(49, 79, 186, 0.22);
+    }
+
+    .game-select option {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      font-weight: 700;
+      padding: 10px;
+    }
+
+    .game-select-arrow {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .game-select-arrow svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2.5;
+    }
+
+    /* Dynamic Mission Briefing & Telemetry Box */
+    .arcade-briefing-box {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .briefing-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .briefing-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--primary-deep);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .briefing-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+
+    .briefing-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      font-weight: 600;
+      color: rgba(23, 43, 122, 0.85);
+    }
+
+    .briefing-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1.5px dashed rgba(23, 43, 122, 0.2);
+    }
+
+    .briefing-stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 8px 4px;
+      background-color: var(--white);
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 10px;
+    }
+
+    .briefing-stat-val {
+      font-family: var(--font-mono);
+      font-size: clamp(16px, 2.2vw, 19px);
+      font-weight: 900;
+      color: var(--primary-deep);
+      line-height: 1.1;
+    }
+
+    .briefing-stat-lbl {
+      font-family: var(--font-main);
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* THE BIG ARCADE START BUTTON ("tombolnya aga gede") */
+    .btn-arcade-start {
+      width: 100%;
+      height: clamp(64px, 8.5vh, 74px);
+      background-color: var(--primary);
+      color: var(--white);
+      border: 3.5px solid var(--primary-deep);
+      border-radius: 18px;
+      box-shadow: 0 8px 0 var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .btn-arcade-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 var(--primary-deep);
+      background-color: #3b5dd6;
+    }
+
+    .btn-arcade-start:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 var(--primary-deep);
+    }
+
+    .btn-arcade-start svg {
+      width: clamp(20px, 2.6vw, 26px);
+      height: clamp(20px, 2.6vw, 26px);
+      stroke-width: 3;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-arcade-start:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Quick Mode Shortcuts Row */
+    .console-shortcuts-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(23, 43, 122, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .shortcut-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .shortcut-key {
+      background-color: #f6f8fe;
+      border: 1px solid var(--primary-deep);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-weight: 800;
+      color: var(--primary-deep);
     }
 
     /* =======================================================
-       SOLID & CONSOLIDATED CONSOLE DOCK (MATCHING CASUAL.HTML)
+       SOLID CONSOLIDATED CONSOLE DOCK
        ======================================================= */
     .bottom-player-bar {
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: auto;
-      max-width: fit-content;
-      height: 56px;
-      border: 3px solid var(--primary-deep);
-      border-radius: 999px;
-      background-color: var(--white);
-      padding: 5px 12px;
+      z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 4px 0 var(--primary-deep);
-      z-index: 1000;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 12px;
+      background-color: var(--white);
+      border: 2.5px solid var(--primary-deep);
+      border-radius: 999px;
+      box-shadow: 0 6px 0 var(--primary-deep);
+      width: auto;
+      max-width: 92vw;
+      box-sizing: border-box;
     }
 
     .dock-section {
@@ -718,7 +550,6 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      position: relative;
       flex-shrink: 0;
       transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -751,40 +582,10 @@
     .dock-track-count {
       font-family: var(--font-mono);
       font-size: 11.5px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary-deep);
       white-space: nowrap;
       letter-spacing: 0.5px;
-    }
-
-    .dock-quick-btn {
-      height: 36px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 2px solid var(--primary-deep);
-      background-color: #f6f8fe;
-      color: var(--primary-deep);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-family: var(--font-display);
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-      flex-shrink: 0;
-    }
-    .dock-quick-btn:hover {
-      background-color: var(--primary-deep);
-      color: var(--white);
-      transform: scale(1.04);
-    }
-    .dock-quick-btn svg {
-      width: 14px;
-      height: 14px;
-      stroke-width: 2.2;
     }
 
     /* =======================================================
@@ -848,127 +649,96 @@
         <span class="title-tone-2">PRINCE NCIT</span>
       </h1>
     </div>
-    <div class="sub-meta">COMMAND LOBBY // DECK SELECTION & SIMULATION SUITE</div>
+    <div class="sub-meta">ARCADE MEDICAL SIMULATION // PATOLOGI ANATOMI &amp; KLINIK</div>
   </header>
 
-  <!-- MAIN WRAPPER -->
-  <main class="lobby-main-wrap">
-
-    <!-- ACTIVE BUNDLE SHOWCASE (INTEGRATED COMMAND CENTER) -->
-    <section class="active-bundle-card" id="activeBundleCard">
-      <div class="bundle-card-top">
-        <div class="bundle-badge-group">
-          <span class="bundle-badge-main">ACTIVE BUNDLE</span>
-          <span class="bundle-status-pill">READY TO LAUNCH</span>
-        </div>
-        <div class="bundle-decks-badges" id="bundleDecksBadges">
-          <!-- Dynamically populated e.g. [IDENT 3.1] + [IDENT 3.2] -->
-        </div>
-      </div>
+  <!-- MAIN ARCADE CONSOLE -->
+  <main class="arcade-console-wrap">
+    <section class="arcade-console-card">
       
-      <div class="bundle-content">
-        <h2 class="bundle-title" id="bundleTitle">IDENTIFICATION SUITE</h2>
-        <p class="bundle-subtitle" id="bundleSubtitle">Select decks below to configure your custom multi-system practice bundle</p>
+      <!-- Top Console Header -->
+      <div class="console-top-bar">
+        <div class="console-badge-group">
+          <span class="console-badge-main">MISSION SETUP</span>
+          <span class="console-status-pill">SYSTEM READY</span>
+        </div>
+        <span class="console-packs-detected" id="consolePacksDetected">DETECTING DECKS...</span>
       </div>
 
-      <div class="bundle-stats-row">
-        <div class="bundle-stat-box">
-          <span class="bundle-stat-num" id="bundleTotalCards">0</span>
-          <span class="bundle-stat-lbl">TOTAL SPECIMENS</span>
-        </div>
-        <div class="bundle-stat-box">
-          <span class="bundle-stat-num" id="bundlePrepCards">0</span>
-          <span class="bundle-stat-lbl">HISTOPATHOLOGY</span>
-        </div>
-        <div class="bundle-stat-box">
-          <span class="bundle-stat-num" id="bundleTeoriCards">0</span>
-          <span class="bundle-stat-lbl">THEORY &amp; CASES</span>
-        </div>
-        <div class="bundle-stat-box">
-          <span class="bundle-stat-num" id="bundleDecksRatio">0 / 0</span>
-          <span class="bundle-stat-lbl">DECKS BUNDLED</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 1: DECK SELECTOR SHELF -->
-    <section class="deck-shelf-card">
-      <div class="deck-shelf-header">
-        <div class="deck-shelf-title-group">
-          <span class="shelf-badge">DECK SELECTOR</span>
-          <span class="shelf-telemetry-chip" id="shelfTelemetryText">LOADING PACKS...</span>
-        </div>
-        <div class="shelf-actions-group">
-          <button class="btn-shelf-action" id="btnSelectAllDecks" onclick="selectAllDecks()" title="Select All Decks [A]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>SELECT ALL [A]</span>
-          </button>
-          <button class="btn-shelf-action" id="btnResetDecks" onclick="resetDecksSelection()" title="Reset Selection [R]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-            <span>RESET [R]</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARTRIDGES GRID -->
-      <div class="deck-cartridge-grid" id="deckCartridgeGrid">
-        <!-- Dynamically populated from window.CARD_PACKS -->
-      </div>
-    </section>
-
-    <!-- SECTION 2: MODE LAUNCH ARENA -->
-    <section class="lobby-mode-grid">
-
-      <!-- MODE 1: CASUAL 3D PRACTICE -->
-      <a href="casual.html" class="lobby-mode-card" id="cardCasualMode" onclick="handleLaunchMode(event, 'casual.html')">
-        <div class="mode-card-top">
-          <span class="mode-card-badge">CASUAL PRACTICE</span>
-          <span class="mode-key-hint">KEY [1]</span>
-        </div>
-        <div class="mode-card-body">
-          <h2 class="mode-card-title">3D CYLINDER CAROUSEL</h2>
-          <p class="mode-card-desc">
-            Freeform 3D card rotation with PlayStation gamepad controls, rapid streaming HUD, audio engine, and complete diagnostic sheets.
-          </p>
-          <div class="mode-card-tags">
-            <span class="mode-tag-pill" id="casualBundlePill">Active: 0 Cards</span>
-            <span class="mode-tag-pill">3D Perspective</span>
-            <span class="mode-tag-pill">Gamepad Support</span>
-            <span class="mode-tag-pill">Rapid Browse HUD</span>
+      <!-- CONTROL 1: DECK SELECTION DROPDOWN -->
+      <div class="game-field-group">
+        <label class="game-field-label" for="deckSelect">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <span>01 // PILIH DECK / MATERI</span>
+        </label>
+        <div class="game-select-wrap">
+          <select id="deckSelect" class="game-select" onchange="onDeckDropdownChange()">
+            <!-- Dynamically populated from CARD_PACKS -->
+            <option value="all">SEMUA DECK (COMBINED SUITE)</option>
+          </select>
+          <div class="game-select-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
         </div>
-        <div class="mode-card-launch-btn">
-          <span id="casualLaunchBtnText">START CASUAL PRACTICE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </a>
+      </div>
 
-      <!-- MODE 2: PRACTICAL EXAM SIMULATION -->
-      <a href="exam.html" class="lobby-mode-card" id="cardExamMode" onclick="handleLaunchMode(event, 'exam.html')">
-        <div class="mode-card-top">
-          <span class="mode-card-badge">TIMED EXAM</span>
-          <span class="mode-key-hint">KEY [2]</span>
-        </div>
-        <div class="mode-card-body">
-          <h2 class="mode-card-title">PRACTICAL SIMULATION</h2>
-          <p class="mode-card-desc">
-            Timed practical examination drill. 5-second preparation, 60-second timed study with 4 universal identification questions, structured reveal, and scoring.
-          </p>
-          <div class="mode-card-tags">
-            <span class="mode-tag-pill" id="examBundlePill">Active: 0 Cards</span>
-            <span class="mode-tag-pill">60s Timer Ring</span>
-            <span class="mode-tag-pill">4 Universal Prompts</span>
-            <span class="mode-tag-pill">Performance Scorecard</span>
+      <!-- CONTROL 2: MODE SELECTION DROPDOWN -->
+      <div class="game-field-group">
+        <label class="game-field-label" for="modeSelect">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>02 // PILIH MODE PERMAINAN</span>
+        </label>
+        <div class="game-select-wrap">
+          <select id="modeSelect" class="game-select" onchange="onModeDropdownChange()">
+            <option value="casual.html">CASUAL 3D PRACTICE (3D CYLINDER &amp; GAMEPAD)</option>
+            <option value="exam.html">TIMED EXAM SIMULATION (60S DRILL &amp; SCORECARD)</option>
+          </select>
+          <div class="game-select-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
         </div>
-        <div class="mode-card-launch-btn">
-          <span id="examLaunchBtnText">START EXAM SIMULATION</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <!-- DYNAMIC MISSION BRIEFING & STATS BOX -->
+      <div class="arcade-briefing-box">
+        <div class="briefing-header">
+          <div class="briefing-title" id="briefingModeTitle">CASUAL 3D PRACTICE</div>
+          <span class="briefing-badge" id="briefingDeckBadge">COMBINED</span>
         </div>
-      </a>
+        <p class="briefing-desc" id="briefingModeDesc">
+          Rotasi sediaan 3D silinder bebas dengan kontrol analog PlayStation, rapid browse HUD, audio synthesizer, dan lembar diagnosis lengkap.
+        </p>
+        <div class="briefing-stats-row">
+          <div class="briefing-stat-item">
+            <span class="briefing-stat-val" id="statTotalSpecimens">0</span>
+            <span class="briefing-stat-lbl">TOTAL SPECIMENS</span>
+          </div>
+          <div class="briefing-stat-item">
+            <span class="briefing-stat-val" id="statHistopathology">0</span>
+            <span class="briefing-stat-lbl">HISTOPATHOLOGY</span>
+          </div>
+          <div class="briefing-stat-item">
+            <span class="briefing-stat-val" id="statTheoryCases">0</span>
+            <span class="briefing-stat-lbl">THEORY &amp; CASES</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE BIG ARCADE START BUTTON ("tombolnya aga gede") -->
+      <button class="btn-arcade-start" id="btnArcadeStart" onclick="launchActiveMode()">
+        <span id="startBtnText">START GAME [ENTER]</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+
+      <!-- Keyboard shortcuts hint -->
+      <div class="console-shortcuts-row">
+        <span class="shortcut-chip"><span class="shortcut-key">ENTER</span> START</span>
+        <span class="shortcut-chip"><span class="shortcut-key">1</span> CASUAL</span>
+        <span class="shortcut-chip"><span class="shortcut-key">2</span> EXAM</span>
+        <span class="shortcut-chip"><span class="shortcut-key">M</span> MUTE</span>
+      </div>
 
     </section>
-
   </main>
 
   <!-- SOLID & CONSOLIDATED CONSOLE DOCK -->
@@ -989,32 +759,39 @@
 
     <div class="dock-section dock-center">
       <div class="dock-track-info">
-        <span class="dock-track-count" id="dockSelectionCount">0 DECKS SELECTED</span>
+        <span class="dock-track-count" id="dockSelectionCount">0 SPECIMENS STAGED</span>
       </div>
-    </div>
-
-    <div class="dock-section dock-right">
-      <a href="casual.html" class="dock-quick-btn" onclick="handleLaunchMode(event, 'casual.html')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        <span>CASUAL [1]</span>
-      </a>
-      <a href="exam.html" class="dock-quick-btn" onclick="handleLaunchMode(event, 'exam.html')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>EXAM [2]</span>
-      </a>
     </div>
   </footer>
 
   <!-- LOBBY JAVASCRIPT ENGINE -->
   <script>
     let selectedPackIds = [];
+    let selectedMode = 'casual.html';
     let isAudioMuted = false;
     let audioCtx = null;
 
-    function initSelectedPacks() {
+    // =======================================================
+    // INIT & DROPDOWN MANAGEMENT
+    // =======================================================
+    function initLobby() {
       const packs = window.CARD_PACKS || {};
       const allPackKeys = Object.keys(packs);
 
+      // Restore previously selected mode
+      try {
+        const storedMode = localStorage.getItem('selectedGameMode');
+        if (storedMode && (storedMode === 'casual.html' || storedMode === 'exam.html')) {
+          selectedMode = storedMode;
+        }
+      } catch (e) {}
+
+      const modeSelect = document.getElementById('modeSelect');
+      if (modeSelect) {
+        modeSelect.value = selectedMode;
+      }
+
+      // Restore previously selected decks
       try {
         const stored = localStorage.getItem('selectedCardPacks');
         if (stored) {
@@ -1029,8 +806,81 @@
         selectedPackIds = allPackKeys.length > 0 ? [...allPackKeys] : [];
       }
 
+      populateDeckDropdown();
+      updateLobbyUI();
+    }
+
+    function populateDeckDropdown() {
+      const packs = window.CARD_PACKS || {};
+      const allPackKeys = Object.keys(packs);
+      const deckSelect = document.getElementById('deckSelect');
+      if (!deckSelect) return;
+
+      let totalAllCards = 0;
+      for (const pack of Object.values(packs)) {
+        totalAllCards += pack.cards ? pack.cards.length : (pack.cardCount || 0);
+      }
+
+      let html = '';
+      // Option 1: All Decks Combined
+      html += `<option value="all">⭐ SEMUA DECK (COMBINED SUITE) • ${totalAllCards} KARTU</option>`;
+
+      // Options for each individual deck
+      for (const [id, pack] of Object.entries(packs)) {
+        const cardCount = pack.cards ? pack.cards.length : (pack.cardCount || 0);
+        const name = pack.packName || pack.title || id;
+        html += `<option value="${id}">${pack.badge ? '[' + pack.badge + '] ' : ''}${name} • ${cardCount} KARTU</option>`;
+      }
+
+      deckSelect.innerHTML = html;
+
+      // Select active value based on selectedPackIds
+      if (selectedPackIds.length === allPackKeys.length && allPackKeys.length > 1) {
+        deckSelect.value = 'all';
+      } else if (selectedPackIds.length === 1 && packs[selectedPackIds[0]]) {
+        deckSelect.value = selectedPackIds[0];
+      } else {
+        deckSelect.value = 'all';
+      }
+
+      const packsDetectedEl = document.getElementById('consolePacksDetected');
+      if (packsDetectedEl) {
+        packsDetectedEl.textContent = `${allPackKeys.length} DECK${allPackKeys.length > 1 ? 'S' : ''} READY`;
+      }
+    }
+
+    function onDeckDropdownChange() {
+      playSelectSound();
+      const packs = window.CARD_PACKS || {};
+      const allPackKeys = Object.keys(packs);
+      const deckSelect = document.getElementById('deckSelect');
+      if (!deckSelect) return;
+
+      const val = deckSelect.value;
+      if (val === 'all') {
+        selectedPackIds = [...allPackKeys];
+        showToast('Deck Dipilih', `Semua Deck (${allPackKeys.length} Decks) diaktifkan.`);
+      } else if (packs[val]) {
+        selectedPackIds = [val];
+        showToast('Deck Dipilih', `${packs[val].badge || packs[val].packName || val} diaktifkan.`);
+      }
+
       saveSelectedPacks();
-      renderDeckShelf();
+      updateLobbyUI();
+    }
+
+    function onModeDropdownChange() {
+      playSelectSound();
+      const modeSelect = document.getElementById('modeSelect');
+      if (!modeSelect) return;
+
+      selectedMode = modeSelect.value;
+      try {
+        localStorage.setItem('selectedGameMode', selectedMode);
+      } catch (e) {}
+
+      showToast('Mode Dipilih', selectedMode === 'casual.html' ? 'Casual 3D Practice' : 'Practical Exam Simulation');
+      updateLobbyUI();
     }
 
     function saveSelectedPacks() {
@@ -1042,174 +892,79 @@
       } catch (e) {}
     }
 
-    function toggleDeckSelection(packId) {
-      playClickSound();
+    function updateLobbyUI() {
       const packs = window.CARD_PACKS || {};
-      if (!packs[packId]) return;
-
-      const idx = selectedPackIds.indexOf(packId);
-      if (idx >= 0) {
-        if (selectedPackIds.length <= 1) {
-          showToast('Selection Notice', 'At least one deck must remain selected.');
-          playErrorSound();
-          return;
-        }
-        selectedPackIds.splice(idx, 1);
-      } else {
-        selectedPackIds.push(packId);
-      }
-
-      saveSelectedPacks();
-      renderDeckShelf();
-      playSelectSound();
-    }
-
-    function selectAllDecks() {
-      playClickSound();
-      const packs = window.CARD_PACKS || {};
-      selectedPackIds = Object.keys(packs);
-      saveSelectedPacks();
-      renderDeckShelf();
-      showToast('Decks Updated', 'All available decks selected.');
-      playSelectSound();
-    }
-
-    function resetDecksSelection() {
-      playClickSound();
-      const packs = window.CARD_PACKS || {};
-      const firstKey = Object.keys(packs)[0] || '';
-      selectedPackIds = firstKey ? [firstKey] : [];
-      saveSelectedPacks();
-      renderDeckShelf();
-      showToast('Decks Reset', `Reset to default: ${packs[firstKey]?.packName || firstKey}`);
-      playSelectSound();
-    }
-
-    function renderDeckShelf() {
-      const container = document.getElementById('deckCartridgeGrid');
-      if (!container) return;
-
-      const packs = window.CARD_PACKS || {};
-      let html = '';
       let totalCards = 0;
       let totalPrep = 0;
       let totalTeori = 0;
       const selectedPacksList = [];
 
-      for (const [id, pack] of Object.entries(packs)) {
-        const isSelected = selectedPackIds.includes(id);
-        const cardCount = pack.cards ? pack.cards.length : (pack.cardCount || 0);
-        const prepCount = pack.cards ? pack.cards.filter(c => c.type === 'preparat').length : 0;
-        const teoriCount = pack.cards ? pack.cards.filter(c => c.type === 'teori').length : 0;
-
-        if (isSelected) {
-          totalCards += cardCount;
-          totalPrep += prepCount;
-          totalTeori += teoriCount;
+      selectedPackIds.forEach(id => {
+        const pack = packs[id];
+        if (pack) {
           selectedPacksList.push(pack);
+          if (pack.cards) {
+            totalCards += pack.cards.length;
+            totalPrep += pack.cards.filter(c => c.type === 'preparat').length;
+            totalTeori += pack.cards.filter(c => c.type === 'teori').length;
+          }
         }
+      });
 
-        html += `
-          <div class="deck-cartridge-item ${isSelected ? 'is-active' : ''}" onclick="toggleDeckSelection('${id}')">
-            <div class="deck-item-left">
-              <div class="deck-checkbox-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <div class="deck-item-info">
-                <div class="deck-item-header">
-                  <span class="deck-item-badge">${pack.badge || 'PACK'}</span>
-                  <span class="deck-item-title">${pack.packName || pack.title || id}</span>
-                </div>
-                <div class="deck-item-sub">${prepCount} Preparat • ${teoriCount} Teori</div>
-              </div>
-            </div>
-            <span class="deck-item-count-pill">${cardCount} CARDS</span>
-          </div>
-        `;
+      // Update Briefing Box
+      const modeTitleEl = document.getElementById('briefingModeTitle');
+      const modeDescEl = document.getElementById('briefingModeDesc');
+      const deckBadgeEl = document.getElementById('briefingDeckBadge');
+
+      if (selectedMode === 'casual.html') {
+        if (modeTitleEl) modeTitleEl.textContent = 'CASUAL 3D PRACTICE';
+        if (modeDescEl) {
+          modeDescEl.textContent = 'Rotasi sediaan 3D silinder bebas dengan kontrol analog PlayStation, rapid browse HUD, audio synthesizer, dan lembar diagnosis lengkap.';
+        }
+      } else {
+        if (modeTitleEl) modeTitleEl.textContent = 'TIMED EXAM SIMULATION';
+        if (modeDescEl) {
+          modeDescEl.textContent = 'Simulasi ujian praktikum berwaktu. 5 detik persiapan, 60 detik observasi dengan 4 pertanyaan identifikasi universal, structured reveal, dan kartu skor.';
+        }
       }
 
-      container.innerHTML = html;
-
-      // 1. UPDATE ACTIVE BUNDLE SHOWCASE
-      const bundleBadgesEl = document.getElementById('bundleDecksBadges');
-      if (bundleBadgesEl) {
-        bundleBadgesEl.innerHTML = selectedPacksList.map(p => `
-          <span class="bundle-deck-chip">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            ${p.badge || p.packName || 'PACK'}
-          </span>
-        `).join('');
-      }
-
-      const bundleTitleEl = document.getElementById('bundleTitle');
-      if (bundleTitleEl) {
-        if (selectedPacksList.length === 1) {
-          bundleTitleEl.textContent = selectedPacksList[0].packName || selectedPacksList[0].title || 'IDENT DECK';
-        } else if (selectedPacksList.length > 1) {
-          const names = selectedPacksList.map(p => p.badge || p.packName).join(' + ');
-          bundleTitleEl.textContent = `${names} // COMBINED SUITE`;
+      if (deckBadgeEl) {
+        if (selectedPackIds.length > 1) {
+          deckBadgeEl.textContent = `${selectedPackIds.length} DECKS COMBINED`;
+        } else if (selectedPackIds.length === 1 && selectedPacksList[0]) {
+          deckBadgeEl.textContent = selectedPacksList[0].badge || '1 DECK';
         } else {
-          bundleTitleEl.textContent = 'NO DECKS SELECTED';
+          deckBadgeEl.textContent = 'NO DECK';
         }
       }
 
-      const bundleSubEl = document.getElementById('bundleSubtitle');
-      if (bundleSubEl) {
-        if (selectedPacksList.length > 0) {
-          bundleSubEl.textContent = `Active Practice Bundle: ${totalCards} specimens staged (${totalPrep} Histopathology, ${totalTeori} Theory & Cases)`;
-        } else {
-          bundleSubEl.textContent = 'Please select at least one deck from the shelf below to begin.';
-        }
-      }
-
-      const elTotal = document.getElementById('bundleTotalCards');
+      // Update Briefing Stats
+      const elTotal = document.getElementById('statTotalSpecimens');
       if (elTotal) elTotal.textContent = totalCards;
-      const elPrep = document.getElementById('bundlePrepCards');
+      const elPrep = document.getElementById('statHistopathology');
       if (elPrep) elPrep.textContent = totalPrep;
-      const elTeori = document.getElementById('bundleTeoriCards');
+      const elTeori = document.getElementById('statTheoryCases');
       if (elTeori) elTeori.textContent = totalTeori;
-      const elRatio = document.getElementById('bundleDecksRatio');
-      if (elRatio) elRatio.textContent = `${selectedPackIds.length} / ${Object.keys(packs).length}`;
 
-      // 2. UPDATE REACTIVE MODE CARDS
-      const casualLaunchBtnText = document.getElementById('casualLaunchBtnText');
-      if (casualLaunchBtnText) {
-        casualLaunchBtnText.textContent = `START CASUAL PRACTICE (${totalCards} CARDS)`;
-      }
-      const examLaunchBtnText = document.getElementById('examLaunchBtnText');
-      if (examLaunchBtnText) {
-        examLaunchBtnText.textContent = `START EXAM SIMULATION (${totalCards} CARDS)`;
+      // Update The Big Start Button Text
+      const startBtnText = document.getElementById('startBtnText');
+      if (startBtnText) {
+        const modeLabel = selectedMode === 'casual.html' ? 'START CASUAL PRACTICE' : 'START EXAM SIMULATION';
+        startBtnText.textContent = `${modeLabel} (${totalCards} CARDS)`;
       }
 
-      const casualBundlePill = document.getElementById('casualBundlePill');
-      if (casualBundlePill) {
-        casualBundlePill.textContent = `Staged: ${totalCards} Cards (${selectedPackIds.length} Decks)`;
-      }
-      const examBundlePill = document.getElementById('examBundlePill');
-      if (examBundlePill) {
-        examBundlePill.textContent = `Staged: ${totalCards} Questions (${selectedPackIds.length} Decks)`;
-      }
-
-      // 3. UPDATE TELEMETRY & DOCK INFO
+      // Update Dock Selection Count
       const countPill = document.getElementById('dockSelectionCount');
       if (countPill) {
-        countPill.textContent = `${selectedPackIds.length} DECK${selectedPackIds.length > 1 ? 'S' : ''} • ${totalCards} SPECIMENS`;
-      }
-
-      const telemetryText = document.getElementById('shelfTelemetryText');
-      if (telemetryText) {
-        telemetryText.textContent = `${selectedPackIds.length} OF ${Object.keys(packs).length} DECKS ACTIVE • ${totalCards} TOTAL SPECIMENS`;
+        countPill.textContent = `${totalCards} SPECIMENS READY • ${selectedPackIds.length} DECK${selectedPackIds.length > 1 ? 'S' : ''}`;
       }
     }
 
-    function handleLaunchMode(e, targetUrl) {
-      e.preventDefault();
+    function launchActiveMode() {
       playLaunchSound();
-      showToast('Launching', `Loading ${targetUrl === 'casual.html' ? 'Casual 3D Practice' : 'Exam Simulation'}...`);
+      showToast('Launching', `Memulai ${selectedMode === 'casual.html' ? 'Casual 3D Practice' : 'Exam Simulation'}...`);
       setTimeout(() => {
-        window.location.href = targetUrl;
+        window.location.href = selectedMode;
       }, 160);
     }
 
@@ -1235,7 +990,7 @@
       if (!isAudioMuted) {
         initAudioContext();
         playSelectSound();
-        showToast('Audio', 'Sound Effects Enabled');
+        showToast('Audio', 'Sound Effects Aktif');
       } else {
         showToast('Audio', 'Sound Effects Muted');
       }
@@ -1311,25 +1066,6 @@
       } catch (e) {}
     }
 
-    function playErrorSound() {
-      if (isAudioMuted) return;
-      initAudioContext();
-      if (!audioCtx) return;
-      try {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(180, audioCtx.currentTime);
-        osc.frequency.setValueAtTime(140, audioCtx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.09, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.16);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.16);
-      } catch (e) {}
-    }
-
     // =======================================================
     // TOAST SYSTEM
     // =======================================================
@@ -1359,18 +1095,28 @@
     // KEYBOARD NAVIGATION
     // =======================================================
     window.addEventListener('keydown', (e) => {
-      if (e.key === '1') {
+      // Enter or Space: Start game
+      if (e.key === 'Enter' || e.key === ' ') {
+        // Only if not focused on select
+        if (document.activeElement && document.activeElement.tagName === 'SELECT') {
+          return;
+        }
         e.preventDefault();
-        handleLaunchMode(e, 'casual.html');
+        launchActiveMode();
+      } else if (e.key === '1') {
+        e.preventDefault();
+        const modeSelect = document.getElementById('modeSelect');
+        if (modeSelect) {
+          modeSelect.value = 'casual.html';
+          onModeDropdownChange();
+        }
       } else if (e.key === '2') {
         e.preventDefault();
-        handleLaunchMode(e, 'exam.html');
-      } else if (e.key === 'a' || e.key === 'A') {
-        e.preventDefault();
-        selectAllDecks();
-      } else if (e.key === 'r' || e.key === 'R') {
-        e.preventDefault();
-        resetDecksSelection();
+        const modeSelect = document.getElementById('modeSelect');
+        if (modeSelect) {
+          modeSelect.value = 'exam.html';
+          onModeDropdownChange();
+        }
       } else if (e.key === 'm' || e.key === 'M') {
         e.preventDefault();
         toggleAudioMute();
@@ -1385,10 +1131,10 @@
 
     if (window.whenPacksReady) {
       window.whenPacksReady(function(packs) {
-        initSelectedPacks();
+        initLobby();
       });
     } else {
-      initSelectedPacks();
+      initLobby();
     }
   </script>
 </body>
