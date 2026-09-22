@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
-  <script src="packs/blok-3.1.js"></script>
+  <script src="packs/packs.js"></script>
   <style>
     /* =======================================================
        STRICT MONOCHROMATIC 2-COLOR DESIGN:
@@ -4006,7 +4006,7 @@
     // =======================================================
     // MODULAR CARD PACK ENGINE
     // =======================================================
-    let currentPackId = Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1';
+    let currentPackId = Object.keys(window.CARD_PACKS || {})[0] || '';
     let currentPack = null;
     let DATA_CARDS = [];
     let isPackModalOpen = false;
@@ -4067,37 +4067,69 @@
       updateRemovedCounterUI();
     }
 
-    function loadCardPack(packId, notify = true) {
+    function loadSelectedCardPacks(notify = false) {
       const packs = window.CARD_PACKS || {};
-      if (!packs[packId]) {
-        const keys = Object.keys(packs);
-        if (keys.length > 0) packId = keys[0];
-        else {
-          console.error('No card packs registered!');
-          return;
+      let packIds = [];
+      try {
+        const stored = localStorage.getItem('selectedCardPacks');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            packIds = parsed.filter(id => packs[id]);
+          }
         }
+      } catch (e) {}
+
+      if (packIds.length === 0) {
+        const defaultId = localStorage.getItem('activeCardPack') || Object.keys(packs)[0] || '';
+        packIds = defaultId ? [defaultId] : [];
       }
 
-      currentPackId = packId;
-      currentPack = packs[packId];
-      DATA_CARDS = currentPack.cards || [];
-      removedCardIds = loadRemovedCards(packId);
-      try {
-        localStorage.setItem('activeCardPack', packId);
-      } catch (e) {}
+      currentPackId = packIds[0];
+      currentPack = packs[currentPackId] || {};
+
+      // Merge cards from all selected packs
+      let combined = [];
+      packIds.forEach(pId => {
+        const p = packs[pId];
+        if (p && p.cards) {
+          p.cards.forEach(c => {
+            combined.push({
+              ...c,
+              _packId: pId,
+              _packName: p.packName || pId,
+              _packBadge: p.badge || 'PACK'
+            });
+          });
+        }
+      });
+
+      DATA_CARDS = combined;
+      removedCardIds = new Set();
+      packIds.forEach(pId => {
+        const removed = loadRemovedCards(pId);
+        removed.forEach(id => removedCardIds.add(id));
+      });
 
       // Update Header Text & Metadata
       const headerPackName = document.getElementById('headerPackName');
-      if (headerPackName) headerPackName.textContent = currentPack.badge || currentPack.packName || packId;
-
-      // PRESERVE TWO-TONE STYLED TITLE SPANS (NEVER OVERWRITE WITH PLAIN TEXT)
-      const appMainTitle = document.getElementById('appMainTitle');
-      if (appMainTitle && currentPack && currentPack.title && currentPack.title !== 'GAMBLING WITH PRINCE NCIT') {
-        appMainTitle.textContent = currentPack.title;
+      if (headerPackName) {
+        if (packIds.length === 1) {
+          headerPackName.textContent = currentPack.badge || currentPack.packName || currentPackId;
+        } else {
+          headerPackName.textContent = `${packIds.length} DECKS COMBINED`;
+        }
       }
 
       const appSubMeta = document.getElementById('appSubMeta');
-      if (appSubMeta) appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Cards`;
+      if (appSubMeta) {
+        if (packIds.length === 1) {
+          appSubMeta.textContent = currentPack.subtitle || `${currentPack.packName} • ${DATA_CARDS.length} Cards`;
+        } else {
+          const names = packIds.map(pId => packs[pId]?.badge || packs[pId]?.packName || pId).join(' + ');
+          appSubMeta.textContent = `${names} • ${DATA_CARDS.length} Cards Total`;
+        }
+      }
 
       // Update Filter Button Titles
       const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
@@ -4118,8 +4150,16 @@
       applyDeckFilterAndMode(true);
 
       if (notify) {
-        showToast('Card Pack', `${currentPack.packName || packId} • ${sessionCards.length} Cards`);
+        showToast('Decks Loaded', `${packIds.length} Decks • ${DATA_CARDS.length} Cards`);
       }
+    }
+
+    function loadCardPack(packId, notify = true) {
+      try {
+        localStorage.setItem('selectedCardPacks', JSON.stringify([packId]));
+        localStorage.setItem('activeCardPack', packId);
+      } catch (e) {}
+      loadSelectedCardPacks(notify);
     }
 
     let isEntranceMode = false;
@@ -7009,7 +7049,7 @@
       if (isPackModalOpen) {
         if (e.key === ' ' || e.key === 'Enter') {
           e.preventDefault();
-          selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1');
+          selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || '');
           return;
         }
         if (e.key === 'Escape') {
@@ -7197,7 +7237,7 @@
           } else if (document.getElementById('reviewConfigOverlay')?.classList.contains('active')) {
             startReviewSimulation();
           } else if (isPackModalOpen) {
-            selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || 'blok-3.1');
+            selectCardPack(currentPackId || Object.keys(window.CARD_PACKS || {})[0] || '');
           } else if (lightboxOverlay.classList.contains('active')) {
             closeLightbox();
           } else if (isModalOpen) {
@@ -7292,25 +7332,14 @@
     }
     requestAnimationFrame(pollGamepad);
 
-    // INITIAL LAUNCH: Load card pack, set resting stack, and present "Pick a Block" entrance screen first!
-    let savedPack = null;
-    try {
-      savedPack = localStorage.getItem('activeCardPack');
-    } catch (e) {}
-    const availablePacks = Object.keys(window.CARD_PACKS || {});
-    const defaultPackId = savedPack && (window.CARD_PACKS || {})[savedPack]
-      ? savedPack
-      : (availablePacks[0] || 'blok-3.1');
-    loadCardPack(defaultPackId, false);
+    // INITIAL LAUNCH: Load multi-deck selection directly from Lobby!
+    loadSelectedCardPacks(false);
     renderInitialStackedStage();
     currentPlayMode = 'sequential';
     updateAudioIconUI();
     updateSettingsUI();
     updateDockFilterUI();
     updatePlayModeButtonsUI();
-
-    // Show "Pick a Block" onboarding screen so cards are not immediately shown
-    openEntranceBlockPicker();
   </script>
 </body>
 </html>
