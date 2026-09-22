@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#314fba">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>LOBBY • GAMBLING WITH PRINCE NCIT</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23314fba'/%3E%3Cpath d='M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
@@ -16,14 +13,11 @@
   <script src="packs/packs.js"></script>
   <style>
     /* =======================================================
-       STRICT MONOCHROMATIC 2-COLOR DESIGN:
+       STRICT MONOCHROMATIC 2-COLOR DESIGN SYSTEM:
        PRIMARY BLUE #314fba & WHITE #ffffff
-       STRICT 2 FONTS ONLY:
-       1. DISPLAY FONT: 'Special Elite'
-       2. BODY & UI FONT: 'Plus Jakarta Sans'
-       STRICT ZERO GRADIENTS: PURE SOLID COLORS ONLY
-       STRICT ZERO BLACK SHADOWS: NO AI SLOP SHADOWS
-       STRICT ZERO TRANSPARENCY: ALL CARDS 100% SOLID
+       ACCENT NAVY #172b7a
+       FONTS: 'Special Elite' (Display) & 'Plus Jakarta Sans' (Body)
+       TASTEFUL SPACING • ZERO OVERFLOW CLIPPING • ZERO COLLISION
        ======================================================= */
 
     :root {
@@ -55,31 +49,31 @@
     }
 
     html, body {
-      width: 100vw;
-      height: 100vh;
-      max-height: 100vh;
-      overflow: hidden;
+      width: 100%;
+      min-height: 100vh;
       background-color: var(--primary);
       color: var(--white);
       user-select: none;
+      overflow-x: hidden;
     }
 
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: clamp(20px, 3.8vh, 40px) clamp(16px, 3vw, 36px) clamp(18px, 2.8vh, 32px);
+      justify-content: flex-start;
+      padding: clamp(24px, 4vh, 44px) clamp(16px, 3vw, 36px) 100px;
+      gap: clamp(20px, 3vh, 32px);
       box-sizing: border-box;
     }
 
     /* =======================================================
-       CENTERED HEADER (MATCHING CASUAL.HTML EXACTLY)
+       CENTERED HEROIC HEADER
        ======================================================= */
     header.app-header {
       text-align: center;
       width: 100%;
-      max-width: 960px;
+      max-width: 980px;
       flex-shrink: 0;
       z-index: 10;
       display: flex;
@@ -102,7 +96,7 @@
     }
 
     h1.main-title {
-      font-size: clamp(1.45rem, 3.2vw, 2.65rem);
+      font-size: clamp(1.5rem, 3.4vw, 2.75rem);
       font-weight: normal;
       letter-spacing: clamp(1.5px, 0.4vw, 3px);
       text-transform: uppercase;
@@ -155,12 +149,12 @@
 
     .sub-meta {
       font-family: var(--font-main);
-      font-size: clamp(0.72rem, 1.15vw, 0.82rem);
+      font-size: clamp(0.72rem, 1.15vw, 0.84rem);
       font-weight: 700;
       color: var(--white-90);
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: clamp(6px, 1vh, 10px);
+      margin-top: clamp(8px, 1.2vh, 12px);
       text-shadow: 0 1px 3px rgba(13, 26, 69, 0.6);
       white-space: nowrap;
       overflow: hidden;
@@ -170,7 +164,7 @@
 
     @media (max-width: 600px) {
       h1.main-title {
-        font-size: clamp(1.15rem, 5vw, 1.55rem);
+        font-size: clamp(1.2rem, 5.5vw, 1.6rem);
         letter-spacing: 1.2px;
         gap: 6px;
       }
@@ -184,170 +178,162 @@
     }
 
     /* =======================================================
-       MAIN LOBBY ARENA (MULTI-DECK SELECTOR & MODE CARDS)
+       MAIN LOBBY CONTENT CONTAINER
        ======================================================= */
-    .lobby-stage {
+    main.lobby-main-wrap {
       width: 100%;
-      max-width: 1040px;
-      flex: 1;
-      min-height: 0;
+      max-width: 980px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(10px, 1.8vh, 18px);
+      gap: 24px;
       box-sizing: border-box;
       z-index: 5;
     }
 
     /* =======================================================
-       SECTION 1: MULTI-DECK SELECTOR SHELF
+       SECTION 1: DECK SELECTOR (TACTILE CARTRIDGE SHELF)
        ======================================================= */
-    .deck-shelf-container {
+    .deck-shelf-card {
       width: 100%;
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
       border-radius: 20px;
-      box-shadow: 0 4px 0 var(--primary-deep);
-      padding: clamp(10px, 1.6vh, 16px) clamp(12px, 2vw, 20px);
+      box-shadow: 0 5px 0 var(--primary-deep);
+      padding: clamp(16px, 2.4vh, 22px) clamp(16px, 2.5vw, 26px);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      box-sizing: border-box;
+      gap: 14px;
       color: var(--primary-deep);
-      flex-shrink: 0;
+      box-sizing: border-box;
     }
 
     .deck-shelf-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #edf1fc;
+    }
+
+    .deck-shelf-title-group {
+      display: flex;
+      align-items: center;
       gap: 10px;
       flex-wrap: wrap;
     }
 
-    .deck-shelf-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .deck-shelf-badge {
+    .shelf-badge {
       font-family: var(--font-display);
-      font-size: 10.5px;
+      font-size: 11px;
       letter-spacing: 1.5px;
       background-color: var(--primary-deep);
       color: var(--white);
-      padding: 3px 10px;
+      padding: 3px 12px;
       border-radius: 999px;
       font-weight: 700;
       text-transform: uppercase;
     }
 
-    .deck-shelf-telemetry {
+    .shelf-telemetry-chip {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       color: var(--primary);
       letter-spacing: 0.5px;
     }
 
-    .deck-shelf-actions {
+    .shelf-actions-group {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .btn-shelf-action {
       background-color: #f6f8fe;
-      border: 1.5px solid var(--primary-deep);
+      border: 2px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 3px 10px;
+      padding: 4px 12px;
       font-family: var(--font-main);
-      font-size: 10.5px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
       color: var(--primary-deep);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      transition: all 0.15s ease;
+      gap: 5px;
+      transition: all 0.16s ease;
       user-select: none;
     }
     .btn-shelf-action:hover {
       background-color: var(--primary-deep);
       color: var(--white);
+      transform: translateY(-1px);
     }
     .btn-shelf-action svg {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       stroke-width: 2.4;
     }
 
-    /* Deck Cards Grid */
+    /* Deck Cartridges Grid */
     .deck-cartridge-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 8px;
-      max-height: clamp(100px, 18vh, 150px);
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-    .deck-cartridge-grid::-webkit-scrollbar {
-      width: 4px;
-    }
-    .deck-cartridge-grid::-webkit-scrollbar-thumb {
-      background-color: var(--primary-deep);
-      border-radius: 999px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 12px;
+      width: 100%;
     }
 
-    .deck-cartridge-card {
+    .deck-cartridge-item {
       background-color: #f6f8fe;
-      border: 2px solid var(--primary-deep);
-      border-radius: 12px;
-      padding: 8px 12px;
+      border: 2.5px solid var(--primary-deep);
+      border-radius: 14px;
+      padding: 12px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
       cursor: pointer;
-      transition: transform 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
       user-select: none;
+      position: relative;
     }
-    .deck-cartridge-card:hover {
-      transform: translateY(-1px);
-      background-color: #eef3ff;
+    .deck-cartridge-item:hover {
+      transform: translateY(-2px);
+      background-color: #edf2fd;
+      box-shadow: 0 4px 0 var(--primary-deep);
     }
-    .deck-cartridge-card.is-selected {
+    .deck-cartridge-item.is-active {
       background-color: var(--primary-deep);
       border-color: var(--primary-deep);
       color: var(--white);
-      box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--primary-deep);
+      box-shadow: 0 0 0 2.5px var(--white), 0 0 0 5px var(--primary-deep);
     }
-    .deck-cartridge-card.is-selected .deck-cartridge-sub {
+    .deck-cartridge-item.is-active .deck-item-sub {
       color: var(--white-75);
     }
-    .deck-cartridge-card.is-selected .deck-cartridge-badge {
+    .deck-cartridge-item.is-active .deck-item-badge {
       background-color: var(--white);
       color: var(--primary-deep);
     }
-    .deck-cartridge-card.is-selected .deck-toggle-box {
+    .deck-cartridge-item.is-active .deck-checkbox-box {
       background-color: var(--white);
       color: var(--primary-deep);
       border-color: var(--white);
     }
 
-    .deck-cartridge-info {
+    .deck-item-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       min-width: 0;
     }
 
-    .deck-toggle-box {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
+    .deck-checkbox-box {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
       border: 2px solid var(--primary-deep);
       background-color: var(--white);
       color: transparent;
@@ -357,291 +343,200 @@
       flex-shrink: 0;
       transition: all 0.15s ease;
     }
-    .deck-toggle-box svg {
-      width: 14px;
-      height: 14px;
+    .deck-checkbox-box svg {
+      width: 15px;
+      height: 15px;
       stroke-width: 3;
     }
 
-    .deck-cartridge-details {
+    .deck-item-info {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
       min-width: 0;
     }
-    .deck-cartridge-header {
+    .deck-item-header {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .deck-cartridge-badge {
+    .deck-item-badge {
       font-family: var(--font-display);
-      font-size: 8.5px;
+      font-size: 9px;
       letter-spacing: 1px;
       background-color: var(--primary-deep);
       color: var(--white);
-      padding: 1px 6px;
+      padding: 1px 7px;
       border-radius: 4px;
       font-weight: 700;
       flex-shrink: 0;
     }
-    .deck-cartridge-title {
-      font-size: 12.5px;
+    .deck-item-title {
+      font-size: 13.5px;
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.25;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .deck-cartridge-sub {
-      font-size: 10.5px;
+    .deck-item-sub {
+      font-size: 11px;
       font-weight: 600;
-      color: rgba(23, 43, 122, 0.7);
+      color: rgba(23, 43, 122, 0.75);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .deck-item-count-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background-color: rgba(23, 43, 122, 0.10);
+      color: var(--primary-deep);
+      flex-shrink: 0;
+    }
+    .deck-cartridge-item.is-active .deck-item-count-pill {
+      background-color: rgba(255, 255, 255, 0.20);
+      color: var(--white);
     }
 
     /* =======================================================
-       SECTION 2: MODE LAUNCH ARENA (CASUAL 3D & EXAM MODE)
-       USING EXACT HORIZONTAL COLLECTIBLE CARD DESIGN (.BIG-CARD)
+       SECTION 2: MODE LAUNCH ARENA (TASTEFUL, FUNCTIONAL CARDS)
        ======================================================= */
-    .lobby-mode-arena {
-      width: 100%;
+    .lobby-mode-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(14px, 2.5vw, 24px);
-      align-items: stretch;
-      box-sizing: border-box;
+      gap: clamp(16px, 2.5vw, 24px);
+      width: 100%;
     }
 
-    .mode-big-card {
-      position: relative;
-      width: 100%;
-      height: clamp(180px, 26vh, 230px);
-      border-radius: 20px;
-      overflow: hidden;
+    .lobby-mode-card {
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
-      box-shadow: 0 4px 0 var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 5px 0 var(--primary-deep);
+      padding: clamp(18px, 2.8vh, 26px);
       display: flex;
-      flex-direction: row;
-      padding: 10px 12px 10px 10px;
-      user-select: none;
-      cursor: pointer;
-      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
       color: var(--primary-deep);
       text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .mode-big-card:hover {
+    .lobby-mode-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 0 var(--primary-deep);
     }
-    .mode-big-card:active {
+    .lobby-mode-card:active {
       transform: translateY(1px);
       box-shadow: 0 2px 0 var(--primary-deep);
     }
 
-    /* Left Branding Rail */
-    .mode-left-rail {
-      width: 26px;
-      flex-shrink: 0;
+    .mode-card-top {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2px 0 4px;
-      margin-right: 8px;
-      position: relative;
+      gap: 8px;
     }
-    .mode-pip {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background-color: var(--primary);
-      border: 2px solid var(--primary-deep);
-      flex-shrink: 0;
-    }
-    .mode-vertical-title {
+    .mode-card-badge {
       font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: normal;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      white-space: nowrap;
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-
-    /* Center Main Area */
-    .mode-main-area {
-      flex: 1;
-      min-width: 0;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .mode-content-window {
-      flex: 1;
-      min-height: 0;
-      border-radius: 14px;
-      border: 2px solid var(--primary-deep);
-      background-color: #0d1a45;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 12px 14px 44px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      background-color: var(--primary-deep);
       color: var(--white);
-      box-sizing: border-box;
-      gap: 6px;
-    }
-
-    .mode-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-    }
-    .mode-badge {
-      font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 1.2px;
-      background-color: var(--white);
-      color: var(--primary-deep);
+      padding: 3px 10px;
       border-radius: 999px;
-      padding: 2px 8px;
       font-weight: 700;
       text-transform: uppercase;
     }
-    .mode-key-badge {
+    .mode-key-hint {
       font-family: var(--font-mono);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
-      background-color: var(--primary);
-      color: var(--white);
-      padding: 1px 6px;
-      border-radius: 4px;
-      border: 1px solid var(--white-50);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      border: 1.5px solid var(--primary-deep);
+      padding: 2px 7px;
+      border-radius: 6px;
     }
 
-    .mode-prompt-text {
-      font-size: 11.5px;
-      line-height: 1.4;
+    .mode-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mode-card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      line-height: 1.2;
+    }
+    .mode-card-desc {
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: rgba(23, 43, 122, 0.85);
       font-weight: 500;
-      color: #f6f8fe;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
     }
 
-    .mode-feature-chips {
+    .mode-card-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-top: auto;
+      gap: 6px;
+      margin-top: 4px;
     }
-    .mode-chip {
-      font-size: 9.5px;
+    .mode-tag-pill {
+      font-size: 10.5px;
       font-weight: 700;
-      background-color: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      background-color: #f6f8fe;
+      border: 1.5px solid rgba(23, 43, 122, 0.3);
       border-radius: 6px;
-      padding: 2px 6px;
-      color: var(--white);
+      padding: 3px 8px;
+      color: var(--primary-deep);
     }
 
-    /* Bottom Overlapping Banner */
-    .mode-bottom-banner {
-      position: absolute;
-      bottom: 4px;
-      left: -14px;
-      right: 0;
-      height: 38px;
-      background-color: var(--primary);
-      border: 2px solid var(--primary-deep);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px 0 44px;
-      z-index: 10;
-    }
-
-    .mode-emblem-badge {
-      position: absolute;
-      left: -4px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
+    .mode-card-launch-btn {
+      width: 100%;
+      height: 44px;
       border-radius: 999px;
-      background-color: var(--white);
-      border: 2.5px solid var(--primary-deep);
-      box-shadow: 0 0 0 2px var(--white);
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border: 2px solid var(--primary-deep);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 15;
-    }
-    .mode-emblem-icon {
-      width: 22px;
-      height: 22px;
-      color: var(--primary-deep);
-    }
-
-    .mode-banner-title {
+      gap: 8px;
       font-family: var(--font-display);
-      font-size: 13.5px;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--white);
-      line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      transition: all 0.18s ease;
+      margin-top: 4px;
     }
-
-    .mode-banner-btn {
-      padding: 4px 12px;
-      border-radius: 999px;
-      background-color: var(--white);
-      color: var(--primary-deep);
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      border: 1.5px solid var(--primary-deep);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: all 0.15s ease;
+    .lobby-mode-card:hover .mode-card-launch-btn {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.02);
     }
-    .mode-big-card:hover .mode-banner-btn {
-      background-color: var(--primary-deep);
-      color: var(--white);
-      border-color: var(--white);
-    }
-    .mode-banner-btn svg {
-      width: 12px;
-      height: 12px;
+    .mode-card-launch-btn svg {
+      width: 15px;
+      height: 15px;
       stroke-width: 2.5;
     }
 
     @media (max-width: 768px) {
-      .lobby-mode-arena {
+      .lobby-mode-grid {
         grid-template-columns: 1fr;
-      }
-      .mode-big-card {
-        height: 180px;
       }
     }
 
@@ -649,6 +544,10 @@
        SOLID & CONSOLIDATED CONSOLE DOCK (MATCHING CASUAL.HTML)
        ======================================================= */
     .bottom-player-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       width: auto;
       max-width: fit-content;
       height: 56px;
@@ -661,15 +560,13 @@
       justify-content: center;
       gap: 8px;
       box-shadow: 0 4px 0 var(--primary-deep);
-      flex-shrink: 0;
-      z-index: 100;
-      margin: 0 auto;
+      z-index: 1000;
     }
 
     .dock-section {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
@@ -687,12 +584,12 @@
       cursor: pointer;
       position: relative;
       flex-shrink: 0;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .dock-audio-btn:hover {
       background-color: var(--primary-deep);
       color: var(--white);
-      transform: scale(1.06);
+      transform: scale(1.08);
     }
     .dock-audio-btn svg {
       width: 16px;
@@ -726,7 +623,7 @@
 
     .dock-quick-btn {
       height: 36px;
-      padding: 0 12px;
+      padding: 0 14px;
       border-radius: 999px;
       border: 2px solid var(--primary-deep);
       background-color: #f6f8fe;
@@ -740,7 +637,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
       flex-shrink: 0;
     }
     .dock-quick-btn:hover {
@@ -755,24 +652,8 @@
     }
 
     /* =======================================================
-       TOAST SYSTEM & FULL-SCREEN SCRIM (MATCHING CASUAL.HTML)
+       TOAST NOTIFICATIONS
        ======================================================= */
-    .screen-scrim {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 20, 65, 0.65);
-      z-index: 3400;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(2.5px);
-      -webkit-backdrop-filter: blur(2.5px);
-    }
-    body.toast-active .screen-scrim {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
     .toast-container {
       position: fixed;
       top: 24px;
@@ -820,9 +701,6 @@
 </head>
 <body>
 
-  <!-- FULL SCREEN SCRIM -->
-  <div class="screen-scrim" id="screenScrim"></div>
-
   <!-- TOAST CONTAINER -->
   <div class="toast-container" id="toastContainer"></div>
 
@@ -834,25 +712,25 @@
         <span class="title-tone-2">PRINCE NCIT</span>
       </h1>
     </div>
-    <div class="sub-meta">COMMAND LOBBY // MULTI-DECK PREPARATION PLATFORM</div>
+    <div class="sub-meta">COMMAND LOBBY // DECK SELECTION & SIMULATION SUITE</div>
   </header>
 
-  <!-- MAIN LOBBY STAGE -->
-  <main class="lobby-stage">
+  <!-- MAIN WRAPPER -->
+  <main class="lobby-main-wrap">
 
-    <!-- SECTION 1: MULTI-DECK SELECTOR SHELF -->
-    <section class="deck-shelf-container">
+    <!-- SECTION 1: DECK SELECTOR SHELF -->
+    <section class="deck-shelf-card">
       <div class="deck-shelf-header">
-        <div class="deck-shelf-title-wrap">
-          <span class="deck-shelf-badge">SELECT DECKS</span>
-          <span class="deck-shelf-telemetry" id="deckTelemetryText">LOADING PACKS...</span>
+        <div class="deck-shelf-title-group">
+          <span class="shelf-badge">DECK SELECTOR</span>
+          <span class="shelf-telemetry-chip" id="shelfTelemetryText">LOADING PACKS...</span>
         </div>
-        <div class="deck-shelf-actions">
+        <div class="shelf-actions-group">
           <button class="btn-shelf-action" id="btnSelectAllDecks" onclick="selectAllDecks()" title="Select All Decks [A]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>SELECT ALL</span>
+            <span>SELECT ALL [A]</span>
           </button>
-          <button class="btn-shelf-action" id="btnResetDecks" onclick="resetDecksSelection()" title="Reset to Default Deck">
+          <button class="btn-shelf-action" id="btnResetDecks" onclick="resetDecksSelection()" title="Reset Selection">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
             <span>RESET</span>
           </button>
@@ -861,87 +739,56 @@
 
       <!-- CARTRIDGES GRID -->
       <div class="deck-cartridge-grid" id="deckCartridgeGrid">
-        <!-- Dynamically rendered from window.CARD_PACKS -->
+        <!-- Dynamically populated from window.CARD_PACKS -->
       </div>
     </section>
 
     <!-- SECTION 2: MODE LAUNCH ARENA -->
-    <section class="lobby-mode-arena">
+    <section class="lobby-mode-grid">
 
       <!-- MODE 1: CASUAL 3D PRACTICE -->
-      <a href="casual.html" class="mode-big-card" id="cardCasualMode" onclick="handleLaunchMode(event, 'casual.html')">
-        <div class="mode-left-rail">
-          <div class="mode-pip"></div>
-          <div class="mode-vertical-title">CASUAL // 3D CAROUSEL</div>
-          <div class="mode-pip"></div>
+      <a href="casual.html" class="lobby-mode-card" id="cardCasualMode" onclick="handleLaunchMode(event, 'casual.html')">
+        <div class="mode-card-top">
+          <span class="mode-card-badge">CASUAL PRACTICE</span>
+          <span class="mode-key-hint">KEY [1]</span>
         </div>
-        <div class="mode-main-area">
-          <div class="mode-content-window">
-            <div class="mode-badge-row">
-              <span class="mode-badge">FREE 3D PRACTICE</span>
-              <span class="mode-key-badge">KEY [1]</span>
-            </div>
-            <div class="mode-prompt-text">
-              Explore your selected deck in an interactive 3D cylinder carousel. Full PlayStation gamepad navigation, rapid streaming HUD, and complete microscopic data sheets.
-            </div>
-            <div class="mode-feature-chips">
-              <span class="mode-chip">3D Perspective</span>
-              <span class="mode-chip">Gamepad Engine</span>
-              <span class="mode-chip">Rapid Browse</span>
-            </div>
+        <div class="mode-card-body">
+          <h2 class="mode-card-title">3D CYLINDER CAROUSEL</h2>
+          <p class="mode-card-desc">
+            Freeform 3D card rotation with PlayStation gamepad controls, rapid streaming HUD, audio engine, and complete diagnostic sheets.
+          </p>
+          <div class="mode-card-tags">
+            <span class="mode-tag-pill">3D Perspective</span>
+            <span class="mode-tag-pill">Gamepad Support</span>
+            <span class="mode-tag-pill">Rapid Browse HUD</span>
           </div>
-          <div class="mode-bottom-banner">
-            <div class="mode-emblem-badge">
-              <svg class="mode-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                <path d="M2 12h20"/>
-              </svg>
-            </div>
-            <div class="mode-banner-title">CASUAL 3D MODE</div>
-            <div class="mode-banner-btn">
-              <span>LAUNCH [1]</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-          </div>
+        </div>
+        <div class="mode-card-launch-btn">
+          <span>START CASUAL PRACTICE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </a>
 
       <!-- MODE 2: PRACTICAL EXAM SIMULATION -->
-      <a href="exam.html" class="mode-big-card" id="cardExamMode" onclick="handleLaunchMode(event, 'exam.html')">
-        <div class="mode-left-rail">
-          <div class="mode-pip"></div>
-          <div class="mode-vertical-title">EXAM // TIMED CHALLENGE</div>
-          <div class="mode-pip"></div>
+      <a href="exam.html" class="lobby-mode-card" id="cardExamMode" onclick="handleLaunchMode(event, 'exam.html')">
+        <div class="mode-card-top">
+          <span class="mode-card-badge">TIMED EXAM</span>
+          <span class="mode-key-hint">KEY [2]</span>
         </div>
-        <div class="mode-main-area">
-          <div class="mode-content-window">
-            <div class="mode-badge-row">
-              <span class="mode-badge">PRACTICAL SIMULATION</span>
-              <span class="mode-key-badge">KEY [2]</span>
-            </div>
-            <div class="mode-prompt-text">
-              Simulate actual practical exam conditions. 5-second countdown preparation, 60-second timed specimen study with 4 universal identification questions, structured reveal, and scoring.
-            </div>
-            <div class="mode-feature-chips">
-              <span class="mode-chip">60s Timer Ring</span>
-              <span class="mode-chip">4 General Prompts</span>
-              <span class="mode-chip">Scorecard</span>
-            </div>
+        <div class="mode-card-body">
+          <h2 class="mode-card-title">PRACTICAL SIMULATION</h2>
+          <p class="mode-card-desc">
+            Timed practical examination drill. 5-second preparation, 60-second timed study with 4 universal identification questions, structured reveal, and scoring.
+          </p>
+          <div class="mode-card-tags">
+            <span class="mode-tag-pill">60s Timer Ring</span>
+            <span class="mode-tag-pill">4 Universal Prompts</span>
+            <span class="mode-tag-pill">Performance Scorecard</span>
           </div>
-          <div class="mode-bottom-banner">
-            <div class="mode-emblem-badge">
-              <svg class="mode-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <div class="mode-banner-title">EXAM MODE</div>
-            <div class="mode-banner-btn">
-              <span>LAUNCH [2]</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-          </div>
+        </div>
+        <div class="mode-card-launch-btn">
+          <span>START EXAM SIMULATION</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </a>
 
@@ -983,16 +830,12 @@
     </div>
   </footer>
 
-  <!-- LOBBY SCRIPT & MULTI-PACK ENGINE -->
+  <!-- LOBBY JAVASCRIPT ENGINE -->
   <script>
-    // =======================================================
-    // MULTI-PACK ENGINE STATE
-    // =======================================================
     let selectedPackIds = [];
     let isAudioMuted = false;
     let audioCtx = null;
 
-    // Load initial selection from localStorage
     function initSelectedPacks() {
       const packs = window.CARD_PACKS || {};
       const allPackKeys = Object.keys(packs);
@@ -1002,13 +845,11 @@
         if (stored) {
           const parsed = JSON.parse(stored);
           if (Array.isArray(parsed) && parsed.length > 0) {
-            // Filter to ensure only valid pack keys are retained
             selectedPackIds = parsed.filter(id => packs[id]);
           }
         }
       } catch (e) {}
 
-      // Fallback: If no valid selection, pick all available packs by default
       if (!selectedPackIds || selectedPackIds.length === 0) {
         selectedPackIds = allPackKeys.length > 0 ? [...allPackKeys] : [];
       }
@@ -1020,7 +861,6 @@
     function saveSelectedPacks() {
       try {
         localStorage.setItem('selectedCardPacks', JSON.stringify(selectedPackIds));
-        // Also keep activeCardPack as the primary for backwards compatibility
         if (selectedPackIds.length > 0) {
           localStorage.setItem('activeCardPack', selectedPackIds[0]);
         }
@@ -1034,7 +874,6 @@
 
       const idx = selectedPackIds.indexOf(packId);
       if (idx >= 0) {
-        // Do not allow deselecting the last remaining deck
         if (selectedPackIds.length <= 1) {
           showToast('Selection Notice', 'At least one deck must remain selected.');
           playErrorSound();
@@ -1071,7 +910,6 @@
       playSelectSound();
     }
 
-    // Render Deck Shelf Cards
     function renderDeckShelf() {
       const container = document.getElementById('deckCartridgeGrid');
       if (!container) return;
@@ -1095,21 +933,22 @@
         }
 
         html += `
-          <div class="deck-cartridge-card ${isSelected ? 'is-selected' : ''}" onclick="toggleDeckSelection('${id}')">
-            <div class="deck-cartridge-info">
-              <div class="deck-toggle-box">
+          <div class="deck-cartridge-item ${isSelected ? 'is-active' : ''}" onclick="toggleDeckSelection('${id}')">
+            <div class="deck-item-left">
+              <div class="deck-checkbox-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
-              <div class="deck-cartridge-details">
-                <div class="deck-cartridge-header">
-                  <span class="deck-cartridge-badge">${pack.badge || 'PACK'}</span>
-                  <span class="deck-cartridge-title">${pack.packName || pack.title || id}</span>
+              <div class="deck-item-info">
+                <div class="deck-item-header">
+                  <span class="deck-item-badge">${pack.badge || 'PACK'}</span>
+                  <span class="deck-item-title">${pack.packName || pack.title || id}</span>
                 </div>
-                <div class="deck-cartridge-sub">${cardCount} Cards (${prepCount} Prep, ${teoriCount} Teori)</div>
+                <div class="deck-item-sub">${prepCount} Preparat • ${teoriCount} Teori</div>
               </div>
             </div>
+            <span class="deck-item-count-pill">${cardCount} CARDS</span>
           </div>
         `;
       }
@@ -1122,13 +961,12 @@
         countPill.textContent = `${selectedPackIds.length} DECK${selectedPackIds.length > 1 ? 'S' : ''} • ${totalCards} SPECIMENS`;
       }
 
-      const telemetryText = document.getElementById('deckTelemetryText');
+      const telemetryText = document.getElementById('shelfTelemetryText');
       if (telemetryText) {
-        telemetryText.textContent = `${selectedPackIds.length} OF ${Object.keys(packs).length} DECKS ACTIVE // ${totalCards} TOTAL SPECIMENS READY`;
+        telemetryText.textContent = `${selectedPackIds.length} OF ${Object.keys(packs).length} DECKS ACTIVE • ${totalCards} TOTAL SPECIMENS`;
       }
     }
 
-    // Launch Mode Handler with Sound
     function handleLaunchMode(e, targetUrl) {
       e.preventDefault();
       playLaunchSound();
@@ -1139,7 +977,7 @@
     }
 
     // =======================================================
-    // TACTILE WEB AUDIO SYNTHESIZER (MATCHING CASUAL.HTML)
+    // AUDIO SYNTHESIZER
     // =======================================================
     function initAudioContext() {
       if (!audioCtx) {
@@ -1256,7 +1094,7 @@
     }
 
     // =======================================================
-    // TOAST NOTIFICATION SYSTEM
+    // TOAST SYSTEM
     // =======================================================
     let toastTimer = null;
     function showToast(title, message) {
@@ -1284,23 +1122,16 @@
     // KEYBOARD NAVIGATION
     // =======================================================
     window.addEventListener('keydown', (e) => {
-      // 1: Launch Casual
       if (e.key === '1') {
         e.preventDefault();
         handleLaunchMode(e, 'casual.html');
-      }
-      // 2: Launch Exam
-      else if (e.key === '2') {
+      } else if (e.key === '2') {
         e.preventDefault();
         handleLaunchMode(e, 'exam.html');
-      }
-      // A: Select All Decks
-      else if (e.key === 'a' || e.key === 'A') {
+      } else if (e.key === 'a' || e.key === 'A') {
         e.preventDefault();
         selectAllDecks();
-      }
-      // M: Audio Mute
-      else if (e.key === 'm' || e.key === 'M') {
+      } else if (e.key === 'm' || e.key === 'M') {
         e.preventDefault();
         toggleAudioMute();
       }

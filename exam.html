@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#314fba">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>EXAM MODE • GAMBLING WITH PRINCE NCIT</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23314fba'/%3E%3Cpath d='M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
@@ -16,13 +13,11 @@
   <script src="packs/packs.js"></script>
   <style>
     /* =======================================================
-       STRICT MONOCHROMATIC 2-COLOR DESIGN:
+       STRICT MONOCHROMATIC 2-COLOR DESIGN SYSTEM:
        PRIMARY BLUE #314fba & WHITE #ffffff
-       STRICT 2 FONTS ONLY:
-       1. DISPLAY FONT: 'Special Elite'
-       2. BODY & UI FONT: 'Plus Jakarta Sans'
-       STRICT ZERO GRADIENTS: PURE SOLID COLORS ONLY
-       STRICT ZERO BLACK SHADOWS: NO AI SLOP SHADOWS
+       ACCENT NAVY #172b7a
+       FONTS: 'Special Elite' (Display) & 'Plus Jakarta Sans' (Body)
+       TASTEFUL SPACING • ZERO OVERFLOW CLIPPING • ZERO COLLISION
        ======================================================= */
 
     :root {
@@ -54,31 +49,31 @@
     }
 
     html, body {
-      width: 100vw;
-      height: 100vh;
-      max-height: 100vh;
-      overflow: hidden;
+      width: 100%;
+      min-height: 100vh;
       background-color: var(--primary);
       color: var(--white);
       user-select: none;
+      overflow-x: hidden;
     }
 
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: clamp(18px, 3.2vh, 36px) clamp(16px, 3vw, 36px) clamp(16px, 2.5vh, 30px);
+      justify-content: flex-start;
+      padding: clamp(20px, 3.5vh, 40px) clamp(16px, 3vw, 36px) 100px;
+      gap: clamp(16px, 2.5vh, 28px);
       box-sizing: border-box;
     }
 
     /* =======================================================
-       CENTERED APP HEADER (MATCHING CASUAL.HTML EXACTLY)
+       CENTERED APP HEADER
        ======================================================= */
     header.app-header {
       text-align: center;
       width: 100%;
-      max-width: 960px;
+      max-width: 980px;
       flex-shrink: 0;
       z-index: 10;
       display: flex;
@@ -101,7 +96,7 @@
     }
 
     h1.main-title {
-      font-size: clamp(1.45rem, 3.2vw, 2.65rem);
+      font-size: clamp(1.5rem, 3.4vw, 2.75rem);
       font-weight: normal;
       letter-spacing: clamp(1.5px, 0.4vw, 3px);
       text-transform: uppercase;
@@ -154,12 +149,12 @@
 
     .sub-meta {
       font-family: var(--font-main);
-      font-size: clamp(0.72rem, 1.15vw, 0.82rem);
+      font-size: clamp(0.72rem, 1.15vw, 0.84rem);
       font-weight: 700;
       color: var(--white-90);
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: clamp(6px, 1vh, 10px);
+      margin-top: clamp(8px, 1.2vh, 12px);
       text-shadow: 0 1px 3px rgba(13, 26, 69, 0.6);
       white-space: nowrap;
       overflow: hidden;
@@ -169,7 +164,7 @@
 
     @media (max-width: 600px) {
       h1.main-title {
-        font-size: clamp(1.15rem, 5vw, 1.55rem);
+        font-size: clamp(1.2rem, 5.5vw, 1.6rem);
         letter-spacing: 1.2px;
         gap: 6px;
       }
@@ -183,155 +178,115 @@
     }
 
     /* =======================================================
-       MAIN EXAM STAGE ARENA
+       EXAM MAIN WRAPPER
        ======================================================= */
-    .exam-stage-arena {
+    main.exam-main-wrap {
       width: 100%;
-      max-width: 960px;
-      flex: 1;
-      min-height: 0;
+      max-width: 1060px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      position: relative;
+      gap: 20px;
       box-sizing: border-box;
       z-index: 5;
     }
 
     /* =======================================================
-       COLLECTIBLE HORIZONTAL EXAM CARD (.EXAM-BIG-CARD)
-       MATCHING CASUAL.HTML'S .BIG-CARD AESTHETIC & ANATOMY
+       PHASE 1: EXAM SETUP CONFIGURATION CARD
        ======================================================= */
-    .exam-big-card {
+    .exam-config-card {
       width: 100%;
-      height: clamp(320px, 50vh, 460px);
-      border-radius: 20px;
-      overflow: hidden;
+      max-width: 720px;
       background-color: var(--white);
       border: 3px solid var(--primary-deep);
+      border-radius: 20px;
       box-shadow: 0 6px 0 var(--primary-deep);
+      padding: clamp(20px, 3vh, 32px);
       display: flex;
-      flex-direction: row;
-      padding: 10px 14px 10px 10px;
-      user-select: none;
-      position: relative;
+      flex-direction: column;
+      gap: 20px;
       color: var(--primary-deep);
       box-sizing: border-box;
-      animation: examCardPop 0.26s cubic-bezier(0.16, 1.25, 0.3, 1);
+      animation: viewPop 0.22s ease-out;
     }
-    @keyframes examCardPop {
-      0% { opacity: 0; transform: scale(0.96); }
+    @keyframes viewPop {
+      0% { opacity: 0; transform: scale(0.97); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Left Branding Rail */
-    .exam-left-rail {
-      width: 28px;
-      flex-shrink: 0;
+    .config-card-header {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2px 0 4px;
-      margin-right: 10px;
-      position: relative;
-    }
-    .exam-pip {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background-color: var(--primary);
-      border: 2px solid var(--primary-deep);
-      flex-shrink: 0;
-    }
-    .exam-vertical-title {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: normal;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--primary-deep);
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      white-space: nowrap;
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-
-    /* Center Main Area */
-    .exam-main-area {
-      flex: 1;
-      min-width: 0;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    /* Content Window Frame */
-    .exam-content-window {
-      flex: 1;
-      min-height: 0;
-      border-radius: 14px;
-      border: 2px solid var(--primary-deep);
-      background-color: #0d1a45;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 12px 14px 44px;
-      color: var(--white);
-      box-sizing: border-box;
-    }
-
-    /* =======================================================
-       PHASE 1: EXAM SETUP CONFIGURATION VIEW
-       ======================================================= */
-    .setup-view-wrap {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
       gap: 12px;
-      overflow-y: auto;
-      padding-right: 4px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #edf1fc;
     }
-    .setup-view-wrap::-webkit-scrollbar {
-      width: 4px;
-    }
-    .setup-view-wrap::-webkit-scrollbar-thumb {
-      background-color: var(--white-25);
-      border-radius: 999px;
-    }
-
-    .setup-section-title {
+    .config-badge {
       font-family: var(--font-display);
       font-size: 11px;
       letter-spacing: 1.5px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-weight: 700;
       text-transform: uppercase;
-      color: var(--white-90);
+    }
+    .config-card-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .config-card-close:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .config-card-close svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.4;
+    }
+
+    .config-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .config-section-title {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .setup-pills-row {
+    .config-pills-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .setup-pill-btn {
-      padding: 6px 14px;
+    .config-pill-btn {
+      padding: 8px 16px;
       border-radius: 999px;
-      border: 1.5px solid var(--white-25);
-      background-color: rgba(255, 255, 255, 0.08);
-      color: var(--white);
+      border: 2px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
       font-family: var(--font-main);
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 12px;
+      font-weight: 800;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -339,269 +294,459 @@
       transition: all 0.16s ease;
       user-select: none;
     }
-    .setup-pill-btn:hover {
-      background-color: rgba(255, 255, 255, 0.20);
+    .config-pill-btn:hover {
+      background-color: #edf2fd;
       transform: translateY(-1px);
     }
-    .setup-pill-btn.active {
-      background-color: var(--white);
-      color: var(--primary-deep);
-      border-color: var(--white);
-      box-shadow: 0 0 0 2px var(--primary-deep);
-    }
-    .setup-pill-btn svg {
-      width: 14px;
-      height: 14px;
-      stroke-width: 2.2;
+    .config-pill-btn.active {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      box-shadow: 0 3px 0 var(--primary);
     }
 
-    .setup-protocol-box {
-      background-color: rgba(8, 17, 46, 0.85);
-      border: 1.5px solid rgba(255, 255, 255, 0.18);
-      border-radius: 10px;
-      padding: 10px 14px;
+    .config-rules-box {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 14px;
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 11px;
+      gap: 8px;
+      font-size: 12px;
       line-height: 1.45;
-      color: #e2e8f8;
+      color: var(--primary-deep);
     }
-    .protocol-item {
+    .rules-item {
       display: flex;
       align-items: flex-start;
       gap: 8px;
     }
-    .protocol-bullet {
-      width: 6px;
-      height: 6px;
+    .rules-bullet {
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
       background-color: var(--primary);
       margin-top: 5px;
       flex-shrink: 0;
     }
 
-    /* =======================================================
-       PHASE 2: 5S PREPARATION COUNTDOWN VIEW
-       ======================================================= */
-    .prep-countdown-wrap {
+    .btn-start-exam {
       width: 100%;
-      height: 100%;
+      height: 50px;
+      border-radius: 999px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border: 2px solid var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 0 var(--primary);
+      transition: all 0.18s ease;
+      margin-top: 6px;
+    }
+    .btn-start-exam:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 var(--primary-deep);
+    }
+    .btn-start-exam:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 var(--primary-deep);
+    }
+    .btn-start-exam svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.6;
+    }
+
+    /* =======================================================
+       PHASE 2: 5S PREPARATION COUNTDOWN
+       ======================================================= */
+    .exam-prep-card {
+      width: 100%;
+      max-width: 600px;
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 6px 0 var(--primary-deep);
+      padding: 40px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 16px;
       text-align: center;
+      color: var(--primary-deep);
+      box-sizing: border-box;
+      animation: viewPop 0.2s ease-out;
     }
     .prep-countdown-circle {
-      width: 90px;
-      height: 90px;
+      width: 100px;
+      height: 100px;
       border-radius: 999px;
-      background-color: var(--white);
-      border: 3.5px solid var(--primary-deep);
-      box-shadow: 0 0 0 4px var(--white);
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 3px var(--primary-deep);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-deep);
       font-family: var(--font-display);
-      font-size: 42px;
+      font-size: 46px;
       font-weight: normal;
       animation: prepPulse 0.9s infinite alternate cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes prepPulse {
-      0% { transform: scale(0.94); }
-      100% { transform: scale(1.06); }
+      0% { transform: scale(0.92); }
+      100% { transform: scale(1.08); }
     }
-    .prep-countdown-title {
+    .prep-title {
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: 2px;
-      color: var(--white);
       text-transform: uppercase;
+      color: var(--primary-deep);
     }
-    .prep-countdown-sub {
-      font-size: 12px;
-      color: var(--white-75);
+    .prep-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(23, 43, 122, 0.75);
+    }
+    .btn-skip-prep {
+      padding: 8px 22px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-deep);
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      transition: all 0.16s ease;
+    }
+    .btn-skip-prep:hover {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      transform: scale(1.04);
     }
 
     /* =======================================================
        PHASE 3: 60S TIMED STUDY PHASE (SPLIT LAYOUT)
        ======================================================= */
-    .study-split-grid {
+    .study-top-hud {
       width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 6px 16px;
+      box-shadow: 0 4px 0 var(--primary-deep);
+      color: var(--primary-deep);
+      box-sizing: border-box;
+    }
+    .hud-specimen-pill {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .hud-timer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 3px 12px 3px 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .hud-timer-wrap:hover {
+      background-color: #edf2fd;
+      transform: scale(1.03);
+    }
+    .timer-svg-box {
+      width: 22px;
+      height: 22px;
+      transform: rotate(-90deg);
+    }
+    .timer-circle-bg {
+      fill: none;
+      stroke: #d0d8f0;
+      stroke-width: 3;
+    }
+    .timer-circle-bar {
+      fill: none;
+      stroke: var(--primary-deep);
+      stroke-width: 3;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.9s linear;
+    }
+    .hud-timer-text {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .hud-reveal-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border: 2px solid var(--primary-deep);
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.16s ease;
+    }
+    .hud-reveal-btn:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.04);
+    }
+    .hud-reveal-btn svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.5;
+    }
+
+    /* Study Workspace Grid */
+    .study-workspace-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 20px;
+      align-items: stretch;
       box-sizing: border-box;
     }
 
-    .study-specimen-pane {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-      background-color: #060c22;
+    /* Specimen Visual Card */
+    .study-visual-card {
+      background-color: #0d1a45;
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 5px 0 var(--primary-deep);
       overflow: hidden;
-      position: relative;
+      min-height: 380px;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
-    .study-specimen-img {
+    .study-visual-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
+      max-height: 480px;
+      object-fit: contain;
+      background-color: #060c22;
       display: block;
     }
-    .study-no-image-text {
-      font-family: var(--font-display);
-      font-size: 12px;
-      letter-spacing: 1px;
-      color: var(--white-50);
-      text-align: center;
-      padding: 16px;
-    }
-
-    .study-prompts-pane {
-      width: 100%;
-      height: 100%;
+    .study-vignette-box {
+      padding: 24px;
+      color: var(--white);
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      overflow-y: auto;
-      padding-right: 4px;
+      gap: 12px;
+      text-align: left;
     }
-    .study-prompts-pane::-webkit-scrollbar {
-      width: 4px;
-    }
-    .study-prompts-pane::-webkit-scrollbar-thumb {
-      background-color: var(--white-25);
-      border-radius: 999px;
-    }
-
-    .study-q-card {
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 1.5px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      padding: 8px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .study-q-number {
+    .study-vignette-badge {
       font-family: var(--font-display);
-      font-size: 8.5px;
-      letter-spacing: 1px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
       background-color: var(--white);
       color: var(--primary-deep);
-      border-radius: 4px;
-      padding: 1px 5px;
-      align-self: flex-start;
+      padding: 3px 10px;
+      border-radius: 999px;
       font-weight: 700;
+      align-self: flex-start;
       text-transform: uppercase;
     }
-    .study-q-prompt {
-      font-size: 11px;
-      line-height: 1.35;
+    .study-vignette-text {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #eef3ff;
+      font-weight: 500;
+    }
+
+    /* 4 Universal Prompts Card */
+    .study-prompts-card {
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 5px 0 var(--primary-deep);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--primary-deep);
+      box-sizing: border-box;
+    }
+
+    .prompts-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #edf1fc;
+    }
+    .prompts-card-title {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary-deep);
+    }
+
+    .prompt-box {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .prompt-box-badge {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 1px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+      align-self: flex-start;
+      text-transform: uppercase;
+    }
+    .prompt-box-text {
+      font-size: 12px;
+      line-height: 1.4;
       font-weight: 600;
-      color: #ffffff;
+      color: var(--primary-deep);
+    }
+
+    @media (max-width: 820px) {
+      .study-workspace-grid {
+        grid-template-columns: 1fr;
+      }
+      .study-visual-card {
+        min-height: 260px;
+      }
     }
 
     /* =======================================================
-       PHASE 4: STRUCTURED SPECIMEN REVEAL PHASE
+       PHASE 4: STRUCTURED REVEAL PHASE
        ======================================================= */
-    .reveal-view-wrap {
+    .reveal-workspace-card {
       width: 100%;
-      height: 100%;
+      background-color: var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 6px 0 var(--primary-deep);
+      padding: clamp(18px, 2.8vh, 26px);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-    .reveal-view-wrap::-webkit-scrollbar {
-      width: 4px;
-    }
-    .reveal-view-wrap::-webkit-scrollbar-thumb {
-      background-color: var(--white-25);
-      border-radius: 999px;
+      gap: 16px;
+      color: var(--primary-deep);
+      box-sizing: border-box;
+      animation: viewPop 0.22s ease-out;
     }
 
-    .reveal-diag-header {
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
-      border-radius: 10px;
-      padding: 8px 12px;
+    .reveal-header-bar {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #edf1fc;
     }
-    .reveal-badge {
+    .reveal-title-badge {
       font-family: var(--font-display);
-      font-size: 8.5px;
-      letter-spacing: 1px;
-      background-color: var(--white);
-      color: var(--primary-deep);
-      border-radius: 4px;
-      padding: 1px 6px;
-      align-self: flex-start;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      padding: 2px 10px;
+      border-radius: 999px;
       font-weight: 700;
+      align-self: flex-start;
       text-transform: uppercase;
     }
-    .reveal-diag-title {
+    .reveal-main-title {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--primary-deep);
       line-height: 1.2;
     }
-    .reveal-meta-row {
+    .reveal-tags-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      font-size: 10.5px;
-      color: #cfdcf8;
-      font-weight: 600;
     }
-    .reveal-meta-item {
-      background: rgba(255, 255, 255, 0.10);
-      padding: 2px 6px;
-      border-radius: 4px;
+    .reveal-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      background-color: #f6f8fe;
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 6px;
+      padding: 3px 10px;
+      color: var(--primary-deep);
     }
 
-    .reveal-details-box {
+    /* Reveal Details Grid */
+    .reveal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .reveal-info-box {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 12px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
-    .reveal-block {
-      background-color: rgba(8, 17, 46, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      padding: 8px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .reveal-block-title {
+    .reveal-info-title {
       font-family: var(--font-display);
-      font-size: 9.5px;
-      letter-spacing: 1px;
-      color: var(--white-90);
+      font-size: 10.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
+      color: var(--primary-deep);
+      font-weight: 700;
     }
-    .reveal-block-content {
-      font-size: 11px;
-      line-height: 1.4;
-      color: #eef3ff;
+    .reveal-info-content {
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--primary-deep);
     }
     .reveal-bullet-list {
-      list-style-type: none;
+      list-style: none;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -611,275 +756,188 @@
       align-items: flex-start;
       gap: 6px;
     }
-    .reveal-bullet-dot {
-      width: 5px;
-      height: 5px;
+    .reveal-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
-      background-color: var(--white);
+      background-color: var(--primary-deep);
       margin-top: 5px;
       flex-shrink: 0;
     }
 
-    /* Self-Assessment Scoring Row */
-    .reveal-scoring-row {
+    @media (max-width: 768px) {
+      .reveal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scoring Section */
+    .reveal-scoring-box {
+      background-color: var(--primary-deep);
+      border-radius: 14px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(255, 255, 255, 0.20);
-      border-radius: 10px;
-      padding: 8px 12px;
-      margin-top: 4px;
+      gap: 12px;
       flex-wrap: wrap;
-    }
-    .scoring-label {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
       color: var(--white);
     }
-    .scoring-buttons-group {
+    .scoring-label-text {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .scoring-btn-group {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
     }
-    .btn-score-choice {
-      padding: 5px 12px;
+    .btn-score-pick {
+      padding: 8px 18px;
       border-radius: 999px;
-      border: 1.5px solid var(--white-50);
+      border: 2px solid var(--white);
       background-color: var(--white);
       color: var(--primary-deep);
       font-family: var(--font-main);
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       letter-spacing: 0.5px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      transition: all 0.15s ease;
+      gap: 6px;
+      transition: all 0.16s ease;
       user-select: none;
     }
-    .btn-score-choice:hover {
-      background-color: var(--primary-deep);
+    .btn-score-pick:hover {
+      background-color: var(--primary);
       color: var(--white);
-      border-color: var(--white);
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     /* =======================================================
-       PHASE 5: FINAL PERFORMANCE SUMMARY VIEW
+       PHASE 5: PERFORMANCE SUMMARY SCORECARD
        ======================================================= */
-    .summary-view-wrap {
+    .exam-summary-card {
       width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      text-align: center;
-      padding: 10px;
-    }
-    .summary-score-badge {
-      width: 96px;
-      height: 96px;
-      border-radius: 999px;
+      max-width: 640px;
       background-color: var(--white);
-      border: 3.5px solid var(--primary-deep);
-      box-shadow: 0 0 0 4px var(--white);
+      border: 3px solid var(--primary-deep);
+      border-radius: 20px;
+      box-shadow: 0 6px 0 var(--primary-deep);
+      padding: 36px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 20px;
+      text-align: center;
       color: var(--primary-deep);
+      box-sizing: border-box;
+      animation: viewPop 0.22s ease-out;
+    }
+
+    .summary-score-badge {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 3px var(--primary-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-family: var(--font-display);
-      font-size: 32px;
+      font-size: 36px;
       line-height: 1;
-      font-weight: normal;
     }
     .summary-score-sub {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 1px;
-      color: var(--primary-deep);
-      margin-top: 2px;
+      margin-top: 3px;
     }
+
     .summary-title {
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 20px;
       letter-spacing: 2px;
-      color: var(--white);
       text-transform: uppercase;
+      color: var(--primary-deep);
     }
+
     .summary-stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      max-width: 440px;
+      max-width: 480px;
     }
-    .summary-stat-box {
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(255, 255, 255, 0.20);
-      border-radius: 8px;
-      padding: 8px;
+    .summary-stat-item {
+      background-color: #f6f8fe;
+      border: 2px solid var(--primary-deep);
+      border-radius: 10px;
+      padding: 10px 8px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
     }
-    .stat-box-val {
+    .summary-stat-val {
       font-family: var(--font-display);
-      font-size: 18px;
-      color: var(--white);
-    }
-    .stat-box-lbl {
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--white-75);
-      text-transform: uppercase;
-    }
-
-    /* =======================================================
-       BOTTOM OVERLAPPING BANNER (MATCHING CASUAL.HTML)
-       ======================================================= */
-    .exam-bottom-banner {
-      position: absolute;
-      bottom: 4px;
-      left: -14px;
-      right: 0;
-      height: 42px;
-      background-color: var(--primary);
-      border: 2px solid var(--primary-deep);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px 0 46px;
-      z-index: 10;
-    }
-
-    .exam-emblem-badge {
-      position: absolute;
-      left: -4px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background-color: var(--white);
-      border: 2.5px solid var(--primary-deep);
-      box-shadow: 0 0 0 2px var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 15;
-    }
-    .exam-emblem-icon {
-      width: 22px;
-      height: 22px;
+      font-size: 20px;
       color: var(--primary-deep);
     }
-
-    .exam-banner-title {
-      font-family: var(--font-display);
-      font-size: 13.5px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--white);
-      line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    /* Timer Ring Box */
-    .exam-timer-ring-box {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--white);
-      border: 1.5px solid var(--primary-deep);
-      border-radius: 999px;
-      padding: 2px 10px 2px 6px;
-      color: var(--primary-deep);
-      font-family: var(--font-mono);
-      font-size: 12px;
+    .summary-stat-lbl {
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.5px;
-    }
-    .timer-svg-circle {
-      width: 20px;
-      height: 20px;
-      transform: rotate(-90deg);
-    }
-    .timer-svg-bg {
-      fill: none;
-      stroke: #d0d8f0;
-      stroke-width: 3;
-    }
-    .timer-svg-progress {
-      fill: none;
-      stroke: var(--primary-deep);
-      stroke-width: 3;
-      stroke-linecap: round;
-      transition: stroke-dashoffset 0.9s linear;
+      color: rgba(23, 43, 122, 0.75);
+      text-transform: uppercase;
     }
 
-    .exam-banner-actions {
-      display: inline-flex;
+    .summary-actions-row {
+      display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
     }
-    .exam-action-btn {
-      padding: 5px 12px;
+    .btn-summary-action {
+      padding: 10px 24px;
       border-radius: 999px;
-      background-color: var(--white);
-      color: var(--primary-deep);
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      border: 1.5px solid var(--primary-deep);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: all 0.15s ease;
-      user-select: none;
-    }
-    .exam-action-btn:hover {
+      border: 2px solid var(--primary-deep);
       background-color: var(--primary-deep);
       color: var(--white);
-      border-color: var(--white);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.16s ease;
+    }
+    .btn-summary-action:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
       transform: scale(1.04);
-    }
-    .exam-action-btn svg {
-      width: 12px;
-      height: 12px;
-      stroke-width: 2.5;
-    }
-
-    @media (max-width: 768px) {
-      .study-split-grid {
-        grid-template-columns: 1fr;
-      }
-      .study-specimen-pane {
-        height: 160px;
-      }
-      .exam-big-card {
-        height: clamp(340px, 60vh, 520px);
-      }
     }
 
     /* =======================================================
        SOLID & CONSOLIDATED CONSOLE DOCK (MATCHING CASUAL.HTML)
        ======================================================= */
     .bottom-player-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       width: auto;
       max-width: fit-content;
       height: 56px;
@@ -892,15 +950,13 @@
       justify-content: center;
       gap: 8px;
       box-shadow: 0 4px 0 var(--primary-deep);
-      flex-shrink: 0;
-      z-index: 100;
-      margin: 0 auto;
+      z-index: 1000;
     }
 
     .dock-section {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
@@ -987,24 +1043,8 @@
     }
 
     /* =======================================================
-       TOAST SYSTEM & FULL-SCREEN SCRIM (MATCHING CASUAL.HTML)
+       TOAST SYSTEM
        ======================================================= */
-    .screen-scrim {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 20, 65, 0.65);
-      z-index: 3400;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(2.5px);
-      -webkit-backdrop-filter: blur(2.5px);
-    }
-    body.toast-active .screen-scrim {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
     .toast-container {
       position: fixed;
       top: 24px;
@@ -1052,9 +1092,6 @@
 </head>
 <body>
 
-  <!-- FULL SCREEN SCRIM -->
-  <div class="screen-scrim" id="screenScrim"></div>
-
   <!-- TOAST CONTAINER -->
   <div class="toast-container" id="toastContainer"></div>
 
@@ -1069,9 +1106,9 @@
     <div class="sub-meta" id="examSubMeta">PRACTICAL EXAM SIMULATION // 60S SPECIMEN IDENTIFICATION</div>
   </header>
 
-  <!-- MAIN EXAM ARENA -->
-  <main class="exam-stage-arena" id="examStageArena">
-    <!-- Dynamically rendered according to currentExamPhase -->
+  <!-- MAIN EXAM WRAPPER -->
+  <main class="exam-main-wrap" id="examMainWrap">
+    <!-- Dynamically rendered by renderCurrentPhase() -->
   </main>
 
   <!-- SOLID & CONSOLIDATED CONSOLE DOCK -->
@@ -1103,21 +1140,18 @@
     </div>
 
     <div class="dock-section dock-right" id="dockActionGroup">
-      <!-- Dynamic contextual action button -->
+      <!-- Contextual Action Button -->
     </div>
   </footer>
 
-  <!-- EXAM SCRIPT & ENGINE -->
+  <!-- EXAM ENGINE JAVASCRIPT -->
   <script>
-    // =======================================================
-    // EXAM STATE & ENGINE
-    // =======================================================
     let selectedPackIds = [];
     let ALL_EXAM_CARDS = [];
     let examActiveFilter = 'all';
-    let examTargetCount = 20; // 5, 10, 20, or 'all'
+    let examTargetCount = 20;
 
-    // Exam Flow Phases: 'setup', 'prep', 'study', 'reveal', 'summary'
+    // Phases: 'setup', 'prep', 'study', 'reveal', 'summary'
     let currentExamPhase = 'setup';
     let examSessionCards = [];
     let currentCardIndex = 0;
@@ -1140,7 +1174,6 @@
     let audioCtx = null;
     let toastTimer = null;
 
-    // Load Decks from Lobby Selection
     function initExamEngine() {
       const packs = window.CARD_PACKS || {};
       const allPackKeys = Object.keys(packs);
@@ -1181,7 +1214,7 @@
       const subMeta = document.getElementById('examSubMeta');
       if (subMeta) {
         const packNames = selectedPackIds.map(id => packs[id]?.badge || packs[id]?.packName || id).join(' + ');
-        subMeta.textContent = `${packNames} // ${ALL_EXAM_CARDS.length} SPECIMENS READY`;
+        subMeta.textContent = `${packNames || 'EXAM SIMULATION'} // ${ALL_EXAM_CARDS.length} SPECIMENS READY`;
       }
 
       renderCurrentPhase();
@@ -1191,19 +1224,19 @@
     // PHASE RENDER ROUTER
     // =======================================================
     function renderCurrentPhase() {
-      const arena = document.getElementById('examStageArena');
-      if (!arena) return;
+      const wrap = document.getElementById('examMainWrap');
+      if (!wrap) return;
 
       if (currentExamPhase === 'setup') {
-        renderSetupPhase(arena);
+        renderSetupPhase(wrap);
       } else if (currentExamPhase === 'prep') {
-        renderPrepPhase(arena);
+        renderPrepPhase(wrap);
       } else if (currentExamPhase === 'study') {
-        renderStudyPhase(arena);
+        renderStudyPhase(wrap);
       } else if (currentExamPhase === 'reveal') {
-        renderRevealPhase(arena);
+        renderRevealPhase(wrap);
       } else if (currentExamPhase === 'summary') {
-        renderSummaryPhase(arena);
+        renderSummaryPhase(wrap);
       }
 
       updateDockUI();
@@ -1211,97 +1244,86 @@
 
     // 1. SETUP PHASE
     function renderSetupPhase(container) {
-      const packs = window.CARD_PACKS || {};
       const prepCount = ALL_EXAM_CARDS.filter(c => c.type === 'preparat').length;
       const teoriCount = ALL_EXAM_CARDS.filter(c => c.type === 'teori').length;
       const totalCount = ALL_EXAM_CARDS.length;
 
       container.innerHTML = `
-        <div class="exam-big-card">
-          <div class="exam-left-rail">
-            <div class="exam-pip"></div>
-            <div class="exam-vertical-title">EXAM SETUP // CONFIGURATION</div>
-            <div class="exam-pip"></div>
+        <div class="exam-config-card">
+          <div class="config-card-header">
+            <span class="config-badge">EXAM CONFIGURATION</span>
+            <a href="index.html" class="config-card-close" title="Return to Lobby [Esc]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </a>
           </div>
-          <div class="exam-main-area">
-            <div class="exam-content-window">
-              <div class="setup-view-wrap">
-                
-                <!-- Section 1: Target Content Filter -->
-                <div class="setup-section-title">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                  <span>1. CHOOSE CONTENT FILTER</span>
-                </div>
-                <div class="setup-pills-row">
-                  <button class="setup-pill-btn ${examActiveFilter === 'all' ? 'active' : ''}" onclick="setExamFilter('all')">
-                    <span>All Questions (${totalCount})</span>
-                  </button>
-                  <button class="setup-pill-btn ${examActiveFilter === 'preparat' ? 'active' : ''}" onclick="setExamFilter('preparat')">
-                    <span>Histopathology (${prepCount})</span>
-                  </button>
-                  <button class="setup-pill-btn ${examActiveFilter === 'teori' ? 'active' : ''}" onclick="setExamFilter('teori')">
-                    <span>Theory & Cases (${teoriCount})</span>
-                  </button>
-                </div>
 
-                <!-- Section 2: Question Count Selector -->
-                <div class="setup-section-title" style="margin-top: 6px;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  <span>2. SELECT QUESTION COUNT</span>
-                </div>
-                <div class="setup-pills-row">
-                  <button class="setup-pill-btn ${examTargetCount === 5 ? 'active' : ''}" onclick="setExamCount(5)">
-                    <span>5 Questions</span>
-                  </button>
-                  <button class="setup-pill-btn ${examTargetCount === 10 ? 'active' : ''}" onclick="setExamCount(10)">
-                    <span>10 Questions</span>
-                  </button>
-                  <button class="setup-pill-btn ${examTargetCount === 20 ? 'active' : ''}" onclick="setExamCount(20)">
-                    <span>20 Questions</span>
-                  </button>
-                  <button class="setup-pill-btn ${examTargetCount === 'all' ? 'active' : ''}" onclick="setExamCount('all')">
-                    <span>All Available (${totalCount})</span>
-                  </button>
-                </div>
-
-                <!-- Section 3: Protocol Rules -->
-                <div class="setup-section-title" style="margin-top: 6px;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                  <span>EXAM SIMULATION PROTOCOL</span>
-                </div>
-                <div class="setup-protocol-box">
-                  <div class="protocol-item">
-                    <div class="protocol-bullet"></div>
-                    <div><strong>5-Second Preparation:</strong> Brief tactile countdown before each specimen is shown.</div>
-                  </div>
-                  <div class="protocol-item">
-                    <div class="protocol-bullet"></div>
-                    <div><strong>60-Second Timed Study:</strong> Inspect specimen and answer the 4 universal identification prompts.</div>
-                  </div>
-                  <div class="protocol-item">
-                    <div class="protocol-bullet"></div>
-                    <div><strong>Structured Reveal:</strong> Instant diagnostic answer, key features, and self-assessment scoring.</div>
-                  </div>
-                </div>
-
-              </div>
+          <!-- Filter Section -->
+          <div class="config-section">
+            <div class="config-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              <span>1. CONTENT FILTER</span>
             </div>
+            <div class="config-pills-row">
+              <button class="config-pill-btn ${examActiveFilter === 'all' ? 'active' : ''}" onclick="setExamFilter('all')">
+                <span>All Questions (${totalCount})</span>
+              </button>
+              <button class="config-pill-btn ${examActiveFilter === 'preparat' ? 'active' : ''}" onclick="setExamFilter('preparat')">
+                <span>Histopathology (${prepCount})</span>
+              </button>
+              <button class="config-pill-btn ${examActiveFilter === 'teori' ? 'active' : ''}" onclick="setExamFilter('teori')">
+                <span>Theory & Cases (${teoriCount})</span>
+              </button>
+            </div>
+          </div>
 
-            <div class="exam-bottom-banner">
-              <div class="exam-emblem-badge">
-                <svg class="exam-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
+          <!-- Question Count Section -->
+          <div class="config-section">
+            <div class="config-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>2. QUESTION COUNT</span>
+            </div>
+            <div class="config-pills-row">
+              <button class="config-pill-btn ${examTargetCount === 5 ? 'active' : ''}" onclick="setExamCount(5)">
+                <span>5 Questions</span>
+              </button>
+              <button class="config-pill-btn ${examTargetCount === 10 ? 'active' : ''}" onclick="setExamCount(10)">
+                <span>10 Questions</span>
+              </button>
+              <button class="config-pill-btn ${examTargetCount === 20 ? 'active' : ''}" onclick="setExamCount(20)">
+                <span>20 Questions</span>
+              </button>
+              <button class="config-pill-btn ${examTargetCount === 'all' ? 'active' : ''}" onclick="setExamCount('all')">
+                <span>All (${totalCount})</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Protocol Rules -->
+          <div class="config-section">
+            <div class="config-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>3. SIMULATION RULES</span>
+            </div>
+            <div class="config-rules-box">
+              <div class="rules-item">
+                <div class="rules-bullet"></div>
+                <div><strong>5s Countdown Preparation:</strong> Brief preparation phase before each specimen is displayed.</div>
               </div>
-              <div class="exam-banner-title">READY TO SIMULATE</div>
-              <div class="exam-banner-actions">
-                <button class="exam-action-btn" onclick="startExamSession()">
-                  <span>START EXAM [Enter]</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
+              <div class="rules-item">
+                <div class="rules-bullet"></div>
+                <div><strong>60s Timed Identification:</strong> Analyze the high-resolution specimen and answer 4 general practical questions.</div>
+              </div>
+              <div class="rules-item">
+                <div class="rules-bullet"></div>
+                <div><strong>Structured Reveal & Scoring:</strong> Immediate diagnostic answer, microscopic findings, and self-assessment scorecard.</div>
               </div>
             </div>
           </div>
+
+          <button class="btn-start-exam" onclick="startExamSession()">
+            <span>START EXAM SIMULATION [Enter]</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       `;
     }
@@ -1309,37 +1331,14 @@
     // 2. PREPARATION COUNTDOWN PHASE (5S)
     function renderPrepPhase(container) {
       container.innerHTML = `
-        <div class="exam-big-card">
-          <div class="exam-left-rail">
-            <div class="exam-pip"></div>
-            <div class="exam-vertical-title">PREPARATION // GET READY</div>
-            <div class="exam-pip"></div>
-          </div>
-          <div class="exam-main-area">
-            <div class="exam-content-window">
-              <div class="prep-countdown-wrap">
-                <div class="prep-countdown-circle" id="prepCounterEl">${prepRemaining}</div>
-                <div class="prep-countdown-title">PREPARE FOR SPECIMEN #${currentCardIndex + 1}</div>
-                <div class="prep-countdown-sub">Study begins in ${prepRemaining} seconds...</div>
-              </div>
-            </div>
-
-            <div class="exam-bottom-banner">
-              <div class="exam-emblem-badge">
-                <svg class="exam-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <div class="exam-banner-title">PREPARATION PHASE</div>
-              <div class="exam-banner-actions">
-                <button class="exam-action-btn" onclick="skipPrepToStudy()">
-                  <span>SKIP PREP [Enter]</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="exam-prep-card">
+          <div class="prep-countdown-circle" id="prepCounterEl">${prepRemaining}</div>
+          <div class="prep-title">PREPARE FOR SPECIMEN #${currentCardIndex + 1}</div>
+          <div class="prep-sub">Specimen identification begins in ${prepRemaining} seconds...</div>
+          <button class="btn-skip-prep" onclick="skipPrepToStudy()">
+            <span>SKIP PREPARATION [Enter]</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       `;
     }
@@ -1351,81 +1350,67 @@
       const progressOffset = ((60 - studyRemaining) / 60) * 56.5;
 
       container.innerHTML = `
-        <div class="exam-big-card">
-          <div class="exam-left-rail">
-            <div class="exam-pip"></div>
-            <div class="exam-vertical-title">SPECIMEN ${currentCardIndex + 1} OF ${total}</div>
-            <div class="exam-pip"></div>
+        <!-- Top HUD -->
+        <div class="study-top-hud">
+          <span class="hud-specimen-pill">SPECIMEN ${currentCardIndex + 1} OF ${total}</span>
+          
+          <div class="hud-timer-wrap" id="studyTimerWrap" title="Pause / Resume [Space]" onclick="toggleStudyTimerPause()">
+            <svg class="timer-svg-box" viewBox="0 0 24 24">
+              <circle class="timer-circle-bg" cx="12" cy="12" r="9"/>
+              <circle class="timer-circle-bar" id="timerCircleBar" cx="12" cy="12" r="9" stroke-dasharray="56.5" stroke-dashoffset="${progressOffset}"/>
+            </svg>
+            <span class="hud-timer-text" id="studySecondsEl">${studyRemaining}s</span>
           </div>
-          <div class="exam-main-area">
-            <div class="exam-content-window">
-              <div class="study-split-grid">
-                
-                <!-- Left: Specimen High-Res Visual -->
-                <div class="study-specimen-pane">
-                  ${card.image ? `
-                    <img src="${card.image}" alt="Specimen ${card.id}" class="study-specimen-img" />
-                  ` : `
-                    <div class="study-no-image-text">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 8px; display: block; opacity: 0.6;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                      <div>THEORETICAL CASE VIGNETTE</div>
-                      <div style="font-size: 11px; margin-top: 4px; color: #a4b7e8;">${card.prompt || 'Analyze theoretical case details.'}</div>
-                    </div>
-                  `}
-                </div>
 
-                <!-- Right: The 4 Universal Identification Prompts -->
-                <div class="study-prompts-pane">
-                  <div class="study-q-card">
-                    <span class="study-q-number">SOAL 1 // IDENTIFIKASI</span>
-                    <div class="study-q-prompt">Preparat apa ini? Tentukan nama diagnosis atau sediaan patologi.</div>
-                  </div>
+          <button class="hud-reveal-btn" onclick="revealCurrentAnswer()">
+            <span>REVEAL [Enter]</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
 
-                  <div class="study-q-card">
-                    <span class="study-q-number">SOAL 2 // STRUKTUR KHAS</span>
-                    <div class="study-q-prompt">Sel apa yang menjadi ciri khas pada struktur ini? Sebutkan penanda mikroskopisnya.</div>
-                  </div>
-
-                  <div class="study-q-card">
-                    <span class="study-q-number">SOAL 3 // CIRI UTAMA</span>
-                    <div class="study-q-prompt">Apa ciri-ciri utama sediaan ini? Deskripsikan pola arsitektur atau stroma.</div>
-                  </div>
-
-                  <div class="study-q-card">
-                    <span class="study-q-number">SOAL 4 // PATOFISIOLOGI</span>
-                    <div class="study-q-prompt">Fungsi atau signifikansi biologis / patogenesis apa yang mendasari kelainan ini?</div>
-                  </div>
-                </div>
-
+        <!-- Main Workspace -->
+        <div class="study-workspace-grid">
+          
+          <!-- Left: Specimen High-Res Visual -->
+          <div class="study-visual-card">
+            ${card.image ? `
+              <img src="${card.image}" alt="Specimen ${card.id}" class="study-visual-img" />
+            ` : `
+              <div class="study-vignette-box">
+                <span class="study-vignette-badge">THEORETICAL VIGNETTE</span>
+                <p class="study-vignette-text">${card.prompt || 'Observe case scenario and pathological findings.'}</p>
               </div>
+            `}
+          </div>
+
+          <!-- Right: The 4 Universal Practical Prompts -->
+          <div class="study-prompts-card">
+            <div class="prompts-card-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span class="prompts-card-title">PRACTICAL EXAM QUESTIONS</span>
             </div>
 
-            <div class="exam-bottom-banner">
-              <div class="exam-emblem-badge">
-                <svg class="exam-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <div class="exam-banner-title">SPECIMEN #${currentCardIndex + 1}</div>
-              
-              <div class="exam-banner-actions">
-                <!-- 60s Animated SVG Timer Ring -->
-                <div class="exam-timer-ring-box" id="studyTimerRingBox" title="Pause / Resume [Space]" onclick="toggleStudyTimerPause()">
-                  <svg class="timer-svg-circle" viewBox="0 0 24 24">
-                    <circle class="timer-svg-bg" cx="12" cy="12" r="9"/>
-                    <circle class="timer-svg-progress" id="timerSvgProgress" cx="12" cy="12" r="9" stroke-dasharray="56.5" stroke-dashoffset="${progressOffset}"/>
-                  </svg>
-                  <span id="studySecondsEl">${studyRemaining}s</span>
-                </div>
+            <div class="prompt-box">
+              <span class="prompt-box-badge">SOAL 1 // IDENTIFIKASI</span>
+              <div class="prompt-box-text">Preparat apa ini? Tentukan nama sediaan / diagnosis patologi.</div>
+            </div>
 
-                <button class="exam-action-btn" onclick="revealCurrentAnswer()">
-                  <span>REVEAL [Enter]</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
+            <div class="prompt-box">
+              <span class="prompt-box-badge">SOAL 2 // STRUKTUR KHAS</span>
+              <div class="prompt-box-text">Sel apa yang menjadi ciri khas pada struktur ini? Sebutkan penanda mikroskopisnya.</div>
+            </div>
+
+            <div class="prompt-box">
+              <span class="prompt-box-badge">SOAL 3 // CIRI UTAMA</span>
+              <div class="prompt-box-text">Apa ciri-ciri utama sediaan ini? Deskripsikan pola arsitektur atau stroma.</div>
+            </div>
+
+            <div class="prompt-box">
+              <span class="prompt-box-badge">SOAL 4 // BIOLOGIS & PATOFISIOLOGI</span>
+              <div class="prompt-box-text">Fungsi atau signifikansi biologis / patogenesis apa yang mendasari kelainan ini?</div>
             </div>
           </div>
+
         </div>
       `;
     }
@@ -1435,7 +1420,6 @@
       const card = examSessionCards[currentCardIndex] || {};
       const total = examSessionCards.length;
 
-      // Extract key findings
       const rawCiri = card.struktur_khas || card.ciri_kunci || card.mikroskopis || [];
       const ciriList = Array.isArray(rawCiri) ? rawCiri : [rawCiri];
 
@@ -1443,90 +1427,62 @@
       const etiologiText = Array.isArray(rawEtiologi) ? rawEtiologi.join(' • ') : rawEtiologi;
 
       container.innerHTML = `
-        <div class="exam-big-card">
-          <div class="exam-left-rail">
-            <div class="exam-pip"></div>
-            <div class="exam-vertical-title">REVEAL // DIAGNOSTIC SPEC SHEET</div>
-            <div class="exam-pip"></div>
-          </div>
-          <div class="exam-main-area">
-            <div class="exam-content-window">
-              <div class="reveal-view-wrap">
-                
-                <!-- Diagnosis Header -->
-                <div class="reveal-diag-header">
-                  <span class="reveal-badge">DIAGNOSIS UTAMA</span>
-                  <div class="reveal-diag-title">${card.diagnosis || 'Diagnosis Sediaan'}</div>
-                  <div class="reveal-meta-row">
-                    <span class="reveal-meta-item">📍 ${card.organ || 'Organ Asal'}</span>
-                    <span class="reveal-meta-item">🏷️ ${card.sifat || 'Klasifikasi Patologi'}</span>
-                    ${card.asal ? `<span class="reveal-meta-item">🔬 ${card.asal}</span>` : ''}
-                  </div>
-                </div>
-
-                <!-- Details & Microscopic Findings -->
-                <div class="reveal-details-box">
-                  <div class="reveal-block">
-                    <span class="reveal-block-title">CIRI KHAS HISTOPATOLOGIS</span>
-                    <ul class="reveal-bullet-list">
-                      ${ciriList.map(item => `
-                        <li class="reveal-bullet-item">
-                          <div class="reveal-bullet-dot"></div>
-                          <div class="reveal-block-content">${item}</div>
-                        </li>
-                      `).join('')}
-                    </ul>
-                  </div>
-
-                  ${etiologiText ? `
-                    <div class="reveal-block">
-                      <span class="reveal-block-title">ETIOLOGI & PATOFISIOLOGI</span>
-                      <div class="reveal-block-content">${etiologiText}</div>
-                    </div>
-                  ` : ''}
-
-                  ${card.keywords ? `
-                    <div class="reveal-block">
-                      <span class="reveal-block-title">KATA KUNCI CEPAT (HIGH-YIELD)</span>
-                      <div class="reveal-block-content"><strong>${card.keywords}</strong></div>
-                    </div>
-                  ` : ''}
-                </div>
-
-                <!-- Self-Assessment Scoring Choice -->
-                <div class="reveal-scoring-row">
-                  <span class="scoring-label">HOW WELL DID YOU KNOW THIS?</span>
-                  <div class="scoring-buttons-group">
-                    <button class="btn-score-choice" onclick="recordScoreAndNext('missed')" title="Key [1]">
-                      <span>0 • MISSED [1]</span>
-                    </button>
-                    <button class="btn-score-choice" onclick="recordScoreAndNext('partial')" title="Key [2]">
-                      <span>1 • PARTIAL [2]</span>
-                    </button>
-                    <button class="btn-score-choice" onclick="recordScoreAndNext('mastered')" title="Key [3]">
-                      <span>2 • MASTERED [3]</span>
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="exam-bottom-banner">
-              <div class="exam-emblem-badge">
-                <svg class="exam-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <div class="exam-banner-title">SPECIMEN #${currentCardIndex + 1} REVEALED</div>
-              <div class="exam-banner-actions">
-                <button class="exam-action-btn" onclick="recordScoreAndNext('mastered')">
-                  <span>NEXT SPECIMEN [Enter]</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
+        <div class="reveal-workspace-card">
+          
+          <!-- Diagnosis Header -->
+          <div class="reveal-header-bar">
+            <span class="reveal-title-badge">SPECIMEN #${currentCardIndex + 1} OF ${total} // DIAGNOSIS RESMI</span>
+            <h2 class="reveal-main-title">${card.diagnosis || 'Diagnosis Sediaan'}</h2>
+            <div class="reveal-tags-row">
+              <span class="reveal-tag">📍 Organ: ${card.organ || '-'}</span>
+              <span class="reveal-tag">🏷️ Sifat: ${card.sifat || '-'}</span>
+              ${card.asal ? `<span class="reveal-tag">🔬 Asal: ${card.asal}</span>` : ''}
             </div>
           </div>
+
+          <!-- Structured Details Grid -->
+          <div class="reveal-grid">
+            <div class="reveal-info-box">
+              <span class="reveal-info-title">CIRI KHAS HISTOPATOLOGIS</span>
+              <ul class="reveal-bullet-list">
+                ${ciriList.map(item => `
+                  <li class="reveal-bullet-item">
+                    <div class="reveal-dot"></div>
+                    <div class="reveal-info-content">${item}</div>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div class="reveal-info-box">
+              ${etiologiText ? `
+                <span class="reveal-info-title">ETIOLOGI & PATOFISIOLOGI</span>
+                <div class="reveal-info-content" style="margin-bottom: 8px;">${etiologiText}</div>
+              ` : ''}
+
+              ${card.keywords ? `
+                <span class="reveal-info-title">KATA KUNCI IDENTIFIKASI (HIGH-YIELD)</span>
+                <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+              ` : ''}
+            </div>
+          </div>
+
+          <!-- Self-Assessment Scoring Choice -->
+          <div class="reveal-scoring-box">
+            <span class="scoring-label-text">EVALUASI PEMAHAMAN ANDA:</span>
+            <div class="scoring-btn-group">
+              <button class="btn-score-pick" onclick="recordScoreAndNext('missed')" title="Key [1]">
+                <span>0 • MISSED [1]</span>
+              </button>
+              <button class="btn-score-pick" onclick="recordScoreAndNext('partial')" title="Key [2]">
+                <span>1 • PARTIAL [2]</span>
+              </button>
+              <button class="btn-score-pick" onclick="recordScoreAndNext('mastered')" title="Key [3]">
+                <span>2 • MASTERED [3]</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       `;
     }
@@ -1538,56 +1494,36 @@
       const pct = maxPoints > 0 ? Math.round((examScores.totalPoints / maxPoints) * 100) : 0;
 
       container.innerHTML = `
-        <div class="exam-big-card">
-          <div class="exam-left-rail">
-            <div class="exam-pip"></div>
-            <div class="exam-vertical-title">SIMULATION COMPLETE // SCORECARD</div>
-            <div class="exam-pip"></div>
+        <div class="exam-summary-card">
+          <div class="summary-score-badge">
+            <span>${pct}%</span>
+            <span class="summary-score-sub">${examScores.totalPoints}/${maxPoints} PTS</span>
           </div>
-          <div class="exam-main-area">
-            <div class="exam-content-window">
-              <div class="summary-view-wrap">
-                <div class="summary-score-badge">
-                  <span>${pct}%</span>
-                  <span class="summary-score-sub">${examScores.totalPoints}/${maxPoints} PTS</span>
-                </div>
-                <div class="summary-title">SIMULATION PERFORMANCE SUMMARY</div>
-                
-                <div class="summary-stats-grid">
-                  <div class="summary-stat-box">
-                    <span class="stat-box-val" style="color: #ffffff;">${examScores.mastered}</span>
-                    <span class="stat-box-lbl">Mastered (100%)</span>
-                  </div>
-                  <div class="summary-stat-box">
-                    <span class="stat-box-val" style="color: #ffffff;">${examScores.partial}</span>
-                    <span class="stat-box-lbl">Partial (50%)</span>
-                  </div>
-                  <div class="summary-stat-box">
-                    <span class="stat-box-val" style="color: #ffffff;">${examScores.missed}</span>
-                    <span class="stat-box-lbl">Missed (0%)</span>
-                  </div>
-                </div>
-              </div>
+          <h2 class="summary-title">SIMULATION COMPLETE</h2>
+          
+          <div class="summary-stats-grid">
+            <div class="summary-stat-item">
+              <span class="summary-stat-val">${examScores.mastered}</span>
+              <span class="summary-stat-lbl">Mastered (100%)</span>
             </div>
+            <div class="summary-stat-item">
+              <span class="summary-stat-val">${examScores.partial}</span>
+              <span class="summary-stat-lbl">Partial (50%)</span>
+            </div>
+            <div class="summary-stat-item">
+              <span class="summary-stat-val">${examScores.missed}</span>
+              <span class="summary-stat-lbl">Missed (0%)</span>
+            </div>
+          </div>
 
-            <div class="exam-bottom-banner">
-              <div class="exam-emblem-badge">
-                <svg class="exam-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-              </div>
-              <div class="exam-banner-title">EXAM FINISHED</div>
-              <div class="exam-banner-actions">
-                <button class="exam-action-btn" onclick="restartExamSimulation()">
-                  <span>REPLAY EXAM [Enter]</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                </button>
-                <a href="index.html" class="exam-action-btn" style="text-decoration:none;">
-                  <span>LOBBY [Esc]</span>
-                </a>
-              </div>
-            </div>
+          <div class="summary-actions-row">
+            <button class="btn-summary-action" onclick="restartExamSimulation()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              <span>REPLAY SIMULATION</span>
+            </button>
+            <a href="index.html" class="btn-summary-action" style="background-color: var(--primary);">
+              <span>RETURN TO LOBBY [Esc]</span>
+            </a>
           </div>
         </div>
       `;
@@ -1610,7 +1546,6 @@
 
     function startExamSession() {
       playLaunchSound();
-      // Filter cards
       let pool = [];
       if (examActiveFilter === 'all') {
         pool = [...ALL_EXAM_CARDS];
@@ -1624,10 +1559,8 @@
         return;
       }
 
-      // Shuffle pool
       pool = shuffleArray(pool);
 
-      // Slice target count
       if (examTargetCount !== 'all' && typeof examTargetCount === 'number') {
         examSessionCards = pool.slice(0, examTargetCount);
       } else {
@@ -1681,7 +1614,7 @@
 
         studyRemaining--;
         const secEl = document.getElementById('studySecondsEl');
-        const progressEl = document.getElementById('timerSvgProgress');
+        const progressEl = document.getElementById('timerCircleBar');
         if (secEl) secEl.textContent = `${studyRemaining}s`;
         if (progressEl) {
           const offset = ((60 - studyRemaining) / 60) * 56.5;
@@ -1703,7 +1636,7 @@
     function toggleStudyTimerPause() {
       isTimerPaused = !isTimerPaused;
       showToast('Timer', isTimerPaused ? 'Timer Paused' : 'Timer Resumed');
-      const box = document.getElementById('studyTimerRingBox');
+      const box = document.getElementById('studyTimerWrap');
       if (box) {
         box.style.opacity = isTimerPaused ? '0.6' : '1';
       }
@@ -1762,7 +1695,7 @@
           </button>
         `;
       } else if (currentExamPhase === 'prep') {
-        statusEl.textContent = `PREPARING SPECIMEN ${currentCardIndex + 1} / ${examSessionCards.length}`;
+        statusEl.textContent = `PREPARING: ${currentCardIndex + 1} / ${examSessionCards.length}`;
         actionGroup.innerHTML = `
           <button class="dock-pill-btn" onclick="skipPrepToStudy()">
             <span>SKIP PREP [Enter]</span>
@@ -1803,7 +1736,7 @@
     }
 
     // =======================================================
-    // TACTILE WEB AUDIO SYNTHESIZER (MATCHING CASUAL.HTML)
+    // AUDIO SYNTHESIZER
     // =======================================================
     function initAudioContext() {
       if (!audioCtx) {
@@ -1895,7 +1828,7 @@
     }
 
     // =======================================================
-    // TOAST NOTIFICATIONS
+    // TOAST SYSTEM
     // =======================================================
     function showToast(title, message) {
       const container = document.getElementById('toastContainer');
