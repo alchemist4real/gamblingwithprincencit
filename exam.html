@@ -1181,6 +1181,13 @@
     let ALL_EXAM_CARDS = [];
     let examActiveFilter = 'all';
     let examTargetCount = 20;
+    let examRevealTiming = 'per-card'; // 'per-card' (immediate) or 'batch-end' (all at end)
+    try {
+      const storedTiming = localStorage.getItem('examRevealTiming');
+      if (storedTiming && (storedTiming === 'per-card' || storedTiming === 'batch-end')) {
+        examRevealTiming = storedTiming;
+      }
+    } catch (e) {}
 
     // Phases: 'setup', 'prep', 'study', 'reveal', 'summary'
     let currentExamPhase = 'setup';
@@ -1329,24 +1336,42 @@
             </div>
           </div>
 
+          <!-- Reveal Timing Section -->
+          <div class="config-section">
+            <div class="config-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>3. WAKTU PEMBAHASAN / REVEAL</span>
+            </div>
+            <div class="config-pills-row">
+              <button class="config-pill-btn ${examRevealTiming === 'per-card' ? 'active' : ''}" onclick="setExamRevealTiming('per-card')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Tiap Soal (Per-Card Reveal)</span>
+              </button>
+              <button class="config-pill-btn ${examRevealTiming === 'batch-end' ? 'active' : ''}" onclick="setExamRevealTiming('batch-end')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Di Akhir Semua (Batch Reveal)</span>
+              </button>
+            </div>
+          </div>
+
           <!-- Protocol Rules -->
           <div class="config-section">
             <div class="config-section-title">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              <span>3. SIMULATION RULES</span>
+              <span>4. ATURAN SIMULASI</span>
             </div>
             <div class="config-rules-box">
               <div class="rules-item">
                 <div class="rules-bullet"></div>
-                <div><strong>5s Countdown Preparation:</strong> Brief preparation phase before each specimen is displayed.</div>
+                <div><strong>Persiapan di Awal:</strong> 5 detik hitung mundur persiapan lembar kertas &amp; pena hanya di awal sebelum sediaan pertama.</div>
               </div>
               <div class="rules-item">
                 <div class="rules-bullet"></div>
-                <div><strong>60s Timed Identification:</strong> Analyze the high-resolution specimen and answer 4 general practical questions.</div>
+                <div><strong>60s Observasi per Sediaan:</strong> Amati gambar mikroskopik resolusi tinggi dan jawab 4 panduan praktikum.</div>
               </div>
               <div class="rules-item">
                 <div class="rules-bullet"></div>
-                <div><strong>Structured Reveal & Scoring:</strong> Immediate diagnostic answer, microscopic findings, and self-assessment scorecard.</div>
+                <div><strong>Waktu Pembahasan:</strong> ${examRevealTiming === 'per-card' ? 'Pembahasan &amp; penilaian mandiri langsung muncul setelah tiap soal.' : 'Seluruh sediaan dikerjakan beruntun di kertas tanpa jeda. Kunci jawaban dan penilaian dibuka sekaligus di akhir ujian.'}</div>
               </div>
             </div>
           </div>
@@ -1359,15 +1384,19 @@
       `;
     }
 
-    // 2. PREPARATION COUNTDOWN PHASE (5S)
+    // 2. PREPARATION COUNTDOWN PHASE (5S - HANYA DI AWAL SEBELUM SEDIAAN PERTAMA)
     function renderPrepPhase(container) {
+      const total = examSessionCards.length;
       container.innerHTML = `
         <div class="exam-prep-card">
           <div class="prep-countdown-circle" id="prepCounterEl">${prepRemaining}</div>
-          <div class="prep-title">PREPARE FOR SPECIMEN #${currentCardIndex + 1}</div>
-          <div class="prep-sub">Specimen identification begins in ${prepRemaining} seconds...</div>
+          <div class="prep-title">PERSIAPKAN KERTAS &amp; PENA</div>
+          <div class="prep-sub">
+            Siapkan lembar jawaban dan tulis nomor <strong>1 s/d ${total}</strong>.<br>
+            Simulasi praktikum dimulai dalam <strong>${prepRemaining} detik</strong>.
+          </div>
           <button class="btn-skip-prep" onclick="skipPrepToStudy()">
-            <span>SKIP PREPARATION [Enter]</span>
+            <span>MULAI SEKARANG [Enter]</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
@@ -1393,8 +1422,8 @@
             <span class="hud-timer-text" id="studySecondsEl">${studyRemaining}s</span>
           </div>
 
-          <button class="hud-reveal-btn" onclick="revealCurrentAnswer()">
-            <span>REVEAL [Enter]</span>
+          <button class="hud-reveal-btn" onclick="${examRevealTiming === 'per-card' ? 'revealCurrentAnswer()' : 'advanceStudySpecimen()'}">
+            <span>${examRevealTiming === 'per-card' ? 'REVEAL [Enter]' : 'NEXT SOAL [Enter]'}</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
@@ -1462,7 +1491,7 @@
           
           <!-- Diagnosis Header -->
           <div class="reveal-header-bar">
-            <span class="reveal-title-badge">SPECIMEN #${currentCardIndex + 1} OF ${total} // DIAGNOSIS RESMI</span>
+            <span class="reveal-title-badge">SPECIMEN #${currentCardIndex + 1} OF ${total} // ${examRevealTiming === 'batch-end' ? 'PEMBAHASAN &amp; PENILAIAN MANDIRI' : 'DIAGNOSIS RESMI'}</span>
             <h2 class="reveal-main-title">${card.diagnosis || 'Diagnosis Sediaan'}</h2>
             <div class="reveal-tags-row">
               <span class="reveal-tag">📍 Organ: ${card.organ || '-'}</span>
@@ -1518,7 +1547,7 @@
 
           <!-- Self-Assessment Scoring Choice -->
           <div class="reveal-scoring-box">
-            <span class="scoring-label-text">EVALUASI PEMAHAMAN ANDA:</span>
+            <span class="scoring-label-text">${examRevealTiming === 'batch-end' ? 'COCOKKAN JAWABAN KERTAS DENGAN KUNCI:' : 'EVALUASI PEMAHAMAN ANDA:'}</span>
             <div class="scoring-btn-group">
               <button class="btn-score-pick" onclick="recordScoreAndNext('missed')" title="Key [1]">
                 <span>0 • MISSED [1]</span>
@@ -1590,6 +1619,15 @@
     function setExamCount(countVal) {
       playClickSound();
       examTargetCount = countVal;
+      renderCurrentPhase();
+    }
+
+    function setExamRevealTiming(timing) {
+      playClickSound();
+      examRevealTiming = timing;
+      try {
+        localStorage.setItem('examRevealTiming', timing);
+      } catch (e) {}
       renderCurrentPhase();
     }
 
@@ -1677,7 +1715,11 @@
         if (studyRemaining <= 0) {
           clearInterval(studyTimer);
           studyTimer = null;
-          revealCurrentAnswer();
+          if (examRevealTiming === 'per-card') {
+            revealCurrentAnswer();
+          } else {
+            advanceStudySpecimen();
+          }
         }
       }, 1000);
     }
@@ -1699,6 +1741,27 @@
       renderCurrentPhase();
     }
 
+    function advanceStudySpecimen() {
+      if (studyTimer) clearInterval(studyTimer);
+      studyTimer = null;
+      playTone(660, 'triangle', 0.12);
+
+      currentCardIndex++;
+      if (currentCardIndex < examSessionCards.length) {
+        startStudyCountdown();
+      } else {
+        startBatchReveal();
+      }
+    }
+
+    function startBatchReveal() {
+      currentCardIndex = 0;
+      currentExamPhase = 'reveal';
+      playRevealSound();
+      showToast('Drill Selesai', 'Memasuki Pembahasan & Self-Scoring.');
+      renderCurrentPhase();
+    }
+
     function recordScoreAndNext(choice) {
       playSelectSound();
       if (choice === 'mastered') {
@@ -1713,7 +1776,13 @@
 
       currentCardIndex++;
       if (currentCardIndex < examSessionCards.length) {
-        startPrepCountdown();
+        if (examRevealTiming === 'per-card') {
+          // Langsung mulai sediaan berikutnya tanpa mengulang persiapan kertas
+          startStudyCountdown();
+        } else {
+          // Di mode batch-end, lanjut membuka kunci sediaan berikutnya
+          renderCurrentPhase();
+        }
       } else {
         finishExamSession();
       }
@@ -1744,22 +1813,23 @@
           </button>
         `;
       } else if (currentExamPhase === 'prep') {
-        statusEl.textContent = `PREPARING: ${currentCardIndex + 1} / ${examSessionCards.length}`;
+        statusEl.textContent = `PERSIAPAN LEMBAR UJIAN (${examSessionCards.length} SOAL)`;
         actionGroup.innerHTML = `
           <button class="dock-pill-btn" onclick="skipPrepToStudy()">
-            <span>SKIP PREP [Enter]</span>
+            <span>MULAI [Enter]</span>
           </button>
         `;
       } else if (currentExamPhase === 'study') {
-        statusEl.textContent = `STUDYING: ${currentCardIndex + 1} / ${examSessionCards.length} (${studyRemaining}s)`;
+        const isPerCard = examRevealTiming === 'per-card';
+        statusEl.textContent = `${isPerCard ? 'STUDYING' : 'EXAM DRILL'}: ${currentCardIndex + 1} / ${examSessionCards.length} (${studyRemaining}s)`;
         actionGroup.innerHTML = `
-          <button class="dock-pill-btn" onclick="revealCurrentAnswer()">
+          <button class="dock-pill-btn" onclick="${isPerCard ? 'revealCurrentAnswer()' : 'advanceStudySpecimen()'}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg>
-            <span>REVEAL [Enter]</span>
+            <span>${isPerCard ? 'REVEAL [Enter]' : 'NEXT SOAL [Enter]'}</span>
           </button>
         `;
       } else if (currentExamPhase === 'reveal') {
-        statusEl.textContent = `REVEALED: ${currentCardIndex + 1} / ${examSessionCards.length}`;
+        statusEl.textContent = `REVEAL & SCORING: ${currentCardIndex + 1} / ${examSessionCards.length}`;
         actionGroup.innerHTML = `
           <button class="dock-pill-btn" onclick="recordScoreAndNext('mastered')">
             <span>NEXT [Enter]</span>
@@ -1923,7 +1993,10 @@
         e.preventDefault();
         if (currentExamPhase === 'setup') startExamSession();
         else if (currentExamPhase === 'prep') skipPrepToStudy();
-        else if (currentExamPhase === 'study') revealCurrentAnswer();
+        else if (currentExamPhase === 'study') {
+          if (examRevealTiming === 'per-card') revealCurrentAnswer();
+          else advanceStudySpecimen();
+        }
         else if (currentExamPhase === 'reveal') recordScoreAndNext('mastered');
         else if (currentExamPhase === 'summary') restartExamSimulation();
         return;
