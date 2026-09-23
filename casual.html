@@ -907,7 +907,6 @@
       justify-content: center;
     }
     body.toast-active .screen-scrim,
-    body.rapid-stream-active .screen-scrim,
     .screen-scrim.active {
       opacity: 1;
       pointer-events: auto;
@@ -1133,58 +1132,101 @@
       }
     }
 
-    /* =======================================================
-       STREAM TOAST / RAPID BROWSE HUD (FLOATING GAME WIDGET)
-       DEAD CENTER OVER FULL-SCREEN SHADOW SCRIM
+        /* =======================================================
+       RAPID STREAM HIGH-SPEED HUD & LATERAL SPEED STREAMERS
+       NON-INTRUSIVE, ZERO CENTER OCCLUSION - CARDS STAY 100% VISIBLE
        ======================================================= */
+    .rapid-edge-fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2800; /* Behind HUD (3300) and cards, above backdrop */
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    body.rapid-stream-active .rapid-edge-fx {
+      opacity: 1;
+    }
+    .rapid-edge-left,
+    .rapid-edge-right {
+      width: clamp(24px, 5vw, 60px);
+      height: 100%;
+      position: relative;
+    }
+    .rapid-edge-left {
+      background: linear-gradient(to right, rgba(49, 79, 186, 0.22), transparent);
+    }
+    .rapid-edge-right {
+      background: linear-gradient(to left, rgba(49, 79, 186, 0.22), transparent);
+    }
+    .rapid-edge-left::before,
+    .rapid-edge-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 14px,
+        rgba(255, 255, 255, 0.45) 14px,
+        rgba(255, 255, 255, 0.45) 16px,
+        transparent 16px,
+        transparent 28px
+      );
+      animation: rapidStreakFlow 0.18s linear infinite;
+    }
+    @keyframes rapidStreakFlow {
+      from { transform: translateY(0); }
+      to { transform: translateY(28px); }
+    }
+
     .rapid-stream-hud {
       position: fixed;
-      top: 50%;
+      top: clamp(66px, 9.5vh, 86px);
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.82);
+      transform: translateX(-50%) translateY(-10px) scale(0.92);
       opacity: 0;
       pointer-events: none;
-      z-index: 3600; /* Above scrim (3400) */
-      transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1.25, 0.3, 1);
+      z-index: 3300;
+      transition: opacity 0.16s ease, transform 0.22s cubic-bezier(0.16, 1.25, 0.3, 1);
     }
     .rapid-stream-hud.active {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translateX(-50%) translateY(0) scale(1);
     }
     .hud-pill {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 24px;
+      gap: 10px;
+      padding: 7px 18px;
       border-radius: 999px;
       background-color: var(--white);
-      border: 3.5px solid var(--primary-deep);
-      box-shadow: 0 8px 0 var(--primary-deep), 0 0 0 5px var(--white);
+      border: 2.5px solid var(--primary-deep);
+      box-shadow: 0 5px 0 var(--primary-deep), 0 0 0 4px var(--white);
       color: var(--primary-deep);
       font-family: var(--font-display);
-      font-size: clamp(13px, 1.5vw, 16px);
-      letter-spacing: 1.8px;
-      font-weight: normal;
+      font-size: clamp(12px, 1.3vw, 14px);
+      letter-spacing: 1.5px;
+      font-weight: 700;
       text-transform: uppercase;
       user-select: none;
     }
     .hud-icon {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       stroke-width: 2.8;
       color: var(--primary);
-      animation: hudIconBob 0.35s ease-in-out infinite alternate;
-    }
-    @keyframes hudIconBob {
-      from { transform: translateX(-3px); }
-      to { transform: translateX(3px); }
+      transition: transform 0.15s ease;
     }
     .hud-label {
       font-family: var(--font-display);
-      font-size: clamp(13px, 1.5vw, 16px);
-      font-weight: normal;
+      font-size: clamp(12px, 1.3vw, 14px);
+      font-weight: 700;
       color: var(--primary-deep);
-      letter-spacing: 1.8px;
+      letter-spacing: 1.5px;
     }
     .hud-divider {
       color: var(--primary);
@@ -1192,25 +1234,16 @@
     }
     .hud-counter {
       font-family: var(--font-mono);
-      font-size: 15px;
+      font-size: 13px;
       color: var(--primary-deep);
       font-weight: 800;
       letter-spacing: 0.8px;
-      min-width: 58px;
+      min-width: 54px;
       text-align: center;
       background: #f6f8fe;
-      border: 2px solid var(--primary-deep);
-      border-radius: 8px;
-      padding: 2px 8px;
-    }
-
-    @keyframes hudBoltPulse {
-      0% { transform: scale(0.9); opacity: 0.7; }
-      100% { transform: scale(1.22); opacity: 1; }
-    }
-    @keyframes hudArrowFlash {
-      0% { opacity: 0.35; transform: scaleX(0.9); }
-      100% { opacity: 1; transform: scaleX(1.15); }
+      border: 1.5px solid var(--primary-deep);
+      border-radius: 6px;
+      padding: 2px 7px;
     }
 
     /* Active Card Speed Glow & Leading Edge Trails (STRICT 2-COLOR ZERO SHADOW SLOP) */
@@ -4460,6 +4493,12 @@
   </div>
 
   <!-- RAPID STREAM HIGH-SPEED HUD (DEAD CENTER OVER FULL-SCREEN SCRIM) -->
+    <!-- RAPID STREAM LATERAL SPEED STREAMERS (NON-INTRUSIVE EDGE FX, ZERO CENTER OCCLUSION) -->
+  <div class="rapid-edge-fx" id="rapidEdgeFx" aria-hidden="true">
+    <div class="rapid-edge-left"></div>
+    <div class="rapid-edge-right"></div>
+  </div>
+
   <div class="rapid-stream-hud" id="rapidStreamHud" aria-hidden="true">
     <div class="hud-pill">
       <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
