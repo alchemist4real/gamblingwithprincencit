@@ -3738,6 +3738,341 @@
       background-color: var(--white);
       color: var(--primary-deep);
     }
+    /* =======================================================
+       QUICK FILTER BAR (HORIZONTAL SCROLLABLE CHIPS)
+       ======================================================= */
+    .quick-filter-container {
+      width: 100%;
+      max-width: 960px;
+      margin: 6px auto 4px auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 10;
+    }
+    .quick-filter-scroll {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 3px 2px;
+      flex: 1;
+    }
+    .quick-filter-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .quick-filter-chip {
+      background-color: var(--white-15);
+      color: var(--white);
+      border: 1.5px solid var(--white-25);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .quick-filter-chip:hover {
+      background-color: var(--white-25);
+      border-color: var(--white);
+      transform: translateY(-1px);
+    }
+    .quick-filter-chip.active {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border-color: var(--white);
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.3);
+    }
+    .quick-filter-chip .chip-badge {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background-color: var(--white-25);
+      color: inherit;
+    }
+    .quick-filter-chip.active .chip-badge {
+      background-color: var(--primary-deep);
+      color: var(--white);
+    }
+    .quick-filter-hub-btn {
+      background-color: var(--white);
+      color: var(--primary-deep);
+      border: 1.5px solid var(--white);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.25);
+      flex-shrink: 0;
+    }
+    .quick-filter-hub-btn:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    /* =======================================================
+       FILTER HUB MODAL (MULTI-LEVEL GRANULAR FILTER SYSTEM)
+       ======================================================= */
+    .filter-hub-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(23, 43, 122, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .filter-hub-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .filter-hub-card {
+      background-color: var(--white);
+      border: 2px solid var(--primary-deep);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 840px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.96) translateY(12px);
+      transition: transform 0.22s cubic-bezier(0.16, 1.15, 0.3, 1);
+      box-shadow: 0 12px 40px rgba(23, 43, 122, 0.35);
+    }
+    .filter-hub-overlay.active .filter-hub-card {
+      transform: scale(1) translateY(0);
+    }
+    .filter-hub-header {
+      padding: 16px 20px 12px 20px;
+      border-bottom: 1.5px solid rgba(49, 79, 186, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background-color: #f7f9ff;
+    }
+    .filter-hub-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .filter-hub-badge {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+    .filter-hub-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      font-family: var(--font-main);
+    }
+    .filter-hub-subtitle {
+      font-size: 11.5px;
+      color: #556699;
+      font-weight: 500;
+    }
+    .filter-hub-controls {
+      padding: 12px 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid rgba(49, 79, 186, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .filter-hub-search {
+      width: 100%;
+      padding: 9px 14px;
+      border: 1.5px solid #c2cff2;
+      border-radius: 10px;
+      font-size: 13px;
+      font-family: var(--font-main);
+      color: var(--primary-deep);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background-color: #fafdff;
+    }
+    .filter-hub-search:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(49, 79, 186, 0.15);
+      background-color: #ffffff;
+    }
+    .filter-hub-tabs-row {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .filter-hub-tabs-row::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-hub-tab-btn {
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid #d0daf5;
+      background-color: #f4f6fc;
+      color: var(--primary-deep);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-hub-tab-btn:hover {
+      background-color: #e6ecfc;
+      border-color: var(--primary);
+    }
+    .filter-hub-tab-btn.active {
+      background-color: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 800;
+    }
+    .filter-hub-body {
+      padding: 16px 20px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: calc(88vh - 200px);
+    }
+    .filter-hub-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .filter-hub-group-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: var(--primary-deep);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid #e2e8f8;
+      padding-bottom: 4px;
+    }
+    .filter-hub-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-hub-chip {
+      background-color: #f4f7fc;
+      color: var(--primary-deep);
+      border: 1.5px solid #d2ddf5;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .filter-hub-chip:hover {
+      background-color: #e7effd;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .filter-hub-chip.active {
+      background-color: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary-deep);
+      font-weight: 800;
+      box-shadow: 0 2px 6px rgba(49, 79, 186, 0.3);
+    }
+    .filter-hub-chip .chip-count {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background-color: #e2eafc;
+      color: var(--primary-deep);
+    }
+    .filter-hub-chip.active .chip-count {
+      background-color: #ffffff;
+      color: var(--primary);
+    }
+    .filter-hub-footer {
+      padding: 12px 20px;
+      border-top: 1.5px solid rgba(49, 79, 186, 0.15);
+      background-color: #f7f9ff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .filter-hub-status-text {
+      font-size: 12px;
+      color: var(--primary-deep);
+      font-weight: 600;
+    }
+    .filter-hub-btn-reset {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1.5px solid #c2cff2;
+      background-color: #ffffff;
+      color: var(--primary-deep);
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-hub-btn-reset:hover {
+      background-color: #f0f4fc;
+      border-color: var(--primary);
+    }
+    .filter-hub-btn-close {
+      padding: 7px 18px;
+      border-radius: 8px;
+      border: 1.5px solid var(--primary-deep);
+      background-color: var(--primary);
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-hub-btn-close:hover {
+      background-color: var(--primary-deep);
+      transform: translateY(-1px);
+    }
   </style>
 </head>
 <body>
@@ -3750,6 +4085,19 @@
       <h1 class="main-title" id="appMainTitle"><span class="title-tone-1">GAMBLING WITH</span> <span class="title-tone-2">PRINCE NCIT</span></h1>
     </div>
     <div class="sub-meta" id="appSubMeta">Persiapan Ujian Identifikasi &amp; Praktikum Kedokteran</div>
+    <!-- Quick Filter Chips Row (Horizontal Scroll) -->
+    <div class="quick-filter-container" id="quickFilterContainer">
+      <div class="quick-filter-scroll" id="quickFilterScroll">
+        <!-- Rendered dynamically via renderQuickFilterBar() -->
+      </div>
+      <button class="quick-filter-hub-btn" id="btnOpenFilterHub" onclick="openFilterHubModal()" title="Buka Filter Hub Lengkap (51 Kategori) [F]">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        <span>FILTER HUB</span>
+        <span class="chip-badge" id="quickFilterHubCountBadge">51</span>
+      </button>
+    </div>
   </header>
 
   <!-- =======================================================
@@ -3794,12 +4142,12 @@
         <span class="pack-name-text" id="headerPackName">IDENT DECK</span>
       </a>
 
-      <!-- Filter Cycle Button (Icon-Only, Cycles All -> Specimen -> Theory) -->
-      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="cycleFilter()" title="Filter: All Cards [Click to cycle]" aria-label="Filter Cards">
+      <!-- Filter Hub Button (Icon-Only, Opens 51-Category Filter Hub Modal) -->
+      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="openFilterHubModal()" title="Buka Filter Hub (51 Kategori) [F]" aria-label="Buka Filter Hub">
         <svg id="dockFilterIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
-        <span class="gamepad-badge" id="dockFilterBadge" title="Filter">ALL</span>
+        <span class="gamepad-badge" id="dockFilterBadge" title="Filter Hub">ALL</span>
       </button>
     </div>
 
@@ -4511,6 +4859,59 @@
     </div>
   </div>
 
+  <!-- =======================================================
+       FILTER HUB MODAL (MULTI-LEVEL GRANULAR FILTER SYSTEM)
+       ======================================================= -->
+  <div class="filter-hub-overlay" id="filterHubModal" onclick="handleFilterHubOverlayClick(event)">
+    <div class="filter-hub-card" role="dialog" aria-modal="true" aria-labelledby="filterHubTitle">
+      <!-- Header -->
+      <div class="filter-hub-header">
+        <div class="filter-hub-title-wrap">
+          <span class="filter-hub-badge">KATALOG FILTER RESMI • FARMAKO 3.2</span>
+          <h2 class="filter-hub-title" id="filterHubTitle">Filter Hub Bank Soal</h2>
+          <span class="filter-hub-subtitle">Pilih modul spesifik, sub-golongan obat, tipe soal, atau arsip tahun ujian</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeFilterHubModal()" title="Tutup [Esc]" aria-label="Tutup">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Controls: Search & Category Tabs -->
+      <div class="filter-hub-controls">
+        <input type="text" id="filterHubSearchInput" class="filter-hub-search" placeholder="🔍 Ketik nama obat, golongan, resep, 2024, asma, diuretik..." oninput="handleFilterHubSearch(this.value)">
+        <div class="filter-hub-tabs-row" id="filterHubTabsRow">
+          <button class="filter-hub-tab-btn active" data-tab="all" onclick="setFilterHubTab('all')">Semua Filter</button>
+          <button class="filter-hub-tab-btn" data-tab="sistem" onclick="setFilterHubTab('sistem')">🏥 Modul Sistem</button>
+          <button class="filter-hub-tab-btn" data-tab="subclass" onclick="setFilterHubTab('subclass')">💊 Golongan Obat</button>
+          <button class="filter-hub-tab-btn" data-tab="tipe" onclick="setFilterHubTab('tipe')">📋 Tipe Soal &amp; Algoritma</button>
+          <button class="filter-hub-tab-btn" data-tab="arsip" onclick="setFilterHubTab('arsip')">📅 Arsip Ujian</button>
+          <button class="filter-hub-tab-btn" data-tab="role" onclick="setFilterHubTab('role')">🎯 Peran Terapi</button>
+        </div>
+      </div>
+
+      <!-- Scrollable Filter Chips Body -->
+      <div class="filter-hub-body" id="filterHubBody">
+        <!-- Injected dynamically by renderFilterHubChips() -->
+      </div>
+
+      <!-- Footer -->
+      <div class="filter-hub-footer">
+        <button class="filter-hub-btn-reset" onclick="selectFilterFromHub('all')">
+          🔄 Tampilkan Semua Kartu
+        </button>
+        <span class="filter-hub-status-text" id="filterHubStatusText">
+          Menampilkan <strong id="filterHubCountCurrent">136</strong> kartu
+        </span>
+        <button class="filter-hub-btn-close" onclick="closeFilterHubModal()">
+          Selesai [Esc]
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- TOAST NOTICE (GAME-STYLE CENTER SPLASH TOAST WITH FULL-SCREEN SHADOW) -->
   <div class="toast-notice" id="toastNotice" aria-live="polite">
     <div class="toast-card-badge">
@@ -4570,23 +4971,19 @@
       if (!filterId || filterId === 'all') return true;
       if (filterId === 'prioritas') return !!card.is_priority;
       if (filterId === 'resep') return !!card.has_resep;
-      if (filterId === 'kardio') {
-        return card.section === 'Kardiovaskular & Ginjal' ||
-               card.sub_category === 'diuretik' ||
-               card.sub_category === 'simpatolitik-ccb' ||
-               card.sub_category === 'raas' ||
-               card.sub_category === 'vasodilator';
-      }
-      if (filterId === 'raas-vasodilator') {
-        return card.sub_category === 'raas' || card.sub_category === 'vasodilator';
-      }
-      if (filterId === 'respirasi') {
-        return card.section === 'Respirasi & Infeksi Terkait' ||
-               card.sub_category === 'asma-ppok' ||
-               card.sub_category === 'oat' ||
-               card.sub_category === 'infeksi-batuk';
+      if (filterId === 'kardio') return card.section === 'Kardiovaskular & Ginjal';
+      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait';
+      if (filterId === 'ccb') return (card.sub_class && card.sub_class.startsWith('ccb')) || (card.tags && card.tags.includes('ccb'));
+      if (filterId === 'diuretik') return card.sub_category === 'diuretik' || (card.tags && card.tags.includes('diuretik'));
+      if (filterId.startsWith('th-')) {
+        const yr = filterId.replace('th-', '');
+        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr));
       }
       if (card.sub_category === filterId) return true;
+      if (card.sub_class === filterId) return true;
+      if (card.clinical_role === filterId) return true;
+      if (card.question_types && card.question_types.includes(filterId)) return true;
+      if (card.tags && card.tags.includes(filterId)) return true;
       if (card.type === filterId) return true;
       if (card._packId === filterId) return true;
       return false;
@@ -4602,24 +4999,202 @@
 
       // Fallback combined list
       const list = [
-        { id: 'all', label: `Semua Kartu (${cards.length})`, count: cards.length, badge: 'ALL' }
+        { id: 'all', label: `Semua Kartu (${cards.length})`, count: cards.length, badge: 'ALL', group: 'sistem' }
       ];
       const pCount = cards.filter(c => c.is_priority).length;
-      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, badge: 'STAR' });
+      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, badge: 'STAR', group: 'arsip' });
 
       const kCount = cards.filter(c => isCardMatchingFilter(c, 'kardio')).length;
-      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount, badge: 'KARD' });
+      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount, badge: 'KARD', group: 'sistem' });
 
       const rCount = cards.filter(c => isCardMatchingFilter(c, 'respirasi')).length;
-      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount, badge: 'RESP' });
+      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount, badge: 'RESP', group: 'sistem' });
 
       const prepCount = cards.filter(c => c.type === 'preparat').length;
-      if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Sediaan Mikroskopik (${prepCount})`, count: prepCount, badge: 'PREP' });
+      if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Sediaan Mikroskopik (${prepCount})`, count: prepCount, badge: 'PREP', group: 'sistem' });
 
       const teoriCount = cards.filter(c => c.type === 'teori').length;
-      if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Soal Teori (${teoriCount})`, count: teoriCount, badge: 'THRY' });
+      if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Soal Teori (${teoriCount})`, count: teoriCount, badge: 'THRY', group: 'tipe' });
 
       return list;
+    }
+
+    // =======================================================
+    // FILTER HUB ENGINE (51+ MULTI-LEVEL FILTERS)
+    // =======================================================
+    let filterHubSearchQuery = '';
+    let filterHubActiveTab = 'all';
+
+    function openFilterHubModal() {
+      const modal = document.getElementById('filterHubModal');
+      if (!modal) return;
+      filterHubSearchQuery = '';
+      const searchInput = document.getElementById('filterHubSearchInput');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+      renderFilterHubChips();
+      modal.classList.add('active');
+      if (searchInput) {
+        setTimeout(() => searchInput.focus(), 120);
+      }
+      playSelectSound();
+    }
+
+    function closeFilterHubModal() {
+      const modal = document.getElementById('filterHubModal');
+      if (!modal) return;
+      modal.classList.remove('active');
+      playClickSound();
+    }
+
+    function handleFilterHubOverlayClick(e) {
+      if (e.target && e.target.id === 'filterHubModal') {
+        closeFilterHubModal();
+      }
+    }
+
+    function handleFilterHubSearch(query) {
+      filterHubSearchQuery = (query || '').trim().toLowerCase();
+      renderFilterHubChips();
+    }
+
+    function setFilterHubTab(tabKey) {
+      filterHubActiveTab = tabKey;
+      const tabBtns = document.querySelectorAll('.filter-hub-tab-btn');
+      tabBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabKey);
+      });
+      renderFilterHubChips();
+      playClickSound();
+    }
+
+    function selectFilterFromHub(filterId) {
+      setFilter(filterId);
+      closeFilterHubModal();
+      const filters = getActiveFiltersList();
+      const current = filters.find(f => f.id === filterId) || { label: filterId, count: filteredBase.length };
+      showToast('Filter Aktif', `${current.label} • ${filteredBase.length} Kartu`);
+    }
+
+    function renderFilterHubChips() {
+      const body = document.getElementById('filterHubBody');
+      const countEl = document.getElementById('filterHubCountCurrent');
+      if (!body) return;
+
+      const filters = getActiveFiltersList();
+      if (countEl) countEl.textContent = filteredBase.length;
+
+      // Group definitions
+      const groups = [
+        { key: 'sistem', title: '🏥 Modul & Sistem Utama', desc: 'Sistem kardiovaskular, ginjal, respirasi, dan modul stasi praktikum' },
+        { key: 'subclass', title: '💊 Sub-Golongan Farmakologis (Target Molekuler)', desc: 'Golongan obat spesifik, reseptor, dan target enzim' },
+        { key: 'tipe', title: '📋 Tipe Pertanyaan & Algoritma Klinis', desc: 'Resep dokter, mekanisme kerja, efek samping, dan perhitungan dosis' },
+        { key: 'arsip', title: '📅 Arsip Soal Ujian & Prioritas', desc: 'Bank soal tahun 2024 (Tablet Costae), 2022 (Artedium), 2021 (Alveliola)' },
+        { key: 'role', title: '🎯 Peran Terapi & Aksi Biologis', desc: 'Reliever vs Controller, Bakterisidal vs Bakteriostatik' }
+      ];
+
+      let filteredFilters = filters;
+      if (filterHubSearchQuery) {
+        filteredFilters = filters.filter(f => 
+          f.label.toLowerCase().includes(filterHubSearchQuery) ||
+          f.id.toLowerCase().includes(filterHubSearchQuery) ||
+          (f.badge && f.badge.toLowerCase().includes(filterHubSearchQuery))
+        );
+      }
+
+      if (filterHubActiveTab !== 'all') {
+        filteredFilters = filteredFilters.filter(f => f.group === filterHubActiveTab || f.id === 'all');
+      }
+
+      if (filteredFilters.length === 0) {
+        body.innerHTML = `
+          <div style="text-align: center; padding: 40px 20px; color: #556699;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 12px; opacity: 0.6;">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Tidak ada filter yang cocok</div>
+            <div style="font-size: 12px;">Coba gunakan kata kunci lain seperti "resep", "loop", "2024", atau "asma".</div>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+
+      // Special top section for "Semua Stasi"
+      const allFilter = filteredFilters.find(f => f.id === 'all');
+      if (allFilter && (!filterHubActiveTab || filterHubActiveTab === 'all' || filterHubActiveTab === 'sistem')) {
+        html += `
+          <div class="filter-hub-group">
+            <div class="filter-hub-chips-grid">
+              <button class="filter-hub-chip ${activeFilter === 'all' ? 'active' : ''}" onclick="selectFilterFromHub('all')" style="font-weight: 800; border-width: 2px;">
+                <span>🌐</span>
+                <span>${allFilter.label}</span>
+                <span class="chip-count">${allFilter.count}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      groups.forEach(g => {
+        if (filterHubActiveTab !== 'all' && filterHubActiveTab !== g.key) return;
+        const groupFilters = filteredFilters.filter(f => f.group === g.key && f.id !== 'all');
+        if (groupFilters.length === 0) return;
+
+        html += `
+          <div class="filter-hub-group">
+            <div class="filter-hub-group-title">
+              <span>${g.title}</span>
+              <span style="font-size: 10px; color: #7788aa; font-weight: 600;">(${groupFilters.length})</span>
+            </div>
+            <div class="filter-hub-chips-grid">
+              ${groupFilters.map(f => `
+                <button class="filter-hub-chip ${activeFilter === f.id ? 'active' : ''}" onclick="selectFilterFromHub('${f.id}')" title="${f.label}">
+                  <span>${f.icon === 'grid' ? '▦' : f.icon === 'heart' ? '♥' : f.icon === 'droplet' ? '💧' : f.icon === 'feather' ? '🪶' : f.icon === 'shield' ? '🛡️' : f.icon === 'crosshair' ? '🎯' : f.icon === 'thermometer' ? '🌡️' : f.icon === 'archive' ? '📦' : f.icon === 'star' ? '⭐' : f.icon === 'calendar' ? '📅' : f.icon === 'edit' ? '📝' : f.icon === 'zap' ? '⚡' : '•'}</span>
+                  <span>${f.label}</span>
+                  <span class="chip-count">${f.count}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      body.innerHTML = html;
+    }
+
+    function renderQuickFilterBar() {
+      const scrollEl = document.getElementById('quickFilterScroll');
+      const badgeEl = document.getElementById('quickFilterHubCountBadge');
+      if (!scrollEl) return;
+
+      const filters = getActiveFiltersList();
+      if (badgeEl) badgeEl.textContent = filters.length;
+
+      // Select top key filters for the quick horizontal scroll
+      const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'faringitis-batuk-flu', 'loop', 'beta-blocker', 'ccb', 'acei', 'arb'];
+      const quickFilters = [];
+
+      popularIds.forEach(pid => {
+        const found = filters.find(f => f.id === pid);
+        if (found) quickFilters.push(found);
+      });
+
+      // Also ensure current active filter is visible in the quick scroll if not already
+      if (!quickFilters.some(f => f.id === activeFilter)) {
+        const cur = filters.find(f => f.id === activeFilter);
+        if (cur) quickFilters.splice(1, 0, cur);
+      }
+
+      scrollEl.innerHTML = quickFilters.map(f => `
+        <button class="quick-filter-chip ${activeFilter === f.id ? 'active' : ''}" onclick="setFilter('${f.id}')" title="${f.label}">
+          <span>${f.label.split('(')[0].trim()}</span>
+          <span class="chip-badge">${f.count}</span>
+        </button>
+      `).join('');
     }
 
     function applyDeckFilterAndMode(resetIndex = true) {
@@ -4746,6 +5321,9 @@
       if (btnTeori) btnTeori.classList.remove('active');
 
       applyDeckFilterAndMode(true);
+      updateDockFilterUI();
+      renderQuickFilterBar();
+      renderFilterHubChips();
 
       if (notify) {
         showToast('Decks Loaded', `${packIds.length} Decks • ${DATA_CARDS.length} Cards`);
@@ -6079,9 +6657,9 @@
       const labelText = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
       const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-      const isFarmako = card.category && card.category.includes('FARMAKO');
+      const isFarmako = curCard.category && curCard.category.includes('FARMAKO');
       if (isFarmako) {
-        activeIndicatorTitle.textContent = `${labelText} • ${card.sifat || 'FARMAKOLOGI'}`;
+        activeIndicatorTitle.textContent = `${labelText} • ${curCard.sifat || 'FARMAKOLOGI'}`;
         activeIndicatorDesc.textContent = isTouch
           ? 'Ketuk untuk melihat mekanisme molekuler & resep'
           : 'Klik atau tekan Spasi untuk melihat mekanisme molekuler & resep';
@@ -6640,16 +7218,16 @@
       if (!btn) return;
 
       const filters = getActiveFiltersList();
-      const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'All Cards' };
-      const shortBadge = filterBadgeMap[activeFilter] || (current.badge || activeFilter.substring(0, 4).toUpperCase());
+      const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'Semua Kartu', badge: 'ALL' };
+      const shortBadge = current.badge || activeFilter.substring(0, 4).toUpperCase();
 
       if (activeFilter === 'all') {
         btn.classList.remove('active');
-        btn.title = `Filter: ${current.label} [Click to cycle]`;
+        btn.title = `Buka Filter Hub (51 Kategori) [F] • Aktif: Semua Kartu (${filteredBase.length})`;
         if (badge) badge.textContent = 'ALL';
       } else {
         btn.classList.add('active');
-        btn.title = `Filter: ${current.label} [Click to cycle]`;
+        btn.title = `Buka Filter Hub (51 Kategori) [F] • Aktif: ${current.label} (${filteredBase.length})`;
         if (badge) badge.textContent = shortBadge;
       }
     }
@@ -6688,9 +7266,11 @@
       applyDeckFilterAndMode(true);
       const filters = getActiveFiltersList();
       const curF = filters.find(f => f.id === filterType);
-      showToast('Filter Aktif', curF ? curF.label : `${sessionCards.length} Kartu`);
+      showToast('Filter Aktif', curF ? `${curF.label} • ${sessionCards.length} Kartu` : `${sessionCards.length} Kartu`);
       updateSettingsUI();
       updateDockFilterUI();
+      renderQuickFilterBar();
+      renderFilterHubChips();
     }
 
     function removeCurrentCard() {
@@ -7000,6 +7580,35 @@
       const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
 
       const isFarmako = card.category && card.category.includes('FARMAKO');
+      const keywordsStr = card.keywords || (card.tags ? card.tags.slice(0, 10).join(' • ') : '');
+
+      let resepSectionHtml = '';
+      if (card.resep_teks) {
+        resepSectionHtml = `
+          <div class="section-block">
+            <div class="section-heading" style="color: #172b7a; display: flex; align-items: center; justify-content: space-between;">
+              <span>📝 RESEP LENGKAP DOKTER</span>
+              <span style="font-size: 10px; background: #e0ebff; color: #172b7a; padding: 2px 7px; border-radius: 999px;">OFFICIAL PRESCRIPTION</span>
+            </div>
+            <div style="background-color: #f7f9ff; border: 1.5px solid #c2cff2; border-radius: 10px; padding: 12px 14px; font-family: monospace; font-size: 12.5px; line-height: 1.5; white-space: pre-wrap; color: #172b7a;">
+${card.resep_teks}
+            </div>
+          </div>
+        `;
+      }
+
+      let tipsSectionHtml = '';
+      if (card.tips_klinis) {
+        tipsSectionHtml = `
+          <div class="section-block">
+            <div class="section-heading" style="color: #b35900;">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</div>
+            <div style="background-color: #fffaf0; border: 1.5px solid #ffd8a8; border-radius: 10px; padding: 10px 14px; font-size: 13px; line-height: 1.55; color: #7a3e00;">
+              ${formatBold(card.tips_klinis)}
+            </div>
+          </div>
+        `;
+      }
+
       modalRightPane.innerHTML = `
         <div class="diag-title-row">
           <div class="diag-heading">${card.diagnosis}</div>
@@ -7019,24 +7628,27 @@
 
         <!-- CIRI KHAS / JAWABAN B -->
         <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'JAWABAN B • GOLONGAN, SEDIAAN, DOSIS & RESEP' : 'CIRI KHAS HISTOPATOLOGI'}</div>
+          <div class="section-heading">${isFarmako ? 'POIN KUNCI • GOLONGAN, SEDIAAN & DOSIS' : 'CIRI KHAS HISTOPATOLOGI'}</div>
           <div class="highlight-box">
             <ul class="point-list">${ciriList}</ul>
           </div>
         </div>
 
-        <!-- ETIOLOGI / JAWABAN A -->
+        <!-- JAWABAN LENGKAP / MEKANISME -->
         <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'JAWABAN A • MEKANISME KERJA MOLEKULER' : 'ETIOLOGI & PATOGENESIS'}</div>
+          <div class="section-heading">${isFarmako ? 'PEMBAHASAN LENGKAP & MEKANISME KERJA' : 'ETIOLOGI & PATOGENESIS'}</div>
           <div class="highlight-box">
-            ${isFarmako && card.full_jawaban_a ? `<div style="font-size: 14px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${card.full_jawaban_a}</div>` : `<ul class="point-list">${mekanismeList}</ul>`}
+            ${isFarmako && card.jawaban_lengkap ? `<div style="font-size: 13.5px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${formatBold(card.jawaban_lengkap)}</div>` : `<ul class="point-list">${mekanismeList}</ul>`}
           </div>
         </div>
 
+        ${resepSectionHtml}
+        ${tipsSectionHtml}
+
         <!-- KATA KUNCI IDENTIFIKASI -->
         <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'KATA KUNCI IDENTIFIKASI & MNEMONIK' : 'KATA KUNCI IDENTIFIKASI'}</div>
-          <div class="keyword-capsule-box">${card.keywords}</div>
+          <div class="section-heading">${isFarmako ? 'TAG IDENTIFIKASI & PENCARIAN' : 'KATA KUNCI IDENTIFIKASI'}</div>
+          <div class="keyword-capsule-box">${keywordsStr}</div>
         </div>
       `;
     }
@@ -7513,7 +8125,10 @@
         return;
       }
       if (e.key === 'Escape') {
-        if (lightboxOverlay.classList.contains('active')) {
+        const filterHub = document.getElementById('filterHubModal');
+        if (filterHub && filterHub.classList.contains('active')) {
+          closeFilterHubModal();
+        } else if (lightboxOverlay.classList.contains('active')) {
           closeLightbox();
         } else if (isModalOpen) {
           closeModal();
@@ -7573,7 +8188,16 @@
       } else if (e.key === 'r' || e.key === 'R' || e.key === 'g' || e.key === 'G') {
         pickRandomCard();
       } else if (e.key === 'f' || e.key === 'F') {
-        toggleFullScreen();
+        if (e.shiftKey) {
+          toggleFullScreen();
+        } else {
+          const filterHub = document.getElementById('filterHubModal');
+          if (filterHub && filterHub.classList.contains('active')) {
+            closeFilterHubModal();
+          } else {
+            openFilterHubModal();
+          }
+        }
       }
     });
 
@@ -7779,6 +8403,7 @@
       updateAudioIconUI();
       updateSettingsUI();
       updateDockFilterUI();
+      renderQuickFilterBar();
       updatePlayModeButtonsUI();
       updateCardPositions(false);
     }

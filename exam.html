@@ -304,6 +304,60 @@
       box-shadow: 0 3px 0 var(--primary);
     }
 
+    .config-tabs-nav {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .config-tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .config-tab-btn {
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1.5px solid #d2ddf5;
+      background-color: #f6f8fe;
+      color: var(--primary-deep);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .config-tab-btn:hover {
+      background-color: #eaf0fc;
+      border-color: var(--primary);
+    }
+    .config-tab-btn.active {
+      background-color: var(--primary-deep);
+      color: #ffffff;
+      border-color: var(--primary-deep);
+      font-weight: 800;
+    }
+    .config-filter-search-box {
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .config-filter-search-input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1.5px solid #c2cff2;
+      font-size: 12px;
+      font-family: var(--font-main);
+      color: var(--primary-deep);
+      background-color: #fafdff;
+      outline: none;
+    }
+    .config-filter-search-input:focus {
+      border-color: var(--primary);
+      background-color: #ffffff;
+    }
+
     .config-rules-box {
       background-color: #f6f8fe;
       border: 2px solid var(--primary-deep);
@@ -1904,27 +1958,38 @@
       updateDockUI();
     }
 
+    let examFilterTab = 'popular';
+    let examFilterQuery = '';
+
+    function setExamFilterTab(tab) {
+      examFilterTab = tab;
+      const wrap = document.getElementById('examStageWrap');
+      if (wrap) renderSetupPhase(wrap);
+    }
+
+    function handleExamFilterSearch(query) {
+      examFilterQuery = (query || '').trim().toLowerCase();
+      const wrap = document.getElementById('examStageWrap');
+      if (wrap) renderSetupPhase(wrap);
+    }
+
     function isCardMatchingFilter(card, filterId) {
       if (!filterId || filterId === 'all') return true;
       if (filterId === 'prioritas') return !!card.is_priority;
       if (filterId === 'resep') return !!card.has_resep;
-      if (filterId === 'kardio') {
-        return card.section === 'Kardiovaskular & Ginjal' ||
-               card.sub_category === 'diuretik' ||
-               card.sub_category === 'simpatolitik-ccb' ||
-               card.sub_category === 'raas' ||
-               card.sub_category === 'vasodilator';
-      }
-      if (filterId === 'raas-vasodilator') {
-        return card.sub_category === 'raas' || card.sub_category === 'vasodilator';
-      }
-      if (filterId === 'respirasi') {
-        return card.section === 'Respirasi & Infeksi Terkait' ||
-               card.sub_category === 'asma-ppok' ||
-               card.sub_category === 'oat' ||
-               card.sub_category === 'infeksi-batuk';
+      if (filterId === 'kardio') return card.section === 'Kardiovaskular & Ginjal';
+      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait';
+      if (filterId === 'ccb') return (card.sub_class && card.sub_class.startsWith('ccb')) || (card.tags && card.tags.includes('ccb'));
+      if (filterId === 'diuretik') return card.sub_category === 'diuretik' || (card.tags && card.tags.includes('diuretik'));
+      if (filterId.startsWith('th-')) {
+        const yr = filterId.replace('th-', '');
+        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr));
       }
       if (card.sub_category === filterId) return true;
+      if (card.sub_class === filterId) return true;
+      if (card.clinical_role === filterId) return true;
+      if (card.question_types && card.question_types.includes(filterId)) return true;
+      if (card.tags && card.tags.includes(filterId)) return true;
       if (card.type === filterId) return true;
       if (card._packId === filterId) return true;
       return false;
@@ -1942,22 +2007,22 @@
 
       // Dynamic combined list
       const list = [
-        { id: 'all', label: `All Questions (${ALL_EXAM_CARDS.length})`, count: ALL_EXAM_CARDS.length }
+        { id: 'all', label: `All Questions (${ALL_EXAM_CARDS.length})`, count: ALL_EXAM_CARDS.length, group: 'sistem' }
       ];
       const pCount = ALL_EXAM_CARDS.filter(c => c.is_priority).length;
-      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount });
+      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, group: 'arsip' });
 
       const kCount = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, 'kardio')).length;
-      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount });
+      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount, group: 'sistem' });
 
       const rCount = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, 'respirasi')).length;
-      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount });
+      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount, group: 'sistem' });
 
       const prepCount = ALL_EXAM_CARDS.filter(c => c.type === 'preparat').length;
-      if (prepCount > 0 && prepCount !== ALL_EXAM_CARDS.length) list.push({ id: 'preparat', label: `Histopathology (${prepCount})`, count: prepCount });
+      if (prepCount > 0 && prepCount !== ALL_EXAM_CARDS.length) list.push({ id: 'preparat', label: `Histopathology (${prepCount})`, count: prepCount, group: 'sistem' });
 
       const teoriCount = ALL_EXAM_CARDS.filter(c => c.type === 'teori').length;
-      if (teoriCount > 0 && teoriCount !== ALL_EXAM_CARDS.length) list.push({ id: 'teori', label: `Theory & Cases (${teoriCount})`, count: teoriCount });
+      if (teoriCount > 0 && teoriCount !== ALL_EXAM_CARDS.length) list.push({ id: 'teori', label: `Theory & Cases (${teoriCount})`, count: teoriCount, group: 'tipe' });
 
       return list;
     }
@@ -1982,8 +2047,28 @@
         </button>
       `;
 
-      const filterPillsHtml = filters.map(f => `
-        <button class="config-pill-btn ${examActiveFilter === f.id ? 'active' : ''}" onclick="setExamFilter('${f.id}')">
+      const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'loop', 'beta-blocker', 'ccb', 'acei'];
+      let visibleFilters = filters;
+
+      if (examFilterQuery) {
+        visibleFilters = filters.filter(f => 
+          f.label.toLowerCase().includes(examFilterQuery) || 
+          f.id.toLowerCase().includes(examFilterQuery)
+        );
+      } else if (examFilterTab === 'popular') {
+        visibleFilters = filters.filter(f => popularIds.includes(f.id));
+      } else if (examFilterTab !== 'all') {
+        visibleFilters = filters.filter(f => f.group === examFilterTab || f.id === 'all');
+      }
+
+      // If active filter is not in visibleFilters, include it so user sees selection
+      if (!visibleFilters.some(f => f.id === examActiveFilter)) {
+        const activeF = filters.find(f => f.id === examActiveFilter);
+        if (activeF) visibleFilters.unshift(activeF);
+      }
+
+      const filterPillsHtml = visibleFilters.map(f => `
+        <button class="config-pill-btn ${examActiveFilter === f.id ? 'active' : ''}" onclick="setExamFilter('${f.id}')" title="${f.label}">
           <span>${f.label}</span>
         </button>
       `).join('');
@@ -2001,10 +2086,27 @@
           <div class="config-section">
             <div class="config-section-title">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-              <span>1. CONTENT FILTER</span>
+              <span>1. CONTENT FILTER (PILIH DARI ${filters.length} KATEGORI)</span>
             </div>
+
+            <!-- Category Navigation Tabs -->
+            <div class="config-tabs-nav">
+              <button class="config-tab-btn ${examFilterTab === 'popular' ? 'active' : ''}" onclick="setExamFilterTab('popular')">⭐ Populer</button>
+              <button class="config-tab-btn ${examFilterTab === 'sistem' ? 'active' : ''}" onclick="setExamFilterTab('sistem')">🏥 Modul Sistem</button>
+              <button class="config-tab-btn ${examFilterTab === 'subclass' ? 'active' : ''}" onclick="setExamFilterTab('subclass')">💊 Golongan Obat</button>
+              <button class="config-tab-btn ${examFilterTab === 'tipe' ? 'active' : ''}" onclick="setExamFilterTab('tipe')">📋 Tipe Soal &amp; Resep</button>
+              <button class="config-tab-btn ${examFilterTab === 'arsip' ? 'active' : ''}" onclick="setExamFilterTab('arsip')">📅 Arsip Ujian</button>
+              <button class="config-tab-btn ${examFilterTab === 'role' ? 'active' : ''}" onclick="setExamFilterTab('role')">🎯 Peran Terapi</button>
+              <button class="config-tab-btn ${examFilterTab === 'all' ? 'active' : ''}" onclick="setExamFilterTab('all')">Semua Filter (${filters.length})</button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="config-filter-search-box">
+              <input type="text" class="config-filter-search-input" value="${examFilterQuery}" placeholder="🔍 Cari filter topik: amlodipin, loop, resep, 2024, oat, asma..." oninput="handleExamFilterSearch(this.value)">
+            </div>
+
             <div class="config-pills-row">
-              ${filterPillsHtml}
+              ${filterPillsHtml || '<div style="font-size:12px;color:rgba(23,43,122,0.6);padding:6px;">Tidak ada topik yang cocok dengan pencarian</div>'}
             </div>
           </div>
 
@@ -2227,13 +2329,27 @@
 
                 <div class="reveal-info-box">
                   <span class="reveal-info-title">JAWABAN A // MEKANISME KERJA MOLEKULER &amp; RESEPTOR</span>
-                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.6;">${card.full_jawaban_a || etiologiText}</div>
+                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.6;">${card.jawaban_lengkap || card.full_jawaban_a || etiologiText}</div>
                 </div>
 
-                ${card.keywords ? `
+                ${card.resep_teks ? `
+                  <div class="reveal-info-box" style="border-color: #172b7a; background-color: #f7f9ff;">
+                    <span class="reveal-info-title" style="color: #172b7a;">📝 RESEP LENGKAP DOKTER</span>
+                    <div class="reveal-info-content" style="font-family: monospace; font-size: 11.5px; white-space: pre-wrap; color: #172b7a;">${card.resep_teks}</div>
+                  </div>
+                ` : ''}
+
+                ${card.tips_klinis ? `
+                  <div class="reveal-info-box" style="border-color: #f59f00; background-color: #fff9db;">
+                    <span class="reveal-info-title" style="color: #b35900;">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</span>
+                    <div class="reveal-info-content" style="color: #7a3e00;">${card.tips_klinis}</div>
+                  </div>
+                ` : ''}
+
+                ${card.keywords || (card.tags && card.tags.length > 0) ? `
                   <div class="reveal-info-box">
-                    <span class="reveal-info-title">KATA KUNCI IDENTIFIKASI &amp; MNEMONIK</span>
-                    <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+                    <span class="reveal-info-title">TAG IDENTIFIKASI &amp; MNEMONIK</span>
+                    <div class="reveal-info-content"><strong>${card.keywords || card.tags.slice(0, 10).join(' • ')}</strong></div>
                   </div>
                 ` : ''}
               ` : `
