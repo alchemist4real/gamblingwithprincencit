@@ -327,6 +327,29 @@
       width: 360px;
       height: 240px;
       transform-style: preserve-3d;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    /* =======================================================
+       TEXT & PHARMACOLOGY EXPANDED CARD GEOMETRY
+       Spacious proportions ensure 100% full question visibility
+       Zero hidden overflow, zero clipped lines
+       ======================================================= */
+    .has-text-deck .viewport-3d {
+      height: clamp(440px, 58vh, 540px);
+    }
+    .has-text-deck .card-stage-container {
+      width: min(660px, 92vw);
+      height: clamp(410px, 54vh, 490px);
+    }
+    .has-text-deck .big-card {
+      width: min(660px, 92vw);
+      height: clamp(410px, 54vh, 490px);
+      padding: 10px 12px 10px 8px;
+    }
+    .has-text-deck .card-content-window {
+      margin-bottom: 42px; /* Ends cleanly ABOVE bottom banner: ZERO text obscured */
+      border-radius: 12px;
     }
 
     /* =======================================================
@@ -497,24 +520,44 @@
       transform: scale(1.05);
     }
 
-    /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY */
+    /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY & ZERO OVERFLOW */
     .theory-window-wrap {
       width: 100%;
       height: 100%;
-      padding: 10px 14px 44px;
+      padding: 10px 12px 10px;
       display: flex;
       flex-direction: column;
-      background-color: #0d1a45;
+      background-color: #08112e;
       overflow-y: auto;
+      overscroll-behavior: contain;
       text-align: left;
       box-sizing: border-box;
+      -webkit-overflow-scrolling: touch;
     }
     .theory-window-wrap::-webkit-scrollbar {
-      width: 4px;
+      width: 5px;
     }
     .theory-window-wrap::-webkit-scrollbar-thumb {
-      background: var(--white-25);
+      background: rgba(255, 255, 255, 0.28);
       border-radius: 999px;
+    }
+    .theory-window-wrap::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+
+    .theory-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+      flex-shrink: 0;
+    }
+    .theory-badge-cluster {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
     .theory-window-badge {
       display: inline-flex;
@@ -522,21 +565,144 @@
       align-self: flex-start;
       font-size: 8.5px;
       font-weight: 800;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
       background-color: var(--white);
       color: var(--primary-deep);
       border-radius: 999px;
-      padding: 2px 7px;
-      margin-bottom: 5px;
+      padding: 2.5px 8px;
       flex-shrink: 0;
     }
-    .theory-window-prompt {
-      font-size: 10.8px;
-      line-height: 1.42;
-      font-weight: 500;
+    .theory-subclass-badge {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      background-color: rgba(255, 255, 255, 0.16);
+      color: #dce5ff;
+      border-radius: 999px;
+      padding: 2.5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      flex-shrink: 0;
+    }
+    .theory-star-badge {
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      background-color: #ffd700;
+      color: #172b7a;
+      border-radius: 999px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+    }
+
+    .theory-stimulus-box {
+      background: linear-gradient(135deg, rgba(23, 43, 122, 0.9) 0%, rgba(49, 79, 186, 0.45) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 7px;
+      flex-shrink: 0;
+    }
+    .theory-stimulus-head {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      color: #aecdff;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .theory-stimulus-body {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .theory-questions-container {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+    .theory-question-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-radius: 9px;
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .theory-question-card.q-card-a {
+      border-left: 3.5px solid #64b5f6;
+    }
+    .theory-question-card.q-card-b {
+      border-left: 3.5px solid #81c784;
+    }
+    .theory-q-head {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theory-q-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 900;
+      color: var(--primary-deep);
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .theory-q-topic {
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.9px;
+      color: #c9d7ff;
+      text-transform: uppercase;
+    }
+    .theory-q-text {
+      font-size: 11.2px;
+      line-height: 1.45;
       color: #f6f8fe;
+      font-weight: 500;
       word-break: break-word;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+    .theory-q-text strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .theory-rx-code {
+      margin: 5px 0;
+      background: #030718;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 7px;
+      padding: 6px 9px;
+      overflow-x: auto;
+    }
+    .theory-rx-code pre {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 9.8px;
+      line-height: 1.35;
+      color: #dce5ff;
+      white-space: pre;
+    }
+
+    .theory-prompt-full-text {
+      font-size: 11.5px;
+      line-height: 1.48;
+      color: #f6f8fe;
+      white-space: pre-line;
       user-select: text;
       -webkit-user-select: text;
     }
@@ -1880,6 +2046,14 @@
         height: 220px;
         border-radius: 18px;
       }
+      .has-text-deck .viewport-3d {
+        height: clamp(410px, 52vh, 490px);
+      }
+      .has-text-deck .card-stage-container,
+      .has-text-deck .big-card {
+        width: min(560px, 92vw);
+        height: clamp(390px, 50vh, 460px);
+      }
       .modal-card {
         width: 94vw;
         height: 88vh;
@@ -1951,6 +2125,15 @@
         height: min(205px, 30vh);
         border-radius: 16px;
         padding: 7px 8px 7px 5px;
+      }
+      .has-text-deck .viewport-3d {
+        height: clamp(390px, 55vh, 480px);
+      }
+      .has-text-deck .card-stage-container,
+      .has-text-deck .big-card {
+        width: min(390px, 95vw);
+        height: clamp(370px, 52vh, 460px);
+        padding: 9px 10px 9px 6px;
       }
       .card-left-rail {
         width: 18px;
@@ -2996,32 +3179,35 @@
       display: block;
     }
     .review-study-theory-content {
-      padding: clamp(20px, 3vh, 32px) clamp(18px, 3vw, 28px);
-      text-align: center;
+      padding: clamp(14px, 2.5vh, 24px) clamp(14px, 2.5vw, 22px);
+      text-align: left;
       color: var(--white);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 12px;
       height: 100%;
       background-color: var(--primary-dark);
       box-sizing: border-box;
+      overflow-y: auto;
     }
     .review-study-theory-badge {
       font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 1.5px;
-      padding: 4px 12px;
+      padding: 3px 12px;
       border-radius: 999px;
       background-color: rgba(255, 255, 255, 0.15);
       border: 1px solid var(--white-25);
+      align-self: flex-start;
     }
     .review-study-theory-text {
-      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-      line-height: 1.6;
-      font-weight: 700;
+      font-size: clamp(0.92rem, 1.6vw, 1.1rem);
+      line-height: 1.55;
+      font-weight: 600;
       color: var(--white);
+      white-space: pre-wrap;
     }
     .review-study-right {
       background-color: var(--white);
@@ -3185,31 +3371,36 @@
       display: block;
     }
     .review-reveal-theory-content {
-      padding: 24px 20px;
-      text-align: center;
+      padding: clamp(14px, 2.5vh, 22px) clamp(14px, 2.5vw, 20px);
+      text-align: left;
       color: var(--white);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 10px;
       height: 100%;
       background-color: var(--primary-dark);
+      box-sizing: border-box;
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .review-reveal-theory-badge {
       font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 1.5px;
       padding: 3px 10px;
       border-radius: 999px;
       background-color: rgba(255, 255, 255, 0.15);
       border: 1px solid var(--white-25);
+      align-self: flex-start;
     }
     .review-reveal-theory-text {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      font-weight: 700;
+      font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+      line-height: 1.55;
+      font-weight: 600;
       color: var(--white);
+      white-space: pre-wrap;
     }
 
     .review-reveal-right {
@@ -5968,10 +6159,16 @@
       if (phaseBadge) phaseBadge.textContent = 'STUDY PHASE // 60s';
       if (counter) counter.textContent = `CARD ${String(reviewCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
-      const cardLabel = `SEDIAAN ${String(reviewCurrentIndex + 1).padStart(2, '0')}`;
+      const isFarmako = card.category && card.category.includes('FARMAKO');
+      const isPrep = card.type === 'preparat' && !isFarmako && card.image;
+      const cardNum = card.id ? String(card.id).padStart(2, '0') : String(reviewCurrentIndex + 1).padStart(2, '0');
+      const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
 
       let leftMediaHtml = '';
-      if (card.type === 'preparat') {
+      let questionsBoxHtml = '';
+      const hasStructuredQA = !!(card.soal_a || card.soal_b);
+
+      if (isPrep) {
         leftMediaHtml = `
           <div class="review-study-left">
             <div class="review-reveal-card-header">
@@ -5983,75 +6180,147 @@
             </div>
           </div>
         `;
+        questionsBoxHtml = `
+          <div class="review-study-right">
+            <div class="review-q-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span class="review-q-title">PANDUAN SOAL IDENTIFIKASI</span>
+            </div>
+            <div class="review-q-card-body">
+              <div class="review-q-item">
+                <div class="review-q-badge">01</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">DIAGNOSIS / NAMA SEDIAAN</div>
+                  <div class="review-q-text">Preparat / diagnosis apakah ini?</div>
+                </div>
+              </div>
+              <div class="review-q-item">
+                <div class="review-q-badge">02</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">KARAKTERISTIK SEL</div>
+                  <div class="review-q-text">Sel apa yang menjadi ciri khas pada struktur ini?</div>
+                </div>
+              </div>
+              <div class="review-q-item">
+                <div class="review-q-badge">03</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">CIRI STRUKTUR / MIKROSKOPIS</div>
+                  <div class="review-q-text">Apa ciri-ciri khas struktur / mikroskopis yang tampak?</div>
+                </div>
+              </div>
+              <div class="review-q-item">
+                <div class="review-q-badge">04</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">ETIOLOGI & PATOGENESIS</div>
+                  <div class="review-q-text">Apa etiologi atau mekanisme patogenesis yang mendasari?</div>
+                </div>
+              </div>
+            </div>
+            <div class="review-q-card-footer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>Tuliskan poin jawaban di lembar kertas. Kunci jawaban terbuka di fase reveal!</span>
+            </div>
+          </div>
+        `;
       } else {
+        const badgeText = isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM';
         leftMediaHtml = `
           <div class="review-study-left">
             <div class="review-reveal-card-header">
-              <span class="review-specimen-badge">${cardLabel} // SOAL TEORI</span>
+              <span class="review-specimen-badge">${cardLabel} // ${isFarmako ? 'FARMAKOLOGI' : 'SOAL TEORI'}</span>
               <span class="review-specimen-badge" style="opacity: 0.85; font-size: 10.5px;">60 DETIK</span>
             </div>
             <div class="review-study-media">
               <div class="review-study-theory-content">
-                <span class="review-study-theory-badge">KASUS & PERTANYAAN TEORI</span>
-                <div class="review-study-theory-text">"${card.prompt}"</div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                  <span class="review-study-theory-badge">${badgeText}</span>
+                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:#ffd700; color:#172b7a; padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+                </div>
+                <div style="font-size: clamp(1rem, 1.8vw, 1.22rem); font-weight: 800; color: #ffffff; line-height: 1.4; margin-top: 4px;">
+                  ${card.stimulus ? escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim()) : (card.diagnosis || '')}
+                </div>
+                ${card.sub_class ? `<div style="font-size: 12px; color: #aecdff; font-weight: 600;">Golongan / Subkelas: <strong>${escapeHtml(card.sub_class)}</strong></div>` : ''}
+                ${!hasStructuredQA ? `<div class="review-study-theory-text" style="margin-top: 8px;">${formatQuestionText(card.prompt)}</div>` : ''}
               </div>
             </div>
           </div>
         `;
-      }
 
-      const questionsBoxHtml = `
-        <div class="review-study-right">
-          <div class="review-q-card-header">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            <span class="review-q-title">PANDUAN SOAL IDENTIFIKASI</span>
-          </div>
-          <div class="review-q-card-body">
-            <div class="review-q-item">
-              <div class="review-q-badge">01</div>
-              <div class="review-q-content">
-                <div class="review-q-label">DIAGNOSIS / NAMA SEDIAAN</div>
-                <div class="review-q-text">Preparat / diagnosis apakah ini?</div>
+        if (hasStructuredQA) {
+          questionsBoxHtml = `
+            <div class="review-study-right">
+              <div class="review-q-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span class="review-q-title">${isFarmako ? 'PANDUAN PERTANYAAN FARMAKOLOGI' : 'PANDUAN PERTANYAAN TEORI'}</span>
+              </div>
+              <div class="review-q-card-body" style="overflow-y: auto;">
+                <div class="review-q-item">
+                  <div class="review-q-badge" style="background:#64b5f6; color:#08112e;">A</div>
+                  <div class="review-q-content">
+                    <div class="review-q-label">MEKANISME KERJA MOLEKULER &amp; TARGET</div>
+                    <div class="review-q-text" style="font-size:12.5px; line-height:1.5;">${formatQuestionText(card.soal_a || 'Jelaskan mekanisme kerja molekuler obat ini!')}</div>
+                  </div>
+                </div>
+                <div class="review-q-item">
+                  <div class="review-q-badge" style="background:#81c784; color:#08112e;">B</div>
+                  <div class="review-q-content">
+                    <div class="review-q-label">GOLONGAN, SEDIAAN, EFEK SAMPING &amp; RESEP</div>
+                    <div class="review-q-text" style="font-size:12.5px; line-height:1.5;">${formatQuestionText(card.soal_b || 'Sebutkan golongan obat, efek samping khas, dan tuliskan resepnya!')}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-q-card-footer">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>Tuliskan poin jawaban di lembar kertas. Kunci jawaban terbuka di fase reveal!</span>
               </div>
             </div>
-            <div class="review-q-item">
-              <div class="review-q-badge">02</div>
-              <div class="review-q-content">
-                <div class="review-q-label">KARAKTERISTIK SEL</div>
-                <div class="review-q-text">Sel apa yang menjadi ciri khas pada struktur ini?</div>
+          `;
+        } else {
+          questionsBoxHtml = `
+            <div class="review-study-right">
+              <div class="review-q-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span class="review-q-title">SKENARIO &amp; PERTANYAAN KASUS</span>
+              </div>
+              <div class="review-q-card-body" style="overflow-y: auto;">
+                <div style="font-size: 13.5px; line-height: 1.6; color: var(--primary-deep); font-weight: 600;">
+                  ${formatQuestionText(card.prompt)}
+                </div>
+              </div>
+              <div class="review-q-card-footer">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>Tuliskan poin jawaban di lembar kertas. Kunci jawaban terbuka di fase reveal!</span>
               </div>
             </div>
-            <div class="review-q-item">
-              <div class="review-q-badge">03</div>
-              <div class="review-q-content">
-                <div class="review-q-label">CIRI STRUKTUR / MIKROSKOPIS</div>
-                <div class="review-q-text">Apa ciri-ciri khas struktur / mikroskopis yang tampak?</div>
-              </div>
-            </div>
-            <div class="review-q-item">
-              <div class="review-q-badge">04</div>
-              <div class="review-q-content">
-                <div class="review-q-label">ETIOLOGI & PATOGENESIS</div>
-                <div class="review-q-text">Apa etiologi atau mekanisme patogenesis yang mendasari?</div>
-              </div>
-            </div>
-          </div>
-          <div class="review-q-card-footer">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span>Tuliskan poin jawaban di lembar kertas. Kunci jawaban terbuka di fase reveal!</span>
-          </div>
-        </div>
-      `;
+          `;
+        }
+      }
 
       if (body) {
         body.innerHTML = `
@@ -6146,9 +6415,10 @@
       const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
 
       if (body) {
-        const isPrep = card.type === 'preparat';
+        const isFarmako = card.category && card.category.includes('FARMAKO');
+        const isPrep = card.type === 'preparat' && !isFarmako && card.image;
         const cardNum = card.id ? String(card.id).padStart(2, '0') : String(reviewCurrentIndex + 1).padStart(2, '0');
-        const cardLabel = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+        const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
 
         let leftContentHtml = '';
         if (isPrep && card.image) {
@@ -6163,16 +6433,59 @@
         } else {
           leftContentHtml = `
             <div class="review-reveal-card-header">
-              <span class="review-specimen-badge">${cardLabel} // SOAL TEORI</span>
+              <span class="review-specimen-badge">${cardLabel} // ${isFarmako ? 'FARMAKOLOGI' : 'SOAL TEORI'}</span>
             </div>
             <div class="review-reveal-media">
               <div class="review-reveal-theory-content">
-                <span class="review-reveal-theory-badge">SOAL TEORI & KASUS</span>
-                <div class="review-reveal-theory-text">"${card.prompt}"</div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                  <span class="review-reveal-theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS'}</span>
+                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:#ffd700; color:#172b7a; padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+                </div>
+                <div style="font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 800; color: #ffffff; line-height: 1.4; margin-top: 4px;">
+                  ${card.stimulus ? escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim()) : (card.diagnosis || '')}
+                </div>
+                ${card.sub_class ? `<div style="font-size: 12px; color: #aecdff; font-weight: 600;">Golongan: <strong>${escapeHtml(card.sub_class)}</strong></div>` : ''}
+                ${card.soal_a || card.soal_b ? `
+                  <div style="display:flex; flex-direction:column; gap:8px; margin-top:8px; text-align:left; width:100%;">
+                    ${card.soal_a ? `<div style="background:rgba(255,255,255,0.08); border-left:3.5px solid #64b5f6; border-radius:6px; padding:7px 10px; font-size:12px; line-height:1.45;"><strong>[A]</strong> ${formatQuestionText(card.soal_a)}</div>` : ''}
+                    ${card.soal_b ? `<div style="background:rgba(255,255,255,0.08); border-left:3.5px solid #81c784; border-radius:6px; padding:7px 10px; font-size:12px; line-height:1.45;"><strong>[B]</strong> ${formatQuestionText(card.soal_b)}</div>` : ''}
+                  </div>
+                ` : `
+                  <div class="review-reveal-theory-text" style="margin-top: 8px;">${formatQuestionText(card.prompt)}</div>
+                `}
               </div>
             </div>
           `;
         }
+
+        let resepSectionHtml = '';
+        if (card.resep_teks) {
+          resepSectionHtml = `
+            <div class="review-info-section">
+              <div class="review-info-heading" style="color: #172b7a; display: flex; align-items: center; justify-content: space-between;">
+                <span>📝 RESEP LENGKAP DOKTER</span>
+                <span style="font-size: 9px; background: #e0ebff; color: #172b7a; padding: 2px 7px; border-radius: 999px;">OFFICIAL PRESCRIPTION</span>
+              </div>
+              <div style="background-color: #f7f9ff; border: 1.5px solid #c2cff2; border-radius: 9px; padding: 10px 12px; font-family: monospace; font-size: 11.5px; line-height: 1.45; white-space: pre-wrap; color: #172b7a;">
+${card.resep_teks}
+              </div>
+            </div>
+          `;
+        }
+
+        let tipsSectionHtml = '';
+        if (card.tips_klinis) {
+          tipsSectionHtml = `
+            <div class="review-info-section">
+              <div class="review-info-heading" style="color: #b35900;">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</div>
+              <div style="background-color: #fffaf0; border: 1.5px solid #ffd8a8; border-radius: 9px; padding: 10px 12px; font-size: 12px; line-height: 1.5; color: #7a3e00;">
+                ${formatBold(card.tips_klinis)}
+              </div>
+            </div>
+          `;
+        }
+
+        const keywordsStr = card.keywords || (card.tags ? card.tags.slice(0, 10).join(' • ') : '');
 
         body.innerHTML = `
           <div class="review-reveal-container">
@@ -6182,7 +6495,7 @@
             <div class="review-reveal-right">
               <!-- Hero Diagnosis Box -->
               <div class="review-diag-hero">
-                <span class="review-diag-badge">DIAGNOSIS UTAMA</span>
+                <span class="review-diag-badge">${isFarmako ? 'NAMA OBAT / DIAGNOSIS' : 'DIAGNOSIS UTAMA'}</span>
                 <div class="review-diag-title">${card.diagnosis || ''}</div>
                 <div class="review-diag-meta">
                   <span class="review-meta-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>${card.organ || '-'}</span>
@@ -6191,31 +6504,41 @@
                 </div>
               </div>
 
-              <!-- Ciri Khas Histopatologi -->
+              <!-- Poin Kunci / Ciri Khas -->
               ${ciriList ? `
                 <div class="review-info-section">
-                  <div class="review-info-heading">CIRI KHAS IDENTIFIKASI</div>
+                  <div class="review-info-heading">${isFarmako ? 'POIN KUNCI • GOLONGAN, SEDIAAN & DOSIS' : 'CIRI KHAS IDENTIFIKASI'}</div>
                   <div class="review-info-box">
                     <ul class="review-point-list">${ciriList}</ul>
                   </div>
                 </div>
               ` : ''}
 
-              <!-- Etiologi / Patogenesis -->
-              ${mekanismeList ? `
+              <!-- Etiologi / Jawaban Lengkap / Mekanisme -->
+              ${(isFarmako && card.jawaban_lengkap) ? `
                 <div class="review-info-section">
-                  <div class="review-info-heading">ETIOLOGI & PATOGENESIS</div>
+                  <div class="review-info-heading">PEMBAHASAN LENGKAP &amp; MEKANISME KERJA</div>
+                  <div class="review-info-box">
+                    <div style="font-size: 13px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${formatBold(card.jawaban_lengkap)}</div>
+                  </div>
+                </div>
+              ` : (mekanismeList ? `
+                <div class="review-info-section">
+                  <div class="review-info-heading">${isFarmako ? 'MEKANISME KERJA MOLEKULER' : 'ETIOLOGI & PATOGENESIS'}</div>
                   <div class="review-info-box">
                     <ul class="review-point-list">${mekanismeList}</ul>
                   </div>
                 </div>
-              ` : ''}
+              ` : '')}
+
+              ${resepSectionHtml}
+              ${tipsSectionHtml}
 
               <!-- Kata Kunci Cepat -->
-              ${card.keywords ? `
+              ${keywordsStr ? `
                 <div class="review-info-section">
-                  <div class="review-info-heading">KATA KUNCI CEPAT</div>
-                  <div class="review-keywords-wrap">${card.keywords}</div>
+                  <div class="review-info-heading">${isFarmako ? 'TAG IDENTIFIKASI & PENCARIAN' : 'KATA KUNCI CEPAT'}</div>
+                  <div class="review-keywords-wrap">${keywordsStr}</div>
                 </div>
               ` : ''}
             </div>
@@ -6471,11 +6794,109 @@
     }
 
     // =======================================================
+    // QUESTION & THEORY CARD CONTENT FORMATTER
+    // Formats questions with 100% full text visibility & zero overflow
+    // =======================================================
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatQuestionText(text) {
+      if (!text) return '';
+      let html = escapeHtml(text);
+      // Code blocks ```text ... ``` -> styled prescription / text block
+      html = html.replace(/```(?:text)?\s*([\s\S]*?)```/g, (match, code) => {
+        return `<div class="theory-rx-code"><pre><code>${code.trim()}</code></pre></div>`;
+      });
+      // Bold formatting **text**
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      return html;
+    }
+
+    function renderTheoryCardContent(card) {
+      const isFarmako = card.category && card.category.includes('FARMAKO');
+      const badgeLabel = isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM';
+      const subLabel = card.sub_class || card.diagnosis || '';
+      const stimulusText = card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '').trim() : '';
+
+      if (card.soal_a && card.soal_b) {
+        return `
+          <div class="theory-window-wrap is-structured-qa">
+            <div class="theory-header-bar">
+              <div class="theory-badge-cluster">
+                <span class="theory-window-badge">${badgeLabel}</span>
+                ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
+              </div>
+              ${card.prioritas_tinggi ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
+            </div>
+
+            ${stimulusText ? `
+              <div class="theory-stimulus-box">
+                <div class="theory-stimulus-head">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span>SEDIAAN &amp; STIMULUS UJIAN</span>
+                </div>
+                <div class="theory-stimulus-body">${escapeHtml(stimulusText)}</div>
+              </div>
+            ` : ''}
+
+            <div class="theory-questions-container">
+              <div class="theory-question-card q-card-a">
+                <div class="theory-q-head">
+                  <span class="theory-q-letter">A</span>
+                  <span class="theory-q-topic">MEKANISME KERJA MOLEKULER &amp; TARGET</span>
+                </div>
+                <div class="theory-q-text">${formatQuestionText(card.soal_a)}</div>
+              </div>
+
+              <div class="theory-question-card q-card-b">
+                <div class="theory-q-head">
+                  <span class="theory-q-letter">B</span>
+                  <span class="theory-q-topic">GOLONGAN, SEDIAAN, EFEK SAMPING &amp; RESEP</span>
+                </div>
+                <div class="theory-q-text">${formatQuestionText(card.soal_b)}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="theory-window-wrap is-standard-prompt">
+            <div class="theory-header-bar">
+              <div class="theory-badge-cluster">
+                <span class="theory-window-badge">${badgeLabel}</span>
+                ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
+              </div>
+            </div>
+            <div class="theory-prompt-full-text">
+              ${formatQuestionText(card.prompt)}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // =======================================================
     // BUILD STAGE CARDS: Renders all cards in the session
     // =======================================================
     function rebuildStageCards() {
       stage3D.innerHTML = '';
       const total = sessionCards.length;
+
+      const isTextSession = sessionCards.length > 0 && (sessionCards.every(c => !c.image) || currentPackId.includes('farmako') || currentPack?.category?.includes('FARMAKO'));
+      if (isTextSession) {
+        document.body.classList.add('has-text-deck');
+        stage3D.classList.add('has-text-cards');
+      } else {
+        document.body.classList.remove('has-text-deck');
+        stage3D.classList.remove('has-text-cards');
+      }
 
       sessionCards.forEach((card, idx) => {
         const cardEl = document.createElement('article');
@@ -6495,12 +6916,7 @@
             <img src="${card.image}" alt="Sediaan" class="card-specimen-img">
           `;
         } else {
-          contentWindowHtml = `
-            <div class="theory-window-wrap">
-              <div class="theory-window-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM'}</div>
-              <div class="theory-window-prompt" style="white-space: pre-line;">"${card.prompt}"</div>
-            </div>
-          `;
+          contentWindowHtml = renderTheoryCardContent(card);
         }
 
         cardEl.innerHTML = `
@@ -6545,6 +6961,13 @@
             rotateToIndex(idx);
           }
         });
+
+        const theoryWrap = cardEl.querySelector('.theory-window-wrap');
+        if (theoryWrap) {
+          theoryWrap.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+          theoryWrap.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+          theoryWrap.addEventListener('wheel', (e) => e.stopPropagation(), { passive: true });
+        }
 
         stage3D.appendChild(cardEl);
       });
@@ -6596,13 +7019,16 @@
 
         const isMobile = window.innerWidth <= 600;
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+        const isTextMode = document.body.classList.contains('has-text-deck');
 
         if (offset === 0) {
-          // ACTIVE CARD: Significantly enlarged, prominent hero landscape display
+          // ACTIVE CARD: Significantly enlarged, prominent hero display
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isMobile ? 1.12 : (isTablet ? 1.16 : 1.22);
+          const activeScale = isTextMode 
+            ? (isMobile ? 1.02 : (isTablet ? 1.04 : 1.06))
+            : (isMobile ? 1.12 : (isTablet ? 1.16 : 1.22));
           const activeZ = isMobile ? 26 : 46;
 
           if (isRapid && rapidDir === 'next') {
@@ -6618,25 +7044,46 @@
           const absOff = Math.abs(offset);
 
           let tx, tz, ry, sc, zi;
-          if (absOff === 1) {
-            tx = dir * (isMobile ? 135 : (isTablet ? 175 : 215));
-            tz = isMobile ? -45 : -60;
-            ry = -dir * (isMobile ? 16 : 22);
-            sc = isMobile ? 0.80 : (isTablet ? 0.82 : 0.84);
-            zi = 40;
-          } else if (absOff === 2) {
-            tx = dir * (isMobile ? 230 : (isTablet ? 295 : 355));
-            tz = isMobile ? -90 : -130;
-            ry = -dir * (isMobile ? 26 : 34);
-            sc = isMobile ? 0.65 : (isTablet ? 0.68 : 0.70);
-            zi = 30;
+          if (isTextMode) {
+            if (absOff === 1) {
+              tx = dir * (isMobile ? 155 : (isTablet ? 210 : 270));
+              tz = isMobile ? -45 : -60;
+              ry = -dir * (isMobile ? 14 : 18);
+              sc = isMobile ? 0.82 : (isTablet ? 0.83 : 0.85);
+              zi = 40;
+            } else if (absOff === 2) {
+              tx = dir * (isMobile ? 250 : (isTablet ? 335 : 430));
+              tz = isMobile ? -90 : -125;
+              ry = -dir * (isMobile ? 22 : 28);
+              sc = isMobile ? 0.68 : (isTablet ? 0.70 : 0.72);
+              zi = 30;
+            } else {
+              tx = dir * (isMobile ? 330 : (isTablet ? 430 : 540));
+              tz = isMobile ? -140 : -180;
+              ry = -dir * (isMobile ? 30 : 36);
+              sc = isMobile ? 0.54 : (isTablet ? 0.56 : 0.60);
+              zi = 20;
+            }
           } else {
-            // absOff === 3
-            tx = dir * (isMobile ? 310 : (isTablet ? 390 : 470));
-            tz = isMobile ? -140 : -190;
-            ry = -dir * (isMobile ? 34 : 42);
-            sc = isMobile ? 0.52 : (isTablet ? 0.55 : 0.58);
-            zi = 20;
+            if (absOff === 1) {
+              tx = dir * (isMobile ? 135 : (isTablet ? 175 : 215));
+              tz = isMobile ? -45 : -60;
+              ry = -dir * (isMobile ? 16 : 22);
+              sc = isMobile ? 0.80 : (isTablet ? 0.82 : 0.84);
+              zi = 40;
+            } else if (absOff === 2) {
+              tx = dir * (isMobile ? 230 : (isTablet ? 295 : 355));
+              tz = isMobile ? -90 : -130;
+              ry = -dir * (isMobile ? 26 : 34);
+              sc = isMobile ? 0.65 : (isTablet ? 0.68 : 0.70);
+              zi = 30;
+            } else {
+              tx = dir * (isMobile ? 310 : (isTablet ? 390 : 470));
+              tz = isMobile ? -140 : -190;
+              ry = -dir * (isMobile ? 34 : 42);
+              sc = isMobile ? 0.52 : (isTablet ? 0.55 : 0.58);
+              zi = 20;
+            }
           }
 
           let rz = 0;
@@ -6652,17 +7099,17 @@
 
       const curCard = sessionCards[currentIndex];
       if (!curCard) return;
-      const isPrep = curCard.type === 'preparat';
+      const isFarmako = curCard.category && curCard.category.includes('FARMAKO');
+      const isPrep = curCard.type === 'preparat' && !isFarmako;
       const cardNum = curCard.id ? String(curCard.id).padStart(2, '0') : String(currentIndex + 1).padStart(2, '0');
-      const labelText = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+      const labelText = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
       const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-      const isFarmako = curCard.category && curCard.category.includes('FARMAKO');
       if (isFarmako) {
-        activeIndicatorTitle.textContent = `${labelText} • ${curCard.sifat || 'FARMAKOLOGI'}`;
+        activeIndicatorTitle.textContent = `${labelText} • ${curCard.sub_class || curCard.sifat || 'FARMAKOLOGI'}`;
         activeIndicatorDesc.textContent = isTouch
-          ? 'Ketuk untuk melihat mekanisme molekuler & resep'
-          : 'Klik atau tekan Spasi untuk melihat mekanisme molekuler & resep';
+          ? 'Ketuk untuk melihat kunci jawaban, mekanisme & resep'
+          : 'Klik atau tekan Spasi untuk melihat kunci jawaban, mekanisme & resep';
       } else {
         activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATOLOGI' : 'TEORI & KASUS'}`;
         activeIndicatorDesc.textContent = isPrep 
@@ -7522,10 +7969,11 @@
       const card = sessionCards[idx];
       const total = sessionCards.length;
 
-      const isPrep = card.type === 'preparat';
+      const isFarmako = card.category && card.category.includes('FARMAKO');
+      const isPrep = card.type === 'preparat' && !isFarmako;
       const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
-      const cardLabel = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
-      modalTypeBadge.textContent = isPrep ? 'SEDIAAN HISTOPATOLOGI' : 'SOAL TEORI & KASUS';
+      const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
+      modalTypeBadge.textContent = isFarmako ? 'STASI FARMAKOLOGI' : (isPrep ? 'SEDIAAN HISTOPATOLOGI' : 'SOAL TEORI & KASUS');
       modalIndexText.textContent = `${cardLabel} • ${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
       // LEFT COLUMN: High-res image or Theory vignette box
@@ -7547,14 +7995,45 @@
           </div>
         `;
       } else {
-        const isFarmako = card.category && card.category.includes('FARMAKO');
+        let questionsHtml = '';
+        if (card.soal_a && card.soal_b) {
+          questionsHtml = `
+            ${card.stimulus ? `
+              <div style="background:#f4f7fe; border:1.5px solid #c9d7ff; border-radius:10px; padding:10px 14px; margin-bottom:14px;">
+                <span style="font-size:10px; font-weight:800; color:var(--primary-deep); letter-spacing:1px; display:block; margin-bottom:3px;">STIMULUS &amp; SEDIAAN OBAT</span>
+                <div style="font-size:14px; font-weight:700; color:#172b7a;">${escapeHtml(card.stimulus.replace(/^\[|\]$/g, ''))}</div>
+              </div>
+            ` : ''}
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
+              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:10px; padding:12px 14px;">
+                <div style="font-size:11px; font-weight:800; color:var(--primary-deep); margin-bottom:4px; letter-spacing:0.8px;">PERTANYAAN A // MEKANISME KERJA MOLEKULER</div>
+                <div style="font-size:13.5px; line-height:1.55; color:#172b7a;">${formatQuestionText(card.soal_a)}</div>
+              </div>
+
+              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:10px; padding:12px 14px;">
+                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px; letter-spacing:0.8px;">PERTANYAAN B // GOLONGAN, SEDIAAN, EFEK SAMPING &amp; RESEP</div>
+                <div style="font-size:13.5px; line-height:1.55; color:#172b7a;">${formatQuestionText(card.soal_b)}</div>
+              </div>
+            </div>
+          `;
+        } else {
+          questionsHtml = `
+            <p style="margin-bottom: 12px;"><strong>${isFarmako ? 'Stimulus & Pertanyaan Ujian:' : 'Kasus / Skenario Soal:'}</strong></p>
+            <div style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px; white-space: pre-line;">${formatQuestionText(card.prompt)}</div>
+          `;
+        }
+
         modalLeftPane.innerHTML = `
           <div class="theory-station-box">
-            <div class="theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS PRAKTIKUM'}</div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+              <span class="theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS PRAKTIKUM'}</span>
+              ${card.sub_class ? `<span style="font-size:10.5px; font-weight:700; background:#e8f0fe; color:var(--primary-deep); padding:2px 9px; border-radius:999px;">${escapeHtml(card.sub_class)}</span>` : ''}
+              ${card.prioritas_tinggi ? `<span style="font-size:10px; font-weight:800; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+            </div>
             <div class="theory-station-title">${card.diagnosis}</div>
             <div class="theory-station-text">
-              <p style="margin-bottom: 12px;"><strong>${isFarmako ? 'Stimulus & Pertanyaan Ujian:' : 'Kasus / Skenario Soal:'}</strong></p>
-              <div style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px; white-space: pre-line;">"${card.prompt}"</div>
+              ${questionsHtml}
               <p style="font-size: 13.5px; color: var(--primary); font-weight: 600;">
                 ${currentPack?.subtitle || currentPack?.packName || 'Stasiun soal teori & identifikasi praktikum.'}
               </p>
@@ -7578,8 +8057,6 @@
         mekanismeItems = [card.etiologi];
       }
       const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
-
-      const isFarmako = card.category && card.category.includes('FARMAKO');
       const keywordsStr = card.keywords || (card.tags ? card.tags.slice(0, 10).join(' • ') : '');
 
       let resepSectionHtml = '';

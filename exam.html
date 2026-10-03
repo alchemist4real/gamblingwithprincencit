@@ -602,8 +602,10 @@
       border: 3px solid var(--primary-deep);
       border-radius: 20px;
       box-shadow: 0 5px 0 var(--primary-deep);
-      overflow: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       min-height: 380px;
+      max-height: calc(100vh - 170px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -618,12 +620,15 @@
       display: block;
     }
     .study-vignette-box {
-      padding: 24px;
+      padding: 20px;
       color: var(--white);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      align-self: flex-start;
     }
     .study-vignette-badge {
       font-family: var(--font-display);
@@ -642,6 +647,7 @@
       line-height: 1.5;
       color: #eef3ff;
       font-weight: 500;
+      white-space: pre-wrap;
     }
 
     /* 4 Universal Prompts Card */
@@ -656,6 +662,9 @@
       gap: 12px;
       color: var(--primary-deep);
       box-sizing: border-box;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      max-height: calc(100vh - 170px);
     }
 
     .prompts-card-header {
@@ -696,10 +705,25 @@
       text-transform: uppercase;
     }
     .prompt-box-text {
-      font-size: 12px;
-      line-height: 1.4;
+      font-size: 12.5px;
+      line-height: 1.45;
       font-weight: 600;
       color: var(--primary-deep);
+      white-space: pre-wrap;
+    }
+
+    .exam-rx-block, .prompt-box-text pre, .study-vignette-box pre {
+      background: #030718;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 7px;
+      padding: 6px 10px;
+      font-family: monospace;
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: #dce5ff;
+      white-space: pre;
+      overflow-x: auto;
+      margin: 6px 0;
     }
 
     @media (max-width: 820px) {
@@ -783,8 +807,10 @@
       background-color: #0d1a45;
       border: 2px solid var(--primary-deep);
       border-radius: 14px;
-      overflow: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       min-height: 280px;
+      max-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2188,11 +2214,25 @@
       `;
     }
 
+    function formatExamPromptText(text) {
+      if (!text) return '';
+      let html = String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      html = html.replace(/```(?:text)?\s*([\s\S]*?)```/g, (m, code) => {
+        return `<pre class="exam-rx-block"><code>${code.trim()}</code></pre>`;
+      });
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      return html;
+    }
+
     // 3. STUDY PHASE (60S) WITH 4 UNIVERSAL QUESTIONS
     function renderStudyPhase(container) {
       const card = examSessionCards[currentCardIndex] || {};
       const total = examSessionCards.length;
       const progressOffset = ((60 - studyRemaining) / 60) * 56.5;
+      const isFarmako = card.category && card.category.includes('FARMAKO');
 
       container.innerHTML = `
         <!-- Top HUD -->
@@ -2216,14 +2256,17 @@
         <!-- Main Workspace -->
         <div class="study-workspace-grid">
           
-          <!-- Left: Specimen High-Res Visual -->
+          <!-- Left: Specimen High-Res Visual / Stimulus -->
           <div class="study-visual-card">
             ${card.image ? `
               <img src="${card.image}" alt="Specimen ${card.id}" class="study-visual-img" />
             ` : `
               <div class="study-vignette-box">
-                <span class="study-vignette-badge">THEORETICAL VIGNETTE</span>
-                <p class="study-vignette-text">${card.prompt || 'Observe case scenario and pathological findings.'}</p>
+                <span class="study-vignette-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'THEORETICAL VIGNETTE'}</span>
+                <div style="font-size: 15px; font-weight: 700; color: #ffffff; line-height: 1.45; margin-top: 6px;">
+                  ${card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '') : (card.prompt || 'Observe case scenario and pathological findings.')}
+                </div>
+                ${card.sub_class ? `<div style="font-size: 12px; color: #aecdff; font-weight: 600; margin-top: 4px;">Golongan: ${card.sub_class}</div>` : ''}
               </div>
             `}
           </div>
@@ -2232,18 +2275,18 @@
           <div class="study-prompts-card">
             <div class="prompts-card-header">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span class="prompts-card-title">${card.category && card.category.includes('FARMAKO') ? 'OSPE PHARMACOLOGY PROMPTS' : 'PRACTICAL EXAM QUESTIONS'}</span>
+              <span class="prompts-card-title">${isFarmako ? 'OSPE PHARMACOLOGY PROMPTS' : 'PRACTICAL EXAM QUESTIONS'}</span>
             </div>
 
             ${card.soal_a || card.soal_b ? `
               <div class="prompt-box">
                 <span class="prompt-box-badge">SOAL A // MEKANISME KERJA MOLEKULER</span>
-                <div class="prompt-box-text">${card.soal_a || 'Jelaskan mekanisme kerja molekuler obat ini!'}</div>
+                <div class="prompt-box-text">${formatExamPromptText(card.soal_a || 'Jelaskan mekanisme kerja molekuler obat ini!')}</div>
               </div>
 
               <div class="prompt-box">
                 <span class="prompt-box-badge">SOAL B // KLASIFIKASI, SEDIAAN, EFEK SAMPING &amp; RESEP</span>
-                <div class="prompt-box-text">${card.soal_b || 'Sebutkan golongan obat, efek samping khas, dan tuliskan resepnya!'}</div>
+                <div class="prompt-box-text">${formatExamPromptText(card.soal_b || 'Sebutkan golongan obat, efek samping khas, dan tuliskan resepnya!')}</div>
               </div>
             ` : `
               <div class="prompt-box">
@@ -2306,8 +2349,11 @@
                 <img src="${card.image}" alt="Specimen ${card.id}" class="reveal-visual-img" />
               ` : `
                 <div class="study-vignette-box" style="padding: 20px;">
-                  <span class="study-vignette-badge">THEORETICAL VIGNETTE</span>
-                  <p class="study-vignette-text">${card.prompt || 'Theoretical question and case analysis.'}</p>
+                  <span class="study-vignette-badge">${card.category && card.category.includes('FARMAKO') ? (card.asal || 'STASI FARMAKOLOGI') : 'THEORETICAL VIGNETTE'}</span>
+                  <div style="font-size: 15px; font-weight: 700; color: #ffffff; line-height: 1.45; margin-top: 6px;">
+                    ${card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '') : (card.prompt || 'Theoretical question and case analysis.')}
+                  </div>
+                  ${card.sub_class ? `<div style="font-size: 12px; color: #aecdff; font-weight: 600; margin-top: 4px;">Golongan: ${card.sub_class}</div>` : ''}
                 </div>
               `}
             </div>
