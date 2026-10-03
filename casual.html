@@ -331,15 +331,6 @@
     }
 
     /* =======================================================
-       CARD CONTENT WINDOW & BOTTOM BANNER CLEARANCE
-       Ends cleanly above bottom banner: zero text obscured
-       ======================================================= */
-    .has-text-deck .card-content-window {
-      margin-bottom: 26px; /* Ends cleanly ABOVE bottom banner: ZERO text obscured */
-      border-radius: 12px;
-    }
-
-    /* =======================================================
        CARD ITEM: HORIZONTAL / LANDSCAPE COLLECTIBLE CARD DESIGN
        WHITE CARD STOCK, LEFT BRANDING RAIL, OVERLAPPING EMBLEM
        ======================================================= */
@@ -511,7 +502,7 @@
     .theory-window-wrap {
       width: 100%;
       height: 100%;
-      padding: 10px 12px 10px;
+      padding: 10px 12px 42px 12px;
       display: flex;
       flex-direction: column;
       background-color: #08112e;
@@ -537,7 +528,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 6px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
       flex-shrink: 0;
     }
     .theory-badge-cluster {
@@ -550,7 +541,7 @@
       display: inline-flex;
       align-items: center;
       align-self: flex-start;
-      font-size: 8.5px;
+      font-size: 9px;
       font-weight: 800;
       letter-spacing: 1.1px;
       text-transform: uppercase;
@@ -561,7 +552,7 @@
       flex-shrink: 0;
     }
     .theory-subclass-badge {
-      font-size: 8.5px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.6px;
       background-color: rgba(255, 255, 255, 0.16);
@@ -572,7 +563,7 @@
       flex-shrink: 0;
     }
     .theory-star-badge {
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 800;
       letter-spacing: 0.8px;
       background-color: var(--white);
@@ -583,52 +574,59 @@
       flex-shrink: 0;
     }
 
-    .theory-stimulus-box {
-      background: linear-gradient(135deg, rgba(23, 43, 122, 0.95) 0%, rgba(49, 79, 186, 0.55) 100%);
-      border: 1.5px solid rgba(255, 255, 255, 0.35);
-      border-radius: 8px;
-      padding: 5px 9px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
-    }
-    .theory-stimulus-head {
+    /* Sleek, compact 1-line stimulus bar */
+    .theory-stimulus-bar {
       display: flex;
       align-items: center;
-      gap: 5px;
-      font-size: 7.5px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--white-90);
-      text-transform: uppercase;
-      margin-bottom: 2px;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin-bottom: 6px;
+      flex-shrink: 0;
     }
-    .theory-stimulus-body {
-      font-size: 10.5px;
+    .theory-stimulus-bar .stimulus-tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+      background-color: var(--white);
+      color: var(--primary-deep);
+      flex-shrink: 0;
+    }
+    .theory-stimulus-bar .stimulus-text {
+      font-size: 11px;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.35;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .theory-questions-container {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       flex: 1;
     }
     .theory-question-card {
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 7px;
-      padding: 5px 8px;
+      padding: 6px 9px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
     }
     .theory-question-card.q-card-a {
       border-left: 3.5px solid var(--white);
     }
     .theory-question-card.q-card-b {
-      border-left: 3.5px solid rgba(255, 255, 255, 0.65);
+      border-left: 3.5px solid rgba(255, 255, 255, 0.7);
     }
     .theory-q-head {
       display: flex;
@@ -639,25 +637,28 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 900;
       color: var(--primary-deep);
       background: #ffffff;
       flex-shrink: 0;
     }
+    .theory-question-card.q-card-b .theory-q-letter {
+      background: rgba(255, 255, 255, 0.85);
+    }
     .theory-q-topic {
-      font-size: 7.5px;
+      font-size: 8px;
       font-weight: 800;
-      letter-spacing: 0.8px;
-      color: var(--white-90);
+      letter-spacing: 0.7px;
+      color: rgba(255, 255, 255, 0.85);
       text-transform: uppercase;
     }
     .theory-q-text {
-      font-size: 10px;
-      line-height: 1.38;
+      font-size: 12px;
+      line-height: 1.46;
       color: #ffffff;
       font-weight: 500;
       word-break: break-word;
@@ -680,19 +681,20 @@
     .theory-rx-code pre {
       margin: 0;
       font-family: var(--font-mono);
-      font-size: 8.8px;
-      line-height: 1.3;
+      font-size: 10px;
+      line-height: 1.35;
       color: #ffffff;
       white-space: pre;
     }
 
     .theory-prompt-full-text {
-      font-size: 10.5px;
-      line-height: 1.42;
+      font-size: 12.5px;
+      line-height: 1.5;
       color: #ffffff;
       white-space: pre-line;
       user-select: text;
       -webkit-user-select: text;
+      margin-top: 4px;
     }
 
     /* BOTTOM OVERLAPPING BANNER */
@@ -6923,12 +6925,9 @@ ${card.resep_teks}
             </div>
 
             ${stimulusText ? `
-              <div class="theory-stimulus-box">
-                <div class="theory-stimulus-head">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                  <span>SEDIAAN &amp; STIMULUS UJIAN</span>
-                </div>
-                <div class="theory-stimulus-body">${escapeHtml(stimulusText)}</div>
+              <div class="theory-stimulus-bar">
+                <span class="stimulus-tag">SEDIAAN</span>
+                <span class="stimulus-text">${escapeHtml(stimulusText)}</span>
               </div>
             ` : ''}
 
@@ -7105,17 +7104,14 @@ ${card.resep_teks}
 
         const isMobile = window.innerWidth <= 600;
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
-        const isTextMode = document.body.classList.contains('has-text-deck');
 
         if (offset === 0) {
           // ACTIVE CARD: Significantly enlarged, prominent hero display
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isTextMode 
-            ? (isMobile ? 1.02 : (isTablet ? 1.04 : 1.06))
-            : (isMobile ? 1.12 : (isTablet ? 1.16 : 1.22));
-          const activeZ = isMobile ? 26 : 46;
+          const activeScale = isMobile ? 1.15 : (isTablet ? 1.20 : 1.25);
+          const activeZ = isMobile ? 32 : 52;
 
           if (isRapid && rapidDir === 'next') {
             cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(${activeZ + 8}px) rotateY(-8deg) rotateZ(2deg) scale(${activeScale + 0.02})`;
@@ -7130,46 +7126,24 @@ ${card.resep_teks}
           const absOff = Math.abs(offset);
 
           let tx, tz, ry, sc, zi;
-          if (isTextMode) {
-            if (absOff === 1) {
-              tx = dir * (isMobile ? 155 : (isTablet ? 210 : 270));
-              tz = isMobile ? -45 : -60;
-              ry = -dir * (isMobile ? 14 : 18);
-              sc = isMobile ? 0.82 : (isTablet ? 0.83 : 0.85);
-              zi = 40;
-            } else if (absOff === 2) {
-              tx = dir * (isMobile ? 250 : (isTablet ? 335 : 430));
-              tz = isMobile ? -90 : -125;
-              ry = -dir * (isMobile ? 22 : 28);
-              sc = isMobile ? 0.68 : (isTablet ? 0.70 : 0.72);
-              zi = 30;
-            } else {
-              tx = dir * (isMobile ? 330 : (isTablet ? 430 : 540));
-              tz = isMobile ? -140 : -180;
-              ry = -dir * (isMobile ? 30 : 36);
-              sc = isMobile ? 0.54 : (isTablet ? 0.56 : 0.60);
-              zi = 20;
-            }
+          if (absOff === 1) {
+            tx = dir * (isMobile ? 140 : (isTablet ? 180 : 225));
+            tz = isMobile ? -45 : -60;
+            ry = -dir * (isMobile ? 16 : 22);
+            sc = isMobile ? 0.78 : (isTablet ? 0.80 : 0.82);
+            zi = 40;
+          } else if (absOff === 2) {
+            tx = dir * (isMobile ? 235 : (isTablet ? 300 : 365));
+            tz = isMobile ? -90 : -130;
+            ry = -dir * (isMobile ? 26 : 34);
+            sc = isMobile ? 0.64 : (isTablet ? 0.66 : 0.68);
+            zi = 30;
           } else {
-            if (absOff === 1) {
-              tx = dir * (isMobile ? 135 : (isTablet ? 175 : 215));
-              tz = isMobile ? -45 : -60;
-              ry = -dir * (isMobile ? 16 : 22);
-              sc = isMobile ? 0.80 : (isTablet ? 0.82 : 0.84);
-              zi = 40;
-            } else if (absOff === 2) {
-              tx = dir * (isMobile ? 230 : (isTablet ? 295 : 355));
-              tz = isMobile ? -90 : -130;
-              ry = -dir * (isMobile ? 26 : 34);
-              sc = isMobile ? 0.65 : (isTablet ? 0.68 : 0.70);
-              zi = 30;
-            } else {
-              tx = dir * (isMobile ? 310 : (isTablet ? 390 : 470));
-              tz = isMobile ? -140 : -190;
-              ry = -dir * (isMobile ? 34 : 42);
-              sc = isMobile ? 0.52 : (isTablet ? 0.55 : 0.58);
-              zi = 20;
-            }
+            tx = dir * (isMobile ? 315 : (isTablet ? 395 : 480));
+            tz = isMobile ? -140 : -190;
+            ry = -dir * (isMobile ? 34 : 42);
+            sc = isMobile ? 0.50 : (isTablet ? 0.53 : 0.55);
+            zi = 20;
           }
 
           let rz = 0;
