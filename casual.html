@@ -4281,7 +4281,7 @@
       <div class="quick-filter-scroll" id="quickFilterScroll">
         <!-- Rendered dynamically via renderQuickFilterBar() -->
       </div>
-      <button class="quick-filter-hub-btn" id="btnOpenFilterHub" onclick="openFilterHubModal()" title="Buka Filter Hub Lengkap (51 Kategori) [F]">
+      <button class="quick-filter-hub-btn" id="btnOpenFilterHub" onclick="openFilterHubModal()" title="Buka Filter Hub Lengkap [F]">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
@@ -4333,8 +4333,8 @@
         <span class="pack-name-text" id="headerPackName">IDENT DECK</span>
       </a>
 
-      <!-- Filter Hub Button (Icon-Only, Opens 51-Category Filter Hub Modal) -->
-      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="openFilterHubModal()" title="Buka Filter Hub (51 Kategori) [F]" aria-label="Buka Filter Hub">
+      <!-- Filter Button (Icon-Only, Deck-Driven: Cycle Filter if <= 6, Open Filter Hub if > 6) -->
+      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="handleDockFilterClick()" title="Ganti Filter [Klik / F]" aria-label="Ganti Filter">
         <svg id="dockFilterIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
@@ -5058,7 +5058,7 @@
       <!-- Header -->
       <div class="filter-hub-header">
         <div class="filter-hub-title-wrap">
-          <span class="filter-hub-badge">KATALOG FILTER RESMI • FARMAKO 3.2</span>
+          <span class="filter-hub-badge" id="filterHubBadge">KATALOG FILTER RESMI</span>
           <h2 class="filter-hub-title" id="filterHubTitle">Filter Hub Bank Soal</h2>
           <span class="filter-hub-subtitle">Pilih modul spesifik, sub-golongan obat, tipe soal, atau arsip tahun ujian</span>
         </div>
@@ -5160,15 +5160,17 @@
 
     function isCardMatchingFilter(card, filterId) {
       if (!filterId || filterId === 'all') return true;
-      if (filterId === 'prioritas') return !!card.is_priority;
-      if (filterId === 'resep') return !!card.has_resep;
+      if (filterId === 'preparat') return card.type === 'preparat';
+      if (filterId === 'teori') return card.type === 'teori' || card.type === 'theory';
+      if (filterId === 'prioritas') return !!card.is_priority || !!card.prioritas_tinggi;
+      if (filterId === 'resep') return !!card.has_resep || !!card.resep_teks;
       if (filterId === 'kardio') return card.section === 'Kardiovaskular & Ginjal';
-      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait';
+      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait' || card.section === 'Respirasi & Infeksi';
       if (filterId === 'ccb') return (card.sub_class && card.sub_class.startsWith('ccb')) || (card.tags && card.tags.includes('ccb'));
       if (filterId === 'diuretik') return card.sub_category === 'diuretik' || (card.tags && card.tags.includes('diuretik'));
       if (filterId.startsWith('th-')) {
         const yr = filterId.replace('th-', '');
-        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr));
+        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr)) || (card.tags && card.tags.includes(filterId));
       }
       if (card.sub_category === filterId) return true;
       if (card.sub_class === filterId) return true;
@@ -5192,7 +5194,7 @@
       const list = [
         { id: 'all', label: `Semua Kartu (${cards.length})`, count: cards.length, badge: 'ALL', group: 'sistem' }
       ];
-      const pCount = cards.filter(c => c.is_priority).length;
+      const pCount = cards.filter(c => c.is_priority || c.prioritas_tinggi).length;
       if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, badge: 'STAR', group: 'arsip' });
 
       const kCount = cards.filter(c => isCardMatchingFilter(c, 'kardio')).length;
@@ -5204,17 +5206,26 @@
       const prepCount = cards.filter(c => c.type === 'preparat').length;
       if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Sediaan Mikroskopik (${prepCount})`, count: prepCount, badge: 'PREP', group: 'sistem' });
 
-      const teoriCount = cards.filter(c => c.type === 'teori').length;
+      const teoriCount = cards.filter(c => c.type === 'teori' || c.type === 'theory').length;
       if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Soal Teori (${teoriCount})`, count: teoriCount, badge: 'THRY', group: 'tipe' });
 
       return list;
     }
 
     // =======================================================
-    // FILTER HUB ENGINE (51+ MULTI-LEVEL FILTERS)
+    // FILTER HUB ENGINE (DECK-DRIVEN: 3-51+ MULTI-LEVEL FILTERS)
     // =======================================================
     let filterHubSearchQuery = '';
     let filterHubActiveTab = 'all';
+
+    function handleDockFilterClick() {
+      const filters = getActiveFiltersList();
+      if (filters.length <= 6) {
+        cycleFilter();
+      } else {
+        openFilterHubModal();
+      }
+    }
 
     function openFilterHubModal() {
       const modal = document.getElementById('filterHubModal');
@@ -5224,9 +5235,21 @@
       if (searchInput) {
         searchInput.value = '';
       }
+
+      const filters = getActiveFiltersList();
+      const isCompact = filters.length <= 6;
+      const tabsRow = document.getElementById('filterHubTabsRow');
+      const hubBadge = document.getElementById('filterHubBadge');
+
+      if (tabsRow) tabsRow.style.display = isCompact ? 'none' : 'flex';
+      if (searchInput) searchInput.style.display = isCompact ? 'none' : 'block';
+      if (hubBadge) {
+        hubBadge.textContent = currentPack ? (currentPack.badge || currentPack.packName || 'KATALOG FILTER') : 'KATALOG FILTER';
+      }
+
       renderFilterHubChips();
       modal.classList.add('active');
-      if (searchInput) {
+      if (searchInput && !isCompact) {
         setTimeout(() => searchInput.focus(), 120);
       }
       playSelectSound();
@@ -5276,14 +5299,7 @@
       const filters = getActiveFiltersList();
       if (countEl) countEl.textContent = filteredBase.length;
 
-      // Group definitions
-      const groups = [
-        { key: 'sistem', title: '🏥 Modul & Sistem Utama', desc: 'Sistem kardiovaskular, ginjal, respirasi, dan modul stasi praktikum' },
-        { key: 'subclass', title: '💊 Sub-Golongan Farmakologis (Target Molekuler)', desc: 'Golongan obat spesifik, reseptor, dan target enzim' },
-        { key: 'tipe', title: '📋 Tipe Pertanyaan & Algoritma Klinis', desc: 'Resep dokter, mekanisme kerja, efek samping, dan perhitungan dosis' },
-        { key: 'arsip', title: '📅 Arsip Soal Ujian & Prioritas', desc: 'Bank soal tahun 2024 (Tablet Costae), 2022 (Artedium), 2021 (Alveliola)' },
-        { key: 'role', title: '🎯 Peran Terapi & Aksi Biologis', desc: 'Reliever vs Controller, Bakterisidal vs Bakteriostatik' }
-      ];
+      const hasGroups = filters.some(f => f.group);
 
       let filteredFilters = filters;
       if (filterHubSearchQuery) {
@@ -5294,7 +5310,7 @@
         );
       }
 
-      if (filterHubActiveTab !== 'all') {
+      if (hasGroups && filterHubActiveTab !== 'all') {
         filteredFilters = filteredFilters.filter(f => f.group === filterHubActiveTab || f.id === 'all');
       }
 
@@ -5306,13 +5322,45 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
             <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Tidak ada filter yang cocok</div>
-            <div style="font-size: 12px;">Coba gunakan kata kunci lain seperti "resep", "loop", "2024", atau "asma".</div>
+            <div style="font-size: 12px;">Coba gunakan kata kunci lain seperti "resep", "preparat", "2024", atau "teori".</div>
           </div>
         `;
         return;
       }
 
       let html = '';
+
+      if (!hasGroups || filters.length <= 6) {
+        // Flat/Ungrouped list for decks like PA 3.1
+        html += `
+          <div class="filter-hub-group">
+            <div class="filter-hub-group-title">
+              <span>📚 Filter Sediaan &amp; Topik</span>
+              <span style="font-size: 10px; color: #7788aa; font-weight: 600;">(${filteredFilters.length})</span>
+            </div>
+            <div class="filter-hub-chips-grid">
+              ${filteredFilters.map(f => `
+                <button class="filter-hub-chip ${activeFilter === f.id ? 'active' : ''}" onclick="selectFilterFromHub('${f.id}')" title="${f.label}">
+                  <span>${f.icon === 'microscope' ? '🔬' : f.icon === 'book' ? '📖' : f.icon === 'grid' ? '▦' : f.icon === 'star' ? '⭐' : '•'}</span>
+                  <span>${f.label}</span>
+                  <span class="chip-count">${f.count}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        body.innerHTML = html;
+        return;
+      }
+
+      // Group definitions for multi-category decks (e.g. Farmakologi 3.2)
+      const groups = [
+        { key: 'sistem', title: '🏥 Modul & Sistem Utama', desc: 'Sistem kardiovaskular, ginjal, respirasi, dan modul stasi praktikum' },
+        { key: 'subclass', title: '💊 Sub-Golongan Farmakologis (Target Molekuler)', desc: 'Golongan obat spesifik, reseptor, dan target enzim' },
+        { key: 'tipe', title: '📋 Tipe Pertanyaan & Algoritma Klinis', desc: 'Resep dokter, mekanisme kerja, efek samping, dan perhitungan dosis' },
+        { key: 'arsip', title: '📅 Arsip Soal Ujian & Prioritas', desc: 'Bank soal tahun 2024 (Tablet Costae), 2022 (Artedium), 2021 (Alveliola)' },
+        { key: 'role', title: '🎯 Peran Terapi & Aksi Biologis', desc: 'Reliever vs Controller, Bakterisidal vs Bakteriostatik' }
+      ];
 
       // Special top section for "Semua Stasi"
       const allFilter = filteredFilters.find(f => f.id === 'all');
@@ -5360,24 +5408,36 @@
     function renderQuickFilterBar() {
       const scrollEl = document.getElementById('quickFilterScroll');
       const badgeEl = document.getElementById('quickFilterHubCountBadge');
+      const hubBtn = document.getElementById('btnOpenFilterHub');
       if (!scrollEl) return;
 
       const filters = getActiveFiltersList();
+      const isCompact = filters.length <= 6;
+
       if (badgeEl) badgeEl.textContent = filters.length;
+      if (hubBtn) {
+        hubBtn.style.display = isCompact ? 'none' : 'inline-flex';
+        hubBtn.title = `Buka Filter Hub Lengkap (${filters.length} Kategori) [F]`;
+      }
 
-      // Select top key filters for the quick horizontal scroll
-      const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'faringitis-batuk-flu', 'loop', 'beta-blocker', 'ccb', 'acei', 'arb'];
-      const quickFilters = [];
+      let quickFilters = [];
 
-      popularIds.forEach(pid => {
-        const found = filters.find(f => f.id === pid);
-        if (found) quickFilters.push(found);
-      });
+      if (isCompact) {
+        // When deck has <= 6 filters (e.g. PA 3.1 with 3 filters), show all filters directly on the quick bar
+        quickFilters = [...filters];
+      } else {
+        // Select top key filters for the quick horizontal scroll (e.g. Farmako 3.2 with 51 filters)
+        const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'faringitis-batuk-flu', 'loop', 'beta-blocker', 'ccb', 'acei', 'arb'];
+        popularIds.forEach(pid => {
+          const found = filters.find(f => f.id === pid);
+          if (found) quickFilters.push(found);
+        });
 
-      // Also ensure current active filter is visible in the quick scroll if not already
-      if (!quickFilters.some(f => f.id === activeFilter)) {
-        const cur = filters.find(f => f.id === activeFilter);
-        if (cur) quickFilters.splice(1, 0, cur);
+        // Also ensure current active filter is visible in the quick scroll if not already
+        if (!quickFilters.some(f => f.id === activeFilter)) {
+          const cur = filters.find(f => f.id === activeFilter);
+          if (cur) quickFilters.splice(1, 0, cur);
+        }
       }
 
       scrollEl.innerHTML = quickFilters.map(f => `
@@ -7667,14 +7727,19 @@ ${card.resep_teks}
       const filters = getActiveFiltersList();
       const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'Semua Kartu', badge: 'ALL' };
       const shortBadge = current.badge || activeFilter.substring(0, 4).toUpperCase();
+      const isCompact = filters.length <= 6;
 
       if (activeFilter === 'all') {
         btn.classList.remove('active');
-        btn.title = `Buka Filter Hub (51 Kategori) [F] • Aktif: Semua Kartu (${filteredBase.length})`;
+        btn.title = isCompact 
+          ? `Ganti Filter [Klik / F] • Aktif: Semua Kartu (${filteredBase.length})` 
+          : `Buka Filter Hub (${filters.length} Kategori) [F] • Aktif: Semua Kartu (${filteredBase.length})`;
         if (badge) badge.textContent = 'ALL';
       } else {
         btn.classList.add('active');
-        btn.title = `Buka Filter Hub (51 Kategori) [F] • Aktif: ${current.label} (${filteredBase.length})`;
+        btn.title = isCompact 
+          ? `Ganti Filter [Klik / F] • Aktif: ${current.label} (${filteredBase.length})` 
+          : `Buka Filter Hub (${filters.length} Kategori) [F] • Aktif: ${current.label} (${filteredBase.length})`;
         if (badge) badge.textContent = shortBadge;
       }
     }
@@ -8668,11 +8733,16 @@ ${card.resep_teks}
         if (e.shiftKey) {
           toggleFullScreen();
         } else {
-          const filterHub = document.getElementById('filterHubModal');
-          if (filterHub && filterHub.classList.contains('active')) {
-            closeFilterHubModal();
+          const filters = getActiveFiltersList();
+          if (filters.length <= 6) {
+            cycleFilter();
           } else {
-            openFilterHubModal();
+            const filterHub = document.getElementById('filterHubModal');
+            if (filterHub && filterHub.classList.contains('active')) {
+              closeFilterHubModal();
+            } else {
+              openFilterHubModal();
+            }
           }
         }
       }
@@ -8817,9 +8887,9 @@ ${card.resep_teks}
           else openRevealModal();
         });
 
-        // Share / Select (button 8): Cycle Filter (All -> Preparat -> Teori)
+        // Share / Select (button 8): Cycle Filter or Open Filter Hub depending on deck filter count
         onEdgePress(8, () => {
-          cycleFilter();
+          handleDockFilterClick();
         });
 
         // Left Analog Stick (Axes 0 & 1)

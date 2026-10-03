@@ -2001,15 +2001,17 @@
 
     function isCardMatchingFilter(card, filterId) {
       if (!filterId || filterId === 'all') return true;
-      if (filterId === 'prioritas') return !!card.is_priority;
-      if (filterId === 'resep') return !!card.has_resep;
+      if (filterId === 'preparat') return card.type === 'preparat';
+      if (filterId === 'teori') return card.type === 'teori' || card.type === 'theory';
+      if (filterId === 'prioritas') return !!card.is_priority || !!card.prioritas_tinggi;
+      if (filterId === 'resep') return !!card.has_resep || !!card.resep_teks;
       if (filterId === 'kardio') return card.section === 'Kardiovaskular & Ginjal';
-      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait';
+      if (filterId === 'respirasi') return card.section === 'Respirasi & Infeksi Terkait' || card.section === 'Respirasi & Infeksi';
       if (filterId === 'ccb') return (card.sub_class && card.sub_class.startsWith('ccb')) || (card.tags && card.tags.includes('ccb'));
       if (filterId === 'diuretik') return card.sub_category === 'diuretik' || (card.tags && card.tags.includes('diuretik'));
       if (filterId.startsWith('th-')) {
         const yr = filterId.replace('th-', '');
-        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr));
+        return (card.years && card.years.includes(yr)) || (card.tags && card.tags.includes(yr)) || (card.tags && card.tags.includes(filterId));
       }
       if (card.sub_category === filterId) return true;
       if (card.sub_class === filterId) return true;
@@ -2035,7 +2037,7 @@
       const list = [
         { id: 'all', label: `All Questions (${ALL_EXAM_CARDS.length})`, count: ALL_EXAM_CARDS.length, group: 'sistem' }
       ];
-      const pCount = ALL_EXAM_CARDS.filter(c => c.is_priority).length;
+      const pCount = ALL_EXAM_CARDS.filter(c => c.is_priority || c.prioritas_tinggi).length;
       if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, group: 'arsip' });
 
       const kCount = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, 'kardio')).length;
@@ -2056,6 +2058,9 @@
     // 1. SETUP PHASE
     function renderSetupPhase(container) {
       const filters = getActiveExamFilters();
+      if (!filters.some(f => f.id === examActiveFilter)) {
+        examActiveFilter = 'all';
+      }
       const currentFilteredPool = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, examActiveFilter));
       const poolCount = currentFilteredPool.length;
       const totalCount = ALL_EXAM_CARDS.length;
@@ -2073,24 +2078,28 @@
         </button>
       `;
 
-      const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'loop', 'beta-blocker', 'ccb', 'acei'];
+      const hasManyFilters = filters.length > 6;
       let visibleFilters = filters;
 
-      if (examFilterQuery) {
-        visibleFilters = filters.filter(f => 
-          f.label.toLowerCase().includes(examFilterQuery) || 
-          f.id.toLowerCase().includes(examFilterQuery)
-        );
-      } else if (examFilterTab === 'popular') {
-        visibleFilters = filters.filter(f => popularIds.includes(f.id));
-      } else if (examFilterTab !== 'all') {
-        visibleFilters = filters.filter(f => f.group === examFilterTab || f.id === 'all');
-      }
+      if (hasManyFilters) {
+        const popularIds = ['all', 'preparat', 'teori', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'loop', 'beta-blocker', 'ccb', 'acei'];
 
-      // If active filter is not in visibleFilters, include it so user sees selection
-      if (!visibleFilters.some(f => f.id === examActiveFilter)) {
-        const activeF = filters.find(f => f.id === examActiveFilter);
-        if (activeF) visibleFilters.unshift(activeF);
+        if (examFilterQuery) {
+          visibleFilters = filters.filter(f => 
+            f.label.toLowerCase().includes(examFilterQuery) || 
+            f.id.toLowerCase().includes(examFilterQuery)
+          );
+        } else if (examFilterTab === 'popular') {
+          visibleFilters = filters.filter(f => popularIds.includes(f.id));
+        } else if (examFilterTab !== 'all') {
+          visibleFilters = filters.filter(f => f.group === examFilterTab || f.id === 'all');
+        }
+
+        // If active filter is not in visibleFilters, include it so user sees selection
+        if (!visibleFilters.some(f => f.id === examActiveFilter)) {
+          const activeF = filters.find(f => f.id === examActiveFilter);
+          if (activeF) visibleFilters.unshift(activeF);
+        }
       }
 
       const filterPillsHtml = visibleFilters.map(f => `
@@ -2112,24 +2121,26 @@
           <div class="config-section">
             <div class="config-section-title">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-              <span>1. CONTENT FILTER (PILIH DARI ${filters.length} KATEGORI)</span>
+              <span>1. CONTENT FILTER (${filters.length} KATEGORI)</span>
             </div>
 
-            <!-- Category Navigation Tabs -->
-            <div class="config-tabs-nav">
-              <button class="config-tab-btn ${examFilterTab === 'popular' ? 'active' : ''}" onclick="setExamFilterTab('popular')">⭐ Populer</button>
-              <button class="config-tab-btn ${examFilterTab === 'sistem' ? 'active' : ''}" onclick="setExamFilterTab('sistem')">🏥 Modul Sistem</button>
-              <button class="config-tab-btn ${examFilterTab === 'subclass' ? 'active' : ''}" onclick="setExamFilterTab('subclass')">💊 Golongan Obat</button>
-              <button class="config-tab-btn ${examFilterTab === 'tipe' ? 'active' : ''}" onclick="setExamFilterTab('tipe')">📋 Tipe Soal &amp; Resep</button>
-              <button class="config-tab-btn ${examFilterTab === 'arsip' ? 'active' : ''}" onclick="setExamFilterTab('arsip')">📅 Arsip Ujian</button>
-              <button class="config-tab-btn ${examFilterTab === 'role' ? 'active' : ''}" onclick="setExamFilterTab('role')">🎯 Peran Terapi</button>
-              <button class="config-tab-btn ${examFilterTab === 'all' ? 'active' : ''}" onclick="setExamFilterTab('all')">Semua Filter (${filters.length})</button>
-            </div>
+            ${hasManyFilters ? `
+              <!-- Category Navigation Tabs -->
+              <div class="config-tabs-nav">
+                <button class="config-tab-btn ${examFilterTab === 'popular' ? 'active' : ''}" onclick="setExamFilterTab('popular')">⭐ Populer</button>
+                <button class="config-tab-btn ${examFilterTab === 'sistem' ? 'active' : ''}" onclick="setExamFilterTab('sistem')">🏥 Modul Sistem</button>
+                <button class="config-tab-btn ${examFilterTab === 'subclass' ? 'active' : ''}" onclick="setExamFilterTab('subclass')">💊 Golongan Obat</button>
+                <button class="config-tab-btn ${examFilterTab === 'tipe' ? 'active' : ''}" onclick="setExamFilterTab('tipe')">📋 Tipe Soal &amp; Resep</button>
+                <button class="config-tab-btn ${examFilterTab === 'arsip' ? 'active' : ''}" onclick="setExamFilterTab('arsip')">📅 Arsip Ujian</button>
+                <button class="config-tab-btn ${examFilterTab === 'role' ? 'active' : ''}" onclick="setExamFilterTab('role')">🎯 Peran Terapi</button>
+                <button class="config-tab-btn ${examFilterTab === 'all' ? 'active' : ''}" onclick="setExamFilterTab('all')">Semua Filter (${filters.length})</button>
+              </div>
 
-            <!-- Search Input -->
-            <div class="config-filter-search-box">
-              <input type="text" class="config-filter-search-input" value="${examFilterQuery}" placeholder="🔍 Cari filter topik: amlodipin, loop, resep, 2024, oat, asma..." oninput="handleExamFilterSearch(this.value)">
-            </div>
+              <!-- Search Input -->
+              <div class="config-filter-search-box">
+                <input type="text" class="config-filter-search-input" value="${examFilterQuery}" placeholder="🔍 Cari filter topik: amlodipin, loop, resep, 2024, oat, asma..." oninput="handleExamFilterSearch(this.value)">
+              </div>
+            ` : ''}
 
             <div class="config-pills-row">
               ${filterPillsHtml || '<div style="font-size:12px;color:rgba(23,43,122,0.6);padding:6px;">Tidak ada topik yang cocok dengan pencarian</div>'}
