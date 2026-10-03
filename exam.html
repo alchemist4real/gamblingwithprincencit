@@ -2225,9 +2225,24 @@
       `;
     }
 
+    function sanitizeLatexAndCode(text) {
+      if (!text) return '';
+      return String(text)
+        .replace(/\\rightarrow/g, '→')
+        .replace(/\\leftarrow/g, '←')
+        .replace(/\\leftrightarrow/g, '↔')
+        .replace(/\\beta_?([0-9]+)?/g, (m, d) => 'β' + (d ? (d === '1' ? '₁' : d === '2' ? '₂' : d === '3' ? '₃' : d) : ''))
+        .replace(/\\alpha_?([0-9]+)?/g, (m, d) => 'α' + (d ? (d === '1' ? '₁' : d === '2' ? '₂' : d === '3' ? '₃' : d) : ''))
+        .replace(/\\text\{([^{}]+)\}/g, '$1')
+        .replace(/\{,\}/g, ',')
+        .replace(/\$([^\$]+)\$/g, '$1')
+        .replace(/\$/g, '');
+    }
+
     function formatExamPromptText(text) {
       if (!text) return '';
-      let html = String(text)
+      let clean = sanitizeLatexAndCode(text);
+      let html = String(clean)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
@@ -2386,7 +2401,7 @@
 
                 <div class="reveal-info-box">
                   <span class="reveal-info-title">JAWABAN A // MEKANISME KERJA MOLEKULER &amp; RESEPTOR</span>
-                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.6;">${card.jawaban_lengkap || card.full_jawaban_a || etiologiText}</div>
+                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.6;">${formatExamPromptText(card.jawaban_lengkap || card.full_jawaban_a || etiologiText)}</div>
                 </div>
 
                 ${card.resep_teks ? `
@@ -2397,9 +2412,9 @@
                 ` : ''}
 
                 ${card.tips_klinis ? `
-                  <div class="reveal-info-box" style="border-color: #f59f00; background-color: #fff9db;">
-                    <span class="reveal-info-title" style="color: #b35900;">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</span>
-                    <div class="reveal-info-content" style="color: #7a3e00;">${card.tips_klinis}</div>
+                  <div class="reveal-info-box" style="border-color: #172b7a; background-color: #f6f8fe;">
+                    <span class="reveal-info-title" style="color: #172b7a;">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</span>
+                    <div class="reveal-info-content" style="color: #172b7a;">${formatExamPromptText(card.tips_klinis)}</div>
                   </div>
                 ` : ''}
 
