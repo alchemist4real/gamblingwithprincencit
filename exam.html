@@ -1904,11 +1904,89 @@
       updateDockUI();
     }
 
+    function isCardMatchingFilter(card, filterId) {
+      if (!filterId || filterId === 'all') return true;
+      if (filterId === 'prioritas') return !!card.is_priority;
+      if (filterId === 'resep') return !!card.has_resep;
+      if (filterId === 'kardio') {
+        return card.section === 'Kardiovaskular & Ginjal' ||
+               card.sub_category === 'diuretik' ||
+               card.sub_category === 'simpatolitik-ccb' ||
+               card.sub_category === 'raas' ||
+               card.sub_category === 'vasodilator';
+      }
+      if (filterId === 'raas-vasodilator') {
+        return card.sub_category === 'raas' || card.sub_category === 'vasodilator';
+      }
+      if (filterId === 'respirasi') {
+        return card.section === 'Respirasi & Infeksi Terkait' ||
+               card.sub_category === 'asma-ppok' ||
+               card.sub_category === 'oat' ||
+               card.sub_category === 'infeksi-batuk';
+      }
+      if (card.sub_category === filterId) return true;
+      if (card.type === filterId) return true;
+      if (card._packId === filterId) return true;
+      return false;
+    }
+
+    function getActiveExamFilters() {
+      const packs = window.CARD_PACKS || {};
+      let singlePack = selectedPackIds.length === 1 ? packs[selectedPackIds[0]] : null;
+      if (singlePack && Array.isArray(singlePack.filters) && singlePack.filters.length > 0) {
+        return singlePack.filters.map(f => {
+          const count = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, f.id)).length;
+          return { ...f, count };
+        }).filter(f => f.id === 'all' || f.count > 0);
+      }
+
+      // Dynamic combined list
+      const list = [
+        { id: 'all', label: `All Questions (${ALL_EXAM_CARDS.length})`, count: ALL_EXAM_CARDS.length }
+      ];
+      const pCount = ALL_EXAM_CARDS.filter(c => c.is_priority).length;
+      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount });
+
+      const kCount = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, 'kardio')).length;
+      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount });
+
+      const rCount = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, 'respirasi')).length;
+      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount });
+
+      const prepCount = ALL_EXAM_CARDS.filter(c => c.type === 'preparat').length;
+      if (prepCount > 0 && prepCount !== ALL_EXAM_CARDS.length) list.push({ id: 'preparat', label: `Histopathology (${prepCount})`, count: prepCount });
+
+      const teoriCount = ALL_EXAM_CARDS.filter(c => c.type === 'teori').length;
+      if (teoriCount > 0 && teoriCount !== ALL_EXAM_CARDS.length) list.push({ id: 'teori', label: `Theory & Cases (${teoriCount})`, count: teoriCount });
+
+      return list;
+    }
+
     // 1. SETUP PHASE
     function renderSetupPhase(container) {
-      const prepCount = ALL_EXAM_CARDS.filter(c => c.type === 'preparat').length;
-      const teoriCount = ALL_EXAM_CARDS.filter(c => c.type === 'teori').length;
+      const filters = getActiveExamFilters();
+      const currentFilteredPool = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, examActiveFilter));
+      const poolCount = currentFilteredPool.length;
       const totalCount = ALL_EXAM_CARDS.length;
+
+      const countsPreset = [5, 10, 20, 40].filter(n => n < poolCount);
+      let countButtonsHtml = countsPreset.map(n => `
+        <button class="config-pill-btn ${examTargetCount === n ? 'active' : ''}" onclick="setExamCount(${n})">
+          <span>${n} Questions</span>
+        </button>
+      `).join('');
+      const isAllActive = examTargetCount === 'all' || examTargetCount >= poolCount;
+      countButtonsHtml += `
+        <button class="config-pill-btn ${isAllActive ? 'active' : ''}" onclick="setExamCount('all')">
+          <span>All (${poolCount})</span>
+        </button>
+      `;
+
+      const filterPillsHtml = filters.map(f => `
+        <button class="config-pill-btn ${examActiveFilter === f.id ? 'active' : ''}" onclick="setExamFilter('${f.id}')">
+          <span>${f.label}</span>
+        </button>
+      `).join('');
 
       container.innerHTML = `
         <div class="exam-config-card">
@@ -1926,15 +2004,7 @@
               <span>1. CONTENT FILTER</span>
             </div>
             <div class="config-pills-row">
-              <button class="config-pill-btn ${examActiveFilter === 'all' ? 'active' : ''}" onclick="setExamFilter('all')">
-                <span>All Questions (${totalCount})</span>
-              </button>
-              <button class="config-pill-btn ${examActiveFilter === 'preparat' ? 'active' : ''}" onclick="setExamFilter('preparat')">
-                <span>Histopathology (${prepCount})</span>
-              </button>
-              <button class="config-pill-btn ${examActiveFilter === 'teori' ? 'active' : ''}" onclick="setExamFilter('teori')">
-                <span>Theory & Cases (${teoriCount})</span>
-              </button>
+              ${filterPillsHtml}
             </div>
           </div>
 
@@ -1942,21 +2012,10 @@
           <div class="config-section">
             <div class="config-section-title">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>2. QUESTION COUNT</span>
+              <span>2. QUESTION COUNT (ACTIVE POOL: ${poolCount})</span>
             </div>
             <div class="config-pills-row">
-              <button class="config-pill-btn ${examTargetCount === 5 ? 'active' : ''}" onclick="setExamCount(5)">
-                <span>5 Questions</span>
-              </button>
-              <button class="config-pill-btn ${examTargetCount === 10 ? 'active' : ''}" onclick="setExamCount(10)">
-                <span>10 Questions</span>
-              </button>
-              <button class="config-pill-btn ${examTargetCount === 20 ? 'active' : ''}" onclick="setExamCount(20)">
-                <span>20 Questions</span>
-              </button>
-              <button class="config-pill-btn ${examTargetCount === 'all' ? 'active' : ''}" onclick="setExamCount('all')">
-                <span>All (${totalCount})</span>
-              </button>
+              ${countButtonsHtml}
             </div>
           </div>
 
@@ -2067,32 +2126,44 @@
             `}
           </div>
 
-          <!-- Right: The 4 Universal Practical Prompts -->
+          <!-- Right: Questions -->
           <div class="study-prompts-card">
             <div class="prompts-card-header">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span class="prompts-card-title">PRACTICAL EXAM QUESTIONS</span>
+              <span class="prompts-card-title">${card.category && card.category.includes('FARMAKO') ? 'OSPE PHARMACOLOGY PROMPTS' : 'PRACTICAL EXAM QUESTIONS'}</span>
             </div>
 
-            <div class="prompt-box">
-              <span class="prompt-box-badge">SOAL 1 // IDENTIFIKASI</span>
-              <div class="prompt-box-text">Preparat apa ini? Tentukan nama sediaan / diagnosis patologi.</div>
-            </div>
+            ${card.soal_a || card.soal_b ? `
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL A // MEKANISME KERJA MOLEKULER</span>
+                <div class="prompt-box-text">${card.soal_a || 'Jelaskan mekanisme kerja molekuler obat ini!'}</div>
+              </div>
 
-            <div class="prompt-box">
-              <span class="prompt-box-badge">SOAL 2 // STRUKTUR KHAS</span>
-              <div class="prompt-box-text">Sel apa yang menjadi ciri khas pada struktur ini? Sebutkan penanda mikroskopisnya.</div>
-            </div>
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL B // KLASIFIKASI, SEDIAAN, EFEK SAMPING &amp; RESEP</span>
+                <div class="prompt-box-text">${card.soal_b || 'Sebutkan golongan obat, efek samping khas, dan tuliskan resepnya!'}</div>
+              </div>
+            ` : `
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL 1 // IDENTIFIKASI</span>
+                <div class="prompt-box-text">Preparat apa ini? Tentukan nama sediaan / diagnosis patologi.</div>
+              </div>
 
-            <div class="prompt-box">
-              <span class="prompt-box-badge">SOAL 3 // CIRI UTAMA</span>
-              <div class="prompt-box-text">Apa ciri-ciri utama sediaan ini? Deskripsikan pola arsitektur atau stroma.</div>
-            </div>
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL 2 // STRUKTUR KHAS</span>
+                <div class="prompt-box-text">Sel apa yang menjadi ciri khas pada struktur ini? Sebutkan penanda mikroskopisnya.</div>
+              </div>
 
-            <div class="prompt-box">
-              <span class="prompt-box-badge">SOAL 4 // BIOLOGIS & PATOFISIOLOGI</span>
-              <div class="prompt-box-text">Fungsi atau signifikansi biologis / patogenesis apa yang mendasari kelainan ini?</div>
-            </div>
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL 3 // CIRI UTAMA</span>
+                <div class="prompt-box-text">Apa ciri-ciri utama sediaan ini? Deskripsikan pola arsitektur atau stroma.</div>
+              </div>
+
+              <div class="prompt-box">
+                <span class="prompt-box-badge">SOAL 4 // BIOLOGIS &amp; PATOFISIOLOGI</span>
+                <div class="prompt-box-text">Fungsi atau signifikansi biologis / patogenesis apa yang mendasari kelainan ini?</div>
+              </div>
+            `}
           </div>
 
         </div>
@@ -2141,31 +2212,57 @@
 
             <!-- Right: Details & High-Yield Findings -->
             <div class="reveal-details-col">
-              <div class="reveal-info-box">
-                <span class="reveal-info-title">CIRI KHAS HISTOPATOLOGIS</span>
-                <ul class="reveal-bullet-list">
-                  ${ciriList.map(item => `
-                    <li class="reveal-bullet-item">
-                      <div class="reveal-dot"></div>
-                      <div class="reveal-info-content">${item}</div>
-                    </li>
-                  `).join('')}
-                </ul>
-              </div>
-
-              ${etiologiText ? `
+              ${card.category && card.category.includes('FARMAKO') ? `
                 <div class="reveal-info-box">
-                  <span class="reveal-info-title">ETIOLOGI &amp; PATOFISIOLOGI</span>
-                  <div class="reveal-info-content">${etiologiText}</div>
+                  <span class="reveal-info-title">JAWABAN B // GOLONGAN, SEDIAAN, DOSIS &amp; RESEP</span>
+                  <ul class="reveal-bullet-list">
+                    ${ciriList.map(item => `
+                      <li class="reveal-bullet-item">
+                        <div class="reveal-dot"></div>
+                        <div class="reveal-info-content">${item}</div>
+                      </li>
+                    `).join('')}
+                  </ul>
                 </div>
-              ` : ''}
 
-              ${card.keywords ? `
                 <div class="reveal-info-box">
-                  <span class="reveal-info-title">KATA KUNCI IDENTIFIKASI</span>
-                  <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+                  <span class="reveal-info-title">JAWABAN A // MEKANISME KERJA MOLEKULER &amp; RESEPTOR</span>
+                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.6;">${card.full_jawaban_a || etiologiText}</div>
                 </div>
-              ` : ''}
+
+                ${card.keywords ? `
+                  <div class="reveal-info-box">
+                    <span class="reveal-info-title">KATA KUNCI IDENTIFIKASI &amp; MNEMONIK</span>
+                    <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+                  </div>
+                ` : ''}
+              ` : `
+                <div class="reveal-info-box">
+                  <span class="reveal-info-title">CIRI KHAS HISTOPATOLOGIS</span>
+                  <ul class="reveal-bullet-list">
+                    ${ciriList.map(item => `
+                      <li class="reveal-bullet-item">
+                        <div class="reveal-dot"></div>
+                        <div class="reveal-info-content">${item}</div>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+
+                ${etiologiText ? `
+                  <div class="reveal-info-box">
+                    <span class="reveal-info-title">ETIOLOGI &amp; PATOFISIOLOGI</span>
+                    <div class="reveal-info-content">${etiologiText}</div>
+                  </div>
+                ` : ''}
+
+                ${card.keywords ? `
+                  <div class="reveal-info-box">
+                    <span class="reveal-info-title">KATA KUNCI IDENTIFIKASI</span>
+                    <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+                  </div>
+                ` : ''}
+              `}
             </div>
           </div>
 
@@ -2261,7 +2358,7 @@
       if (examActiveFilter === 'all') {
         pool = [...ALL_EXAM_CARDS];
       } else {
-        pool = ALL_EXAM_CARDS.filter(c => c.type === examActiveFilter);
+        pool = ALL_EXAM_CARDS.filter(c => isCardMatchingFilter(c, examActiveFilter));
       }
 
       if (pool.length === 0) {

@@ -8,7 +8,8 @@
   // Manifest of active card packs
   window.CARD_PACK_REGISTRY = [
     'packs/blok-3.1.js',
-    'packs/blok-3.2.js'
+    'packs/blok-3.2.js',
+    'packs/farmako-3.2.js'
   ];
 
   let loadedCount = 0;

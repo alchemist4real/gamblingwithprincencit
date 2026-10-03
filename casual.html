@@ -4566,11 +4566,67 @@
       }
     }
 
+    function isCardMatchingFilter(card, filterId) {
+      if (!filterId || filterId === 'all') return true;
+      if (filterId === 'prioritas') return !!card.is_priority;
+      if (filterId === 'resep') return !!card.has_resep;
+      if (filterId === 'kardio') {
+        return card.section === 'Kardiovaskular & Ginjal' ||
+               card.sub_category === 'diuretik' ||
+               card.sub_category === 'simpatolitik-ccb' ||
+               card.sub_category === 'raas' ||
+               card.sub_category === 'vasodilator';
+      }
+      if (filterId === 'raas-vasodilator') {
+        return card.sub_category === 'raas' || card.sub_category === 'vasodilator';
+      }
+      if (filterId === 'respirasi') {
+        return card.section === 'Respirasi & Infeksi Terkait' ||
+               card.sub_category === 'asma-ppok' ||
+               card.sub_category === 'oat' ||
+               card.sub_category === 'infeksi-batuk';
+      }
+      if (card.sub_category === filterId) return true;
+      if (card.type === filterId) return true;
+      if (card._packId === filterId) return true;
+      return false;
+    }
+
+    function getActiveFiltersList(cards = DATA_CARDS) {
+      if (currentPack && Array.isArray(currentPack.filters) && currentPack.filters.length > 0) {
+        return currentPack.filters.map(f => {
+          const count = cards.filter(c => isCardMatchingFilter(c, f.id)).length;
+          return { ...f, count };
+        }).filter(f => f.id === 'all' || f.count > 0);
+      }
+
+      // Fallback combined list
+      const list = [
+        { id: 'all', label: `Semua Kartu (${cards.length})`, count: cards.length, badge: 'ALL' }
+      ];
+      const pCount = cards.filter(c => c.is_priority).length;
+      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, badge: 'STAR' });
+
+      const kCount = cards.filter(c => isCardMatchingFilter(c, 'kardio')).length;
+      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount, badge: 'KARD' });
+
+      const rCount = cards.filter(c => isCardMatchingFilter(c, 'respirasi')).length;
+      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount, badge: 'RESP' });
+
+      const prepCount = cards.filter(c => c.type === 'preparat').length;
+      if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Sediaan Mikroskopik (${prepCount})`, count: prepCount, badge: 'PREP' });
+
+      const teoriCount = cards.filter(c => c.type === 'teori').length;
+      if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Soal Teori (${teoriCount})`, count: teoriCount, badge: 'THRY' });
+
+      return list;
+    }
+
     function applyDeckFilterAndMode(resetIndex = true) {
       if (activeFilter === 'all') {
         filteredBase = [...DATA_CARDS];
       } else {
-        filteredBase = DATA_CARDS.filter(c => c.type === activeFilter);
+        filteredBase = DATA_CARDS.filter(c => isCardMatchingFilter(c, activeFilter));
       }
 
       const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
@@ -5137,13 +5193,7 @@
       if (btnShuff) btnShuff.classList.toggle('active', reviewOrder === 'shuffle');
 
       // Update Filter Pills
-      const btnFAll = document.getElementById('btnRevFilterAll');
-      const btnFPrep = document.getElementById('btnRevFilterPrep');
-      const btnFTeori = document.getElementById('btnRevFilterTeori');
-      if (btnFAll) btnFAll.classList.toggle('active', reviewFilter === 'all');
-      if (btnFPrep) btnFPrep.classList.toggle('active', reviewFilter === 'preparat');
-      if (btnFTeori) btnFTeori.classList.toggle('active', reviewFilter === 'teori');
-
+      renderReviewFilterPills();
       renderReviewCountPills();
 
       const overlay = document.getElementById('reviewConfigOverlay');
@@ -5162,14 +5212,20 @@
       }
     }
 
+    function renderReviewFilterPills() {
+      const row = document.getElementById('reviewFilterPillsRow');
+      if (!row) return;
+      const filters = getActiveFiltersList();
+      row.innerHTML = filters.map(f => `
+        <button class="review-pill-btn ${reviewFilter === f.id ? 'active' : ''}" onclick="setReviewFilter('${f.id}')">
+          ${f.label.toUpperCase()}
+        </button>
+      `).join('');
+    }
+
     function setReviewFilter(filter) {
       reviewFilter = filter;
-      const btnFAll = document.getElementById('btnRevFilterAll');
-      const btnFPrep = document.getElementById('btnRevFilterPrep');
-      const btnFTeori = document.getElementById('btnRevFilterTeori');
-      if (btnFAll) btnFAll.classList.toggle('active', reviewFilter === 'all');
-      if (btnFPrep) btnFPrep.classList.toggle('active', reviewFilter === 'preparat');
-      if (btnFTeori) btnFTeori.classList.toggle('active', reviewFilter === 'teori');
+      renderReviewFilterPills();
       playLobbyHoverSound();
       renderReviewCountPills();
     }
@@ -5200,7 +5256,7 @@
 
       let pool = DATA_CARDS.filter(c => !removedCardIds.has(c.id));
       if (reviewFilter !== 'all') {
-        pool = pool.filter(c => c.type === reviewFilter);
+        pool = pool.filter(c => isCardMatchingFilter(c, reviewFilter));
       }
       const totalAvail = pool.length;
 
@@ -5226,7 +5282,7 @@
     function startReviewSimulation() {
       let pool = DATA_CARDS.filter(c => !removedCardIds.has(c.id));
       if (reviewFilter !== 'all') {
-        pool = pool.filter(c => c.type === reviewFilter);
+        pool = pool.filter(c => isCardMatchingFilter(c, reviewFilter));
       }
 
       if (pool.length === 0) {
@@ -5735,16 +5791,11 @@
       // 1. Content Filter Select & Option Counts
       const selectFilter = document.getElementById('selectSettingsFilter');
       if (selectFilter) {
+        const filters = getActiveFiltersList();
+        selectFilter.innerHTML = filters.map(f => {
+          return `<option value="${f.id}">${f.label}</option>`;
+        }).join('');
         selectFilter.value = activeFilter;
-        const optAll = selectFilter.querySelector('option[value="all"]');
-        const optPrep = selectFilter.querySelector('option[value="preparat"]');
-        const optTeori = selectFilter.querySelector('option[value="teori"]');
-        const totalCount = DATA_CARDS.length;
-        const prepCount = DATA_CARDS.filter(c => c.type === 'preparat').length;
-        const teoriCount = DATA_CARDS.filter(c => c.type === 'teori').length;
-        if (optAll) optAll.textContent = `All Cards (${totalCount})`;
-        if (optPrep) optPrep.textContent = `Specimens Only (${prepCount})`;
-        if (optTeori) optTeori.textContent = `Theory Only (${teoriCount})`;
       }
 
       // 2. Play Mode Select
@@ -5855,17 +5906,21 @@
 
         let contentWindowHtml = '';
         const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
-        const bannerLabel = card.type === 'preparat' ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+        const isFarmako = card.category && card.category.includes('FARMAKO');
+        let bannerLabel = card.type === 'preparat' ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+        if (isFarmako) {
+          bannerLabel = `STASI ${cardNum} • FARMAKO`;
+        }
 
-        if (card.type === 'preparat') {
+        if (card.type === 'preparat' && card.image) {
           contentWindowHtml = `
-            <img src="${card.image}" alt="Sediaan Histopatologi" class="card-specimen-img">
+            <img src="${card.image}" alt="Sediaan" class="card-specimen-img">
           `;
         } else {
           contentWindowHtml = `
             <div class="theory-window-wrap">
-              <div class="theory-window-badge">SOAL TEORI PRAKTIKUM</div>
-              <div class="theory-window-prompt">"${card.prompt}"</div>
+              <div class="theory-window-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM'}</div>
+              <div class="theory-window-prompt" style="white-space: pre-line;">"${card.prompt}"</div>
             </div>
           `;
         }
@@ -6024,10 +6079,18 @@
       const labelText = isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
       const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-      activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATOLOGI' : 'TEORI & KASUS'}`;
-      activeIndicatorDesc.textContent = isPrep 
-        ? (isTouch ? 'Geser sediaan • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati sediaan mikroskopik • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan')
-        : (isTouch ? 'Soal teori praktikum • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati soal kasus/teori • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan');
+      const isFarmako = card.category && card.category.includes('FARMAKO');
+      if (isFarmako) {
+        activeIndicatorTitle.textContent = `${labelText} • ${card.sifat || 'FARMAKOLOGI'}`;
+        activeIndicatorDesc.textContent = isTouch
+          ? 'Ketuk untuk melihat mekanisme molekuler & resep'
+          : 'Klik atau tekan Spasi untuk melihat mekanisme molekuler & resep';
+      } else {
+        activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATOLOGI' : 'TEORI & KASUS'}`;
+        activeIndicatorDesc.textContent = isPrep 
+          ? (isTouch ? 'Geser sediaan • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati sediaan mikroskopik • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan')
+          : (isTouch ? 'Soal teori praktikum • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati soal kasus/teori • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan');
+      }
 
       barTrackName.textContent = labelText;
       barSubCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
@@ -6555,32 +6618,51 @@
       if (btnShuff) btnShuff.classList.toggle('active', currentPlayMode === 'shuffle');
     }
 
+    const filterBadgeMap = {
+      'all': 'ALL',
+      'prioritas': 'STAR',
+      'kardio': 'KARD',
+      'diuretik': 'DIUR',
+      'simpatolitik-ccb': 'SIMP',
+      'raas-vasodilator': 'RAAS',
+      'respirasi': 'RESP',
+      'asma-ppok': 'ASMA',
+      'oat': 'OAT',
+      'infeksi-batuk': 'INFK',
+      'resep': 'R/',
+      'preparat': 'PREP',
+      'teori': 'THRY'
+    };
+
     function updateDockFilterUI() {
       const btn = document.getElementById('btnDockFilter');
       const badge = document.getElementById('dockFilterBadge');
       if (!btn) return;
+
+      const filters = getActiveFiltersList();
+      const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'All Cards' };
+      const shortBadge = filterBadgeMap[activeFilter] || (current.badge || activeFilter.substring(0, 4).toUpperCase());
+
       if (activeFilter === 'all') {
         btn.classList.remove('active');
-        btn.title = 'Filter: All Cards [Click to cycle]';
+        btn.title = `Filter: ${current.label} [Click to cycle]`;
         if (badge) badge.textContent = 'ALL';
-      } else if (activeFilter === 'preparat') {
+      } else {
         btn.classList.add('active');
-        btn.title = 'Filter: Specimens Only [Click to cycle]';
-        if (badge) badge.textContent = 'PREP';
-      } else if (activeFilter === 'teori') {
-        btn.classList.add('active');
-        btn.title = 'Filter: Theory Only [Click to cycle]';
-        if (badge) badge.textContent = 'THRY';
+        btn.title = `Filter: ${current.label} [Click to cycle]`;
+        if (badge) badge.textContent = shortBadge;
       }
     }
 
     function cycleFilter() {
       if (isShuffling) return;
-      let nextFilter = 'all';
-      if (activeFilter === 'all') nextFilter = 'preparat';
-      else if (activeFilter === 'preparat') nextFilter = 'teori';
-      else nextFilter = 'all';
-      setFilter(nextFilter);
+      const filters = getActiveFiltersList();
+      if (!filters || filters.length === 0) return;
+      let curIdx = filters.findIndex(f => f.id === activeFilter);
+      if (curIdx === -1) curIdx = 0;
+      const nextIdx = (curIdx + 1) % filters.length;
+      const nextFilter = filters[nextIdx];
+      setFilter(nextFilter.id);
     }
 
     // Toggle between Mode Urut (Sequential) and Mode Acak (Shuffle / Gambling)
@@ -6604,7 +6686,9 @@
       if (btnTeori) btnTeori.classList.toggle('active', filterType === 'teori');
 
       applyDeckFilterAndMode(true);
-      showToast('Filter Applied', `${sessionCards.length} Cards`);
+      const filters = getActiveFiltersList();
+      const curF = filters.find(f => f.id === filterType);
+      showToast('Filter Aktif', curF ? curF.label : `${sessionCards.length} Kartu`);
       updateSettingsUI();
       updateDockFilterUI();
     }
@@ -6883,13 +6967,14 @@
           </div>
         `;
       } else {
+        const isFarmako = card.category && card.category.includes('FARMAKO');
         modalLeftPane.innerHTML = `
           <div class="theory-station-box">
-            <div class="theory-badge">SOAL TEORI & KASUS PRAKTIKUM</div>
+            <div class="theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS PRAKTIKUM'}</div>
             <div class="theory-station-title">${card.diagnosis}</div>
             <div class="theory-station-text">
-              <p style="margin-bottom: 12px;"><strong>Kasus / Skenario Soal:</strong></p>
-              <p style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px;">"${card.prompt}"</p>
+              <p style="margin-bottom: 12px;"><strong>${isFarmako ? 'Stimulus & Pertanyaan Ujian:' : 'Kasus / Skenario Soal:'}</strong></p>
+              <div style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px; white-space: pre-line;">"${card.prompt}"</div>
               <p style="font-size: 13.5px; color: var(--primary); font-weight: 600;">
                 ${currentPack?.subtitle || currentPack?.packName || 'Stasiun soal teori & identifikasi praktikum.'}
               </p>
@@ -6914,42 +6999,43 @@
       }
       const mekanismeList = mekanismeItems.map(m => `<li>${formatBold(m)}</li>`).join('');
 
+      const isFarmako = card.category && card.category.includes('FARMAKO');
       modalRightPane.innerHTML = `
         <div class="diag-title-row">
           <div class="diag-heading">${card.diagnosis}</div>
-          <div class="diag-organ">Organ / Lokasi: ${card.organ}</div>
+          <div class="diag-organ">${isFarmako ? 'Target Organ / Reseptor' : 'Organ / Lokasi'}: ${card.organ}</div>
         </div>
 
         <div class="id-grid-box">
           <div class="id-grid-cell">
-            <div class="cell-label">Klasifikasi / Sifat Jejas</div>
+            <div class="cell-label">${isFarmako ? 'Golongan & Klasifikasi' : 'Klasifikasi / Sifat Jejas'}</div>
             <div class="cell-value">${card.sifat}</div>
           </div>
           <div class="id-grid-cell">
-            <div class="cell-label">Asal Jaringan / Organ</div>
+            <div class="cell-label">${isFarmako ? 'Modul / Praktikum' : 'Asal Jaringan / Organ'}</div>
             <div class="cell-value">${card.asal}</div>
           </div>
         </div>
 
-        <!-- CIRI KHAS HISTOPATOLOGI -->
+        <!-- CIRI KHAS / JAWABAN B -->
         <div class="section-block">
-          <div class="section-heading">CIRI KHAS HISTOPATOLOGI</div>
+          <div class="section-heading">${isFarmako ? 'JAWABAN B • GOLONGAN, SEDIAAN, DOSIS & RESEP' : 'CIRI KHAS HISTOPATOLOGI'}</div>
           <div class="highlight-box">
             <ul class="point-list">${ciriList}</ul>
           </div>
         </div>
 
-        <!-- ETIOLOGI & PATOGENESIS -->
+        <!-- ETIOLOGI / JAWABAN A -->
         <div class="section-block">
-          <div class="section-heading">ETIOLOGI & PATOGENESIS</div>
+          <div class="section-heading">${isFarmako ? 'JAWABAN A • MEKANISME KERJA MOLEKULER' : 'ETIOLOGI & PATOGENESIS'}</div>
           <div class="highlight-box">
-            <ul class="point-list">${mekanismeList}</ul>
+            ${isFarmako && card.full_jawaban_a ? `<div style="font-size: 14px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${card.full_jawaban_a}</div>` : `<ul class="point-list">${mekanismeList}</ul>`}
           </div>
         </div>
 
         <!-- KATA KUNCI IDENTIFIKASI -->
         <div class="section-block">
-          <div class="section-heading">KATA KUNCI IDENTIFIKASI</div>
+          <div class="section-heading">${isFarmako ? 'KATA KUNCI IDENTIFIKASI & MNEMONIK' : 'KATA KUNCI IDENTIFIKASI'}</div>
           <div class="keyword-capsule-box">${card.keywords}</div>
         </div>
       `;
