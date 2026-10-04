@@ -483,6 +483,13 @@
       justify-content: center;
     }
 
+    .card-content-window:has(.theory-window-wrap),
+    .has-text-deck .card-content-window {
+      margin-bottom: 46px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
     .card-specimen-img {
       width: 100%;
       height: 100%;
@@ -498,29 +505,26 @@
       transform: scale(1.05);
     }
 
-    /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY & ZERO OVERFLOW */
+    /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY & ZERO SCROLL */
     .theory-window-wrap {
       width: 100%;
       height: 100%;
-      padding: 10px 12px 42px 12px;
+      padding: 6px 9px 5px 9px;
       display: flex;
       flex-direction: column;
       background-color: #08112e;
-      overflow-y: auto;
-      overscroll-behavior: contain;
+      overflow: hidden !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
       text-align: left;
       box-sizing: border-box;
-      -webkit-overflow-scrolling: touch;
+      user-select: text;
+      -webkit-user-select: text;
     }
     .theory-window-wrap::-webkit-scrollbar {
-      width: 5px;
-    }
-    .theory-window-wrap::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
-    }
-    .theory-window-wrap::-webkit-scrollbar-thumb:hover {
-      background: #ffffff;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
     }
 
     .theory-header-bar {
@@ -528,173 +532,211 @@
       align-items: center;
       justify-content: space-between;
       gap: 6px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       flex-shrink: 0;
     }
     .theory-badge-cluster {
       display: flex;
       align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
+      gap: 5px;
+      min-width: 0;
+      flex-wrap: nowrap;
+      overflow: hidden;
     }
     .theory-window-badge {
       display: inline-flex;
       align-items: center;
-      align-self: flex-start;
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 800;
-      letter-spacing: 1.1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       background-color: var(--white);
       color: var(--primary-deep);
       border-radius: 999px;
-      padding: 2.5px 8px;
+      padding: 2px 7px;
+      white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-subclass-badge {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 700;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       background-color: rgba(255, 255, 255, 0.16);
       color: #dce5ff;
       border-radius: 999px;
-      padding: 2.5px 8px;
+      padding: 2px 7px;
       border: 1px solid rgba(255, 255, 255, 0.22);
-      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 1;
     }
     .theory-star-badge {
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
       background-color: var(--white);
       color: var(--primary-deep);
       border: 1.5px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 2px 7px;
+      padding: 1.5px 6px;
       flex-shrink: 0;
+      white-space: nowrap;
     }
 
-    /* Sleek, compact 1-line stimulus bar */
+    /* Sleek, ultra-compact 1-line stimulus bar */
     .theory-stimulus-bar {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 6px;
-      padding: 3px 8px;
-      margin-bottom: 6px;
+      border-radius: 5px;
+      padding: 2px 6px;
+      margin-bottom: 4px;
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-tag {
       font-family: var(--font-mono);
-      font-size: 8px;
+      font-size: 7.5px;
       font-weight: 900;
-      letter-spacing: 0.8px;
-      padding: 1.5px 5px;
-      border-radius: 4px;
+      letter-spacing: 0.6px;
+      padding: 1px 4px;
+      border-radius: 3px;
       background-color: var(--white);
       color: var(--primary-deep);
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-text {
-      font-size: 11px;
+      font-size: 9.5px;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.3;
+      line-height: 1.25;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .theory-questions-container {
+    /* Streamlined Q&A flow with zero vertical overhead */
+    .theory-qa-flow {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 3.5px;
       flex: 1;
+      min-height: 0;
+      justify-content: space-between;
     }
-    .theory-question-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 7px;
-      padding: 6px 9px;
+    .theory-q-row {
       display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .theory-question-card.q-card-a {
-      border-left: 3.5px solid var(--white);
-    }
-    .theory-question-card.q-card-b {
-      border-left: 3.5px solid rgba(255, 255, 255, 0.7);
-    }
-    .theory-q-head {
-      display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 6px;
+      padding: 3.5px 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+      flex: 1;
+      min-height: 0;
     }
-    .theory-q-letter {
+    .theory-q-row.q-row-a {
+      border-left: 3px solid var(--white);
+    }
+    .theory-q-row.q-row-b {
+      border-left: 3px solid rgba(255, 255, 255, 0.7);
+    }
+    .theory-q-row .q-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 4px;
       font-size: 9px;
       font-weight: 900;
       color: var(--primary-deep);
       background: #ffffff;
       flex-shrink: 0;
+      margin-top: 1px;
     }
-    .theory-question-card.q-card-b .theory-q-letter {
+    .theory-q-row.q-row-b .q-badge {
       background: rgba(255, 255, 255, 0.85);
     }
-    .theory-q-topic {
-      font-size: 8px;
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      color: rgba(255, 255, 255, 0.85);
-      text-transform: uppercase;
-    }
-    .theory-q-text {
-      font-size: 12px;
-      line-height: 1.46;
+    .theory-q-row .q-text {
+      flex: 1;
+      min-width: 0;
+      font-size: 10.6px;
+      line-height: 1.32;
       color: #ffffff;
       font-weight: 500;
       word-break: break-word;
-      user-select: text;
-      -webkit-user-select: text;
+      overflow: hidden;
     }
-    .theory-q-text strong {
+    .theory-q-row .q-text strong {
       color: #ffffff;
       font-weight: 700;
     }
 
+    /* Adaptive text density for longer questions */
+    .theory-window-wrap.is-dense-text .theory-q-row {
+      padding: 2.5px 5px;
+    }
+    .theory-window-wrap.is-dense-text .theory-qa-flow {
+      gap: 2.5px;
+    }
+    .theory-window-wrap.is-dense-text .theory-q-row .q-text {
+      font-size: 9.6px;
+      line-height: 1.25;
+    }
+
+    .theory-window-wrap.is-compact-text .theory-q-row {
+      padding: 2px 4px;
+    }
+    .theory-window-wrap.is-compact-text .theory-qa-flow {
+      gap: 2px;
+    }
+    .theory-window-wrap.is-compact-text .theory-q-row .q-badge {
+      width: 13px;
+      height: 13px;
+      font-size: 8px;
+    }
+    .theory-window-wrap.is-compact-text .theory-q-row .q-text {
+      font-size: 8.8px;
+      line-height: 1.20;
+    }
+
+    /* Standard single-prompt cards */
+    .theory-prompt-full-text {
+      font-size: 11px;
+      line-height: 1.36;
+      color: #ffffff;
+      white-space: pre-line;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .theory-window-wrap.is-dense-text .theory-prompt-full-text {
+      font-size: 10px;
+      line-height: 1.28;
+    }
+    .theory-window-wrap.is-compact-text .theory-prompt-full-text {
+      font-size: 9px;
+      line-height: 1.22;
+    }
+
     .theory-rx-code {
-      margin: 4px 0;
+      margin: 2px 0;
       background: #060c22;
       border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 6px;
-      padding: 4px 7px;
+      border-radius: 4px;
+      padding: 2px 5px;
       overflow-x: auto;
     }
     .theory-rx-code pre {
       margin: 0;
       font-family: var(--font-mono);
-      font-size: 10px;
-      line-height: 1.35;
+      font-size: 9px;
+      line-height: 1.25;
       color: #ffffff;
       white-space: pre;
-    }
-
-    .theory-prompt-full-text {
-      font-size: 12.5px;
-      line-height: 1.5;
-      color: #ffffff;
-      white-space: pre-line;
-      user-select: text;
-      -webkit-user-select: text;
-      margin-top: 4px;
     }
 
     /* BOTTOM OVERLAPPING BANNER */
@@ -2150,6 +2192,26 @@
       .card-banner-btn svg {
         width: 10px;
         height: 10px;
+      }
+
+      .card-content-window:has(.theory-window-wrap),
+      .has-text-deck .card-content-window {
+        margin-bottom: 38px;
+      }
+      .theory-window-wrap {
+        padding: 4px 6px 3px 6px;
+      }
+      .theory-q-row .q-text {
+        font-size: 9.4px;
+        line-height: 1.25;
+      }
+      .theory-window-wrap.is-dense-text .theory-q-row .q-text {
+        font-size: 8.6px;
+        line-height: 1.18;
+      }
+      .theory-window-wrap.is-compact-text .theory-q-row .q-text {
+        font-size: 8px;
+        line-height: 1.14;
       }
 
       /* SPECIMEN INDICATOR */
@@ -6914,14 +6976,22 @@ ${card.resep_teks}
       const stimulusText = card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '').trim() : '';
 
       if (card.soal_a && card.soal_b) {
+        const totalChars = (card.soal_a || '').length + (card.soal_b || '').length;
+        let densityClass = '';
+        if (totalChars > 340) {
+          densityClass = 'is-compact-text';
+        } else if (totalChars > 220) {
+          densityClass = 'is-dense-text';
+        }
+
         return `
-          <div class="theory-window-wrap is-structured-qa">
+          <div class="theory-window-wrap is-structured-qa ${densityClass}">
             <div class="theory-header-bar">
               <div class="theory-badge-cluster">
                 <span class="theory-window-badge">${badgeLabel}</span>
                 ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
               </div>
-              ${card.prioritas_tinggi ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
+              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
             </div>
 
             ${stimulusText ? `
@@ -6931,34 +7001,42 @@ ${card.resep_teks}
               </div>
             ` : ''}
 
-            <div class="theory-questions-container">
-              <div class="theory-question-card q-card-a">
-                <div class="theory-q-head">
-                  <span class="theory-q-letter">A</span>
-                  <span class="theory-q-topic">MEKANISME KERJA MOLEKULER &amp; TARGET</span>
-                </div>
-                <div class="theory-q-text">${formatQuestionText(card.soal_a)}</div>
+            <div class="theory-qa-flow">
+              <div class="theory-q-row q-row-a">
+                <span class="q-badge">A</span>
+                <div class="q-text">${formatQuestionText(card.soal_a)}</div>
               </div>
 
-              <div class="theory-question-card q-card-b">
-                <div class="theory-q-head">
-                  <span class="theory-q-letter">B</span>
-                  <span class="theory-q-topic">GOLONGAN, SEDIAAN, EFEK SAMPING &amp; RESEP</span>
-                </div>
-                <div class="theory-q-text">${formatQuestionText(card.soal_b)}</div>
+              <div class="theory-q-row q-row-b">
+                <span class="q-badge">B</span>
+                <div class="q-text">${formatQuestionText(card.soal_b)}</div>
               </div>
             </div>
           </div>
         `;
       } else {
+        const promptLen = (card.prompt || '').length;
+        let promptDensity = '';
+        if (promptLen > 300) promptDensity = 'is-compact-text';
+        else if (promptLen > 180) promptDensity = 'is-dense-text';
+
         return `
-          <div class="theory-window-wrap is-standard-prompt">
+          <div class="theory-window-wrap is-standard-prompt ${promptDensity}">
             <div class="theory-header-bar">
               <div class="theory-badge-cluster">
                 <span class="theory-window-badge">${badgeLabel}</span>
                 ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
               </div>
+              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
             </div>
+
+            ${stimulusText ? `
+              <div class="theory-stimulus-bar">
+                <span class="stimulus-tag">SEDIAAN</span>
+                <span class="stimulus-text">${escapeHtml(stimulusText)}</span>
+              </div>
+            ` : ''}
+
             <div class="theory-prompt-full-text">
               ${formatQuestionText(card.prompt)}
             </div>
@@ -7046,13 +7124,6 @@ ${card.resep_teks}
             rotateToIndex(idx);
           }
         });
-
-        const theoryWrap = cardEl.querySelector('.theory-window-wrap');
-        if (theoryWrap) {
-          theoryWrap.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
-          theoryWrap.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
-          theoryWrap.addEventListener('wheel', (e) => e.stopPropagation(), { passive: true });
-        }
 
         stage3D.appendChild(cardEl);
       });
