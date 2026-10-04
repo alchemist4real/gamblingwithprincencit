@@ -42,8 +42,8 @@
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Special Elite', cursive, monospace, sans-serif;
-      --card-w: clamp(400px, 38vw, 580px);
-      --card-h: clamp(260px, 25vw, 375px);
+      --card-w: clamp(440px, 44vw, 650px);
+      --card-h: clamp(285px, 29vw, 420px);
     }
 
     * {
@@ -354,6 +354,10 @@
       flex-direction: row;
       padding: 10px 12px 10px 10px;
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
       opacity: 1;
       user-select: none;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -361,13 +365,14 @@
                   box-shadow 0.25s ease;
     }
 
-    /* ACTIVE CARD: CONTRASTING MIDNIGHT COLLECTIBLE CARD POP (WARNA KITA) */
+    /* ACTIVE CARD: CONTRASTING MIDNIGHT COLLECTIBLE CARD POP (WARNA KITA) - RAZOR SHARP HD */
     .big-card.is-active {
       background-color: var(--primary-deep);
       border: 3.5px solid var(--white);
       z-index: 50;
       box-shadow: 0 0 0 3px var(--primary-deep), 0 0 0 8px var(--white);
       opacity: 1 !important;
+      transform-style: flat;
     }
 
     .big-card.is-active .card-vertical-title {
@@ -428,20 +433,20 @@
 
     /* LEFT VERTICAL BRANDING RAIL */
     .card-left-rail {
-      width: 25px;
+      width: 28px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2px 0 4px;
-      margin-right: 7px;
+      padding: 3px 0 5px;
+      margin-right: 8px;
       position: relative;
     }
 
     .card-pip {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       border-radius: 999px;
       background-color: var(--primary);
       border: 2px solid var(--primary-deep);
@@ -450,9 +455,9 @@
 
     .card-vertical-title {
       font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: normal;
-      letter-spacing: 3px;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
       color: var(--primary-deep);
       writing-mode: vertical-lr;
@@ -488,8 +493,8 @@
 
     .card-content-window:has(.theory-window-wrap),
     .has-text-deck .card-content-window {
-      margin-bottom: 44px;
-      border-radius: 12px;
+      margin-bottom: 48px;
+      border-radius: 14px;
       overflow: hidden;
     }
 
@@ -499,20 +504,25 @@
       object-fit: cover;
       object-position: center;
       display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .big-card.is-active .card-specimen-img {
-      transform: scale(1.02);
+      transform: none !important;
     }
     .big-card:hover .card-specimen-img {
-      transform: scale(1.05);
+      transform: none;
     }
 
     /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY & ZERO SCROLL */
     .theory-window-wrap {
       width: 100%;
       height: 100%;
-      padding: 5px 8px 3px 8px;
+      padding: 8px 12px 6px 12px;
       display: flex;
       flex-direction: column;
       background-color: #08112e;
@@ -534,14 +544,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 4px;
-      margin-bottom: 3px;
+      gap: 6px;
+      margin-bottom: 5px;
       flex-shrink: 0;
     }
     .theory-badge-cluster {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       min-width: 0;
       flex: 1;
       overflow: hidden;
@@ -549,81 +559,81 @@
     .theory-window-badge {
       display: inline-flex;
       align-items: center;
-      font-size: 7.8px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       background-color: var(--white);
       color: var(--primary-deep);
       border-radius: 999px;
-      padding: 1.5px 5.5px;
+      padding: 2.5px 8px;
       white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-subclass-badge {
-      font-size: 7.5px;
+      font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       background-color: rgba(255, 255, 255, 0.16);
       color: #dce5ff;
       border-radius: 999px;
-      padding: 1.5px 5.5px;
+      padding: 2px 8px;
       border: 1px solid rgba(255, 255, 255, 0.22);
       white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-star-badge {
-      font-size: 7.5px;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 0.5px;
       background-color: var(--white);
       color: var(--primary-deep);
       border: 1.5px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 1px 5px;
+      padding: 2px 7px;
       flex-shrink: 0;
       white-space: nowrap;
     }
 
-    /* Sleek, ultra-compact 1-line stimulus bar */
+    /* Sleek 1-line stimulus bar */
     .theory-stimulus-bar {
       display: flex;
       align-items: center;
-      gap: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-      padding: 1.5px 5px;
-      margin-bottom: 3px;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin-bottom: 5px;
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-tag {
       font-family: var(--font-mono);
-      font-size: 7px;
+      font-size: 10px;
       font-weight: 900;
-      letter-spacing: 0.5px;
-      padding: 1px 4px;
-      border-radius: 3px;
+      letter-spacing: 0.6px;
+      padding: 2px 6px;
+      border-radius: 4px;
       background-color: var(--white);
       color: var(--primary-deep);
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-text {
-      font-size: 8.8px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.2;
+      line-height: 1.3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    /* Streamlined Q&A flow with zero vertical overhead */
+    /* Streamlined Q&A flow */
     .theory-qa-flow {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 5px;
       flex: 1;
       min-height: 0;
       justify-content: flex-start;
@@ -631,27 +641,27 @@
     .theory-q-row {
       display: flex;
       align-items: flex-start;
-      gap: 5px;
-      padding: 2.2px 5px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 6px;
+      gap: 8px;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 7px;
       min-height: 0;
     }
     .theory-q-row.q-row-a {
-      border-left: 3px solid var(--white);
+      border-left: 3.5px solid var(--white);
     }
     .theory-q-row.q-row-b {
-      border-left: 3px solid rgba(255, 255, 255, 0.7);
+      border-left: 3.5px solid rgba(255, 255, 255, 0.7);
     }
     .theory-q-row .q-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 14px;
-      height: 14px;
-      border-radius: 4px;
-      font-size: 8.5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      font-size: 11.5px;
       font-weight: 900;
       color: var(--primary-deep);
       background: #ffffff;
@@ -664,8 +674,8 @@
     .theory-q-row .q-text {
       flex: 1;
       min-width: 0;
-      font-size: 10.2px;
-      line-height: 1.28;
+      font-size: 13.5px;
+      line-height: 1.36;
       color: #ffffff;
       font-weight: 500;
       word-break: break-word;
@@ -678,53 +688,53 @@
 
     /* Adaptive text density for longer questions */
     .theory-window-wrap.is-dense-text .theory-q-row {
-      padding: 2px 4.5px;
+      padding: 3px 7px;
     }
     .theory-window-wrap.is-dense-text .theory-qa-flow {
-      gap: 2.5px;
+      gap: 4px;
     }
     .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-      font-size: 9.2px;
-      line-height: 1.22;
+      font-size: 12.2px;
+      line-height: 1.3;
     }
 
     .theory-window-wrap.is-compact-text .theory-q-row {
-      padding: 1.8px 4px;
+      padding: 2.5px 6px;
     }
     .theory-window-wrap.is-compact-text .theory-qa-flow {
-      gap: 2px;
+      gap: 3.5px;
     }
     .theory-window-wrap.is-compact-text .theory-q-row .q-badge {
-      width: 13px;
-      height: 13px;
-      font-size: 8px;
+      width: 16px;
+      height: 16px;
+      font-size: 10.5px;
     }
     .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-      font-size: 8.4px;
-      line-height: 1.18;
+      font-size: 11.4px;
+      line-height: 1.25;
     }
 
-    /* Ultra-compact for cards with long multi-part questions (e.g. Card 201) */
+    /* Ultra-compact for cards with long multi-part questions */
     .theory-window-wrap.is-ultra-compact .theory-q-row {
-      padding: 1.5px 3.5px;
+      padding: 2px 5px;
     }
     .theory-window-wrap.is-ultra-compact .theory-qa-flow {
-      gap: 2px;
+      gap: 3px;
     }
     .theory-window-wrap.is-ultra-compact .theory-q-row .q-badge {
-      width: 12px;
-      height: 12px;
-      font-size: 7.5px;
+      width: 15px;
+      height: 15px;
+      font-size: 10px;
     }
     .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
-      font-size: 7.8px;
-      line-height: 1.14;
+      font-size: 10.6px;
+      line-height: 1.2;
     }
 
     /* Standard single-prompt cards */
     .theory-prompt-full-text {
-      font-size: 11px;
-      line-height: 1.36;
+      font-size: 14.5px;
+      line-height: 1.45;
       color: #ffffff;
       white-space: pre-line;
       flex: 1;
@@ -732,12 +742,12 @@
       overflow: hidden;
     }
     .theory-window-wrap.is-dense-text .theory-prompt-full-text {
-      font-size: 10px;
-      line-height: 1.28;
+      font-size: 13.5px;
+      line-height: 1.38;
     }
     .theory-window-wrap.is-compact-text .theory-prompt-full-text {
-      font-size: 9px;
-      line-height: 1.22;
+      font-size: 12.5px;
+      line-height: 1.32;
     }
 
     .theory-rx-code {
@@ -763,14 +773,14 @@
       bottom: 6px;
       left: -14px;
       right: 0;
-      height: 38px;
+      height: 42px;
       background-color: var(--primary);
       border: 2px solid var(--primary-deep);
-      border-radius: 9px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 10px 0 44px;
+      padding: 0 12px 0 48px;
       z-index: 10;
     }
 
@@ -780,8 +790,8 @@
       left: -4px;
       top: 50%;
       transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       background-color: var(--white);
       border: 2.5px solid var(--primary-deep);
@@ -793,16 +803,16 @@
     }
 
     .card-emblem-icon {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       color: var(--primary-deep);
     }
 
     .card-banner-title {
       font-family: var(--font-display);
-      font-size: 14.5px;
+      font-size: 16.5px;
       font-weight: normal;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--white);
       line-height: 1;
@@ -871,7 +881,7 @@
 
     .active-specimen-title {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
       font-weight: normal;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -881,8 +891,8 @@
     }
 
     .active-specimen-desc {
-      font-size: 0.80rem;
-      color: var(--white-75);
+      font-size: clamp(0.85rem, 1.2vw, 0.98rem);
+      color: var(--white-90);
       line-height: 1.4;
     }
 
@@ -2098,8 +2108,8 @@
        ======================================================= */
     @media (min-width: 601px) and (max-width: 1024px) {
       :root {
-        --card-w: clamp(360px, 52vw, 480px);
-        --card-h: clamp(235px, 34vw, 315px);
+        --card-w: clamp(380px, 56vw, 520px);
+        --card-h: clamp(245px, 36vw, 340px);
       }
       body {
         padding: max(12px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
@@ -2136,8 +2146,8 @@
        ======================================================= */
     @media (max-width: 600px) {
       :root {
-        --card-w: min(340px, 88vw);
-        --card-h: min(228px, 33vh);
+        --card-w: min(355px, 92vw);
+        --card-h: min(240px, 36vh);
       }
       html, body {
         padding: max(8px, env(safe-area-inset-top)) 8px max(12px, env(safe-area-inset-bottom));
@@ -2179,7 +2189,7 @@
         padding: 7px 8px 7px 6px;
       }
       .card-left-rail {
-        width: 20px;
+        width: 22px;
         margin-right: 6px;
       }
       .card-pip {
@@ -2187,26 +2197,26 @@
         height: 10px;
       }
       .card-vertical-title {
-        font-size: 9px;
-        letter-spacing: 1.5px;
+        font-size: 11px;
+        letter-spacing: 2px;
       }
       .card-bottom-banner {
-        height: 34px;
+        height: 36px;
         left: -8px;
-        padding: 0 8px 0 38px;
+        padding: 0 10px 0 40px;
         bottom: 5px;
       }
       .card-emblem-badge {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
         left: -4px;
       }
       .card-emblem-icon {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
       }
       .card-banner-title {
-        font-size: 12px;
+        font-size: 13.5px;
       }
       .card-banner-actions {
         padding: 1px 2px;
@@ -2223,29 +2233,44 @@
 
       .card-content-window:has(.theory-window-wrap),
       .has-text-deck .card-content-window {
-        margin-bottom: 38px;
+        margin-bottom: 40px;
       }
       .theory-window-wrap {
-        padding: 5px 7px 4px 7px;
+        padding: 6px 8px 5px 8px;
+      }
+      .theory-window-badge {
+        font-size: 9.5px;
+        padding: 2px 6px;
+      }
+      .theory-subclass-badge {
+        font-size: 9px;
+        padding: 1.5px 6px;
+      }
+      .theory-stimulus-bar .stimulus-text {
+        font-size: 11px;
       }
       .theory-q-row .q-text {
-        font-size: 9.6px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.32;
       }
       .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-        font-size: 8.8px;
-        line-height: 1.18;
+        font-size: 10.8px;
+        line-height: 1.25;
       }
       .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-        font-size: 8.2px;
-        line-height: 1.14;
+        font-size: 10.2px;
+        line-height: 1.2;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row {
         padding: 1px 3px;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
-        font-size: 7.6px;
-        line-height: 1.10;
+        font-size: 9.5px;
+        line-height: 1.15;
+      }
+      .theory-prompt-full-text {
+        font-size: 12.5px;
+        line-height: 1.35;
       }
 
       /* SPECIMEN INDICATOR */
@@ -7029,7 +7054,7 @@ ${card.resep_teks}
 
         if (card.type === 'preparat' && card.image) {
           contentWindowHtml = `
-            <img src="${card.image}" alt="Card" class="card-specimen-img">
+            <img src="${card.image}" alt="Specimen" class="card-specimen-img" loading="eager" decoding="sync">
           `;
         } else {
           contentWindowHtml = renderTheoryCardContent(card);
@@ -7120,19 +7145,16 @@ ${card.resep_teks}
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
         if (offset === 0) {
-          // ACTIVE CARD: MAX BIGGER, HERO DISPLAY
+          // ACTIVE CARD: MAX BIGGER, 1:1 HD CRISP RASTERIZATION (ZERO SCALING BLUR)
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isMobile ? 1.05 : (isTablet ? 1.07 : 1.10);
-          const activeZ = isMobile ? 30 : 48;
-
           if (isRapid && rapidDir === 'next') {
-            cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(${activeZ + 8}px) rotateY(-8deg) rotateZ(2deg) scale(${activeScale + 0.02})`;
+            cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(8px) rotateY(-8deg) rotateZ(2deg) scale(1)`;
           } else if (isRapid && rapidDir === 'prev') {
-            cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(${activeZ + 8}px) rotateY(8deg) rotateZ(-2deg) scale(${activeScale + 0.02})`;
+            cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(8px) rotateY(8deg) rotateZ(-2deg) scale(1)`;
           } else {
-            cardEl.style.transform = `translateX(0px) translateY(0px) translateZ(${activeZ}px) rotateY(0deg) rotateZ(0deg) scale(${activeScale})`;
+            cardEl.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateY(0deg) rotateZ(0deg) scale(1)`;
           }
         } else {
           cardEl.classList.remove('is-active');
@@ -7144,19 +7166,19 @@ ${card.resep_teks}
             tx = dir * (isMobile ? 140 : (isTablet ? 210 : 280));
             tz = isMobile ? -50 : -70;
             ry = -dir * (isMobile ? 16 : 22);
-            sc = isMobile ? 0.76 : (isTablet ? 0.78 : 0.80);
+            sc = isMobile ? 0.74 : (isTablet ? 0.76 : 0.78);
             zi = 40;
           } else if (absOff === 2) {
             tx = dir * (isMobile ? 240 : (isTablet ? 340 : 450));
             tz = isMobile ? -100 : -140;
             ry = -dir * (isMobile ? 26 : 34);
-            sc = isMobile ? 0.60 : (isTablet ? 0.63 : 0.66);
+            sc = isMobile ? 0.58 : (isTablet ? 0.61 : 0.64);
             zi = 30;
           } else {
             tx = dir * (isMobile ? 320 : (isTablet ? 450 : 580));
             tz = isMobile ? -150 : -200;
             ry = -dir * (isMobile ? 34 : 42);
-            sc = isMobile ? 0.46 : (isTablet ? 0.50 : 0.52);
+            sc = isMobile ? 0.44 : (isTablet ? 0.48 : 0.50);
             zi = 20;
           }
 
