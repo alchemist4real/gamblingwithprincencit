@@ -613,195 +613,200 @@
     .theory-window-badge {
       display: inline-flex;
       align-items: center;
-      font-size: 11px;
+      font-size: clamp(12.5px, 1.05vw, 14px);
       font-weight: 800;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       background-color: var(--white);
       color: var(--primary-deep);
       border-radius: 999px;
-      padding: 2.5px 8px;
+      padding: 3.5px 10px;
       white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-subclass-badge {
-      font-size: 10.5px;
+      font-size: clamp(12px, 1vw, 13.5px);
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       background-color: rgba(255, 255, 255, 0.16);
       color: #dce5ff;
       border-radius: 999px;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border: 1px solid rgba(255, 255, 255, 0.22);
       white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-star-badge {
-      font-size: 10.5px;
+      font-size: clamp(12px, 1vw, 13.5px);
       font-weight: 800;
       letter-spacing: 0.5px;
       background-color: var(--white);
       color: var(--primary-deep);
       border: 1.5px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 2px 7px;
+      padding: 3px 9px;
       flex-shrink: 0;
       white-space: nowrap;
     }
 
-    /* Sleek 1-line stimulus bar */
+    /* Highly readable stimulus bar - wraps text, no awkward truncation */
     .theory-stimulus-bar {
       display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 6px;
-      padding: 3px 8px;
-      margin-bottom: 5px;
+      align-items: flex-start;
+      gap: 9px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: clamp(7px, 1.1vh, 11px) 12px;
+      margin-bottom: clamp(6px, 1vh, 12px);
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-tag {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: 0.6px;
-      padding: 2px 6px;
-      border-radius: 4px;
+      letter-spacing: 0.8px;
+      padding: 3px 7px;
+      border-radius: 5px;
       background-color: var(--white);
       color: var(--primary-deep);
       flex-shrink: 0;
+      margin-top: 1px;
     }
     .theory-stimulus-bar .stimulus-text {
-      font-size: 12.5px;
-      font-weight: 700;
+      font-size: clamp(15px, 1.3vw, 18px);
+      font-weight: 600;
       color: #ffffff;
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.45;
+      white-space: normal;
+      word-break: break-word;
     }
 
-    /* Streamlined Q&A flow */
+    /* Bold, spacious, high-contrast Q&A flow */
     .theory-qa-flow {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: clamp(8px, 1.4vh, 15px);
       flex: 1;
       min-height: 0;
-      justify-content: flex-start;
+      justify-content: center;
     }
     .theory-q-row {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      padding: 4px 8px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 7px;
+      gap: 12px;
+      padding: clamp(8px, 1.25vh, 14px) clamp(10px, 1.2vw, 16px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.20);
+      border-radius: 10px;
       min-height: 0;
     }
     .theory-q-row.q-row-a {
-      border-left: 3.5px solid var(--white);
+      border-left: 4.5px solid var(--white);
     }
     .theory-q-row.q-row-b {
-      border-left: 3.5px solid rgba(255, 255, 255, 0.7);
+      border-left: 4.5px solid rgba(255, 255, 255, 0.82);
     }
     .theory-q-row .q-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 5px;
-      font-size: 11.5px;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      font-size: 14px;
       font-weight: 900;
       color: var(--primary-deep);
       background: #ffffff;
       flex-shrink: 0;
-      margin-top: 1px;
+      margin-top: 2px;
     }
     .theory-q-row.q-row-b .q-badge {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.92);
     }
     .theory-q-row .q-text {
       flex: 1;
       min-width: 0;
-      font-size: 13.5px;
-      line-height: 1.36;
+      font-size: clamp(16px, 1.42vw, 20.5px);
+      line-height: 1.46;
       color: #ffffff;
-      font-weight: 500;
+      font-weight: 600;
       word-break: break-word;
-      overflow: hidden;
     }
     .theory-q-row .q-text strong {
       color: #ffffff;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    /* Adaptive text density for longer questions */
+    /* Adaptive text density for long questions */
     .theory-window-wrap.is-dense-text .theory-q-row {
-      padding: 3px 7px;
+      padding: clamp(6px, 1vh, 11px) 12px;
     }
     .theory-window-wrap.is-dense-text .theory-qa-flow {
-      gap: 4px;
+      gap: clamp(6px, 1vh, 10px);
     }
     .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-      font-size: 12.2px;
-      line-height: 1.3;
+      font-size: clamp(14.5px, 1.25vw, 18px);
+      line-height: 1.40;
     }
 
     .theory-window-wrap.is-compact-text .theory-q-row {
-      padding: 2.5px 6px;
+      padding: 5px 10px;
     }
     .theory-window-wrap.is-compact-text .theory-qa-flow {
-      gap: 3.5px;
+      gap: 6px;
     }
     .theory-window-wrap.is-compact-text .theory-q-row .q-badge {
-      width: 16px;
-      height: 16px;
-      font-size: 10.5px;
+      width: 22px;
+      height: 22px;
+      font-size: 12.5px;
     }
     .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-      font-size: 11.4px;
-      line-height: 1.25;
+      font-size: clamp(13.5px, 1.15vw, 16.5px);
+      line-height: 1.34;
     }
 
     /* Ultra-compact for cards with long multi-part questions */
     .theory-window-wrap.is-ultra-compact .theory-q-row {
-      padding: 2px 5px;
+      padding: 4px 8px;
     }
     .theory-window-wrap.is-ultra-compact .theory-qa-flow {
-      gap: 3px;
+      gap: 5px;
     }
     .theory-window-wrap.is-ultra-compact .theory-q-row .q-badge {
-      width: 15px;
-      height: 15px;
-      font-size: 10px;
+      width: 20px;
+      height: 20px;
+      font-size: 11.5px;
     }
     .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
-      font-size: 10.6px;
-      line-height: 1.2;
+      font-size: clamp(12.5px, 1.05vw, 15px);
+      line-height: 1.28;
     }
 
     /* Standard single-prompt cards */
     .theory-prompt-full-text {
-      font-size: 14.5px;
-      line-height: 1.45;
+      font-size: clamp(16.5px, 1.5vw, 22px);
+      line-height: 1.52;
       color: #ffffff;
+      font-weight: 600;
       white-space: pre-line;
       flex: 1;
       min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 14px;
       overflow: hidden;
     }
     .theory-window-wrap.is-dense-text .theory-prompt-full-text {
-      font-size: 13.5px;
-      line-height: 1.38;
+      font-size: clamp(15px, 1.3vw, 19px);
+      line-height: 1.44;
     }
     .theory-window-wrap.is-compact-text .theory-prompt-full-text {
-      font-size: 12.5px;
-      line-height: 1.32;
+      font-size: clamp(13.5px, 1.15vw, 17px);
+      line-height: 1.36;
     }
 
     .theory-rx-code {
@@ -864,9 +869,9 @@
 
     .card-banner-title {
       font-family: var(--font-display);
-      font-size: 16.5px;
-      font-weight: normal;
-      letter-spacing: 2px;
+      font-size: clamp(17px, 1.55vw, 22px);
+      font-weight: 700;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--white);
       line-height: 1;
@@ -1191,24 +1196,7 @@
        STRICT MONOCHROMATIC PALETTE: #172b7a, #314fba, #ffffff (ZERO BLACK)
        ======================================================= */
     .screen-scrim {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(13, 27, 77, 0.72) 0%, rgba(6, 12, 38, 0.92) 100%);
-      z-index: 3400; /* Just below toast (3600) */
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(3px);
-      -webkit-backdrop-filter: blur(3px);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    body.toast-active .screen-scrim,
-    .screen-scrim.active {
-      opacity: 1;
-      pointer-events: auto;
+      display: none !important;
     }
 
     .scrim-motif-canvas {
@@ -2012,78 +2000,51 @@
     }
 
     /* =======================================================
-       GAME-STYLE CENTER SPLASH TOAST (DEAD CENTER, IMPACTFUL, ANIMATED)
-       PURE SOLID COLLECTIBLE CARD AESTHETIC - ZERO AI SLOP
+       SLEEK LIGHTWEIGHT TOP HUD TOAST (NON-INTRUSIVE & SNAPPY)
        ======================================================= */
     .toast-notice {
       position: fixed;
-      top: 50%;
+      top: max(16px, env(safe-area-inset-top));
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.65) rotate(-3deg);
+      transform: translate(-50%, -16px) scale(0.96);
       opacity: 0;
       pointer-events: none;
       z-index: 3600;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: opacity 0.16s ease, transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .toast-notice.show {
-      animation: gameToastSplash 1.45s cubic-bezier(0.16, 1.25, 0.3, 1) forwards;
-    }
-
-    @keyframes gameToastSplash {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.60) rotate(-4deg);
-      }
-      18% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.08) rotate(1deg);
-      }
-      26% {
-        transform: translate(-50%, -50%) scale(0.98) rotate(0deg);
-      }
-      34% {
-        transform: translate(-50%, -50%) scale(1.02) rotate(0deg);
-      }
-      42% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-      }
-      82% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.14) translateY(-14px) rotate(1.5deg);
-      }
+      opacity: 1;
+      transform: translate(-50%, 0) scale(1);
     }
 
     .toast-card-badge {
       background-color: var(--white);
-      border: 3.5px solid var(--primary-deep);
-      border-radius: 24px;
-      padding: clamp(14px, 2.5vh, 22px) clamp(22px, 3.5vw, 36px);
-      box-shadow: 0 8px 0 var(--primary-deep), 0 0 0 6px var(--white);
+      border: 2px solid var(--primary-deep);
+      border-radius: 999px;
+      padding: 6px 16px;
+      box-shadow: 0 4px 14px rgba(23, 43, 122, 0.22);
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-width: clamp(260px, 38vw, 380px);
+      min-width: auto;
       max-width: 90vw;
       text-align: center;
       user-select: none;
+      pointer-events: none;
     }
 
     .toast-emblem-wrap {
-      width: 44px;
-      height: 44px;
+      width: 24px;
+      height: 24px;
       border-radius: 999px;
       background-color: var(--primary);
-      border: 2.5px solid var(--primary-deep);
-      box-shadow: 0 0 0 2px var(--white);
+      border: 1.5px solid var(--primary-deep);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2092,40 +2053,40 @@
     }
 
     .toast-emblem-icon {
-      width: 24px;
-      height: 24px;
+      width: 13px;
+      height: 13px;
     }
 
     .toast-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      gap: 3px;
+      gap: 6px;
     }
 
     .toast-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.5vw, 1.85rem);
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       color: var(--primary-deep);
-      line-height: 1.1;
-      -webkit-text-stroke: 0.5px var(--primary-deep);
+      line-height: 1;
     }
 
     .toast-subtext {
       font-family: var(--font-main);
-      font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--primary);
-      letter-spacing: 0.8px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      background-color: #f6f8fe;
-      border: 1.5px solid var(--primary-deep);
+      background-color: #f0f3ff;
+      border: 1px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 3px 12px;
-      margin-top: 4px;
+      padding: 2px 8px;
+      line-height: 1;
+      margin: 0;
     }
 
     /* LIGHTBOX FOR FULL IMAGE ZOOM */
@@ -2316,41 +2277,60 @@
         margin-bottom: 40px;
       }
       .theory-window-wrap {
-        padding: 6px 8px 5px 8px;
+        padding: 8px 10px 6px 10px;
       }
       .theory-window-badge {
-        font-size: 9.5px;
-        padding: 2px 6px;
+        font-size: 11px;
+        padding: 2.5px 7px;
       }
       .theory-subclass-badge {
-        font-size: 9px;
-        padding: 1.5px 6px;
+        font-size: 10.5px;
+        padding: 2px 7px;
+      }
+      .theory-stimulus-bar {
+        padding: 5px 8px;
+        gap: 6px;
+      }
+      .theory-stimulus-bar .stimulus-tag {
+        font-size: 10px;
+        padding: 2px 5px;
       }
       .theory-stimulus-bar .stimulus-text {
-        font-size: 11px;
+        font-size: 13.5px;
+        line-height: 1.4;
+      }
+      .theory-q-row {
+        padding: 6px 9px;
+        gap: 9px;
+      }
+      .theory-q-row .q-badge {
+        width: 22px;
+        height: 22px;
+        font-size: 12.5px;
       }
       .theory-q-row .q-text {
-        font-size: 12px;
-        line-height: 1.32;
+        font-size: 14.5px;
+        line-height: 1.4;
       }
       .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-        font-size: 10.8px;
-        line-height: 1.25;
+        font-size: 13px;
+        line-height: 1.35;
       }
       .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-        font-size: 10.2px;
-        line-height: 1.2;
+        font-size: 12px;
+        line-height: 1.3;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row {
-        padding: 1px 3px;
+        padding: 3px 6px;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
-        font-size: 9.5px;
-        line-height: 1.15;
+        font-size: 11.5px;
+        line-height: 1.25;
       }
       .theory-prompt-full-text {
-        font-size: 12.5px;
-        line-height: 1.35;
+        font-size: 15px;
+        line-height: 1.45;
+        padding: 6px 8px;
       }
 
       /* SPECIMEN INDICATOR */
@@ -6942,7 +6922,6 @@ ${card.resep_teks}
     let toastTimer = null;
     function showToast(titleOrText, sub = null) {
       const toastNotice = document.getElementById('toastNotice');
-      const screenScrim = document.getElementById('screenScrim');
       if (!toastNotice) return;
 
       let title = titleOrText;
@@ -6973,32 +6952,18 @@ ${card.resep_teks}
         }
       }
 
-      // Snappy restart of toast card and converging batik cloud scrim
-      document.body.classList.add('toast-active');
-      if (screenScrim) {
-        screenScrim.classList.remove('active');
-        void screenScrim.offsetWidth;
-        screenScrim.classList.add('active');
-      }
-
-      toastNotice.classList.remove('show');
-      void toastNotice.offsetWidth;
+      // Snappy, non-blocking toast notice
       toastNotice.classList.add('show');
 
-      // Crisp game toast audio cue
+      // Crisp subtle tone
       if (typeof playTone === 'function') {
-        playTone(587.33, 'sine', 0.08);
-        setTimeout(() => playTone(880, 'sine', 0.12), 70);
-      } else if (typeof playSelectSound === 'function') {
-        playSelectSound();
+        playTone(659.25, 'sine', 0.05);
       }
 
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => {
         toastNotice.classList.remove('show');
-        if (screenScrim) screenScrim.classList.remove('active');
-        document.body.classList.remove('toast-active');
-      }, 1450);
+      }, 750);
     }
 
     function shuffleCardsArray(array) {
@@ -7066,11 +7031,11 @@ ${card.resep_teks}
       if (card.soal_a && card.soal_b) {
         const totalChars = (card.soal_a || '').length + (card.soal_b || '').length;
         let densityClass = '';
-        if (totalChars > 390) {
+        if (totalChars > 520) {
           densityClass = 'is-ultra-compact';
-        } else if (totalChars > 290) {
+        } else if (totalChars > 380) {
           densityClass = 'is-compact-text';
-        } else if (totalChars > 190) {
+        } else if (totalChars > 260) {
           densityClass = 'is-dense-text';
         }
 
@@ -7107,9 +7072,9 @@ ${card.resep_teks}
       } else {
         const promptLen = (card.prompt || '').length;
         let promptDensity = '';
-        if (promptLen > 380) promptDensity = 'is-ultra-compact';
-        else if (promptLen > 280) promptDensity = 'is-compact-text';
-        else if (promptLen > 180) promptDensity = 'is-dense-text';
+        if (promptLen > 480) promptDensity = 'is-ultra-compact';
+        else if (promptLen > 350) promptDensity = 'is-compact-text';
+        else if (promptLen > 240) promptDensity = 'is-dense-text';
 
         return `
           <div class="theory-window-wrap is-standard-prompt ${promptDensity}">
@@ -7240,7 +7205,7 @@ ${card.resep_teks}
         } else if (isRapid) {
           cardEl.style.transition = 'transform 0.075s linear, border-color 0.1s ease';
         } else {
-          cardEl.style.transition = 'transform 0.45s cubic-bezier(0.16, 1.15, 0.3, 1), border-color 0.25s ease';
+          cardEl.style.transition = 'transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s ease';
         }
 
         if (Math.abs(offset) > 3) {
@@ -7398,271 +7363,132 @@ ${card.resep_teks}
       }
     }
 
-    // STYLE 1: RIFFLE SHUFFLE & WATERFALL BRIDGE CASCADE
+    // STYLE 1: SNAPPY RIFFLE & BRIDGE SNAP (260ms)
     function runRiffleBridgeShuffle(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.34s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
-      });
+      const animatedCards = cards.slice(0, 8);
+      const splitDist = isMobile ? 32 : 45;
 
-      setTimeout(() => {
-        const splitDist = isMobile ? 65 : (isTablet ? 85 : 110);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1)';
-          const isLeft = i % 2 === 0;
-          const tx = isLeft ? -splitDist : splitDist;
-          const rz = isLeft ? -6 : 6;
-          const ry = isLeft ? -10 : 10;
-          card.style.transform = `translateX(${tx}px) translateY(0px) translateZ(${(i % 20) * 0.5}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(0.95)`;
-        });
-      }, 340);
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 0.9, 0.3, 1)';
+        const isLeft = i % 2 === 0;
+        card.style.transform = `translateX(${isLeft ? -splitDist : splitDist}px) translateY(-6px) translateZ(14px) rotateZ(${isLeft ? -4 : 4}deg) scale(0.97)`;
+      });
 
       setTimeout(() => {
         playRiffleSound();
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.18s cubic-bezier(0.15, 0.9, 0.25, 1)';
-            card.style.transform = `translateX(0px) translateY(-8px) translateZ(${12 + i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
-          }, i * 13);
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(0px) translateY(2px) translateZ(8px) rotateZ(0deg) scale(0.98)';
         });
-      }, 640);
+      }, 120);
 
       setTimeout(() => {
         playDeckSlap();
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.12s ease-in';
-          card.style.transform = `translateX(0px) translateY(12px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
-        });
-      }, 1220);
+      }, 210);
 
-      setTimeout(onComplete, 1400);
+      setTimeout(onComplete, 260);
     }
 
-    // STYLE 2: CASINO FELT TABLE WASH & SWIRL VORTEX
+    // STYLE 2: QUICK TABLE WASH (260ms)
     function runTableWashShuffle(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+      playWashSwirlSound();
+      const animatedCards = cards.slice(0, 8);
+
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.12s ease-out';
+        const angle = (i / 8) * Math.PI * 2;
+        const tx = Math.cos(angle) * (isMobile ? 24 : 36);
+        const ty = Math.sin(angle) * (isMobile ? 14 : 20);
+        card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(12px) rotateZ(${(i % 3 - 1) * 5}deg) scale(0.96)`;
       });
 
-      // Swirl outward into circular table wash pattern
       setTimeout(() => {
-        playWashSwirlSound();
-        triggerControllerRumble(240, 0.3, 0.55);
-        const total = cards.length;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.42s cubic-bezier(0.16, 0.9, 0.28, 1)';
-          const angle = (i / total) * Math.PI * 4;
-          const radius = isMobile ? (42 + (i % 4) * 16) : (65 + (i % 5) * 24);
-          const tx = Math.cos(angle) * radius;
-          const ty = Math.sin(angle) * (radius * 0.42);
-          const rz = ((i * 47) % 60) - 30;
-          const ry = ((i * 29) % 32) - 16;
-          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${(i % 8) * 2}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(0.88)`;
-        });
-      }, 260);
-
-      // Reverse swirl sweeping motion
-      setTimeout(() => {
-        const total = cards.length;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.36s ease-in-out';
-          const angle = (i / total) * Math.PI * 4 + Math.PI * 0.8;
-          const radius = isMobile ? (38 + (i % 4) * 14) : (55 + (i % 5) * 20);
-          const tx = Math.cos(angle) * radius;
-          const ty = Math.sin(angle) * (radius * 0.42);
-          const rz = -(((i * 47) % 60) - 30);
-          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${(i % 8) * 2}px) rotateZ(${rz}deg) scale(0.90)`;
-        });
-      }, 680);
-
-      // Vacuum gather back to center deck
-      setTimeout(() => {
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.20s cubic-bezier(0.2, 1, 0.3, 1)';
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
-          }, i * 6);
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
         });
         playDeckSlap();
-      }, 1040);
+      }, 130);
 
-      setTimeout(onComplete, 1380);
+      setTimeout(onComplete, 260);
     }
 
-    // STYLE 3: CARDISTRY PARABOLIC DECK SPRING
+    // STYLE 3: FAST CARD SPRING (260ms)
     function runCardSpringShuffle(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      const leftX = isMobile ? -85 : -115;
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.30s cubic-bezier(0.2, 1, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(${leftX}px) translateY(32px) translateZ(${i * 0.3}px) rotateZ(-12deg) scale(0.90)`;
+      const animatedCards = cards.slice(0, 8);
+
+      animatedCards.forEach((card) => {
+        card.style.transition = 'transform 0.11s ease-out';
+        card.style.transform = 'translateX(-30px) translateY(8px) translateZ(12px) rotateZ(-5deg) scale(0.96)';
       });
 
-      // Spring cards one by one across high parabolic arc
       setTimeout(() => {
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.15s ease-out';
-            const midY = isMobile ? -65 : -95;
-            card.style.transform = `translateX(0px) translateY(${midY}px) translateZ(${50 + i * 2}px) rotateY(${-12 + (i % 24)}deg) rotateZ(0deg) scale(1.02)`;
-            playRiffleTick(i);
-            if (i % 4 === 0) triggerControllerRumble(25, 0.2, 0.35);
-
-            setTimeout(() => {
-              card.style.transition = 'transform 0.14s ease-in';
-              const rightX = isMobile ? 85 : 115;
-              card.style.transform = `translateX(${rightX}px) translateY(32px) translateZ(${i * 0.4}px) rotateZ(12deg) scale(0.92)`;
-            }, 140);
-          }, i * 16);
+        if (typeof playRiffleTick === 'function') playRiffleTick(0);
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(25px) translateY(-6px) translateZ(16px) rotateZ(4deg) scale(0.98)';
         });
-      }, 300);
+      }, 110);
 
-      // Slide gathered right packet squarely into center
       setTimeout(() => {
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.22s cubic-bezier(0.18, 1, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.08s ease-in';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
         });
         playDeckSlap();
-      }, 1080);
+      }, 210);
 
-      setTimeout(onComplete, 1380);
+      setTimeout(onComplete, 260);
     }
 
-    // STYLE 4: OVERHAND TRIPLE PACKET CUT & STRIPPING
+    // STYLE 4: CRISP TRIPLE CUT (250ms)
     function runTripleCutShuffle(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.26s cubic-bezier(0.2, 1, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+      const animatedCards = cards.slice(0, 8);
+
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 0.9, 0.3, 1)';
+        if (i % 3 === 0) card.style.transform = 'translateX(-35px) translateY(-10px) translateZ(14px) rotateZ(-3deg) scale(0.97)';
+        else if (i % 3 === 1) card.style.transform = 'translateX(35px) translateY(10px) translateZ(18px) rotateZ(3deg) scale(0.97)';
+        else card.style.transform = 'translateX(0px) translateY(-14px) translateZ(24px) scale(1.01)';
       });
 
-      // Split into 3 distinct floating packets
       setTimeout(() => {
-        playTone(380, 'triangle', 0.08);
-        triggerControllerRumble(55, 0.3, 0.5);
-        const cutX = isMobile ? 85 : 120;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.32s cubic-bezier(0.16, 0.9, 0.28, 1)';
-          if (i >= 26) {
-            // Top packet flies high left
-            card.style.transform = `translateX(${-cutX}px) translateY(-50px) translateZ(30px) rotateZ(-9deg) scale(0.93)`;
-          } else if (i >= 13) {
-            // Middle packet floats center
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(65px) scale(0.98)`;
-          } else {
-            // Bottom packet slides low right
-            card.style.transform = `translateX(${cutX}px) translateY(50px) translateZ(20px) rotateZ(9deg) scale(0.93)`;
-          }
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.09s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
         });
-      }, 260);
-
-      // Mid-air packet crossover
-      setTimeout(() => {
-        playTone(490, 'triangle', 0.08);
-        triggerControllerRumble(55, 0.3, 0.5);
-        const cutX = isMobile ? 85 : 120;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.32s cubic-bezier(0.18, 1, 0.3, 1)';
-          if (i >= 26) {
-            card.style.transform = `translateX(${cutX}px) translateY(42px) translateZ(20px) rotateZ(6deg) scale(0.93)`;
-          } else if (i >= 13) {
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(95px) scale(1.02)`;
-          } else {
-            card.style.transform = `translateX(${-cutX}px) translateY(-42px) translateZ(30px) rotateZ(-6deg) scale(0.93)`;
-          }
-        });
-      }, 620);
-
-      // Triple packet slam into central deck
-      setTimeout(() => {
         playDeckSlap();
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.22s cubic-bezier(0.15, 0.9, 0.25, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) scale(0.95)`;
-        });
-      }, 980);
+      }, 120);
 
-      setTimeout(onComplete, 1300);
+      setTimeout(onComplete, 250);
     }
 
-    // STYLE 5: 3D HELIX CYCLONE TORNADO
+    // STYLE 5: SWIFT CYCLONE SHUFFLE (260ms)
     function runHelixCycloneShuffle(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.26s cubic-bezier(0.2, 1, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+      playWashSwirlSound();
+      const animatedCards = cards.slice(0, 8);
+
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.12s ease-out';
+        const r = (i % 2 === 0 ? 1 : -1) * 28;
+        card.style.transform = `translateX(${r}px) translateY(-5px) translateZ(14px) rotateY(${r > 0 ? 8 : -8}deg) scale(0.97)`;
       });
 
-      // Expand into 3D cylindrical helix spiral
       setTimeout(() => {
-        playWashSwirlSound();
-        triggerControllerRumble(240, 0.35, 0.65);
-        const total = cards.length;
-        const rad = isMobile ? 75 : 115;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.44s cubic-bezier(0.12, 0.9, 0.25, 1)';
-          const angle = (i / total) * Math.PI * 4;
-          const tx = Math.sin(angle) * rad;
-          const tz = Math.cos(angle) * (isMobile ? 95 : 145) - 55;
-          const ty = ((i / total) - 0.5) * (isMobile ? 85 : 135);
-          const ry = (angle * 180 / Math.PI) + 90;
-          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${tz}px) rotateY(${ry}deg) scale(0.85)`;
-        });
-      }, 260);
-
-      // Vortex spin 180 degrees around Y axis
-      setTimeout(() => {
-        const total = cards.length;
-        const rad = isMobile ? 75 : 115;
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.36s ease-in-out';
-          const angle = (i / total) * Math.PI * 4 + Math.PI;
-          const tx = Math.sin(angle) * rad;
-          const tz = Math.cos(angle) * (isMobile ? 95 : 145) - 55;
-          const ty = ((i / total) - 0.5) * (isMobile ? 85 : 135);
-          const ry = (angle * 180 / Math.PI) + 270;
-          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${tz}px) rotateY(${ry}deg) scale(0.85)`;
-        });
-      }, 700);
-
-      // Implosion collapse into central stack
-      setTimeout(() => {
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.22s cubic-bezier(0.15, 0.9, 0.25, 1)';
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
-          }, i * 5);
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateY(0deg) scale(1)';
         });
         playDeckSlap();
-      }, 1060);
+      }, 130);
 
-      setTimeout(onComplete, 1400);
+      setTimeout(onComplete, 260);
     }
 
-    // =======================================================
     // DEALER & MAGICIAN SEQUENTIAL CARDISTRY SORT SUITE
-    // 1. Table Square-Up, Double Tap & Domino Turnover Wave
-    // 2. Triple Packet Stripping & Ordered Assembly
-    // =======================================================
     let sequentialStyleIndex = 0;
     const SEQUENTIAL_STYLES = [
       { id: 'wave', name: 'Double Tap & Turnover Wave', fn: runRibbonTurnoverWaveSort },
@@ -7714,159 +7540,49 @@ ${card.resep_teks}
       }
     }
 
-    // STYLE 1: TABLE SQUARE-UP, DOUBLE TABLE TAP & DOMINO TURNOVER WAVE
+    // STYLE 1: SNAPPY TABLE TAP & DOMINO SORT (230ms)
     function runRibbonTurnoverWaveSort(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      const total = cards.length;
+      const animatedCards = cards.slice(0, 8);
 
-      // Phase 1: Cards gather into a tight vertical stack at center
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 1, 0.3, 1)';
+        card.style.transform = `translateX(0px) translateY(-10px) translateZ(${10 + i * 2}px) scale(0.98)`;
       });
 
-      // Phase 2: Lift deck 24px off table
       setTimeout(() => {
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.16s ease-out';
-          card.style.transform = `translateX(0px) translateY(-24px) translateZ(${i * 0.35}px) scale(0.97)`;
+        if (typeof playDeckTapSound === 'function') playDeckTapSound();
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.08s ease-in';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) scale(1)';
         });
-      }, 300);
-
-      // Phase 3: KNOCK 1 down sharp against the table felt! (Tap 1)
-      setTimeout(() => {
-        playDeckTapSound();
-        triggerHaptic([20, 30]);
-        triggerControllerRumble(75, 0.5, 0.8);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.09s cubic-bezier(0.2, 0, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) scale(0.95)`;
-        });
-      }, 480);
-
-      // Phase 4: Lift deck 14px (Tap 2 prep)
-      setTimeout(() => {
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.14s ease-out';
-          card.style.transform = `translateX(0px) translateY(-14px) translateZ(${i * 0.35}px) scale(0.96)`;
-        });
-      }, 610);
-
-      // Phase 5: KNOCK 2 down sharp against table felt! (Tap 2)
-      setTimeout(() => {
-        playDeckTapSound();
-        triggerHaptic([25, 35]);
-        triggerControllerRumble(85, 0.6, 0.9);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.09s cubic-bezier(0.2, 0, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) scale(0.95)`;
-        });
-      }, 770);
-
-      // Phase 6: Dealer spreads the deck into a wide horizontal ribbon across the felt
-      setTimeout(() => {
-        playWhooshSound();
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.36s cubic-bezier(0.16, 1, 0.3, 1)';
-          const offset = i - (total / 2);
-          const tx = Math.max(-170, Math.min(170, offset * (isMobile ? 8.5 : 14.5)));
-          const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2 : 3.5);
-          card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -5 : 5}px) translateZ(${i * 0.35}px) rotateZ(${rz}deg) scale(0.92)`;
-        });
-      }, 920);
-
-      // Phase 7: Domino Turnover Ripple Wave from card 01 to card 40!
-      const stepInterval = 14;
-      setTimeout(() => {
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.style.transition = 'transform 0.14s ease-out';
-            const offset = i - (total / 2);
-            const tx = Math.max(-170, Math.min(170, offset * (isMobile ? 8.5 : 14.5)));
-            card.style.transform = `translateX(${tx}px) translateY(-24px) translateZ(${20 + i * 0.5}px) rotateX(16deg) rotateZ(0deg) scale(0.98)`;
-            playRiffleTick(i);
-
-            setTimeout(() => {
-              card.style.transition = 'transform 0.14s ease-in';
-              card.style.transform = `translateX(${tx}px) translateY(0px) translateZ(${i * 0.35}px) rotateX(0deg) scale(0.94)`;
-            }, 120);
-          }, i * stepInterval);
-        });
-      }, 1300);
-
-      // Phase 8: Scoop ribbon squarely together and settle
-      const waveDuration = total * stepInterval;
-      setTimeout(() => {
         playDeckSlap();
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.22s cubic-bezier(0.2, 1, 0.3, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateY(0deg) rotateZ(0deg) scale(0.95)`;
-        });
-      }, 1300 + waveDuration + 140);
+      }, 120);
 
-      setTimeout(onComplete, 1300 + waveDuration + 380);
+      setTimeout(onComplete, 230);
     }
 
-    // STYLE 2: TRIPLE PACKET STRIPPING & ORDERED ASSEMBLY
+    // STYLE 2: QUICK PACKET ASSEMBLY (230ms)
     function runTriplePacketAssemblySort(cards, isMobile, isTablet, onComplete) {
       playGatherSound();
-      const splitX = isMobile ? 90 : 135;
+      const animatedCards = cards.slice(0, 8);
+      const splitX = isMobile ? 32 : 44;
 
-      // Phase 1: Gather to center
-      cards.forEach((card, i) => {
-        card.style.transition = 'transform 0.28s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.2s';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-        card.style.zIndex = `${i + 1}`;
-        card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.3}px) scale(0.95)`;
+      animatedCards.forEach((card, i) => {
+        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 1, 0.3, 1)';
+        const tx = (i % 2 === 0 ? -splitX : splitX);
+        card.style.transform = `translateX(${tx}px) translateY(-6px) translateZ(12px) scale(0.97)`;
       });
 
-      // Phase 2: Split into 3 ordered packets across the felt
       setTimeout(() => {
-        playTone(340, 'triangle', 0.08);
-        triggerHaptic(18);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.32s cubic-bezier(0.16, 0.9, 0.28, 1)';
-          if (i >= 26) {
-            // Packet 3 (High): Right
-            card.style.transform = `translateX(${splitX}px) translateY(-15px) translateZ(20px) rotateZ(8deg) scale(0.92)`;
-          } else if (i >= 13) {
-            // Packet 2 (Mid): Center
-            card.style.transform = `translateX(0px) translateY(18px) translateZ(50px) scale(0.96)`;
-          } else {
-            // Packet 1 (Low 01-13): Left
-            card.style.transform = `translateX(${-splitX}px) translateY(-15px) translateZ(20px) rotateZ(-8deg) scale(0.92)`;
-          }
+        animatedCards.forEach((card) => {
+          card.style.transition = 'transform 0.09s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) scale(1)';
         });
-      }, 300);
-
-      // Phase 3: Packet 3 slides squarely under Packet 2
-      setTimeout(() => {
-        playDeckTapSound();
-        triggerHaptic(15);
-        cards.forEach((card, i) => {
-          if (i >= 13) {
-            card.style.transition = 'transform 0.24s cubic-bezier(0.18, 1, 0.3, 1)';
-            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
-          }
-        });
-      }, 680);
-
-      // Phase 4: Packet 1 (Sediaan 01) lands boldly on top of the stack!
-      setTimeout(() => {
         playDeckSlap();
-        triggerHaptic([30, 45]);
-        triggerControllerRumble(90, 0.5, 0.8);
-        cards.forEach((card, i) => {
-          card.style.transition = 'transform 0.22s cubic-bezier(0.15, 0, 0.25, 1)';
-          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.35}px) rotateZ(0deg) scale(0.95)`;
-        });
-      }, 980);
+      }, 120);
 
-      setTimeout(onComplete, 1260);
+      setTimeout(onComplete, 230);
     }
 
     function updatePlayModeButtonsUI() {
