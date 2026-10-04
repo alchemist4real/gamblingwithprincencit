@@ -485,7 +485,7 @@
 
     .card-content-window:has(.theory-window-wrap),
     .has-text-deck .card-content-window {
-      margin-bottom: 46px;
+      margin-bottom: 44px;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -509,7 +509,7 @@
     .theory-window-wrap {
       width: 100%;
       height: 100%;
-      padding: 6px 9px 5px 9px;
+      padding: 5px 8px 3px 8px;
       display: flex;
       flex-direction: column;
       background-color: #08112e;
@@ -531,55 +531,54 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 4px;
+      gap: 4px;
+      margin-bottom: 3px;
       flex-shrink: 0;
     }
     .theory-badge-cluster {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       min-width: 0;
-      flex-wrap: nowrap;
+      flex: 1;
       overflow: hidden;
     }
     .theory-window-badge {
       display: inline-flex;
       align-items: center;
-      font-size: 8.5px;
+      font-size: 7.8px;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       background-color: var(--white);
       color: var(--primary-deep);
       border-radius: 999px;
-      padding: 2px 7px;
+      padding: 1.5px 5.5px;
       white-space: nowrap;
       flex-shrink: 0;
     }
     .theory-subclass-badge {
-      font-size: 8px;
+      font-size: 7.5px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
       background-color: rgba(255, 255, 255, 0.16);
       color: #dce5ff;
       border-radius: 999px;
-      padding: 2px 7px;
+      padding: 1.5px 5.5px;
       border: 1px solid rgba(255, 255, 255, 0.22);
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      flex-shrink: 1;
+      flex-shrink: 0;
     }
     .theory-star-badge {
-      font-size: 8px;
+      font-size: 7.5px;
       font-weight: 800;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       background-color: var(--white);
       color: var(--primary-deep);
       border: 1.5px solid var(--primary-deep);
       border-radius: 999px;
-      padding: 1.5px 6px;
+      padding: 1px 5px;
       flex-shrink: 0;
       white-space: nowrap;
     }
@@ -588,19 +587,19 @@
     .theory-stimulus-bar {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 5px;
-      padding: 2px 6px;
-      margin-bottom: 4px;
+      padding: 1.5px 5px;
+      margin-bottom: 3px;
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-tag {
       font-family: var(--font-mono);
-      font-size: 7.5px;
+      font-size: 7px;
       font-weight: 900;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       padding: 1px 4px;
       border-radius: 3px;
       background-color: var(--white);
@@ -608,10 +607,10 @@
       flex-shrink: 0;
     }
     .theory-stimulus-bar .stimulus-text {
-      font-size: 9.5px;
+      font-size: 8.8px;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.25;
+      line-height: 1.2;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -621,20 +620,19 @@
     .theory-qa-flow {
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 3px;
       flex: 1;
       min-height: 0;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
     .theory-q-row {
       display: flex;
       align-items: flex-start;
-      gap: 6px;
-      padding: 3.5px 6px;
+      gap: 5px;
+      padding: 2.2px 5px;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 6px;
-      flex: 1;
       min-height: 0;
     }
     .theory-q-row.q-row-a {
@@ -647,10 +645,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 15px;
-      height: 15px;
+      width: 14px;
+      height: 14px;
       border-radius: 4px;
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 900;
       color: var(--primary-deep);
       background: #ffffff;
@@ -663,8 +661,8 @@
     .theory-q-row .q-text {
       flex: 1;
       min-width: 0;
-      font-size: 10.6px;
-      line-height: 1.32;
+      font-size: 10.2px;
+      line-height: 1.28;
       color: #ffffff;
       font-weight: 500;
       word-break: break-word;
@@ -677,18 +675,18 @@
 
     /* Adaptive text density for longer questions */
     .theory-window-wrap.is-dense-text .theory-q-row {
-      padding: 2.5px 5px;
+      padding: 2px 4.5px;
     }
     .theory-window-wrap.is-dense-text .theory-qa-flow {
       gap: 2.5px;
     }
     .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-      font-size: 9.6px;
-      line-height: 1.25;
+      font-size: 9.2px;
+      line-height: 1.22;
     }
 
     .theory-window-wrap.is-compact-text .theory-q-row {
-      padding: 2px 4px;
+      padding: 1.8px 4px;
     }
     .theory-window-wrap.is-compact-text .theory-qa-flow {
       gap: 2px;
@@ -699,8 +697,25 @@
       font-size: 8px;
     }
     .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-      font-size: 8.8px;
-      line-height: 1.20;
+      font-size: 8.4px;
+      line-height: 1.18;
+    }
+
+    /* Ultra-compact for cards with long multi-part questions (e.g. Card 201) */
+    .theory-window-wrap.is-ultra-compact .theory-q-row {
+      padding: 1.5px 3.5px;
+    }
+    .theory-window-wrap.is-ultra-compact .theory-qa-flow {
+      gap: 2px;
+    }
+    .theory-window-wrap.is-ultra-compact .theory-q-row .q-badge {
+      width: 12px;
+      height: 12px;
+      font-size: 7.5px;
+    }
+    .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
+      font-size: 7.8px;
+      line-height: 1.14;
     }
 
     /* Standard single-prompt cards */
@@ -2212,6 +2227,13 @@
       .theory-window-wrap.is-compact-text .theory-q-row .q-text {
         font-size: 8px;
         line-height: 1.14;
+      }
+      .theory-window-wrap.is-ultra-compact .theory-q-row {
+        padding: 1px 3px;
+      }
+      .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
+        font-size: 7.4px;
+        line-height: 1.10;
       }
 
       /* SPECIMEN INDICATOR */
@@ -6971,16 +6993,24 @@ ${card.resep_teks}
 
     function renderTheoryCardContent(card) {
       const isFarmako = card.category && card.category.includes('FARMAKO');
-      const badgeLabel = isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM';
-      const subLabel = card.sub_class || card.diagnosis || '';
+      let badgeLabel = isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM';
+      if (isFarmako && card.asal) {
+        badgeLabel = card.asal.replace(/\s*•\s*Stasi\s*\d+/i, '').trim();
+      }
+      let subLabel = card.sub_class || card.diagnosis || '';
+      if (subLabel) {
+        subLabel = subLabel.replace(/[-_]/g, ' ').toUpperCase();
+      }
       const stimulusText = card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '').trim() : '';
 
       if (card.soal_a && card.soal_b) {
         const totalChars = (card.soal_a || '').length + (card.soal_b || '').length;
         let densityClass = '';
-        if (totalChars > 340) {
+        if (totalChars > 390) {
+          densityClass = 'is-ultra-compact';
+        } else if (totalChars > 290) {
           densityClass = 'is-compact-text';
-        } else if (totalChars > 220) {
+        } else if (totalChars > 190) {
           densityClass = 'is-dense-text';
         }
 
@@ -7017,7 +7047,8 @@ ${card.resep_teks}
       } else {
         const promptLen = (card.prompt || '').length;
         let promptDensity = '';
-        if (promptLen > 300) promptDensity = 'is-compact-text';
+        if (promptLen > 380) promptDensity = 'is-ultra-compact';
+        else if (promptLen > 280) promptDensity = 'is-compact-text';
         else if (promptLen > 180) promptDensity = 'is-dense-text';
 
         return `
