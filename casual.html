@@ -7297,23 +7297,9 @@ ${card.resep_teks}
     }
 
     // =======================================================
-    // DEALER & MAGICIAN CARDISTRY SHUFFLE SUITE (5 STYLES)
-    // 1. Riffle & Waterfall Bridge
-    // 2. Casino Table Wash (Chemmy / Croupier Scramble)
-    // 3. Card Spring & Pressure Fan
-    // 4. Triple Packet False Cut & Swivel Assembly
-    // 5. Helix Cyclone & Ribbon Whirlpool
+    // ULTRA-CLEAN SNAPPY CAROUSEL SHUFFLE & SEQUENTIAL SORT
     // =======================================================
-    let shuffleStyleIndex = 0;
-    const SHUFFLE_STYLES = [
-      { id: 'riffle', name: 'Riffle Shuffle', fn: runRiffleBridgeShuffle },
-      { id: 'wash', name: 'Table Wash', fn: runTableWashShuffle },
-      { id: 'spring', name: 'Card Spring', fn: runCardSpringShuffle },
-      { id: 'cut', name: 'Triple Cut', fn: runTripleCutShuffle },
-      { id: 'helix', name: 'Cyclone Shuffle', fn: runHelixCycloneShuffle }
-    ];
-
-    function startRealisticShuffle(forcedStyleIndex = null) {
+    function startRealisticShuffle() {
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'shuffle';
@@ -7322,180 +7308,40 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      const finishShuffle = () => {
-        const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
-        let shuffled = shuffleCardsArray(availableCards);
-        if (shuffled.length > 1 && shuffled[0].id === sessionCards[currentIndex]?.id) {
-          const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
-          [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
+      if (typeof playRiffleSound === 'function') playRiffleSound();
+      if (typeof triggerHaptic === 'function') triggerHaptic([15, 25]);
+      if (typeof triggerControllerRumble === 'function') triggerControllerRumble(80, 0.4, 0.7);
+
+      const activeCard = stage3D ? stage3D.querySelector('.big-card.is-active') : null;
+      if (activeCard) {
+        activeCard.style.transition = 'transform 0.12s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.12s ease';
+        activeCard.style.transform = 'translateY(-24px) translateZ(40px) rotateZ(-2deg) scale(0.98)';
+      }
+
+      setTimeout(() => {
+        try {
+          const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
+          let shuffled = shuffleCardsArray(availableCards);
+          if (shuffled.length > 1 && shuffled[0].id === sessionCards[currentIndex]?.id) {
+            const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
+            [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
+          }
+          sessionCards = shuffled;
+          currentIndex = 0;
+          rebuildStageCards();
+          updateCardPositions(true);
+          if (typeof playDeckSlap === 'function') playDeckSlap();
+          if (typeof playChimeSound === 'function') playChimeSound();
+        } catch (e) {
+          console.error('Shuffle error:', e);
+        } finally {
+          isShuffling = false;
+          showToast('Card Shuffled', `${sessionCards.length} Cards`);
         }
-        sessionCards = shuffled;
-        currentIndex = 0;
-        rebuildStageCards();
-        updateCardPositions(true);
-        playChimeSound();
-        triggerHaptic([15, 30, 20]);
-        triggerControllerRumble(130, 0.45, 0.85);
-        isShuffling = false;
-        showToast('Card Shuffled', `${sessionCards.length} Cards`);
-      };
-
-      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
-      if (!cards.length) {
-        finishShuffle();
-        return;
-      }
-
-      const styleToRun = forcedStyleIndex !== null 
-        ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
-        : SHUFFLE_STYLES[shuffleStyleIndex % SHUFFLE_STYLES.length];
-      
-      shuffleStyleIndex = (shuffleStyleIndex + 1) % SHUFFLE_STYLES.length;
-
-      const isMobile = window.innerWidth <= 600;
-      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
-
-      try {
-        styleToRun.fn(cards, isMobile, isTablet, finishShuffle);
-      } catch (err) {
-        console.error('Shuffle animation error:', err);
-        finishShuffle();
-      }
-    }
-
-    // STYLE 1: SNAPPY RIFFLE & BRIDGE SNAP (260ms)
-    function runRiffleBridgeShuffle(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const animatedCards = cards.slice(0, 8);
-      const splitDist = isMobile ? 32 : 45;
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 0.9, 0.3, 1)';
-        const isLeft = i % 2 === 0;
-        card.style.transform = `translateX(${isLeft ? -splitDist : splitDist}px) translateY(-6px) translateZ(14px) rotateZ(${isLeft ? -4 : 4}deg) scale(0.97)`;
-      });
-
-      setTimeout(() => {
-        playRiffleSound();
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(0px) translateY(2px) translateZ(8px) rotateZ(0deg) scale(0.98)';
-        });
-      }, 120);
-
-      setTimeout(() => {
-        playDeckSlap();
-      }, 210);
-
-      setTimeout(onComplete, 260);
-    }
-
-    // STYLE 2: QUICK TABLE WASH (260ms)
-    function runTableWashShuffle(cards, isMobile, isTablet, onComplete) {
-      playWashSwirlSound();
-      const animatedCards = cards.slice(0, 8);
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.12s ease-out';
-        const angle = (i / 8) * Math.PI * 2;
-        const tx = Math.cos(angle) * (isMobile ? 24 : 36);
-        const ty = Math.sin(angle) * (isMobile ? 14 : 20);
-        card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(12px) rotateZ(${(i % 3 - 1) * 5}deg) scale(0.96)`;
-      });
-
-      setTimeout(() => {
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
-        });
-        playDeckSlap();
       }, 130);
-
-      setTimeout(onComplete, 260);
     }
 
-    // STYLE 3: FAST CARD SPRING (260ms)
-    function runCardSpringShuffle(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const animatedCards = cards.slice(0, 8);
-
-      animatedCards.forEach((card) => {
-        card.style.transition = 'transform 0.11s ease-out';
-        card.style.transform = 'translateX(-30px) translateY(8px) translateZ(12px) rotateZ(-5deg) scale(0.96)';
-      });
-
-      setTimeout(() => {
-        if (typeof playRiffleTick === 'function') playRiffleTick(0);
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(25px) translateY(-6px) translateZ(16px) rotateZ(4deg) scale(0.98)';
-        });
-      }, 110);
-
-      setTimeout(() => {
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.08s ease-in';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
-        });
-        playDeckSlap();
-      }, 210);
-
-      setTimeout(onComplete, 260);
-    }
-
-    // STYLE 4: CRISP TRIPLE CUT (250ms)
-    function runTripleCutShuffle(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const animatedCards = cards.slice(0, 8);
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 0.9, 0.3, 1)';
-        if (i % 3 === 0) card.style.transform = 'translateX(-35px) translateY(-10px) translateZ(14px) rotateZ(-3deg) scale(0.97)';
-        else if (i % 3 === 1) card.style.transform = 'translateX(35px) translateY(10px) translateZ(18px) rotateZ(3deg) scale(0.97)';
-        else card.style.transform = 'translateX(0px) translateY(-14px) translateZ(24px) scale(1.01)';
-      });
-
-      setTimeout(() => {
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.09s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateZ(0deg) scale(1)';
-        });
-        playDeckSlap();
-      }, 120);
-
-      setTimeout(onComplete, 250);
-    }
-
-    // STYLE 5: SWIFT CYCLONE SHUFFLE (260ms)
-    function runHelixCycloneShuffle(cards, isMobile, isTablet, onComplete) {
-      playWashSwirlSound();
-      const animatedCards = cards.slice(0, 8);
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.12s ease-out';
-        const r = (i % 2 === 0 ? 1 : -1) * 28;
-        card.style.transform = `translateX(${r}px) translateY(-5px) translateZ(14px) rotateY(${r > 0 ? 8 : -8}deg) scale(0.97)`;
-      });
-
-      setTimeout(() => {
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.10s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) rotateY(0deg) scale(1)';
-        });
-        playDeckSlap();
-      }, 130);
-
-      setTimeout(onComplete, 260);
-    }
-
-    // DEALER & MAGICIAN SEQUENTIAL CARDISTRY SORT SUITE
-    let sequentialStyleIndex = 0;
-    const SEQUENTIAL_STYLES = [
-      { id: 'wave', name: 'Double Tap & Turnover Wave', fn: runRibbonTurnoverWaveSort },
-      { id: 'triple', name: 'Triple Packet Assembly', fn: runTriplePacketAssemblySort },
-    ];
-
-    function startSequentialSort(forcedStyleIndex = null) {
+    function startSequentialSort() {
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'sequential';
@@ -7504,85 +7350,31 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      const finishSequential = () => {
-        const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
-        sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
-        currentIndex = 0;
-        rebuildStageCards();
-        updateCardPositions(true);
-        playChimeSound();
-        triggerHaptic([15, 30, 20]);
-        triggerControllerRumble(120, 0.4, 0.8);
-        isShuffling = false;
-        showToast('Sequential Mode', `01 to ${sessionCards.length}`);
-      };
+      if (typeof playGatherSound === 'function') playGatherSound();
+      if (typeof triggerHaptic === 'function') triggerHaptic(15);
 
-      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
-      if (!cards.length) {
-        finishSequential();
-        return;
+      const activeCard = stage3D ? stage3D.querySelector('.big-card.is-active') : null;
+      if (activeCard) {
+        activeCard.style.transition = 'transform 0.12s cubic-bezier(0.2, 0.9, 0.3, 1)';
+        activeCard.style.transform = 'translateY(18px) translateZ(-20px) scale(0.97)';
       }
 
-      const styleToRun = forcedStyleIndex !== null 
-        ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
-        : SEQUENTIAL_STYLES[sequentialStyleIndex % SEQUENTIAL_STYLES.length];
-      
-      sequentialStyleIndex = (sequentialStyleIndex + 1) % SEQUENTIAL_STYLES.length;
-
-      const isMobile = window.innerWidth <= 600;
-      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
-
-      try {
-        styleToRun.fn(cards, isMobile, isTablet, finishSequential);
-      } catch (err) {
-        console.error('Sequential sort animation error:', err);
-        finishSequential();
-      }
-    }
-
-    // STYLE 1: SNAPPY TABLE TAP & DOMINO SORT (230ms)
-    function runRibbonTurnoverWaveSort(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const animatedCards = cards.slice(0, 8);
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 1, 0.3, 1)';
-        card.style.transform = `translateX(0px) translateY(-10px) translateZ(${10 + i * 2}px) scale(0.98)`;
-      });
-
       setTimeout(() => {
-        if (typeof playDeckTapSound === 'function') playDeckTapSound();
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.08s ease-in';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) scale(1)';
-        });
-        playDeckSlap();
+        try {
+          const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
+          sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
+          currentIndex = 0;
+          rebuildStageCards();
+          updateCardPositions(true);
+          if (typeof playDeckSlap === 'function') playDeckSlap();
+          if (typeof playChimeSound === 'function') playChimeSound();
+        } catch (e) {
+          console.error('Sort error:', e);
+        } finally {
+          isShuffling = false;
+          showToast('Sequential Mode', `01 to ${sessionCards.length}`);
+        }
       }, 120);
-
-      setTimeout(onComplete, 230);
-    }
-
-    // STYLE 2: QUICK PACKET ASSEMBLY (230ms)
-    function runTriplePacketAssemblySort(cards, isMobile, isTablet, onComplete) {
-      playGatherSound();
-      const animatedCards = cards.slice(0, 8);
-      const splitX = isMobile ? 32 : 44;
-
-      animatedCards.forEach((card, i) => {
-        card.style.transition = 'transform 0.11s cubic-bezier(0.2, 1, 0.3, 1)';
-        const tx = (i % 2 === 0 ? -splitX : splitX);
-        card.style.transform = `translateX(${tx}px) translateY(-6px) translateZ(12px) scale(0.97)`;
-      });
-
-      setTimeout(() => {
-        animatedCards.forEach((card) => {
-          card.style.transition = 'transform 0.09s cubic-bezier(0.16, 1, 0.3, 1)';
-          card.style.transform = 'translateX(0px) translateY(0px) translateZ(0px) scale(1)';
-        });
-        playDeckSlap();
-      }, 120);
-
-      setTimeout(onComplete, 230);
     }
 
     function updatePlayModeButtonsUI() {
