@@ -1,10 +1,13 @@
 /**
- * Card Pack: Farmakologi Blok 3.2 - Kardiovaskular, Ginjal, Respirasi & Infeksi
- * Kompilasi 136 Stasi Ujian Identifikasi, Mekanisme Molekuler, Dosis, Efek Samping, & Kaidah Resep
- * Sumber: Master Soal Farmakologi Blok 3.2 (Arsip 2021, 2022, 2024 & Modul Praktikum)
- * Pure Text & Ultra-Lightweight (Zero Images)
+ * Card Pack: Bank Soal OSPE Farmakologi Blok 3.2
+ * 136 Cards across 8 Practical Modules
+ * Ultra-Clean Exam-Exact Q&A with High-Yield Concise Answers & Full References
  */
-(window.CARD_PACKS = window.CARD_PACKS || {})['farmako-3.2'] = {
+
+(function() {
+  if (!window.CARD_PACKS) window.CARD_PACKS = {};
+
+  window.CARD_PACKS['farmako-3.2'] = {
   "id": "farmako-3.2",
   "title": "FARMAKOLOGI KLINIS BLOK 3.2",
   "packName": "Farmako 3.2: Kardio, Ginjal & Respirasi",
@@ -429,7 +432,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "FUROSEMID",
       "prompt": "[Tablet Furosemid 40 mg / Ampul Furosemid 20 mg/2 mL]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan 3 contoh obat lain dalam golongan yang sama!",
-      "stimulus": "Tablet Furosemid 40 mg / Ampul Furosemid 20 mg/2 mL",
+      "stimulus": "Diberikan preparat / kemasan Furosemid",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan 3 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "FUROSEMID",
@@ -457,7 +460,7 @@
         "**Mnemonik:** \"FUTOR BUang ASap\"), bentuk sediaan & dosis lazim harian, serta efek samping khasnya terhadap keseimbangan elektrolit dan organ sensorik! Tuliskan pula resep lengkapnya untuk pasien edema paru akut/gagal jantung!",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/K+/2Cl- (NKCC2) di ansa Henle asenden tebal -> menghambat reabsorpsi NaCl -> diuresis kuat\nb. Torsemid, Bumetanid, Asam Etakrinat (Loop Diuretic)\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → menghambat reabsorpsi NaCl → diuresis kuat\nb. Torsemid, Bumetanid, Asam Etakrinat (Loop Diuretic)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat secara reversibel simporter/kotransporter Na⁺/K⁺/2Cl⁻ pada membran luminal sel epitel tubulus.  \r\n- **Lokasi Segmen Nefron:** Ansa Henle Pars Asenden Tebal (*Thick Ascending Limb of Henle's Loop* / TAL).  \r\n- **Dampak Molekuler:** Menghambat reabsorpsi natrium, kalium, dan klorida → menurunkan gradien osmotik medula ginjal → menurunkan reabsorpsi air → ekskresi urin (diuresis) dan natrium (natriuresis) meningkat pesat (efikasi diuretik tertinggi / *high-ceiling diuretic*). Juga menurunkan potensial positif lumen sehingga membuang Ca²⁺ dan Mg²⁺.\r\n\r\nb. **Golongan, Sediaan, Efek Samping, & Resep:**  \r\n- **Golongan:** Diuretik Kuat / *Loop Diuretic*.  \r\n- **3 Contoh Obat Sejenis (\"FUTOR BUang ASap\"):**  \r\n  1. Torsemid  \r\n  2. Bumetanid  \r\n  3. Asam Etakrinat  \r\n- **Dosis & Sediaan:**  \r\n  - Sediaan: Tablet 40 mg; Injeksi ampul 20 mg/2 mL.  \r\n  - Dosis oral harian: 20 - 80 mg/hari (dosis tunggal atau terbagi).  \r\n- **Efek Samping Khas:**  \r\n  - *Elektrolit:* Hipokalemia, Hiponatremia, Hipokloremia, **Hipokalsemia** (khas membuang kalsium, beda dengan tiazid), Hipomagnesemia, deplesi volume cairan ekstraseluler, alkalosis metabolik.  \r\n  - *Metabolik:* Hiperurisemia, hiperglikemia, peningkatan LDL & trigliserida, penurunan HDL.  \r\n  - *Organ Sensorik:* **Ototoksisitas** (tinitus, gangguan pendengaran/tuli yang diperparah bila dikombinasi dengan aminoglikosida atau cisplatin).  \r\n- **Penulisan Resep:**  \r\n  ```text\r\n  dr. Pratama, Sp.PD\r\n  SIP: 123/SIP/2026\r\n  Jl. Farmakologi No. 1, Jakarta\r\n  Jakarta, 04 Oktober 2026\r\n\r\n  R/ Furosemide tab mg 40 No. X\r\n     S 1 d d tab 1 mane (pagi hari)\r\n     ---------------------------------- ꝕ\r\n\r\n  Pro: Tn. Ahmad (58 tahun)\r\n  ```\r\n\r\n---",
       "resep_teks": "dr. Pratama, Sp.PD\r\n  SIP: 123/SIP/2026\r\n  Jl. Farmakologi No. 1, Jakarta\r\n  Jakarta, 04 Oktober 2026\r\n\r\n  R/ Furosemide tab mg 40 No. X\r\n     S 1 d d tab 1 mane (pagi hari)\r\n     ---------------------------------- ꝕ\r\n\r\n  Pro: Tn. Ahmad (58 tahun)",
       "tips_klinis": "",
@@ -478,7 +481,9 @@
         "th-2021",
         "furosemid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → menghambat reabsorpsi NaCl → diuresis kuat",
+      "jawaban_b": "Torsemid, Bumetanid, Asam Etakrinat (Loop Diuretic)"
     },
     {
       "id": 202,
@@ -486,7 +491,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "HYDROCHLOROTHIAZIDE (HCT)",
       "prompt": "[Tablet Hydrochlorothiazide (HCT) 25 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan 3 contoh obat lain dalam golongan yang sama / thiazide-like!",
-      "stimulus": "Tablet Hydrochlorothiazide (HCT) 25 mg",
+      "stimulus": "Diberikan preparat / kemasan Hydrochlorothiazide (HCT)",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan 3 contoh obat lain dalam golongan yang sama / thiazide-like!",
       "diagnosis": "HYDROCHLOROTHIAZIDE (HCT)",
@@ -514,7 +519,7 @@
         "**Golongan:** Diuretik Tiazid",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/Cl- (NCC) di tubulus kontortus distal (DCT) -> menghambat reabsorpsi NaCl -> diuresis sedang\nb. Klortalidon, Indapamid, Metolazon (Golongan Thiazide & Thiazide-like)\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/Cl⁻ (NCC) di tubulus kontortus distal (DCT) → menghambat reabsorpsi NaCl → diuresis sedang\nb. Klortalidon, Indapamid, Metolazon (Golongan Thiazide & Thiazide-like)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat kotransporter/simporter Na⁺/Cl⁻ (NCC) dari sisi luminal sel epitel tubulus.  \r\n- **Lokasi Segmen Nefron:** Tubulus Kontortus Distal (*Distal Convoluted Tubule* / DCT).  \r\n- **Dampak Molekuler:** Menghambat reabsorpsi NaCl di tubulus distal → meningkatkan ekskresi Na⁺, Cl⁻, dan air → menurunkan volume cairan ekstraseluler dan volume darah sirkulasi → menurunkan resistensi perifer dan tekanan darah.\r\n\r\nb. **Golongan, Sediaan, Efek Samping \"HIPER-\", & Resep:**  \r\n- **Golongan:** Diuretik Tiazid (*Thiazide Diuretic*).  \r\n- **3 Contoh Obat Sejenis / Thiazide-like:**  \r\n  1. Klortalidon  \r\n  2. Indapamid  \r\n  3. Metolazon (atau Bendroflumetiazid)  \r\n- **Dosis & Bentuk Sediaan:**  \r\n  - Dosis harian: 25 - 100 mg/hari (pada hipertensi umumnya 12,5 - 25 mg/hari), dosis tunggal pada pagi hari.  \r\n  - Sediaan: Tablet 25 mg dan Tablet 50 mg.  \r\n- **Efek Samping Elektrolit & Metabolik Khas:**  \r\n  - *3 \"HIPER-\" Metabolik:* **Hiperglikemia** (menghambat pelepasan insulin), **Hiperurisemia** (kompetisi sekresi asam urat di tubulus proksimal → memicu serangan gout), dan **Hiperlipidemia** (meningkatkan kadar kolesterol LDL dan trigliserida).  \r\n  - *Efek terhadap Kalsium:* **Hiperkalsemia** (kebalikan dari loop diuretik; tiazid merangsang reabsorpsi kalsium di tubulus distal sehingga menurunkan ekskresi kalsium dalam urin → diindikasikan untuk nefrolitiasis e.c. hiperkalsiuria idiopatik).  \r\n  - *Elektrolit yang turun:* Hipokalemia, hiponatremia, hipokloremia, hipomagnesemia, alkalosis metabolik.  \r\n- **Penulisan Resep:**  \r\n  ```text\r\n  dr. Pratama, Sp.PD\r\n  SIP: 123/SIP/2026\r\n  Jl. Farmakologi No. 1, Jakarta\r\n  Jakarta, 04 Oktober 2026\r\n\r\n  R/ Hydrochlorothiazide tab mg 25 No. XXX\r\n     S 1 d d tab 1 mane (pagi hari)\r\n     ---------------------------------- ꝕ\r\n\r\n  Pro: Ny. Siti (50 tahun)\r\n  ```\r\n\r\n---",
       "resep_teks": "dr. Pratama, Sp.PD\r\n  SIP: 123/SIP/2026\r\n  Jl. Farmakologi No. 1, Jakarta\r\n  Jakarta, 04 Oktober 2026\r\n\r\n  R/ Hydrochlorothiazide tab mg 25 No. XXX\r\n     S 1 d d tab 1 mane (pagi hari)\r\n     ---------------------------------- ꝕ\r\n\r\n  Pro: Ny. Siti (50 tahun)",
       "tips_klinis": "",
@@ -538,7 +543,9 @@
         "hydrochlorothiazide",
         "hct"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/Cl⁻ (NCC) di tubulus kontortus distal (DCT) → menghambat reabsorpsi NaCl → diuresis sedang",
+      "jawaban_b": "Klortalidon, Indapamid, Metolazon (Golongan Thiazide & Thiazide-like)"
     },
     {
       "id": 203,
@@ -546,7 +553,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "SPIRONOLAKTON",
       "prompt": "[Tablet Spironolakton 25 mg / 100 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat dan 1 contoh obat sejenis yang lebih selektif!",
-      "stimulus": "Tablet Spironolakton 25 mg / 100 mg",
+      "stimulus": "Diberikan preparat / kemasan Spironolakton",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat dan 1 contoh obat sejenis yang lebih selektif!",
       "diagnosis": "SPIRONOLAKTON",
@@ -572,7 +579,7 @@
         "**Golongan:** Diuretik Hemat Kalium (K+-Sparing)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Antagonis kompetitif reseptor aldosteron (mineralokortikoid) di tubulus distal akhir dan duktus koligentes -> retensi K+ dan ekskresi Na+\nb. Golongan Diuretik Hemat Kalium (K-sparing). Contoh lebih selektif: Eplerenon\r\n\r\n---",
+      "jawaban_ringkas": "a. Antagonis kompetitif reseptor aldosteron (mineralokortikoid) di tubulus distal akhir dan duktus koligentes → retensi K⁺ dan ekskresi Na⁺\nb. Golongan Diuretik Hemat Kalium (K-sparing). Contoh lebih selektif: Eplerenon",
       "jawaban_lengkap": "a. **Mekanisme Kerja Farmakodinamik:**  \r\n- **Sifat Antagonisme:** Merupakan antagonis kompetitif reseptor aldosteron (reseptor mineralokortikoid intraseluler / MR sitosolik).  \r\n- **Lokasi Segmen Nefron:** Hilir tubulus distal (*late distal tubule*) dan duktus koligentes (*collecting duct* / sel prinsipal).  \r\n- **Dampak Molekuler:** Mencegah translokasi kompleks aldosteron-reseptor ke inti sel → menghambat sintesis protein terinduksi aldosteron (AIP) → menghambat reabsorpsi natrium melalui ENaC dan menghambat sekresi/ekskresi kalium serta ion hidrogen (H⁺) ke dalam lumen → diuresis ringan dengan retensi kalium.\r\n\r\nb. **Golongan, Efek Samping Endokrin, Interaksi, & Kontraindikasi:**  \r\n- **Golongan:** Diuretik Hemat Kalium (*Potassium-Sparing Diuretic*) subgolongan Antagonis Aldosteron / *Aldosterone Antagonist*.  \r\n- **Contoh Obat Sejenis yang Lebih Selektif:** Eplerenon (*Eplerenone* - tidak mengikat reseptor androgen/progesteron sehingga bebas efek ginekomastia).  \r\n- **Indikasi Khas:** Hiperaldosteronisme primer (Sindrom Conn), hiperaldosteronisme sekunder (asites pada sirosis hepar, gagal jantung kongestif berat), hipertensi esensial (sebagai terapi kombinasi untuk mencegah hipokalemia).  \r\n- **Efek Samping Endokrin/Seksual Patognomonik:** **Ginekomastia** (pembesaran payudara pada pria), impotensi/disfungsi ereksi, penurunan libido, dan pada wanita memicu *menstrual irregularities* (karena efek samping antiandrogenik dan stimulasi parsial reseptor progesteron).  \r\n- **Kontraindikasi Utama:** Anuria, hiperkalemia (kadar K⁺ > 5,5 mEq/L), insufisiensi ginjal berat / penyakit ginjal progresif.  \r\n- **Interaksi Berbahaya dengan ACE-Inhibitor (ACEi):** Kombinasi Spironolakton + ACEi (misal Kaptopril/Ramipril) menghambat aldosteron dari dua jalur secara simultan → memicu **Hiperkalemia berat / fatal** yang dapat menyebabkan henti jantung (*cardiac arrest*).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -593,7 +600,9 @@
         "th-2021",
         "spironolakton"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antagonis kompetitif reseptor aldosteron (mineralokortikoid) di tubulus distal akhir dan duktus koligentes → retensi K⁺ dan ekskresi Na⁺",
+      "jawaban_b": "Golongan Diuretik Hemat Kalium (K-sparing). Contoh lebih selektif: Eplerenon"
     },
     {
       "id": 204,
@@ -601,7 +610,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "MANITOL",
       "prompt": "[Botol Infus Manitol 20% 250 mL / 500 mL]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan 2 indikasi klinis gawat darurat dan rute pemberian wajibnya!",
-      "stimulus": "Botol Infus Manitol 20% 250 mL / 500 mL",
+      "stimulus": "Diberikan preparat / kemasan botol infus Manitol",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan 2 indikasi klinis gawat darurat dan rute pemberian wajibnya!",
       "diagnosis": "MANITOL",
@@ -622,7 +631,7 @@
       "struktur_khas": [
         "**Golongan:** MANITOL"
       ],
-      "jawaban_ringkas": "a. Zat inert osmotik meningkatkan osmolalitas intraluminal di tubulus proksimal & ansa Henle desenden -> menarik air ke lumen nefron -> diuresis air masif\nb. Indikasi: Edema serebri (menurunkan TIK) dan glaukoma akut (menurunkan TIO). Rute: Intravena (IV) infus cepat (oral memicu diare osmotik masif)\r\n\r\n---",
+      "jawaban_ringkas": "a. Zat inert osmotik meningkatkan osmolalitas intraluminal di tubulus proksimal & ansa Henle desenden → menarik air ke lumen nefron → diuresis air masif\nb. Indikasi: Edema serebri (menurunkan TIK) dan glaukoma akut (menurunkan TIO). Rute: Intravena (IV) infus cepat (oral memicu diare osmotik masif)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Farmakodinamik:**  \r\n- **Sifat Molekul:** Merupakan zat terlarut yang secara farmakologis inert, difiltrasi bebas oleh glomerulus namun tidak/sedikit sekali direabsorpsi oleh tubulus ginjal.  \r\n- **Mekanisme Kerja:** Meningkatkan tekanan osmolalitas intraluminal cairan tubulus ginjal → menciptakan gradien osmotik yang menghambat reabsorpsi air dan elektrolit (Na⁺) → menarik air dari ruang intraseluler ke ekstraseluler dan lumen tubulus → memicu diuresis air dalam jumlah besar (*osmotic diuresis*).  \r\n- **Lokasi Segmen Nefron:** Terutama pada **Tubulus Kontortus Proksimal** dan **Ansa Henle Desenden Tipis** (segmen nefron yang sangat permeabel terhadap air).\r\n\r\nb. **Golongan, Rute, Indikasi Emergensi, & Kontraindikasi Mutlak:**  \r\n- **Golongan:** Diuretik Osmotik (*Osmotic Diuretic*).  \r\n- **Rute Pemberian:** **Intravena (IV)** infus tetes cepat.  \r\n  - *Alasan tidak boleh per oral:* Absorpsi sangat buruk di saluran cerna. Jika diberikan oral, manitol akan tertahan di lumen usus, menarik air ke lumen usus, dan menimbulkan **diare osmotik masif** tanpa menghasilkan efek diuretik sistemik.  \r\n- **2 Indikasi Klinis Gawat Darurat Utama:**  \r\n  1. Menurunkan **Tekanan Intrakranial (TIK) tinggi** (edema serebri / herniasi otak akut).  \r\n  2. Menurunkan **Tekanan Intraokular (TIO) tinggi** (glaukoma sudut tertutup akut / pra-operasi mata).  \r\n- **2 Kontraindikasi Mutlak Kardiovaskular:**  \r\n  1. **Edema Paru Akut** (*Acute Pulmonary Edema*).  \r\n  2. **Gagal Jantung Kongestif Berat** (*Congestive Heart Failure* / CHF).  \r\n  *(Alasan: Manitol menarik air dari jaringan ke pembuluh darah, menyebabkan ekspansi volume intravaskular mendadak → overload sirkulasi yang memicu kegagalan jantung akut dan memperberat edema paru).*  \r\n- **Efek Samping:** Dehidrasi berat, hipernatremia, hiperkalemia (karena pergeseran cairan seluler), sakit kepala/mual/muntah.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -637,7 +646,9 @@
         "efek-samping",
         "manitol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Zat inert osmotik meningkatkan osmolalitas intraluminal di tubulus proksimal & ansa Henle desenden → menarik air ke lumen nefron → diuresis air masif",
+      "jawaban_b": "Indikasi: Edema serebri (menurunkan TIK) dan glaukoma akut (menurunkan TIO). Rute: Intravena (IV) infus cepat (oral memicu diare osmotik masif)"
     },
     {
       "id": 205,
@@ -645,7 +656,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ACETAZOLAMIDE (ASETASOLAMID)",
       "prompt": "[Tablet Acetazolamide 250 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat dan 2 indikasi klinis utamanya!",
-      "stimulus": "Tablet Acetazolamide 250 mg",
+      "stimulus": "Diberikan preparat / kemasan Acetazolamide",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat dan 2 indikasi klinis utamanya!",
       "diagnosis": "ACETAZOLAMIDE (ASETASOLAMID)",
@@ -670,7 +681,7 @@
         "**Golongan:** ACETAZOLAMIDE (ASETASOLAMID)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Menghambat enzim karbonik anhidrase (CA II sitoplasma & CA IV luminal) di tubulus kontortus proksimal (PCT) -> menghambat reabsorpsi NaHCO3 -> diuresis alkali\nb. Golongan Carbonic Anhydrase Inhibitor (CAI). Indikasi: Glaukoma sudut terbuka dan profilaksis Acute Mountain Sickness (AMS) / alkalosis metabolik\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat enzim karbonik anhidrase (CA II sitoplasma & CA IV luminal) di tubulus kontortus proksimal (PCT) → menghambat reabsorpsi NaHCO3 → diuresis alkali\nb. Golongan Carbonic Anhydrase Inhibitor (CAI). Indikasi: Glaukoma sudut terbuka dan profilaksis Acute Mountain Sickness (AMS) / alkalosis metabolik",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler Enzimatis:**  \r\n- **Target Enzim:** Menghambat secara non-kompetitif enzim **Karbonik Anhidrase** (*Carbonic Anhydrase*, terutama isoenzim CA II di sitoplasma dan CA IV pada membran brush border luminal).  \r\n- **Reaksi Kimia yang Dihambat:**  \r\n  - Membran luminal: Menghambat dehidrasi H₂CO₃ → CO₂ + H₂O.  \r\n  - Sitoplasma sel: Menghambat rehidrasi CO₂ + H₂O → H₂CO₃.  \r\n- **Lokasi Segmen Nefron:** **Tubulus Kontortus Proksimal** (*Proximal Convoluted Tubule* / PCT segmen S2).  \r\n- **Dampak Molekuler:** Menghambat pembentukan ion H⁺ dan HCO₃⁻ di dalam sel → menurunkan penukar Na⁺/H⁺ luminal → menghambat reabsorpsi NaHCO₃ (natrium bikarbonat) → ekskresi bikarbonat, natrium, dan air meningkat ke urin → diuresis alkali.\r\n\r\nb. **Golongan, Dosis, Indikasi, Efek Samping, & Kontraindikasi:**  \r\n- **Golongan:** *Carbonic Anhydrase Inhibitor* (CAI) / Penghambat Enzim Karbonik Anhidrase.  \r\n- **Dosis Lazim Harian:** 250 - 375 mg/hari, diberikan 1 kali sehari.  \r\n- **Indikasi Klinis Penting:**  \r\n  1. **Glaukoma Sudut Terbuka (*Open-angle glaucoma*):** Menurunkan produksi *aqueous humor* di korpus siliaris mata sehingga menurunkan tekanan intraokular.  \r\n  2. **Alkalosis Metabolik:** Mengoreksi alkalosis dengan membuang kelebihan bikarbonat melalui urin (*bicarbonaturia*).  \r\n  3. Edema akibat CHF (jarang/efikasi diuretik lemah), profilaksis *Acute Mountain Sickness* (AMS).  \r\n- **Efek Samping Khas:**  \r\n  - **Asidosis Metabolik Hiperkloremik** (*Hyperchloremic metabolic acidosis* akibat kehilangan cadangan bikarbonat tubuh).  \r\n  - **Batu Ginjal / Nefrolitiasis** (kalsium fosfat mengendap akibat urin yang bersifat basa/alkalin dan hipositraturia).  \r\n- **Kontraindikasi:**  \r\n  1. **Sirosis Hepar** (penurunan ekskresi amonia ginjal dan pengalihan ke sirkulasi sistemik memicu ensefalopati hepatikum fatal).  \r\n  2. **PPOK / Asidosis respiratorik** (memperberat asidosis metabolik).  \r\n  3. Hipersensitivitas sulfonamid, hipokalemia, hiponatremia, insufisiensi adrenal.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -689,7 +700,9 @@
         "acetazolamide",
         "asetasolamid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat enzim karbonik anhidrase (CA II sitoplasma & CA IV luminal) di tubulus kontortus proksimal (PCT) → menghambat reabsorpsi NaHCO3 → diuresis alkali",
+      "jawaban_b": "Golongan Carbonic Anhydrase Inhibitor (CAI). Indikasi: Glaukoma sudut terbuka dan profilaksis Acute Mountain Sickness (AMS) / alkalosis metabolik"
     },
     {
       "id": 206,
@@ -697,7 +710,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "AMILORIDE",
       "prompt": "[Tablet Amiloride 5 mg]\n\na. Sebutkan mekanisme kerja obat tersebut dan perbedaannya dengan Spironolakton!\n\nb. Sebutkan golongan obat, 1 contoh obat sejenis, dan efek samping utamanya!",
-      "stimulus": "Tablet Amiloride 5 mg",
+      "stimulus": "Diberikan preparat / kemasan Amiloride",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut dan perbedaannya dengan Spironolakton!",
       "soal_b": "Sebutkan golongan obat, 1 contoh obat sejenis, dan efek samping utamanya!",
       "diagnosis": "AMILORIDE",
@@ -722,7 +735,7 @@
         "**Golongan:** Diuretik Hemat Kalium (K+-Sparing)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Menghambat langsung kanal Na+ epitelial (ENaC) di tubulus distal akhir & duktus koligentes tanpa lewat reseptor aldosteron (Spironolakton menghambat reseptor aldosteron)\nb. Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Contoh lain: Triamteren. Efek samping utama: Hiperkalemia\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat langsung kanal Na⁺ epitelial (ENaC) di tubulus distal akhir & duktus koligentes tanpa lewat reseptor aldosteron (Spironolakton menghambat reseptor aldosteron)\nb. Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Contoh lain: Triamteren. Efek samping utama: Hiperkalemia",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Perbedaan dengan Spironolakton:**  \r\n- **Target Kanal:** Memblokade secara langsung **Kanal Natrium Epitel** (*Epithelial Sodium Channel* / **ENaC**) pada membran luminal sel prinsipal tanpa memerlukan interaksi dengan reseptor aldosteron.  \r\n- **Lokasi Segmen Nefron:** Tubulus kontortus distal akhir (*late distal tubule*) dan duktus koligentes (*collecting duct*).  \r\n- **Dampak Molekuler:** Menghambat influks natrium ke dalam sel prinsipal → menurunkan potensial negatif luminal (lumen menjadi kurang elektronegatif) → menghambat gaya dorong untuk sekresi/ekskresi K⁺ dan H⁺ ke dalam urin → retensi kalium dalam darah dan pembuangan natrium ringan.  \r\n- **Perbedaan dengan Spironolakton:** Amiloride bekerja sebagai penghambat kanal ENaC langsung (*direct ENaC blocker*), sedangkan Spironolakton bekerja secara tidak langsung melalui blokade reseptor mineralokortikoid intraseluler (antagonis aldosteron). Amiloride bekerja mandiri tanpa tergantung ada/tidaknya kadar aldosteron darah.\r\n\r\nb. **Golongan, Contoh Sejenis, Indikasi Khusus, & Efek Samping:**  \r\n- **Golongan:** Diuretik Hemat Kalium (*Potassium-Sparing Diuretic*) subgolongan Penghambat Kanal Natrium (*Inhibitor of Renal Epithelial Na+ Channel*).  \r\n- **Contoh Obat Sejenis:** Triamteren (*Triamterene*).  \r\n- **Indikasi Klinis Khas (Slide 17):**  \r\n  1. Hipertensi (kombinasi dengan tiazid untuk mencegah hipokalemia).  \r\n  2. **Cystic Fibrosis** (inhalasi amiloride memperbaiki klirens mukosiliar dengan menghambat penyerapan natrium berlebih di epitel bronkus).  \r\n  3. **Diabetes Insipidus Nefrogenik** (terutama yang diinduksi oleh intoksikasi Litium, karena amiloride menghambat masuknya litium melalui kanal ENaC di duktus koligentes).  \r\n  4. Sindrom Liddle (mutasi hiperaktivitas kanal ENaC).  \r\n- **Efek Samping Utama:** **Hiperkalemia**, asidosis metabolik, mual, muntah, sakit kepala. Kontraindikasi pada anuria dan gagal ginjal.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -740,7 +753,9 @@
         "th-2022",
         "amiloride"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat langsung kanal Na⁺ epitelial (ENaC) di tubulus distal akhir & duktus koligentes tanpa lewat reseptor aldosteron (Spironolakton menghambat reseptor aldosteron)",
+      "jawaban_b": "Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Contoh lain: Triamteren. Efek samping utama: Hiperkalemia"
     },
     {
       "id": 207,
@@ -748,7 +763,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TRIAMTEREN",
       "prompt": "[Kapsul Triamteren 50 mg / 100 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat, kombinasi lazimnya dengan obat lain, dan efek samping khas pada ginjal!",
-      "stimulus": "Kapsul Triamteren 50 mg / 100 mg",
+      "stimulus": "Diberikan preparat / kemasan Triamteren",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat, kombinasi lazimnya dengan obat lain, dan efek samping khas pada ginjal!",
       "diagnosis": "TRIAMTEREN",
@@ -775,7 +790,7 @@
         "**Golongan:** Diuretik Hemat Kalium (K+-Sparing)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat langsung kanal Na+ epitelial (ENaC) di tubulus distal akhir & duktus koligentes -> menghambat reabsorpsi Na+ dan menahan K+\nb. Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Kombinasi: HCT (Hydrochlorothiazide). Efek samping khas: Hiperkalemia dan batu ginjal (nefrolitiasis kristal triamteren)\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat langsung kanal Na⁺ epitelial (ENaC) di tubulus distal akhir & duktus koligentes → menghambat reabsorpsi Na⁺ dan menahan K⁺\nb. Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Kombinasi: HCT (Hydrochlorothiazide). Efek samping khas: Hiperkalemia dan batu ginjal (nefrolitiasis kristal triamteren)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Kanal:** Menghambat kanal natrium epitelial luminal (**ENaC**) secara langsung di membran luminal sel prinsipal.  \r\n- **Lokasi Segmen Nefron:** Tubulus distal terminal dan duktus koligentes kortikal (*cortical collecting tubule*).  \r\n- **Dampak Molekuler:** Menghambat reabsorpsi Na⁺ dan secara sekunder menekan ekskresi K⁺ ke lumen tubulus → menghasilkan efek natriuresis ringan sekaligus mencegah pembuangan kalium (*potassium-sparing*).\r\n\r\nb. **Golongan, Kombinasi, Efek Samping, & Kontraindikasi:**  \r\n- **Golongan:** Diuretik Hemat Kalium (*Potassium-Sparing Diuretic* - *direct ENaC inhibitor*).  \r\n- **Kombinasi Komersial:** Sering dikombinasikan dengan **Hydrochlorothiazide (HCT)** (misal kombinasi sediaan HCT + Triamteren) untuk menetralkan efek pembuangan kalium dari HCT pada terapi hipertensi.  \r\n- **Efek Samping:** **Hiperkalemia** (dapat fatal pada gangguan ginjal), nefrolitiasis (kristal triamteren dapat mengendap membentuk batu ginjal radiolusen), mual, pusing, kram otot.  \r\n- **Kontraindikasi:** Pasien hiperkalemia, gagal ginjal progresif, anuria, dan penggunaan bersamaan dengan suplemen kalium atau obat penahan kalium lainnya.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -797,7 +812,9 @@
         "th-2021",
         "triamteren"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat langsung kanal Na⁺ epitelial (ENaC) di tubulus distal akhir & duktus koligentes → menghambat reabsorpsi Na⁺ dan menahan K⁺",
+      "jawaban_b": "Golongan Diuretik Hemat Kalium (Inhibitor ENaC langsung). Kombinasi: HCT (Hydrochlorothiazide). Efek samping khas: Hiperkalemia dan batu ginjal (nefrolitiasis kristal triamteren)"
     },
     {
       "id": 208,
@@ -805,7 +822,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "EPLERENON",
       "prompt": "[Tablet Eplerenon 25 mg / 50 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan keunggulan obat ini dibanding Spironolakton dan indikasi utamanya!",
-      "stimulus": "Tablet Eplerenon 25 mg / 50 mg",
+      "stimulus": "Diberikan preparat / kemasan Eplerenon",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan keunggulan obat ini dibanding Spironolakton dan indikasi utamanya!",
       "diagnosis": "EPLERENON",
@@ -826,7 +843,7 @@
       "struktur_khas": [
         "**Golongan:** Diuretik Hemat Kalium (K+-Sparing)"
       ],
-      "jawaban_ringkas": "a. Antagonis kompetitif sangat selektif reseptor mineralokortikoid (aldosteron) di sel prinsipal duktus koligentes ginjal\nb. Keunggulan: Sangat selektif sehingga bebas efek samping ginekomastia dan disfungsi seksual. Indikasi: Gagal jantung pasca infark miokard (HFrEF)\r\n\r\n---",
+      "jawaban_ringkas": "a. Antagonis kompetitif sangat selektif reseptor mineralokortikoid (aldosteron) di sel prinsipal duktus koligentes ginjal\nb. Keunggulan: Sangat selektif sehingga bebas efek samping ginekomastia dan disfungsi seksual. Indikasi: Gagal jantung pasca infark miokard (HFrEF)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Perbandingan Selektivitas:**  \r\n- **Mekanisme Molekuler:** Bekerja sebagai antagonis kompetitif selektif pada reseptor mineralokortikoid (aldosteron) di sel prinsipal duktus koligentes ginjal, menghambat retensi natrium dan ekskresi kalium.  \r\n- **Perbandingan Selektivitas:** Eplerenon memiliki afinitas ikatan yang **sangat selektif** terhadap reseptor mineralokortikoid, dengan afinitas ratusan kali lebih rendah terhadap reseptor androgen dan progesteron dibandingkan Spironolakton.\r\n\r\nb. **Golongan, Keunggulan Klinis, & Indikasi:**  \r\n- **Golongan:** Diuretik Hemat Kalium (*Potassium-Sparing Diuretic*) / Antagonis Reseptor Mineralokortikoid Selektif (*Selective Aldosterone Receptor Antagonist*).  \r\n- **Keunggulan Bebas Efek Samping Endokrin:** Karena tidak mengikat reseptor androgen/progesteron, Eplerenon **TIDAK menyebabkan ginekomastia**, mastodinia, disfungsi ereksi, maupun gangguan siklus menstruasi (berbeda signifikan dengan Spironolakton yang sering dihentikan pasien pria akibat ginekomastia yang nyeri).  \r\n- **Indikasi Klinis:** Gagal jantung dengan penurunan fraksi ejeksi (HFrEF) pasca infark miokard akut (terbukti menurunkan mortalitas kardiovaskular), serta hipertensi resisten.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -840,7 +857,9 @@
         "efek-samping",
         "eplerenon"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antagonis kompetitif sangat selektif reseptor mineralokortikoid (aldosteron) di sel prinsipal duktus koligentes ginjal",
+      "jawaban_b": "Keunggulan: Sangat selektif sehingga bebas efek samping ginekomastia dan disfungsi seksual. Indikasi: Gagal jantung pasca infark miokard (HFrEF)"
     },
     {
       "id": 209,
@@ -848,7 +867,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TORSEMID",
       "prompt": "[Tablet Torsemid 10 mg / 20 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat, 2 contoh obat sejenis, dan keunggulannya dibanding Furosemid!",
-      "stimulus": "Tablet Torsemid 10 mg / 20 mg",
+      "stimulus": "Diberikan preparat / kemasan Torsemid",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat, 2 contoh obat sejenis, dan keunggulannya dibanding Furosemid!",
       "diagnosis": "TORSEMID",
@@ -873,7 +892,7 @@
         "**Golongan:** Loop Diuretic / Diuretik Kuat",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/K+/2Cl- (NKCC2) di ansa Henle asenden tebal -> menghambat reabsorpsi NaCl\nb. Golongan Loop Diuretic. Contoh: Furosemid, Bumetanid. Keunggulan: Bioavailabilitas oral lebih tinggi/stabil (80-90%) dan durasi kerja lebih panjang dibanding Furosemid\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → menghambat reabsorpsi NaCl\nb. Golongan Loop Diuretic. Contoh: Furosemid, Bumetanid. Keunggulan: Bioavailabilitas oral lebih tinggi/stabil (80-90%) dan durasi kerja lebih panjang dibanding Furosemid",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat simporter Na⁺/K⁺/2Cl⁻ pada membran luminal sel epitel tubulus.  \r\n- **Lokasi Segmen Nefron:** Ansa Henle Pars Asenden Tebal (*Thick Ascending Limb of Henle* / TAL).  \r\n- **Dampak Molekuler:** Menghalangi reabsorpsi ion Na⁺, K⁺, dan Cl⁻, memicu natriuresis dan diuresis masif serta menurunkan resistensi vaskular ginjal.\r\n\r\nb. **Golongan, Dosis Sediaan PPT, & Keunggulan Farmakokinetik:**  \r\n- **Golongan:** Diuretik Kuat / *Loop Diuretic*.  \r\n- **Dosis Oral Harian & Sediaan (Slide 14):**  \r\n  - Dosis oral harian: 5 - 20 mg/hari.  \r\n  - Bentuk sediaan: Tablet 5 mg, 10 mg, 20 mg, dan 100 mg.  \r\n- **Perbandingan dengan Furosemid:** Torsemid memiliki bioavailabilitas oral yang jauh lebih tinggi dan konsisten (≈ 80-90%, dibanding furosemid yang bervariasi antara 10-90%), serta waktu paruh eliminasi dan durasi kerja yang lebih panjang, menjadikannya pilihan unggul pada gagal jantung refrakter.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -892,7 +911,9 @@
         "th-2021",
         "torsemid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → menghambat reabsorpsi NaCl",
+      "jawaban_b": "Golongan Loop Diuretic. Contoh: Furosemid, Bumetanid. Keunggulan: Bioavailabilitas oral lebih tinggi/stabil (80-90%) dan durasi kerja lebih panjang dibanding Furosemid"
     },
     {
       "id": 210,
@@ -900,7 +921,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BUMETANID",
       "prompt": "[Tablet Bumetanid 0,5 mg / 1 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat, 2 contoh obat sejenis, dan rasio potensinya dibanding Furosemid!",
-      "stimulus": "Tablet Bumetanid 0,5 mg / 1 mg",
+      "stimulus": "Diberikan preparat / kemasan Bumetanid",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat, 2 contoh obat sejenis, dan rasio potensinya dibanding Furosemid!",
       "diagnosis": "BUMETANID",
@@ -925,7 +946,7 @@
         "**Golongan:** Loop Diuretic / Diuretik Kuat",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/K+/2Cl- (NKCC2) di ansa Henle asenden tebal -> diuresis kuat\nb. Golongan Loop Diuretic. Contoh: Furosemid, Torsemid. Rasio potensi: 40 kali lebih poten per mg dibanding Furosemid (1 mg Bumetanid = 40 mg Furosemid)\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → diuresis kuat\nb. Golongan Loop Diuretic. Contoh: Furosemid, Torsemid. Rasio potensi: 40 kali lebih poten per mg dibanding Furosemid (1 mg Bumetanid = 40 mg Furosemid)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat simporter Na⁺/K⁺/2Cl⁻ pada membran luminal.  \r\n- **Lokasi Segmen Nefron:** Ansa Henle Pars Asenden Tebal (*Thick Ascending Limb of Henle* / TAL).  \r\n- **Dampak Molekuler:** Mencegah reabsorpsi ion natrium, klorida, dan kalium, menghasilkan efek diuresis cepat dan poten.\r\n\r\nb. **Golongan, Dosis Sediaan PPT, & Rasio Potensi:**  \r\n- **Golongan:** Diuretik Kuat / *Loop Diuretic*.  \r\n- **Dosis Oral Harian & Sediaan (Slide 14):**  \r\n  - Dosis oral harian: 0,5 - 2 mg/hari.  \r\n  - Bentuk sediaan: Tablet 0,5 mg, 1 mg, dan 2 mg.  \r\n- **Perbandingan Potensi dengan Furosemid:** Bumetanid sekitar **40 kali lipat lebih poten per miligram** dibandingkan Furosemid (dosis 1 mg bumetanid setara efikasinya dengan sekitar 40 mg furosemid). Absorpsi oralnya juga jauh lebih terprediksi pada kondisi edema usus akibat gagal jantung.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -944,7 +965,9 @@
         "th-2021",
         "bumetanid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → diuresis kuat",
+      "jawaban_b": "Golongan Loop Diuretic. Contoh: Furosemid, Torsemid. Rasio potensi: 40 kali lebih poten per mg dibanding Furosemid (1 mg Bumetanid = 40 mg Furosemid)"
     },
     {
       "id": 211,
@@ -952,7 +975,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ASAM ETAKRINAT (ETHACRYNIC ACID)",
       "prompt": "[Tablet Asam Etakrinat 25 mg / 50 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan keunikan struktur kimianya untuk pasien tertentu dan efek toksisitas organ sensoriknya!",
-      "stimulus": "Tablet Asam Etakrinat 25 mg / 50 mg",
+      "stimulus": "Diberikan preparat / kemasan Asam Etakrinat",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan keunikan struktur kimianya untuk pasien tertentu dan efek toksisitas organ sensoriknya!",
       "diagnosis": "ASAM ETAKRINAT (ETHACRYNIC ACID)",
@@ -977,7 +1000,7 @@
         "**Golongan:** Loop Diuretic / Diuretik Kuat",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/K+/2Cl- (NKCC2) di ansa Henle asenden tebal -> diuresis kuat\nb. Keunikan: Satu-satunya loop diuretik non-sulfonamid (pilihan pasien alergi sulfa). Efek samping: Risiko ototoksisitas (ketulian) paling tinggi di antara seluruh loop diuretik\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → diuresis kuat\nb. Keunikan: Satu-satunya loop diuretik non-sulfonamid (pilihan pasien alergi sulfa). Efek samping: Risiko ototoksisitas (ketulian) paling tinggi di antara seluruh loop diuretik",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat simporter Na⁺/K⁺/2Cl⁻ pada membran luminal sel epitel tubulus ansa Henle asenden tebal.  \r\n- **Lokasi Segmen Nefron:** Ansa Henle Pars Asenden Tebal (*Thick Ascending Limb* / TAL).  \r\n- **Dampak Molekuler:** Menghambat reabsorpsi Na⁺, K⁺, Cl⁻, Ca²⁺, Mg²⁺, menghasilkan diuresis kuat.\r\n\r\nb. **Golongan, Sediaan, Keunikan Struktur Kimia, & Ototoksisitas:**  \r\n- **Golongan:** Diuretik Kuat / *Loop Diuretic* (turunan asam fenoksiasetat).  \r\n- **Dosis Oral Harian & Sediaan (Slide 14):**  \r\n  - Dosis oral harian: 50 - 200 mg/hari.  \r\n  - Bentuk sediaan: Tablet 25 mg dan Tablet 50 mg.  \r\n- **Keunikan Struktur & Indikasi Khusus:** Asam etakrinat merupakan **satu-satunya loop diuretik yang BUKAN turunan sulfonamid** (bebas gugus sulfa). Oleh karena itu, menjadi obat pilihan utama (*drug of choice*) pada pasien yang memiliki riwayat **alergi berat / hipersensitivitas sulfonamid** yang membutuhkan diuretik kuat.  \r\n- **Risiko Ototoksisitas:** Memiliki insidensi **ototoksisitas (ketulian permanen/tinitus) tertinggi** di antara seluruh kelompok loop diuretik, terutama bila diberikan secara cepat dosis tinggi intravena pada pasien gagal ginjal.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -998,7 +1021,9 @@
         "ethacrynic",
         "acid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/K⁺/2Cl⁻ (NKCC2) di ansa Henle asenden tebal → diuresis kuat",
+      "jawaban_b": "Keunikan: Satu-satunya loop diuretik non-sulfonamid (pilihan pasien alergi sulfa). Efek samping: Risiko ototoksisitas (ketulian) paling tinggi di antara seluruh loop diuretik"
     },
     {
       "id": 212,
@@ -1006,7 +1031,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KLORTALIDON (CHLORTHALIDONE)",
       "prompt": "[Tablet Klortalidon 50 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan golongan obat, ciri khas farmakokinetiknya, dan keunggulannya dibanding HCT!",
-      "stimulus": "Tablet Klortalidon 50 mg",
+      "stimulus": "Diberikan preparat / kemasan Klortalidon",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan golongan obat, ciri khas farmakokinetiknya, dan keunggulannya dibanding HCT!",
       "diagnosis": "KLORTALIDON (CHLORTHALIDONE)",
@@ -1032,7 +1057,7 @@
         "**Golongan:** Diuretik Tiazid",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/Cl- (NCC) di tubulus kontortus distal (DCT) -> menghambat reabsorpsi NaCl\nb. Golongan Thiazide-like Diuretic. Ciri khas: Waktu paruh sangat panjang (40-50 jam) terikat eritrosit. Keunggulan: Kontrol tensi 24 jam lebih stabil dan proteksi kardiovaskular lebih superior dibanding HCT\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/Cl⁻ (NCC) di tubulus kontortus distal (DCT) → menghambat reabsorpsi NaCl\nb. Golongan Thiazide-like Diuretic. Ciri khas: Waktu paruh sangat panjang (40-50 jam) terikat eritrosit. Keunggulan: Kontrol tensi 24 jam lebih stabil dan proteksi kardiovaskular lebih superior dibanding HCT",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat simporter Na⁺/Cl⁻ (NCC) pada sisi luminal sel epitel tubulus distal.  \r\n- **Lokasi Segmen Nefron:** Tubulus Kontortus Distal (*Distal Convoluted Tubule* / DCT).  \r\n- **Dampak Molekuler:** Menghambat reabsorpsi NaCl → ekskresi air dan natrium meningkat, menurunkan volume sirkulasi dan resistensi pembuluh darah perifer.\r\n\r\nb. **Golongan, Sediaan, Farmakokinetik Khas, & Keunggulan Klinis:**  \r\n- **Golongan:** Diuretik menyerupai tiazid (*Thiazide-like Diuretic* / turunan ftalimidin).  \r\n- **Dosis Oral Harian & Sediaan (Slide 10):**  \r\n  - Dosis lazim harian: 25 - 50 mg/hari, diberikan sebagai dosis tunggal di pagi hari.  \r\n  - Bentuk sediaan: Tablet 50 mg.  \r\n- **Karakteristik Farmakokinetik Khas:** Memiliki **waktu paruh eliminasi yang sangat panjang (t₁/2} ≈ 40 - 50 jam)** karena terikat dan berakumulasi kuat pada karbonik anhidrase di dalam sel darah merah (eritrosit), memberikan kontrol tekanan darah 24 jam yang sangat stabil.  \r\n- **Keunggulan Klinis:** Memiliki bukti proteksi kardiovaskular (penurunan kejadian stroke dan infark miokard) yang lebih superior dibanding HCT berdasarkan uji klinis acak berskala besar (seperti ALLHAT trial).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1054,7 +1079,9 @@
         "klortalidon",
         "chlorthalidone"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/Cl⁻ (NCC) di tubulus kontortus distal (DCT) → menghambat reabsorpsi NaCl",
+      "jawaban_b": "Golongan Thiazide-like Diuretic. Ciri khas: Waktu paruh sangat panjang (40-50 jam) terikat eritrosit. Keunggulan: Kontrol tensi 24 jam lebih stabil dan proteksi kardiovaskular lebih superior dibanding HCT"
     },
     {
       "id": 213,
@@ -1062,7 +1089,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "INDAPAMID (INDAPAMIDE)",
       "prompt": "[Tablet Indapamid 2,5 mg]\n\na. Sebutkan mekanisme kerja ganda obat tersebut!\n\nb. Sebutkan golongan obat, 2 contoh obat sejenis, dan keunggulan profil metaboliknya!",
-      "stimulus": "Tablet Indapamid 2,5 mg",
+      "stimulus": "Diberikan preparat / kemasan Indapamid",
       "soal_a": "Sebutkan mekanisme kerja ganda obat tersebut!",
       "soal_b": "Sebutkan golongan obat, 2 contoh obat sejenis, dan keunggulan profil metaboliknya!",
       "diagnosis": "INDAPAMID (INDAPAMIDE)",
@@ -1083,7 +1110,7 @@
       "struktur_khas": [
         "**Golongan:** Diuretik Tiazid"
       ],
-      "jawaban_ringkas": "a. Efek renal: menghambat kotransporter Na+/Cl- di tubulus distal (DCT). Efek vaskular: vasodilator langsung lewat penghambatan influks Ca2+ dan stimulasi prostaglandin\nb. Golongan Thiazide-like Diuretic. Contoh: Klortalidon, Metolazon. Keunggulan: Relatif netral secara metabolik (tidak mengganggu kadar lipid serum dan glukosa darah)\r\n\r\n---",
+      "jawaban_ringkas": "a. Efek renal: menghambat kotransporter Na⁺/Cl⁻ di tubulus distal (DCT). Efek vaskular: vasodilator langsung lewat penghambatan influks Ca²⁺ dan stimulasi prostaglandin\nb. Golongan Thiazide-like Diuretic. Contoh: Klortalidon, Metolazon. Keunggulan: Relatif netral secara metabolik (tidak mengganggu kadar lipid serum dan glukosa darah)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Ganda Indapamid:**  \r\n- **Efek Diuretik pada Ginjal:** Menghambat kotransporter Na⁺/Cl⁻ pada membran luminal sel epitel **Tubulus Kontortus Distal (DCT)**, menginduksi ekskresi natrium dan air.  \r\n- **Efek Vaskular Langsung:** Bekerja sebagai vasodilator dengan cara menghambat aliran masuk kalsium (*calcium entry*) ke dalam sel otot polos pembuluh darah arteriol dan merangsang sintesis prostaglandin vasodilator (PGI₂/PGE₂), sehingga menurunkan resistensi perifer secara independen dari efek diuresisnya.\r\n\r\nb. **Golongan, Dosis PPT, & Profil Metabolik:**  \r\n- **Golongan:** Diuretik menyerupai tiazid (*Thiazide-like Diuretic* / turunan indol-indolin).  \r\n- **Dosis Harian (Slide 10):** 2,5 - 10 mg/hari, diberikan sebagai dosis tunggal pada pagi hari (tersedia sediaan tablet 2,5 mg dan lepas lambat 1,5 mg).  \r\n- **Keunggulan Profil Metabolik:** Bersifat relatif **metabolically neutral**; pada dosis terapi antihipertensi, tidak mempengaruhi metabolisme glukosa secara bermakna, tidak meningkatkan profil kolesterol LDL/trigliserida serum, dan dampak hiperurisemianya minimal.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1098,7 +1125,9 @@
         "indapamid",
         "indapamide"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Efek renal: menghambat kotransporter Na⁺/Cl⁻ di tubulus distal (DCT). Efek vaskular: vasodilator langsung lewat penghambatan influks Ca²⁺ dan stimulasi prostaglandin",
+      "jawaban_b": "Golongan Thiazide-like Diuretic. Contoh: Klortalidon, Metolazon. Keunggulan: Relatif netral secara metabolik (tidak mengganggu kadar lipid serum dan glukosa darah)"
     },
     {
       "id": 214,
@@ -1106,7 +1135,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "METOLAZON (METOLAZONE)",
       "prompt": "[Tablet Metolazon 2,5 mg / 5 mg / 10 mg]\n\na. Sebutkan mekanisme kerja obat tersebut!\n\nb. Sebutkan keunggulannya pada gagal ginjal berat dan konsep kombinasinya dengan loop diuretik!",
-      "stimulus": "Tablet Metolazon 2,5 mg / 5 mg / 10 mg",
+      "stimulus": "Diberikan preparat / kemasan Metolazon",
       "soal_a": "Sebutkan mekanisme kerja obat tersebut!",
       "soal_b": "Sebutkan keunggulannya pada gagal ginjal berat dan konsep kombinasinya dengan loop diuretik!",
       "diagnosis": "METOLAZON (METOLAZONE)",
@@ -1134,7 +1163,7 @@
         "**Mnemonik:** ---:|:---|:---|:---:|:---|:---|:---:|",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kotransporter Na+/Cl- di tubulus kontortus distal (DCT) dan sebagian tubulus proksimal\nb. Keunggulan: Tetap efektif memicu diuresis pada GFR < 30 mL/menit (HCT tidak efektif). Kombinasi: Sinergisme kuat dengan Furosemid (Sequential Nephron Blockade) untuk edema refrakter\r\n\r\n---",
+      "jawaban_ringkas": "a. Menghambat kotransporter Na⁺/Cl⁻ di tubulus kontortus distal (DCT) dan sebagian tubulus proksimal\nb. Keunggulan: Tetap efektif memicu diuresis pada GFR < 30 mL/menit (HCT tidak efektif). Kombinasi: Sinergisme kuat dengan Furosemid (Sequential Nephron Blockade) untuk edema refrakter",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n- **Target Transporter:** Menghambat reabsorpsi NaCl melalui blokade simporter Na⁺/Cl⁻ di membran luminal Tubulus Kontortus Distal (DCT), serta memiliki efek inhibisi tambahan pada tubulus proksimal.\r\n\r\nb. **Golongan, Sediaan, Keunggulan GFR, & Sequential Blockade:**  \r\n- **Golongan:** Diuretik menyerupai tiazid (*Thiazide-like Diuretic* / turunan kuinazolin).  \r\n- **Dosis Harian & Sediaan (Slide 10):**  \r\n  - Dosis harian: 2,5 - 10 mg/hari (dosis tunggal).  \r\n  - Ragam sediaan: Tablet 2,5 mg, 5 mg, dan 10 mg.  \r\n- **Keunggulan Unik pada Gangguan Ginjal Berat:** Diuretik tiazid biasa (seperti HCT) kehilangan efektivitasnya jika GFR < 30 mL/menit. Sebaliknya, **Metolazon tetap poten dan efektif memicu diuresis bahkan pada pasien gagal ginjal berat dengan GFR < 30 mL/menit**.  \r\n- **Blokade Nefron Sekuensial:** Sering dikombinasikan dengan Loop Diuretik (Furosemid) pada kasus *refractory edema* / resistensi diuretik berat; kombinasi ini memblokade reabsorpsi natrium di ansa Henle sekaligus di tubulus distal secara sinergis masif.\r\n\r\n---\r\n\r\n## BAGIAN II: RINGKASAN KOMPARATIF KELOMPOK, ELEKTROLIT KHAS, & RESEP RESUME\r\n\r\n### 1. Peta Hubungan Golongan, Lokasi Nefron, & Efek Elektrolit Khas\r\n| Golongan Diuretik | Contoh Obat (Slide 1-26) | Lokasi Kerja Nefron | Target Molekuler | Efek Elektrolit Khas |\r\n| :--- | :--- | :--- | :--- | :--- |\r\n| **CAI (Carbonic Anhydrase Inhibitor)** | Acetazolamide, Metazolamid, Diklorfenamid | Tubulus Kontortus Proksimal (PCT) | Enzim Karbonik Anhidrase (CA II & IV) | Asidosis metabolik, ↓K⁺, ↑HCO₃⁻ urin (urin basa) |\r\n| **Diuretik Osmotik** | Mannitol | Tubulus Proksimal & Ansa Henle Desenden | Tekanan osmotik luminal intraluminal | ↑Na⁺ serum (hipernatremia), ↑K⁺ serum, dehidrasi seluler |\r\n| **Loop Diuretic (Diuretik Kuat)** | Furosemid, Torsemid, Bumetanid, Asam Etakrinat | Ansa Henle Pars Asenden Tebal (TAL) | Simporter Na⁺/K⁺/2Cl⁻ | ↓K⁺, ↓Na⁺, ↓Cl⁻, **↓Ca²⁺ (Hipokalsemia)**, ↓Mg²⁺, alkalosis metabolik |\r\n| **Thiazide & Thiazide-like** | HCT, Klortalidon, Indapamid, Metolazon, Bendroflumetiazid | Tubulus Kontortus Distal (DCT) | Simporter Na⁺/Cl⁻ (NCC) | ↓K⁺, ↓Na⁺, **↑Ca²⁺ (Hiperkalsemia)**, **Hiperurisemia**, **Hiperglikemia** |\r\n| **Hemat Kalium (K-Sparing)** | Spironolakton, Eplerenon, Amiloride, Triamteren | Tubulus Distal Akhir & Duktus Koligentes (CCT/CD) | Reseptor Aldosteron (Spirono/Eplerenon) atau Kanal ENaC (Amiloride/Triamteren) | **↑K⁺ (Hiperkalemia)**, asidosis metabolik, ↓Na⁺ |\r\n\r\n### 2. Hubungan Obat & Interaksi Obat Penting (Slide 10, 14, 18)\r\n1. **Loop Diuretik + Aminoglikosida/Cisplatin:** Memperparah **ototoksisitas** (kerusakan koklea/vestibular).  \r\n2. **Diuretik (Loop/Tiazid) + NSAID:** NSAID menghambat sintesis prostaglandin renal → **menurunkan efek diuretik & antihipertensi**.  \r\n3. **Loop Diuretik + Tiazid (misal Furosemid + Metolazon):** Menimbulkan **efek sinergisme kuat** (*sequential nephron blockade*).  \r\n4. **Diuretik Pembuang Kalium + Digoksin / Antiaritmia:** Menginduksi hipokalemia yang memicu intoksikasi glikosida jantung dan **aritmia letal**.  \r\n5. **Spironolakton + ACE-Inhibitor (ACEi):** Menyebabkan retensi kalium hebat berisiko **hiperkalemia fatal**.  \r\n6. **Tiazid + Litium:** Menurunkan klirens litium di ginjal → memicu **toksisitas litium**.\r\n\r\n\r\n---\r\n\r\n## 1.2. Simpatolitik (Beta-Blocker, Alfa-1 Blocker) & Calcium Channel Blocker (CCB)\r\n\r\n# Bank Soal-Jawab Komprehensif: Simpatolitik & Calcium Channel Blocker (CCB)\r\n**Materi:** Presentasi Asisten Dosen Farmakologi (P1S2 - Simpatolitik & CCB, Slide 1–25)  \r\n**Kesesuaian:** 100% Persis Algoritma Ujian Identifikasi Meja / OSPE Farmakologi Blok 3.2  \r\n\r\n---\r\n\r\n## DAFTAR OBAT PRIORITAS & PETA KONSEP CEPAT MEJA UJIAN\r\n\r\n| No | Nama Obat | Golongan / Subgolongan | Mnemonik Asdos | Sediaan & Dosis Lazim | Kata Kunci / Efek Khas Ujian | Status Ujian |\r\n|:---:|:---|:---|:---:|:---|:---|:---:|\r\n| 1 | **Atenolol** | β-Blocker Kardioselektif (β₁) | AMEL KARLA | Tab 50, 100 mg; Dosis awal 25 mg, maks 100 mg/hr | Bradikardia, PJK, angina | **PRIORITAS TINGGI** |\r\n| 2 | **Metoprolol** | β-Blocker Kardioselektif (β₁) | AMEL KARLA | Tab 50, 100 mg; Dosis awal 50–100 mg, maks 200 mg/hr | Masking hipoglikemia, PJK | **PRIORITAS TINGGI** |\r\n| 3 | **Bisoprolol** | β-Blocker Kardioselektif (β₁) | AMEL | Tab 2,5; 5; 10 mg; Dosis 1,25–10 mg/hr | Gagal jantung kronik stabil, kardioselektif | **PRIORITAS TINGGI** |\r\n| 4 | **Betaxolol** | β-Blocker Kardioselektif (β₁) | AMEL | Tab 10, 20 mg; Tetes mata 0,25–0,5% | Hipertensi, glaukoma sudut terbuka | Standar |\r\n| 5 | **Esmolol** | β-Blocker Kardioselektif (β₁) | AMEL | Vial/Ampul injeksi 10 mg/mL, 250 mg/mL | Ultra-short acting, SVT intraoperatif | Standar |\r\n| 6 | **Acebutolol** | β-Blocker Kardioselektif (β₁) | AMEL | Kapsul 200, 400 mg; Dosis 200–800 mg/hr | Memiliki aktivitas ISA (simpatomimetik intrinsik) | Standar |\r\n| 7 | **Propranolol** | β-Blocker Non-Selektif (β₁ + β₂) | Pro-Ti-Na | Tab 10, 40 mg; Dosis 40–160 mg/hr | Bronkospasme berat (KI: Asma), tremor | **PRIORITAS TINGGI** |\r\n| 8 | **Timolol** | β-Blocker Non-Selektif (β₁ + β₂) | Pro-Ti-Na | Tetes mata 0,25%, 0,5%; Tab 5, 10 mg | Glaukoma sudut terbuka, profilaksis migren | Standar |\r\n| 9 | **Nadolol** | β-Blocker Non-Selektif (β₁ + β₂) | Pro-Ti-Na | Tab 20, 40, 80 mg; Dosis 40–240 mg/hr | Waktu paruh panjang, ekskresi ginjal | Standar |\r\n| 10 | **Karvedilol** | Mixed α₁ + β Blocker | AMEL KARLA | Tab 6,25; 25 mg; Dosis awal 12,5 mg, maks 50 mg/hr | Baku emas gagal jantung kronik, vasodilatasi perifer | **PRIORITAS TINGGI** |\r\n| 11 | **Labetalol** | Mixed α₁ + β Blocker | AMEL KARLA | Tab 100 mg; Dosis awal 100 mg, maks 300 mg/hr | Pilihan hipertensi pada kehamilan (preeklamsia) | **PRIORITAS TINGGI** |\r\n| 12 | **Prazosin** | α₁-Blocker Selektif | PETE BUDOK | Tab 1, 2 mg; Dosis awal 0,5 mg, maks 4 mg/hr | ***First-dose syncope***, hipotensi postural | **PRIORITAS TINGGI** |\r\n| 13 | **Terazosin** | α₁-Blocker Selektif | PETE BUDOK | Tab 1, 2 mg; Dosis awal 1–2 mg, maks 4 mg/hr | BPH + Hipertensi; diminum malam hari (h.s.) | **PRIORITAS TINGGI** |\r\n| 14 | **Doksazosin** | α₁-Blocker Selektif | PETE BUDOK | Tab 1, 2 mg; Dosis awal 1–2 mg, maks 4 mg/hr | Hipertensi + BPH, long-acting | Standar |\r\n| 15 | **Bunazosin** | α₁-Blocker Selektif | PETE BUDOK | Tab 0,5, 1 mg; Dosis awal 1–5 mg, maks 3 mg/hr | Vasodilatasi arteriol & venula | Standar |\r\n| 16 | **Nifedipin** | CCB Dihidropiridin (DHP) | AMIN NIKAH FELICIA | Tab 10 mg; Dosis 3 × 5–10 mg/hr | Hiperplasia gingiva, flushing, edema tungkai | **PRIORITAS TINGGI** |\r\n| 17 | **Amlodipin** | CCB Dihidropiridin (DHP) | AMIN NIKAH FELICIA | Tab 5, 10 mg; Dosis 1 × 5–10 mg/hr | Edema perifer/pretibial, hiperplasia gingiva | **PRIORITAS TINGGI** |\r\n| 18 | **Nikardipin** | CCB Dihidropiridin (DHP) | AMIN NIKAH FELICIA | Ampul 10 mg/10 mL; Dosis titrasi emergensi | Vasodilator arteriolar poten, hipertensi krisis | Standar |\r\n| 19 | **Felodipin** | CCB Dihidropiridin (DHP) | AMIN NIKAH FELICIA | Tab lepas lambat 2,5; 5 mg | Vaskuloselektif tinggi, edema perifer | Standar |\r\n| 20 | **Verapamil** | CCB Non-DHP (Diphenylalkylamine) | VERA GALO TIA HAMIL | Tab 80, 240 mg; Ampul 5 mg/2 mL | **Konstipasi berat**, bradikardia, **KI mutlak + β-blocker** | **PRIORITAS TINGGI** |\r\n| 21 | **Diltiazem** | CCB Non-DHP (Benzotiazepin) | Intermediat | Tab 30, 60 mg; Dosis 90–180 mg/hr | **AV block**, bradikardia, palpitasi | **PRIORITAS TINGGI** |\r\n\r\n---\r\n\r\n## BAGIAN I: TEORI DASAR & PATOFISIOLOGI OBAT (SLIDE 1–5, 7, 9–11, 13–15)\r\n\r\n### Butir 1 (Definisi Farmakologis Simpatolitik)\r\n**q:** Jelaskan definisi farmakologis dan mekanisme umum obat golongan simpatolitik (*adrenergic antagonist*)!  \r\n**a:** \r\n* **Definisi:** Simpatolitik adalah senyawa obat yang melekat secara reversibel maupun ireversibel pada adrenoreseptor (α dan/atau β).\r\n* **Mekanisme Umum:** Mencegah aktivasi adrenoreseptor oleh ligan agonis endogen (epinefrin, norepinefrin) maupun agonis eksogen, sehingga meniadakan transmisi sinyal simpatis pada organ efektor kardiovaskular.\r\n* **Klasifikasi:** Terdiri atas α-blocker dan β-blocker.\r\n\r\n---\r\n\r\n### Butir 2 (Mekanisme Kerja Molekuler β-Blocker)\r\n**q:**  \r\na. Bagaimana mekanisme kerja molekuler β-blocker pada reseptor adrenergik?  \r\nb. Apa efek kardiovaskular langsung dari blokade reseptor β₁ di jantung dan ginjal?  \r\n**a:**  \r\na. Bekerja secara **kompetitif mengurangi tingkat hunian (occupancy) adrenoreseptor β** oleh katekolamin endogen atau agonis β eksogen.  \r\nb. Hambatan pada reseptor β₁:\r\n   1. **Jantung:** Penurunan laju denyut jantung (*kronotropik negatif*), penurunan kontraktilitas miokardium (*inotropik negatif*), dan perlambatan konduksi nodus AV (*dromotropik negatif*).\r\n   2. **Ginjal:** Menghambat pelepasan renin dari sel jukstaglomerulus → menurunkan pembentukan Angiotensin II dan sekresi aldosteron → menurunkan retensi cairan dan resistensi perifer.\r\n\r\n---\r\n\r\n### Butir 3 (Indikasi Klinis β-Blocker - Mnemonik \"PAJAK ASAP\")\r\n**q:** Sebutkan indikasi penggunaan β-blocker menggunakan mnemonik yang diajarkan pada praktikum!  \r\n**a:**  \r\n* **Mnemonik PPT:** **PAJAK ASAP**\r\n  * **P** : **P**enyakit Jantung Koroner (PJK)\r\n  * **A** : **A**ritmia Supraventrikel\r\n  * **J** : Gagal **J**antung (*Heart Failure* stabil)\r\n  * **A** : **A**ngina Pectoris\r\n  * **K** : **K**ardiak / Hipertensi dengan risiko kardiovaskular tinggi\r\n  * **ASAP** : Sindrom Koroner Akut / Angina Stabil / Profilaksis Infark pasca PJK\r\n\r\n---\r\n\r\n### Butir 4 (Kontraindikasi & Interaksi Berbahaya β-Blocker)\r\n**q:**  \r\na. Sebutkan kontraindikasi obat golongan β-blocker!  \r\nb. Jelaskan bahaya interaksi obat antara β-blocker dengan CCB Non-Dihidropiridin (Verapamil / Diltiazem)!  \r\n**a:**  \r\na. Kontraindikasi β-blocker:\r\n   1. Pasien blokade AV derajat 2 dan 3.\r\n   2. Sick Sinus Syndrome (SSS).\r\n   3. Pasien Asma Bronkial dan PPOK (risiko bronkospasme berat akibat blokade β₂).\r\n   4. Diabetes Melitus (kewaspadaan tinggi: menutupi gejala peringatan hipoglikemia adrenergik seperti tremor dan takikardia).\r\n   5. Gagal Jantung Akut Dekompensasi.\r\nb. **Interaksi Berbahaya:** Kombinasi β-blocker dengan Verapamil atau Diltiazem menimbulkan efek depresi aditif pada nodus SA dan konduksi AV → **sangat berisiko terjadi heart block (blokade AV total), bradikardia berat, dan asistol / syok kardiogenik**.\r\n\r\n---\r\n\r\n### Butir 5 (Efek Samping Khas β-Blocker)\r\n**q:** Sebutkan 4 efek samping khas dari obat golongan β-blocker!  \r\n**a:**  \r\n1. **Bronkospasme:** Akibat blokade reseptor β₂ pada otot polos saluran napas.\r\n2. **Hambatan konduksi nodus AV & bradikardia:** Perlambatan transmisi impuls nodus AV.\r\n3. **Mengurangi / menutupi gejala hipoglikemia (*masking hypoglycemia*):** Pasien tidak merasakan takikardia atau tremor saat gula darah turun drastis.\r\n4. **Gangguan fungsi seksual:** Disfungsi ereksi dan penurunan libido.\r\n\r\n---\r\n\r\n### Butir 6 (Mekanisme Kerja & Indikasi α-Blocker)\r\n**q:**  \r\na. Bagaimana mekanisme kerja molekuler α-blocker dalam menurunkan tekanan darah?  \r\nb. Sebutkan indikasi klinis khas α-blocker selain hipertensi biasa!  \r\n**a:**  \r\na. Menghambat reseptor α₁-adrenergik pada otot polos arteriol dan venula → mencegah vasokonstriksi oleh katekolamin → vasodilatasi sistemik → **penurunan resistensi vaskular perifer (SVR) dan penurunan tekanan darah**.  \r\nb. Indikasi khas:\r\n   1. **Hipertensi dengan dislipidemia dan Diabetes Melitus:** Tidak mengganggu metabolisme glukosa dan lipid.\r\n   2. **Pasien Hiperplasia Prostat Jinak (BPH):** Merelaksasi otot polos leher buli-buli dan stroma prostat sehingga melancarkan berkemih.\r\n\r\n---\r\n\r\n### Butir 7 (Efek Samping Khas & Kontraindikasi α-Blocker)\r\n**q:**  \r\na. Sebutkan efek samping khas yang sering terjadi pada awal terapi α-blocker!  \r\nb. Sebutkan kontraindikasi α-blocker menurut slide kuliah!  \r\n**a:**  \r\na. Efek samping khas:\r\n   1. **Hipotensi ortostatik / postural (*First-Dose Syncope* / Fenomena Dosis Pertama):** Pusing melayang hingga pingsan saat berdiri mendadak dari posisi duduk/berbaring.\r\n   2. Hidung tersumbat (akibat vasodilatasi mukosa nasal).\r\n   3. Sakit kepala, palpitasi refleks, dan edema perifer.\r\n   4. Gangguan fungsi seksual (ejakulasi retrograde).  \r\nb. Kontraindikasi slide: Pasien blokade AV derajat 2 dan 3, Sick Sinus Syndrome, Pasien Asma/PPOK, dan Gagal jantung berat dekompensasi.\r\n\r\n---\r\n\r\n### Butir 8 (Mekanisme Kerja Seluler CCB & 3 Kelas Kimianya)\r\n**q:**  \r\na. Jelaskan mekanisme kerja seluler Calcium Channel Blocker (CCB)!  \r\nb. Sebutkan 3 kelas kimia utama obat CCB beserta contoh representatifnya!  \r\n**a:**  \r\na. Menghambat influks ion kalsium (Ca²⁺) ekstraseluler melalui kanal kalsium tipe-L sensitif voltase (*voltage-gated L-type calcium channel*) ke dalam sarkoplasma miosit jantung dan sel otot polos vaskular → vasodilatasi perifer, penurunan resistensi vaskular, serta efek inotropik, kronotropik, dan dromotropik negatif → penurunan tekanan darah.  \r\nb. Tiga kelas kimia CCB:\r\n   1. **Diphenylalkylamines:** Verapamil.\r\n   2. **Benzotiazepin:** Diltiazem.\r\n   3. **Dihidropiridin (DHP):** Nifedipin, Amlodipin, Nikardipin, Felodipin.\r\n\r\n---\r\n\r\n## BAGIAN II: BANK SOAL STASI IDENTIFIKASI MEJA / OSPE FARMAKO\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1157,7 +1186,9 @@
         "metolazon",
         "metolazone"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kotransporter Na⁺/Cl⁻ di tubulus kontortus distal (DCT) dan sebagian tubulus proksimal",
+      "jawaban_b": "Keunggulan: Tetap efektif memicu diuresis pada GFR < 30 mL/menit (HCT tidak efektif). Kombinasi: Sinergisme kuat dengan Furosemid (Sequential Nephron Blockade) untuk edema refrakter"
     },
     {
       "id": 215,
@@ -1165,7 +1196,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ATENOLOL",
       "prompt": "[Tablet Atenolol]\n\na. Mekanisme kerja obat?\n\nb. Contoh obat lain yang satu golongan?",
-      "stimulus": "Tablet Atenolol",
+      "stimulus": "Diberikan preparat Atenolol",
       "soal_a": "Mekanisme kerja obat?",
       "soal_b": "Contoh obat lain yang satu golongan?",
       "diagnosis": "ATENOLOL",
@@ -1191,7 +1222,7 @@
         "**Mnemonik:** Metoprolol, Bisoprolol, Betaxolol.",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Secara kompetitif menghambat reseptor beta-1 adrenergik di jantung -> menurunkan kontraktilitas miokard, denyut jantung, dan sekresi renin\nb. Metoprolol, Bisoprolol, Karvedilol (Beta-Blocker)\r\n\r\n---\r\n\r\n### 2. METOPROLOL",
+      "jawaban_ringkas": "a. Secara kompetitif menghambat reseptor β₁ adrenergik di jantung → menurunkan kontraktilitas miokard, denyut jantung, dan sekresi renin\nb. Metoprolol, Bisoprolol, Karvedilol (Beta-Blocker)",
       "jawaban_lengkap": "a. **Mekanisme Kerja:**  \r\n   Bekerja secara kompetitif memblokade reseptor β₁-adrenergik secara selektif (kardioselektif) pada membran miosit miokardium dan nodus AV/SA, menurunkan stimulasi adenilat siklase dan influks Ca²⁺, sehingga menghasilkan efek inotropik, kronotropik, dan dromotropik negatif, serta menurunkan sekresi renin ginjal.  \r\nb. **Golongan, Contoh Obat, Dosis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (Antagonis selektif β₁).  \r\n   * **Contoh sejenis (Mnemonik AMEL KARLA):** Metoprolol, Bisoprolol, Betaxolol.  \r\n   * **Dosis Awal:** 25 mg/hari (oral).  \r\n   * **Dosis Maksimal:** 100 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 50 mg dan 100 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1210,7 +1241,9 @@
         "th-2021",
         "atenolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Secara kompetitif menghambat reseptor β₁ adrenergik di jantung → menurunkan kontraktilitas miokard, denyut jantung, dan sekresi renin",
+      "jawaban_b": "Metoprolol, Bisoprolol, Karvedilol (Beta-Blocker)"
     },
     {
       "id": 216,
@@ -1218,7 +1251,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "METOPROLOL",
       "prompt": "[Tablet Metoprolol]\n\na. Mekanisme kerja obat dan risikonya pada pasien Diabetes Melitus?\n\nb. Penulisan resep sediaan oralnya (1 kali sehari)?",
-      "stimulus": "Tablet Metoprolol",
+      "stimulus": "Diberikan preparat Metoprolol",
       "soal_a": "Mekanisme kerja obat dan risikonya pada pasien Diabetes Melitus?",
       "soal_b": "Penulisan resep sediaan oralnya (1 kali sehari)?",
       "diagnosis": "METOPROLOL",
@@ -1242,7 +1275,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Antagonis kompetitif reseptor beta-1 adrenergik (kardioselektif) -> menurunkan HR & kontraktilitas; Risiko DM: masking hipoglikemia (menutupi gejala takikardia & tremor)\nb. R/ Metoprolol tab 50 mg No. XXX / S 1 d d tab 1 p.c. (atau injeksi 1 mg/ml amp No. I / S.i.m.m.)\r\n\r\n---\r\n\r\n### 3. BISOPROLOL",
+      "jawaban_ringkas": "a. Antagonis kompetitif reseptor β₁ adrenergik (kardioselektif) → menurunkan HR & kontraktilitas; Risiko DM: masking hipoglikemia (menutupi gejala takikardia & tremor)\nb. R/ Metoprolol tab 50 mg No. XXX / S 1 d d tab 1 p.c. (atau injeksi 1 mg/ml amp No. I / S.i.m.m.)",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Risiko DM:**  \r\n   * **Mekanisme Kerja:** Antagonis kompetitif selektif reseptor β₁-adrenergik di jantung yang mengurangi laju denyut jantung, curah jantung, dan tekanan darah arterial.  \r\n   * **Risiko pada DM:** Dapat menutupi (*masking*) gejala peringatan hipoglikemia adrenergik (seperti takikardia, palpitasi, dan tremor), sehingga pasien DM dapat jatuh ke dalam koma hipoglikemia tanpa disadari.  \r\nb. **Golongan, Mnemonik, Dosis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (β₁).  \r\n   * **Mnemonik Asdos:** **AMEL** (**A**tenolol, **ME**toprolo**L**).  \r\n   * **Dosis Awal:** 50 - 100 mg/hari.  \r\n   * **Dosis Maksimal:** 200 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 50 mg dan 100 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1259,7 +1292,9 @@
         "th-2021",
         "metoprolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antagonis kompetitif reseptor β₁ adrenergik (kardioselektif) → menurunkan HR & kontraktilitas; Risiko DM: masking hipoglikemia (menutupi gejala takikardia & tremor)",
+      "jawaban_b": "R/ Metoprolol tab 50 mg No. XXX / S 1 d d tab 1 p.c. (atau injeksi 1 mg/ml amp No. I / S.i.m.m.)"
     },
     {
       "id": 217,
@@ -1267,7 +1302,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BISOPROLOL",
       "prompt": "[Tablet Bisoprolol]\n\na. Mekanisme kerja dan peran utamanya pada gagal jantung kronik stabil?\n\nb. Contoh obat lain satu golongan dan sediaannya?",
-      "stimulus": "Tablet Bisoprolol",
+      "stimulus": "Diberikan preparat Bisoprolol",
       "soal_a": "Mekanisme kerja dan peran utamanya pada gagal jantung kronik stabil?",
       "soal_b": "Contoh obat lain satu golongan dan sediaannya?",
       "diagnosis": "BISOPROLOL",
@@ -1292,7 +1327,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat sangat selektif reseptor beta-1 adrenergik -> mencegah toksisitas katekolamin berlebih pada miosit, apoptosis sel, dan remodeling ventrikel\nb. Atenolol, Metoprolol (Beta-1 Blocker); Sediaan: tab 2,5 mg, 5 mg, 10 mg (Dosis: 1,25–10 mg/hari)\r\n\r\n---\r\n\r\n### 4. PROPRANOLOL",
+      "jawaban_ringkas": "a. Menghambat sangat selektif reseptor β₁ adrenergik → mencegah toksisitas katekolamin berlebih pada miosit, apoptosis sel, dan remodeling ventrikel\nb. Atenolol, Metoprolol (β₁ Blocker); Sediaan: tab 2,5 mg, 5 mg, 10 mg (Dosis: 1,25–10 mg/hari)",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Gagal Jantung:**  \r\n   * **Mekanisme Kerja:** Menghambat secara sangat selektif reseptor β₁-adrenergik jantung tanpa aktivitas simpatomimetik intrinsik (ISA).  \r\n   * **Peran pada Gagal Jantung:** Menghambat hiperaktivitas simpatis kronik yang toksik bagi miosit, mencegah apoptosis miosit, menurunkan remodeling ventrikel kiri, dan menurunkan angka mortalitas kardiovaskular.  \r\nb. **Golongan, Contoh Sejenis, Dosis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (β₁).  \r\n   * **Contoh sejenis:** Atenolol, Metoprolol.  \r\n   * **Dosis Lazim:** Dosis awal 1,25 mg/hari (titrasi bertahap) hingga target pemeliharaan 5 - 10 mg/hari (1x/hari).  \r\n   * **Bentuk Sediaan:** Tablet 2,5 mg, 5 mg, dan 10 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1311,7 +1346,9 @@
         "th-2021",
         "bisoprolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat sangat selektif reseptor β₁ adrenergik → mencegah toksisitas katekolamin berlebih pada miosit, apoptosis sel, dan remodeling ventrikel",
+      "jawaban_b": "Atenolol, Metoprolol (β₁ Blocker); Sediaan: tab 2,5 mg, 5 mg, 10 mg (Dosis: 1,25–10 mg/hari)"
     },
     {
       "id": 218,
@@ -1319,7 +1356,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BETAXOLOL",
       "prompt": "[Tablet / Tetes Mata Betaxolol]\n\na. Mekanisme kerja obat dan aplikasinya pada bidang mata?\n\nb. Golongan obat dan bentuk sediaannya?",
-      "stimulus": "Tablet / Tetes Mata Betaxolol",
+      "stimulus": "Diberikan preparat Betaxolol",
       "soal_a": "Mekanisme kerja obat dan aplikasinya pada bidang mata?",
       "soal_b": "Golongan obat dan bentuk sediaannya?",
       "diagnosis": "BETAXOLOL",
@@ -1344,7 +1381,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Antagonis selektif reseptor beta-1 adrenergik (kardioselektif); Aplikasi mata: Menurunkan produksi aqueous humor pada glaukoma sudut terbuka tanpa memicu bronkospasme berat\nb. Beta-1 Blocker Kardioselektif; Sediaan: Tablet 10 mg, 20 mg; Tetes mata 0,25% dan 0,5%\r\n\r\n---\r\n\r\n### 16. ESMOLOL",
+      "jawaban_ringkas": "a. [STANDAR] a. Antagonis selektif reseptor β₁ adrenergik (kardioselektif); Aplikasi mata: Menurunkan produksi aqueous humor pada glaukoma sudut terbuka tanpa memicu bronkospasme berat\nb. β₁ Blocker Kardioselektif; Sediaan: Tablet 10 mg, 20 mg; Tetes mata 0,25% dan 0,5%",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Oftalmologi:**  \r\n   * **Mekanisme Kerja:** Antagonis selektif reseptor β₁-adrenergik kardioselektif.  \r\n   * **Aplikasi Oftalmologi:** Menurunkan produksi cairan bola mata (*aqueous humor*) oleh epitel badan siliaris tanpa efek samping bronkospasme berat sistemik, digunakan untuk mengontrol glaukoma sudut terbuka dan hipertensi okular.  \r\nb. **Golongan, Contoh Sejenis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (β₁).  \r\n   * **Contoh sejenis:** Atenolol, Metoprolol, Bisoprolol.  \r\n   * **Bentuk Sediaan:** Tablet oral 10 mg, 20 mg; Larutan tetes mata (*ophthalmic solution*) 0,25% dan 0,5%.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1363,7 +1400,9 @@
         "th-2021",
         "betaxolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Antagonis selektif reseptor β₁ adrenergik (kardioselektif); Aplikasi mata: Menurunkan produksi aqueous humor pada glaukoma sudut terbuka tanpa memicu bronkospasme berat",
+      "jawaban_b": "β₁ Blocker Kardioselektif; Sediaan: Tablet 10 mg, 20 mg; Tetes mata 0,25% dan 0,5%"
     },
     {
       "id": 219,
@@ -1371,7 +1410,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ESMOLOL",
       "prompt": "[Ampul / Vial Injeksi Esmolol]\n\na. Mekanisme kerja dan karakteristik farmakokinetik uniknya?\n\nb. Rute pemberian, golongan, dan indikasi utamanya?",
-      "stimulus": "Ampul / Vial Injeksi Esmolol",
+      "stimulus": "Diberikan preparat Esmolol",
       "soal_a": "Mekanisme kerja dan karakteristik farmakokinetik uniknya?",
       "soal_b": "Rute pemberian, golongan, dan indikasi utamanya?",
       "diagnosis": "ESMOLOL",
@@ -1391,7 +1430,7 @@
       "struktur_khas": [
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)"
       ],
-      "jawaban_ringkas": "a. Menghambat cepat reseptor beta-1 adrenergik; Kinetik unik: Ultra-short acting (T½ ~9 menit karena cepat dihidrolisis esterase eritrosit)\nb. Rute: Infus IV kontinu; Golongan: Beta-1 Blocker Kardioselektif; Indikasi: Takikardia supraventrikular (SVT) intraoperatif dan krisis hipertensi perioperatif\r\n\r\n---\r\n\r\n### 17. ACEBUTOLOL",
+      "jawaban_ringkas": "a. [STANDAR] a. Menghambat cepat reseptor β₁ adrenergik; Kinetik unik: Ultra-short acting (T½ ~9 menit karena cepat dihidrolisis esterase eritrosit)\nb. Rute: Infus IV kontinu; Golongan: β₁ Blocker Kardioselektif; Indikasi: Takikardia supraventrikular (SVT) intraoperatif dan krisis hipertensi perioperatif",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Farmakokinetik Khas:**  \r\n   * **Mekanisme Kerja:** Blokade cepat dan sangat selektif pada reseptor β₁-adrenergik di nodus SA dan AV, menurunkan denyut jantung dan tekanan darah seketika.  \r\n   * **Kinetik Khas:** Merupakan β-blocker dengan masa kerja ultra-singkat (*ultra-short acting*, waktu paruh eliminasi hanya sekitar 9 menit) karena dihidrolisis cepat oleh enzim esterase dalam sitosol eritrosit.  \r\nb. **Golongan, Rute & Indikasi:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (β₁).  \r\n   * **Rute Pemberian:** Infus intravena (IV drip / bolus).  \r\n   * **Indikasi Utama:** Pengendalian cepat laju ventrikel pada takikardia supraventrikular (SVT), fibrilasi atrium/flutter perioperatif, serta hipertensi intraoperatif.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1404,7 +1443,9 @@
         "mekanisme",
         "esmolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Menghambat cepat reseptor β₁ adrenergik; Kinetik unik: Ultra-short acting (T½ ~9 menit karena cepat dihidrolisis esterase eritrosit)",
+      "jawaban_b": "Rute: Infus IV kontinu; Golongan: β₁ Blocker Kardioselektif; Indikasi: Takikardia supraventrikular (SVT) intraoperatif dan krisis hipertensi perioperatif"
     },
     {
       "id": 220,
@@ -1412,7 +1453,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ACEBUTOLOL",
       "prompt": "[Kapsul Acebutolol]\n\na. Mekanisme kerja dan arti kepemilikan aktivitas ISA (simpatomimetik intrinsik)?\n\nb. Golongan, dosis lazim, dan sediaannya?",
-      "stimulus": "Kapsul Acebutolol",
+      "stimulus": "Diberikan preparat Acebutolol",
       "soal_a": "Mekanisme kerja dan arti kepemilikan aktivitas ISA (simpatomimetik intrinsik)?",
       "soal_b": "Golongan, dosis lazim, dan sediaannya?",
       "diagnosis": "ACEBUTOLOL",
@@ -1433,7 +1474,7 @@
       "struktur_khas": [
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)"
       ],
-      "jawaban_ringkas": "a. Antagonis beta-1 dengan aktivitas ISA (agonis parsial); Makna ISA: Menghambat stimulasi berlebih simpatis namun tetap memberi stimulasi basal saat istirahat -> risiko bradikardia istirahat lebih kecil\nb. Beta-1 Blocker Kardioselektif dengan ISA; Dosis: 200–800 mg/hari; Sediaan: Kapsul 200 mg, 400 mg\r\n\r\n---\r\n\r\n### 18. TIMOLOL",
+      "jawaban_ringkas": "a. [STANDAR] a. Antagonis β₁ dengan aktivitas ISA (agonis parsial); Makna ISA: Menghambat stimulasi berlebih simpatis namun tetap memberi stimulasi basal saat istirahat → risiko bradikardia istirahat lebih kecil\nb. β₁ Blocker Kardioselektif dengan ISA; Dosis: 200–800 mg/hari; Sediaan: Kapsul 200 mg, 400 mg",
       "jawaban_lengkap": "a. **Mekanisme Kerja & ISA:**  \r\n   * **Mekanisme Kerja:** Memblokade reseptor β₁-adrenergik secara kompetitif namun bertindak sebagai agonis parsial (memiliki aktivitas ISA).  \r\n   * **Makna Klinis ISA:** Memberikan efek blokade reseptor β saat tonus simpatis tinggi, namun tetap memberikan sedikit stimulasi basal saat istirahat, sehingga meminimalkan penurunan denyut jantung saat istirahat (risiko bradikardia berat lebih kecil) dan gangguan profil lipid lebih ringan.  \r\nb. **Golongan, Dosis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Kardioselektif (β₁) dengan aktivitas ISA.  \r\n   * **Dosis Lazim:** 200 - 800 mg/hari (terbagi 1–2 kali).  \r\n   * **Bentuk Sediaan:** Kapsul 200 mg dan 400 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1447,7 +1488,9 @@
         "dosis",
         "acebutolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Antagonis β₁ dengan aktivitas ISA (agonis parsial); Makna ISA: Menghambat stimulasi berlebih simpatis namun tetap memberi stimulasi basal saat istirahat → risiko bradikardia istirahat lebih kecil",
+      "jawaban_b": "β₁ Blocker Kardioselektif dengan ISA; Dosis: 200–800 mg/hari; Sediaan: Kapsul 200 mg, 400 mg"
     },
     {
       "id": 221,
@@ -1455,7 +1498,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PROPRANOLOL",
       "prompt": "[Tablet Propranolol]\n\na. Mekanisme kerja obat dan kontraindikasi mutlaknya?\n\nb. Contoh obat lain satu golongan dan penulisan resepnya?",
-      "stimulus": "Tablet Propranolol",
+      "stimulus": "Diberikan preparat Propranolol",
       "soal_a": "Mekanisme kerja obat dan kontraindikasi mutlaknya?",
       "soal_b": "Contoh obat lain satu golongan dan penulisan resepnya?",
       "diagnosis": "PROPRANOLOL",
@@ -1481,7 +1524,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Antagonis non-selektif reseptor beta-1 dan beta-2 adrenergik; Kontraindikasi mutlak: Asma bronkial dan PPOK (memicu bronkospasme berat via blokade reseptor beta-2)\nb. Timolol, Nadolol (Beta-Blocker Non-Selektif); Resep: R/ Propranolol tab 10 mg No. XXX / S 3 d d tab 1 a.c.\r\n\r\n---\r\n\r\n### 5. KARVEDILOL (CARVEDILOL)",
+      "jawaban_ringkas": "a. Antagonis non-selektif reseptor β₁ dan β₂ adrenergik; Kontraindikasi mutlak: Asma bronkial dan PPOK (memicu bronkospasme berat via blokade reseptor β₂)\nb. Timolol, Nadolol (Beta-Blocker Non-Selektif); Resep: R/ Propranolol tab 10 mg No. XXX / S 3 d d tab 1 a.c.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Kontraindikasi Asma:**  \r\n   * **Mekanisme Kerja:** Memblokade reseptor β₁ dan β₂-adrenergik secara non-selektif tanpa aktivitas agonis parsial.  \r\n   * **Kontraindikasi Asma:** Blokade reseptor β₂ pada otot polos bronkus meniadakan efek bronkodilatasi fisiologis oleh epinefrin → memicu konstriksi bronkus hebat (*bronkospasme masif*) yang dapat berakibat fatal pada penderita asma/PPOK.  \r\nb. **Golongan, Sediaan, Dosis & Resep:**  \r\n   * **Golongan:** β-Blocker Non-Selektif (β₁ + β₂).  \r\n   * **Contoh sejenis:** Timolol, Nadolol.  \r\n   * **Dosis Lazim:** 40 - 160 mg/hari (terbagi 2–3 dosis).  \r\n   * **Sediaan:** Tablet 10 mg dan 40 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Propranolol tab 10 mg No. XXX\r\n        S 3 d d tab 1 a.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Nn. Rina (24 tahun)\r\n     Indikasi: Tremor / Palpitasi tirotoksikosis\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Propranolol tab 10 mg No. XXX\r\n        S 3 d d tab 1 a.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Nn. Rina (24 tahun)\r\n     Indikasi: Tremor / Palpitasi tirotoksikosis",
       "tips_klinis": "",
@@ -1500,7 +1543,9 @@
         "th-2021",
         "propranolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antagonis non-selektif reseptor β₁ dan β₂ adrenergik; Kontraindikasi mutlak: Asma bronkial dan PPOK (memicu bronkospasme berat via blokade reseptor β₂)",
+      "jawaban_b": "Timolol, Nadolol (Beta-Blocker Non-Selektif); Resep: R/ Propranolol tab 10 mg No. XXX / S 3 d d tab 1 a.c."
     },
     {
       "id": 222,
@@ -1508,7 +1553,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TIMOLOL",
       "prompt": "[Tetes Mata Timolol]\n\na. Mekanisme kerja pada mata dan reseptor yang dipengaruhinya?\n\nb. Golongan, konsentrasi sediaan tetes mata, dan efek samping sistemik yang diwaspadai?",
-      "stimulus": "Tetes Mata Timolol",
+      "stimulus": "Diberikan preparat Timolol",
       "soal_a": "Mekanisme kerja pada mata dan reseptor yang dipengaruhinya?",
       "soal_b": "Golongan, konsentrasi sediaan tetes mata, dan efek samping sistemik yang diwaspadai?",
       "diagnosis": "TIMOLOL",
@@ -1529,7 +1574,7 @@
       "struktur_khas": [
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)"
       ],
-      "jawaban_ringkas": "a. Menghambat reseptor beta-1 dan beta-2 adrenergik pada epitel siliaris -> produksi aqueous humor turun -> tekanan intraokular (TIO) turun\nb. Beta-Blocker Non-Selektif; Sediaan: Tetes mata 0,25% dan 0,5%; Waspada efek sistemik: Bronkospasme pada pasien riwayat asma akibat absorpsi nasolakrimal\r\n\r\n---\r\n\r\n### 19. NADOLOL",
+      "jawaban_ringkas": "a. [STANDAR] a. Menghambat reseptor β₁ dan β₂ adrenergik pada epitel siliaris → produksi aqueous humor turun → tekanan intraokular (TIO) turun\nb. Beta-Blocker Non-Selektif; Sediaan: Tetes mata 0,25% dan 0,5%; Waspada efek sistemik: Bronkospasme pada pasien riwayat asma akibat absorpsi nasolakrimal",
       "jawaban_lengkap": "a. **Mekanisme Kerja Oftalmologi:**  \r\n   Memblokade reseptor β₁ dan β₂-adrenergik non-selektif pada prosesus siliaris epitel mata → menurunkan aktivitas adenilat siklase intraseluler → menurunkan sekresi dan pembentukan cairan intraokular (*aqueous humor*) → menurunkan tekanan intraokular (TIO).  \r\nb. **Golongan, Anggota Sejenis, Sediaan & Efek Sistemik:**  \r\n   * **Golongan:** β-Blocker Non-Selektif (β₁ + β₂).  \r\n   * **Contoh sejenis:** Propranolol, Nadolol.  \r\n   * **Bentuk Sediaan:** Tetes mata 0,25% dan 0,5% (juga tablet oral 5 mg, 10 mg).  \r\n   * **Efek Samping Sistemik Waspada:** Absorpsi sistemik melalui duktus nasolakrimalis dapat memicu bradikardia dan bronkospasme pada pasien riwayat asma.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1543,7 +1588,9 @@
         "efek-samping",
         "timolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Menghambat reseptor β₁ dan β₂ adrenergik pada epitel siliaris → produksi aqueous humor turun → tekanan intraokular (TIO) turun",
+      "jawaban_b": "Beta-Blocker Non-Selektif; Sediaan: Tetes mata 0,25% dan 0,5%; Waspada efek sistemik: Bronkospasme pada pasien riwayat asma akibat absorpsi nasolakrimal"
     },
     {
       "id": 223,
@@ -1551,7 +1598,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "NADOLOL",
       "prompt": "[Tablet Nadolol]\n\na. Mekanisme kerja dan rute eliminasi utamanya dalam tubuh?\n\nb. Golongan, dosis lazim harian, dan sediaannya?",
-      "stimulus": "Tablet Nadolol",
+      "stimulus": "Diberikan preparat Nadolol",
       "soal_a": "Mekanisme kerja dan rute eliminasi utamanya dalam tubuh?",
       "soal_b": "Golongan, dosis lazim harian, dan sediaannya?",
       "diagnosis": "NADOLOL",
@@ -1572,7 +1619,7 @@
       "struktur_khas": [
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)"
       ],
-      "jawaban_ringkas": "a. Antagonis non-selektif reseptor beta-1 dan beta-2; Eliminasi: Waktu paruh panjang (14–24 jam) dan diekskresikan dalam bentuk utuh oleh ginjal (perlu penyesuaian dosis pada gangguan ginjal)\nb. Beta-Blocker Non-Selektif; Dosis: 40–240 mg/hari (1x sehari); Sediaan: Tablet 20 mg, 40 mg, 80 mg\r\n\r\n---\r\n\r\n### 20. BUNAZOSIN",
+      "jawaban_ringkas": "a. [STANDAR] a. Antagonis non-selektif reseptor β₁ dan β₂; Eliminasi: Waktu paruh panjang (14–24 jam) dan diekskresikan dalam bentuk utuh oleh ginjal (perlu penyesuaian dosis pada gangguan ginjal)\nb. Beta-Blocker Non-Selektif; Dosis: 40–240 mg/hari (1x sehari); Sediaan: Tablet 20 mg, 40 mg, 80 mg",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Eliminasi:**  \r\n   * **Mekanisme Kerja:** Antagonis kompetitif non-selektif terhadap reseptor β₁ dan β₂-adrenergik yang menurunkan curah jantung dan resistensi vaskular.  \r\n   * **Eliminasi Khas:** Memiliki waktu paruh sangat panjang (14 - 24 jam) dan **diekskresikan terutama dalam bentuk utuh oleh ginjal**, sehingga memerlukan penyesuaian dosis yang ketat pada pasien insufisiensi ginjal.  \r\nb. **Golongan, Dosis & Sediaan:**  \r\n   * **Golongan:** β-Blocker Non-Selektif (β₁ + β₂).  \r\n   * **Dosis Lazim:** 40 - 240 mg/hari (diberikan 1 kali sehari).  \r\n   * **Bentuk Sediaan:** Tablet 20 mg, 40 mg, dan 80 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1586,7 +1633,9 @@
         "dosis",
         "nadolol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Antagonis non-selektif reseptor β₁ dan β₂; Eliminasi: Waktu paruh panjang (14–24 jam) dan diekskresikan dalam bentuk utuh oleh ginjal (perlu penyesuaian dosis pada gangguan ginjal)",
+      "jawaban_b": "Beta-Blocker Non-Selektif; Dosis: 40–240 mg/hari (1x sehari); Sediaan: Tablet 20 mg, 40 mg, 80 mg"
     },
     {
       "id": 224,
@@ -1594,7 +1643,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KARVEDILOL",
       "prompt": "[Tablet Karvedilol]\n\na. Obat tersebut termasuk dalam golongan apa?\n\nb. Sebutkan 3 indikasi klinis dari obat tersebut!",
-      "stimulus": "Tablet Karvedilol",
+      "stimulus": "Diberikan preparat Karvedilol",
       "soal_a": "Obat tersebut termasuk dalam golongan apa?",
       "soal_b": "Sebutkan 3 indikasi klinis dari obat tersebut!",
       "diagnosis": "KARVEDILOL",
@@ -1619,7 +1668,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. Simpatolitik - Beta-Blocker non-selektif dengan efek vasodilatasi perifer via alfa-1 blocker (Mixed alpha-1/beta blocker)\nb. Gagal jantung kronik stabil (baku emas), hipertensi esensial, penyakit jantung koroner (PJK), angina pektoris\r\n\r\n---\r\n\r\n### 6. LABETALOL",
+      "jawaban_ringkas": "a. Simpatolitik - Beta-Blocker non-selektif dengan efek vasodilatasi perifer via α₁ blocker (Mixed alpha-1/beta blocker)\nb. Gagal jantung kronik stabil (baku emas), hipertensi esensial, penyakit jantung koroner (PJK), angina pektoris",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Keunggulan:**  \r\n   * **Mekanisme Kerja:** Menghambat secara non-selektif reseptor β₁ dan β₂, serta memblokade reseptor α₁-adrenergik vaskular (*Mixed α₁/β adrenoceptor blocker*).  \r\n   * **Keunggulan:** Blokade α₁ memicu vasodilatasi perifer dan menurunkan resistensi vaskular sistemik (*afterload*) tanpa menimbulkan takikardia refleks (karena terblokir oleh efek β). Memiliki sifat antioksidan poten dan terbukti secara klinis menurunkan angka kematian pada gagal jantung kronik stabil.  \r\nb. **Golongan, Mnemonik, Dosis, Sediaan & Resep:**  \r\n   * **Golongan:** Mixed α & β-Blocker (Non-Kardioselektif dengan efek vasodilatasi).  \r\n   * **Mnemonik Asdos:** **KARLA** (**KAR**vedilol, **LA**betalol); gabungan lengkap: **AMEL KARLA**.  \r\n   * **Dosis Awal:** 12,5 mg/hari (pada gagal jantung dimulai 2 × 3,125 mg/hari).  \r\n   * **Dosis Maksimal:** 50 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 6,25 mg dan 25 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Carvedilol tab 25 mg No. XXX\r\n        S 1 d d tab 1/2 p.c. mane\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Hartono (60 tahun)\r\n     Indikasi: Gagal jantung kronik stabil NYHA II\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Carvedilol tab 25 mg No. XXX\r\n        S 1 d d tab 1/2 p.c. mane\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Hartono (60 tahun)\r\n     Indikasi: Gagal jantung kronik stabil NYHA II",
       "tips_klinis": "",
@@ -1637,7 +1686,9 @@
         "th-2024",
         "karvedilol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatolitik - Beta-Blocker non-selektif dengan efek vasodilatasi perifer via α₁ blocker (Mixed alpha-1/beta blocker)",
+      "jawaban_b": "Gagal jantung kronik stabil (baku emas), hipertensi esensial, penyakit jantung koroner (PJK), angina pektoris"
     },
     {
       "id": 225,
@@ -1645,7 +1696,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "LABETALOL",
       "prompt": "[Tablet / Ampul Labetalol]\n\na. Sebutkan golongan obat dan dosis maksimalnya!\n\nb. Sebutkan indikasi klinis spesifiknya pada bidang obstetri!",
-      "stimulus": "Tablet / Ampul Labetalol",
+      "stimulus": "Diberikan preparat Labetalol",
       "soal_a": "Sebutkan golongan obat dan dosis maksimalnya!",
       "soal_b": "Sebutkan indikasi klinis spesifiknya pada bidang obstetri!",
       "diagnosis": "LABETALOL",
@@ -1669,7 +1720,7 @@
         "**Golongan:** Beta-Adrenergic Blocker (β-Blocker)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan Mixed alpha-1 dan beta-adrenergic blocker; Dosis maksimal 300 mg/hari (slide modul)\nb. Lini pertama hipertensi pada kehamilan (preeklamsia/eklamsia karena aman bagi perfusi uteroplasenta) dan krisis hipertensi\r\n\r\n---\r\n\r\n### 7. TERAZOSIN",
+      "jawaban_ringkas": "a. Golongan Mixed alpha-1 dan beta-adrenergic blocker; Dosis maksimal 300 mg/hari (slide modul)\nb. Lini pertama hipertensi pada kehamilan (preeklamsia/eklamsia karena aman bagi perfusi uteroplasenta) dan krisis hipertensi",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Indikasi Obstetri:**  \r\n   * **Mekanisme Kerja:** Memblokade reseptor adrenergik β₁, β₂, dan α₁ secara kompetitif (rasio blokade β:α sekitar 3:1 pada sediaan oral, 7:1 pada IV) → vasodilatasi resistensi sistemik dengan tetap mempertahankan perfusi uteroplasenta.  \r\n   * **Indikasi Obstetri Terpilih:** Merupakan obat pilihan pertama (*first-line agent*) untuk penatalaksanaan hipertensi berat pada kehamilan dan preeklamsia/eklamsia karena profil keamanannya yang tinggi bagi janin.  \r\nb. **Golongan, Mnemonik, Dosis & Sediaan:**  \r\n   * **Golongan:** Mixed α₁ + β-Blocker.  \r\n   * **Mnemonik Asdos:** **KARLA** (**KAR**vedilol, **LA**betalol).  \r\n   * **Dosis Awal:** 100 mg/hari (oral).  \r\n   * **Dosis Maksimal:** 300 mg/hari (pada emergensi hipertensi dapat dititrasi lebih tinggi).  \r\n   * **Bentuk Sediaan:** Tablet 100 mg (tersedia pula ampul injeksi IV 5 mg/mL).  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1686,7 +1737,9 @@
         "th-2022",
         "labetalol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mixed alpha-1 dan beta-adrenergic blocker; Dosis maksimal 300 mg/hari (slide modul)",
+      "jawaban_b": "Lini pertama hipertensi pada kehamilan (preeklamsia/eklamsia karena aman bagi perfusi uteroplasenta) dan krisis hipertensi"
     },
     {
       "id": 226,
@@ -1694,7 +1747,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PRAZOSIN",
       "prompt": "[Tablet Prazosin]\n\na. Mekanisme kerja obat dan efek samping khas pada dosis pertama?\n\nb. Golongan obat dan cara pencegahan efek samping dosis pertamanya?",
-      "stimulus": "Tablet Prazosin",
+      "stimulus": "Diberikan preparat Prazosin",
       "soal_a": "Mekanisme kerja obat dan efek samping khas pada dosis pertama?",
       "soal_b": "Golongan obat dan cara pencegahan efek samping dosis pertamanya?",
       "diagnosis": "PRAZOSIN",
@@ -1717,7 +1770,7 @@
       "struktur_khas": [
         "**Golongan:** Alfa-1 Blocker"
       ],
-      "jawaban_ringkas": "a. Menghambat secara selektif reseptor alfa-1 adrenergik pascasinaps -> vasodilatasi arteriol & venula; Efek samping: First-dose syncope (hipotensi ortostatik mendadak hingga pingsan)\nb. Alfa-1 Blocker Selektif; Pencegahan: berikan dosis awal sangat rendah (0,5 mg) dan dikonsumsi tepat sebelum tidur malam\r\n\r\n---\r\n\r\n### 9. DOKSAZOSIN",
+      "jawaban_ringkas": "a. Menghambat secara selektif reseptor α₁ adrenergik pascasinaps → vasodilatasi arteriol & venula; Efek samping: First-dose syncope (hipotensi ortostatik mendadak hingga pingsan)\nb. α₁ Blocker Selektif; Pencegahan: berikan dosis awal sangat rendah (0,5 mg) dan dikonsumsi tepat sebelum tidur malam",
       "jawaban_lengkap": "a. **Mekanisme Kerja & First-Dose Syncope:**  \r\n   * **Mekanisme Kerja:** Menghambat secara selektif dan kompetitif reseptor α₁-adrenergik pascasinaps pada otot polos vaskular → vasodilatasi arteriol dan venula tanpa menghambat umpan balik autoreseptor α₂ presinaps.  \r\n   * **Efek Samping Khas:** **First-Dose Syncope / Hipotensi Ortostatik Dosis Pertama** (penurunan tekanan darah postural mendadak yang dapat disertai pingsan dalam 30–90 menit setelah dosis perdana). Cara pencegahan: dosis awal harus sangat kecil (0,5 mg) dan dikonsumsi saat menjelang tidur malam (*bedtime*).  \r\nb. **Golongan, Mnemonik, Dosis, Sediaan & Resep:**  \r\n   * **Golongan:** α₁-Blocker Selektif (*Selective α₁-Adrenergic Antagonist*).  \r\n   * **Mnemonik Anggota:** **PETE BUDOK** (**P**razosin, **Te**razosin, **Bu**nazosin, **Dok**sazosin).  \r\n   * **Dosis Awal:** 0,5 mg/hari.  \r\n   * **Dosis Maksimal:** 4 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 1 mg dan 2 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Prazosin tab 1 mg No. XV\r\n        S 1 d d tab 1/2 h.s. (nocte)\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Slamet (58 tahun)\r\n     Catatan: Diminum malam hari sebelum tidur\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Prazosin tab 1 mg No. XV\r\n        S 1 d d tab 1/2 h.s. (nocte)\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Slamet (58 tahun)\r\n     Catatan: Diminum malam hari sebelum tidur",
       "tips_klinis": "",
@@ -1734,7 +1787,9 @@
         "efek-samping",
         "prazosin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat secara selektif reseptor α₁ adrenergik pascasinaps → vasodilatasi arteriol & venula; Efek samping: First-dose syncope (hipotensi ortostatik mendadak hingga pingsan)",
+      "jawaban_b": "α₁ Blocker Selektif; Pencegahan: berikan dosis awal sangat rendah (0,5 mg) dan dikonsumsi tepat sebelum tidur malam"
     },
     {
       "id": 227,
@@ -1742,7 +1797,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TERAZOSIN",
       "prompt": "[Tablet Terazosin]\n\na. Sebutkan 3 contoh obat lain dalam golongan yang sama!\n\nb. Sebutkan 2 sediaan, dosis, dan aturan waktu minumnya!",
-      "stimulus": "Tablet Terazosin",
+      "stimulus": "Diberikan preparat Terazosin",
       "soal_a": "Sebutkan 3 contoh obat lain dalam golongan yang sama!",
       "soal_b": "Sebutkan 2 sediaan, dosis, dan aturan waktu minumnya!",
       "diagnosis": "TERAZOSIN",
@@ -1767,7 +1822,7 @@
         "**Golongan:** Alfa-1 Blocker",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. Prazosin, Doksazosin, Bunazosin (Golongan Alfa-1 Blocker Selektif / Mnemonik: PETE BUDOK)\nb. Sediaan: tab 1 mg dan tab 2 mg; Dosis awal 1 mg/hari, wajib diminum malam hari sebelum tidur (h.s.) untuk mencegah sinkop\r\n\r\n---\r\n\r\n### 8. PRAZOSIN",
+      "jawaban_ringkas": "a. Prazosin, Doksazosin, Bunazosin (Golongan α₁ Blocker Selektif / Mnemonik: PETE BUDOK)\nb. Sediaan: tab 1 mg dan tab 2 mg; Dosis awal 1 mg/hari, wajib diminum malam hari sebelum tidur (h.s.) untuk mencegah sinkop",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Peran pada BPH:**  \r\n   * **Mekanisme Kerja:** Memblokade reseptor α₁-adrenergik pada otot polos pembuluh darah dan jaringan fibro-muskular urogenital.  \r\n   * **Rasionalisasi BPH:** Blokade reseptor α₁ pada kapsul prostat, stroma prostat, dan leher kandung kemih (*trigonum vesicae*) menurunkan tonus sfingter internal → memperlebar jalan keluar urin, menurunkan resistensi aliran urin, dan memperbaiki gejala obstruktif miksi pada BPH.  \r\nb. **Golongan, Mnemonik, Dosis, Sediaan & Resep:**  \r\n   * **Golongan:** α₁-Blocker Selektif.  \r\n   * **Mnemonik Asdos:** **PETE BUDOK** (**PE**=Prazosin, **TE**=Terazosin, **BU**=Bunazosin, **DOK**=Doksazosin).  \r\n   * **Dosis Awal:** 1 - 2 mg/hari (diberikan malam hari sebelum tidur).  \r\n   * **Dosis Maksimal:** 4 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 1 mg dan 2 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.U\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Terazosin tab 1 mg No. X\r\n        S 1 d d tab 1 h.s. (nocte)\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Joko (64 tahun)\r\n     Indikasi: BPH + Hipertensi\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.U\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Terazosin tab 1 mg No. X\r\n        S 1 d d tab 1 h.s. (nocte)\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Joko (64 tahun)\r\n     Indikasi: BPH + Hipertensi",
       "tips_klinis": "",
@@ -1785,7 +1840,9 @@
         "th-2024",
         "terazosin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Prazosin, Doksazosin, Bunazosin (Golongan α₁ Blocker Selektif / Mnemonik: PETE BUDOK)",
+      "jawaban_b": "Sediaan: tab 1 mg dan tab 2 mg; Dosis awal 1 mg/hari, wajib diminum malam hari sebelum tidur (h.s.) untuk mencegah sinkop"
     },
     {
       "id": 228,
@@ -1793,7 +1850,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "DOKSAZOSIN",
       "prompt": "[Tablet Doksazosin]\n\na. Mekanisme kerja obat dan keunggulan kinetiknya dibanding Prazosin?\n\nb. Golongan, indikasi klinis, dan sediaannya?",
-      "stimulus": "Tablet Doksazosin",
+      "stimulus": "Diberikan preparat Doksazosin",
       "soal_a": "Mekanisme kerja obat dan keunggulan kinetiknya dibanding Prazosin?",
       "soal_b": "Golongan, indikasi klinis, dan sediaannya?",
       "diagnosis": "DOKSAZOSIN",
@@ -1814,7 +1871,7 @@
       "struktur_khas": [
         "**Golongan:** Alfa-1 Blocker"
       ],
-      "jawaban_ringkas": "a. Antagonis selektif reseptor alfa-1 adrenergik; Keunggulan kinetik: waktu paruh panjang (~22 jam) sehingga cukup diminum 1 kali sehari\nb. Alfa-1 Blocker Selektif; Indikasi: Hipertensi dan BPH (Hiperplasia Prostat Jinak); Sediaan: tab 1 mg dan 2 mg\r\n\r\n---\r\n\r\n## II. GOLONGAN CALCIUM CHANNEL BLOCKER (CCB)\r\n\r\n### 10. NIFEDIPIN",
+      "jawaban_ringkas": "a. [STANDAR] a. Antagonis selektif reseptor α₁ adrenergik; Keunggulan kinetik: waktu paruh panjang (~22 jam) sehingga cukup diminum 1 kali sehari\nb. α₁ Blocker Selektif; Indikasi: Hipertensi dan BPH (Hiperplasia Prostat Jinak); Sediaan: tab 1 mg dan 2 mg",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Profil Kinetik:**  \r\n   * **Mekanisme Kerja:** Antagonis selektif reseptor adrenergik α₁ pascasinaps yang menyebabkan relaksasi vaskular sistemik dan sfingter trigonum prostat.  \r\n   * **Kinetik:** Memiliki waktu paruh eliminasi yang jauh lebih panjang (≈ 22 jam) dibandingkan Prazosin (2 - 3 jam), sehingga cukup diberikan sekali sehari (*once-daily dosing*) dengan fluktuasi tekanan darah yang lebih minimal.  \r\nb. **Golongan, Mnemonik, Dosis & Sediaan:**  \r\n   * **Golongan:** α₁-Blocker Selektif.  \r\n   * **Mnemonik Asdos:** **PETE BUDOK** (**DOK** = Doksazosin).  \r\n   * **Dosis Awal:** 1 - 2 mg/hari (dosis malam).  \r\n   * **Dosis Maksimal:** 4 mg/hari.  \r\n   * **Bentuk Sediaan:** Tablet 1 mg dan 2 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1828,7 +1885,9 @@
         "dosis",
         "doksazosin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Antagonis selektif reseptor α₁ adrenergik; Keunggulan kinetik: waktu paruh panjang (~22 jam) sehingga cukup diminum 1 kali sehari",
+      "jawaban_b": "α₁ Blocker Selektif; Indikasi: Hipertensi dan BPH (Hiperplasia Prostat Jinak); Sediaan: tab 1 mg dan 2 mg"
     },
     {
       "id": 229,
@@ -1836,7 +1895,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BUNAZOSIN",
       "prompt": "[Tablet Bunazosin]\n\na. Mekanisme kerja obat dalam menurunkan tekanan darah?\n\nb. Golongan obat, dosis lazim harian, dan sediaannya?",
-      "stimulus": "Tablet Bunazosin",
+      "stimulus": "Diberikan preparat Bunazosin",
       "soal_a": "Mekanisme kerja obat dalam menurunkan tekanan darah?",
       "soal_b": "Golongan obat, dosis lazim harian, dan sediaannya?",
       "diagnosis": "BUNAZOSIN",
@@ -1860,7 +1919,7 @@
         "**Golongan:** Alfa-1 Blocker",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat reseptor alfa-1 adrenergik perifer -> menghambat vasokonstriksi arteriol dan meningkatkan kapasitansi vena -> resistensi perifer turun\nb. Alfa-1 Blocker Selektif (Mnemonik: PETE BUDOK); Dosis: Dosis awal 1–5 mg, maksimal 3 mg/hari (data slide); Sediaan: Tablet 0,5 mg, 1 mg\r\n\r\n---\r\n\r\n### 21. FELODIPIN",
+      "jawaban_ringkas": "a. [STANDAR] a. Menghambat reseptor α₁ adrenergik perifer → menghambat vasokonstriksi arteriol dan meningkatkan kapasitansi vena → resistensi perifer turun\nb. α₁ Blocker Selektif (Mnemonik: PETE BUDOK); Dosis: Dosis awal 1–5 mg, maksimal 3 mg/hari (data slide); Sediaan: Tablet 0,5 mg, 1 mg",
       "jawaban_lengkap": "a. **Mekanisme Hemodinamik Molekuler:**  \r\n   Memblokade reseptor α₁-adrenergik perifer → menghambat vasokonstriksi yang dimediasi oleh pelepasan norepinefrin → relaksasi resistensi arteriol sistemik dan peningkatan kapasitansi vena → penurunan tekanan darah sistolik dan diastolik.  \r\nb. **Golongan, Mnemonik, Dosis & Sediaan:**  \r\n   * **Golongan:** α₁-Blocker Selektif.  \r\n   * **Mnemonik Asdos:** **PETE BUDOK** (**BU** = Bunazosin).  \r\n   * **Dosis Awal:** 1 - 5 mg/hari.  \r\n   * **Dosis Maksimal:** 3 mg/hari (tercatat pada data tabel dosis PPT).  \r\n   * **Bentuk Sediaan:** Tablet 0,5 mg dan 1 mg.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -1877,7 +1936,9 @@
         "th-2021",
         "bunazosin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Menghambat reseptor α₁ adrenergik perifer → menghambat vasokonstriksi arteriol dan meningkatkan kapasitansi vena → resistensi perifer turun",
+      "jawaban_b": "α₁ Blocker Selektif (Mnemonik: PETE BUDOK); Dosis: Dosis awal 1–5 mg, maksimal 3 mg/hari (data slide); Sediaan: Tablet 0,5 mg, 1 mg"
     },
     {
       "id": 230,
@@ -1885,7 +1946,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "NIFEDIPIN",
       "prompt": "[Tablet Nifedipin]\n\na. Sebutkan golongan dan 3 contoh obat lain satu golongan!\n\nb. Sebutkan 3 efek samping khasnya dan tuliskan resepnya (3x sehari 1 minggu)!",
-      "stimulus": "Tablet Nifedipin",
+      "stimulus": "Diberikan preparat Nifedipin",
       "soal_a": "Sebutkan golongan dan 3 contoh obat lain satu golongan!",
       "soal_b": "Sebutkan 3 efek samping khasnya dan tuliskan resepnya (3x sehari 1 minggu)!",
       "diagnosis": "NIFEDIPIN",
@@ -1913,7 +1974,7 @@
         "**Golongan:** CCB Dihidropiridin (Vaskular)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan CCB Dihidropiridin (DHP); Contoh lain: Amlodipin, Nikardipin, Felodipin (Mnemonik: AMIN NIKAH FELICIA)\nb. Efek samping: Hiperplasia gingiva, kemerahan wajah (flushing), edema tungkai/perifer; Resep: R/ Nifedipin tab 10 mg No. XXI / S 3 d d tab 1 p.c.\r\n\r\n---\r\n\r\n### 11. AMLODIPIN",
+      "jawaban_ringkas": "a. Golongan CCB Dihidropiridin (DHP); Contoh lain: Amlodipin, Nikardipin, Felodipin (Mnemonik: AMIN NIKAH FELICIA)\nb. Efek samping: Hiperplasia gingiva, kemerahan wajah (flushing), edema tungkai/perifer; Resep: R/ Nifedipin tab 10 mg No. XXI / S 3 d d tab 1 p.c.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Efek Samping Khas:**  \r\n   * **Mekanisme Kerja:** Menghambat influks ion kalsium ekstraseluler melalui *voltage-dependent L-type calcium channels* secara selektif pada sel otot polos vaskular arteri (*vaskuloselektif* kuat), menurunkan resistensi perifer secara cepat.  \r\n   * **Tiga Efek Samping Khas:**\r\n     1. **Hiperplasia Gingiva (*Gingival Hyperplasia*):** Pembengkakan / proliferasi jaringan gusi.\r\n     2. **Flushing & Sakit Kepala (*Throbbing Headache*):** Akibat vasodilatasi mendadak pembuluh darah kulit dan serebral.\r\n     3. **Edema Perifer (Edema Tungkai):** Karena peningkatan tekanan hidrostatis kapiler akibat relaksasi arteriol prekapiler tanpa relaksasi vena pascakapiler.\r\n     4. *Palpitasi / Takikardia Refleks* (khususnya formulasi kerja pendek).  \r\nb. **Golongan, Mnemonik, Dosis, Sediaan & Resep:**  \r\n   * **Golongan:** Calcium Channel Blocker (CCB) golongan **Dihidropiridin (DHP)**.  \r\n   * **Mnemonik Asdos:** **AMIN NIKAH FELICIA** (**Am**lodipin, **Ni**fedipin, **Nik**ardipin, **Felo**dipin).  \r\n   * **Dosis Lazim:** 3 × 5 - 10 mg/hari (sediaan short-acting; atau 20–60 mg 1x/hari formulasi sustained-release/OROS).  \r\n   * **Bentuk Sediaan:** Tablet 10 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Nifedipine tab 10 mg No. XXX\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Ny. Endang (48 tahun)\r\n     Indikasi: Hipertensi\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Nifedipine tab 10 mg No. XXX\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Ny. Endang (48 tahun)\r\n     Indikasi: Hipertensi",
       "tips_klinis": "",
@@ -1936,7 +1997,9 @@
         "th-2021",
         "nifedipin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan CCB Dihidropiridin (DHP); Contoh lain: Amlodipin, Nikardipin, Felodipin (Mnemonik: AMIN NIKAH FELICIA)",
+      "jawaban_b": "Efek samping: Hiperplasia gingiva, kemerahan wajah (flushing), edema tungkai/perifer; Resep: R/ Nifedipin tab 10 mg No. XXI / S 3 d d tab 1 p.c."
     },
     {
       "id": 231,
@@ -1944,7 +2007,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "AMLODIPIN",
       "prompt": "[Tablet Amlodipin]\n\na. Bagaimana mekanisme kerja obat dan keunggulan farmakokinetiknya?\n\nb. Sebutkan 3 contoh obat lain satu golongan dan efek samping khasnya!",
-      "stimulus": "Tablet Amlodipin",
+      "stimulus": "Diberikan preparat Amlodipin",
       "soal_a": "Bagaimana mekanisme kerja obat dan keunggulan farmakokinetiknya?",
       "soal_b": "Sebutkan 3 contoh obat lain satu golongan dan efek samping khasnya!",
       "diagnosis": "AMLODIPIN",
@@ -1972,7 +2035,7 @@
         "**Golongan:** CCB Dihidropiridin (Vaskular)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat influks kalsium transmembran via kanal tipe-L ke otot polos vaskular (CCB DHP vaskuloselektif); Kinetik: T½ panjang (30–50 jam) cukup 1x sehari\nb. Nifedipin, Nikardipin, Felodipin; Efek samping khas: Edema perifer (bengkak pergelangan kaki / pretibial) dan hiperplasia gingiva\r\n\r\n---\r\n\r\n### 12. NIKARDIPIN",
+      "jawaban_ringkas": "a. Menghambat influks kalsium transmembran via kanal tipe-L ke otot polos vaskular (CCB DHP vaskuloselektif); Kinetik: T½ panjang (30–50 jam) cukup 1x sehari\nb. Nifedipin, Nikardipin, Felodipin; Efek samping khas: Edema perifer (bengkak pergelangan kaki / pretibial) dan hiperplasia gingiva",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Keunggulan Farmakokinetik:**  \r\n   * **Mekanisme Kerja:** Menghambat kanal kalsium tipe-L pada otot polos vaskular perifer, merelaksasi pembuluh darah resistensi arteriolar dan menurunkan tekanan darah sistemik.  \r\n   * **Keunggulan Farmakokinetik:** Memiliki waktu paruh eliminasi sangat panjang (30 - 50 jam), absorpsi lambat bertahap, sehingga tidak menimbulkan penurunan tekanan darah drastis maupun takikardia refleks masif, serta cukup diminum **1 kali sehari**.  \r\nb. **Golongan, Efek Samping Khas, Dosis, Sediaan & Resep:**  \r\n   * **Golongan:** Calcium Channel Blocker (CCB) golongan **Dihidropiridin (DHP)**.  \r\n   * **Efek Samping Khas Utama:** **Edema Perifer (Edema Pretibial / Bengkak Pergelangan Kaki)** dan **Hiperplasia Gingiva**.  \r\n   * **Dosis Lazim:** 1 × 5 mg/hari (dapat ditingkatkan hingga 10 mg/hari).  \r\n   * **Bentuk Sediaan:** Tablet 5 mg dan 10 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Amlodipine tab 5 mg No. XXX\r\n        S 1 d d tab 1 mane p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Bambang (52 tahun)\r\n     Indikasi: Hipertensi Stage 1\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.PD\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Amlodipine tab 5 mg No. XXX\r\n        S 1 d d tab 1 mane p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Bambang (52 tahun)\r\n     Indikasi: Hipertensi Stage 1",
       "tips_klinis": "",
@@ -1995,7 +2058,9 @@
         "th-2021",
         "amlodipin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat influks kalsium transmembran via kanal tipe-L ke otot polos vaskular (CCB DHP vaskuloselektif); Kinetik: T½ panjang (30–50 jam) cukup 1x sehari",
+      "jawaban_b": "Nifedipin, Nikardipin, Felodipin; Efek samping khas: Edema perifer (bengkak pergelangan kaki / pretibial) dan hiperplasia gingiva"
     },
     {
       "id": 232,
@@ -2003,7 +2068,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "NIKARDIPIN",
       "prompt": "[Ampul Injeksi / Kapsul Nikardipin]\n\na. Mekanisme kerja obat dan indikasi utama sediaan injeksinya?\n\nb. Golongan obat, sediaan, dan keuntungannya terhadap perfusi organ vital?",
-      "stimulus": "Ampul Injeksi / Kapsul Nikardipin",
+      "stimulus": "Diberikan preparat Nikardipin",
       "soal_a": "Mekanisme kerja obat dan indikasi utama sediaan injeksinya?",
       "soal_b": "Golongan obat, sediaan, dan keuntungannya terhadap perfusi organ vital?",
       "diagnosis": "NIKARDIPIN",
@@ -2028,7 +2093,7 @@
         "**Golongan:** CCB Dihidropiridin (Vaskular)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kanal kalsium tipe-L vaskular -> vasodilatasi arteriolar poten; Indikasi: Krisis hipertensi / emergensi hipertensi via titrasi infus IV\nb. CCB Dihidropiridin (DHP); Sediaan: Ampul injeksi 10 mg/10 mL; Keuntungan: Mempertahankan aliran darah serebral & koroner tanpa depresi miokard\r\n\r\n---\r\n\r\n### 13. VERAPAMIL",
+      "jawaban_ringkas": "a. [STANDAR] a. Menghambat kanal kalsium tipe-L vaskular → vasodilatasi arteriolar poten; Indikasi: Krisis hipertensi / emergensi hipertensi via titrasi infus IV\nb. CCB Dihidropiridin (DHP); Sediaan: Ampul injeksi 10 mg/10 mL; Keuntungan: Mempertahankan aliran darah serebral & koroner tanpa depresi miokard",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Hipertensi Krisis:**  \r\n   * **Mekanisme Kerja:** Relaksasi otot polos vaskular melalui blokade poten kanal kalsium tipe-L.  \r\n   * **Penggunaan Hipertensi Krisis:** Diberikan secara titrasi infus intravena kontinu untuk menurunkan tekanan darah secara cepat, terukur, dan presisi tanpa depresi miokardium.  \r\nb. **Golongan, Mnemonik, Sediaan & Perfusi Organ:**  \r\n   * **Golongan:** CCB Dihidropiridin (DHP).  \r\n   * **Mnemonik Asdos:** **AMIN NIKAH FELICIA** (**NIKAH** = Nikardipin & Nifedipin).  \r\n   * **Bentuk Sediaan:** Ampul injeksi 10 mg/10 mL (tersedia pula kapsul oral 20 mg, 30 mg).  \r\n   * **Keuntungan:** Mempertahankan atau memperbaiki aliran darah arteri koroner dan serebral selama reduksi tekanan darah.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2048,7 +2113,9 @@
         "th-2021",
         "nikardipin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Menghambat kanal kalsium tipe-L vaskular → vasodilatasi arteriolar poten; Indikasi: Krisis hipertensi / emergensi hipertensi via titrasi infus IV",
+      "jawaban_b": "CCB Dihidropiridin (DHP); Sediaan: Ampul injeksi 10 mg/10 mL; Keuntungan: Mempertahankan aliran darah serebral & koroner tanpa depresi miokard"
     },
     {
       "id": 233,
@@ -2056,7 +2123,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "FELODIPIN",
       "prompt": "[Tablet Lepas Lambat Felodipin]\n\na. Mekanisme kerja molekuler dan derajat selektivitas vaskularnya?\n\nb. Golongan obat, efek samping khas, dan sediaannya?",
-      "stimulus": "Tablet Lepas Lambat Felodipin",
+      "stimulus": "Diberikan preparat Felodipin",
       "soal_a": "Mekanisme kerja molekuler dan derajat selektivitas vaskularnya?",
       "soal_b": "Golongan obat, efek samping khas, dan sediaannya?",
       "diagnosis": "FELODIPIN",
@@ -2077,7 +2144,7 @@
       "struktur_khas": [
         "**Golongan:** CCB Dihidropiridin (Vaskular)"
       ],
-      "jawaban_ringkas": "a. Menghambat influks kalsium transmembran via kanal tipe-L vaskular; Selektivitas vaskular sangat tinggi (~100x lebih kuat di pembuluh darah dibanding miokardium) -> aman dari depresi kontraktilitas jantung\nb. CCB Dihidropiridin (DHP); Efek samping: Edema perifer tungkai, kemerahan wajah, hiperplasia gingiva; Sediaan: Tablet lepas lambat 2,5 mg, 5 mg\r\n\r\n---\r\n\r\n## IV. RUMUS CEPAT HITUNGAN DOSIS HEWAN COBA (OSPE PRAKTIKUM)\r\n* **Faktor Konversi Manusia (70 kg) ke Tikus (200 g):** **0,018**\r\n* **Rumus Baku:** Dosis Tikus (200 g) = Dosis Manusia (70 kg) × 0,018\r\n* **Contoh Cepat Meja Ujian:**\r\n  * Atenolol (50 mg) → 50 × 0,018 = \\mathbf{0,9 mg}\r\n  * Amlodipin (5 mg) → 5 × 0,018 = \\mathbf{0,09 mg}\r\n  * Diltiazem (90 mg) → 90 × 0,018 = \\mathbf{1,62 mg}\r\n  * Prazosin (1 mg) → 1 × 0,018 = \\mathbf{0,018 mg}\r\n\r\n---\r\n\r\n## V. MNEMONIK KUNCI 10 DETIK ASISTEN DOSEN\r\n1. **AMEL KARLA** (β-Blocker):  \r\n   * **AMEL** (β₁ Kardioselektif): **A**tenolol, **ME**toprolo**L**  \r\n   * **KARLA** (Mixed α₁+β): **KAR**vedilol, **LA**betalol  \r\n2. **PETE BUDOK** (α₁-Blocker Selektif):  \r\n   * **PE** : **P**razosin  \r\n   * **TE** : **Te**razosin  \r\n   * **BU** : **Bu**nazosin  \r\n   * **DOK** : **Dok**sazosin  \r\n3. **AMIN NIKAH FELICIA** (CCB Dihidropiridin):  \r\n   * **AMIN** : **Am**lodipin  \r\n   * **NIKAH** : **Ni**fedipin & **Nik**ardipin  \r\n   * **FELICIA** : **Felo**dipin  \r\n4. **VERA GALO TIA HAMIL** (CCB Diphenylalkylamines):  \r\n   * **VERA** : **Vera**pamil, **GALO** : **Gallo**pamil, **TIA** : **Tia**pamil  \r\n5. **PAJAK ASAP** (Indikasi Utama β-Blocker):  \r\n   * **P** : PJK, **A** : Aritmia supraventrikel, **J** : Gagal Jantung stabil, **A** : Angina pektoris, **K** : Kardiak / Hipertensi, **ASAP** : Akut koroner / Profilaksis\r\n\r\n\r\n---\r\n\r\n# MODUL 1.3: RAAS INHIBITORS (PRAKTIKUM 1)\r\n\r\n# PANDUAN HAFALAN CEPAT UJIAN OSPE FARMAKOLOGI (BLOK 3.2)\r\n# TOPIK: SISTEM RAAS & ANTIHIPERTENSI (P1S3)\r\n*Format Standar Soal Ujian Meja / OSPE: Singkat, Padat, To-The-Point (Target Jawab: < 1 Menit)*\r\n\r\n---\r\n\r\n### STASI 1: KAPTOPRIL (CAPTOPRIL)",
+      "jawaban_ringkas": "a. [STANDAR] a. Menghambat influks kalsium transmembran via kanal tipe-L vaskular; Selektivitas vaskular sangat tinggi (~100x lebih kuat di pembuluh darah dibanding miokardium) → aman dari depresi kontraktilitas jantung\nb. CCB Dihidropiridin (DHP); Efek samping: Edema perifer tungkai, kemerahan wajah, hiperplasia gingiva; Sediaan: Tablet lepas lambat 2,5 mg, 5 mg",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Selektivitas Vaskular:**  \r\n   * **Mekanisme Kerja:** Menghambat influks kalsium transmembran pada sel otot polos arteriol perifer.  \r\n   * **Derajat Selektivitas:** Memiliki rasio selektivitas vaskular yang luar biasa tinggi (efek vasodilatasi vaskular ≈ 100× lebih kuat dibanding efek depresi inotropik miokardium), sehingga tidak mengganggu kontraktilitas dan konduksi nodus AV jantung.  \r\nb. **Golongan, Mnemonik, Sediaan & Efek Samping:**  \r\n   * **Golongan:** CCB Dihidropiridin (DHP).  \r\n   * **Mnemonik Asdos:** **AMIN NIKAH FELICIA** (**FELICIA** = Felodipin).  \r\n   * **Bentuk Sediaan:** Tablet lepas lambat (*extended release*) 2,5 mg dan 5 mg.  \r\n   * **Efek Samping Khas:** Edema perifer tungkai, flushing, dan hiperplasia gingiva.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2091,7 +2158,9 @@
         "efek-samping",
         "felodipin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "[STANDAR] a. Menghambat influks kalsium transmembran via kanal tipe-L vaskular; Selektivitas vaskular sangat tinggi (~100x lebih kuat di pembuluh darah dibanding miokardium) → aman dari depresi kontraktilitas jantung",
+      "jawaban_b": "CCB Dihidropiridin (DHP); Efek samping: Edema perifer tungkai, kemerahan wajah, hiperplasia gingiva; Sediaan: Tablet lepas lambat 2,5 mg, 5 mg"
     },
     {
       "id": 234,
@@ -2099,7 +2168,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "VERAPAMIL",
       "prompt": "[Tablet / Ampul Verapamil]\n\na. Mekanisme elektrofisiologi jantung dan kontraindikasi berbahayanya?\n\nb. Kelas kimia, efek samping saluran cerna yang khas, dan sediaannya?",
-      "stimulus": "Tablet / Ampul Verapamil",
+      "stimulus": "Diberikan preparat Verapamil",
       "soal_a": "Mekanisme elektrofisiologi jantung dan kontraindikasi berbahayanya?",
       "soal_b": "Kelas kimia, efek samping saluran cerna yang khas, dan sediaannya?",
       "diagnosis": "VERAPAMIL",
@@ -2121,7 +2190,7 @@
       "struktur_khas": [
         "**Golongan:** CCB Non-Dihidropiridin (Kardioselektif)"
       ],
-      "jawaban_ringkas": "a. Menghambat kanal kalsium tipe-L di miokardium & nodus SA/AV -> inotropik, kronotropik, dromotropik negatif; Kontraindikasi mutlak: Bersama beta-blocker (risiko asistol / total AV block)\nb. CCB Non-DHP (Diphenylalkylamines / Mnemonik: VERA GALO TIA HAMIL); Efek samping khas: Konstipasi berat; Sediaan: tab 80 mg, tab SR 240 mg, ampul 5 mg/2 mL\r\n\r\n---\r\n\r\n### 14. DILTIAZEM",
+      "jawaban_ringkas": "a. Menghambat kanal kalsium tipe-L di miokardium & nodus SA/AV → inotropik, kronotropik, dromotropik negatif; Kontraindikasi mutlak: Bersama beta-blocker (risiko asistol / total AV block)\nb. CCB Non-DHP (Diphenylalkylamines / Mnemonik: VERA GALO TIA HAMIL); Efek samping khas: Konstipasi berat; Sediaan: tab 80 mg, tab SR 240 mg, ampul 5 mg/2 mL",
       "jawaban_lengkap": "a. **Mekanisme Kerja, Elektrofisiologi & Larangan β-Blocker:**  \r\n   * **Mekanisme Kerja & Elektrofisiologi:** Menghambat kanal kalsium tipe-L dengan selektivitas tinggi pada **miosit miokardium dan nodus konduksi SA dan AV**. Menghasilkan efek **kronotropik negatif** kuat (menurunkan HR), **inotropik negatif** kuat (menurunkan kontraktilitas), dan **dromotropik negatif** kuat (memperlambat konduksi nodus AV dan memperpanjang masa refrakter).  \r\n   * **Kontraindikasi Mutlak bersama β-Blocker:** Menimbulkan efek depresi jantung sinergis/aditif → **memicu blokade AV komplit (*total heart block*), asistol, bradikardia ekstrem, dan gagal jantung akut fatal**.  \r\nb. **Kelas Kimia, Mnemonik, Efek Samping, Sediaan & Resep:**  \r\n   * **Kelas Kimia CCB:** **Diphenylalkylamines** (CCB Non-Dihidropiridin).  \r\n   * **Mnemonik Asdos:** **VERA GALO TIA HAMIL** (**Vera**pamil, **Gallo**pamil, **Tia**pamil).  \r\n   * **Efek Samping Khas Saluran Cerna:** **Konstipasi berat** (akibat relaksasi tonus otot polos kolon dan penekanan pleksus mienterikus).  \r\n   * **Bentuk Sediaan:** Tablet 80 mg, Tablet lepas lambat 240 mg, dan Ampul injeksi 5 mg/2 mL.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Verapamil tab 80 mg No. XXX\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Setyo (45 tahun)\r\n     Indikasi: Aritmia Supraventrikel (SVT / Rate control AF)\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Verapamil tab 80 mg No. XXX\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Tn. Setyo (45 tahun)\r\n     Indikasi: Aritmia Supraventrikel (SVT / Rate control AF)",
       "tips_klinis": "",
@@ -2137,7 +2206,9 @@
         "efek-samping",
         "verapamil"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kanal kalsium tipe-L di miokardium & nodus SA/AV → inotropik, kronotropik, dromotropik negatif; Kontraindikasi mutlak: Bersama beta-blocker (risiko asistol / total AV block)",
+      "jawaban_b": "CCB Non-DHP (Diphenylalkylamines / Mnemonik: VERA GALO TIA HAMIL); Efek samping khas: Konstipasi berat; Sediaan: tab 80 mg, tab SR 240 mg, ampul 5 mg/2 mL"
     },
     {
       "id": 235,
@@ -2145,7 +2216,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "DILTIAZEM",
       "prompt": "[Tablet / Kapsul Diltiazem]\n\na. Mekanisme kerja obat dan perbandingannya dengan Verapamil?\n\nb. Kelas kimia, efek samping khas nodus jantung, dosis harian, dan sediaannya?",
-      "stimulus": "Tablet / Kapsul Diltiazem",
+      "stimulus": "Diberikan preparat Diltiazem",
       "soal_a": "Mekanisme kerja obat dan perbandingannya dengan Verapamil?",
       "soal_b": "Kelas kimia, efek samping khas nodus jantung, dosis harian, dan sediaannya?",
       "diagnosis": "DILTIAZEM",
@@ -2173,7 +2244,7 @@
         "**Mnemonik:** P : Penyakit Jantung Koroner",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Menghambat kanal kalsium tipe-L di jantung dan vaskular (profil intermediat: depresi inotropik lebih ringan dari Verapamil, efek vasodilatasi lebih baik)\nb. CCB Non-DHP (Benzotiazepin); Efek samping: Bradikardia, AV block; Dosis: 90–180 mg/hari; Sediaan: tab 30 mg, 60 mg, kap SR 90 mg, 180 mg\r\n\r\n---\r\n\r\n## III. OBAT LAINNYA DI SLIDE (PELENGKAP KOMPREHENSIF)\r\n\r\n### 15. BETAXOLOL",
+      "jawaban_ringkas": "a. Menghambat kanal kalsium tipe-L di jantung dan vaskular (profil intermediat: depresi inotropik lebih ringan dari Verapamil, efek vasodilatasi lebih baik)\nb. CCB Non-DHP (Benzotiazepin); Efek samping: Bradikardia, AV block; Dosis: 90–180 mg/hari; Sediaan: tab 30 mg, 60 mg, kap SR 90 mg, 180 mg",
       "jawaban_lengkap": "a. **Mekanisme Molekuler & Profil Kerja Antara (Intermediat):**  \r\n   * **Mekanisme Kerja:** Menghambat influks kalsium kanal tipe-L baik pada miosit/nodus jantung maupun otot polos vaskular perifer.  \r\n   * **Profil Kerja Intermediat:** Berada di antara Verapamil dan DHP; efek depresif inotropik/kronotropik jantungnya lebih moderat dibanding Verapamil, namun efek vasodilatasi arteriolnya lebih baik daripada Verapamil (menurunkan resistensi perifer tanpa takikardia refleks).  \r\nb. **Kelas Kimia, Dosis, Efek Samping Khas, Sediaan & Resep:**  \r\n   * **Kelas Kimia CCB:** **Benzotiazepin** (CCB Non-Dihidropiridin).  \r\n   * **Dosis Lazim Harian PPT:** **90 - 180 mg/hari** (terbagi dalam dosis harian atau formulasi lepas lambat).  \r\n   * **Efek Samping Khas Nodus Jantung:** **Bradikardia, Blokade Sinoatrial (SA Block), Blokade Atrioventrikular (AV Block)**, dan palpitasi.  \r\n   * **Bentuk Sediaan:** Tablet 30 mg, 60 mg; Kapsul sustained-release 90 mg, 180 mg.  \r\n   * **Contoh Resep Standar:**\r\n     ```text\r\n     dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Diltiazem tab 30 mg No. XLV\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Ny. Martini (56 tahun)\r\n     Indikasi: Hipertensi esensial + Angina pektoris stabil\r\n     ```\r\n\r\n---\r\n\r\n## BAGIAN III: ALGORITMA PERHITUNGAN DOSIS KONVERSI HEWAN COBA (OSPE PRAKTIKUM)\r\n\r\nUjian identifikasi meja sering menyertakan sub-soal hitungan konversi dosis manusia ke hewan laboratorium (Tikus 200 g) menggunakan tabel konversi baku Laurence & Bacharach:\r\n\r\n* **Faktor Konversi Manusia (70 kg) ke Tikus (200 g):** **0,018**\r\n* **Rumus Baku:**\r\n  Dosis Tikus (200 g) = Dosis Manusia (70 kg) × 0,018\r\n\r\n### Contoh Perhitungan Stasi Meja:\r\n1. **Atenolol (Dosis manusia: 50 mg):**  \r\n   Dosis Tikus = 50 mg × 0,018 = 0,9 mg\r\n2. **Amlodipin (Dosis manusia: 5 mg):**  \r\n   Dosis Tikus = 5 mg × 0,018 = 0,09 mg\r\n3. **Diltiazem (Dosis manusia: 90 mg):**  \r\n   Dosis Tikus = 90 mg × 0,018 = 1,62 mg\r\n4. **Prazosin (Dosis manusia: 1 mg):**  \r\n   Dosis Tikus = 1 mg × 0,018 = 0,018 mg\r\n\r\n---\r\n\r\n## RINGKASAN MNEMONIK KUNCI ASISTEN DOSEN (SLIDE 1–25)\r\n\r\n1. **PAJAK ASAP** (β-Blocker - Indikasi):\r\n   * **P** : **P**enyakit Jantung Koroner\r\n   * **A** : **A**ritmia Supraventrikel\r\n   * **J** : Gagal **J**antung stabil\r\n   * **A** : **A**ngina Pectoris\r\n   * **K** : **K**ardiak / Hipertensi\r\n   * **ASAP** : Sindrom Koroner Akut / Angina profilaksis\r\n2. **AMEL KARLA** (β-Blocker):\r\n   * **AMEL** (Kardioselektif β₁): **A**tenolol, **ME**toprolo**L**\r\n   * **KARLA** (Non-kardioselektif / Mixed α₁+β): **KAR**vedilol, **LA**betalol\r\n3. **PETE BUDOK** (α₁-Blocker):\r\n   * **PE** : **P**razosin\r\n   * **TE** : **Te**razosin\r\n   * **BU** : **Bu**nazosin\r\n   * **DOK** : **Dok**sazosin\r\n4. **VERA GALO TIA HAMIL** (CCB Diphenylalkylamines):\r\n   * **VERA** : **Vera**pamil\r\n   * **GALO** : **Gallo**pamil\r\n   * **TIA** : **Tia**pamil\r\n5. **AMIN NIKAH FELICIA** (CCB Dihidropiridin):\r\n   * **AMIN** : **Am**lodipin\r\n   * **NIKAH** : **Ni**fedipin & **Nik**ardipin\r\n   * **FELICIA** : **Felo**dipin\r\n\r\n\r\n---\r\n\r\n## 1.3. Renin-Angiotensin-Aldosterone System (RAAS) Inhibitors (ACEi, ARB, DRI)\r\n\r\n# BANK SOAL-JAWAB IDENTIFIKASI FARMAKOLOGI (OSPE MEJA) BLOK 3.2\r\n## TOPIK: SISTEM RENIN-ANGIOTENSIN-ALDOSTERON (RAAS) & ANTIHIPERTENSI\r\n**Sumber Referensi:** PPT Asisten Dosen Farmakologi (P1S3 - RAAS, Slide 1–21 Lengkap)  \r\n**Target:** Algoritma Ujian Identifikasi Meja / OSPE Farmakologi Blok Kardiovaskular & Ginjal FK\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.JP\r\n     SIP: 123/DU/2026\r\n     Jl. Farmakologi No. 1, Semarang\r\n     Semarang, 04 Oktober 2026\r\n\r\n     R/ Diltiazem tab 30 mg No. XLV\r\n        S 3 d d tab 1 p.c.\r\n        ----------------------------- (paraf)\r\n\r\n     Pro: Ny. Martini (56 tahun)\r\n     Indikasi: Hipertensi esensial + Angina pektoris stabil",
       "tips_klinis": "",
@@ -2194,7 +2265,9 @@
         "th-2021",
         "diltiazem"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat kanal kalsium tipe-L di jantung dan vaskular (profil intermediat: depresi inotropik lebih ringan dari Verapamil, efek vasodilatasi lebih baik)",
+      "jawaban_b": "CCB Non-DHP (Benzotiazepin); Efek samping: Bradikardia, AV block; Dosis: 90–180 mg/hari; Sediaan: tab 30 mg, 60 mg, kap SR 90 mg, 180 mg"
     },
     {
       "id": 236,
@@ -2202,7 +2275,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ALISKIREN",
       "prompt": "[Tablet Aliskiren]\n\na. Sebutkan golongan obat, enzim target spesifik, dan dampak hambatannya terhadap kaskade RAAS!\n\nb. Sebutkan dosis lazim harian, efek samping saluran cerna pada dosis tinggi, serta kontraindikasi kombinasi (*dual blockade*)!",
-      "stimulus": "Tablet Aliskiren",
+      "stimulus": "Diberikan preparat Aliskiren",
       "soal_a": "Sebutkan golongan obat, enzim target spesifik, dan dampak hambatannya terhadap kaskade RAAS!",
       "soal_b": "Sebutkan dosis lazim harian, efek samping saluran cerna pada dosis tinggi, serta kontraindikasi kombinasi (*dual blockade*)!",
       "diagnosis": "ALISKIREN",
@@ -2228,7 +2301,7 @@
         "**Golongan:** ALISKIREN",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan DRI (*Direct Renin Inhibitor*), menghambat langsung enzim **Renin** → mencegah konversi Angiotensinogen menjadi Angiotensin I (menurunkan kadar Ang I dan Ang II plasma).\nb. Dosis: 150 - 300 mg/hari (1x sehari). Efek samping khas dosis 300 mg: **Diare**. Kontraindikasi: Dilarang dikombinasi dengan ACEi/ARB pada pasien Diabetes Melitus (risiko hipotensi berat, hiperkalemia fatal, & gagal ginjal akut).\r\n\r\n---\r\n\r\n## KUNCI RANGKUMAN CEPAT HAFALAN 1 MENIT\r\n\r\n### 1. Pembeda Kunci: Direct ACEi vs Prodrug / Indirect ACEi (Wajib Hafal!)\r\n| Klasifikasi | Obat | Ciri Khas Farmakologi | Keuntungan Klinis |\r\n| :--- | :--- | :--- | :--- |\r\n| **Direct ACEi** | **Kaptopril**, **Lisinopril** | Molekul aktif langsung mengikat enzim ACE tanpa perlu hidrolisis/bioaktivasi hepar | Aman pada pasien gangguan fungsi hepar berat; onset cepat |\r\n| **Indirect / Prodrug ACEi** | **Enalapril**, **Ramipril**, **Benazepril**, **Perindopril** | Bentuk inaktif (ester), wajib dihidrolisis esterase hepar menjadi metabolit aktif (*-at*) | Masa kerja lebih panjang (*maintenance*), butuh fungsi hati baik |\r\n\r\n### 2. Mnemonik Dosis ARB Slide 17 (1x Sehari)\r\n> **\"LoVa Iri, Telat Cantik - tan\"**\r\n- **Lo**sartan: 50 - 100 mg/hari\r\n- **Va**lsartan: 80 - 150 mg/hari\r\n- **Iri** (Irbesartan): 150 - 300 mg/hari\r\n- **Telat** (Telmisartan): 40 - 80 mg/hari\r\n- **Cantik** (Candesartan): 8 - 32 mg/hari\r\n\r\n### 3. Pembeda Efek Samping Khas: ACEi vs ARB vs DRI\r\n- **Batuk Kering Persisten:** **HANYA ACEi** (+++, akumulasi Bradikinin). ARB (-) dan DRI (-).\r\n- **Angioedema:** Paling tinggi pada ACEi (++). ARB sangat jarang (+/-).\r\n- **Hiperkalemia & Hipotensi:** Terjadi pada **KETIGA-TIGANYA** (+).\r\n- **Diare:** Khas pada **Aliskiren** dosis 300 mg (+).\r\n- **Kontraindikasi Mutlak Ketiganya:** **Kehamilan** (teratogenik) & **Stenosis Arteri Renalis Bilateral**.\r\n\r\n\r\n---\r\n\r\n# MODUL 1.4: VASODILATOR & NITRAT (PRAKTIKUM 1)\r\n\r\n# P1S4: VASODILATOR — HAFALAN SINGKAT FORMAT SOAL UJIAN MEJA OSPE (BLOK 3.2)\r\n**Format:** Persis Format Soal Ujian Tahun Kemarin | Siap Tulis dalam 60 Detik | Jawaban To-The-Point 1–2 Baris  \r\n**Sumber:** PPT Asdos P1S4 & Bank Soal Ujian Identifikasi Farmakologi FK Unsoed\r\n\r\n---\r\n\r\n## ⚡ MNEMONIK KUNCI 10 DETIK\r\n- **Mnemonik Vasodilator Non-Nitrat:** **\"HAMIL DINI\"**\r\n  - **H** : **H**idralazin *(Arteriodilator -> Lupus-like syndrome)*\r\n  - **MI** : **Mi**noksidil *(Kanal K_ATP -> Hipertrikosis)*\r\n  - **DI** : **Di**azoksid *(Kanal K+ -> Hiperglikemia & Azotemia)*\r\n  - **NI** : Natrium **Ni**troprusid *(Arteri + Vena seimbang -> Toksisitas Sianida)*\r\n- **Selektivitas Vaskular:**\r\n  - **Arteriodilator Murni (Turunkan Afterload):** Hidralazin, Minoksidil, Diazoksid\r\n  - **Venodilator Predominan (Turunkan Preload):** ISDN, Nitrogliserin\r\n  - **Vasodilator Seimbang (Turunkan Preload & Afterload):** Natrium Nitroprusid\r\n\r\n---\r\n\r\n# BAGIAN 1: MODEL SOAL UTAMA (MEKANISME & CONTOH OBAT SEJENIS)\r\n*(Sesuai Soal Ujian Asli Meja Farmakologi Blok 3.2)*\r\n\r\n---\r\n\r\n### 1. HIDRALAZIN (HYDRALAZINE)",
+      "jawaban_ringkas": "a. Golongan DRI (*Direct Renin Inhibitor*), menghambat langsung enzim **Renin** → mencegah konversi Angiotensinogen menjadi Angiotensin I (menurunkan kadar Ang I dan Ang II plasma).\nb. Dosis: 150 - 300 mg/hari (1x sehari). Efek samping khas dosis 300 mg: **Diare**. Kontraindikasi: Dilarang dikombinasi dengan ACEi/ARB pada pasien Diabetes Melitus (risiko hipotensi berat, hiperkalemia fatal, & gagal ginjal akut).",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Peran Molekuler RAAS:**  \r\n   - Aliskiren bekerja secara langsung menghambat aktivitas enzim **Renin** (*Direct Renin Inhibitor* / DRI).  \r\n   - Hambatan ini mencegah konversi **Angiotensinogen** menjadi **Angiotensin I (Ang I)**.  \r\n   - Dampak kaskade: Menurunkan kadar Ang I dan Angiotensin II (Ang II) plasma, menurunkan sekresi aldosteron oleh korteks adrenal, menyebabkan vasodilatasi perifer, serta menurunkan resistensi vaskular sistemik dan tekanan darah (↓ Ang 1 & ↓ Ang 2 → Vasodilatasi perifer & ↓ sekresi aldosteron → ↓ Tekanan Darah).  \r\n\r\nb. **Golongan, Dosis, Kontraindikasi, & Efek Samping Obat (ESO):**  \r\n   - **Golongan:** Direct Renin Inhibitor (DRI).  \r\n   - **Dosis Lazim Dewasa:** 150 - 300 mg 1 kali sehari per oral.  \r\n   - **Kontraindikasi:**  \r\n     1. **Kehamilan (Ibu Hamil):** Teratogenik (fetotoksisitas berat, oligohidramnion, hipoplasia kranial/paru, gagal ginjal janin).  \r\n     2. **Ibu Menyusui.**  \r\n     3. **Hipersensitivitas** terhadap aliskiren.  \r\n     4. **Kombinasi dengan ACEI atau ARB (terutama pada pasien Diabetes Melitus):** Meningkatkan risiko hipotensi berat, hiperkalemia berat, dan gangguan fungsi ginjal / gagal ginjal akut.  \r\n   - **Efek Samping Obat (ESO) & Mnemonik Kuliah:**  \r\n     *Mnemonik:* **\"TENXI dan KALE GANGGU ANGGI di PUSAT KEDAI\"**  \r\n     1. **TENXI** → **Hipotensi**  \r\n     2. **KALE** → **Hiperkalemia**  \r\n     3. **GANGGU** → **Gangguan fungsi ginjal**  \r\n     4. **ANGGI** → **Angioedema**  \r\n     5. **PUSAT** → **Pusing** (*dizziness*)  \r\n     6. **KEDA** → **Sakit kepala** (*headache*)  \r\n     7. **I** → **Diare** (gangguan GI khas pada dosis tinggi 300 mg)  \r\n   - **Farmakokinetik Penting:** Absorpsi via GI Tract, terikat protein plasma 50%, metabolisme di hepar (sebagian via CYP3A4), ekskresi utama melalui **feses** dan sebagian kecil urin.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2248,7 +2321,9 @@
         "th-2022",
         "aliskiren"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan DRI (*Direct Renin Inhibitor*), menghambat langsung enzim **Renin** → mencegah konversi Angiotensinogen menjadi Angiotensin I (menurunkan kadar Ang I dan Ang II plasma).",
+      "jawaban_b": "Dosis: 150 - 300 mg/hari (1x sehari). Efek samping khas dosis 300 mg: **Diare**. Kontraindikasi: Dilarang dikombinasi dengan ACEi/ARB pada pasien Diabetes Melitus (risiko hipotensi berat, hiperkalemia fatal, & gagal ginjal akut)."
     },
     {
       "id": 237,
@@ -2256,9 +2331,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KAPTOPRIL (CAPTOPRIL)",
       "prompt": "[Tablet Kaptopril / Captopril]\n\na. Jelaskan mekanisme kerja molekuler Kaptopril pada kaskade RAAS serta peran gandanya terhadap kaskade bradikinin!\n\nb. Sebutkan status aktivasinya (*direct vs prodrug*), indikasi klinis, dosis lazim, patomekanisme efek samping batuk kering persisten & angioedema, interaksi dengan NSAID/Diuretik, serta tuliskan resep lengkapnya!",
-      "stimulus": "Tablet Kaptopril / Captopril",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Kaptopril pada kaskade RAAS serta peran gandanya terhadap kaskade bradikinin!",
-      "soal_b": "Sebutkan status aktivasinya (*direct vs prodrug*), indikasi klinis, dosis lazim, patomekanisme efek samping batuk kering persisten & angioedema, interaksi dengan NSAID/Diuretik, serta tuliskan resep lengkapnya!",
+      "stimulus": "Diberikan preparat Kaptopril",
+      "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), dan 3 contoh obat lain dalam golongan yang sama!",
+      "soal_b": "Sebutkan efek samping khas yang paling sering dari obat ini dan jelaskan patomekanismenya!",
       "diagnosis": "KAPTOPRIL (CAPTOPRIL)",
       "organ": "Sistem Vaskular, Ginjal, & Adrenal (RAAS)",
       "sifat": "ACE Inhibitor (Penghambat ACE)",
@@ -2284,7 +2359,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja & Peran Molekuler RAAS:**  \r\n   - Kaptopril bekerja menghambat enzim **Angiotensin Converting Enzyme (ACE)** / kininase II secara kompetitif.  \r\n   - Menghambat konversi **Angiotensin I → Angiotensin II**.  \r\n   - Penurunan kadar Ang II menyebabkan vasodilatasi arteriol sistemik dan penurunan sekresi aldosteron → penurunan resistensi vaskular perifer dan penurunan retensi natrium/air → tekanan darah turun.  \r",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Direct ACEi** (zat aktif langsung tanpa bioaktivasi hepar). Contoh lain: Lisinopril, Enalapril, Ramipril.\nb. **Batuk kering persisten** dan angioedema (terjadi akibat akumulasi bradikinin & substansi P di trakeobronkial karena enzim ACE/kininase II dihambat).",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Peran Molekuler RAAS:**  \r\n   - Kaptopril bekerja menghambat enzim **Angiotensin Converting Enzyme (ACE)** / kininase II secara kompetitif.  \r\n   - Menghambat konversi **Angiotensin I → Angiotensin II**.  \r\n   - Penurunan kadar Ang II menyebabkan vasodilatasi arteriol sistemik dan penurunan sekresi aldosteron → penurunan resistensi vaskular perifer dan penurunan retensi natrium/air → tekanan darah turun.  \r\n   - **Peran Ganda terhadap Bradikinin:** Enzim ACE normalnya mendegradasi bradikinin (vasodilator endogen) menjadi inaktif. Inhibisi ACE menyebabkan akumulasi **bradikinin** dan substansi P di jaringan/paru → memicu vasodilatasi tambahan (via NO dan prostasiklin), namun akumulasi lokal ini bertanggung jawab langsung terhadap **batuk kering persisten** dan **angioedema**.  \r\n\r\nb. **Status Aktivasi, Dosis, Efek Samping, Interaksi, & Resep:**  \r\n   - **Golongan & Status Aktivasi:** ACE Inhibitor tipe **Direct** (zat aktif langsung mengikat ACE tanpa perlu metabolisme bioaktivasi oleh hepar; pilihan utama bila butuh efek cepat/akut atau pasien gangguan hepar berat).  \r\n   - **Dosis Lazim:** 2 × 12,5 mg/hari per oral (dapat ditingkatkan s.d. 2-3 × 25-50 mg/hari). Diminum saat perut kosong (1 jam sebelum makan atau 2 jam setelah makan karena makanan menurunkan absorpsi 30-40%).  \r\n   - **Indikasi:** Lini pertama antihipertensi, hipertensi dengan DM (renoprotektif, mengurangi mikroalbuminuria), gagal jantung, pasca infark miokard.  \r\n   - **Kontraindikasi:** Ibu hamil (teratogenik mutlak), ibu menyusui, stenosis arteri renalis bilateral (memicu anuria/gagal ginjal akut), riwayat angioedema/hipersensitivitas.  \r\n   - **Efek Samping Obat (ESO) & Mnemonik Kuliah:**  \r\n     *Mnemonik:* **\"Hati - Hati Beli Akuarium, Harus Rajin Gosok\"**  \r\n     1. **Hati** → **Hipotensi** (*first-dose hypotension*)  \r\n     2. **Hati** → **Hipoglikemia**  \r\n     3. **Beli** → **Batuk kering yang menetap / persisten** (akumulasi bradikinin & substansi P di trakeobronkial)  \r\n     4. **Akuarium** → **Angioedema** (edema submukosa wajah/bibir/laring fatal via bradikinin)  \r\n     5. **Harus** → **Hiperkalemia** (akibat penurunan aldosteron)  \r\n     6. **Rajin** → **Ruam kulit** (*rash*)  \r\n     7. **Gosok** → **Gangguan saluran cerna / gangguan rasa (*metallic taste* / dysgeusia)**  \r\n   - **Interaksi Obat:**  \r\n     - ACEI + Diuretik → Hipotensi berat (*first-dose phenomenon*).  \r\n     - ACEI + NSAID → Efek antihipertensi menurun & risiko gagal ginjal akut (AKI) serta hiperkalemia meningkat drastis.  \r\n   - **Format Resep Lengkap Lege Artis (Kaptopril):**  \r\n     ```text\r\n     dr. Pratama, Sp.JP\r\n     SIP: 123/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Captopril tab mg 12,5 No. XXX\r\n        S 2 d d tab I a.c.\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Tn. R\r\n     Umur  : 48 tahun\r\n     BB    : 65 kg\r\n     Alamat: Jl. Melati No. 10\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Pratama, Sp.JP\r\n     SIP: 123/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Captopril tab mg 12,5 No. XXX\r\n        S 2 d d tab I a.c.\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Tn. R\r\n     Umur  : 48 tahun\r\n     BB    : 65 kg\r\n     Alamat: Jl. Melati No. 10",
       "tips_klinis": "",
@@ -2308,7 +2383,9 @@
         "kaptopril",
         "captopril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Direct ACEi** (zat aktif langsung tanpa bioaktivasi hepar). Contoh lain: Lisinopril, Enalapril, Ramipril.",
+      "jawaban_b": "**Batuk kering persisten** dan angioedema (terjadi akibat akumulasi bradikinin & substansi P di trakeobronkial karena enzim ACE/kininase II dihambat)."
     },
     {
       "id": 238,
@@ -2316,7 +2393,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "LISINOPRIL",
       "prompt": "[Tablet Lisinopril]\n\na. Sebutkan golongan, status aktivasi (*direct vs prodrug*), serta keunggulannya dibanding kaptopril!\n\nb. Sebutkan dosis lazim harian serta mengapa obat ini menjadi pilihan utama pada pasien hipertensi dengan Diabetes Melitus!",
-      "stimulus": "Tablet Lisinopril",
+      "stimulus": "Diberikan preparat Lisinopril",
       "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), serta keunggulannya dibanding kaptopril!",
       "soal_b": "Sebutkan dosis lazim harian serta mengapa obat ini menjadi pilihan utama pada pasien hipertensi dengan Diabetes Melitus!",
       "diagnosis": "LISINOPRIL",
@@ -2344,7 +2421,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Direct ACEi** (langsung aktif, aman untuk gangguan hepar). Keunggulan: *Long-acting* (cukup 1x sehari) dan absorpsi tidak dihambat makanan.\nb. Dosis: 10 mg/hari (1x sehari). Bersifat **renoprotektif** (mendilatasi arteriol eferen glomerulus → menurunkan tekanan intraglomerular → mencegah mikroalbuminuria & nefropati diabetik).\r\n\r\n---\r\n\r\n### STASI 3: ENALAPRIL",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Direct ACEi** (langsung aktif, aman untuk gangguan hepar). Keunggulan: *Long-acting* (cukup 1x sehari) dan absorpsi tidak dihambat makanan.\nb. Dosis: 10 mg/hari (1x sehari). Bersifat **renoprotektif** (mendilatasi arteriol eferen glomerulus → menurunkan tekanan intraglomerular → mencegah mikroalbuminuria & nefropati diabetik).",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Peran Molekuler RAAS:**  \r\n   - Lisinopril bekerja menghambat enzim **Angiotensin Converting Enzyme (ACE)**.  \r\n   - Mencegah konversi Angiotensin I menjadi Angiotensin II.  \r\n   - Efek: Vasodilatasi arteriol sistemik, penurunan afterload, serta penurunan sekresi aldosteron → ekskresi natrium dan air meningkat → tekanan darah turun.  \r\n   - **Peran Renoprotektif pada DM:** Mendilatasi arteriol eferen glomerulus secara selektif → menurunkan tekanan intraglomerular (hiperfiltrasi kapiler glomerulus menurun) → mencegah dan mengurangi mikroalbuminuria serta memperlambat progresivitas nefropati diabetik.  \r\n\r\nb. **Status Aktivasi, Keunggulan, Dosis, Efek Samping, & Resep:**  \r\n   - **Golongan & Status Aktivasi:** ACE Inhibitor tipe **Direct** (molekul aktif hidrofilik; langsung mengikat ACE tanpa memerlukan bioaktivasi metabolisme hepar; aman pada pasien disfungsi hati).  \r\n   - **Keunggulan dibanding Kaptopril:** Waktu paruh lebih panjang (*long-acting*), cukup diminum **1 kali sehari** sehingga kepatuhan pasien lebih baik, dan absorpsinya tidak dihambat oleh makanan.  \r\n   - **Dosis Lazim:** **10 mg/hari** (1 kali sehari pagi hari tablet per oral).  \r\n   - **Efek Samping Khas:** Batuk kering persisten (akumulasi bradikinin), angioedema, hiperkalemia, hipotensi, gangguan fungsi ginjal (terutama pada stenosis arteri renalis bilateral).  \r\n   - **Kontraindikasi:** Kehamilan (teratogenik mutlak), menyusui, stenosis arteri renalis bilateral, riwayat angioedema.  \r\n   - **Format Resep Lengkap Lege Artis (Lisinopril):**  \r\n     ```text\r\n     dr. Pratama, Sp.PD\r\n     SIP: 777/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Lisinopril tab mg 10 No. XXX\r\n        S 1 d d tab I mane\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Ny. S\r\n     Umur  : 55 tahun\r\n     BB    : 60 kg\r\n     Alamat: Jl. Kenanga No. 25\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Pratama, Sp.PD\r\n     SIP: 777/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Lisinopril tab mg 10 No. XXX\r\n        S 1 d d tab I mane\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Ny. S\r\n     Umur  : 55 tahun\r\n     BB    : 60 kg\r\n     Alamat: Jl. Kenanga No. 25",
       "tips_klinis": "",
@@ -2367,7 +2444,9 @@
         "th-2021",
         "lisinopril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Direct ACEi** (langsung aktif, aman untuk gangguan hepar). Keunggulan: *Long-acting* (cukup 1x sehari) dan absorpsi tidak dihambat makanan.",
+      "jawaban_b": "Dosis: 10 mg/hari (1x sehari). Bersifat **renoprotektif** (mendilatasi arteriol eferen glomerulus → menurunkan tekanan intraglomerular → mencegah mikroalbuminuria & nefropati diabetik)."
     },
     {
       "id": 239,
@@ -2375,7 +2454,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ENALAPRIL",
       "prompt": "[Tablet / Vial Injeksi Enalapril]\n\na. Sebutkan golongan, status aktivasi (*direct vs prodrug*), dan nama metabolit aktifnya!\n\nb. Sebutkan sediaan & dosis lazim harian (oral vs intravena) serta efek samping khasnya!",
-      "stimulus": "Tablet / Vial Injeksi Enalapril",
+      "stimulus": "Diberikan preparat Enalapril",
       "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), dan nama metabolit aktifnya!",
       "soal_b": "Sebutkan sediaan & dosis lazim harian (oral vs intravena) serta efek samping khasnya!",
       "diagnosis": "ENALAPRIL",
@@ -2400,7 +2479,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (butuh bioaktivasi esterase hepar menjadi metabolit aktif **Enalaprilat**).\nb. Sediaan & Dosis: Tablet oral 2,5 - 5 mg/hari; Injeksi IV 1,25 mg/hari (Enalaprilat untuk krisis/urgensi). Efek samping khas: Batuk kering persisten & hiperkalemia.\r\n\r\n---\r\n\r\n### STASI 4: RAMIPRIL",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (butuh bioaktivasi esterase hepar menjadi metabolit aktif **Enalaprilat**).\nb. Sediaan & Dosis: Tablet oral 2,5 - 5 mg/hari; Injeksi IV 1,25 mg/hari (Enalaprilat untuk krisis/urgensi). Efek samping khas: Batuk kering persisten & hiperkalemia.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Jalur Bioaktivasi Metabolik:**  \r\n   - Enalapril adalah ester etil inaktif yang setelah diserap akan mengalami hidrolisis hepatik oleh enzim esterase di hepar menjadi metabolit asam dikarboksilat aktif yaitu **Enalaprilat**.  \r\n   - Enalaprilat bekerja menghambat enzim **Angiotensin Converting Enzyme (ACE)** → menghambat sintesis Angiotensin II → penurunan sekresi aldosteron, vasodilatasi vaskular, dan penurunan tekanan darah.  \r\n\r\nb. **Status Aktivasi, Dosis, Indikasi, & Efek Samping:**  \r\n   - **Golongan & Status Aktivasi:** ACE Inhibitor tipe **Indirect / Prodrug** (memerlukan fungsi hati yang baik untuk diaktivasi; ditujukan untuk terapi jangka panjang / *maintenance*).  \r\n   - **Bentuk Sediaan & Dosis Lazim (Slide 13):**  \r\n     - **Oral (Tablet):** **2,5 - 5 mg/hari** (diberikan 1-2 kali sehari).  \r\n     - **Intravena (IV - Enalaprilat):** **1,25 mg/hari** IV (digunakan pada kondisi urgensi hipertensi ketika rute oral tidak memungkinkan).  \r\n   - **Efek Samping Khas:** Batuk kering persisten (khas bradikinin), hiperkalemia, hipotensi, angioedema, ruam kulit.  \r\n   - **Kontraindikasi:** Ibu hamil (teratogenik), stenosis arteri renalis bilateral, hipersensitivitas, gangguan fungsi hepar berat (kurang optimal mengonversi prodrug).  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2418,7 +2497,9 @@
         "th-2022",
         "enalapril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (butuh bioaktivasi esterase hepar menjadi metabolit aktif **Enalaprilat**).",
+      "jawaban_b": "Sediaan & Dosis: Tablet oral 2,5 - 5 mg/hari; Injeksi IV 1,25 mg/hari (Enalaprilat untuk krisis/urgensi). Efek samping khas: Batuk kering persisten & hiperkalemia."
     },
     {
       "id": 240,
@@ -2426,7 +2507,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "RAMIPRIL",
       "prompt": "[Tablet Ramipril]\n\na. Sebutkan golongan, status aktivasi (*direct vs prodrug*), metabolit aktif, dan dosis lazim harian!\n\nb. Sebutkan 2 kontraindikasi mutlak penggunaan obat ini dan alasannya!",
-      "stimulus": "Tablet Ramipril",
+      "stimulus": "Diberikan preparat Ramipril",
       "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), metabolit aktif, dan dosis lazim harian!",
       "soal_b": "Sebutkan 2 kontraindikasi mutlak penggunaan obat ini dan alasannya!",
       "diagnosis": "RAMIPRIL",
@@ -2451,7 +2532,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (dihidrolisis di hepar menjadi **Ramiprilat**). Dosis: 2,5 mg/hari (titrasi s.d. 5-10 mg).\nb. 1) **Kehamilan** (teratogenik mutlak: oligohidramnion, anuria & gagal ginjal janin); 2) **Stenosis arteri renalis bilateral** (memicu anuria / gagal ginjal akut).\r\n\r\n---\r\n\r\n### STASI 5: BENAZEPRIL",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (dihidrolisis di hepar menjadi **Ramiprilat**). Dosis: 2,5 mg/hari (titrasi s.d. 5-10 mg).\nb. 1) **Kehamilan** (teratogenik mutlak: oligohidramnion, anuria & gagal ginjal janin); 2) **Stenosis arteri renalis bilateral** (memicu anuria / gagal ginjal akut).",
       "jawaban_lengkap": "a. **Mekanisme Molekuler & Organ Target Proteksi:**  \r\n   - Ramipril dihidrolisis di hepar menjadi **Ramiprilat** yang memiliki afinitas ikatan sangat kuat terhadap enzim **Angiotensin Converting Enzyme (ACE)**.  \r\n   - Menghambat konversi Ang I menjadi Ang II → menurunkan tonus vaskular arteriol perifer dan sekresi aldosteron.  \r\n   - Memberikan efek kardioprotektif (mencegah *remodeling* miokard pasca infark/gagal jantung) dan renoprotektif (menurunkan proteinuria pada pasien berisiko kardiovaskular tinggi).  \r\n\r\nb. **Status Farmakologis, Dosis, & Kontraindikasi:**  \r\n   - **Golongan & Status Aktivasi:** ACE Inhibitor tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Ramiprilat**; digunakan untuk maintenance jangka panjang pada pasien dengan fungsi hepar normal).  \r\n   - **Dosis Lazim (Slide 13):** **2,5 mg/hari** tablet oral (dapat dititrasi bertahap s.d. 5 - 10 mg/hari).  \r\n   - **Kontraindikasi Mutlak:** Kehamilan (teratogenik fetotoksik), menyusui, riwayat angioedema, stenosis arteri renalis bilateral.  \r\n   - **Efek Samping Khas:** Batuk kering kronik menetap (bradikinin), hiperkalemia, hipotensi postural, sakit kepala.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2469,7 +2550,9 @@
         "th-2022",
         "ramipril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (dihidrolisis di hepar menjadi **Ramiprilat**). Dosis: 2,5 mg/hari (titrasi s.d. 5-10 mg).",
+      "jawaban_b": "1) **Kehamilan** (teratogenik mutlak: oligohidramnion, anuria & gagal ginjal janin); 2) **Stenosis arteri renalis bilateral** (memicu anuria / gagal ginjal akut)."
     },
     {
       "id": 241,
@@ -2477,7 +2560,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BENAZEPRIL",
       "prompt": "[Tablet Benazepril]\n\na. Sebutkan golongan, status aktivasi (*direct vs prodrug*), metabolit aktif, dan dosis lazimnya!\n\nb. Jelaskan komplikasi fatal pada janin yang mendasari kontraindikasi mutlak obat ini pada trimester 2 dan 3 kehamilan!",
-      "stimulus": "Tablet Benazepril",
+      "stimulus": "Diberikan preparat Benazepril",
       "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), metabolit aktif, dan dosis lazimnya!",
       "soal_b": "Jelaskan komplikasi fatal pada janin yang mendasari kontraindikasi mutlak obat ini pada trimester 2 dan 3 kehamilan!",
       "diagnosis": "BENAZEPRIL",
@@ -2502,7 +2585,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Benazeprilat**). Dosis: 5 mg/hari (dapat ditingkatkan s.d. 10-20 mg).\nb. Teratogenik fetotoksik (*fetopathy syndrome*): iskemia ginjal janin → anuria → **oligohidramnion**, hipoplasia paru, deformitas kraniofasial, dan kematian janin intrauterin.\r\n\r\n---\r\n\r\n### STASI 6: PERINDOPRIL",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Benazeprilat**). Dosis: 5 mg/hari (dapat ditingkatkan s.d. 10-20 mg).\nb. Teratogenik fetotoksik (*fetopathy syndrome*): iskemia ginjal janin → anuria → **oligohidramnion**, hipoplasia paru, deformitas kraniofasial, dan kematian janin intrauterin.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Benazepril adalah prodrug ester yang diubah di hepar menjadi bentuk aktif **Benazeprilat**.  \r\n   - Benazeprilat menghambat enzim **ACE**, memutus konversi Ang I menjadi Ang II.  \r\n   - Mengakibatkan penurunan resistensi vaskular sistemik perifer, penurunan retensi natrium dan air di ginjal via penurunan aldosteron, serta akumulasi vasodilator bradikinin → tekanan darah turun.  \r\n\r\nb. **Status Aktivasi, Dosis, & Efek Teratogenik:**  \r\n   - **Golongan & Status Aktivasi:** ACE Inhibitor tipe **Indirect / Prodrug** (membutuhkan aktivasi hepar menjadi Benazeprilat).  \r\n   - **Bentuk Sediaan & Dosis Lazim (Slide 13):** Tablet oral, **5 mg/hari** (dapat dititrasi hingga 10 - 20 mg/hari).  \r\n   - **Alasan Kontraindikasi Kehamilan (Teratogenik):** Hambatan RAAS pada trimester 2 dan 3 menyebabkan iskemia ginjal janin, anuria janin, **oligohidramnion**, hipoplasia paru sekunder, deformitas kraniofasial, dan kematian janin (*fetopathy syndrome*).  \r\n   - **Efek Samping Lain:** Batuk kering, hipotensi, hiperkalemia, gangguan saluran cerna.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2520,7 +2603,9 @@
         "th-2022",
         "benazepril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Benazeprilat**). Dosis: 5 mg/hari (dapat ditingkatkan s.d. 10-20 mg).",
+      "jawaban_b": "Teratogenik fetotoksik (*fetopathy syndrome*): iskemia ginjal janin → anuria → **oligohidramnion**, hipoplasia paru, deformitas kraniofasial, dan kematian janin intrauterin."
     },
     {
       "id": 242,
@@ -2528,7 +2613,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PERINDOPRIL",
       "prompt": "[Tablet Perindopril]\n\na. Sebutkan golongan, status aktivasi (*direct vs prodrug*), dan metabolit aktifnya!\n\nb. Apa bahaya utama jika obat ini dikombinasi dengan suplemen kalium (KCl) atau diuretik hemat kalium (spironolakton)?",
-      "stimulus": "Tablet Perindopril",
+      "stimulus": "Diberikan preparat Perindopril",
       "soal_a": "Sebutkan golongan, status aktivasi (*direct vs prodrug*), dan metabolit aktifnya!",
       "soal_b": "Apa bahaya utama jika obat ini dikombinasi dengan suplemen kalium (KCl) atau diuretik hemat kalium (spironolakton)?",
       "diagnosis": "PERINDOPRIL",
@@ -2553,7 +2638,7 @@
         "**Golongan:** ACE Inhibitor (Penghambat ACE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Perindoprilat**).\nb. Memicu **Hiperkalemia berat / fatal** yang berisiko menyebabkan henti jantung / aritmia ventrikel mematikan (karena efek aditif penghambatan sekresi kalium ginjal).\r\n\r\n---\r\n\r\n### STASI 7: KANDESARTAN (CANDESARTAN)",
+      "jawaban_ringkas": "a. Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Perindoprilat**).\nb. Memicu **Hiperkalemia berat / fatal** yang berisiko menyebabkan henti jantung / aritmia ventrikel mematikan (karena efek aditif penghambatan sekresi kalium ginjal).",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik:**  \r\n   - Perindopril adalah ester prodrug yang dihidrolisis di hepar menjadi metabolit aktif **Perindoprilat**.  \r\n   - Menghambat enzim **ACE** plasma dan jaringan vaskular → menurunkan pembentukan Angiotensin II, menurunkan degradasi bradikinin, dan meningkatkan sintesis NO endotel → relaksasi otot polos vaskular sistemik dan penurunan tekanan darah.  \r\n\r\nb. **Golongan, Efek Samping, & Interaksi Elektrolit:**  \r\n   - **Golongan & Status:** ACE Inhibitor tipe **Prodrug / Indirect**.  \r\n   - **Perbandingan ESO Batuk:** Perindopril (seperti seluruh ACEi) memiliki risiko tinggi menyebabkan **batuk kering persisten** akibat degradasi bradikinin yang terhambat. Sebaliknya, golongan ARB (misal Candesartan) tidak menghambat degradasi bradikinin sehingga **tidak memicu batuk kering**.  \r\n   - **Interaksi Berbahaya:** Kombinasi Perindopril dengan suplemen kalium (KCl) atau diuretik hemat kalium (Spironolakton/Amilorid) menghambat ekskresi kalium ginjal secara sinergis → memicu **Hiperkalemia Berat / Fatal** yang menyebabkan aritmia jantung mematikan (fibrilasi ventrikel/asistol).  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2572,7 +2657,9 @@
         "th-2021",
         "perindopril"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ACE Inhibitor, tipe **Indirect / Prodrug** (diaktivasi di hepar menjadi **Perindoprilat**).",
+      "jawaban_b": "Memicu **Hiperkalemia berat / fatal** yang berisiko menyebabkan henti jantung / aritmia ventrikel mematikan (karena efek aditif penghambatan sekresi kalium ginjal)."
     },
     {
       "id": 243,
@@ -2580,7 +2667,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KANDESARTAN (CANDESARTAN)",
       "prompt": "[Tablet Kandesartan / Candesartan]\n\na. Sebutkan golongan obat, reseptor target kerja spesifiknya, dan dosis lazim hariannya!\n\nb. Mengapa obat ini menjadi terapi pengganti lini pertama pada pasien hipertensi yang batuk setelah minum Kaptopril?",
-      "stimulus": "Tablet Kandesartan / Candesartan",
+      "stimulus": "Diberikan preparat Kandesartan / Candesartan",
       "soal_a": "Sebutkan golongan obat, reseptor target kerja spesifiknya, dan dosis lazim hariannya!",
       "soal_b": "Mengapa obat ini menjadi terapi pengganti lini pertama pada pasien hipertensi yang batuk setelah minum Kaptopril?",
       "diagnosis": "KANDESARTAN (CANDESARTAN)",
@@ -2607,7 +2694,7 @@
         "**Golongan:** Angiotensin Receptor Blocker (AT1)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), memblokir selektif **Reseptor AT₁** Angiotensin II. Dosis: 8 - 32 mg/hari (1x sehari).\nb. ARB memblokir reseptor tanpa menghambat enzim ACE (kininase II) → metabolisme degradasi bradikinin tetap lancar → **TIDAK terjadi akumulasi bradikinin → TIDAK memicu batuk kering persisten**.\r\n\r\n---\r\n\r\n### STASI 8: VALSARTAN",
+      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), memblokir selektif **Reseptor AT₁** Angiotensin II. Dosis: 8 - 32 mg/hari (1x sehari).\nb. ARB memblokir reseptor tanpa menghambat enzim ACE (kininase II) → metabolisme degradasi bradikinin tetap lancar → **TIDAK terjadi akumulasi bradikinin → TIDAK memicu batuk kering persisten**.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Perbedaan dengan ACEi:**  \r\n   - Kandesartan (diberikan sebagai ester prodrug Candesartan cilexetil yang dihidrolisis di saluran cerna menjadi candesartan aktif) bekerja secara selektif memblokir **Reseptor Angiotensin II Tipe 1 (AT₁)**.  \r\n   - Blokade reseptor AT₁ mencegah Angiotensin II berikatan pada otot polos vaskular (mencegah vasokonstriksi → vasodilatasi) dan pada korteks adrenal (mencegah sekresi aldosteron → ekskresi Na⁺ dan air meningkat).  \r\n   - **Perbedaan Fundamental dengan ACEi:** Kandesartan **tidak menghambat enzim ACE (kininase II)**, sehingga metabolisme degradasi bradikinin tetap normal berjalan → **TIDAK menyebabkan akumulasi bradikinin → TIDAK menimbulkan efek samping batuk kering persisten**.  \r\n\r\nb. **Golongan, Dosis, Indikasi Peralihan, Kontraindikasi, & Resep:**  \r\n   - **Golongan:** Angiotensin Receptor Blocker (ARB).  \r\n   - **Dosis Lazim Harian (Slide 17):** **8 - 32 mg/hari** (diberikan 1 kali sehari per oral).  \r\n   - **Indikasi Peralihan:** Obat pilihan utama pengganti ACE inhibitor untuk pasien hipertensi/gagal jantung/DM yang mengalami efek samping intoleransi **batuk kering persisten** atau riwayat angioedema akibat ACEi.  \r\n   - **Kontraindikasi:** Kehamilan (teratogenik mutlak), menyusui, hipersensitivitas, stenosis arteri renalis bilateral.  \r\n   - **Efek Samping:** Pusing, sakit kepala, hipotensi, hiperkalemia, gangguan pengecapan (*metallic taste*), penurunan kadar Hb.  \r\n   - **Format Resep Lengkap Lege Artis (Candesartan):**  \r\n     ```text\r\n     dr. Pratama, Sp.JP\r\n     SIP: 123/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Candesartan tab mg 8 No. XXX\r\n        S 1 d d tab I mane\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Tn. B\r\n     Umur  : 60 tahun\r\n     BB    : 68 kg\r\n     Alamat: Jl. Anggrek No. 14\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Pratama, Sp.JP\r\n     SIP: 123/DU/2026/FK\r\n     Jl. Farmakologi No. 3, Jakarta\r\n     Telp: 021-1234567\r\n\r\n     Jakarta, 04 Oktober 2026\r\n\r\n     R/ Candesartan tab mg 8 No. XXX\r\n        S 1 d d tab I mane\r\n        --------------------------------------------- §\r\n\r\n     Pro   : Tn. B\r\n     Umur  : 60 tahun\r\n     BB    : 68 kg\r\n     Alamat: Jl. Anggrek No. 14",
       "tips_klinis": "",
@@ -2629,7 +2716,9 @@
         "kandesartan",
         "candesartan"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ARB (*Angiotensin Receptor Blocker*), memblokir selektif **Reseptor AT₁** Angiotensin II. Dosis: 8 - 32 mg/hari (1x sehari).",
+      "jawaban_b": "ARB memblokir reseptor tanpa menghambat enzim ACE (kininase II) → metabolisme degradasi bradikinin tetap lancar → **TIDAK terjadi akumulasi bradikinin → TIDAK memicu batuk kering persisten**."
     },
     {
       "id": 244,
@@ -2637,7 +2726,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "VALSARTAN",
       "prompt": "[Tablet Valsartan]\n\na. Sebutkan golongan obat, mekanisme kerja molekuler, dan dosis lazim hariannya!\n\nb. Sebutkan efek samping elektrolit yang harus dipantau serta kontraindikasi absolutnya!",
-      "stimulus": "Tablet Valsartan",
+      "stimulus": "Diberikan preparat Valsartan",
       "soal_a": "Sebutkan golongan obat, mekanisme kerja molekuler, dan dosis lazim hariannya!",
       "soal_b": "Sebutkan efek samping elektrolit yang harus dipantau serta kontraindikasi absolutnya!",
       "diagnosis": "VALSARTAN",
@@ -2663,7 +2752,7 @@
         "**Golongan:** Angiotensin Receptor Blocker (AT1)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), menghambat ikatan Angiotensin II pada reseptor AT₁. Dosis: 80 - 150 mg/hari (1x sehari).\nb. Efek samping: **Hiperkalemia** (akibat penurunan sekresi aldosteron) dan *metallic taste*. Kontraindikasi absolut: Kehamilan (teratogenik) dan stenosis arteri renalis bilateral.\r\n\r\n---\r\n\r\n### STASI 9: IRBESARTAN",
+      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), menghambat ikatan Angiotensin II pada reseptor AT₁. Dosis: 80 - 150 mg/hari (1x sehari).\nb. Efek samping: **Hiperkalemia** (akibat penurunan sekresi aldosteron) dan *metallic taste*. Kontraindikasi absolut: Kehamilan (teratogenik) dan stenosis arteri renalis bilateral.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Valsartan adalah antagonis non-peptida yang bekerja memblokir secara kompetitif dan selektif **Reseptor AT₁** Angiotensin II.  \r\n   - Mencegah vasokonstriksi pembuluh darah perifer dan menghambat sekresi aldosteron.  \r\n   - Kelebihan Ang II endogen dialihkan untuk menstimulasi reseptor AT₂ yang bebas, menghasilkan efek vasodilatasi tambahan, antiproliferatif endotel, dan penurunan tekanan darah sistemik.  \r\n\r\nb. **Golongan, Dosis, Indikasi, Efek Samping, & Kontraindikasi:**  \r\n   - **Golongan:** Angiotensin Receptor Blocker (ARB) - molekul aktif langsung.  \r\n   - **Dosis Lazim Harian (Slide 17):** **80 - 150 mg/hari** (dalam praktik klinis lazim 80 - 160 mg 1x sehari).  \r\n   - **Indikasi Klinis:** Hipertensi esensial, gagal jantung kronik (terbukti menurunkan mortalitas/remodeling), nefropati diabetik.  \r\n   - **Efek Samping:** Sakit kepala, pusing, diare, hipotensi, **hiperkalemia** (terutama bila disandingkan dengan retensi kalium atau gagal ginjal), rasa logam di lidah (*metallic taste*), dan penurunan kadar hemoglobin.  \r\n   - **Kontraindikasi:** Kehamilan (teratogenik mutlak), stenosis arteri renalis bilateral, hipersensitivitas, serta penggunaan kombinasi bersama aliskiren pada pasien diabetes.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2683,7 +2772,9 @@
         "th-2022",
         "valsartan"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ARB (*Angiotensin Receptor Blocker*), menghambat ikatan Angiotensin II pada reseptor AT₁. Dosis: 80 - 150 mg/hari (1x sehari).",
+      "jawaban_b": "Efek samping: **Hiperkalemia** (akibat penurunan sekresi aldosteron) dan *metallic taste*. Kontraindikasi absolut: Kehamilan (teratogenik) dan stenosis arteri renalis bilateral."
     },
     {
       "id": 245,
@@ -2691,7 +2782,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "IRBESARTAN",
       "prompt": "[Tablet Irbesartan]\n\na. Sebutkan golongan obat, reseptor target, dan dosis lazim harian (sesuai hafalan kuliah)!\n\nb. Sebutkan indikasi klinis utama obat ini selain hipertensi esensial dan jelaskan keuntungannya!",
-      "stimulus": "Tablet Irbesartan",
+      "stimulus": "Diberikan preparat Irbesartan",
       "soal_a": "Sebutkan golongan obat, reseptor target, dan dosis lazim harian (sesuai hafalan kuliah)!",
       "soal_b": "Sebutkan indikasi klinis utama obat ini selain hipertensi esensial dan jelaskan keuntungannya!",
       "diagnosis": "IRBESARTAN",
@@ -2716,7 +2807,7 @@
         "**Golongan:** Angiotensin Receptor Blocker (AT1)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), antagonis selektif reseptor AT₁. Dosis: 150 - 300 mg/hari (1x sehari).\nb. **Nefropati Diabetik tipe 2**: sangat efektif menurunkan laju ekskresi mikroalbumin urin dan memperlambat progresivitas gagal ginjal tahap akhir.\r\n\r\n---\r\n\r\n### STASI 10: LOSARTAN",
+      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*), antagonis selektif reseptor AT₁. Dosis: 150 - 300 mg/hari (1x sehari).\nb. **Nefropati Diabetik tipe 2**: sangat efektif menurunkan laju ekskresi mikroalbumin urin dan memperlambat progresivitas gagal ginjal tahap akhir.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Renoproteksi:**  \r\n   - Irbesartan bekerja mengikat dan menghambat secara selektif **Reseptor AT₁** tanpa mengganggu enzim kininase II/ACE.  \r\n   - Mengurangi resistensi vaskular ginjal dan sistemik, merelaksasi arteriol eferen ginjal → menurunkan tekanan kapiler intraglomerular.  \r\n   - Efek klinis utama: Sangat efektif menghambat progresi kerusakan ginjal dan mengurangi laju ekskresi albumin urin pada penderita hipertensi dengan **nefropati diabetik tipe 2**.  \r\n\r\nb. **Golongan, Dosis, Efek Samping, & Kontraindikasi:**  \r\n   - **Golongan:** Angiotensin Receptor Blocker (ARB).  \r\n   - **Dosis Lazim Harian (Slide 17):** **150 - 300 mg/hari** (1 kali sehari per oral).  \r\n   - **Efek Samping:** Pusing, sakit kepala, diare, hiperkalemia, hipotensi ortostatik, ruam kulit.  \r\n   - **Kontraindikasi Absolut:** Kehamilan (kategori teratogenik: memicu kematian janin, gagal ginjal neonatus), menyusui, stenosis arteri renalis bilateral.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2734,7 +2825,9 @@
         "th-2022",
         "irbesartan"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ARB (*Angiotensin Receptor Blocker*), antagonis selektif reseptor AT₁. Dosis: 150 - 300 mg/hari (1x sehari).",
+      "jawaban_b": "**Nefropati Diabetik tipe 2**: sangat efektif menurunkan laju ekskresi mikroalbumin urin dan memperlambat progresivitas gagal ginjal tahap akhir."
     },
     {
       "id": 246,
@@ -2742,7 +2835,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "LOSARTAN",
       "prompt": "[Tablet Losartan]\n\na. Sebutkan golongan obat, dosis lazim harian, dan keunikan bioaktivasi metabolit aktifnya!\n\nb. Sebutkan efek metabolisme unik obat ini pada asam urat serta dampak interaksinya dengan obat NSAID!",
-      "stimulus": "Tablet Losartan",
+      "stimulus": "Diberikan preparat Losartan",
       "soal_a": "Sebutkan golongan obat, dosis lazim harian, dan keunikan bioaktivasi metabolit aktifnya!",
       "soal_b": "Sebutkan efek metabolisme unik obat ini pada asam urat serta dampak interaksinya dengan obat NSAID!",
       "diagnosis": "LOSARTAN",
@@ -2764,7 +2857,7 @@
       "struktur_khas": [
         "**Golongan:** Angiotensin Receptor Blocker (AT1)"
       ],
-      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 50 - 100 mg/hari. Bioaktivasi: dihepar diubah CYP2C9/3A4 menjadi **EXP3174** (antagonis non-kompetitif 10-40x lebih poten, *long-acting*).\nb. Memiliki efek **urikosurik** (meningkatkan ekskresi asam urat). Interaksi NSAID: menurunkan efikasi hipotensif dan meningkatkan risiko gagal ginjal akut (AKI).\r\n\r\n---\r\n\r\n### STASI 11: TELMISARTAN",
+      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 50 - 100 mg/hari. Bioaktivasi: dihepar diubah CYP2C9/3A4 menjadi **EXP3174** (antagonis non-kompetitif 10-40x lebih poten, *long-acting*).\nb. Memiliki efek **urikosurik** (meningkatkan ekskresi asam urat). Interaksi NSAID: menurunkan efikasi hipotensif dan meningkatkan risiko gagal ginjal akut (AKI).",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Profil Metabolit Aktif:**  \r\n   - Losartan bekerja memblokir reseptor **AT₁** Angiotensin II.  \r\n   - **Keunikan Farmakokinetik:** Losartan mengalami metabolisme lintas pertama di hepar melalui enzim CYP2C9 dan CYP3A4, menghasilkan metabolit aktif karboksilat (**EXP3174**). Metabolit EXP3174 ini bekerja sebagai antagonis non-kompetitif yang memiliki potensi 10 hingga 40 kali lebih kuat dan waktu paruh lebih panjang dibanding molekul induk Losartan, bertanggung jawab atas sebagian besar efek penurunan tekanan darah jangka panjang.  \r\n   - Losartan juga memiliki efek urikosurik unik (meningkatkan ekskresi asam urat di urin).  \r\n\r\nb. **Golongan, Dosis, Efek Samping, & Interaksi Obat:**  \r\n   - **Golongan:** Angiotensin Receptor Blocker (ARB).  \r\n   - **Dosis Lazim Harian (Slide 17):** **50 - 100 mg/hari** (1-2 kali sehari).  \r\n   - **Efek Samping:** Sakit kepala, pusing, hipotensi, hiperkalemia, gangguan saluran cerna (diare), rasa logam (*metallic taste*), penurunan Hb.  \r\n   - **Interaksi Obat Berbahaya:**  \r\n     - Bersama Diuretik Hemat Kalium / Suplemen Kalium → Memicu **Hiperkalemia Berat**.  \r\n     - Bersama NSAID → Hambatan prostaglandin ginjal menurunkan efikasi antihipertensi Losartan dan meningkatkan risiko gagal ginjal akut (*Acute Kidney Injury* / AKI).  \r\n   - **Kontraindikasi:** Kehamilan (teratogenik), menyusui, stenosis arteri renalis bilateral.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2779,7 +2872,9 @@
         "efek-samping",
         "losartan"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 50 - 100 mg/hari. Bioaktivasi: dihepar diubah CYP2C9/3A4 menjadi **EXP3174** (antagonis non-kompetitif 10-40x lebih poten, *long-acting*).",
+      "jawaban_b": "Memiliki efek **urikosurik** (meningkatkan ekskresi asam urat). Interaksi NSAID: menurunkan efikasi hipotensif dan meningkatkan risiko gagal ginjal akut (AKI)."
     },
     {
       "id": 247,
@@ -2787,7 +2882,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TELMISARTAN",
       "prompt": "[Tablet Telmisartan]\n\na. Sebutkan golongan obat, dosis lazim harian, dan keunggulan farmakokinetiknya dibanding ARB lain!\n\nb. Sebutkan reseptor intraseluler lain yang diaktivasi oleh obat ini dan keuntungannya bagi penderita sindrom metabolik/DM!",
-      "stimulus": "Tablet Telmisartan",
+      "stimulus": "Diberikan preparat Telmisartan",
       "soal_a": "Sebutkan golongan obat, dosis lazim harian, dan keunggulan farmakokinetiknya dibanding ARB lain!",
       "soal_b": "Sebutkan reseptor intraseluler lain yang diaktivasi oleh obat ini dan keuntungannya bagi penderita sindrom metabolik/DM!",
       "diagnosis": "TELMISARTAN",
@@ -2814,7 +2909,7 @@
         "**Golongan:** Angiotensin Receptor Blocker (AT1)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 40 - 80 mg/hari (1x sehari). Farmakokinetik: Waktu paruh eliminasi paling panjang (\\sim 24 jam) dan afinitas reseptor AT₁ paling kuat.\nb. Aktivator parsial reseptor **PPAR-γ** (*Peroxisome Proliferator-Activated Receptor gamma*) → meningkatkan sensitivitas insulin serta memperbaiki metabolisme glukosa dan lipid.\r\n\r\n---\r\n\r\n### STASI 12: ALISKIREN",
+      "jawaban_ringkas": "a. Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 40 - 80 mg/hari (1x sehari). Farmakokinetik: Waktu paruh eliminasi paling panjang (\\sim 24 jam) dan afinitas reseptor AT₁ paling kuat.\nb. Aktivator parsial reseptor **PPAR-γ** (*Peroxisome Proliferator-Activated Receptor gamma*) → meningkatkan sensitivitas insulin serta memperbaiki metabolisme glukosa dan lipid.",
       "jawaban_lengkap": "a. **Mekanisme Molekuler & Aktivitas Metabolik:**  \r\n   - Telmisartan bekerja memblokir secara selektif **Reseptor AT₁** Angiotensin II dengan afinitas ikatan yang sangat kuat dan disosiasi yang sangat lambat (waktu paruh eliminasi terpanjang di antara ARB, \\sim 24 jam).  \r\n   - Selain blokade AT₁, Telmisartan memiliki aktivitas agonis parsial pada reseptor **PPAR-γ** (*Peroxisome Proliferator-Activated Receptor gamma*), yang membantu memperbaiki metabolisme glukosa dan profil lipid, sangat menguntungkan pada pasien sindrom metabolik/diabetes.  \r\n\r\nb. **Golongan, Dosis, Mnemonik Kuliah, & Kontraindikasi:**  \r\n   - **Golongan:** Angiotensin Receptor Blocker (ARB).  \r\n   - **Dosis Lazim Harian (Slide 17):** **40 - 80 mg/hari** (1 kali sehari).  \r\n   - **Jembatan Keledai / Mnemonik ARB (Slide 17):**  \r\n     *\"LoVa Iri, Telat Cantik - tan\"*  \r\n     - **Lo** → **Losartan** (50 - 100 mg/hari)  \r\n     - **Va** → **Valsartan** (80 - 150 mg/hari)  \r\n     - **Iri** → **Irbesartan** (150 - 300 mg/hari)  \r\n     - **Telat** → **Telmisartan** (40 - 80 mg/hari)  \r\n     - **Cantik** → **Candesartan** (8 - 32 mg/hari)  \r\n   - **Efek Samping:** Pusing, sakit kepala, diare, hiperkalemia, hipotensi, ruam kulit.  \r\n   - **Kontraindikasi:** Kehamilan (teratogenik mutlak), menyusui, obstruksi bilier/gangguan hepar berat (ekskresi hampir murni via bilier), stenosis arteri renalis bilateral.  \r\n\r\n---\r\n\r\n## MATRIKS RANGKUMAN KOMPARATIF UJIAN MEJA (SLIDE 18 & 19)\r\n\r\n### 1. Komparasi Efek Samping Obat (ESO) - Slide 18\r\n| Gejala Efek Samping | Renin Inhibitor (Aliskiren) | ACE Inhibitor (Captopril dkk) | ARB (Candesartan dkk) | Keterangan Patofisiologi |\r\n| :--- | :---: | :---: | :---: | :--- |\r\n| **Hipotensi** | **+** | **+** | **+** | Efek langsung vasodilatasi sistemik |\r\n| **Hiperkalemia** | **+** | **+** | **+** | Penurunan sekresi aldosteron menghambat ekskresi K⁺ di nefron distal |\r\n| **Batuk Kering Persisten** | **-** | **+++ (KHAS)** | **-** | **Eksklusif pada ACEI** akibat hambatan degradasi bradikinin & substansi P |\r\n| **Angioedema** | **+** | **++ (KHAS)** | **+/- (Sangat jarang)** | Edema submukosa via bradikinin (ACEI); pada ARB frekuensi minimal |\r\n| **Gangguan Fx Ginjal** | **+** | **+** | **+** | Dilatasi arteriol eferen menurunkan tekanan filtrasi glomerulus |\r\n| **Diare / Gangguan GI** | **+ (Khas dosis 300 mg)** | **+** | **+** | Gangguan motilitas/mukosa saluran cerna |\r\n| **Ruam Kulit (*Rash*)** | **-** | **+** | **+** | Reaksi hipersensitivitas kutaneus |\r\n| **Sakit Kepala & Pusing** | **+** | **+** | **+** | Efek hemodinamik vasodilatasi serebrovaskular |\r\n| **Metallic Taste** | **-** | **+** | **+** | Gangguan sensasi pengecapan (*dysgeusia*) |\r\n\r\n### 2. Komparasi Kontraindikasi - Slide 19\r\n| Kondisi Kontraindikasi | Renin Inhibitor | ACE Inhibitor | ARB | Rasional Klinis |\r\n| :--- | :---: | :---: | :---: | :--- |\r\n| **Kehamilan** | **KONTRAINDIKASI MUTLAK** | **KONTRAINDIKASI MUTLAK** | **KONTRAINDIKASI MUTLAK** | **Teratogenik fetotoksik:** oligohidramnion, hipoplasia paru, anuria & kematian janin |\r\n| **Ibu Menyusui** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | Diekskresikan melalui ASI, mengganggu hemodinamik neonatus |\r\n| **Hipersensitivitas** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | Memicu reaksi anafilaktoid / angioedema berulang |\r\n| **Stenosis Arteri Renalis Bilateral** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | Menghilangkan tonus arteriol eferen → GFR anjlok → Gagal Ginjal Akut |\r\n| **Dual Blockade pada DM** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | **KONTRAINDIKASI** | Dilarang menggabungkan Aliskiren + ACEI/ARB (risiko hipotensi, hiperkalemia fatal, AKI) |\r\n\r\n### 3. Klasifikasi Khusus ACE Inhibitor (Slide 13)\r\n| Jenis ACEI | Sifat Kerja & Farmakokinetik | Contoh Obat | Dosis Lazim (Slide 13) | Indikasi Penggunaan |\r\n| :--- | :--- | :--- | :--- | :--- |\r\n| **Direct ACEI** | Langsung aktif mengikat ACE tanpa aktivasi hepar | **Captopril**<br>**Lisinopril** | 2 × 12,5 mg/hari<br>10 mg/hari | - Butuh efek cepat (akut)<br>- Pasien gangguan fungsi hepar berat |\r\n| **Indirect / Prodrug ACEI** | Prodrug yang harus dihidrolisis hepar menjadi metabolit aktif | **Enalapril**<br>**Ramipril**<br>**Benazepril** | Oral: 2,5-5 mg/hari; IV: 1,25 mg/hari<br>2,5 mg/hari<br>5 mg/hari | - Terapi jangka panjang (*maintenance*)<br>- Pasien fungsi hepar baik |\r\n\r\n\r\n---\r\n\r\n## 1.4. Vasodilator Langsung (NO-cGMP, Pembuka Kanal Kalium, Nitrat Organik)\r\n\r\n# BANK SOAL-JAWAB IDENTIFIKASI FARMAKOLOGI (OSPE MEJA) BLOK 3.2\r\n## TOPIK: VASODILATOR (P1S4)\r\n**Sumber Referensi:** PPT Asisten Dosen Farmakologi P1S4_Vasodilator (Slide 1–19) & Standar Algoritma OSPE Identifikasi Meja Blok 3.2 FK Unsoed  \r\n**Penyusun:** Tim Modul Farmakologi Kardiovaskular Blok 3.2  \r\n\r\n---\r\n\r\n## PANDUAN DAN ALGORITMA UJIAN IDENTIFIKASI MEJA (OSPE BLOK 3.2)\r\nSetiap stasi identifikasi farmakologi di meja praktikum menguji mahasiswa dalam durasi terbatas (60–90 detik per meja) dengan format standar:\r\n1. **Identifikasi Preparat / Sediaan Obat:** Mengidentifikasi nama sediaan, zat aktif, dan golongan besar/subgolongan.\r\n2. **Sub-pertanyaan a (Mekanisme Kerja Molekuler):** Penjelasan kaskade intraseluler reseptor/enzim/kanal ion (misal: jalur NO-sGC-cGMP-PKG, kanal kalium K_{ATP}, hiperpolarisasi membran).\r\n3. **Sub-pertanyaan b (Karakteristik Farmakologis Khusus):** Efek samping patognomonik/khas, mnemonik, dosis & rute sediaan, indikasi kegawatdaruratan, atau kontraindikasi mutlak interaksi obat.\r\n\r\n---\r\n\r\n## RINGKASAN CEPAT IDENTIFIKASI PREPARAT VASODILATOR (SLIDE 1–19)\r\n**Mnemonik Golongan Vasodilator Non-Nitrat:** **\"HAMIL DINI\"**\r\n- **H** : Hidralazin\r\n- **MI** : Minoksidil\r\n- **DI** : Diazoksid\r\n- **NI** : Natrium Nitroprusid\r\n\r\n| No | Preparat Obat | Golongan / Selektivitas Vaskular | Target Molekuler Utama | Efek Samping Khas / Ciri Ujian | Dosis & Rute Sediaan |\r\n| :--- | :--- | :--- | :--- | :--- | :--- |\r\n| 1 | **Hidralazin** `[PRIORITAS TINGGI]` | Arteriodilator selektif | Pelepasan NO endotel/arteriol → ↑cGMP | *Facial flushing*, takikardia (**FaSTT**), **Drug-Induced Lupus** | Oral 25–50 mg |\r\n| 2 | **Minoksidil** `[PRIORITAS TINGGI]` | Arteriodilator poten | Pembuka kanal K_{ATP} → hiperpolarisasi | Sakit kepala, efusi pleura (**SET**), **Hipertrikosis** | Oral 5–100 mg/hari; Topikal (alopesia) |\r\n| 3 | **Diazoksid** | Arteriodilator non-diuretik | Pembuka kanal K⁺ → hiperpolarisasi | Mual, muntah, takikardia, **azotemia**, hiperglikemia | IV/Oral 1–3 mg/kgBB (maks 150 mg) |\r\n| 4 | **Natrium Nitroprusid** `[PRIORITAS TINGGI]` | Vasodilator seimbang (Arteri + Vena) | Eritrosit melepaskan NO → ↑cGMP | Preload & afterload turun drastis, **Toksisitas Sianida/Tiosianat** | Infus IV kontinu 1–3 mg/kg (maks 150 mg) |\r\n| 5 | **Isosorbid Dinitrat (ISDN)** `[PRIORITAS TINGGI]` | Venodilator predominan (Organik Nitrat) | Denitrasi → NO → ↑cGMP → relaksasi vena | Sakit kepala, **toleransi nitrat**, KI fatal dengan **PDE-5 inhibitor** | Sublingual 5–10 mg; Oral tablet 10–20 mg |\r\n| 6 | **Nitrogliserin (NTG)** `[PRIORITAS TINGGI]` | Venodilator predominan (Organik Nitrat) | Bioaktivasi mitokondria → NO → ↑cGMP | Sakit kepala berdenyut, hipotensi ortostatik, toleransi nitrat | Sublingual 0,3–0,6 mg; IV titrasi infus |\r\n\r\n---\r\n\r\n## STASI IDENTIFIKASI MEJA / OSPE FARMAKOLOGI\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2836,7 +2931,9 @@
         "th-2021",
         "telmisartan"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan ARB (*Angiotensin Receptor Blocker*). Dosis: 40 - 80 mg/hari (1x sehari). Farmakokinetik: Waktu paruh eliminasi paling panjang (\\sim 24 jam) dan afinitas reseptor AT₁ paling kuat.",
+      "jawaban_b": "Aktivator parsial reseptor **PPAR-γ** (*Peroxisome Proliferator-Activated Receptor gamma*) → meningkatkan sensitivitas insulin serta memperbaiki metabolisme glukosa dan lipid."
     },
     {
       "id": 248,
@@ -2844,9 +2941,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "HIDRALAZIN (HYDRALAZINE)",
       "prompt": "[Tablet Hidralazin 25 mg / 50 mg]\n\na. Jelaskan mekanisme kerja molekuler lengkap dari preparat di meja tersebut dalam menurunkan resistensi vaskular sistemik!\n\nb. Sebutkan golongan obat, rute & dosis lazim pada materi, mnemonik efek samping (*FaSTT*), serta efek samping autoimun jangka panjang yang patognomonik!",
-      "stimulus": "Tablet Hidralazin 25 mg / 50 mg",
-      "soal_a": "Jelaskan mekanisme kerja molekuler lengkap dari preparat di meja tersebut dalam menurunkan resistensi vaskular sistemik!",
-      "soal_b": "Sebutkan golongan obat, rute & dosis lazim pada materi, mnemonik efek samping (*FaSTT*), serta efek samping autoimun jangka panjang yang patognomonik!",
+      "stimulus": "Diberikan preparat Hidralazin",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "HIDRALAZIN (HYDRALAZINE)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "HIDRALAZIN (HYDRALAZINE)",
@@ -2870,7 +2967,7 @@
         "**Golongan:** HIDRALAZIN (HYDRALAZINE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Hidralazin memicu pelepasan Oksida Nitrat (*Nitric Oxide* / NO) secara langsung pada sel otot polos arteriol.  \r\n   - NO berdifusi ke dalam sel otot polos dan mengaktifkan enzim *soluble Guanylyl Cyclase* (sGC).  \r\n   - Aktivasi sGC meningkatkan konversi *Guanosine Triphosphate* (GTP) menjadi *cyclic Guanosine Monophosphate* (cGMP).  \r",
+      "jawaban_ringkas": "a. Melepas Nitric Oxide (NO) → aktivasi guanilat siklase → cGMP meningkat → defosforilasi miosin → vasodilatasi arteriol → resistensi perifer turun\nb. Minoksidil, Natrium Nitroprusid (Vasodilator)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Hidralazin memicu pelepasan Oksida Nitrat (*Nitric Oxide* / NO) secara langsung pada sel otot polos arteriol.  \r\n   - NO berdifusi ke dalam sel otot polos dan mengaktifkan enzim *soluble Guanylyl Cyclase* (sGC).  \r\n   - Aktivasi sGC meningkatkan konversi *Guanosine Triphosphate* (GTP) menjadi *cyclic Guanosine Monophosphate* (cGMP).  \r\n   - Peningkatan cGMP intraseluler memicu aktivasi Protein Kinase G (PKG) yang memfasilitasi defosforilasi rantai ringan miosin (*myosin light-chain dephosphorylation* / defosforilasi protein kontraktil otot polos vaskular).  \r\n   - Terjadi relaksasi langsung otot polos vaskular selektif pada arteriol → vasodilatasi perifer → penurunan resistensi vaskular sistemik (SVR) dan penurunan tekanan darah.  \r\n\r\nb. **Karakteristik Khusus, Dosis, & Efek Samping Khas:**  \r\n   - **Golongan:** Vasodilator langsung perifer (selektif arteriodilator).  \r\n   - **Rute & Dosis:** Per oral, dosis lazim **25 – 50 mg**.  \r\n   - **Indikasi PPT:** Hipertensi esensial, hipertensi urgensi dan emergensi (sering dipakai pada preeklamsia/eklamsia kehamilan).  \r\n   - **Mnemonik Efek Samping (\"FaSTT\"):**  \r\n     - **Fa** : *Facial flushing* (kemerahan pada wajah).  \r\n     - **S**  : Sakit kepala (*headache*).  \r\n     - **T**  : Tremor.  \r\n     - **T**  : Takikardia (refleks baroreseptor simpatis akibat vasodilatasi arteriol cepat).  \r\n   - **Efek Samping Autoimun Patognomonik:** *Drug-Induced Lupus Erythematosus* (DILE / Sindrom mirip Lupus), terutama muncul pada penggunaan dosis tinggi (>200 mg/hari), terapi jangka panjang, dan pasien dengan status *slow acetylator* (asetilator lambat oleh enzim hepar NAT₂). Ditandai dengan artralgia, demam, ruam malar, dan antibodi anti-histon positif.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2891,7 +2988,9 @@
         "hidralazin",
         "hydralazine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Melepas Nitric Oxide (NO) → aktivasi guanilat siklase → cGMP meningkat → defosforilasi miosin → vasodilatasi arteriol → resistensi perifer turun",
+      "jawaban_b": "Minoksidil, Natrium Nitroprusid (Vasodilator)"
     },
     {
       "id": 249,
@@ -2899,9 +2998,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "MINOKSIDIL (MINOXIDIL)",
       "prompt": "[Tablet Minoksidil 5 mg / 10 mg / Larutan Topikal]\n\na. Jelaskan mekanisme kerja molekuler preparat ini pada membran sel otot polos vaskular hingga terjadi vasodilatasi arteriol!\n\nb. Sebutkan golongan obat, dosis awal dan maksimal per oral, mnemonik efek samping (*SET*), serta efek samping dermatologis khas yang dimanfaatkan untuk indikasi klinis lain!",
-      "stimulus": "Tablet Minoksidil 5 mg / 10 mg / Larutan Topikal",
-      "soal_a": "Jelaskan mekanisme kerja molekuler preparat ini pada membran sel otot polos vaskular hingga terjadi vasodilatasi arteriol!",
-      "soal_b": "Sebutkan golongan obat, dosis awal dan maksimal per oral, mnemonik efek samping (*SET*), serta efek samping dermatologis khas yang dimanfaatkan untuk indikasi klinis lain!",
+      "stimulus": "Diberikan preparat Minoksidil",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "MINOKSIDIL (MINOXIDIL)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "MINOKSIDIL (MINOXIDIL)",
@@ -2921,7 +3020,7 @@
       "struktur_khas": [
         "**Golongan:** MINOKSIDIL (MINOXIDIL)"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Minoksidil di hepar dikonversi oleh enzim sulfotransferase menjadi metabolit aktifnya, yaitu **minoksidil sulfat**.  \r\n   - Minoksidil sulfat bekerja secara selektif **membuka kanal kalium sensitif-ATP (K_{ATP})** pada membran sel otot polos arteriol.  \r\n   - Pembukaan kanal ini memicu efluks ion K⁺ keluar dari sel → terjadi **hiperpolarisasi membran sel**.  \r",
+      "jawaban_ringkas": "a. Metabolit aktif minoksidil sulfat membuka kanal K_ATP → efluks K⁺ → hiperpolarisasi membran sel → kanal Ca²⁺ tertutup → influks kalsium turun → relaksasi otot polos arteriol\nb. Hidralazin, Natrium Nitroprusid (Vasodilator)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**  \r\n   - Minoksidil di hepar dikonversi oleh enzim sulfotransferase menjadi metabolit aktifnya, yaitu **minoksidil sulfat**.  \r\n   - Minoksidil sulfat bekerja secara selektif **membuka kanal kalium sensitif-ATP (K_{ATP})** pada membran sel otot polos arteriol.  \r\n   - Pembukaan kanal ini memicu efluks ion K⁺ keluar dari sel → terjadi **hiperpolarisasi membran sel**.  \r\n   - Hiperpolarisasi membran mencegah terbukanya kanal kalsium sensitif-voltase (*voltage-gated L-type calcium channels*), sehingga menurunkan influks kalsium intraseluler.  \r\n   - Penurunan konsentrasi kalsium bebas sitosolik menyebabkan relaksasi otot polos arteriol (hampir tidak berefek pada kapasitansi vena) → vasodilatasi arteriol perifer yang poten → penurunan tekanan darah yang tajam.  \r\n\r\nb. **Karakteristik Khusus, Dosis, & Efek Samping Khas:**  \r\n   - **Golongan:** Vasodilator langsung perifer / *Potassium channel opener* (arteriodilator selektif).  \r\n   - **Dosis Oral PPT:**  \r\n     - Dosis awal: **5 mg/hari**.  \r\n     - Dosis maksimal: **100 mg/hari**.  \r\n   - **Mnemonik Efek Samping (\"SET\"):**  \r\n     - **S** : Sakit kepala (*headache*).  \r\n     - **E** : Efusi pleura (dan retensi cairan/edema perifer masif akibat stimulasi sekunder RAAS).  \r\n     - **T** : Takikardi (refleks takikardia simpatis).  \r\n   - **Efek Samping Dermatologis Khas & Indikasi:** **Hipertrikosis** (*hypertrichosis* / pertumbuhan rambut berlebih pada dahi, pelipis, punggung, dan ekstremitas). Efek samping ini dimanfaatkan secara klinis dalam bentuk sediaan topikal untuk terapi **Alopecia androgenetika** (kebotakan) karena merangsang mikrosirkulasi folikel rambut.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2938,7 +3037,9 @@
         "minoksidil",
         "minoxidil"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Metabolit aktif minoksidil sulfat membuka kanal K_ATP → efluks K⁺ → hiperpolarisasi membran sel → kanal Ca²⁺ tertutup → influks kalsium turun → relaksasi otot polos arteriol",
+      "jawaban_b": "Hidralazin, Natrium Nitroprusid (Vasodilator)"
     },
     {
       "id": 250,
@@ -2946,9 +3047,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "DIAZOKSID (DIAZOXIDE)",
       "prompt": "[Ampul Injeksi / Kapsul Diazoksid]\n\na. Jelaskan mekanisme kerja molekuler Diazoksid dan respons kompensasi hemodinamik/neurohormonal yang dipicunya!\n\nb. Sebutkan golongan obat, dosis lazim & maksimal pada materi, indikasi emergensi, serta efek samping metabolik dan renal yang khas!",
-      "stimulus": "Ampul Injeksi / Kapsul Diazoksid",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Diazoksid dan respons kompensasi hemodinamik/neurohormonal yang dipicunya!",
-      "soal_b": "Sebutkan golongan obat, dosis lazim & maksimal pada materi, indikasi emergensi, serta efek samping metabolik dan renal yang khas!",
+      "stimulus": "Diberikan preparat Diazoksid",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "DIAZOKSID (DIAZOXIDE)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "DIAZOKSID (DIAZOXIDE)",
@@ -2971,7 +3072,7 @@
         "**Golongan:** DIAZOKSID (DIAZOXIDE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Kompensasi Hemodinamik:**  \r\n   - Diazoksid bekerja sebagai **pembuka kanal kalium (K⁺)** pada membran otot polos vaskular arteriol.  \r\n   - Terjadi efluks ion K⁺ → hiperpolarisasi membran → penutupan kanal kalsium dan inhibisi influks ion Ca²⁺ → relaksasi dan dilatasi selektif arteriol perifer yang cepat → penurunan tahanan vaskular sistemik dan tekanan darah.  \r\n   - **Respons Kompensasi Hemodinamik/Neurohormonal:** Penurunan mendadak resistensi perifer memicu aktivasi refleks baroreseptor simpatis yang kuat → peningkatan denyut jantung (refleks takikardia), peningkatan curah jantung, serta peningkatan sekresi renin yang memicu **retensi air dan natrium** yang signifikan.  \r",
+      "jawaban_ringkas": "a. Membuka kanal K⁺ otot polos vaskular → efluks K⁺ → hiperpolarisasi membran → influks Ca²⁺ terhambat → relaksasi selektif arteriol perifer → resistensi vaskular sistemik turun\nb. Hidralazin, Minoksidil (Vasodilator)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Kompensasi Hemodinamik:**  \r\n   - Diazoksid bekerja sebagai **pembuka kanal kalium (K⁺)** pada membran otot polos vaskular arteriol.  \r\n   - Terjadi efluks ion K⁺ → hiperpolarisasi membran → penutupan kanal kalsium dan inhibisi influks ion Ca²⁺ → relaksasi dan dilatasi selektif arteriol perifer yang cepat → penurunan tahanan vaskular sistemik dan tekanan darah.  \r\n   - **Respons Kompensasi Hemodinamik/Neurohormonal:** Penurunan mendadak resistensi perifer memicu aktivasi refleks baroreseptor simpatis yang kuat → peningkatan denyut jantung (refleks takikardia), peningkatan curah jantung, serta peningkatan sekresi renin yang memicu **retensi air dan natrium** yang signifikan.  \r\n\r\nb. **Karakteristik Khusus, Dosis, & Efek Samping Khas:**  \r\n   - **Golongan:** Vasodilator langsung perifer (turunan tiazid non-diuretik / *potassium channel opener*).  \r\n   - **Dosis PPT:** **1 – 3 mg/kgBB** (dosis maksimal: **150 mg**), diberikan secara bolus IV cepat atau infus.  \r\n   - **Indikasi Klinis:** Krisis hipertensi (hipertensi emergensi) dan penatalaksanaan hipoglikemia berat akibat hiperinsulinisme (insulinoma).  \r\n   - **Efek Samping Khas PPT:**  \r\n     1. Hipotensi berat.  \r\n     2. Mual dan muntah (*nausea and vomiting*).  \r\n     3. Takikardia.  \r\n     4. **Azotemia** (peningkatan BUN/kreatinin serum akibat retensi cairan masif dan hipoperfusi ginjal).  \r\n     5. **Hiperglikemia** (karena membuka kanal K_{ATP} pada sel beta pankreas sehingga menghambat eksositosis insulin).  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -2990,7 +3091,9 @@
         "diazoksid",
         "diazoxide"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Membuka kanal K⁺ otot polos vaskular → efluks K⁺ → hiperpolarisasi membran → influks Ca²⁺ terhambat → relaksasi selektif arteriol perifer → resistensi vaskular sistemik turun",
+      "jawaban_b": "Hidralazin, Minoksidil (Vasodilator)"
     },
     {
       "id": 251,
@@ -2998,9 +3101,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "NATRIUM NITROPRUSID (SODIUM NITROPRUSSIDE)",
       "prompt": "[Vial Injeksi Natrium Nitroprusid 50 mg]\n\na. Jelaskan mekanisme pelepasan gugus aktif molekuler dari preparat ini di dalam darah serta kaskade intraseluler yang dihasilkan pada pembuluh darah!\n\nb. Sebutkan golongan & spektrum efek hemodinamiknya (arteri vs vena, afterload/preload), rute sediaan & dosis PPT, serta toksisitas metabolik fatal yang dapat terjadi pada pemakaian lama!",
-      "stimulus": "Vial Injeksi Natrium Nitroprusid 50 mg",
-      "soal_a": "Jelaskan mekanisme pelepasan gugus aktif molekuler dari preparat ini di dalam darah serta kaskade intraseluler yang dihasilkan pada pembuluh darah!",
-      "soal_b": "Sebutkan golongan & spektrum efek hemodinamiknya (arteri vs vena, afterload/preload), rute sediaan & dosis PPT, serta toksisitas metabolik fatal yang dapat terjadi pada pemakaian lama!",
+      "stimulus": "Diberikan preparat Natrium Nitroprusid",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "NATRIUM NITROPRUSID (SODIUM NITROPRUSSIDE)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "NATRIUM NITROPRUSID (SODIUM NITROPRUSSIDE)",
@@ -3020,7 +3123,7 @@
       "struktur_khas": [
         "**Golongan:** NATRIUM NITROPRUSID (SODIUM NITROPRUSSIDE)"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Molekuler Intraseluler:**  \r\n   - Natrium nitroprusid di dalam sirkulasi darah langsung berkontak dengan membran eritrosit → secara non-enzimatik melepaskan **gugus nitroso / gas Oksida Nitrat (NO)** bebas.  \r\n   - Gas NO berdifusi secara cepat menembus membran sel otot polos vaskular.  \r\n   - NO mengikat gugus heme dan mengaktifkan enzim *soluble Guanylyl Cyclase* (sGC).  \r",
+      "jawaban_ringkas": "a. Eritrosit melepaskan NO secara non-enzimatik → aktivasi guanilat siklase → cGMP meningkat → defosforilasi miosin → relaksasi arteriol dan vena seimbang → afterload dan preload turun simultan\nb. Hidralazin, Minoksidil (Vasodilator)",
       "jawaban_lengkap": "a. **Mekanisme Molekuler Intraseluler:**  \r\n   - Natrium nitroprusid di dalam sirkulasi darah langsung berkontak dengan membran eritrosit → secara non-enzimatik melepaskan **gugus nitroso / gas Oksida Nitrat (NO)** bebas.  \r\n   - Gas NO berdifusi secara cepat menembus membran sel otot polos vaskular.  \r\n   - NO mengikat gugus heme dan mengaktifkan enzim *soluble Guanylyl Cyclase* (sGC).  \r\n   - sGC mengatalisis sintesis cGMP intraseluler dari cGTP/GTP → aktivasi Protein Kinase G (PKG) → sekuestrasi kalsium dan defosforilasi rantai ringan miosin.  \r\n   - Terjadi relaksasi otot polos pembuluh darah yang sangat cepat (onset dalam hitungan detik) → penurunan tekanan darah seketika.  \r\n\r\nb. **Spektrum Hemodinamik, Dosis, & Toksisitas Metabolik Khas:**  \r\n   - **Golongan:** Vasodilator kerja cepat (*rapid-acting mixed vasodilator* / arterio- dan venodilator seimbang).  \r\n   - **Spektrum Hemodinamik Lengkap (Slide 17):**  \r\n     1. Resistensi Perifer Menurun (↓).  \r\n     2. Curah Jantung / *Cardiac Output* Menurun (↓).  \r\n     3. Kapasitas Pembuluh Darah Menurun / *Venous capacitance* meningkat (↓).  \r\n     4. **Afterload dan Preload Menurun secara simultan dan seimbang (↓)**.  \r\n     5. Vasodilatasi seimbang pada Arteri dan Vena.  \r\n     6. Renin Plasma Meningkat (↑) (respons kompensasi).  \r\n     7. Takikardia kompensasi.  \r\n   - **Bentuk Sediaan & Dosis PPT:** Sediaan **Intravena (IV)** infus kontinu, dosis awal: **1 – 3 mg/kg** (maksimal **150 mg**). Catatan: Larutan tidak stabil terhadap cahaya (harus dibungkus pelindung gelap/aluminium foil).  \r\n   - **Toksisitas Metabolik Fatal:** Pemecahan molekul nitroprusid melepaskan ion sianida (CN⁻) yang di hepar dimetabolisme oleh enzim rodanase menjadi tiosianat. Infus berkepanjangan (>24–48 jam) atau dosis tinggi dapat menyebabkan **Toksisitas Sianida** (asidosis laktat berat, hipoksia seluler) dan **Toksisitas Tiosianat** (kelemahan, hiperrefleksia, psikosis, konfusi, kejang, hingga koma).  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3039,7 +3142,9 @@
         "sodium",
         "nitroprusside"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Eritrosit melepaskan NO secara non-enzimatik → aktivasi guanilat siklase → cGMP meningkat → defosforilasi miosin → relaksasi arteriol dan vena seimbang → afterload dan preload turun simultan",
+      "jawaban_b": "Hidralazin, Minoksidil (Vasodilator)"
     },
     {
       "id": 252,
@@ -3047,9 +3152,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ISOSORBID DINITRAT / ISDN (ISOSORBIDE DINITRATE)",
       "prompt": "[Tablet Sublingual Isosorbid Dinitrat (ISDN) 5 mg]\n\na. Jelaskan mekanisme kerja molekuler ISDN dan bandingkan selektivitas target vaskularnya (arteri vs vena) dengan Hidralazin!\n\nb. Sebutkan golongan obat, indikasi klinis, alasan rasional kombinasinya dengan Hidralazin pada gagal jantung, fenomena toleransi nitrat beserta solusinya, serta kontraindikasi mutlak interaksi obat!",
-      "stimulus": "Tablet Sublingual Isosorbid Dinitrat (ISDN) 5 mg",
-      "soal_a": "Jelaskan mekanisme kerja molekuler ISDN dan bandingkan selektivitas target vaskularnya (arteri vs vena) dengan Hidralazin!",
-      "soal_b": "Sebutkan golongan obat, indikasi klinis, alasan rasional kombinasinya dengan Hidralazin pada gagal jantung, fenomena toleransi nitrat beserta solusinya, serta kontraindikasi mutlak interaksi obat!",
+      "stimulus": "Diberikan preparat Isosorbid Dinitrat (ISDN)",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "ISOSORBID DINITRAT / ISDN (ISOSORBIDE DINITRATE)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "Vasodilator Nitrat Organik",
@@ -3072,7 +3177,7 @@
         "**Golongan:** Vasodilator Nitrat Organik",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Selektivitas Vaskular:**  \r\n   - ISDN adalah prodrug nitrat organik yang mengalami denitrogenasi enzimatik intraseluler (membutuhkan gugus sulfhidril/-SH) di sel endotel/otot polos untuk melepaskan gas Oksida Nitrat (NO).  \r\n   - NO mengaktifkan soluble Guanilat Siklase (sGC) → meningkatkan cGMP intrasel → defosforilasi miosin → relaksasi otot polos pembuluh darah.  \r\n   - **Perbedaan Selektivitas Vaskular:**  \r",
+      "jawaban_ringkas": "a. Denitrogenasi enzimatik intraseluler melepas NO → aktivasi soluble guanilat siklase → cGMP meningkat → venodilatasi selektif (venous pooling) → aliran balik vena turun → preload turun\nb. Nitrogliserin (NTG), Isosorbid Mononitrat (Vasodilator Golongan Nitrat Organik)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Selektivitas Vaskular:**  \r\n   - ISDN adalah prodrug nitrat organik yang mengalami denitrogenasi enzimatik intraseluler (membutuhkan gugus sulfhidril/-SH) di sel endotel/otot polos untuk melepaskan gas Oksida Nitrat (NO).  \r\n   - NO mengaktifkan soluble Guanilat Siklase (sGC) → meningkatkan cGMP intrasel → defosforilasi miosin → relaksasi otot polos pembuluh darah.  \r\n   - **Perbedaan Selektivitas Vaskular:**  \r\n     - **ISDN (dan Nitrat Organik):** Bekerja selektif predominan sebagai **venodilator** (merelaksasi pembuluh vena kapasitansi lebih dominan daripada arteriol) → terjadi *venous pooling* → menurunkan aliran balik vena (*venous return*) → **penurunan Preload** ventrikel kiri dan penurunan kebutuhan O₂ miokard (*wall stress* turun).  \r\n     - **Hidralazin:** Bekerja selektif sebagai **arteriodilator** → menurunkan resistensi vaskular perifer → **penurunan Afterload**.  \r\n\r\nb. **Karakteristik Klinis, Kombinasi Gagal Jantung, Toleransi, & Kontraindikasi:**  \r\n   - **Golongan:** Vasodilator golongan Nitrat Organik (predominan venodilator).  \r\n   - **Indikasi Klinis:** Angina pektoris (profilaksis dan serangan akut), gagal jantung kongestif kronik.  \r\n   - **Rasionalitas Kombinasi ISDN + Hidralazin pada Gagal Jantung:** Memberikan efek hemodinamik ganda yang sinergis: ISDN menurunkan *preload* (mengurangi kongesti vena pulmonal/edema paru), sedangkan Hidralazin menurunkan *afterload* (meningkatkan curah jantung dan efisiensi pompa ventrikel kiri).  \r\n   - **Fenomena Toleransi Nitrat (*Nitrate Tolerance*):** Penggunaan nitrat terus menerus (misal patch/oral 24 jam) memicu penurunan efektivitas vasodilatasi akibat deplesi gugus sulfhidril (-SH) dan pembentukan radikal superoksida. **Pencegahan:** Memberikan periode bebas nitrat (*nitrate-free interval*) selama 10–12 jam per hari (biasanya saat istirahat malam).  \r\n   - **Kontraindikasi Mutlak Interaksi Obat:** Bersama **PDE-5 Inhibitor (Sildenafil, Tadalafil, Vardenafil)**. Kombinasi peningkatan sintesis cGMP oleh donor NO dan pencegahan pemecahan cGMP oleh inhibitor PDE-5 menyebabkan lonjakan cGMP masif → vasodilatasi berat, hipotensi refrakter, syok kardiovaskular, hingga infark miokard fatal.  \r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3095,7 +3200,9 @@
         "isosorbide",
         "dinitrate"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Denitrogenasi enzimatik intraseluler melepas NO → aktivasi soluble guanilat siklase → cGMP meningkat → venodilatasi selektif (venous pooling) → aliran balik vena turun → preload turun",
+      "jawaban_b": "Nitrogliserin (NTG), Isosorbid Mononitrat (Vasodilator Golongan Nitrat Organik)"
     },
     {
       "id": 253,
@@ -3103,9 +3210,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "NITROGLISERIN / GLISERIL TRINITRAT / NTG (NITROGLYCERIN)",
       "prompt": "[Tablet Sublingual Nitrogliserin 0,5 mg / Ampul Injeksi NTG]\n\na. Jelaskan mekanisme kerja molekuler bioaktivasi Nitrogliserin di tingkat seluler otot polos vaskular dan efek hemodinamiknya pada sirkulasi koroner & sistemik!\n\nb. Sebutkan golongan obat, rute sediaan utama, efek samping khas awal pemberian, serta alasan mengapa sediaan sublingual dipilih pada serangan angina pektoris akut!",
-      "stimulus": "Tablet Sublingual Nitrogliserin 0,5 mg / Ampul Injeksi NTG",
-      "soal_a": "Jelaskan mekanisme kerja molekuler bioaktivasi Nitrogliserin di tingkat seluler otot polos vaskular dan efek hemodinamiknya pada sirkulasi koroner & sistemik!",
-      "soal_b": "Sebutkan golongan obat, rute sediaan utama, efek samping khas awal pemberian, serta alasan mengapa sediaan sublingual dipilih pada serangan angina pektoris akut!",
+      "stimulus": "Diberikan preparat Nitrogliserin",
+      "soal_a": "Jelaskan mekanisme dari obat tersebut!",
+      "soal_b": "Sebutkan 2 contoh obat lain dalam golongan yang sama!",
       "diagnosis": "NITROGLISERIN / GLISERIL TRINITRAT / NTG (NITROGLYCERIN)",
       "organ": "Otot Polos Pembuluh Darah (Vasodilatasi)",
       "sifat": "Vasodilator Nitrat Organik",
@@ -3125,7 +3232,7 @@
       "struktur_khas": [
         "**Golongan:** Vasodilator Nitrat Organik"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Efek Hemodinamik:**  \r\n   - Nitrogliserin (gliseril trinitrat) mengalami bioaktivasi intraseluler oleh enzim mitokondria **aldehida dehidrogenase-2 (ALDH-2)** menjadi 1,2-gliseril dinitrat dan nitrit, yang kemudian dikonversi menjadi Oksida Nitrat (NO).  \r\n   - NO menstimulasi enzim soluble Guanilat Siklase (sGC) → meningkatkan cGMP → mengaktivasi Protein Kinase G (PKG) → penurunan Ca²⁺ intraseluler dan defosforilasi miosin → relaksasi otot polos pembuluh darah.  \r\n   - **Efek Hemodinamik:**  \r",
+      "jawaban_ringkas": "a. Bioaktivasi mitokondria oleh enzim ALDH-2 melepas NO → aktivasi guanilat siklase → cGMP meningkat → venodilatasi sistemik (preload turun) dan dilatasi arteri koroner kolateral\nb. Isosorbid Dinitrat (ISDN), Isosorbid Mononitrat (Vasodilator Golongan Nitrat Organik)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Efek Hemodinamik:**  \r\n   - Nitrogliserin (gliseril trinitrat) mengalami bioaktivasi intraseluler oleh enzim mitokondria **aldehida dehidrogenase-2 (ALDH-2)** menjadi 1,2-gliseril dinitrat dan nitrit, yang kemudian dikonversi menjadi Oksida Nitrat (NO).  \r\n   - NO menstimulasi enzim soluble Guanilat Siklase (sGC) → meningkatkan cGMP → mengaktivasi Protein Kinase G (PKG) → penurunan Ca²⁺ intraseluler dan defosforilasi miosin → relaksasi otot polos pembuluh darah.  \r\n   - **Efek Hemodinamik:**  \r\n     - **Sistemik:** Dilatasi pleksus vena kapasitansi sistemik → penurunan venous return → **penurunan end-diastolic volume/preload ventrikel kiri** → konsumsi oksigen miokardium berkurang drastis.  \r\n     - **Koroner:** Merelaksasi arteri koroner epikardial besar dan pembuluh kolateral tanpa memicu fenomena *coronary steal*, sehingga meningkatkan perfusi darah ke daerah miokardium subendokardium yang iskemik.  \r\n\r\nb. **Karakteristik Khusus, Sediaan, & Alasan Sublingual:**  \r\n   - **Golongan:** Vasodilator nitrat organik kerja cepat (venodilator predominan).  \r\n   - **Bentuk Sediaan:** Tablet sublingual (0,3 – 0,6 mg), semprot oral sublingual, patch transdermal, salep kutan, dan infus intravena (IV).  \r\n   - **Efek Samping Khas:** Sakit kepala berdenyut (*throbbing headache* / *nitrate headache* akibat vasodilatasi arteri serebral meningeal), *facial flushing*, pusing/dizziness, dan hipotensi ortostatik dengan takikardia kompensasi.  \r\n   - **Alasan Pemilihan Rute Sublingual pada Serangan Akut:**  \r\n     1. Menghindari eliminasi lintas pertama (*first-pass hepatic metabolism*) di hepar yang dapat merusak >90% obat bila diminum secara konvensional (oral swallowed).  \r\n     2. Absorpsi membran mukosa sublingual sangat kaya vaskularisasi sehingga obat masuk langsung ke sirkulasi vena cava superior.  \r\n     3. *Onset of action* sangat cepat (1 – 3 menit), efektif meredakan nyeri dada iskemia akut seketika.  \r\n\r\n---\r\n\r\n## RINGKASAN KONSEP UMUM SLIDE 1–6 (UNTUK SUB-PERTANYAAN TEORI MEJA)\r\n\r\n### 1. Definisi & Mekanisme Hemodinamik Vasodilator (Slide 2)\r\nVasodilator merelaksasi otot polos pembuluh darah (arteriol atau vena) → Mengurangi tahanan vaskular sistemik (SVR) dan/atau aliran balik vena → Penurunan tekanan darah.\r\n\r\n### 2. Sintesis Oksida Nitrat Endogen (Slide 6)\r\n- Enzim *endothelial Nitric Oxide Synthase* (eNOS) pada sel endotel mensintesis Oksida Nitrat (NO) dari prekursor asam amino **L-Arginin** dan gas **Oksigen (O₂)**.\r\n- NO berdifusi ke sel otot polos vaskular → Mengaktifkan soluble Guanilat Siklase → Mengonversi GTP menjadi cGMP → Relaksasi dan vasodilatasi.\r\n\r\n### 3. Indikasi & Kontraindikasi Umum (Slide 4)\r\n- **Indikasi:** Hipertensi, Hipertensi urgensi & emergensi, Gagal jantung (*Heart failure*), Kardiomiopati dilatasi (tertentu).\r\n- **Kontraindikasi:** Hipotensi yang sudah ada sebelumnya, Kardiomiopati obstruktif (*Hypertrophic Obstructive Cardiomyopathy* / HOCM), hipersensitivitas.\r\n\r\n### 4. Efek Samping Umum & Interaksi Obat (Slide 5)\r\n- **ESO Umum:** Hipotensi, Hiperkalemia, Ruam kulit (*skin rash*).\r\n- **Interaksi Obat Khas:** Peningkatan efek hipotensi yang poten/sinergis apabila dikombinasikan bersama obat antihipertensi lain atau obat golongan **diuretik** (karena diuretik mengurangi volume cairan intravaskular sedangkan vasodilator menurunkan tonus tahanan vaskular).\r\n\r\n\r\n---\r\n\r\n# BAGIAN 2: PRAKTIKUM 2 (RESPIRASI & INFEKSI TERKAIT)\r\n\r\n## 2.1. Farmakoterapi Asma & PPOK (Reliever, Controller, Bronkodilator, Antiinflamasi)\r\n\r\n# BANK SOAL IDENTIFIKASI FARMAKOLOGI (OSPE MEJA) BLOK 3.2\r\n## TOPIK: FARMAKOTERAPI ASMA BRONKIAL (P2S1 ASMA)\r\n**Format & Algoritma:** 100% Mengikuti Standar Algoritma Ujian Identifikasi Meja / OSPE Farmakologi FK Unsoed Blok 3.2  \r\n**Karakteristik Format Soal:**  \r\n- Setiap stasi/nomor adalah **1 preparat obat** konkret.\r\n- Format soal terstruktur baku:\r\n  - **q:**\r\n    - `[STASI: Nama Obat] [Tandai PRIORITAS TINGGI jika pernah keluar ujian]`\r\n    - `a. [Sub-pertanyaan 1: Mekanisme kerja molekuler / reseptor / peran Reliever vs Controller]`\r\n    - `b. [Sub-pertanyaan 2: Golongan & 2-3 contoh obat sejenis / Efek samping khas / Dosis & sediaan / Resep]`\r\n  - **a:**\r\n    - `a. [Jawaban sub-pertanyaan 1]`\r\n    - `b. [Jawaban sub-pertanyaan 2]`\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3145,7 +3252,9 @@
         "ntg",
         "nitroglycerin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Bioaktivasi mitokondria oleh enzim ALDH-2 melepas NO → aktivasi guanilat siklase → cGMP meningkat → venodilatasi sistemik (preload turun) dan dilatasi arteri koroner kolateral",
+      "jawaban_b": "Isosorbid Dinitrat (ISDN), Isosorbid Mononitrat (Vasodilator Golongan Nitrat Organik)"
     },
     {
       "id": 254,
@@ -3153,9 +3262,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "SALBUTAMOL (ALBUTEROL) INHALER",
       "prompt": "[Salbutamol (Albuterol) Inhaler]\n\na. Jelaskan mekanisme kerja molekuler Salbutamol pada tingkat reseptor intraseluler, serta tentukan perannya apakah termasuk obat Reliever atau Controller!\n\nb. Sebutkan golongan obatnya, 2-3 contoh obat sejenis dalam subgolongannya, 3 efek samping patognomonik/khas, serta tuliskan resep lengkapnya untuk serangan sesak napas akut!",
-      "stimulus": "Salbutamol (Albuterol) Inhaler",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Salbutamol pada tingkat reseptor intraseluler, serta tentukan perannya apakah termasuk obat Reliever atau Controller!",
-      "soal_b": "Sebutkan golongan obatnya, 2-3 contoh obat sejenis dalam subgolongannya, 3 efek samping patognomonik/khas, serta tuliskan resep lengkapnya untuk serangan sesak napas akut!",
+      "stimulus": "Diberikan preparat Salbutamol Tablet",
+      "soal_a": "Golongan obat dan mekanisme kerjanya?",
+      "soal_b": "Resep obat jika diberikan tiap 6 jam sekali selama 5 hari?",
       "diagnosis": "SALBUTAMOL (ALBUTEROL) INHALER",
       "organ": "Saluran Napas",
       "sifat": "SABA (Short-Acting Beta-2 Agonist)",
@@ -3181,7 +3290,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** RELIEVER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Peran Klinis:**\r\n   - **Mekanisme Kerja:** Salbutamol bekerja sebagai agonis selektif pada reseptor β₂-adrenergik di membran sel otot polos bronkus. Ikatan ini mengaktivasi protein G_s (*stimulatory G-protein*), yang selanjutnya menstimulasi enzim **Adenilat Siklase** (*Adenylyl cyclase*) untuk mengubah ATP menjadi **cyclic AMP (cAMP)** intraseluler. Peningkatan cAMP mengaktivasi *Protein Kinase A* (PKA), menurunkan kadar ion kalsium intraseluler, menghambat *Myosin Light Chain Kinase* (MLCK), sehingga menghasilkan:\r\n     1. Relaksasi otot polos bronkus (bronkodilatasi cepat).\r\n     2. Inhibisi pelepasan mediator bronkokonstriksi dari sel mast.\r",
+      "jawaban_ringkas": "a. Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).\nb. R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Peran Klinis:**\r\n   - **Mekanisme Kerja:** Salbutamol bekerja sebagai agonis selektif pada reseptor β₂-adrenergik di membran sel otot polos bronkus. Ikatan ini mengaktivasi protein G_s (*stimulatory G-protein*), yang selanjutnya menstimulasi enzim **Adenilat Siklase** (*Adenylyl cyclase*) untuk mengubah ATP menjadi **cyclic AMP (cAMP)** intraseluler. Peningkatan cAMP mengaktivasi *Protein Kinase A* (PKA), menurunkan kadar ion kalsium intraseluler, menghambat *Myosin Light Chain Kinase* (MLCK), sehingga menghasilkan:\r\n     1. Relaksasi otot polos bronkus (bronkodilatasi cepat).\r\n     2. Inhibisi pelepasan mediator bronkokonstriksi dari sel mast.\r\n     3. Peningkatan transpor mukosiliar.\r\n   - **Peran Klinis:** Merupakan obat **Reliever (Pelega)** pilihan utama, digunakan secara *as-needed* (*pro re nata* / p.r.n.) untuk mengatasi spasme bronkus dan meredakan gejala sesak napas akut secara cepat (onset 15–30 menit, durasi kerja pendek 4–6 jam).\r\nb. **Golongan, Obat Sejenis, Efek Samping, & Penulisan Resep:**\r\n   - **Golongan:** Simpatomimetik / Bronkodilator, subgolongan **SABA** (*Short-Acting β₂ Agonist*).\r\n   - **Contoh Obat Sejenis:** Terbutalin (*Terbutaline*), Metaproterenol, Fenoterol.\r\n   - **3 Efek Samping Khas:**\r\n     1. **Tremor halus pada jari/ekstremitas** (akibat stimulasi reseptor β₂ pada otot rangka).\r\n     2. **Takikardia dan palpitasi** (akibat refleks simpatis dan hilangnya selektivitas pada dosis tinggi merangsang β₁ jantung).\r\n     3. **Hipokalemia** (akibat stimulasi pompa Na⁺/K⁺-ATPase membran yang memindahkan ion kalium ke intraseluler).\r\n     4. *Anxiety* / kegelisahan.\r\n   - **Penulisan Resep Standar:**\r\n     ```text\r\n     dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Salbutamol inhaler 100 mcg Fl. I\r\n        S. inhal. puff 1-2 p.r.n.\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Salbutamol inhaler 100 mcg Fl. I\r\n        S. inhal. puff 1-2 p.r.n.\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi",
       "tips_klinis": "",
@@ -3205,7 +3314,9 @@
         "albuterol",
         "inhaler"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).",
+      "jawaban_b": "R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)"
     },
     {
       "id": 255,
@@ -3213,9 +3324,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TERBUTALIN (TERBUTALINE SULFATE)",
       "prompt": "[Terbutalin (Inhaler / Tablet / Injeksi)]\n\na. Jelaskan mekanisme kerja Terbutalin pada reseptor adrenergik saluran napas serta perannya dalam tatalaksana asma bronkial!\n\nb. Sebutkan golongan obatnya, bentuk sediaan beserta dosis lazimnya , serta efek samping metabolik dan kardiovaskular yang harus diwaspadai!",
-      "stimulus": "Terbutalin (Inhaler / Tablet / Injeksi)",
-      "soal_a": "Jelaskan mekanisme kerja Terbutalin pada reseptor adrenergik saluran napas serta perannya dalam tatalaksana asma bronkial!",
-      "soal_b": "Sebutkan golongan obatnya, bentuk sediaan beserta dosis lazimnya , serta efek samping metabolik dan kardiovaskular yang harus diwaspadai!",
+      "stimulus": "Diberikan preparat Terbutalin (Inhaler / Tablet)",
+      "soal_a": "Golongan obat dan perannya (Reliever vs Controller)?",
+      "soal_b": "Bentuk sediaan, dosis lazim, dan 2 efek samping khasnya?",
       "diagnosis": "TERBUTALIN (TERBUTALINE SULFATE)",
       "organ": "Saluran Napas",
       "sifat": "SABA (Short-Acting Beta-2 Agonist)",
@@ -3239,7 +3350,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** RELIEVER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja & Peran:**\r\n   - **Mekanisme Kerja:** Merupakan agonis selektif reseptor β₂-adrenergik yang merangsang adenilat siklase → meningkatkan cAMP intraseluler → memicu relaksasi otot polos bronkus serta menghambat pelepasan autakoid bronkokonstriktor dari sel mast.\r\n   - **Peran:** Berperan sebagai **Reliever (Pelega)** untuk terapi pelega saat serangan bronkospasme akut (asma bronkial dan bronkospasme reversibel pada PPOK).\r\nb. **Golongan, Dosis/Sediaan, & Efek Samping:**\r",
+      "jawaban_ringkas": "a. Simpatomimetik SABA (Short-Acting β₂ Agonist); Berperan sebagai Reliever (pelega sesak napas akut).\nb. Sediaan: Inhaler 250–500 mcg, Tablet 2,5 mg; Efek samping: Tremor otot rangka, takikardia, dan hipokalemia.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Peran:**\r\n   - **Mekanisme Kerja:** Merupakan agonis selektif reseptor β₂-adrenergik yang merangsang adenilat siklase → meningkatkan cAMP intraseluler → memicu relaksasi otot polos bronkus serta menghambat pelepasan autakoid bronkokonstriktor dari sel mast.\r\n   - **Peran:** Berperan sebagai **Reliever (Pelega)** untuk terapi pelega saat serangan bronkospasme akut (asma bronkial dan bronkospasme reversibel pada PPOK).\r\nb. **Golongan, Dosis/Sediaan, & Efek Samping:**\r\n   - **Golongan:** Simpatomimetik bronkodilator, subgolongan **SABA** (*Short-Acting β₂ Agonist*).\r\n   - **Bentuk Sediaan & Dosis Lazim:**\r\n     - Sediaan Inhalasi (Turbuhaler/Inhaler): Dosis 250 - 500 mcg per inhalasi.\r\n     - Sediaan Tablet oral: 2,5 - 5 mg per kali pemberian.\r\n     - Sediaan Injeksi (SC/IV): 0,25 - 0,5 mg.\r\n   - **Efek Samping yang Diwaspadai:**\r\n     - Tremor otot rangka, takikardia/palpitasi aritmia, sakit kepala, hipotensi/hipertensi transien, cemas, dan **hipokalemia** akibat translokasi ion kalium ekstraseluler ke dalam sel.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3260,7 +3371,9 @@
         "terbutaline",
         "sulfate"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik SABA (Short-Acting β₂ Agonist); Berperan sebagai Reliever (pelega sesak napas akut).",
+      "jawaban_b": "Sediaan: Inhaler 250–500 mcg, Tablet 2,5 mg; Efek samping: Tremor otot rangka, takikardia, dan hipokalemia."
     },
     {
       "id": 256,
@@ -3268,9 +3381,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "SALMETEROL INHALASI",
       "prompt": "[Salmeterol Inhaler]\n\na. Jelaskan mekanisme molekuler Salmeterol sehingga memiliki durasi kerja panjang, peran klinisnya (Reliever vs Controller), serta bahaya fatal bila diberikan sebagai monoterapi pada asma!\n\nb. Sebutkan golongan obatnya, contoh obat lain dalam subgolongannya, bentuk sediaan dan dosisnya, serta jelaskan mengapa obat ini harus dikombinasikan dengan Kortikosteroid Inhalasi (ICS)!",
-      "stimulus": "Salmeterol Inhaler",
-      "soal_a": "Jelaskan mekanisme molekuler Salmeterol sehingga memiliki durasi kerja panjang, peran klinisnya (Reliever vs Controller), serta bahaya fatal bila diberikan sebagai monoterapi pada asma!",
-      "soal_b": "Sebutkan golongan obatnya, contoh obat lain dalam subgolongannya, bentuk sediaan dan dosisnya, serta jelaskan mengapa obat ini harus dikombinasikan dengan Kortikosteroid Inhalasi (ICS)!",
+      "stimulus": "Diberikan preparat Salmeterol Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya (Reliever vs Controller)?",
+      "soal_b": "Mengapa obat ini dikontraindikasikan sebagai monoterapi pada asma?",
       "diagnosis": "SALMETEROL INHALASI",
       "organ": "Saluran Napas",
       "sifat": "LABA (Long-Acting Beta-2 Agonist)",
@@ -3294,7 +3407,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler, Peran, & Peringatan Monoterapi:**\r\n   - **Mekanisme & Durasi Kerja:** Salmeterol adalah agonis selektif β₂-adrenergik dengan rantai samping lipofilik panjang (*lipophilic side-chain*) yang memungkinkannya berikatan erat dan berdifusi lateral dalam lapisan ganda lipid membran sel otot polos bronkus, serta menembus neuron presinaps. Karakteristik ini memberikan stimulasi reseptor β₂ berkepanjangan dengan durasi kerja lama (>12 jam).\r\n   - **Peran Klinis:** Berperan sebagai **Controller (Pengendali / Pemeliharaan)** jangka panjang, BUKAN untuk mengatasi serangan sesak akut (karena memiliki onset kerja yang relatif lambat \\sim 30 menit).\r\n   - **Peringatan Bahaya Monoterapi (*Black Box Warning*):** **DILARANG KERAS / KONTRAINDIKASI SEBAGAI MONOTERAPI PADA ASMA**. Monoterapi LABA tidak mengatasi inflamasi jalan napas yang mendasari dan dapat menutupi perburukan inflamasi (*masking effect*), memicu desensitisasi/down-regulasi reseptor β₂, serta terbukti meningkatkan risiko morbiditas berat dan **kematian mendadak akibat eksaserbasi asma (*asthma-related death*)**.\r",
+      "jawaban_ringkas": "a. Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).\nb. Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler, Peran, & Peringatan Monoterapi:**\r\n   - **Mekanisme & Durasi Kerja:** Salmeterol adalah agonis selektif β₂-adrenergik dengan rantai samping lipofilik panjang (*lipophilic side-chain*) yang memungkinkannya berikatan erat dan berdifusi lateral dalam lapisan ganda lipid membran sel otot polos bronkus, serta menembus neuron presinaps. Karakteristik ini memberikan stimulasi reseptor β₂ berkepanjangan dengan durasi kerja lama (>12 jam).\r\n   - **Peran Klinis:** Berperan sebagai **Controller (Pengendali / Pemeliharaan)** jangka panjang, BUKAN untuk mengatasi serangan sesak akut (karena memiliki onset kerja yang relatif lambat \\sim 30 menit).\r\n   - **Peringatan Bahaya Monoterapi (*Black Box Warning*):** **DILARANG KERAS / KONTRAINDIKASI SEBAGAI MONOTERAPI PADA ASMA**. Monoterapi LABA tidak mengatasi inflamasi jalan napas yang mendasari dan dapat menutupi perburukan inflamasi (*masking effect*), memicu desensitisasi/down-regulasi reseptor β₂, serta terbukti meningkatkan risiko morbiditas berat dan **kematian mendadak akibat eksaserbasi asma (*asthma-related death*)**.\r\nb. **Golongan, Contoh Sejenis, Sediaan/Dosis, & Alasan Kombinasi ICS:**\r\n   - **Golongan:** Simpatomimetik bronkodilator, subgolongan **LABA** (*Long-Acting β₂ Agonist*).\r\n   - **Contoh Sejenis:** Formoterol (*Formoterol fumarate*).\r\n   - **Bentuk Sediaan & Dosis:** Inhaler dosis terukur (MDI/DPI), dosis **50 mcg** per inhalasi (diberikan 2 kali sehari, tiap 12 jam).\r\n   - **Alasan Kombinasi dengan ICS:** ICS mengontrol peradangan mukosa dan mencegah down-regulasi reseptor β₂ (glukokortikoid meningkatkan ekspresi gen reseptor β₂), sedangkan LABA mempertahankan patensi jalan napas selama ≥ 12 jam, menghasilkan sinergi terapi yang aman dan mencegah kematian asma.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3314,7 +3427,9 @@
         "salmeterol",
         "inhalasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).",
+      "jawaban_b": "Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS)."
     },
     {
       "id": 257,
@@ -3322,9 +3437,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "FORMOTEROL INHALASI",
       "prompt": "[Formoterol Inhalasi]\n\na. Golongan obat dan keunikan onset serta durasi kerjanya dibanding Salmeterol?\n\nb. Apa peran Formoterol dalam konsep terapi SMART (Single Maintenance and Reliever Therapy)?",
-      "stimulus": "Formoterol Inhalasi",
-      "soal_a": "Golongan obat dan keunikan onset serta durasi kerjanya dibanding Salmeterol?",
-      "soal_b": "Apa peran Formoterol dalam konsep terapi SMART (Single Maintenance and Reliever Therapy)?",
+      "stimulus": "Diberikan preparat Salmeterol Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya (Reliever vs Controller)?",
+      "soal_b": "Mengapa obat ini dikontraindikasikan sebagai monoterapi pada asma?",
       "diagnosis": "FORMOTEROL INHALASI",
       "organ": "Saluran Napas",
       "sifat": "LABA (Long-Acting Beta-2 Agonist)",
@@ -3349,7 +3464,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. Simpatomimetik LABA (Long-Acting Beta-2 Agonist); Memiliki onset sangat cepat (1–3 menit, setara SABA) dengan durasi kerja panjang (>12 jam).\nb. Jika dikombinasikan dengan Budesonide, dapat berfungsi ganda sebagai terapi Controller pemeliharaan harian sekaligus Reliever saat timbul serangan sesak.\r\n\r\n---\r\n\r\n### STASI 6: TEOFILIN TABLET",
+      "jawaban_ringkas": "a. Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).\nb. Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS).",
       "jawaban_lengkap": "a. **Profil Farmakodinamik & Peran Terapi:**\r\n   - **Profil Farmakodinamik Unik:** Formoterol merupakan agonis β₂ selektif yang memiliki kelarutan lipid sedang (*moderate lipophilicity*). Keunikannya adalah memiliki **onset kerja sangat cepat (1–3 menit, setara Salbutamol)** sekaligus **durasi kerja panjang (>12 jam, setara Salmeterol)**.\r\n   - **Implikasi Klinis (SMART - *Single Maintenance and Reliever Therapy*):** Berkat onset cepat dan durasi panjangnya, Formoterol bila dikombinasikan dengan ICS (terutama Budesonide) dapat digunakan sebagai terapi tunggal untuk pemeliharaan harian (**Controller**) sekaligus hirupan ekstra saat timbul gejala sesak (**Reliever**). Namun demikian, Formoterol tetap **TIDAK BOLEH** digunakan sebagai monoterapi tanpa kortikosteroid.\r\nb. **Golongan, Dosis/Sediaan, & Pasangan Kombinasi:**\r\n   - **Golongan:** Simpatomimetik bronkodilator, subgolongan **LABA** (*Long-Acting β₂ Agonist*).\r\n   - **Sediaan & Dosis:** Inhaler bubuk kering (DPI), dosis **12 mcg** (atau 4,5–9 mcg) per inhalasi.\r\n   - **Pasangan Kombinasi Lazim:** Dikombinasikan tetap dengan **Budesonide** (misalnya dalam bentuk sediaan kombinasi Symbicort).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3371,7 +3486,9 @@
         "formoterol",
         "inhalasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).",
+      "jawaban_b": "Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS)."
     },
     {
       "id": 258,
@@ -3379,9 +3496,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TEOFILIN (THEOPHYLLINE) TABLET",
       "prompt": "[Tablet Teofilin (Theophylline)]\n\na. Jelaskan 2 mekanisme kerja farmakodinamik molekuler Teofilin pada saluran napas, serta jelaskan mengapa obat ini memiliki indeks terapi sempit (*narrow therapeutic index*)!\n\nb. Sebutkan golongan obatnya, 2 contoh obat lain sejenis dalam golongannya, manifestasi intoksikasi/toksisitas khas bila kadarnya berlebih, serta interaksi obat dengan penghambat enzim CYP1A2!",
-      "stimulus": "Tablet Teofilin (Theophylline)",
-      "soal_a": "Jelaskan 2 mekanisme kerja farmakodinamik molekuler Teofilin pada saluran napas, serta jelaskan mengapa obat ini memiliki indeks terapi sempit (*narrow therapeutic index*)!",
-      "soal_b": "Sebutkan golongan obatnya, 2 contoh obat lain sejenis dalam golongannya, manifestasi intoksikasi/toksisitas khas bila kadarnya berlebih, serta interaksi obat dengan penghambat enzim CYP1A2!",
+      "stimulus": "Diberikan preparat Teofilin Tablet",
+      "soal_a": "Golongan obat dan 2 mekanisme kerja molekulernya?",
+      "soal_b": "Sebutkan 2 contoh obat lain segolongan dan bahaya toksisitasnya akibat indeks terapi sempit!",
       "diagnosis": "TEOFILIN (THEOPHYLLINE) TABLET",
       "organ": "Saluran Napas",
       "sifat": "Metilxantin / Phosphodiesterase Inhibitor",
@@ -3406,7 +3523,7 @@
         "**Golongan:** Metilxantin / Phosphodiesterase Inhibitor",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Indeks Terapi Sempit:**\r\n   - **Mekanisme Molekuler (2 Jalur):**\r\n     1. **Inhibisi Non-selektif Enzim Fosfodiesterase (PDE, terutama PDE3 dan PDE4):** Menghambat degradasi cAMP intraseluler → kadar cAMP meningkat → relaksasi otot polos bronkus (bronkodilatasi).\r\n     2. **Antagonis Kompetitif Reseptor Adenosin (A₁ dan A₂):** Adenosin endogen memicu bronkokonstriksi dan degranulasi sel mast; blokade reseptor adenosin oleh teofilin menghambat pelepasan mediator inflamasi/histamin dan mencegah kontraksi bronkus.\r",
+      "jawaban_ringkas": "a. Metilxantin (Methylxanthine); Mekanisme: Menghambat enzim fosfodiesterase (PDE → ↑ cAMP) dan antagonis kompetitif reseptor adenosin.\nb. Contoh sejenis: Kafein, Teobromin, Aminofilin; Indeks terapi sempit (10–20 mcg/mL), toksisitas berlebih menyebabkan takiaritmia dan kejang epileptiform refrakter.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Indeks Terapi Sempit:**\r\n   - **Mekanisme Molekuler (2 Jalur):**\r\n     1. **Inhibisi Non-selektif Enzim Fosfodiesterase (PDE, terutama PDE3 dan PDE4):** Menghambat degradasi cAMP intraseluler → kadar cAMP meningkat → relaksasi otot polos bronkus (bronkodilatasi).\r\n     2. **Antagonis Kompetitif Reseptor Adenosin (A₁ dan A₂):** Adenosin endogen memicu bronkokonstriksi dan degranulasi sel mast; blokade reseptor adenosin oleh teofilin menghambat pelepasan mediator inflamasi/histamin dan mencegah kontraksi bronkus.\r\n   - **Indeks Terapi Sempit:** Rentang kadar terapeutik plasma teofilin sangat sempit (10 - 20 mcg/mL atau 5–15 mcg/mL). Kadar di atas 20 mcg/mL sudah menimbulkan toksisitas serius dan berpotensi fatal, sehingga memerlukan pemantauan kadar obat dalam darah (*Therapeutic Drug Monitoring* / TDM).\r\nb. **Golongan, Obat Sejenis, Gejala Toksisitas, & Interaksi Obat:**\r\n   - **Golongan:** Bronkodilator non-adrenergik golongan **Metilxantin** (*Methylxanthines*).\r\n   - **Contoh Sejenis:** Teobromin (*Theobromine*), Kafein (*Caffeine*), Aminofilin (garam teofilin-etilendiamin).\r\n   - **Dosis Oral (Slide):** 3 - 4 mg/kg per 6 jam (diberikan per oral).\r\n   - **Manifestasi Intoksikasi Khas:** Nyeri kepala, mual, muntah profus, diare, takikardia ventrikular/aritmia kordis, agitasi ekstrem, hingga **kejang epileptiform** yang refrakter terhadap antikonvulsan konvensional.\r\n   - **Interaksi CYP1A2:** Teofilin dimetabolisme di hepar oleh sitokrom **CYP1A2**. Pemberian bersama **CYP1A2 inhibitor** (seperti *Ciprofloxacin*, *Eritromisin*, *Simetidin*) menghambat metabolisme teofilin → akumulasi kadar obat plasma melonjak drastis → **keracunan/toksisitas letal**.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3430,7 +3547,9 @@
         "theophylline",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Metilxantin (Methylxanthine); Mekanisme: Menghambat enzim fosfodiesterase (PDE → ↑ cAMP) dan antagonis kompetitif reseptor adenosin.",
+      "jawaban_b": "Contoh sejenis: Kafein, Teobromin, Aminofilin; Indeks terapi sempit (10–20 mcg/mL), toksisitas berlebih menyebabkan takiaritmia dan kejang epileptiform refrakter."
     },
     {
       "id": 259,
@@ -3438,9 +3557,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TEOBROMIN & KAFEIN",
       "prompt": "[Teobromin / Kafein]\n\na. Jelaskan mekanisme farmakologis senyawa turunan xantin alami (Teobromin dan Kafein) serta perbandingannya dengan Teofilin dalam potensi bronkodilatasi dan stimulasi SSP!\n\nb. Sebutkan golongan besarnya, dosis lazimnya berdasarkan materi kuliah, dan sebutkan organ utama tempat metabolismenya!",
-      "stimulus": "Teobromin / Kafein",
-      "soal_a": "Jelaskan mekanisme farmakologis senyawa turunan xantin alami (Teobromin dan Kafein) serta perbandingannya dengan Teofilin dalam potensi bronkodilatasi dan stimulasi SSP!",
-      "soal_b": "Sebutkan golongan besarnya, dosis lazimnya berdasarkan materi kuliah, dan sebutkan organ utama tempat metabolismenya!",
+      "stimulus": "Diberikan preparat Teobromin & Kafein (Derivat Xantin)",
+      "soal_a": "Sebutkan mekanisme kerja obat golongan ini!",
+      "soal_b": "Mengapa obat golongan ini memiliki risiko toksisitas fatal?",
       "diagnosis": "TEOBROMIN & KAFEIN",
       "organ": "Saluran Napas",
       "sifat": "Metilxantin / Phosphodiesterase Inhibitor",
@@ -3462,7 +3581,7 @@
         "**Golongan:** Metilxantin / Phosphodiesterase Inhibitor",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. **Mekanisme & Perbandingan Farmakologis:**\r\n   - **Mekanisme Farmakologis:** Bekerja melalui penghambatan enzim fosfodiesterase (PDE) sehingga mencegah penguraian cAMP, serta antagonis kompetitif reseptor adenosin di membran sel.\r\n   - **Perbandingan Potensi:**\r\n     - **Kafein:** Memiliki efek stimulasi Sistem Saraf Pusat (SSP) dan respirasi di medulla oblongata paling kuat di antara metilxantin, namun efek bronkodilatasinya lebih lemah dibandingkan Teofilin.\r",
+      "jawaban_ringkas": "a. Inhibisi non-selektif enzim fosfodiesterase (PDE) → cAMP meningkat; dan Antagonis reseptor adenosin A1 & A2B → relaksasi otot polos bronkus\nb. Indeks terapi sempit (10–20 mcg/mL) → risiko aritmia ventrikel fatal dan kejang refrakter bila mencapai kadar toksik",
       "jawaban_lengkap": "a. **Mekanisme & Perbandingan Farmakologis:**\r\n   - **Mekanisme Farmakologis:** Bekerja melalui penghambatan enzim fosfodiesterase (PDE) sehingga mencegah penguraian cAMP, serta antagonis kompetitif reseptor adenosin di membran sel.\r\n   - **Perbandingan Potensi:**\r\n     - **Kafein:** Memiliki efek stimulasi Sistem Saraf Pusat (SSP) dan respirasi di medulla oblongata paling kuat di antara metilxantin, namun efek bronkodilatasinya lebih lemah dibandingkan Teofilin.\r\n     - **Teobromin:** Memiliki efek stimulasi SSP dan bronkodilatasi yang paling lemah di antara ketiganya, namun memiliki efek diuretik ringan dan stimulasi kardiak.\r\n     - **Teofilin:** Merupakan bronkodilator paling poten di antara ketiganya untuk relaksasi otot polos saluran napas.\r\nb. **Golongan, Dosis, & Metabolisme:**\r\n   - **Golongan:** **Metilxantin** (*Methylxanthines*).\r\n   - **Dosis Lazim (Slide 15):**\r\n     - Teobromin: 10 mg/kg oral.\r\n     - Kafein: 5 - 10 mg/kg oral.\r\n   - **Organ Metabolisme:** Dimetabolisme secara ekstensif di **hepar** melalui sistem enzim sitokrom P450, kemudian metabolitnya diekskresikan melalui urin.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3480,7 +3599,9 @@
         "teobromin",
         "kafein"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Inhibisi non-selektif enzim fosfodiesterase (PDE) → cAMP meningkat; dan Antagonis reseptor adenosin A1 & A2B → relaksasi otot polos bronkus",
+      "jawaban_b": "Indeks terapi sempit (10–20 mcg/mL) → risiko aritmia ventrikel fatal dan kejang refrakter bila mencapai kadar toksik"
     },
     {
       "id": 260,
@@ -3488,9 +3609,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "IPRATROPIUM BROMIDA INHALASI (SAMA)",
       "prompt": "[Ipratropium Bromida Inhaler / Nebulizer]\n\na. Jelaskan reseptor spesifik target Ipratropium bromida, mekanisme kerjanya merelaksasi jalan napas, serta perannya apakah sebagai Reliever atau Controller!\n\nb. Sebutkan golongan obatnya, kekuatan sediaan & dosis lazimnya, 3 efek samping antikolinergik khas, serta kondisi penyakit penyerta yang menjadi peringatan/kontraindikasinya!",
-      "stimulus": "Ipratropium Bromida Inhaler / Nebulizer",
-      "soal_a": "Jelaskan reseptor spesifik target Ipratropium bromida, mekanisme kerjanya merelaksasi jalan napas, serta perannya apakah sebagai Reliever atau Controller!",
-      "soal_b": "Sebutkan golongan obatnya, kekuatan sediaan & dosis lazimnya, 3 efek samping antikolinergik khas, serta kondisi penyakit penyerta yang menjadi peringatan/kontraindikasinya!",
+      "stimulus": "Diberikan preparat Salmeterol Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya (Reliever vs Controller)?",
+      "soal_b": "Mengapa obat ini dikontraindikasikan sebagai monoterapi pada asma?",
       "diagnosis": "IPRATROPIUM BROMIDA INHALASI (SAMA)",
       "organ": "Saluran Napas",
       "sifat": "Antimuskarinik Bronkodilator",
@@ -3516,7 +3637,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** RELIEVER"
       ],
-      "jawaban_ringkas": "a. **Reseptor Target, Mekanisme Kerja, & Peran:**\r\n   - **Reseptor Target & Mekanisme:** Ipratropium bromida adalah antagonis kompetitif non-selektif terhadap reseptor muskarinik asetilkolin, khususnya **reseptor M3** pada sel otot polos bronkus dan kelenjar submukosa saluran napas. Obat ini memblokade ikatan asetilkolin parasimpatis → menghambat pembentukan IP₃/DAG intraseluler → menghasilkan **bronkodilatasi** dan **penurunan sekresi mukus jalan napas**.\r\n   - **Peran Klinis:** Berperan sebagai **Reliever add-on (Pelega tambahan)**. Sangat bermanfaat dikombinasikan dengan SABA (Salbutamol) pada serangan asma eksaserbasi akut berat di IGD atau pada pasien yang intoleran terhadap β₂ agonis.\r\nb. **Golongan, Dosis, Efek Samping, & Peringatan Kontraindikasi:**\r",
+      "jawaban_ringkas": "a. Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).\nb. Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS).",
       "jawaban_lengkap": "a. **Reseptor Target, Mekanisme Kerja, & Peran:**\r\n   - **Reseptor Target & Mekanisme:** Ipratropium bromida adalah antagonis kompetitif non-selektif terhadap reseptor muskarinik asetilkolin, khususnya **reseptor M3** pada sel otot polos bronkus dan kelenjar submukosa saluran napas. Obat ini memblokade ikatan asetilkolin parasimpatis → menghambat pembentukan IP₃/DAG intraseluler → menghasilkan **bronkodilatasi** dan **penurunan sekresi mukus jalan napas**.\r\n   - **Peran Klinis:** Berperan sebagai **Reliever add-on (Pelega tambahan)**. Sangat bermanfaat dikombinasikan dengan SABA (Salbutamol) pada serangan asma eksaserbasi akut berat di IGD atau pada pasien yang intoleran terhadap β₂ agonis.\r\nb. **Golongan, Dosis, Efek Samping, & Peringatan Kontraindikasi:**\r\n   - **Golongan:** Antikolinergik / Antimuskarinik bronkodilator, subgolongan **SAMA** (*Short-Acting Muscarinic Antagonist*).\r\n   - **Bentuk Sediaan & Dosis Lazim:** Inhalasi (MDI / larutan nebulizer), dosis **20 - 40 mcg** per inhalasi (Slide 18).\r\n   - **3 Efek Samping Antikolinergik Khas:**\r\n     1. **Mulut kering (*xerostomia*)** dan rasa pahit/tidak enak di lidah.\r\n     2. **Retensi urin** (gangguan miksi).\r\n     3. **Peningkatan Tekanan Intraokular (TIO) / penglihatan kabur** (terutama jika uap nebulizer terkena mata langsung).\r\n   - **Peringatan / Hati-hati (Kontraindikasi Relatif):** Pasien dengan riwayat **Glaukoma sudut tertutup** (risiko kebutaan akibat lonjakan TIO) dan **Benign Prostatic Hyperplasia (BPH)** / hipertrofi prostat (risiko retensi urin akut total).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3542,7 +3663,9 @@
         "inhalasi",
         "sama"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).",
+      "jawaban_b": "Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS)."
     },
     {
       "id": 261,
@@ -3550,9 +3673,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "TIOTROPIUM BROMIDA INHALASI (LAMA)",
       "prompt": "[Tiotropium Bromida Inhaler (HandiHaler / Respimat)]\n\na. Jelaskan mekanisme kerja Tiotropium bromida pada reseptor muskarinik, mengapa obat ini memiliki masa kerja hingga 24 jam, serta tentukan perannya apakah Reliever atau Controller!\n\nb. Sebutkan golongan obatnya, dosis sediaannya, keuntungan kombinasi bersama LABA/kortikosteroid, serta efek samping utamanya!",
-      "stimulus": "Tiotropium Bromida Inhaler (HandiHaler / Respimat)",
-      "soal_a": "Jelaskan mekanisme kerja Tiotropium bromida pada reseptor muskarinik, mengapa obat ini memiliki masa kerja hingga 24 jam, serta tentukan perannya apakah Reliever atau Controller!",
-      "soal_b": "Sebutkan golongan obatnya, dosis sediaannya, keuntungan kombinasi bersama LABA/kortikosteroid, serta efek samping utamanya!",
+      "stimulus": "Diberikan preparat Salbutamol Tablet",
+      "soal_a": "Golongan obat dan mekanisme kerjanya?",
+      "soal_b": "Resep obat jika diberikan tiap 6 jam sekali selama 5 hari?",
       "diagnosis": "TIOTROPIUM BROMIDA INHALASI (LAMA)",
       "organ": "Saluran Napas",
       "sifat": "Antimuskarinik Bronkodilator",
@@ -3576,7 +3699,7 @@
         "**Golongan:** Antimuskarinik Bronkodilator",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler, Kinetika Reseptor, & Peran:**\r\n   - **Mekanisme Molekuler & Kinetika Reseptor:** Bekerja dengan mengikat reseptor muskarinik M1, M2, dan M3. Obat ini berdisosiasi sangat lambat dari **reseptor muskarinik M3** (memiliki selektivitas kinetik fungsional terhadap M3), sehingga menghasilkan blokade kolinergik bronkokonstriktor yang bertahan lama (≥ 24 jam).\r\n   - **Peran Klinis:** Berperan sebagai **Controller add-on (Pengontrol tambahan)** jangka panjang untuk asma persisten yang belum terkontrol optimal dengan kombinasi ICS-LABA, serta obat lini utama pada PPOK.\r\nb. **Golongan, Dosis, Sinergi Kombinasi, & Efek Samping:**\r",
+      "jawaban_ringkas": "a. Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).\nb. R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler, Kinetika Reseptor, & Peran:**\r\n   - **Mekanisme Molekuler & Kinetika Reseptor:** Bekerja dengan mengikat reseptor muskarinik M1, M2, dan M3. Obat ini berdisosiasi sangat lambat dari **reseptor muskarinik M3** (memiliki selektivitas kinetik fungsional terhadap M3), sehingga menghasilkan blokade kolinergik bronkokonstriktor yang bertahan lama (≥ 24 jam).\r\n   - **Peran Klinis:** Berperan sebagai **Controller add-on (Pengontrol tambahan)** jangka panjang untuk asma persisten yang belum terkontrol optimal dengan kombinasi ICS-LABA, serta obat lini utama pada PPOK.\r\nb. **Golongan, Dosis, Sinergi Kombinasi, & Efek Samping:**\r\n   - **Golongan:** Antikolinergik / Antimuskarinik bronkodilator, subgolongan **LAMA** (*Long-Acting Muscarinic Antagonist*).\r\n   - **Bentuk Sediaan & Dosis:** Inhaler bubuk kering / Respimat, dosis **5 mcg** (atau 2,5–5 mcg) per inhalasi sekali sehari (Slide 18).\r\n   - **Keuntungan Interaksi Kombinasi:** Bersama LABA/SABA menghasilkan efek bronkodilatasi sinergis yang lebih superior karena menargetkan dua jalur persarafan otonom yang berbeda (stimulasi simpatis via β₂ + blokade parasimpatis via M3).\r\n   - **Efek Samping Utama:** Mulut kering, batuk lokal/iritasi faring, retensi urin pada pasien usia lanjut, obstipasi.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3599,7 +3722,9 @@
         "inhalasi",
         "lama"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).",
+      "jawaban_b": "R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)"
     },
     {
       "id": 262,
@@ -3607,9 +3732,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BUDESONIDE INHALER (KORTIKOSTEROID INHALASI / ICS)",
       "prompt": "[Budesonide Inhaler]\n\na. Jelaskan mekanisme molekuler Budesonide sebagai obat antiinflamasi saluran napas, serta jelaskan perannya apakah sebagai Reliever atau Controller!\n\nb. Sebutkan golongan obatnya, 2 contoh obat sejenis dalam golongannya, 2 efek samping lokal khas beserta cara pencegahannya, serta tuliskan resep lengkapnya untuk terapi pengendali asma!",
-      "stimulus": "Budesonide Inhaler",
-      "soal_a": "Jelaskan mekanisme molekuler Budesonide sebagai obat antiinflamasi saluran napas, serta jelaskan perannya apakah sebagai Reliever atau Controller!",
-      "soal_b": "Sebutkan golongan obatnya, 2 contoh obat sejenis dalam golongannya, 2 efek samping lokal khas beserta cara pencegahannya, serta tuliskan resep lengkapnya untuk terapi pengendali asma!",
+      "stimulus": "Diberikan preparat Salmeterol Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya (Reliever vs Controller)?",
+      "soal_b": "Mengapa obat ini dikontraindikasikan sebagai monoterapi pada asma?",
       "diagnosis": "BUDESONIDE INHALER (KORTIKOSTEROID INHALASI / ICS)",
       "organ": "Saluran Napas",
       "sifat": "Kortikosteroid (Inhalasi / Sistemik)",
@@ -3633,7 +3758,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Molekuler & Peran Klinis:**\r\n   - **Mekanisme Molekuler:** Budesonide berdifusi melintasi membran sel dan berikatan dengan reseptor glukokortikoid sitoplasma (GRα). Kompleks obat-reseptor bertranslokasi ke nukleus sel epitel dan sel radang, kemudian:\r\n     1. Menghambat faktor transkripsi pro-inflamasi (seperti NF-\\kappaB dan AP-1), sehingga menekan sintesis sitokin pro-inflamasi, kemokin, enzim iNOS, dan COX-2.\r\n     2. Menstimulasi transkripsi gen anti-inflamasi (aneksina-1/lipokortin-1) yang menghambat fosfolipase A₂, menurunkan sintesis prostaglandin dan leukotrien.\r",
+      "jawaban_ringkas": "a. Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).\nb. Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS).",
       "jawaban_lengkap": "a. **Mekanisme Molekuler & Peran Klinis:**\r\n   - **Mekanisme Molekuler:** Budesonide berdifusi melintasi membran sel dan berikatan dengan reseptor glukokortikoid sitoplasma (GRα). Kompleks obat-reseptor bertranslokasi ke nukleus sel epitel dan sel radang, kemudian:\r\n     1. Menghambat faktor transkripsi pro-inflamasi (seperti NF-\\kappaB dan AP-1), sehingga menekan sintesis sitokin pro-inflamasi, kemokin, enzim iNOS, dan COX-2.\r\n     2. Menstimulasi transkripsi gen anti-inflamasi (aneksina-1/lipokortin-1) yang menghambat fosfolipase A₂, menurunkan sintesis prostaglandin dan leukotrien.\r\n     3. Mengurangi ekstravasasi plasma, menurunkan edema mukosa dinding bronkus, menurunkan produksi mukus, dan mencegah hiperresponsivitas saluran napas.\r\n   - **Peran Klinis:** Merupakan obat **Controller (Pengendali)** lini pertama paling efektif untuk terapi pemeliharaan jangka panjang asma bronkial, wajib digunakan rutin setiap hari.\r\nb. **Golongan, Obat Sejenis, Efek Samping Lokal & Edukasi, serta Resep:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Kortikosteroid Inhalasi / ICS** (*Inhaled Corticosteroid*).\r\n   - **Contoh Sejenis:** Beklometason dipropionat (*Beclomethasone dipropionate*), Flutikason propionat (*Fluticasone propionate*), Mometason furoat, Siklesonid.\r\n   - **2 Efek Samping Lokal Khas:**\r\n     1. **Kandidiasis orofaring (*oral thrush*)**: Pertumbuhan jamur *Candida albicans* akibat imunosupresi lokal pada mukosa mulut.\r\n     2. **Disfonia (suara serak)**: Akibat miopati lokal transien pada pita suara (*vocal cord*).\r\n   - **Cara Pencegahan Wajib:** Mengedukasi pasien untuk selalu **berkumur-kumur dengan air bersih lalu membuangnya (kumur-buang / *rinse and spit*)** segera setiap kali setelah menghirup obat, serta menggunakan alat bantu *spacer*.\r\n   - **Penulisan Resep Standar (Slide 30):**\r\n     ```text\r\n     dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Budesonide inhaler 200 mcg Fl. I\r\n        S. 2 d.d. puff 1\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Budesonide inhaler 200 mcg Fl. I\r\n        S. 2 d.d. puff 1\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi",
       "tips_klinis": "",
@@ -3655,7 +3780,9 @@
         "kortikosteroid",
         "inhalasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik LABA (Long-Acting β₂ Agonist); Berperan sebagai Controller (pengontrol pemeliharaan jangka panjang, durasi >12 jam).",
+      "jawaban_b": "Monoterapi dilarang karena tidak mengatasi inflamasi jalan napas, menutupi gejala perburukan, dan meningkatkan risiko kematian asma (wajib dikombinasikan dengan ICS)."
     },
     {
       "id": 263,
@@ -3663,9 +3790,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BEKLOMETASON DIPROPIONAT (BECLOMETHASONE)",
       "prompt": "[Beklometason Dipropionat Inhaler]\n\na. Jelaskan mekanisme kerja Beklometason inhalasi dalam mengatasi hiperresponsivitas jalan napas dan remodeling bronkus pada asma!\n\nb. Sebutkan golongan obatnya, regimen dosis harian lazimnya , serta jelaskan mengapa pemberian secara inhalasi jauh lebih aman daripada pemberian sistemik!",
-      "stimulus": "Beklometason Dipropionat Inhaler",
-      "soal_a": "Jelaskan mekanisme kerja Beklometason inhalasi dalam mengatasi hiperresponsivitas jalan napas dan remodeling bronkus pada asma!",
-      "soal_b": "Sebutkan golongan obatnya, regimen dosis harian lazimnya , serta jelaskan mengapa pemberian secara inhalasi jauh lebih aman daripada pemberian sistemik!",
+      "stimulus": "Diberikan preparat Beklometason Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya?",
+      "soal_b": "Mengapa rute inhalasi ICS jauh lebih aman dibanding kortikosteroid sistemik?",
       "diagnosis": "BEKLOMETASON DIPROPIONAT (BECLOMETHASONE)",
       "organ": "Saluran Napas",
       "sifat": "Kortikosteroid (Inhalasi / Sistemik)",
@@ -3689,7 +3816,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja:**\r\n   - **Mekanisme:** Mengurangi sintesis dan pelepasan berbagai mediator inflamasi (sitokin IL-4, IL-5, IL-13, leukotrien, histamin) dari sel mast, eosinofil, dan limfosit T. Menginduksi vasokonstriksi mikrovaskular, menurunkan permeabilitas vaskular mukosa, meredakan edema dinding bronkus, dan menghambat migrasi eosinofil ke saluran napas, sehingga memulihkan responsivitas bronkus dan mencegah remodeling saluran napas.\r\nb. **Golongan, Dosis Harian, & Keamanan Inhalasi:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Kortikosteroid Inhalasi (ICS)**.\r",
+      "jawaban_ringkas": "a. Kortikosteroid Inhalasi (ICS); Berperan sebagai Controller lini pertama (antiinflamasi kronis saluran napas).\nb. Dosis mikro langsung bekerja di paru dengan bioavailabilitas sistemik minimal dan first-pass metabolism hepar tinggi, sehingga risiko supresi adrenal sangat minimal.",
       "jawaban_lengkap": "a. **Mekanisme Kerja:**\r\n   - **Mekanisme:** Mengurangi sintesis dan pelepasan berbagai mediator inflamasi (sitokin IL-4, IL-5, IL-13, leukotrien, histamin) dari sel mast, eosinofil, dan limfosit T. Menginduksi vasokonstriksi mikrovaskular, menurunkan permeabilitas vaskular mukosa, meredakan edema dinding bronkus, dan menghambat migrasi eosinofil ke saluran napas, sehingga memulihkan responsivitas bronkus dan mencegah remodeling saluran napas.\r\nb. **Golongan, Dosis Harian, & Keamanan Inhalasi:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Kortikosteroid Inhalasi (ICS)**.\r\n   - **Regimen Dosis Lazim (Slide 21):** Beklometason **400 mcg/hari** atau diberikan **4 semprot 2 kali sehari**.\r\n   - **Alasan Keamanan Rute Inhalasi:** Pemberian inhalasi menghantarkan partikel aerosol obat langsung terkonsentrasi ke organ target (paru-paru), sehingga membutuhkan dosis mikro yang sangat kecil dengan bioavailabilitas sistemik minimal. Fraksi obat yang tertelan akan mengalami metabolisme lintas pertama (*first-pass metabolism*) hepar yang tinggi, sehingga efek samping sistemik (supresi adrenal, osteoporosis, katarak) sangat kecil dan aman untuk terapi kronis jangka panjang.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3710,7 +3837,9 @@
         "dipropionat",
         "beclomethasone"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Kortikosteroid Inhalasi (ICS); Berperan sebagai Controller lini pertama (antiinflamasi kronis saluran napas).",
+      "jawaban_b": "Dosis mikro langsung bekerja di paru dengan bioavailabilitas sistemik minimal dan first-pass metabolism hepar tinggi, sehingga risiko supresi adrenal sangat minimal."
     },
     {
       "id": 264,
@@ -3718,9 +3847,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREDNISON TABLET (KORTIKOSTEROID SISTEMIK ORAL)",
       "prompt": "[Tablet Prednison]\n\na. Jelaskan mekanisme kerja Prednison serta aturan mutlak durasi penggunaannya pada asma (mengapa hanya boleh jangka pendek / *short-burst*)!\n\nb. Sebutkan golongan obatnya, dosis oral lazimnya (Slide 21), serta 5 efek samping sistemik berat yang timbul akibat pemakaian jangka panjang!",
-      "stimulus": "Tablet Prednison",
-      "soal_a": "Jelaskan mekanisme kerja Prednison serta aturan mutlak durasi penggunaannya pada asma (mengapa hanya boleh jangka pendek / *short-burst*)!",
-      "soal_b": "Sebutkan golongan obatnya, dosis oral lazimnya (Slide 21), serta 5 efek samping sistemik berat yang timbul akibat pemakaian jangka panjang!",
+      "stimulus": "Diberikan preparat Beklometason Inhaler",
+      "soal_a": "Golongan obat dan peran klinisnya?",
+      "soal_b": "Mengapa rute inhalasi ICS jauh lebih aman dibanding kortikosteroid sistemik?",
       "diagnosis": "PREDNISON TABLET (KORTIKOSTEROID SISTEMIK ORAL)",
       "organ": "Saluran Napas",
       "sifat": "Kortikosteroid (Inhalasi / Sistemik)",
@@ -3744,7 +3873,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja & Aturan Mutlak Penggunaan:**\r\n   - **Mekanisme Kerja:** Glukokortikoid sistemik yang secara masif menekan respons inflamasi seluler dan humoral, menurunkan permeabilitas kapiler, menghambat ekstravasasi neutrofil/eosinofil, serta mengembalikan kepekaan (*up-regulasi*) reseptor β₂ adrenergik terhadap katekolamin.\r\n   - **Aturan Durasi Penggunaan (Slide 20):** **Kortikosteroid per oral HANYA boleh digunakan untuk terapi Reliever / penanganan eksaserbasi akut jangka pendek (*burst therapy* 3–7 hari) dan TIDAK BOLEH digunakan dalam jangka waktu panjang**. Terapi pengontrol jangka panjang wajib dialihkan ke kortikosteroid inhalasi (ICS).\r\nb. **Golongan, Dosis, & Efek Samping Sistemik Jangka Panjang:**\r",
+      "jawaban_ringkas": "a. Kortikosteroid Inhalasi (ICS); Berperan sebagai Controller lini pertama (antiinflamasi kronis saluran napas).\nb. Dosis mikro langsung bekerja di paru dengan bioavailabilitas sistemik minimal dan first-pass metabolism hepar tinggi, sehingga risiko supresi adrenal sangat minimal.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Aturan Mutlak Penggunaan:**\r\n   - **Mekanisme Kerja:** Glukokortikoid sistemik yang secara masif menekan respons inflamasi seluler dan humoral, menurunkan permeabilitas kapiler, menghambat ekstravasasi neutrofil/eosinofil, serta mengembalikan kepekaan (*up-regulasi*) reseptor β₂ adrenergik terhadap katekolamin.\r\n   - **Aturan Durasi Penggunaan (Slide 20):** **Kortikosteroid per oral HANYA boleh digunakan untuk terapi Reliever / penanganan eksaserbasi akut jangka pendek (*burst therapy* 3–7 hari) dan TIDAK BOLEH digunakan dalam jangka waktu panjang**. Terapi pengontrol jangka panjang wajib dialihkan ke kortikosteroid inhalasi (ICS).\r\nb. **Golongan, Dosis, & Efek Samping Sistemik Jangka Panjang:**\r\n   - **Golongan:** Antiinflamasi, **Kortikosteroid Sistemik (Glukokortikoid Oral)**.\r\n   - **Dosis Oral Lazim (Slide 21):** Prednison **30 - 60 mg/hari** per oral (terbagi atau dosis tunggal pagi hari).\r\n   - **5 Efek Samping Sistemik Berat (Slide 20):**\r\n     1. **Supresi aksis hipotalamus-hipofisis-adrenal (aksis HPA)** → atrofi adrenal dan krisis adrenal bila dihentikan mendadak.\r\n     2. **Osteoporosis** dan fraktur patologis tulang.\r\n     3. **Hipertensi** (retensi natrium dan air).\r\n     4. **Diabetes melitus / Hiperglikemia** (stimulasi glukoneogenesis dan resistensi insulin).\r\n     5. **Katarak subkapsular posterior** dan **Glaukoma**.\r\n     6. *Cushingoid* (obesitas sentral, *moon face*, *buffalo hump*), kerentanan infeksi, dan gangguan pertumbuhan anak.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3767,7 +3896,9 @@
         "sistemik",
         "oral"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Kortikosteroid Inhalasi (ICS); Berperan sebagai Controller lini pertama (antiinflamasi kronis saluran napas).",
+      "jawaban_b": "Dosis mikro langsung bekerja di paru dengan bioavailabilitas sistemik minimal dan first-pass metabolism hepar tinggi, sehingga risiko supresi adrenal sangat minimal."
     },
     {
       "id": 265,
@@ -3775,9 +3906,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "METILPREDNISOLON (METHYLPREDNISOLONE) INJEKSI / TABLET",
       "prompt": "[Metilprednisolon Injeksi IV / Tablet Oral]\n\na. Jelaskan indikasi klinis utama pemberian Metilprednisolon intravena pada kedaruratan asma serta onset respon klinisnya!\n\nb. Sebutkan golongan obatnya, dosis sediaan intravena berdasarkan materi presentasi (Slide 21), serta mengapa tapering-off diperlukan setelah penggunaan lebih dari 2 minggu!",
-      "stimulus": "Metilprednisolon Injeksi IV / Tablet Oral",
-      "soal_a": "Jelaskan indikasi klinis utama pemberian Metilprednisolon intravena pada kedaruratan asma serta onset respon klinisnya!",
-      "soal_b": "Sebutkan golongan obatnya, dosis sediaan intravena berdasarkan materi presentasi (Slide 21), serta mengapa tapering-off diperlukan setelah penggunaan lebih dari 2 minggu!",
+      "stimulus": "Diberikan preparat Metilprednisolon Injeksi / Tablet",
+      "soal_a": "Golongan obat dan indikasi klinis utamanya pada kedaruratan asma?",
+      "soal_b": "Berapa dosis intravenanya dan mengapa wajib dilakukan tapering-off jika dipakai >2 minggu?",
       "diagnosis": "METILPREDNISOLON (METHYLPREDNISOLONE) INJEKSI / TABLET",
       "organ": "Saluran Napas",
       "sifat": "Kortikosteroid (Inhalasi / Sistemik)",
@@ -3800,7 +3931,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Indikasi Klinis Kedaruratan & Onset Respon:**\r\n   - **Indikasi Klinis Kedaruratan:** Diberikan pada pasien asma eksaserbasi akut berat / *Status Asthmaticus* yang gagal berespon adekuat terhadap bronkodilator inhalasi di instalasi gawat darurat (IGD).\r\n   - **Onset Respon Klinis:** Onset efek genomik antiinflamasinya membutuhkan waktu beberapa jam (biasanya mulai tampak dalam **4–6 jam** pasca-injeksi). Oleh karena itu, metilprednisolon IV harus selalu diberikan mendampingi bronkodilator kerja cepat (SABA + SAMA inhalasi) yang memberikan efek pelega instan.\r\nb. **Golongan, Dosis Intravena, & Alasan Tapering-Off:**\r",
+      "jawaban_ringkas": "a. Kortikosteroid Sistemik (Glukokortikoid Sintetik); Indikasi: Eksaserbasi akut berat / Status Asthmaticus di IGD (onset respons genomik 4–6 jam).\nb. Dosis IV: 1 mg/kgBB tiap 6–12 jam; Wajib tapering-off untuk mencegah krisis insufisiensi adrenal akut fatal akibat atrofi korteks adrenal temporer.",
       "jawaban_lengkap": "a. **Indikasi Klinis Kedaruratan & Onset Respon:**\r\n   - **Indikasi Klinis Kedaruratan:** Diberikan pada pasien asma eksaserbasi akut berat / *Status Asthmaticus* yang gagal berespon adekuat terhadap bronkodilator inhalasi di instalasi gawat darurat (IGD).\r\n   - **Onset Respon Klinis:** Onset efek genomik antiinflamasinya membutuhkan waktu beberapa jam (biasanya mulai tampak dalam **4–6 jam** pasca-injeksi). Oleh karena itu, metilprednisolon IV harus selalu diberikan mendampingi bronkodilator kerja cepat (SABA + SAMA inhalasi) yang memberikan efek pelega instan.\r\nb. **Golongan, Dosis Intravena, & Alasan Tapering-Off:**\r\n   - **Golongan:** Antiinflamasi, **Kortikosteroid Sistemik (Glukokortikoid Sintetik)**.\r\n   - **Dosis Intravena (Slide 21):** Metilprednisolon **1 mg/kgBB setiap 6–12 jam** secara intravena (IV).\r\n   - **Alasan Wajib Tapering-Off:** Pemberian kortikosteroid sistemik dosis suprafisiologis lebih dari 2 minggu menekan pelepasan CRH dan ACTH, menyebabkan atrofi korteks adrenal temporer. Penghentian obat secara tiba-tiba (*abrupt withdrawal*) akan memicu **Krisis Insufisiensi Adrenal Akut** (hipotensi berat, kolaps sirkulasi, syok, hipoglikemia) yang mengancam nyawa. Penurunan dosis bertahap (*tapering-off*) memberi waktu pemulihan fungsi aksis HPA.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3821,7 +3952,9 @@
         "injeksi",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Kortikosteroid Sistemik (Glukokortikoid Sintetik); Indikasi: Eksaserbasi akut berat / Status Asthmaticus di IGD (onset respons genomik 4–6 jam).",
+      "jawaban_b": "Dosis IV: 1 mg/kgBB tiap 6–12 jam; Wajib tapering-off untuk mencegah krisis insufisiensi adrenal akut fatal akibat atrofi korteks adrenal temporer."
     },
     {
       "id": 266,
@@ -3829,7 +3962,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "MONTELUKAST TABLET",
       "prompt": "[Tablet Montelukast]\n\na. Golongan obat dan mekanisme kerja molekulernya?\n\nb. Dosis, waktu konsumsi yang tepat, dan 2 indikasi klinis spesifiknya?",
-      "stimulus": "Tablet Montelukast",
+      "stimulus": "Diberikan preparat Montelukast Tablet",
       "soal_a": "Golongan obat dan mekanisme kerja molekulernya?",
       "soal_b": "Dosis, waktu konsumsi yang tepat, dan 2 indikasi klinis spesifiknya?",
       "diagnosis": "MONTELUKAST TABLET",
@@ -3855,7 +3988,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. Antiinflamasi Leukotriene Receptor Antagonist (LTRA); Menghambat selektif reseptor leukotrien CysLT₁ → mencegah bronkokonstriksi, edema, dan hipersekresi mukus.\nb. Dosis: Tablet 10 mg 1 kali sehari pada malam hari; Indikasi spesifik: Asma dengan komorbid rinitis alergi dan Exercise-Induced Bronchoconstriction (EIB).\r\n\r\n---\r\n\r\n### STASI 14: ZAFIRLUKAST TABLET",
+      "jawaban_ringkas": "a. Antiinflamasi Leukotriene Receptor Antagonist (LTRA); Menghambat selektif reseptor leukotrien CysLT₁ → mencegah bronkokonstriksi, edema, dan hipersekresi mukus.\nb. Dosis: Tablet 10 mg 1 kali sehari pada malam hari; Indikasi spesifik: Asma dengan komorbid rinitis alergi dan Exercise-Induced Bronchoconstriction (EIB).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Peran:**\r\n   - **Mekanisme Kerja Molekuler:** Merupakan antagonis kompetitif selektif reseptor **CysLT₁** (*Cysteinyl Leukotriene Receptor 1*). Obat ini memblokade ikatan leukotrien LTC_4, LTD_4, dan LTE_4 (yang dilepaskan sel mast dan eosinofil) pada reseptornya di otot polos jalan napas dan endotel, sehingga mencegah bronkokonstriksi poten, hipersekresi mukus, dan edema jalan napas.\r\n   - **Peran Klinis:** Berperan sebagai **Controller (Pengendali oral)** pemeliharaan jangka panjang.\r\nb. **Golongan, Dosis, Waktu Minum, & Keuntungan Klinis:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Leukotriene Modifiers / LTRA** (*Leukotriene Receptor Antagonists*).\r\n   - **Dosis & Waktu Pemberian (Slide 23):** Diberikan secara oral **10 mg 1 kali sehari pada malam hari** (dosis dewasa).\r\n   - **Keuntungan Klinis:**\r\n     1. Bentuk sediaan tablet oral sangat disukai pasien dengan *compliance* buruk terhadap teknik alat inhaler.\r\n     2. Sangat efektif untuk **asma yang diinduksi aktivitas fisik (*Exercise-Induced Bronchoconstriction*)** dan **asma intoleran aspirin (*Aspirin-Exacerbated Respiratory Disease* / AERD)**.\r\n     3. Memiliki efikasi ganda yang sangat baik mengontrol gejala pada pasien asma dengan komorbiditas **Rinitis Alergi**.\r\n   - **Efek Samping (Slide 23):** Infeksi Saluran Pernapasan Atas (ISPA), sakit kepala, gangguan neuropsikiatri langka (gangguan tidur/mimpi buruk).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3875,7 +4008,9 @@
         "montelukast",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antiinflamasi Leukotriene Receptor Antagonist (LTRA); Menghambat selektif reseptor leukotrien CysLT₁ → mencegah bronkokonstriksi, edema, dan hipersekresi mukus.",
+      "jawaban_b": "Dosis: Tablet 10 mg 1 kali sehari pada malam hari; Indikasi spesifik: Asma dengan komorbid rinitis alergi dan Exercise-Induced Bronchoconstriction (EIB)."
     },
     {
       "id": 267,
@@ -3883,7 +4018,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ZAFIRLUKAST TABLET",
       "prompt": "[Tablet Zafirlukast]\n\na. Berapa dosis obat dan aturan waktu minumnya?\n\nb. Sebutkan 2 contoh obat lain pengubah leukotrien dan organ toksisitas yang harus dipantau!",
-      "stimulus": "Tablet Zafirlukast",
+      "stimulus": "Diberikan preparat Zafirlukast Tablet",
       "soal_a": "Berapa dosis obat dan aturan waktu minumnya?",
       "soal_b": "Sebutkan 2 contoh obat lain pengubah leukotrien dan organ toksisitas yang harus dipantau!",
       "diagnosis": "ZAFIRLUKAST TABLET",
@@ -3909,7 +4044,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. Dosis: Tablet 20 mg 2 kali sehari (diminum 1 jam sebelum atau 2 jam sesudah makan / perut kosong).\nb. Contoh sejenis: Montelukast (LTRA), Zileuton (5-LOX Inhibitor); Organ toksisitas: Hepar (hepatotoksisitas / peningkatan ALT/AST; kontraindikasi anak <12 tahun).\r\n\r\n---\r\n\r\n### STASI 15: ZILEUTON TABLET",
+      "jawaban_ringkas": "a. Dosis: Tablet 20 mg 2 kali sehari (diminum 1 jam sebelum atau 2 jam sesudah makan / perut kosong).\nb. Contoh sejenis: Montelukast (LTRA), Zileuton (5-LOX Inhibitor); Organ toksisitas: Hepar (hepatotoksisitas / peningkatan ALT/AST; kontraindikasi anak <12 tahun).",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik & Peran:**\r\n   - **Mekanisme:** Bekerja sebagai antagonis kompetitif reseptor leukotrien sisteinil tipe 1 (CysLT₁), memblokade efek bronkokonstriktor kuat dari leukotrien LTC_4, LTD_4, dan LTE_4.\r\n   - **Peran:** Sebagai obat pengendali (**Controller**) profilaksis jangka panjang untuk mencegah episode serangan asma.\r\nb. **Golongan, Dosis, Kontraindikasi, & Toksisitas:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Leukotriene Modifiers / LTRA** (*Leukotriene Receptor Antagonists*).\r\n   - **Aturan Dosis (Slide 23):** Diberikan secara oral **20 mg 2 kali sehari** (diminum 1 jam sebelum atau 2 jam setelah makan).\r\n   - **Kontraindikasi Batasan Usia:** **Kontraindikasi pada anak usia < 12 tahun** (Slide 23).\r\n   - **Perhatian Khusus (Organ Toksisitas):** Berpotensi menyebabkan hepatotoksik (peningkatan transaminase hepar serum), sehingga memerlukan pemantauan uji fungsi hati.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3929,7 +4064,9 @@
         "zafirlukast",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Dosis: Tablet 20 mg 2 kali sehari (diminum 1 jam sebelum atau 2 jam sesudah makan / perut kosong).",
+      "jawaban_b": "Contoh sejenis: Montelukast (LTRA), Zileuton (5-LOX Inhibitor); Organ toksisitas: Hepar (hepatotoksisitas / peningkatan ALT/AST; kontraindikasi anak <12 tahun)."
     },
     {
       "id": 268,
@@ -3937,7 +4074,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ZILEUTON TABLET",
       "prompt": "[Tablet Zileuton]\n\na. Golongan obat dan apa perbedaan mendasar mekanismenya dibanding Montelukast/Zafirlukast?\n\nb. Berapa dosis lazimnya dan efek samping organ yang harus dievaluasi berkala?",
-      "stimulus": "Tablet Zileuton",
+      "stimulus": "Diberikan preparat Zileuton Tablet",
       "soal_a": "Golongan obat dan apa perbedaan mendasar mekanismenya dibanding Montelukast/Zafirlukast?",
       "soal_b": "Berapa dosis lazimnya dan efek samping organ yang harus dievaluasi berkala?",
       "diagnosis": "ZILEUTON TABLET",
@@ -3964,7 +4101,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. Antiinflamasi 5-Lipoxygenase Inhibitor (5-LOX Inhibitor); Zileuton menghambat langsung enzim 5-LOX di hulu sintesis seluruh leukotrien (LTB_4, LTC_4, LTD_4, LTE_4), sedangkan Montelukast hanya memblok reseptor CysLT₁ di hilir.\nb. Dosis: 600 mg 4 kali sehari per oral; Efek samping: Hepatotoksisitas (wajib uji fungsi hati berkala).\r\n\r\n---\r\n\r\n### STASI 16: OMALIZUMAB INJEKSI",
+      "jawaban_ringkas": "a. Antiinflamasi 5-Lipoxygenase Inhibitor (5-LOX Inhibitor); Zileuton menghambat langsung enzim 5-LOX di hulu sintesis seluruh leukotrien (LTB_4, LTC_4, LTD_4, LTE_4), sedangkan Montelukast hanya memblok reseptor CysLT₁ di hilir.\nb. Dosis: 600 mg 4 kali sehari per oral; Efek samping: Hepatotoksisitas (wajib uji fungsi hati berkala).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Spesifik:**\r\n   - **Mekanisme Pembeda:** Zileuton bekerja menghambat langsung enzim **5-Lipooksigenase (5-LOX)** secara selektif. Enzim ini bertanggung jawab mengonversi asam arakidonat menjadi leukotrien. Dengan menghambat enzim 5-LOX, Zileuton **menghentikan seluruh sintesis leukotrien di hulu**, baik kelompok sisteinil leukotrien (LTC_4, LTD_4, LTE_4) maupun leukotrien kemotaktik (LTB_4). Berbeda dengan Montelukast/Zafirlukast yang hanya memblokade reseptornya di hilir.\r\nb. **Golongan, Dosis, Indikasi, & Efek Samping:**\r\n   - **Golongan:** Antiinflamasi, subgolongan **Leukotriene Synthesis Inhibitor / 5-LOX Inhibitor** (*Leukotriene Modifiers*).\r\n   - **Dosis & Frekuensi Pemberian (Slide 23):** Diberikan secara oral **600 mg 4 kali sehari** (atau 1200 mg 2 kali sehari sediaan lepas lambat).\r\n   - **Indikasi Penggunaan:** Profilaksis dan terapi pengendali jangka panjang asma bronkial kronik pada dewasa dan anak ≥ 12 tahun.\r\n   - **Efek Samping Organ Hepar:** Bersifat hepatotoksik (memicu kenaikan enzim transaminase hepar/ALT/AST bermakna), sehingga dikontraindikasikan pada penyakit hati aktif dan wajib dilakukan evaluasi fungsi hepar berkala.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -3986,7 +4123,9 @@
         "zileuton",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antiinflamasi 5-Lipoxygenase Inhibitor (5-LOX Inhibitor); Zileuton menghambat langsung enzim 5-LOX di hulu sintesis seluruh leukotrien (LTB_4, LTC_4, LTD_4, LTE_4), sedangkan Montelukast hanya memblok reseptor CysLT₁ di hilir.",
+      "jawaban_b": "Dosis: 600 mg 4 kali sehari per oral; Efek samping: Hepatotoksisitas (wajib uji fungsi hati berkala)."
     },
     {
       "id": 269,
@@ -3994,9 +4133,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "OMALIZUMAB INJEKSI (ANTI-IgE)",
       "prompt": "[Omalizumab Vial Injeksi (Anti-IgE)]\n\na. Jelaskan mekanisme molekuler Omalizumab dalam memutus kaskade alergi pada asma atopi berat, serta target ligannya!\n\nb. Sebutkan golongan obatnya, indikasi klinis pasien yang memenuhi syarat terapinya, bentuk sediaan beserta dosisnya (Slide 25), serta efek samping lokal dan sistemik yang paling ditakuti!",
-      "stimulus": "Omalizumab Vial Injeksi (Anti-IgE)",
-      "soal_a": "Jelaskan mekanisme molekuler Omalizumab dalam memutus kaskade alergi pada asma atopi berat, serta target ligannya!",
-      "soal_b": "Sebutkan golongan obatnya, indikasi klinis pasien yang memenuhi syarat terapinya, bentuk sediaan beserta dosisnya (Slide 25), serta efek samping lokal dan sistemik yang paling ditakuti!",
+      "stimulus": "Diberikan preparat Omalizumab Vial Injeksi (Xolair)",
+      "soal_a": "Golongan obat dan target molekuler spesifiknya?",
+      "soal_b": "Indikasi pasien yang memenuhi kriteria terapi, rute pemberian, dan efek samping paling fatal?",
       "diagnosis": "OMALIZUMAB INJEKSI (ANTI-IgE)",
       "organ": "Saluran Napas",
       "sifat": "OMALIZUMAB INJEKSI (ANTI-IgE)",
@@ -4019,7 +4158,7 @@
         "**Golongan:** OMALIZUMAB INJEKSI (ANTI-IgE)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Molekuler & Target Ligan:**\r\n   - **Target Ligan:** Merupakan antibodi monoklonal rekombinan humanisasi (*recombinant humanized IgG1k monoclonal antibody*) yang berikatan secara selektif pada domain C\\varepsilon3 dari **molekul Immunoglobulin E (IgE) bebas** yang bersirkulasi dalam darah.\r\n   - **Mekanisme Kerja Molekuler:**\r\n     1. Mencegah pengikatan IgE ke reseptor berafinitas tinggi (Fc\\varepsilon RI) pada membran permukaan sel mast dan basofil.\r",
+      "jawaban_ringkas": "a. Terapi Biologik / Antibodi Monoklonal Anti-IgE; Mengikat molekul IgE bebas dalam darah → mencegah ikatan IgE ke reseptor Fc\\varepsilon RI di sel mast/basofil → cegah degranulasi mediator alergi.\nb. Indikasi: Pasien asma alergi persisten berat usia >12 tahun yang gagal dikontrol ICS dosis tinggi + LABA; Rute: Injeksi subkutan (SC) tiap 2–4 minggu; Efek samping fatal: Syok anafilaksis.",
       "jawaban_lengkap": "a. **Mekanisme Molekuler & Target Ligan:**\r\n   - **Target Ligan:** Merupakan antibodi monoklonal rekombinan humanisasi (*recombinant humanized IgG1k monoclonal antibody*) yang berikatan secara selektif pada domain C\\varepsilon3 dari **molekul Immunoglobulin E (IgE) bebas** yang bersirkulasi dalam darah.\r\n   - **Mekanisme Kerja Molekuler:**\r\n     1. Mencegah pengikatan IgE ke reseptor berafinitas tinggi (Fc\\varepsilon RI) pada membran permukaan sel mast dan basofil.\r\n     2. Menurunkan jumlah reseptor Fc\\varepsilon RI bebas pada sel efektor inflamasi.\r\n     3. Mencegah degranulasi sel mast dan menghentikan pelepasan mediator inflamasi akut (histamin, leukotrien) maupun kronik (sitokin Th2).\r\n     4. Mencegah aktivasi IgE yang telah terikat ke sel.\r\nb. **Golongan, Indikasi, Sediaan/Dosis, & Efek Samping:**\r\n   - **Golongan:** Agen Biologik / Terapi Bertarget, subgolongan **Anti-IgE Monoclonal Antibody**.\r\n   - **Indikasi Klinis Pasien (Slide 25):** Dewasa dan remaja **> 12 tahun** dengan **asma persisten sedang hingga berat** yang memiliki latar belakang alergi (tes kulit positif / IgE serum tinggi) yang tidak terkontrol adekuat dengan kortikosteroid inhalasi dosis tinggi + LABA, serta bertujuan mengurangi kebutuhan kortikosteroid sistemik.\r\n   - **Bentuk Sediaan & Dosis (Slide 25):** Bubuk injeksi liofilisasi subkutan, dosis **202,5 mg** (diberikan secara injeksi subkutan setiap 2–4 minggu disesuaikan dengan kadar IgE basal dan berat badan).\r\n   - **Efek Samping:**\r\n     - Efek lokal tempat suntikan: Kemerahan (*erythema*), bekas sengat/nyeri, memar, dan indurasi.\r\n     - Efek sistemik yang paling ditakuti: **Reaksi anafilaksis berat / syok anafilaksis** (jarang, namun memerlukan observasi ketat pasca-injeksi).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4039,7 +4178,9 @@
         "injeksi",
         "anti-ige"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Terapi Biologik / Antibodi Monoklonal Anti-IgE; Mengikat molekul IgE bebas dalam darah → mencegah ikatan IgE ke reseptor Fc\\varepsilon RI di sel mast/basofil → cegah degranulasi mediator alergi.",
+      "jawaban_b": "Indikasi: Pasien asma alergi persisten berat usia >12 tahun yang gagal dikontrol ICS dosis tinggi + LABA; Rute: Injeksi subkutan (SC) tiap 2–4 minggu; Efek samping fatal: Syok anafilaksis."
     },
     {
       "id": 270,
@@ -4047,9 +4188,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "CETIRIZINE TABLET (ANTIHISTAMIN GENERASI KE-2)",
       "prompt": "[Tablet Cetirizine]\n\na. Jelaskan mekanisme kerja Cetirizine pada reseptor histamin, peranannya pada pasien asma dengan komorbid rinitis alergi, serta batasannya dalam mengatasi kongesti hidung!\n\nb. Sebutkan golongannya, bandingkan dengan antihistamin generasi 1 (sedasi & durasi kerja), sebutkan mnemonik contoh obatnya (Slide 29), serta tuliskan resepnya!",
-      "stimulus": "Tablet Cetirizine",
-      "soal_a": "Jelaskan mekanisme kerja Cetirizine pada reseptor histamin, peranannya pada pasien asma dengan komorbid rinitis alergi, serta batasannya dalam mengatasi kongesti hidung!",
-      "soal_b": "Sebutkan golongannya, bandingkan dengan antihistamin generasi 1 (sedasi & durasi kerja), sebutkan mnemonik contoh obatnya (Slide 29), serta tuliskan resepnya!",
+      "stimulus": "Diberikan preparat Cetirizine Tablet",
+      "soal_a": "Golongan obat dan bandingkan profil sedasinya dibanding CTM!",
+      "soal_b": "Resep obat jika diminum 1 kali sehari pada malam hari selama 7 hari?",
       "diagnosis": "CETIRIZINE TABLET (ANTIHISTAMIN GENERASI KE-2)",
       "organ": "Saluran Napas",
       "sifat": "Antihistamin H1",
@@ -4072,7 +4213,7 @@
         "**Mnemonik:** a. Mekanisme Kerja, Peran Komorbid, & Batasan:",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja, Peran Komorbid, & Batasan:**\r\n   - **Mekanisme Kerja:** Bekerja sebagai antagonis kompetitif selektif (atau *inverse agonist*) pada **reseptor histamin H₁ perifer**. Menghambat efek histamin dalam memicu vasodilatasi kapiler, peningkatan permeabilitas vaskular, dan stimulasi ujung saraf sensorik.\r\n   - **Peran Klinis:** Mengendalikan gejala rinitis alergi penyerta (rinorea/hidung berair, bersin berulang, hidung gatal, konjungtivitis alergi) yang menjadi pemicu utama serangan asma bronkial.\r\n   - **Keterbatasan Terapi:** Antihistamin sangat efektif menurunkan sekresi nasal dan bersin, namun **kurang efektif untuk mengatasi kongesti/hidung tersumbat** (karena kongesti hidung melibatkan dilatasi pleksus venosus mukosa yang membutuhkan agonis α-adrenergik vasokonstriktor / dekongestan).\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi ke-2 (H1-bloker perifer non-sedatif); Bersifat lipofobik sehingga sulit menembus sawar darah otak → tidak menimbulkan efek sedasi (non-drowsy) dibanding CTM.\nb. R/ Cetirizine tab 10 mg No. VII S.1.d.d tab 1 malam hari ------------------------- (paraf)",
       "jawaban_lengkap": "a. **Mekanisme Kerja, Peran Komorbid, & Batasan:**\r\n   - **Mekanisme Kerja:** Bekerja sebagai antagonis kompetitif selektif (atau *inverse agonist*) pada **reseptor histamin H₁ perifer**. Menghambat efek histamin dalam memicu vasodilatasi kapiler, peningkatan permeabilitas vaskular, dan stimulasi ujung saraf sensorik.\r\n   - **Peran Klinis:** Mengendalikan gejala rinitis alergi penyerta (rinorea/hidung berair, bersin berulang, hidung gatal, konjungtivitis alergi) yang menjadi pemicu utama serangan asma bronkial.\r\n   - **Keterbatasan Terapi:** Antihistamin sangat efektif menurunkan sekresi nasal dan bersin, namun **kurang efektif untuk mengatasi kongesti/hidung tersumbat** (karena kongesti hidung melibatkan dilatasi pleksus venosus mukosa yang membutuhkan agonis α-adrenergik vasokonstriktor / dekongestan).\r\nb. **Golongan, Perbandingan Gen 1 vs Gen 2, Mnemonik, & Resep:**\r\n   - **Golongan:** **Antihistamin Generasi ke-2 (Golongan Baru)** / Penghambat Reseptor H₁ non-sedatif.\r\n   - **Perbandingan dengan Generasi 1:**\r\n     - *Penetrasi BBB & Efek Sedasi:* Generasi 2 bersifat lipofobik dan substrat P-glikoprotein sehingga sangat minimal menembus sawar darah otak → **sedikit atau tidak ada efek sedasi (non-sedasi)** dibandingkan Generasi 1 yang sangat lipofilik dan menimbulkan kantuk berat.\r\n     - *Durasi Kerja:* Generasi 2 memiliki durasi kerja **lebih panjang (>24 jam)** sehingga cukup diminum 1 kali sehari, sedangkan Generasi 1 berdurasi pendek (4–6 jam).\r\n   - **Mnemonik Slide 29:**\r\n     - Generasi Baru: **\"CETI-LEVO, LORA-DES\"** → **Cetirizine**, **Levocetirizine**, **Loratadine**, **Desloratadine**.\r\n     - Generasi Lama: **\"TRIMa PROMo SI CTM\"** → **Trimeprazin**, **Prometazin**, **Siklizin**, **CTM (Klorfeniramin maleat)**.\r\n   - **Penulisan Resep Standar (Slide 30):**\r\n     ```text\r\n     dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Cetirizine tab 10 mg No. VII\r\n        S. 1 d.d. tab 1 malam hari\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi\r\n     ```\r\n\r\n---",
       "resep_teks": "dr. Gumbreg, Sp.P\r\n     SIP: GIA027001\r\n     Jl. Mersi Timur No. 1, Purwokerto\r\n     Purwokerto, 30 September 2026\r\n\r\n     R/ Cetirizine tab 10 mg No. VII\r\n        S. 1 d.d. tab 1 malam hari\r\n        ---------------------------------- (paraf)\r\n\r\n     Pro   : Ny. X (25 tahun)\r\n     Alamat: Mersi",
       "tips_klinis": "",
@@ -4092,7 +4233,9 @@
         "generasi",
         "ke-2"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi ke-2 (H1-bloker perifer non-sedatif); Bersifat lipofobik sehingga sulit menembus sawar darah otak → tidak menimbulkan efek sedasi (non-drowsy) dibanding CTM.",
+      "jawaban_b": "R/ Cetirizine tab 10 mg No. VII S.1.d.d tab 1 malam hari ------------------------- (paraf)"
     },
     {
       "id": 271,
@@ -4100,9 +4243,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "LORATADINE TABLET (ANTIHISTAMIN GENERASI KE-2)",
       "prompt": "[Tablet Loratadine]\n\na. Jelaskan mekanisme aksi molekuler Loratadine serta keuntungannya dalam menjaga produktivitas kerja/belajar harian pasien asma atopik!\n\nb. Sebutkan golongan obatnya, metabolit aktifnya, aturan dosis harian dewasa, serta contoh obat antihistamin generasi pertama yang sering menimbulkan sedasi!",
-      "stimulus": "Tablet Loratadine",
-      "soal_a": "Jelaskan mekanisme aksi molekuler Loratadine serta keuntungannya dalam menjaga produktivitas kerja/belajar harian pasien asma atopik!",
-      "soal_b": "Sebutkan golongan obatnya, metabolit aktifnya, aturan dosis harian dewasa, serta contoh obat antihistamin generasi pertama yang sering menimbulkan sedasi!",
+      "stimulus": "Diberikan preparat Loratadine Tablet",
+      "soal_a": "Golongan obat dan metabolit aktifnya?",
+      "soal_b": "Sebutkan 2 contoh obat lain segolongan dan aturan dosis harian dewasa!",
       "diagnosis": "LORATADINE TABLET (ANTIHISTAMIN GENERASI KE-2)",
       "organ": "Saluran Napas",
       "sifat": "Antihistamin H1",
@@ -4124,7 +4267,7 @@
         "**Golongan:** Antihistamin H1",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Aksi Molekuler & Keuntungan:**\r\n   - **Mekanisme Aksi:** Mengikat secara selektif reseptor histamin H₁ perifer, memblokade kaskade intraseluler fosfolipase C/IP3 yang dipicu histamin, sehingga meredakan gejala pruritus, bersin, dan rinorea akibat alergi.\r\n   - **Keuntungan Produktivitas:** Loratadine tidak menembus sawar darah otak pada dosis terapeutik dan tidak memiliki aktivitas antikolinergik sentral yang bermakna, sehingga **tidak menimbulkan rasa kantuk (non-sedatif)**, tidak mengganggu konsentrasi berkendara, fungsi kognitif, maupun aktivitas harian.\r\nb. **Golongan, Metabolit, Dosis, & Pembanding Generasi 1:**\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi ke-2 (H1-bloker non-sedatif); Metabolit aktif: Desloratadine.\nb. Contoh sejenis: Cetirizine, Fexofenadine, Levocetirizine; Dosis: Tablet 10 mg 1 kali sehari.",
       "jawaban_lengkap": "a. **Mekanisme Aksi Molekuler & Keuntungan:**\r\n   - **Mekanisme Aksi:** Mengikat secara selektif reseptor histamin H₁ perifer, memblokade kaskade intraseluler fosfolipase C/IP3 yang dipicu histamin, sehingga meredakan gejala pruritus, bersin, dan rinorea akibat alergi.\r\n   - **Keuntungan Produktivitas:** Loratadine tidak menembus sawar darah otak pada dosis terapeutik dan tidak memiliki aktivitas antikolinergik sentral yang bermakna, sehingga **tidak menimbulkan rasa kantuk (non-sedatif)**, tidak mengganggu konsentrasi berkendara, fungsi kognitif, maupun aktivitas harian.\r\nb. **Golongan, Metabolit, Dosis, & Pembanding Generasi 1:**\r\n   - **Golongan:** **Antihistamin Generasi ke-2 (Golongan Baru)**.\r\n   - **Metabolit Aktif:** Dimetabolisme di hepar menjadi **Desloratadine**.\r\n   - **Dosis Harian Dewasa:** Tablet **10 mg**, diminum **1 kali sehari**.\r\n   - **Contoh Antihistamin Generasi 1 (Sedatif):** Klorfeniramin maleat (CTM), Difenhidramin, Dimenhidrinat, Prometazin, Trimeprazin, Siklizin.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4144,7 +4287,9 @@
         "generasi",
         "ke-2"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi ke-2 (H1-bloker non-sedatif); Metabolit aktif: Desloratadine.",
+      "jawaban_b": "Contoh sejenis: Cetirizine, Fexofenadine, Levocetirizine; Dosis: Tablet 10 mg 1 kali sehari."
     },
     {
       "id": 272,
@@ -4152,9 +4297,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KLORFENIRAMIN MALEAT (CTM) & DIFENHIDRAMIN (ANTIHISTAMIN GENERASI 1)",
       "prompt": "[Tablet CTM / Difenhidramin Injeksi]\n\na. Jelaskan mekanisme kerja CTM/Difenhidramin, mengapa obat ini menyebabkan kantuk hebat (sedasi), serta sebutkan efek samping antikolinergiknya!\n\nb. Sebutkan golongan obatnya, mnemonik obat segolongannya dari Slide 29, serta indikasi klinis di mana efek sedatif obat ini justru dimanfaatkan!",
-      "stimulus": "Tablet CTM / Difenhidramin Injeksi",
-      "soal_a": "Jelaskan mekanisme kerja CTM/Difenhidramin, mengapa obat ini menyebabkan kantuk hebat (sedasi), serta sebutkan efek samping antikolinergiknya!",
-      "soal_b": "Sebutkan golongan obatnya, mnemonik obat segolongannya dari Slide 29, serta indikasi klinis di mana efek sedatif obat ini justru dimanfaatkan!",
+      "stimulus": "Diberikan preparat CTM (Klorfeniramin Maleat) Tablet",
+      "soal_a": "Golongan obat dan mengapa obat ini memicu efek sedasi / kantuk berat?",
+      "soal_b": "2 Efek samping antikolinergiknya dan resep obat jika diminum 3 kali sehari selama 3 hari?",
       "diagnosis": "KLORFENIRAMIN MALEAT (CTM) & DIFENHIDRAMIN (ANTIHISTAMIN GENERASI 1)",
       "organ": "Saluran Napas",
       "sifat": "Antihistamin H1",
@@ -4174,7 +4319,7 @@
         "**Golongan:** Antihistamin H1",
         "**Mnemonik:** a. Mekanisme Kerja, Dasar Molekuler Sedasi, & Efek Antikolinergik:"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja, Dasar Molekuler Sedasi, & Efek Antikolinergik:**\r\n   - **Mekanisme Kerja:** Antagonis kompetitif reseptor histamin H₁ generasi pertama.\r\n   - **Penyebab Sedasi Hebat:** Molekul obat bersifat sangat lipofilik dengan berat molekul rendah, sehingga **sangat mudah menembus sawar darah otak (BBB)** dan memblokade reseptor H₁ di sistem saraf pusat (histamin di SSP berfungsi mempertahankan status kewaspadaan/arousal), menimbulkan penekanan SSP berupa **rasa kantuk berat (sedasi), letargi, dan penurunan refleks motorik**.\r\n   - **Efek Samping Antikolinergik:** Memiliki afinitas tambahan terhadap reseptor muskarinik perifer, memicu **mulut kering, penglihatan kabur (*blurred vision*), retensi urin, dan konstipasi**.\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi ke-1 (H1-bloker sedatif); Sangat lipofilik sehingga mudah menembus sawar darah otak (BBB) dan memblok reseptor H₁ di sistem saraf pusat (menekan kewaspadaan/arousal).\nb. Efek samping antikolinergik: Mulut kering dan retensi urin/konstipasi; Resep: R/ CTM tab 4 mg No. IX S.3.d.d tab 1 p.c. ------------------------- (paraf)",
       "jawaban_lengkap": "a. **Mekanisme Kerja, Dasar Molekuler Sedasi, & Efek Antikolinergik:**\r\n   - **Mekanisme Kerja:** Antagonis kompetitif reseptor histamin H₁ generasi pertama.\r\n   - **Penyebab Sedasi Hebat:** Molekul obat bersifat sangat lipofilik dengan berat molekul rendah, sehingga **sangat mudah menembus sawar darah otak (BBB)** dan memblokade reseptor H₁ di sistem saraf pusat (histamin di SSP berfungsi mempertahankan status kewaspadaan/arousal), menimbulkan penekanan SSP berupa **rasa kantuk berat (sedasi), letargi, dan penurunan refleks motorik**.\r\n   - **Efek Samping Antikolinergik:** Memiliki afinitas tambahan terhadap reseptor muskarinik perifer, memicu **mulut kering, penglihatan kabur (*blurred vision*), retensi urin, dan konstipasi**.\r\nb. **Golongan, Mnemonik Slide 29, & Pemanfaatan Klinis Efek Sedatif:**\r\n   - **Golongan:** **Antihistamin Generasi ke-1 (Golongan Lama / Sedatif)**.\r\n   - **Mnemonik Slide 29:** **\"TRIMa PROMo SI CTM\"** (*Trimeprazin, Prometazin, Siklizin, CTM*).\r\n   - **Pemanfaatan Efek Sedatif:** Sangat bermanfaat digunakan pada pasien alergi atau urtikaria/asma dengan pruritus hebat pada malam hari yang menyebabkan insomnia/gangguan tidur, serta Difenhidramin sering digunakan untuk mengatasi *motion sickness* (mabuk perjalanan) dan reaksi ekstrapiramidal akibat antipsikotik.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4193,7 +4338,9 @@
         "difenhidramin",
         "generasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi ke-1 (H1-bloker sedatif); Sangat lipofilik sehingga mudah menembus sawar darah otak (BBB) dan memblok reseptor H₁ di sistem saraf pusat (menekan kewaspadaan/arousal).",
+      "jawaban_b": "Efek samping antikolinergik: Mulut kering dan retensi urin/konstipasi; Resep: R/ CTM tab 4 mg No. IX S.3.d.d tab 1 p.c. ------------------------- (paraf)"
     },
     {
       "id": 273,
@@ -4201,9 +4348,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "RESEP KOMBINASI PARIPURNA (FARMACASE SLIDE 2 & 30)",
       "prompt": "[Lembar Resep Lengkap Farmacase Asma Alergi]\n\na. Berdasarkan kasus Farmacase (Slide 2–3 & 30), seorang wanita 25 tahun menderita asma bronkial dengan komponen rinitis alergi. Tuliskan lembar resep lengkap 3 obat rasional (Pelega Inhaler, Pengontrol Inhaler, dan Antihistamin Oral) dengan format kaidah kedokteran yang sempurna!\n\nb. Jelaskan peran farmakologi masing-masing obat dalam resep tersebut, serta sebutkan instruksi dan edukasi penting yang wajib disampaikan dokter kepada pasien!",
-      "stimulus": "Lembar Resep Lengkap Farmacase Asma Alergi",
-      "soal_a": "Berdasarkan kasus Farmacase (Slide 2–3 & 30), seorang wanita 25 tahun menderita asma bronkial dengan komponen rinitis alergi. Tuliskan lembar resep lengkap 3 obat rasional (Pelega Inhaler, Pengontrol Inhaler, dan Antihistamin Oral) dengan format kaidah kedokteran yang sempurna!",
-      "soal_b": "Jelaskan peran farmakologi masing-masing obat dalam resep tersebut, serta sebutkan instruksi dan edukasi penting yang wajib disampaikan dokter kepada pasien!",
+      "stimulus": "Diberikan preparat Salbutamol Tablet",
+      "soal_a": "Golongan obat dan mekanisme kerjanya?",
+      "soal_b": "Resep obat jika diberikan tiap 6 jam sekali selama 5 hari?",
       "diagnosis": "RESEP KOMBINASI PARIPURNA (FARMACASE SLIDE 2 & 30)",
       "organ": "Saluran Napas",
       "sifat": "RESEP KOMBINASI PARIPURNA (FARMACASE SLIDE 2 & 30)",
@@ -4229,7 +4376,7 @@
         "**Golongan:** RESEP KOMBINASI PARIPURNA (FARMACASE SLIDE 2 & 30)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Penulisan Resep Lengkap Sesuai Kaidah Kedokteran (Slide 30):**\r\n   ```text\r\n   dr. Gumbreg, Sp.P\r\n   SIP: GIA027001\r",
+      "jawaban_ringkas": "a. Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).\nb. R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)",
       "jawaban_lengkap": "a. **Penulisan Resep Lengkap Sesuai Kaidah Kedokteran (Slide 30):**\r\n   ```text\r\n   dr. Gumbreg, Sp.P\r\n   SIP: GIA027001\r\n   Jl. Mersi Timur No. 1, Purwokerto\r\n   Telp: 08123456789\r\n   ============================================================\r\n                                  Purwokerto, 30 September 2026\r\n\r\n   R/ Salbutamol inhaler 100 mcg Fl. I\r\n      S. inhal. puff 1-2 p.r.n.\r\n      ----------------------------------------------- (paraf)\r\n\r\n   R/ Budesonide inhaler 200 mcg Fl. I\r\n      S. 2 d.d. puff 1\r\n      ----------------------------------------------- (paraf)\r\n\r\n   R/ Cetirizine tab 10 mg No. VII\r\n      S. 1 d.d. tab 1 malam hari\r\n      ----------------------------------------------- (paraf)\r\n\r\n   Pro   : Ny. X\r\n   Usia  : 25 tahun\r\n   Alamat: Mersi\r\n   ```\r\n\r\nb. **Peran Farmakologis Masing-Masing Obat & Edukasi Pasien:**\r\n   - **Peran Farmakologis Obat:**\r\n     1. **Salbutamol Inhaler (SABA):** Sebagai **Reliever (Pelega)**, bekerja cepat merelaksasi otot bronkus hanya saat timbul serangan sesak (*pro re nata* / jika perlu).\r\n     2. **Budesonide Inhaler (ICS):** Sebagai **Controller (Pengontrol)**, menekan inflamasi kronis saluran napas, mencegah kekambuhan dan remodeling paru; wajib dihirup teratur 2 kali sehari (tiap 12 jam) meskipun tidak ada gejala sesak.\r\n     3. **Cetirizine Tablet (Antihistamin Gen-2):** Mengontrol rinitis alergi penyerta (bersin berulang, hidung berair dan gatal) yang menjadi faktor pencetus serangan asma; diminum 1 kali sehari malam hari.\r\n   - **Instruksi & Edukasi Wajib Dokter kepada Pasien:**\r\n     1. **Kumur-Buang (*Rinse and Spit*):** Setiap kali selesai menghirup Budesonide, pasien **wajib berkumur dengan air bersih lalu membuang airnya** untuk mencegah jamur mulut (kandidiasis orofaring) dan suara serak (disfonia).\r\n     2. **Teknik Inhalasi MDI:** Buka tutup, kocok inhaler, hembuskan napas maksimal, letakkan mouthpiece di antara bibir rapat, tekan canister sambil menarik napas dalam lambat, tahan napas selama 10 detik, lalu hembuskan perlahan.\r\n     3. **Penghindaran Pemicu (*Trigger Avoidance*):** Edukasi untuk membersihkan debu rumah menggunakan lap basah/masker, mencuci sprei secara rutin dengan air hangat, dan menghindari paparan alergen.\r\n\r\n---\r\n\r\n## RINGKASAN CEPAT UJIAN IDENTIFIKASI MEJA BLOK 3.2: PREPARAT ASMA\r\n\r\n| No | Preparat Obat | Golongan | Subgolongan | Peran Klinis | Mekanisme Utama | Efek Samping Khas Patognomonik |\r\n|:---:|:---|:---|:---|:---:|:---|:---|\r\n| 1 | **Salbutamol (Albuterol)** | Simpatomimetik | SABA | **Reliever** | Agonis selektif β₂ → ↑ cAMP → bronkodilatasi cepat | Tremor halus jari, takikardia, hipokalemia |\r\n| 2 | **Terbutalin** | Simpatomimetik | SABA | **Reliever** | Agonis selektif β₂ → ↑ cAMP | Tremor, palpitasi, hipokalemia |\r\n| 3 | **Salmeterol** | Simpatomimetik | LABA | **Controller** | Agonis persisten β₂ durasi >12 jam (lipofilik) | Takikardia; **Fatal jika monoterapi** |\r\n| 4 | **Formoterol** | Simpatomimetik | LABA | **Controller** / SMART | Agonis β₂ onset cepat + durasi lama >12 jam | Takikardia; kontraindikasi monoterapi |\r\n| 5 | **Teofilin** | Metilxantin | Xantin sintetik | Reliever/Add-on | Inhibisi PDE (↑ cAMP) & antagonis adenosin | **Indeks terapi sempit**, mual-muntah, aritmia, kejang |\r\n| 6 | **Teobromin & Kafein** | Metilxantin | Xantin alami | Stimulan / Add-on | Inhibisi PDE & antagonis adenosin | Stimulasi SSP (kafein), takikardia, diuresis |\r\n| 7 | **Ipratropium Bromida** | Antimuskarinik | SAMA | **Reliever add-on** | Blokade reseptor muskarinik M3 → ↓ bronkokonstriksi | Mulut kering, retensi urin, peningkatan TIO |\r\n| 8 | **Tiotropium Bromida** | Antimuskarinik | LAMA | **Controller add-on** | Disosiasi lambat reseptor M3 (durasi >24 jam) | Mulut kering, retensi urin, konstipasi |\r\n| 9 | **Budesonide** | Kortikosteroid | ICS | **Controller utama** | Antiinflamasi genomik via reseptor glukokortikoid | **Kandidiasis oral**, **disfonia** (kumur-buang!) |\r\n| 10 | **Beklometason** | Kortikosteroid | ICS | **Controller utama** | Menekan transkripsi sitokin inflamasi & edema | Kandidiasis orofaring, suara serak, batuk |\r\n| 11 | **Prednison** | Kortikosteroid | Sistemik oral | **Reliever burst** | Menekan inflamasi berat eksaserbasi (hanya jangka pendek) | Supresi aksis HPA, osteoporosis, diabetes, hipertensi |\r\n| 12 | **Metilprednisolon** | Kortikosteroid | Sistemik IV/oral | **Kedaruratan asma** | Supresi inflamasi masif (onset 4–6 jam pada status asmatikus) | Supresi adrenal, krisis adrenal bila stop mendadak |\r\n| 13 | **Montelukast** | Antiinflamasi | LTRA | **Controller oral** | Antagonis reseptor CysLT₁ (oral malam hari) | Sakit kepala, ISPA, neuropsikiatri |\r\n| 14 | **Zafirlukast** | Antiinflamasi | LTRA | **Controller oral** | Antagonis reseptor CysLT₁ (oral 2x sehari) | Hepatotoksik, KI anak <12 tahun |\r\n| 15 | **Zileuton** | Antiinflamasi | 5-LOX Inhibitor | **Controller oral** | Menghambat enzim 5-Lipooksigenase (hulu sintesis) | Toksisitas hepar (pantau ALT/AST) |\r\n| 16 | **Omalizumab** | Agen Biologik | Anti-IgE mAb | **Controller biologik** | Mengikat IgE bebas → cegah ikatan ke Fc\\varepsilon RI mast | Nyeri/memar bekas suntik, syok anafilaksis |\r\n| 17 | **Cetirizine** | Antihistamin | Generasi 2 | Pengontrol alergi | Antagonis reseptor H₁ perifer (non-sedasi) | Mulut kering ringan, relatif non-sedatif |\r\n| 18 | **Loratadine** | Antihistamin | Generasi 2 | Pengontrol alergi | Antagonis reseptor H₁ perifer non-sedatif | Sakit kepala ringan, aman tidak mengantuk |\r\n| 19 | **CTM / Difenhidramin** | Antihistamin | Generasi 1 | Simtomatik pruritus | Antagonis H₁ menembus sawar darah otak | **Sedasi / kantuk berat**, efek antikolinergik |\r\n| 20 | **Kombinasi 3 Obat** | Resep Lengkap | SABA+ICS+AH2 | Komprehensif | SABA (reliever) + ICS (controller) + Cetirizine (alergi) | Sinergis atasi asma dan rinitis alergi |\r\n\r\n\r\n---\r\n\r\n## 2.2. Obat Anti Tuberkulosis (OAT Lini 1 & 2, Paduan KDT/FDC, Resistensi TB)\r\n\r\n# BANK SOAL-JAWAB IDENTIFIKASI FARMAKOLOGI (OSPE/MEJA) BLOK 3.2: OBAT ANTI-TUBERKULOSIS (OAT)\r\n**Sumber Materi:** Slide Presentasi Praktikum Farmakologi FK Unsoed - P2S2 OAT (Slide 1–22)  \r\n**Format:** 100% Mengikuti Algoritma Stasi Ujian Identifikasi Meja / OSPE Blok 3.2\r\n\r\n---\r\n\r\n## DAFTAR STASI / NOMOR MEJA UJIAN\r\n\r\n- **STASI 1:** [PREPARAT: Kapsul / Tablet Rifampisin] [PRIORITAS TINGGI]\r\n- **STASI 2:** [PREPARAT: Tablet Isoniazid / INH] [PRIORITAS TINGGI]\r\n- **STASI 3:** [PREPARAT: Tablet Pirazinamid] [PRIORITAS TINGGI]\r\n- **STASI 4:** [PREPARAT: Tablet Etambutol] [PRIORITAS TINGGI]\r\n- **STASI 5:** [PREPARAT: Vial Bubuk Injeksi Streptomisin] [PRIORITAS TINGGI]\r\n- **STASI 6:** [PREPARAT: Tablet Kombinasi Dosis Tetap / Fixed Dose Combination (4KDT / 4 FDC: RHZE)] [PRIORITAS TINGGI]\r\n- **STASI 7:** [PREPARAT: Tablet Kombinasi Dosis Tetap Fase Lanjutan (2KDT / 2 FDC: RH)] [PRIORITAS TINGGI]\r\n- **STASI 8:** [PREPARAT: Paduan Regimen OAT Kategori 1 (Kasus Baru: 2RHZE / 4R3H3 atau 4RH)] [PRIORITAS TINGGI]\r\n- **STASI 9:** [PREPARAT: Paduan Regimen OAT Kategori 2 (Kasus Relaps / Retreatment: 2RHZES / 1RHZE / 5R3H3E3)] [PRIORITAS TINGGI]\r\n- **STASI 10:** [PREPARAT: Paduan Regimen OAT TB Anak (2RHZ / 4RH atau 2RHZES / 4-10RH)] [PRIORITAS TINGGI]\r\n- **STASI 11:** [PREPARAT: Tablet Bedaquiline (OAT Lini 2 - Grup A / Core Drug)] [PRIORITAS TINGGI]\r\n- **STASI 12:** [PREPARAT: Tablet Linezolid (OAT Lini 2 - Grup A / Core Drug)] [PRIORITAS TINGGI]\r\n- **STASI 13:** [PREPARAT: Tablet Fluorokuinolon Respirasi: Levofloksasin & Moksifloksasin (OAT Lini 2 - Grup A)] [PRIORITAS TINGGI]\r\n- **STASI 14:** [PREPARAT: Tablet Sikloserin (Cycloserine) & Tablet Klofazimin (Clofazimine) (OAT Lini 2 - Grup B / Add-on Drugs)]\r\n- **STASI 15:** [PREPARAT: OAT Lini 2 Grup C / Alternatif (Etionamid, Delamanid, Amikasin, Kanamisin, Kapreomisin)]\r\n- **STASI 16:** [PREPARAT: Klasifikasi Resistensi TB (TB Nonresisten, MR, PR, MDR, XDR, RR)] [PRIORITAS TINGGI]\r\n- **STASI 17:** [PREPARAT: Obat Simtomatik TB Paru (Ambroksol, Dextromethorphan, OBH Sirup)]\r\n- **STASI 18:** [PREPARAT: Lembar Resep Fase Intensif Regimen Individual (Rifampisin, INH, Pirazinamid, Etambutol)] [PRIORITAS TINGGI]\r\n- **STASI 19:** [PREPARAT: Lembar Resep Fase Intensif FDC / 4KDT Dewasa Lengkap] [PRIORITAS TINGGI]\r\n- **STASI 20:** [PREPARAT: Patofisiologi & Lesi Primer/Sekunder TB (Fokus Ghon & Kompleks Ghon)]\r\n\r\n---",
       "resep_teks": "dr. Gumbreg, Sp.P\r\n   SIP: GIA027001\r\n   Jl. Mersi Timur No. 1, Purwokerto\r\n   Telp: 08123456789\r\n   ============================================================\r\n                                  Purwokerto, 30 September 2026\r\n\r\n   R/ Salbutamol inhaler 100 mcg Fl. I\r\n      S. inhal. puff 1-2 p.r.n.\r\n      ----------------------------------------------- (paraf)\r\n\r\n   R/ Budesonide inhaler 200 mcg Fl. I\r\n      S. 2 d.d. puff 1\r\n      ----------------------------------------------- (paraf)\r\n\r\n   R/ Cetirizine tab 10 mg No. VII\r\n      S. 1 d.d. tab 1 malam hari\r\n      ----------------------------------------------- (paraf)\r\n\r\n   Pro   : Ny. X\r\n   Usia  : 25 tahun\r\n   Alamat: Mersi",
       "tips_klinis": "",
@@ -4255,7 +4402,9 @@
         "farmacase",
         "slide"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Simpatomimetik SABA (Short-Acting β₂ Agonist); Agonis selektif reseptor β₂-adrenergik → ↑ cAMP → relaksasi otot polos bronkus (bronkodilator/reliever).",
+      "jawaban_b": "R/ Salbutamol tab 2 mg No. XX S.4.d.d tab 1 p.c. ------------------------- (paraf)"
     },
     {
       "id": 274,
@@ -4263,9 +4412,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Kapsul / Tablet Rifampisin",
       "prompt": "[Rifampisin]\n\na. Sebutkan mekanisme kerja molekuler, enzim target spesifik, dan sifat daya bunuh kumannya (bakterisid vs bakteriostatik)!\n\nb. Sebutkan golongan obat, efek samping patognomonik beserta edukasinya, pengaruh terhadap metabolisme obat lain (induksi enzim sitokrom P450), aturan waktu konsumsi, sediaan, serta dosis maksimalnya!",
-      "stimulus": "Rifampisin",
-      "soal_a": "Sebutkan mekanisme kerja molekuler, enzim target spesifik, dan sifat daya bunuh kumannya (bakterisid vs bakteriostatik)!",
-      "soal_b": "Sebutkan golongan obat, efek samping patognomonik beserta edukasinya, pengaruh terhadap metabolisme obat lain (induksi enzim sitokrom P450), aturan waktu konsumsi, sediaan, serta dosis maksimalnya!",
+      "stimulus": "Diberikan preparat Rifampisin",
+      "soal_a": "Mekanisme kerja obat?",
+      "soal_b": "Resep dengan dosis 1x sehari 1 tablet selama 7 hari?",
       "diagnosis": "PREPARAT: Kapsul / Tablet Rifampisin",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4289,7 +4438,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. \r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Membentuk kompleks yang stabil dengan enzim **DNA-dependent RNA Polymerase** kuman *Mycobacterium tuberculosis* → menghambat inisiasi pembentukan rantai pada sintesis RNA → menghambat sintesis RNA bakteri.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat (efektif membunuh kuman pada populasi ekstraseluler maupun intraseluler).\r\nb. \r",
+      "jawaban_ringkas": "a. Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).\nb. R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)",
       "jawaban_lengkap": "a. \r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Membentuk kompleks yang stabil dengan enzim **DNA-dependent RNA Polymerase** kuman *Mycobacterium tuberculosis* → menghambat inisiasi pembentukan rantai pada sintesis RNA → menghambat sintesis RNA bakteri.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat (efektif membunuh kuman pada populasi ekstraseluler maupun intraseluler).\r\n\r\nb. \r\n- **Golongan Obat:** Rifamisin (*Rifamycins*) / OAT Lini Pertama.\r\n- **Efek Samping Patognomonik & Edukasi:** Menyebabkan cairan tubuh (urin, keringat, air mata, dahak) berwarna **merah hingga oranye kemerahan**. Edukasi pasien bahwa hal ini bersifat tidak berbahaya dan tidak perlu menghentikan obat (hati-hati bagi pemakai lensa kontak lunak dapat terwarnai permanen). Efek samping lain: hepatotoksisitas, gangguan saluran cerna, dan reaksi hipersensitivitas (*flu-like syndrome* terutama pada dosis intermiten tinggi).\r\n- **Induksi Enzim:** Merupakan induktor poten enzim **Sitokrom P450 (khususnya CYP3A4)** di hati → mempercepat metabolisme obat lain (misal: kontrasepsi oral/estrogen, warfarin, antiretroviral/PI, antidiabetes oral) sehingga kadar plasma obat-obat tersebut menurun (risiko kegagalan kontrasepsi).\r\n- **Aturan Waktu Konsumsi:** Diminum dalam keadaan perut kosong (**a.c. / *ante coenam***), yaitu **1 jam sebelum makan atau 2 jam setelah makan**, karena makanan berlemak nyata menurunkan bioavailabilitas dan absorpsi rifampisin.\r\n- **Bentuk Sediaan Obat (BSO):** Kapsul 150 mg dan 300 mg; Tablet 450 mg dan 600 mg; Suspensi 100 mg/5 mL.\r\n- **Dosis:** Dewasa: 10 mg/kgBB/hari (**Dosis Maksimal: 600 mg/hari**). Anak: 10-20 mg/kgBB/hari.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4311,7 +4460,9 @@
         "tablet",
         "rifampisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).",
+      "jawaban_b": "R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)"
     },
     {
       "id": 275,
@@ -4319,9 +4470,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Isoniazid / INH",
       "prompt": "[Isoniazid / INH]\n\na. Sebutkan mekanisme kerja molekuler, enzim aktivator (KatG), enzim target intraseluler, komponen dinding sel yang dihambat, dan sifat daya bunuhnya!\n\nb. Sebutkan efek samping patognomonik neurologis beserta terapi pencegahannya (vitamin pendamping), efek samping hepatotoksik, sediaan, dan dosis maksimalnya!",
-      "stimulus": "Isoniazid / INH",
-      "soal_a": "Sebutkan mekanisme kerja molekuler, enzim aktivator (KatG), enzim target intraseluler, komponen dinding sel yang dihambat, dan sifat daya bunuhnya!",
-      "soal_b": "Sebutkan efek samping patognomonik neurologis beserta terapi pencegahannya (vitamin pendamping), efek samping hepatotoksik, sediaan, dan dosis maksimalnya!",
+      "stimulus": "Diberikan preparat Isoniazid / INH",
+      "soal_a": "Dosis maksimal obat?",
+      "soal_b": "Efek samping utama dan terapi pencegahannya?",
       "diagnosis": "PREPARAT: Tablet Isoniazid / INH",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4345,7 +4496,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. \r\n- **Mekanisme Kerja Molekuler:** Isoniazid adalah prodrug yang diaktifkan oleh enzim katalase-peroksidase mikobakteri (**KatG**) menjadi radikal isonikotinoil. Radikal ini berikatan dengan NADH membentuk adduct yang menghambat enzim **InhA (enoyl-ACP reductase)** dan **KasA (β-ketoacyl-ACP synthase)** → **menghambat biosintesis asam mikolat** (*mycolic acid*) pada polisakarida dinding sel bakteri → integritas dinding sel rusak dan menghilangkan sifat tahan asam kuman.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** sangat kuat terhadap basil yang aktif membelah (*rapidly dividing bacilli*), dan bakteriostatik terhadap basil dorman.\r\nb. \r",
+      "jawaban_ringkas": "a. Dewasa: 5 mg/kgBB/hari (dosis maksimal: 300 mg/hari).\nb. Neuropati perifer (kebas/kesemutan) → dicegah dengan Vitamin B6 (Piridoksin) 10–25 mg/hari; serta hepatotoksisitas.",
       "jawaban_lengkap": "a. \r\n- **Mekanisme Kerja Molekuler:** Isoniazid adalah prodrug yang diaktifkan oleh enzim katalase-peroksidase mikobakteri (**KatG**) menjadi radikal isonikotinoil. Radikal ini berikatan dengan NADH membentuk adduct yang menghambat enzim **InhA (enoyl-ACP reductase)** dan **KasA (β-ketoacyl-ACP synthase)** → **menghambat biosintesis asam mikolat** (*mycolic acid*) pada polisakarida dinding sel bakteri → integritas dinding sel rusak dan menghilangkan sifat tahan asam kuman.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** sangat kuat terhadap basil yang aktif membelah (*rapidly dividing bacilli*), dan bakteriostatik terhadap basil dorman.\r\n\r\nb. \r\n- **Efek Samping Patognomonik Neurologis & Pencegahan:** Menyebabkan **neuropati perifer** (parestesia, kebas, kesemutan pada ujung ekstremitas) akibat antagonisme kompetitif terhadap vitamin B6 (INH mempercepat ekskresi piridoksin renal dan menghambat enzim piridoksal fosfokinase). Solusi/Pencegahan: Berikan ko-preskripsi **Piridoksin (Vitamin B6) 10–25 mg/hari** (atau 50 mg/hari pada kasus risiko tinggi seperti diabetes, malnutrisi, kehamilan, uremia, dan HIV).\r\n- **Efek Samping Lain:** **Hepatotoksisitas** (peningkatan enzim transaminase hati, ikterus, hepatitis akibat metabolit asetilhidrazin; risiko meningkat pada peminum alkohol atau fenotipe *slow acetylator*), reaksi hematologik (anemia, agranulositosis, trombositopenia), serta ruam dan demam.\r\n- **Bentuk Sediaan Obat (BSO):** Tablet 50 mg, 100 mg, 300 mg, dan 400 mg; Sirup 10 mg/mL.\r\n- **Dosis:** Dewasa: 5 mg/kgBB/hari (**Dosis Maksimal: 300 mg/hari**). Anak: 10-20 mg/kgBB/hari (maksimal 300 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4367,7 +4518,9 @@
         "isoniazid",
         "inh"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Dewasa: 5 mg/kgBB/hari (dosis maksimal: 300 mg/hari).",
+      "jawaban_b": "Neuropati perifer (kebas/kesemutan) → dicegah dengan Vitamin B6 (Piridoksin) 10–25 mg/hari; serta hepatotoksisitas."
     },
     {
       "id": 276,
@@ -4375,9 +4528,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Pirazinamid",
       "prompt": "[Pirazinamid]\n\na. Sebutkan mekanisme kerja molekuler, bentuk aktif (asam pirazinoat), lingkungan pH optimal kerjanya, target sintesis lipid, dan sifat daya bunuhnya!\n\nb. Sebutkan golongan obat, efek samping patognomonik metabolik/artikular beserta tatalaksananya, kontraindikasi/keamanan pada kehamilan, sediaan, dan dosis maksimalnya!",
-      "stimulus": "Pirazinamid",
-      "soal_a": "Sebutkan mekanisme kerja molekuler, bentuk aktif (asam pirazinoat), lingkungan pH optimal kerjanya, target sintesis lipid, dan sifat daya bunuhnya!",
-      "soal_b": "Sebutkan golongan obat, efek samping patognomonik metabolik/artikular beserta tatalaksananya, kontraindikasi/keamanan pada kehamilan, sediaan, dan dosis maksimalnya!",
+      "stimulus": "Diberikan preparat Pirazinamid",
+      "soal_a": "Mekanisme kerja obat?",
+      "soal_b": "Resep Pirazinamid jika diminum 3 kali sehari selama 1 minggu?",
       "diagnosis": "PREPARAT: Tablet Pirazinamid",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4401,7 +4554,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. \r\n- **Mekanisme Kerja Molekuler:** Merupakan prodrug yang masuk ke dalam kuman TB dan diubah oleh enzim mikobakteri pirazinamidase (*pyrazinamidase / nicotinamidase*, gen *pncA*) menjadi metabolit aktif **asam pirazinoat (POA)**. POA terakumulasi dalam sitoplasma dan mengganggu gradien potensial membran sel, transport membran, serta **menghambat pembentukan asam lemak mikrobakteri (FAS I / Fatty Acid Synthase I)** yang terlibat dalam biosintesis rantai pendek prekursor **asam mikolat**.\r\n- **Lingkungan pH Optimal:** Bekerja sangat optimal pada **suasana asam (pH rendah / acidic milieu)** di dalam fagosom makrofag atau jaringan nekrosis perkijuan (*caseous necrosis*).\r\n- **Sifat Daya Bunuh:** **Bakterisidal** (sterilizing agent unggulan untuk membunuh basil semidorman intraseluler fagosom makrofag pada fase awal pengobatan).\r",
+      "jawaban_ringkas": "a. Dikonversi enzim pirazinamidase kuman jadi asam pirazinoat (POA, aktif pada pH asam) → menghambat sintesis asam lemak/asam mikolat kuman.\nb. R/ Pirazinamid tab 500 mg No. XXI S.3.d.d tab 1 p.c. (habiskan) ----------------------------- (paraf)",
       "jawaban_lengkap": "a. \r\n- **Mekanisme Kerja Molekuler:** Merupakan prodrug yang masuk ke dalam kuman TB dan diubah oleh enzim mikobakteri pirazinamidase (*pyrazinamidase / nicotinamidase*, gen *pncA*) menjadi metabolit aktif **asam pirazinoat (POA)**. POA terakumulasi dalam sitoplasma dan mengganggu gradien potensial membran sel, transport membran, serta **menghambat pembentukan asam lemak mikrobakteri (FAS I / Fatty Acid Synthase I)** yang terlibat dalam biosintesis rantai pendek prekursor **asam mikolat**.\r\n- **Lingkungan pH Optimal:** Bekerja sangat optimal pada **suasana asam (pH rendah / acidic milieu)** di dalam fagosom makrofag atau jaringan nekrosis perkijuan (*caseous necrosis*).\r\n- **Sifat Daya Bunuh:** **Bakterisidal** (sterilizing agent unggulan untuk membunuh basil semidorman intraseluler fagosom makrofag pada fase awal pengobatan).\r\n\r\nb. \r\n- **Golongan Obat:** Analog Pirazinamid / OAT Lini Pertama.\r\n- **Efek Samping Patognomonik & Tatalaksana:** **Hiperurisemia** (POA menghambat transpor sekresi tubular asam urat di ginjal melalui penukar anion URAT₁) yang dapat bermanifestasi klinis sebagai **artralgia, nyeri sendi, hingga artritis gout akut**. Tatalaksana: Pemberian hidrasi cairan yang adekuat, analgesik/NSAID untuk artralgia, dan alopurinol bila kadar asam urat sangat tinggi atau terjadi serangan gout simtomatik berat. Efek samping lain: **Hepatotoksisitas** (paling tinggi potensinya di antara lini 1), mual, muntah, dan disuria.\r\n- **Keamanan Kehamilan:** Sesuai materi slide praktikum: **Tidak dianjurkan untuk wanita hamil** (kecuali bila tidak ada alternatif lain atas indikasi ketat).\r\n- **Bentuk Sediaan Obat (BSO):** Tablet 250 mg dan 500 mg.\r\n- **Dosis:** Dewasa: 20–30 mg/kgBB/hari (**Dosis Maksimal: 2 gram/hari** = 2000 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4422,7 +4575,9 @@
         "tablet",
         "pirazinamid"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Dikonversi enzim pirazinamidase kuman jadi asam pirazinoat (POA, aktif pada pH asam) → menghambat sintesis asam lemak/asam mikolat kuman.",
+      "jawaban_b": "R/ Pirazinamid tab 500 mg No. XXI S.3.d.d tab 1 p.c. (habiskan) ----------------------------- (paraf)"
     },
     {
       "id": 277,
@@ -4430,9 +4585,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Etambutol",
       "prompt": "[Etambutol]\n\na. Sebutkan enzim target spesifik molekuler, komponen dinding sel kuman yang dihambat pembentukannya, dan sifat daya bunuh antimikrobanya (bakterisid vs bakteriostatik)!\n\nb. Sebutkan efek samping patognomonik visual yang sangat khas, tanda-tanda klinisnya, tatalaksana darurat bila timbul, sediaan, serta dosis maksimalnya!",
-      "stimulus": "Etambutol",
-      "soal_a": "Sebutkan enzim target spesifik molekuler, komponen dinding sel kuman yang dihambat pembentukannya, dan sifat daya bunuh antimikrobanya (bakterisid vs bakteriostatik)!",
-      "soal_b": "Sebutkan efek samping patognomonik visual yang sangat khas, tanda-tanda klinisnya, tatalaksana darurat bila timbul, sediaan, serta dosis maksimalnya!",
+      "stimulus": "Diberikan preparat Etambutol",
+      "soal_a": "Mekanisme kerja obat dan sifat daya bunuhnya?",
+      "soal_b": "Efek samping patognomonik obat dan tatalaksananya?",
       "diagnosis": "PREPARAT: Tablet Etambutol",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4456,7 +4611,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat enzim **Arabinosil Transferase III** (yang dikode oleh gen *embB* / *embCAB operon*) → menghambat polimerisasi arabinogalaktan → menghambat pembentukan **arabinogalaktan** dan **lipoarabinomanan (LAM)** pada dinding sel bakteri → dinding sel mikobakteri tidak terbentuk secara sempurna dan permeabilitas membran terganggu.\r\n- **Sifat Daya Bunuh:** **Bakteriostatik** (satu-satunya OAT Lini Pertama standar yang bersifat bakteriostatik pada dosis terapeutik lazim). Berfungsi ganda menekan pertumbuhan dan mencegah timbulnya resistensi terhadap OAT lain.\r\nb. \r",
+      "jawaban_ringkas": "a. Menghambat enzim arabinosil transferase (gen embB) → menghambat polimerisasi arabinogalaktan pada dinding sel (bakteriostatik).\nb. Neuritis retrobulbar / optik (penurunan tajam penglihatan dan buta warna merah-hijau) → tatalaksana: Hentikan obat segera!",
       "jawaban_lengkap": "a. \r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat enzim **Arabinosil Transferase III** (yang dikode oleh gen *embB* / *embCAB operon*) → menghambat polimerisasi arabinogalaktan → menghambat pembentukan **arabinogalaktan** dan **lipoarabinomanan (LAM)** pada dinding sel bakteri → dinding sel mikobakteri tidak terbentuk secara sempurna dan permeabilitas membran terganggu.\r\n- **Sifat Daya Bunuh:** **Bakteriostatik** (satu-satunya OAT Lini Pertama standar yang bersifat bakteriostatik pada dosis terapeutik lazim). Berfungsi ganda menekan pertumbuhan dan mencegah timbulnya resistensi terhadap OAT lain.\r\n\r\nb. \r\n- **Efek Samping Patognomonik Visual:** **Neuritis retrobulbar (Neuritis optik)**.\r\n- **Tanda-tanda Klinis:** Penurunan visus / tajam penglihatan mendadak, skotoma sentral (lapang pandang menyempit), dan gangguan diskriminasi warna berupa **buta warna merah-hijau (*red-green color blindness*)**. Bersifat *dose-dependent* dan durasi pemakaian (risiko meningkat tajam jika dosis > 15–20 mg/kgBB atau pada gangguan ginjal).\r\n- **Tatalaksana Darurat:** **HENTIKAN ETAMBUTOL SEGERA!** Gejala neuritis optik umumnya reversibel bila obat dihentikan segera, namun berisiko atrofi optik permanen bila pengobatan diteruskan. Lakukan evaluasi tajam penglihatan dan uji buta warna (kartu Ishihara) secara berkala selama terapi.\r\n- **Bentuk Sediaan Obat (BSO):** Tablet 250 mg dan 500 mg.\r\n- **Dosis:** Dewasa: 15–20 mg/kgBB/hari (**Dosis Maksimal: 2 gram/hari** = 2000 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4477,7 +4632,9 @@
         "tablet",
         "etambutol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Menghambat enzim arabinosil transferase (gen embB) → menghambat polimerisasi arabinogalaktan pada dinding sel (bakteriostatik).",
+      "jawaban_b": "Neuritis retrobulbar / optik (penurunan tajam penglihatan dan buta warna merah-hijau) → tatalaksana: Hentikan obat segera!"
     },
     {
       "id": 278,
@@ -4485,9 +4642,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Vial Bubuk Injeksi Streptomisin",
       "prompt": "[Streptomisin]\n\na. Sebutkan golongan obat, target ribosom spesifik (protein ribosomal), mekanisme kerja molekuler sintesis protein, rute pemberian, dan sifat daya bunuhnya!\n\nb. Sebutkan dua efek samping toksik utama patognomonik, interaksi obat berbahaya bila dikombinasikan dengan diuretik tertentu atau OAINS, sediaan, dan dosis maksimalnya!",
-      "stimulus": "Streptomisin",
-      "soal_a": "Sebutkan golongan obat, target ribosom spesifik (protein ribosomal), mekanisme kerja molekuler sintesis protein, rute pemberian, dan sifat daya bunuhnya!",
-      "soal_b": "Sebutkan dua efek samping toksik utama patognomonik, interaksi obat berbahaya bila dikombinasikan dengan diuretik tertentu atau OAINS, sediaan, dan dosis maksimalnya!",
+      "stimulus": "Diberikan preparat Streptomisin injeksi",
+      "soal_a": "Golongan obat, target ribosom, dan rute pemberian?",
+      "soal_b": "Dua efek samping toksik utama dan interaksi berbahayanya?",
       "diagnosis": "PREPARAT: Vial Bubuk Injeksi Streptomisin",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4512,7 +4669,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. \r\n- **Golongan Obat:** Antibiotik **Aminoglikosida**.\r\n- **Target Ribosom Spesifik & Mekanisme Kerja:** Mengikat secara ireversibel pada **ribosom subunit 30S bakteri (khususnya protein ribosomal S12)** → mengganggu pembentukan kompleks inisiasi translasi mRNA, menyebabkan salah baca kode genetik (*misreading/miscoding of mRNA codon*), dan terminasi dini translasi rantai polipeptida → **mencegah sintesis protein bakteri**.\r\n- **Rute Pemberian:** Injeksi **Intramuskular (IM)** dalam (tidak diabsorpsi pada saluran cerna secara per oral).\r",
+      "jawaban_ringkas": "a. Golongan Aminoglikosida; mengikat subunit 30S ribosom (protein S12) → menghambat sintesis protein bakteri (bakterisid, injeksi IM).\nb. Ototoksisitas (kerusakan N. VIII / tuli & vertigo) dan Nefrotoksisitas. Bahaya bila dikombinasi diuretik kuat (furosemid) atau OAINS.",
       "jawaban_lengkap": "a. \r\n- **Golongan Obat:** Antibiotik **Aminoglikosida**.\r\n- **Target Ribosom Spesifik & Mekanisme Kerja:** Mengikat secara ireversibel pada **ribosom subunit 30S bakteri (khususnya protein ribosomal S12)** → mengganggu pembentukan kompleks inisiasi translasi mRNA, menyebabkan salah baca kode genetik (*misreading/miscoding of mRNA codon*), dan terminasi dini translasi rantai polipeptida → **mencegah sintesis protein bakteri**.\r\n- **Rute Pemberian:** Injeksi **Intramuskular (IM)** dalam (tidak diabsorpsi pada saluran cerna secara per oral).\r\n- **Sifat Daya Bunuh:** **Bakterisidal** (terutama bekerja aktif pada kuman basil TB ekstraseluler di kavitas paru yang kaya oksigen).\r\n\r\nb. \r\n- **Dua Efek Samping Toksik Utama:**\r\n  1. **Ototoksisitas:** Kerusakan nervus kranialis VIII (*vestibulocochlear*) cabang vestibuler dan koklear → tinitus, vertigo, gangguan keseimbangan (ataksia vestibuler), hingga tuli perseptif/sensorineural permanen.\r\n  2. **Nefrotoksisitas:** Kerusakan dan nekrosis sel epitel tubulus proksimal ginjal → proteinuria, penurunan LFG, peningkatan ureum/kreatinin serum, oliguria, hingga gagal ginjal akut.\r\n- **Interaksi Obat Berbahaya:**\r\n  1. **Kombinasi dengan Diuretik Kuat / Agen Osmotik (Furosemid, Asam Etakrinat, Manitol):** Sinergisme toksisitas yang meningkatkan secara drastis risiko **ototoksisitas dan nefrotoksisitas berat/irreversibel**. Kontraindikasi/harus dihindari!\r\n  2. **Kombinasi dengan OAINS (Obat Anti-Inflamasi Non-Steroid):** Mengurangi aliran darah ginjal (GFR menurun) → menyebabkan **penurunan ekskresi Streptomisin** di ginjal → kadar serum toksik menumpuk → peningkatan risiko nefrotoksisitas dan ototoksisitas.\r\n- **Bentuk Sediaan Obat (BSO):** Vial bubuk kering injeksi steril **1 gram** dan **5 gram**.\r\n- **Dosis:** Dewasa: 15 mg/kgBB/hari via injeksi IM (**Dosis Maksimal: 1 gram/hari**; diturunkan menjadi 500-750 mg/hari pada lansia > 60 tahun atau BB < 50 kg).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4537,7 +4694,9 @@
         "injeksi",
         "streptomisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Aminoglikosida; mengikat subunit 30S ribosom (protein S12) → menghambat sintesis protein bakteri (bakterisid, injeksi IM).",
+      "jawaban_b": "Ototoksisitas (kerusakan N. VIII / tuli & vertigo) dan Nefrotoksisitas. Bahaya bila dikombinasi diuretik kuat (furosemid) atau OAINS."
     },
     {
       "id": 279,
@@ -4545,9 +4704,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet 4KDT / 4 FDC: RHZE",
       "prompt": "[Tablet Kombinasi Dosis Tetap (4KDT / 4 FDC)]\n\na. Sebutkan kepanjangan KDT/FDC, 4 komposisi zat aktif di dalamnya beserta kekuatan miligram per tablet, dan fase pengobatan yang menggunakannya!\n\nb. Sebutkan pedoman penentuan jumlah tablet harian berdasarkan rentang berat badan pasien (rentang 30-37 kg, 38-54 kg, 55-70 kg, >70 kg), tujuan klinis penggunaan bentuk FDC dibandingkan obat lepasan, dan aturan minumnya!",
-      "stimulus": "Tablet Kombinasi Dosis Tetap (4KDT / 4 FDC)",
-      "soal_a": "Sebutkan kepanjangan KDT/FDC, 4 komposisi zat aktif di dalamnya beserta kekuatan miligram per tablet, dan fase pengobatan yang menggunakannya!",
-      "soal_b": "Sebutkan pedoman penentuan jumlah tablet harian berdasarkan rentang berat badan pasien (rentang 30-37 kg, 38-54 kg, 55-70 kg, >70 kg), tujuan klinis penggunaan bentuk FDC dibandingkan obat lepasan, dan aturan minumnya!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: Tablet 4KDT / 4 FDC: RHZE",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4572,7 +4731,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Kepanjangan:** KDT = Kombinasi Dosis Tetap / FDC = *Fixed Dose Combination*.\r\n- **Komposisi Zat Aktif per Tablet 4KDT Dewasa:**\r\n  1. **Rifampisin (R): 150 mg**\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Kepanjangan:** KDT = Kombinasi Dosis Tetap / FDC = *Fixed Dose Combination*.\r\n- **Komposisi Zat Aktif per Tablet 4KDT Dewasa:**\r\n  1. **Rifampisin (R): 150 mg**\r\n  2. **Isoniazid (H): 75 mg**\r\n  3. **Pirazinamid (Z): 400 mg**\r\n  4. **Etambutol (E): 275 mg**\r\n- **Fase Pengobatan:** Digunakan pada **Fase Intensif (2 bulan pertama)** pengobatan TB Kategori 1 (2RHZE).\r\n\r\nb. \r\n- **Dosis Harian Berdasarkan Rentang Berat Badan Pasien (Diminum 1 kali sehari):**\r\n  - Berat Badan **30 – 37 kg:** 2 tablet 4KDT per hari.\r\n  - Berat Badan **38 – 54 kg:** 3 tablet 4KDT per hari.\r\n  - Berat Badan **55 – 70 kg:** **4 tablet 4KDT per hari**.\r\n  - Berat Badan **> 70 kg:** 5 tablet 4KDT per hari.\r\n- **Tujuan Klinis / Keuntungan FDC:**\r\n  1. **Meningkatkan kepatuhan (*compliance*) pasien** karena jumlah butir obat yang harus ditelan berkurang signifikan (*pill burden* berkurang).\r\n  2. **Mencegah monoterapi tersembunyi** (menghindari pasien hanya meminum obat tertentu dan mengabaikan yang lain), sehingga secara langsung **mencegah terjadinya resistensi obat (TB MDR)**.\r\n  3. Mempermudah peresepan, pengelolaan logistik obat, dan evaluasi pemantauan minum obat oleh PMO (Pengawas Menelan Obat).\r\n- **Aturan Minum:** Diminum sekaligus dalam satu waktu dosis tunggal per hari, di pagi hari dalam kondisi **perut kosong (*ante coenam* / 1 jam sebelum sarapan)** untuk absorpsi maksimal Rifampisin.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4598,7 +4757,9 @@
         "fdc:",
         "rhze"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 280,
@@ -4606,9 +4767,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet 2KDT / 2 FDC: RH",
       "prompt": "[Tablet Kombinasi Dosis Tetap Fase Lanjutan (2KDT / 2 FDC)]\n\na. Sebutkan kepanjangan 2KDT, komposisi zat aktif di dalamnya, rasio kekuatan dosis untuk regimen harian vs intermiten (3x seminggu), dan fase pengobatan penggunaannya!\n\nb. Sebutkan penentuan dosis berdasarkan berat badan, target populasi kuman yang dieliminasi pada fase ini, dan alasan pirazinamid serta etambutol tidak lagi dilanjutkan!",
-      "stimulus": "Tablet Kombinasi Dosis Tetap Fase Lanjutan (2KDT / 2 FDC)",
-      "soal_a": "Sebutkan kepanjangan 2KDT, komposisi zat aktif di dalamnya, rasio kekuatan dosis untuk regimen harian vs intermiten (3x seminggu), dan fase pengobatan penggunaannya!",
-      "soal_b": "Sebutkan penentuan dosis berdasarkan berat badan, target populasi kuman yang dieliminasi pada fase ini, dan alasan pirazinamid serta etambutol tidak lagi dilanjutkan!",
+      "stimulus": "Diberikan sediaan Tablet 2KDT (Fase Lanjutan)",
+      "soal_a": "Komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan target populasi kumannya?",
       "diagnosis": "PREPARAT: Tablet 2KDT / 2 FDC: RH",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4634,7 +4795,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Kepanjangan:** 2KDT = Dua Kombinasi Dosis Tetap (*Fixed Dose Combination 2 FDC*).\r\n- **Komposisi Zat Aktif & Kekuatan Dosis per Tablet:**\r\n  - **Sediaan Intermiten (3 kali seminggu - 4R₃H₃):** Rifampisin 150 mg + Isoniazid 150 mg per tablet.\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg + Isoniazid 75 mg (harian) atau R 150 mg + H 150 mg (intermiten 3x/minggu). Digunakan pada fase lanjutan (4 bulan).\nb. Dosis: 4 tablet sekali sehari (atau 3x/minggu). Target: membasmi kuman persisten/dorman dan mencegah kekambuhan (*relapse*).",
       "jawaban_lengkap": "a. \r\n- **Kepanjangan:** 2KDT = Dua Kombinasi Dosis Tetap (*Fixed Dose Combination 2 FDC*).\r\n- **Komposisi Zat Aktif & Kekuatan Dosis per Tablet:**\r\n  - **Sediaan Intermiten (3 kali seminggu - 4R₃H₃):** Rifampisin 150 mg + Isoniazid 150 mg per tablet.\r\n  - **Sediaan Harian (setiap hari - 4RH):** Rifampisin 150 mg + Isoniazid 75 mg per tablet.\r\n- **Fase Pengobatan:** Digunakan pada **Fase Lanjutan (4 bulan selanjutnya)** terapi TB Kategori 1.\r\n\r\nb. \r\n- **Dosis Harian / Intermiten Berdasarkan Rentang Berat Badan:**\r\n  - Berat Badan 30 – 37 kg: 2 tablet 2KDT per hari (atau 3x/minggu).\r\n  - Berat Badan 38 – 54 kg: 3 tablet 2KDT per hari (atau 3x/minggu).\r\n  - Berat Badan **55 – 70 kg:** **4 tablet 2KDT per hari** (atau 3x/minggu).\r\n  - Berat Badan > 70 kg: 5 tablet 2KDT per hari (atau 3x/minggu).\r\n- **Target Populasi Kuman:** Bertujuan mengeliminasi **kuman basil persisten / kuman semi-dorman** yang membelah secara sporadis/lambat di jaringan, guna **mencegah terjadinya kekambuhan / relaps**.\r\n- **Alasan PZA dan EMB Tidak Dilanjutkan:** Sebagian besar populasi kuman aktif yang membelah cepat telah dimusnahkan dalam 2 bulan fase intensif; risiko resistensi sudah menurun drastis sehingga etambutol tidak diperlukan lagi; serta pirazinamid tidak lagi memberikan manfaat sterilisasi tambahan setelah 2 bulan fase intensif sementara mempertahankan PZA hanya akan meningkatkan risiko hepatotoksisitas dan artritis gout.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4660,7 +4821,9 @@
         "2kdt",
         "fdc:"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg + Isoniazid 75 mg (harian) atau R 150 mg + H 150 mg (intermiten 3x/minggu). Digunakan pada fase lanjutan (4 bulan).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (atau 3x/minggu). Target: membasmi kuman persisten/dorman dan mencegah kekambuhan (*relapse*)."
     },
     {
       "id": 281,
@@ -4668,9 +4831,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Paduan Regimen OAT Kategori 1 (Kasus Baru)",
       "prompt": "[Paduan Regimen OAT Kategori 1]\n\na. Tuliskan formula paduan OAT Kategori 1 (fase intensif dan fase lanjutan), lama durasi total pengobatan, dan kriteria pasien yang mendapatkannya!\n\nb. Uraikan obat yang diberikan pada masing-masing fase, frekuensi pemberiannya, tujuan utama fase intensif vs fase lanjutan, dan pemantauan dahak evaluasi!",
-      "stimulus": "Paduan Regimen OAT Kategori 1",
-      "soal_a": "Tuliskan formula paduan OAT Kategori 1 (fase intensif dan fase lanjutan), lama durasi total pengobatan, dan kriteria pasien yang mendapatkannya!",
-      "soal_b": "Uraikan obat yang diberikan pada masing-masing fase, frekuensi pemberiannya, tujuan utama fase intensif vs fase lanjutan, dan pemantauan dahak evaluasi!",
+      "stimulus": "Panduan Terapi OAT Kategori 1 / Kasus Baru",
+      "soal_a": "Jenis OAT pada 2 bulan pertama (fase intensif)?",
+      "soal_b": "Jenis OAT pada 4 bulan selanjutnya (fase lanjutan)?",
       "diagnosis": "PREPARAT: Paduan Regimen OAT Kategori 1 (Kasus Baru)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4695,7 +4858,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Formula Paduan:** **2(RHZE) / 4(RH)3** atau **2(RHZE) / 4(RH)**.\r\n- **Durasi Total:** **6 bulan** (terdiri dari 2 bulan fase intensif + 4 bulan fase lanjutan).\r\n- **Kriteria Pasien:**\r",
+      "jawaban_ringkas": "a. 4 macam obat diminum setiap hari: 2RHZE (Rifampisin, Isoniazid, Pirazinamid, Etambutol) selama 2 bulan.\nb. 2 macam obat: 4RH (Rifampisin dan Isoniazid) diminum setiap hari (4RH) atau 3x seminggu (4R3H3) selama 4 bulan. Total pengobatan: 6 bulan.",
       "jawaban_lengkap": "a. \r\n- **Formula Paduan:** **2(RHZE) / 4(RH)3** atau **2(RHZE) / 4(RH)**.\r\n- **Durasi Total:** **6 bulan** (terdiri dari 2 bulan fase intensif + 4 bulan fase lanjutan).\r\n- **Kriteria Pasien:**\r\n  1. Pasien TB Paru kasus baru (BTA positif atau BTA negatif dengan foto toraks mendukung).\r\n  2. Pasien TB Ekstra Paru kasus baru.\r\n  3. Pasien yang belum pernah diobati dengan OAT sebelumnya atau pernah minum OAT kurang dari 1 bulan (< 28 hari).\r\n\r\nb. \r\n- **Uraian Masing-Masing Fase & Frekuensi:**\r\n  - **Fase Intensif (2 bulan pertama):** Diberikan kombinasi 4 obat: **Rifampisin (R), Isoniazid (H), Pirazinamid (Z), dan Etambutol (E)** diminum **setiap hari** selama 56 hari (2 bulan).\r\n  - **Fase Lanjutan (4 bulan berikutnya):** Diberikan kombinasi 2 obat: **Rifampisin (R) dan Isoniazid (H)** diminum **3 kali seminggu (4R₃H₃)** atau **setiap hari (4RH)** selama 16 minggu / 4 bulan.\r\n- **Tujuan Utama Terapi:**\r\n  - *Fase Intensif:* Membunuh dengan cepat sebagian besar populasi kuman TB yang membelah cepat, menghentikan penularan (konversi sputum dari positif menjadi negatif), mengatasi gejala klinis, dan mencegah seleksi mutan kuman resisten.\r\n  - *Fase Lanjutan:* Membunuh kuman yang tersisa (kuman persisten/dorman) secara tuntas agar tidak timbul kekambuhan (*relapse*).\r\n- **Evaluasi Mikroskopis Sputum Dahak:** Dilakukan pada akhir bulan ke-2 (akhir fase intensif), akhir bulan ke-5, dan akhir bulan ke-6 (akhir pengobatan).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4722,7 +4885,9 @@
         "kasus",
         "baru"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "4 macam obat diminum setiap hari: 2RHZE (Rifampisin, Isoniazid, Pirazinamid, Etambutol) selama 2 bulan.",
+      "jawaban_b": "2 macam obat: 4RH (Rifampisin dan Isoniazid) diminum setiap hari (4RH) atau 3x seminggu (4R3H3) selama 4 bulan. Total pengobatan: 6 bulan."
     },
     {
       "id": 282,
@@ -4730,9 +4895,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Paduan Regimen OAT Kategori 2 (Kasus Relaps / Retreatment)",
       "prompt": "[Paduan Regimen OAT Kategori 2]\n\na. Tuliskan kode formula paduan OAT Kategori 2 secara lengkap, durasi total pengobatan, dan indikasi klinis pasien yang menerimanya!\n\nb. Rincikan jenis obat dan frekuensi minum pada 2 bulan pertama, 1 bulan berikutnya, dan 5 bulan terakhir, serta alasan penambahan injeksi streptomisin!",
-      "stimulus": "Paduan Regimen OAT Kategori 2",
-      "soal_a": "Tuliskan kode formula paduan OAT Kategori 2 secara lengkap, durasi total pengobatan, dan indikasi klinis pasien yang menerimanya!",
-      "soal_b": "Rincikan jenis obat dan frekuensi minum pada 2 bulan pertama, 1 bulan berikutnya, dan 5 bulan terakhir, serta alasan penambahan injeksi streptomisin!",
+      "stimulus": "Panduan Terapi OAT Kategori 1 / Kasus Baru",
+      "soal_a": "Jenis OAT pada 2 bulan pertama (fase intensif)?",
+      "soal_b": "Jenis OAT pada 4 bulan selanjutnya (fase lanjutan)?",
       "diagnosis": "PREPARAT: Paduan Regimen OAT Kategori 2 (Kasus Relaps / Retreatment)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4756,7 +4921,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Formula Paduan Lengkap:** **2(RHZES) / 1(RHZE) / 5(RHE)3** (atau 2RHZES / 1RHZE / 5RHE).\r\n- **Durasi Total Pengobatan:** **8 bulan**.\r\n- **Indikasi Klinis Pasien:**\r",
+      "jawaban_ringkas": "a. 4 macam obat diminum setiap hari: 2RHZE (Rifampisin, Isoniazid, Pirazinamid, Etambutol) selama 2 bulan.\nb. 2 macam obat: 4RH (Rifampisin dan Isoniazid) diminum setiap hari (4RH) atau 3x seminggu (4R3H3) selama 4 bulan. Total pengobatan: 6 bulan.",
       "jawaban_lengkap": "a. \r\n- **Formula Paduan Lengkap:** **2(RHZES) / 1(RHZE) / 5(RHE)3** (atau 2RHZES / 1RHZE / 5RHE).\r\n- **Durasi Total Pengobatan:** **8 bulan**.\r\n- **Indikasi Klinis Pasien:**\r\n  1. **Kasus Relaps / Kambuh:** Pasien TB yang pernah dinyatakan sembuh/pengobatan lengkap, tetapi kembali terdiagnosis TB BTA positif.\r\n  2. **Kasus Gagal (*Failure*):** Pasien yang hasil pemeriksaan sputum dahaknya tetap positif atau kembali menjadi positif pada bulan ke-5 atau akhir pengobatan.\r\n  3. **Kasus Putus Berobat / Default (*Lost to follow-up*):** Pasien yang sempat berhenti minum OAT selama 2 bulan berturut-turut atau lebih dan kembali datang dengan BTA positif.\r\n\r\nb. \r\n- **Rincian Obat dan Tahapan Fase:**\r\n  - **Tahap 1 (2 bulan pertama):** Diberikan setiap hari **5 jenis obat**: Rifampisin (R), Isoniazid (H), Pirazinamid (Z), Etambutol (E) oral + Injeksi **Streptomisin (S)** intramuskular setiap hari.\r\n  - **Tahap 2 (1 bulan berikutnya / bulan ke-3):** Diberikan setiap hari **4 jenis obat**: Rifampisin (R), Isoniazid (H), Pirazinamid (Z), dan Etambutol (E) oral (injeksi Streptomisin dihentikan).\r\n  - **Tahap 3 (5 bulan terakhir / bulan ke-4 sampai ke-8):** Diberikan **3 jenis obat**: Rifampisin (R), Isoniazid (H), dan Etambutol (E) diminum **3 kali seminggu** (5R₃H₃E₃).\r\n- **Alasan Penambahan Streptomisin & Etambutol Lanjutan:** Pasien telah memiliki riwayat paparan OAT sebelumnya sehingga risiko membawa basil resisten lebih tinggi; Streptomisin ditambahkan sebagai bakterisidal parenteral poten untuk memperluas cakupan bakterisid, dan Etambutol tetap dipertahankan hingga fase lanjutan sebagai pelindung untuk mencegah resistensi sekunder pada kuman yang tersisa.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4783,7 +4948,9 @@
         "relaps",
         "retreatment"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "4 macam obat diminum setiap hari: 2RHZE (Rifampisin, Isoniazid, Pirazinamid, Etambutol) selama 2 bulan.",
+      "jawaban_b": "2 macam obat: 4RH (Rifampisin dan Isoniazid) diminum setiap hari (4RH) atau 3x seminggu (4R3H3) selama 4 bulan. Total pengobatan: 6 bulan."
     },
     {
       "id": 283,
@@ -4791,9 +4958,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Paduan Regimen OAT TB Anak",
       "prompt": "[Paduan Regimen OAT TB Anak]\n\na. Tuliskan dua opsi formula paduan OAT pada pasien anak, durasi masing-masing opsi, dan alasan etambutol umumnya tidak disertakan pada opsi standar!\n\nb. Sebutkan dasar sistem penegakan diagnosis TB pada anak (sistem skor) serta dosis OAT harian per kgBB anak untuk R, H, Z!",
-      "stimulus": "Paduan Regimen OAT TB Anak",
-      "soal_a": "Tuliskan dua opsi formula paduan OAT pada pasien anak, durasi masing-masing opsi, dan alasan etambutol umumnya tidak disertakan pada opsi standar!",
-      "soal_b": "Sebutkan dasar sistem penegakan diagnosis TB pada anak (sistem skor) serta dosis OAT harian per kgBB anak untuk R, H, Z!",
+      "stimulus": "Panduan Regimen OAT Kategori 2 / Retreatment",
+      "soal_a": "Tuliskan formula paduan lengkap dan durasi totalnya?",
+      "soal_b": "Tiga kriteria indikasi pasien penerima Kategori 2?",
       "diagnosis": "PREPARAT: Paduan Regimen OAT TB Anak",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 1",
@@ -4819,7 +4986,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. \r\n- **Dua Opsi Formula Paduan TB Anak:**\r\n  - **Opsi 1 (Kasus TB Anak Standar / Ringan):** **2(RHZ) / 4(RH)** → 2 bulan pertama setiap hari meminum Rifampisin, INH, Pirazinamid; dilanjutkan 4 bulan setiap hari meminum Rifampisin dan INH (Total: 6 bulan).\r\n  - **Opsi 2 (Kasus TB Anak Berat / Milier / Meningitis TB / Ekstra Paru Berat):** **2(RHZES) / 4–10(RH)** → 2 bulan pertama setiap hari meminum Rifampisin, INH, Pirazinamid, Etambutol oral + injeksi Streptomisin; dilanjutkan 4 hingga 10 bulan setiap hari meminum Rifampisin dan INH (Total: 6–12 bulan).\r",
+      "jawaban_ringkas": "a. 2(RHZES) / 1(RHZE) / 5(RHE)3 (total 8 bulan: 2 bulan 5 obat + 1 bulan 4 obat + 5 bulan 3 obat selang-seling 3x/minggu).\nb. Pasien kambuh (*relapse*), pasien gagal pengobatan (*failure*), dan pasien putus berobat (*default / lost to follow-up*).",
       "jawaban_lengkap": "a. \r\n- **Dua Opsi Formula Paduan TB Anak:**\r\n  - **Opsi 1 (Kasus TB Anak Standar / Ringan):** **2(RHZ) / 4(RH)** → 2 bulan pertama setiap hari meminum Rifampisin, INH, Pirazinamid; dilanjutkan 4 bulan setiap hari meminum Rifampisin dan INH (Total: 6 bulan).\r\n  - **Opsi 2 (Kasus TB Anak Berat / Milier / Meningitis TB / Ekstra Paru Berat):** **2(RHZES) / 4–10(RH)** → 2 bulan pertama setiap hari meminum Rifampisin, INH, Pirazinamid, Etambutol oral + injeksi Streptomisin; dilanjutkan 4 hingga 10 bulan setiap hari meminum Rifampisin dan INH (Total: 6–12 bulan).\r\n- **Alasan Etambutol Dihindari pada Anak Kecil (< 5 tahun) pada Opsi Standar:** Risiko efek samping **neuritis retrobulbar (buta warna merah-hijau dan penurunan visus)** sangat sulit dipantau atau dideteksi secara subjektif pada anak usia balita yang belum kooperatif menjalani uji tajam penglihatan/kartu Ishihara.\r\n\r\nb. \r\n- **Dasar Penegakan Diagnosis TB Anak:** Berdasarkan **Sistem Skoring TB Anak (IDAI / Kemenkes)** dengan parameter: kontak TB (skor 2-3), uji tuberkulin / Mantoux positif ≥ 10 mm (skor 3), status gizi kurang/buruk (skor 1-2), demam tanpa sebab jelas > 2 minggu (skor 1), batuk kronik ≥ 3 minggu (skor 1), limfadenopati kolli/aksila/inguinal > 1 cm multipel tidak nyeri (skor 1), pembengkakan tulang/sendi (skor 1), dan foto toraks sugestif TB (skor 1). **Anak didiagnosis TB dan diterapi OAT bila total skor ≥ 6**.\r\n- **Dosis Harian OAT Anak (mg/kgBB/hari):**\r\n  - **Rifampisin (R):** 10–20 mg/kgBB/hari (maksimal 600 mg/hari).\r\n  - **Isoniazid (H):** 10–20 mg/kgBB/hari (maksimal 300 mg/hari).\r\n  - **Pirazinamid (Z):** 20–30 mg/kgBB/hari (maksimal 2000 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4845,7 +5012,9 @@
         "regimen",
         "anak"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "2(RHZES) / 1(RHZE) / 5(RHE)3 (total 8 bulan: 2 bulan 5 obat + 1 bulan 4 obat + 5 bulan 3 obat selang-seling 3x/minggu).",
+      "jawaban_b": "Pasien kambuh (*relapse*), pasien gagal pengobatan (*failure*), dan pasien putus berobat (*default / lost to follow-up*)."
     },
     {
       "id": 284,
@@ -4853,9 +5022,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Bedaquiline (OAT Lini 2 - Grup A)",
       "prompt": "[Bedaquiline]\n\na. Sebutkan kelompok/grup OAT lini kedua obat ini, mekanisme kerja molekuler dan enzim target spesifiknya, serta sifat daya bunuhnya!\n\nb. Sebutkan indikasi penggunaan klinisnya, metabolisme/interaksi utama, efek samping patognomonik kardiak yang wajib diwaspadai, dan pemantauan laboratoriumnya!",
-      "stimulus": "Bedaquiline",
-      "soal_a": "Sebutkan kelompok/grup OAT lini kedua obat ini, mekanisme kerja molekuler dan enzim target spesifiknya, serta sifat daya bunuhnya!",
-      "soal_b": "Sebutkan indikasi penggunaan klinisnya, metabolisme/interaksi utama, efek samping patognomonik kardiak yang wajib diwaspadai, dan pemantauan laboratoriumnya!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: Tablet Bedaquiline (OAT Lini 2 - Grup A)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 2",
@@ -4874,7 +5043,7 @@
       "struktur_khas": [
         "**Golongan:** Obat Anti Tuberkulosis Lini 2"
       ],
-      "jawaban_ringkas": "a. \r\n- **Kelompok Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**.\r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat secara spesifik subunit c dari enzim **ATP Synthase (adenosine triphosphate synthase)** mikobakteri → menghentikan sintesis energi seluler (ATP) kuman → *depletion of cellular energy* yang menyebabkan kematian kuman *M. tuberculosis*.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat.\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Kelompok Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**.\r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat secara spesifik subunit c dari enzim **ATP Synthase (adenosine triphosphate synthase)** mikobakteri → menghentikan sintesis energi seluler (ATP) kuman → *depletion of cellular energy* yang menyebabkan kematian kuman *M. tuberculosis*.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat.\r\n\r\nb. \r\n- **Indikasi Klinis:** Regimen inti (*Core Drug*) untuk tatalaksana **TB Resisten Obat (TB MDR / TB RR / TB XDR)**.\r\n- **Efek Samping Patognomonik Kardiak:** **Pemanjangan interval QT (prolonged QT interval / QTc prolongation)** pada elektrokardiografi (EKG) yang berisiko memicu aritmia ventrikel letal (*Torsades de Pointes*). Efek samping lain: hepatotoksisitas (peningkatan transaminase), sakit kepala, artralgia.\r\n- **Pemantauan Medis:** Wajib melakukan **pemeriksaan EKG berkala** (baseline, minggu ke-2, ke-4, ke-8, ke-12, ke-24) serta pemantauan elektrolit (kalium, magnesium, kalsium serum) dan fungsi hati (SGOT/SGPT).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4893,7 +5062,9 @@
         "lini",
         "grup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 285,
@@ -4901,9 +5072,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Linezolid (OAT Lini 2 - Grup A)",
       "prompt": "[Linezolid]\n\na. Sebutkan kelompok OAT lini kedua, golongan kimia obat, target ribosom spesifik molekuler, dan sifat daya bunuhnya pada mikobakteri!\n\nb. Sebutkan efek samping patognomonik hematologi dan neurologis pada pemakaian jangka panjang, interaksi sindrom serotonin, serta pemantauan rutinnya!",
-      "stimulus": "Linezolid",
-      "soal_a": "Sebutkan kelompok OAT lini kedua, golongan kimia obat, target ribosom spesifik molekuler, dan sifat daya bunuhnya pada mikobakteri!",
-      "soal_b": "Sebutkan efek samping patognomonik hematologi dan neurologis pada pemakaian jangka panjang, interaksi sindrom serotonin, serta pemantauan rutinnya!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: Tablet Linezolid (OAT Lini 2 - Grup A)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 2",
@@ -4926,7 +5097,7 @@
         "**Golongan:** Obat Anti Tuberkulosis Lini 2",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. \r\n- **Kelompok & Golongan Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**; Golongan antibiotik **Oksazolidinon (*Oxazolidinones*)**.\r\n- **Mekanisme Kerja Molekuler:** Berikatan secara spesifik pada **subunit 50S ribosom bakteri (khususnya pada domain 23S rRNA)** dekat sisi pengikatan peptidil transferase → mendistorsi sisi ikatan tRNA dan mencegah pembentukan kompleks inisiasi fungsional ribosom 70S → **menghambat sintesis protein bakteri sejak tahap inisiasi awal**.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat terhadap *M. tuberculosis* (meskipun pada bakteri gram positif lain seperti MRSA/VRE bersifat bakteriostatik).\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Kelompok & Golongan Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**; Golongan antibiotik **Oksazolidinon (*Oxazolidinones*)**.\r\n- **Mekanisme Kerja Molekuler:** Berikatan secara spesifik pada **subunit 50S ribosom bakteri (khususnya pada domain 23S rRNA)** dekat sisi pengikatan peptidil transferase → mendistorsi sisi ikatan tRNA dan mencegah pembentukan kompleks inisiasi fungsional ribosom 70S → **menghambat sintesis protein bakteri sejak tahap inisiasi awal**.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** kuat terhadap *M. tuberculosis* (meskipun pada bakteri gram positif lain seperti MRSA/VRE bersifat bakteriostatik).\r\n\r\nb. \r\n- **Efek Samping Patognomonik:**\r\n  1. **Mielosupresi / Toksisitas Hematologi:** Supresi sumsum tulang reversibel yang bermanifestasi sebagai **anemia, trombositopenia, dan leukopenia/neutropenia**.\r\n  2. **Neurotoksisitas Jangka Panjang:** **Neuropati perifer** dan **neuritis optik** (dapat ireversibel bila terlambat ditangani, akibat disfungsi mitokondria sel mamalia).\r\n  3. Asidosis laktat.\r\n- **Interaksi Obat:** Merupakan inhibitor lemah monoamin oksidase (MAO); hati-hati bila dikonsumsi bersama SSRI, SNRI, atau makanan kaya tiramin karena berisiko memicu **Sindrom Serotonin** atau krisis hipertensi.\r\n- **Pemantauan Laboratorium Rutin:** Pemeriksaan **Darah Lengkap (DL / CBC)** rutin setiap minggu di awal lalu minimal tiap bulan, serta evaluasi ketajaman visual secara berkala.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -4948,7 +5119,9 @@
         "lini",
         "grup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 286,
@@ -4956,9 +5129,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Fluorokuinolon Respirasi: Levofloksasin & Moksifloksasin (OAT Lini 2 - Grup A)",
       "prompt": "[Fluorokuinolon Respirasi (Levofloksasin / Moksifloksasin)]\n\na. Sebutkan kelompok OAT, 2 target enzim intraseluler bakteri yang dihambat, dan sifat daya bunuh antimikrobanya!\n\nb. Mengapa siprofloksasin tidak direkomendasikan untuk TB dibanding levofloksasin/moksifloksasin, sebutkan efek samping patognomonik muskuloskeletal dan kardiak, serta interaksinya dengan antasida!",
-      "stimulus": "Fluorokuinolon Respirasi (Levofloksasin / Moksifloksasin)",
-      "soal_a": "Sebutkan kelompok OAT, 2 target enzim intraseluler bakteri yang dihambat, dan sifat daya bunuh antimikrobanya!",
-      "soal_b": "Mengapa siprofloksasin tidak direkomendasikan untuk TB dibanding levofloksasin/moksifloksasin, sebutkan efek samping patognomonik muskuloskeletal dan kardiak, serta interaksinya dengan antasida!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: Tablet Fluorokuinolon Respirasi: Levofloksasin & Moksifloksasin (OAT Lini 2 - Grup A)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 2",
@@ -4980,7 +5153,7 @@
         "**Golongan:** Obat Anti Tuberkulosis Lini 2",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021"
       ],
-      "jawaban_ringkas": "a. \r\n- **Kelompok Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**.\r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat dua enzim topoisomerase penting bakteri: **DNA Gyrase (Topoisomerase II)** dan **Topoisomerase IV** → menghambat proses relaksasi supercoiling DNA dan pemisahan rantai DNA saat replikasi/transkripsi → pemutusan untai ganda DNA bakteri → kematian sel kuman.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** cepat (*concentration-dependent bactericidal*).\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Kelompok Obat:** **OAT Lini Kedua – Golongan A (*Core Drugs*)**.\r\n- **Mekanisme Kerja Molekuler & Enzim Target:** Menghambat dua enzim topoisomerase penting bakteri: **DNA Gyrase (Topoisomerase II)** dan **Topoisomerase IV** → menghambat proses relaksasi supercoiling DNA dan pemisahan rantai DNA saat replikasi/transkripsi → pemutusan untai ganda DNA bakteri → kematian sel kuman.\r\n- **Sifat Daya Bunuh:** **Bakterisidal** cepat (*concentration-dependent bactericidal*).\r\n\r\nb. \r\n- **Perbandingan Siprofloksasin vs Flurokuinolon Respirasi:** Siprofloksasin memiliki aktivitas intrinsik dan penetrasi jaringan yang jauh lebih lemah terhadap *Mycobacterium tuberculosis* (KHM/MIC tinggi) sehingga dikeluarkan dari pedoman TB modern; sedangkan **Levofloksasin dan Moksifloksasin** merupakan *respiratory fluoroquinolones* dengan bioavailabilitas tinggi, penetrasi parenkim paru yang superior, dan bakterisidal kuat terhadap basil TB.\r\n- **Efek Samping Patognomonik:**\r\n  1. **Tendinopati dan Ruptur Tendon:** Terutama pada **tendon Achilles** (risiko meningkat pada usia lanjut dan pemakaian kortikosteroid).\r\n  2. **Pemanjangan interval QT (QTc Prolongation):** Terutama pada Moksifloksasin.\r\n  3. Neurotoksisitas (gangguan SSP, insomnia, kejang).\r\n- **Interaksi Obat Antasida / Kation Polivalen:** Penggunaan bersama antasida yang mengandung aluminium/magnesium, suplemen kalsium, atau zat besi (Fe) akan membentuk senyawa kelat yang tidak larut (*chelation*) → menurunkan absorpsi fluorokuinolon secara drastis di saluran cerna.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5004,7 +5177,9 @@
         "lini",
         "grup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 287,
@@ -5012,9 +5187,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Tablet Sikloserin (Cycloserine) & Tablet Klofazimin (Clofazimine) (OAT Lini 2 - Grup B)",
       "prompt": "[OAT Lini 2 Golongan B / Add-on Drugs (Sikloserin & Klofazimin)]\n\na. Sebutkan status penempatan kelompok kedua obat ini pada panduan TB-RO, mekanisme molekuler sikloserin, dan mekanisme kerja klofazimin!\n\nb. Sebutkan efek samping patognomonik neuropsikiatrik sikloserin (dan penawarnya) serta efek samping dermatologis khas klofazimin!",
-      "stimulus": "OAT Lini 2 Golongan B / Add-on Drugs (Sikloserin & Klofazimin)",
-      "soal_a": "Sebutkan status penempatan kelompok kedua obat ini pada panduan TB-RO, mekanisme molekuler sikloserin, dan mekanisme kerja klofazimin!",
-      "soal_b": "Sebutkan efek samping patognomonik neuropsikiatrik sikloserin (dan penawarnya) serta efek samping dermatologis khas klofazimin!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: Tablet Sikloserin (Cycloserine) & Tablet Klofazimin (Clofazimine) (OAT Lini 2 - Grup B)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 2",
@@ -5034,7 +5209,7 @@
       "struktur_khas": [
         "**Golongan:** Obat Anti Tuberkulosis Lini 2"
       ],
-      "jawaban_ringkas": "a. \r\n- **Status Kelompok:** **OAT Lini Kedua – Golongan B (*Add-on Drugs*)**; ditambahkan sebagai penguat rejimen lini kedua jika obat Golongan A tidak lengkap.\r\n- **Mekanisme Kerja Sikloserin:** Merupakan analog struktural D-alanin yang menghambat enzim **D-alanin rasemase** dan **D-alanin ligase** → menghambat sintesis prekursor peptidoglikan dinding sel kuman TB → dinding sel lisis.\r\n- **Mekanisme Kerja Klofazimin:** Merupakan pewarna riminofenazin yang mengikat residu guanin pada DNA kuman, menghambat replikasi, serta menghasilkan **Reactive Oxygen Species (ROS)** toksik intraseluler dan mengganggu fungsi transpor membran mikobakteri.\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Status Kelompok:** **OAT Lini Kedua – Golongan B (*Add-on Drugs*)**; ditambahkan sebagai penguat rejimen lini kedua jika obat Golongan A tidak lengkap.\r\n- **Mekanisme Kerja Sikloserin:** Merupakan analog struktural D-alanin yang menghambat enzim **D-alanin rasemase** dan **D-alanin ligase** → menghambat sintesis prekursor peptidoglikan dinding sel kuman TB → dinding sel lisis.\r\n- **Mekanisme Kerja Klofazimin:** Merupakan pewarna riminofenazin yang mengikat residu guanin pada DNA kuman, menghambat replikasi, serta menghasilkan **Reactive Oxygen Species (ROS)** toksik intraseluler dan mengganggu fungsi transpor membran mikobakteri.\r\n\r\nb. \r\n- **Efek Samping Sikloserin & Solusi:** Efek samping patognomonik berupa **gangguan neuropsikiatrik berat** (kecemasan, depresi, psikosis akut, kecenderungan bunuh diri/suisidul, kejang, dan tremor). Penawar/profilaksis: Ko-administrasi **Piridoksin (Vitamin B6) dosis tinggi (100–200 mg/hari)** untuk mengurangi efek neurotoksik.\r\n- **Efek Samping Klofazimin:** Efek samping patognomonik berupa **perubahan warna kulit dan cairan tubuh menjadi merah kecokelatan hingga hitam keabuan (*skin discoloration*)** disertai iktiosis/kulit kering bersisik yang dapat menetap berbulan-bulan setelah terapi dihentikan (dapat memicu beban psikologis pada pasien).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5056,7 +5231,9 @@
         "lini",
         "grup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 288,
@@ -5064,9 +5241,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: OAT Lini 2 Grup C / Alternatif (Etionamid, Delamanid, Amikasin, Kanamisin, Kapreomisin)",
       "prompt": "[OAT Lini 2 Golongan C / Alternatif]\n\na. Sebutkan indikasi penggunaan OAT Golongan C, mekanisme molekuler Etionamid, dan mekanisme Delamanid!\n\nb. Sebutkan 3 antibiotik suntik yang termasuk Golongan C beserta rute pemberian dan organ target toksisitas utamanya!",
-      "stimulus": "OAT Lini 2 Golongan C / Alternatif",
-      "soal_a": "Sebutkan indikasi penggunaan OAT Golongan C, mekanisme molekuler Etionamid, dan mekanisme Delamanid!",
-      "soal_b": "Sebutkan 3 antibiotik suntik yang termasuk Golongan C beserta rute pemberian dan organ target toksisitas utamanya!",
+      "stimulus": "Diberikan sediaan Tablet 4KDT (Fixed Dose Combination)",
+      "soal_a": "4 komposisi zat aktif per tablet dan fase penggunaannya?",
+      "soal_b": "Aturan dosis untuk BB 55–70 kg dan keuntungan klinisnya?",
       "diagnosis": "PREPARAT: OAT Lini 2 Grup C / Alternatif (Etionamid, Delamanid, Amikasin, Kanamisin, Kapreomisin)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "Obat Anti Tuberkulosis Lini 2",
@@ -5088,7 +5265,7 @@
         "**Golongan:** Obat Anti Tuberkulosis Lini 2",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. \r\n- **Indikasi Penggunaan:** Digunakan sebagai **obat alternatif / pengganti** apabila obat-obat dari Golongan A dan Golongan B tidak dapat digunakan karena resistensi, kontraindikasi, atau intoleransi/efek samping toksik berat.\r\n- **Mekanisme Kerja Etionamid (*Ethionamide*):** Merupakan prodrug analog struktural isonikotinamid yang diaktifkan oleh enzim monooksigenase mikobakteri (EthA) → menghambat enzim **InhA (enoyl-ACP reductase)** → **menghambat biosintesis asam mikolat** dinding sel kuman (jalur target sama dengan INH, tetapi aktivator enzim berbeda).\r\n- **Mekanisme Kerja Delamanid:** Menghambat biosintesis komponen lipid dinding sel mikobakteri, khususnya sintesis **metoksi-asam mikolat dan keto-asam mikolat**.\r",
+      "jawaban_ringkas": "a. Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).\nb. Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR).",
       "jawaban_lengkap": "a. \r\n- **Indikasi Penggunaan:** Digunakan sebagai **obat alternatif / pengganti** apabila obat-obat dari Golongan A dan Golongan B tidak dapat digunakan karena resistensi, kontraindikasi, atau intoleransi/efek samping toksik berat.\r\n- **Mekanisme Kerja Etionamid (*Ethionamide*):** Merupakan prodrug analog struktural isonikotinamid yang diaktifkan oleh enzim monooksigenase mikobakteri (EthA) → menghambat enzim **InhA (enoyl-ACP reductase)** → **menghambat biosintesis asam mikolat** dinding sel kuman (jalur target sama dengan INH, tetapi aktivator enzim berbeda).\r\n- **Mekanisme Kerja Delamanid:** Menghambat biosintesis komponen lipid dinding sel mikobakteri, khususnya sintesis **metoksi-asam mikolat dan keto-asam mikolat**.\r\n\r\nb. \r\n- **Tiga Antibiotik Suntik Golongan C:**\r\n  1. **Amikasin** (Golongan Aminoglikosida injeksi).\r\n  2. **Kanamisin** (Golongan Aminoglikosida injeksi).\r\n  3. **Kapreomisin** (Golongan Polipeptida siklik injeksi).\r\n- **Rute Pemberian & Organ Toksisitas Utama:** Diberikan secara parenteral via **injeksi Intramuskular (IM)** atau infus Intravena (IV). Organ target toksisitas utamanya adalah **Telinga (Ototoksisitas saraf VIII)** dan **Ginjal (Nefrotoksisitas sel tubulus)**.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5113,7 +5290,9 @@
         "kanamisin,",
         "kapreomisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg. Digunakan pada fase intensif (2 bulan pertama).",
+      "jawaban_b": "Dosis: 4 tablet sekali sehari (diminum a.c. pagi hari). Keuntungan: meningkatkan kepatuhan pasien (*compliance*) dan mencegah resistensi (TB MDR)."
     },
     {
       "id": 289,
@@ -5121,9 +5300,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Klasifikasi Resistensi TB (TB Nonresisten, MR, PR, MDR, XDR, RR)",
       "prompt": "[Klasifikasi Resistensi Obat TB]\n\na. Definisikan secara tepat kriteria diagnosis TB Nonresisten, TB Monoresisten (TB MR), dan TB Poliresisten (TB PR)!\n\nb. Definisikan kriteria TB Multi-Drug Resistant (TB MDR), TB Extensively Drug-Resistant (TB XDR), dan TB Resisten Rifampisin (TB RR)!",
-      "stimulus": "Klasifikasi Resistensi Obat TB",
-      "soal_a": "Definisikan secara tepat kriteria diagnosis TB Nonresisten, TB Monoresisten (TB MR), dan TB Poliresisten (TB PR)!",
-      "soal_b": "Definisikan kriteria TB Multi-Drug Resistant (TB MDR), TB Extensively Drug-Resistant (TB XDR), dan TB Resisten Rifampisin (TB RR)!",
+      "stimulus": "Klasifikasi Resistensi Obat Tuberkulosis",
+      "soal_a": "Kriteria diagnosis TB MDR (Multi-Drug Resistant)?",
+      "soal_b": "Kriteria diagnosis TB XDR dan TB RR?",
       "diagnosis": "PREPARAT: Klasifikasi Resistensi TB (TB Nonresisten, MR, PR, MDR, XDR, RR)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "PREPARAT: Klasifikasi Resistensi TB (TB Nonresisten, MR, PR, MDR, XDR, RR)",
@@ -5144,7 +5323,7 @@
         "**Golongan:** PREPARAT: Klasifikasi Resistensi TB (TB Nonresisten, MR, PR, MDR, XDR, RR)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. \r\n- **TB Nonresisten (Sensitif Obat):** Galur kuman *Mycobacterium tuberculosis* yang terbukti masih sensitif terhadap seluruh obat OAT lini pertama (diterapi dengan regimen OAT standar Kategori 1).\r\n- **TB Monoresisten (TB MR):** Galur kuman yang resisten terhadap **salah satu** jenis OAT lini pertama saja (misal hanya resisten Isoniazid, atau hanya resisten Rifampisin).\r\n- **TB Poliresisten (TB PR):** Galur kuman yang resisten terhadap **lebih dari satu** jenis OAT lini pertama, **TETAPI BUKAN kombinasi bersamaan antara Isoniazid (H) dan Rifampisin (R)** (contoh: resisten kombinasi H + E, atau H + Z, atau E + Z).\r",
+      "jawaban_ringkas": "a. TB MDR: Resisten terhadap Isoniazid (H) dan Rifampisin (R) secara bersamaan (+/- resisten OAT lini 1 lainnya).\nb. TB RR: Resisten terhadap Rifampisin. TB XDR: TB MDR + resisten salah satu Fluorokuinolon + minimal satu OAT suntik lini 2 (Amikasin/Kanamisin/Kapreomisin).",
       "jawaban_lengkap": "a. \r\n- **TB Nonresisten (Sensitif Obat):** Galur kuman *Mycobacterium tuberculosis* yang terbukti masih sensitif terhadap seluruh obat OAT lini pertama (diterapi dengan regimen OAT standar Kategori 1).\r\n- **TB Monoresisten (TB MR):** Galur kuman yang resisten terhadap **salah satu** jenis OAT lini pertama saja (misal hanya resisten Isoniazid, atau hanya resisten Rifampisin).\r\n- **TB Poliresisten (TB PR):** Galur kuman yang resisten terhadap **lebih dari satu** jenis OAT lini pertama, **TETAPI BUKAN kombinasi bersamaan antara Isoniazid (H) dan Rifampisin (R)** (contoh: resisten kombinasi H + E, atau H + Z, atau E + Z).\r\n\r\nb. \r\n- **TB Multi-Drug Resistant (TB MDR) [SANGAT SERING KELUAR UJIAN]:** Galur kuman yang terbukti resisten terhadap **Isoniazid (H) dan Rifampisin (R) secara bersamaan**, dengan atau tanpa disertai resistensi terhadap jenis OAT lini pertama lainnya.\r\n- **TB Extensively Drug-Resistant (TB XDR):** Kasus TB MDR yang memenuhi kriteria resistensi tambahan terhadap:\r\n  1. **Salah satu OAT golongan Fluorokuinolon** (seperti Levofloksasin atau Moksifloksasin), DAN\r\n  2. **Minimal salah satu OAT lini kedua jenis suntikan** (Kanamisin, Kapreomisin, atau Amikasin).\r\n- **TB Resisten Rifampisin (TB RR):** Galur kuman yang resisten terhadap **Rifampisin** (terdeteksi baik melalui uji genotipik TCM GeneXpert MTB/RIF maupun uji kepekaan fenotipik), dengan atau tanpa resistensi terhadap OAT lain. Pasien TB RR ditatalaksana mengikuti standar rejimen TB MDR/TB-RO.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5167,7 +5346,9 @@
         "mdr,",
         "xdr,"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "TB MDR: Resisten terhadap Isoniazid (H) dan Rifampisin (R) secara bersamaan (+/- resisten OAT lini 1 lainnya).",
+      "jawaban_b": "TB RR: Resisten terhadap Rifampisin. TB XDR: TB MDR + resisten salah satu Fluorokuinolon + minimal satu OAT suntik lini 2 (Amikasin/Kanamisin/Kapreomisin)."
     },
     {
       "id": 290,
@@ -5175,9 +5356,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Obat Simtomatik TB Paru (Ambroksol, Dextromethorphan, OBH Sirup)",
       "prompt": "[Obat Simtomatik Respirasi pada TB]\n\na. Sebutkan golongan farmakologi dan mekanisme kerja Ambroksol tablet/sirup serta alasan pemilihannya pada pasien batuk berdahak kuning kehijauan!\n\nb. Sebutkan golongan dan mekanisme Dextromethorphan, mengapa kontraindikasi/dilarang pada batuk produktif kental, dan fungsi sirup OBH!",
-      "stimulus": "Obat Simtomatik Respirasi pada TB",
-      "soal_a": "Sebutkan golongan farmakologi dan mekanisme kerja Ambroksol tablet/sirup serta alasan pemilihannya pada pasien batuk berdahak kuning kehijauan!",
-      "soal_b": "Sebutkan golongan dan mekanisme Dextromethorphan, mengapa kontraindikasi/dilarang pada batuk produktif kental, dan fungsi sirup OBH!",
+      "stimulus": "Diberikan preparat Rifampisin",
+      "soal_a": "Mekanisme kerja obat?",
+      "soal_b": "Resep dengan dosis 1x sehari 1 tablet selama 7 hari?",
       "diagnosis": "PREPARAT: Obat Simtomatik TB Paru (Ambroksol, Dextromethorphan, OBH Sirup)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "PREPARAT: Obat Simtomatik TB Paru (Ambroksol, Dextromethorphan, OBH Sirup)",
@@ -5200,7 +5381,7 @@
         "**Golongan:** PREPARAT: Obat Simtomatik TB Paru (Ambroksol, Dextromethorphan, OBH Sirup)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022"
       ],
-      "jawaban_ringkas": "a. \r\n- **Golongan & Mekanisme Kerja Ambroksol:** Merupakan obat golongan **Mukolitik**. Bekerja dengan memecah ikatan serat mukopolisakarida asam pada sekret saluran napas, menstimulasi sintesis dan sekresi surfaktan alveolar oleh pneumosit tipe II, serta meningkatkan bersihan mukosiliar (*mucociliary clearance*).\r\n- **Alasan Pemilihan pada Pasien TB:** Pasien TB paru umumnya mengalami batuk produktif dengan sputum mukopurulen kental kehijauan. Ambroksol mengencerkan viskositas dahak yang kental sehingga mudah diekspektorasikan saat batuk, melegakan saluran napas, dan membantu pengeluaran kuman dari percabangan bronkus.\r\nb. \r",
+      "jawaban_ringkas": "a. Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).\nb. R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)",
       "jawaban_lengkap": "a. \r\n- **Golongan & Mekanisme Kerja Ambroksol:** Merupakan obat golongan **Mukolitik**. Bekerja dengan memecah ikatan serat mukopolisakarida asam pada sekret saluran napas, menstimulasi sintesis dan sekresi surfaktan alveolar oleh pneumosit tipe II, serta meningkatkan bersihan mukosiliar (*mucociliary clearance*).\r\n- **Alasan Pemilihan pada Pasien TB:** Pasien TB paru umumnya mengalami batuk produktif dengan sputum mukopurulen kental kehijauan. Ambroksol mengencerkan viskositas dahak yang kental sehingga mudah diekspektorasikan saat batuk, melegakan saluran napas, dan membantu pengeluaran kuman dari percabangan bronkus.\r\n\r\nb. \r\n- **Golongan & Mekanisme Dextromethorphan:** Golongan **Antitusif non-narkotik** (derivat morfinan). Bekerja sentral dengan menaikkan ambang rangsang batuk di pusat batuk medula oblongata (*cough center* di batang otak).\r\n- **Alasan Kontraindikasi pada Batuk Produktif Berdahak Kental:** Bila refleks batuk ditekan pada batuk berdahak kental, dahak tidak dapat dikeluarkan dan tertahan di jalan napas (*sputum retention*) → memicu sumbatan jalan napas, atelektasis paru, memburuknya sesak, dan meningkatkan risiko superinfeksi bakteri sekunder.\r\n- **Fungsi Sirup OBH (Obat Batuk Hitam):** Sebagai obat batuk kombinasi yang mengandung *Succus Liquiritiae* (akar manis) dan Amonium Klorida yang berfungsi sebagai **ekspektoran**, merangsang sekresi cairan saluran napas dan melicinkan tenggorokan sehingga dahak lebih mudah dikeluarkan.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5226,7 +5407,9 @@
         "obh",
         "sirup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).",
+      "jawaban_b": "R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)"
     },
     {
       "id": 291,
@@ -5234,9 +5417,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Lembar Resep Fase Intensif Regimen Individual (Rifampisin, INH, Pirazinamid, Etambutol)",
       "prompt": "[Lembar Resep OAT Individual Fase Intensif Kategori 1]\n\na. Perhatikan resep individual 4 OAT berikut untuk pasien Ny. Y (26 tahun) selama 7 hari: ```text dr. Ardiansyah SIP 07101024114 Jl. Dr. Gumbreg No. 1945, Purwokerto Telp: 083412675809 =========================================== Purwokerto, 30 September 2026 R/ Rifampisin tab 600 mg No. VII s. 1. d. d. tab 1 (habiskan, a.c. pagi) -------------------------------------- § (paraf) R/ Isoniazid tab 300 mg No. VII s. 1. d. d. tab 1 (habiskan) -------------------------------------- § (paraf) R/ Pirazinamid tab 500 mg No. XXI s. 1. d. d. tab 3 (habiskan) -------------------------------------- § (paraf) R/ Ethambutol tab 500 mg No. XIV s. 1. d. d. tab 2 (habiskan) -------------------------------------- § (paraf) Pro : Ny. Y Usia : 26 Tahun Alamat: Griya Arofah ``` Sebutkan analisis perhitungan jumlah tablet (angka Romawi) dan dosis harian miligram tiap obat pada resep di atas!\n\nb. Sebutkan kelengkapan 6 elemen legalitas resep standar serta kaidah penting penulisan signatura antimikroba (tanda habiskan dan waktu konsumsi)!",
-      "stimulus": "Lembar Resep OAT Individual Fase Intensif Kategori 1",
-      "soal_a": "Perhatikan resep individual 4 OAT berikut untuk pasien Ny. Y (26 tahun) selama 7 hari: ```text dr. Ardiansyah SIP 07101024114 Jl. Dr. Gumbreg No. 1945, Purwokerto Telp: 083412675809 =========================================== Purwokerto, 30 September 2026 R/ Rifampisin tab 600 mg No. VII s. 1. d. d. tab 1 (habiskan, a.c. pagi) -------------------------------------- § (paraf) R/ Isoniazid tab 300 mg No. VII s. 1. d. d. tab 1 (habiskan) -------------------------------------- § (paraf) R/ Pirazinamid tab 500 mg No. XXI s. 1. d. d. tab 3 (habiskan) -------------------------------------- § (paraf) R/ Ethambutol tab 500 mg No. XIV s. 1. d. d. tab 2 (habiskan) -------------------------------------- § (paraf) Pro : Ny. Y Usia : 26 Tahun Alamat: Griya Arofah ``` Sebutkan analisis perhitungan jumlah tablet (angka Romawi) dan dosis harian miligram tiap obat pada resep di atas!",
-      "soal_b": "Sebutkan kelengkapan 6 elemen legalitas resep standar serta kaidah penting penulisan signatura antimikroba (tanda habiskan dan waktu konsumsi)!",
+      "stimulus": "Diberikan preparat Rifampisin",
+      "soal_a": "Mekanisme kerja obat?",
+      "soal_b": "Resep dengan dosis 1x sehari 1 tablet selama 7 hari?",
       "diagnosis": "PREPARAT: Lembar Resep Fase Intensif Regimen Individual (Rifampisin, INH, Pirazinamid, Etambutol)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "PREPARAT: Lembar Resep Fase Intensif Regimen Individual (Rifampisin, INH, Pirazinamid, Etambutol)",
@@ -5261,7 +5444,7 @@
         "**Golongan:** PREPARAT: Lembar Resep Fase Intensif Regimen Individual (Rifampisin, INH, Pirazinamid, Etambutol)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. \r\n- **Analisis Dosis Harian dan Perhitungan Jumlah Tablet (Durasi 7 Hari):**\r\n  1. **Rifampisin:** Sediaan tab 600 mg, aturan pakai 1 × 1 tab (dosis 600 mg/hari). Jumlah kebutuhan 7 hari = 1 × 7 = 7 tablet → Ditulis **No. VII**.\r\n  2. **Isoniazid (INH):** Sediaan tab 300 mg, aturan pakai 1 × 1 tab (dosis 300 mg/hari). Jumlah kebutuhan 7 hari = 1 × 7 = 7 tablet → Ditulis **No. VII**.\r",
+      "jawaban_ringkas": "a. Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).\nb. R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)",
       "jawaban_lengkap": "a. \r\n- **Analisis Dosis Harian dan Perhitungan Jumlah Tablet (Durasi 7 Hari):**\r\n  1. **Rifampisin:** Sediaan tab 600 mg, aturan pakai 1 × 1 tab (dosis 600 mg/hari). Jumlah kebutuhan 7 hari = 1 × 7 = 7 tablet → Ditulis **No. VII**.\r\n  2. **Isoniazid (INH):** Sediaan tab 300 mg, aturan pakai 1 × 1 tab (dosis 300 mg/hari). Jumlah kebutuhan 7 hari = 1 × 7 = 7 tablet → Ditulis **No. VII**.\r\n  3. **Pirazinamid:** Sediaan tab 500 mg, aturan pakai 1 × 3 tab (dosis 3 × 500 mg = 1500 mg/hari). Jumlah kebutuhan 7 hari = 3 × 7 = 21 tablet → Ditulis **No. XXI**.\r\n  4. **Ethambutol:** Sediaan tab 500 mg, aturan pakai 1 × 2 tab (dosis 2 × 500 mg = 1000 mg/hari). Jumlah kebutuhan 7 hari = 2 × 7 = 14 tablet → Ditulis **No. XIV**.\r\n\r\nb. \r\n- **Enam Elemen Standar Resep Dokter:**\r\n  1. **Inscriptio:** Identitas dokter (nama, SIP, alamat praktik, nomor telepon) serta tempat (kota) dan tanggal penulisan resep.\r\n  2. **Invocatio:** Simbol permulaan resep `R/` (*recipe* = ambillah).\r\n  3. **Praescriptio / Ordinatio:** Nama obat, bentuk sediaan, kekuatan/potensi dosis, dan kuantitas jumlah obat dalam angka Romawi.\r\n  4. **Signatura:** Petunjuk aturan pakai obat (*signa*), frekuensi, jumlah tablet, dan petunjuk khusus.\r\n  5. **Subscriptio:** Tanda garis penutup di bawah signatura dan **paraf / tanda tangan dokter** pada setiap item obat.\r\n  6. **Pro:** Identitas pasien (nama pasien, umur/tanggal lahir, jenis kelamin, berat badan bila anak, dan alamat lengkap).\r\n- **Kaidah Khusus Signatura Antimikroba/OAT:**\r\n  - Wajib menyertakan instruksi **(habiskan)** untuk mencegah kepatuhan yang buruk dan meminimalkan seleksi mutasi resistensi kuman.\r\n  - Wajib memberikan instruksi waktu konsumsi spesifik: Rifampisin diminum **a.c. / *ante coenam*** (pagi hari 1 jam sebelum sarapan saat perut kosong).\r\n\r\n---",
       "resep_teks": "dr. Ardiansyah\r\nSIP 07101024114\r\nJl. Dr. Gumbreg No. 1945, Purwokerto\r\nTelp: 083412675809\r\n===========================================\r\nPurwokerto, 30 September 2026\r\n\r\nR/ Rifampisin tab 600 mg No. VII\r\n   s. 1. d. d. tab 1 (habiskan, a.c. pagi)\r\n   -------------------------------------- § (paraf)\r\nR/ Isoniazid tab 300 mg No. VII\r\n   s. 1. d. d. tab 1 (habiskan)\r\n   -------------------------------------- § (paraf)\r\nR/ Pirazinamid tab 500 mg No. XXI\r\n   s. 1. d. d. tab 3 (habiskan)\r\n   -------------------------------------- § (paraf)\r\nR/ Ethambutol tab 500 mg No. XIV\r\n   s. 1. d. d. tab 2 (habiskan)\r\n   -------------------------------------- § (paraf)\r\n\r\nPro   : Ny. Y\r\nUsia  : 26 Tahun\r\nAlamat: Griya Arofah",
       "tips_klinis": "",
@@ -5292,7 +5475,9 @@
         "pirazinamid,",
         "etambutol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).",
+      "jawaban_b": "R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)"
     },
     {
       "id": 292,
@@ -5300,9 +5485,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Lembar Resep Fase Intensif FDC / 4KDT Dewasa Lengkap",
       "prompt": "[Penulisan Resep Tablet 4KDT FDC Dewasa Lengkap]\n\na. Tuliskan contoh lembar resep lengkap Fase Intensif OAT Kategori 1 menggunakan preparat Kombinasi Dosis Tetap (Tablet 4KDT) untuk pasien Tn. Budi (BB: 55 kg) selama 14 hari lengkap dengan vitamin pendamping pencegah neuropati perifer sesuai format resep standar kedokteran!\n\nb. Jelaskan rasionalitas penentuan jumlah tablet 4KDT per hari, perhitungan total tablet, dan alasan pemberian vitamin pendamping piridoksin!",
-      "stimulus": "Penulisan Resep Tablet 4KDT FDC Dewasa Lengkap",
-      "soal_a": "Tuliskan contoh lembar resep lengkap Fase Intensif OAT Kategori 1 menggunakan preparat Kombinasi Dosis Tetap (Tablet 4KDT) untuk pasien Tn. Budi (BB: 55 kg) selama 14 hari lengkap dengan vitamin pendamping pencegah neuropati perifer sesuai format resep standar kedokteran!",
-      "soal_b": "Jelaskan rasionalitas penentuan jumlah tablet 4KDT per hari, perhitungan total tablet, dan alasan pemberian vitamin pendamping piridoksin!",
+      "stimulus": "Diberikan preparat Rifampisin",
+      "soal_a": "Mekanisme kerja obat?",
+      "soal_b": "Resep dengan dosis 1x sehari 1 tablet selama 7 hari?",
       "diagnosis": "PREPARAT: Lembar Resep Fase Intensif FDC / 4KDT Dewasa Lengkap",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "PREPARAT: Lembar Resep Fase Intensif FDC / 4KDT Dewasa Lengkap",
@@ -5325,7 +5510,7 @@
         "**Golongan:** PREPARAT: Lembar Resep Fase Intensif FDC / 4KDT Dewasa Lengkap",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. \r\n```text\r\ndr. Antigravity, Sp.P\r\nSIP: 19820315/SIP/2026\r",
+      "jawaban_ringkas": "a. Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).\nb. R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)",
       "jawaban_lengkap": "a. \r\n```text\r\ndr. Antigravity, Sp.P\r\nSIP: 19820315/SIP/2026\r\nPraktik: Jl. Dr. Gumbreg No. 1, Purwokerto\r\nTelp: (0281) 635123\r\n=====================================================\r\nPurwokerto, 4 Oktober 2026\r\n\r\nR/ Tablet 4KDT (RHZE) No. LVI\r\n   s. 1 d. d. tab 4 (habiskan, a.c. pagi)\r\n   ----------------------------------------- § (paraf)\r\n\r\nR/ Tablet Piridoksin (Vit B6) 10 mg No. XIV\r\n   s. 1 d. d. tab 1\r\n   ----------------------------------------- § (paraf)\r\n\r\nPro     : Tn. Budi (BB: 55 kg)\r\nUmur    : 32 tahun\r\nAlamat  : Jl. Kampus No. 10, Purwokerto\r\n```\r\n\r\nb. \r\n- **Rasionalitas Dosis 4KDT Berdasarkan Berat Badan Pasien (BB: 55 kg):**\r\n  - Sesuai pedoman baku nasional OAT FDC, rentang berat badan **55 – 70 kg mendapatkan dosis 4 tablet 4KDT sekali sehari**.\r\n  - Kebutuhan durasi 14 hari: 4 tablet/hari × 14 hari = 56 tablet → Ditulis dalam angka Romawi **No. LVI**.\r\n- **Instruksi Signatura:** Ditulis *s. 1 d. d. tab 4 (habiskan, a.c. pagi)* yang berarti diminum 1 kali sehari 4 tablet sekaligus di pagi hari sebelum makan (perut kosong) dan wajib dihabiskan.\r\n- **Rasionalitas Pemberian Tablet Piridoksin (Vitamin B6 10 mg):**\r\n  - Pasien menerima Isoniazid (INH 75 mg × 4 = 300 mg/hari di dalam 4KDT). INH menghambat aktivasi piridoksin dan mempercepat ekskresinya sehingga berisiko tinggi menimbulkan komplikasi **neuropati perifer** (kesemutan, nyeri kebas ekstremitas). Pemberian ko-preskripsi Piridoksin 10 mg/hari selama 14 hari (No. XIV) berfungsi sebagai **profilaksis spesifik neuropati perifer**.\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.P\r\nSIP: 19820315/SIP/2026\r\nPraktik: Jl. Dr. Gumbreg No. 1, Purwokerto\r\nTelp: (0281) 635123\r\n=====================================================\r\nPurwokerto, 4 Oktober 2026\r\n\r\nR/ Tablet 4KDT (RHZE) No. LVI\r\n   s. 1 d. d. tab 4 (habiskan, a.c. pagi)\r\n   ----------------------------------------- § (paraf)\r\n\r\nR/ Tablet Piridoksin (Vit B6) 10 mg No. XIV\r\n   s. 1 d. d. tab 1\r\n   ----------------------------------------- § (paraf)\r\n\r\nPro     : Tn. Budi (BB: 55 kg)\r\nUmur    : 32 tahun\r\nAlamat  : Jl. Kampus No. 10, Purwokerto",
       "tips_klinis": "",
@@ -5350,7 +5535,9 @@
         "dewasa",
         "lengkap"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Membentuk kompleks dengan subunit beta DNA-dependent RNA polymerase bakteri → menghambat sintesis RNA bakteri (bakterisid).",
+      "jawaban_b": "R/ Rifampisin tab 450 mg No. VII S.1.d.d tab 1 a.c. (habiskan) ----------------------------- (paraf)"
     },
     {
       "id": 293,
@@ -5358,9 +5545,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PREPARAT: Patofisiologi & Lesi Primer/Sekunder TB (Fokus Ghon & Kompleks Ghon)",
       "prompt": "[Patofisiologi & Pembentukan Lesi Ghon]\n\na. Sebutkan patogen penyebab, rute penularan, ukuran partikel droplet infeksius, sel imun inang pertama yang memfagositosis basil di alveolus, dan respons intraselulernya!\n\nb. Definisikan perbedaan patologi anatomis antara Fokus Ghon dan Kompleks Ghon serta implikasi klinis penyebarannya!",
-      "stimulus": "Patofisiologi & Pembentukan Lesi Ghon",
-      "soal_a": "Sebutkan patogen penyebab, rute penularan, ukuran partikel droplet infeksius, sel imun inang pertama yang memfagositosis basil di alveolus, dan respons intraselulernya!",
-      "soal_b": "Definisikan perbedaan patologi anatomis antara Fokus Ghon dan Kompleks Ghon serta implikasi klinis penyebarannya!",
+      "stimulus": "Patofisiologi Infeksi Tuberkulosis Primer",
+      "soal_a": "Sel imun pertama yang memfagositosis basil di alveolus dan responsnya?",
+      "soal_b": "Perbedaan patologis antara Fokus Ghon dan Kompleks Ghon?",
       "diagnosis": "PREPARAT: Patofisiologi & Lesi Primer/Sekunder TB (Fokus Ghon & Kompleks Ghon)",
       "organ": "Paru-paru & Seluler (Mycobacterium tuberculosis)",
       "sifat": "PREPARAT: Patofisiologi & Lesi Primer/Sekunder TB (Fokus Ghon & Kompleks Ghon)",
@@ -5386,7 +5573,7 @@
         "**Golongan:** PREPARAT: Patofisiologi & Lesi Primer/Sekunder TB (Fokus Ghon & Kompleks Ghon)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. \r\n- **Patogen Penyebab:** *Mycobacterium tuberculosis* (bakteri batang tahan asam / BTA obligat aerob).\r\n- **Rute Penularan & Ukuran Droplet:** Transmisi melalui inhalasi aerosol droplet nuklei yang dikeluarkan penderita TB paru aktif saat batuk, bersin, atau berbicara; ukuran droplet infeksius adalah **berukuran mikro < 5 mikron** sehingga mampu menghindari filtrasi saluran napas atas dan mencapai alveolus distal paru.\r\n- **Sel Imun Inang Pertama & Respons Intraseluler:** Kuman difagositosis oleh **Makrofag Alveolus**. Namun, dinding sel kuman yang kaya asam mikolat dan faktor virulensi (*cord factor*) menghambat fusi fagosom-lisosom, sehingga kuman mampu bertahan hidup (*survive*) dan **bereplikasi secara intraseluler** di dalam makrofag alveolus, memicu respons imun seluler (reaksi hipersensitivitas tipe lambat / tipe IV).\r",
+      "jawaban_ringkas": "a. Makrofag alveolus; kuman menghambat fusi fagosom-lisosom → kuman bertahan hidup dan bereplikasi secara intraseluler.\nb. Fokus Ghon: Lesi granulomatosa primer di parenkim paru. Kompleks Ghon: Fokus Ghon + limfangitis + limfadenitis regional (KGB hilus).",
       "jawaban_lengkap": "a. \r\n- **Patogen Penyebab:** *Mycobacterium tuberculosis* (bakteri batang tahan asam / BTA obligat aerob).\r\n- **Rute Penularan & Ukuran Droplet:** Transmisi melalui inhalasi aerosol droplet nuklei yang dikeluarkan penderita TB paru aktif saat batuk, bersin, atau berbicara; ukuran droplet infeksius adalah **berukuran mikro < 5 mikron** sehingga mampu menghindari filtrasi saluran napas atas dan mencapai alveolus distal paru.\r\n- **Sel Imun Inang Pertama & Respons Intraseluler:** Kuman difagositosis oleh **Makrofag Alveolus**. Namun, dinding sel kuman yang kaya asam mikolat dan faktor virulensi (*cord factor*) menghambat fusi fagosom-lisosom, sehingga kuman mampu bertahan hidup (*survive*) dan **bereplikasi secara intraseluler** di dalam makrofag alveolus, memicu respons imun seluler (reaksi hipersensitivitas tipe lambat / tipe IV).\r\n\r\nb. \r\n- **Fokus Ghon (*Ghon Focus*):** Merupakan lesi parenkim primer di paru, biasanya berlokasi subpleural di zona tengah/bawah paru, berupa area peradangan granulomatosa lokal berbatas tegas dengan nekrosis perkijuan (*caseous necrosis*) di bagian tengahnya.\r\n- **Kompleks Ghon (*Ghon Complex*):** Merupakan gabungan dari tiga komponen patologis yang terjadi akibat penyebaran basil melalui saluran getah bening:\r\n  1. **Fokus Ghon** (lesi primer parenkim paru).\r\n  2. **Limfangitis** (radang saluran limfe regional).\r\n  3. **Limfadenitis regional** (pembesaran dan peradangan kelenjar getah bening hilus atau paratrakeal).\r\n- Kompleks Ghon dapat mengalami kalsifikasi membentuk Kompleks Ranke atau mengalami reaktivasi di apeks paru jika daya tahan tubuh host menurun (TB pasca-primer / reaktivasi dewasa).\r\n\r\n---\r\n\r\n## TABEL MATRIKS IDENTIFIKASI CEPAT UJIAN OSPE FARMAKOLOGI (HIGH-YIELD CHEAT SHEET)\r\n\r\n| Stasi / Nama Obat | Golongan & Sifat | Enzim / Target Molekuler | BSO & Dosis Maksimal | Efek Samping Patognomonik | Solusi / Interaksi Kritis |\r\n| :--- | :--- | :--- | :--- | :--- | :--- |\r\n| **Rifampisin (R)** | Rifamisin / Bakterisidal | DNA-dependent RNA Polymerase | Kaps 150, 300 mg; Tab 450, 600 mg (Maks: 600 mg/hr) | **Urin/cairan tubuh merah-oranye**; hepatotoksik; flu-like syndrome | Edukasi urin merah tak berbahaya; minum a.c. (perut kosong); induktor CYP3A4 |\r\n| **Isoniazid (H)** | Hidrazid / Bakterisidal | InhA & KasA (aktif via KatG) → asam mikolat | Tab 50, 100, 300, 400 mg (Maks: 300 mg/hr) | **Neuropati perifer**; ikterus / kerusakan hati; agranulositosis | Ko-preskripsi **Vitamin B6 (Piridoksin) 10–25 mg/hari**; cek faal hati |\r\n| **Pirazinamid (Z)** | Analog Pirazinamid / Bakterisidal | Asam pirazinoat (POA via PncA) → FAS I (pH asam) | Tab 250, 500 mg (Maks: 2 g/hr) | **Hiperurisemia & artritis gout**; hepatotoksik; kontraindikasi hamil | Hidrasi cukup, NSAID/alopurinol; cek asam urat; tidak untuk ibu hamil |\r\n| **Etambutol (E)** | Etilendiamin / **Bakteriostatik** | Arabinosil transferase (EmbB) → arabinogalaktan | Tab 250, 500 mg (Maks: 2 g/hr) | **Neuritis retrobulbar** (buta warna merah-hijau, visus turun) | **Hentikan obat segera!** Uji lapang pandang & kartu Ishihara berkala |\r\n| **Streptomisin (S)** | Aminoglikosida / Bakterisidal | Protein S12 subunit ribosom 30S | Vial injeksi bubuk 1 g & 5 g (Maks: 1 g/hr) | **Ototoksisitas (N. VIII)** & **Nefrotoksisitas** | Hindari furosemid/asam etakrinat/OAINS; awasi kreatinin & audiometri |\r\n| **Tablet 4KDT (FDC)** | Multitarget / Bakterisid + Statik | R 150 mg + H 75 mg + Z 400 mg + E 275 mg | Tablet salut selaput (BB 55-70 kg: 4 tab/hari) | Gabungan efek samping RHZE | Meningkatkan *compliance*; cegah resistensi; minum a.c. pagi hari (habiskan) |\r\n| **Tablet 2KDT (FDC)** | Sterilisasi lanjutan / Bakterisidal | R 150 mg + H 75 mg (harian) atau R 150 mg + H 150 mg (3x/mgg) | Tablet kombinasi 2 FDC (BB 55-70 kg: 4 tab/hari) | Hepatotoksik & neuropati perifer | Eliminasi basil persisten semi-dorman; cegah relaps; ko-preskripsi Vit B6 |\r\n| **Bedaquiline** | OAT Lini 2 Gol A / Bakterisidal | Subunit c ATP Synthase mikobakteri | Tablet oral | **Pemanjangan interval QT (QTc)**; hepatotoksisitas | Rekam EKG serial rutin; monitor elektrolit serum (K, Mg, Ca) |\r\n| **Linezolid** | Oksazolidinon / Bakterisidal | Subunit ribosom 50S (23S rRNA) | Tablet oral / Infus | **Mielosupresi** (anemia, trombositopenia) & neuropati optik | Monitor darah lengkap rutin mingguan; awasi sindrom serotonin |\r\n| **Fluorokuinolon (Lfx/Mfx)** | Fluorokuinolon / Bakterisidal | DNA Gyrase & Topoisomerase IV | Tablet oral / Infus | **Tendinopati Achilles** & pemanjangan QT | Jangan bersama antasida/Fe (kelasi); hindari pada gangguan irama jantung |\r\n\r\n\r\n---\r\n\r\n## 2.3. Farmakoterapi Pneumonia & Antibiotik Saluran Napas (Beta-Laktam, Makrolida, Quinolone, Antifolat)\r\n\r\n# BANK SOAL-JAWAB IDENTIFIKASI FARMAKOLOGI BLOK 3.2: PNEUMONIA & OBAT RESPIRASI\r\n**Format Standar Ujian Identifikasi Meja / OSPE Farmakologi Blok 3.2 FK**\r\n**Sumber Materi:** Presentasi Asdos P2S3 Pneumonia (Slide 1–32)\r\n\r\n---\r\n\r\n## BAGIAN I: KASUS KLINIS UTAMA & PENULISAN RESEP LENGKAP PNEUMONIA",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5416,7 +5603,9 @@
         "ghon",
         "kompleks"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Makrofag alveolus; kuman menghambat fusi fagosom-lisosom → kuman bertahan hidup dan bereplikasi secara intraseluler.",
+      "jawaban_b": "Fokus Ghon: Lesi granulomatosa primer di parenkim paru. Kompleks Ghon: Fokus Ghon + limfangitis + limfadenitis regional (KGB hilus)."
     },
     {
       "id": 294,
@@ -5424,9 +5613,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI",
       "prompt": "[KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI]\n\na. Tentukan pilihan antibiotik dan obat batuk yang paling tepat beserta dasar pertimbangan farmakologinya!\n\nb. Mengapa sediaan Ciprofloxacin dan Dextromethorphan TIDAK tepat dipilih sebagai lini pertama kasus ini?",
-      "stimulus": "KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI",
-      "soal_a": "Tentukan pilihan antibiotik dan obat batuk yang paling tepat beserta dasar pertimbangan farmakologinya!",
-      "soal_b": "Mengapa sediaan Ciprofloxacin dan Dextromethorphan TIDAK tepat dipilih sebagai lini pertama kasus ini?",
+      "stimulus": "Diberikan sediaan Cefixime kapsul 100 mg",
+      "soal_a": "Termasuk golongan apakah obat ini berasal?",
+      "soal_b": "Sebutkan indikasi klinis utama dari obat ini!",
       "diagnosis": "KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI",
@@ -5451,7 +5640,7 @@
         "**Golongan:** KASUS KLINIS PNEUMONIA & PEMILIHAN TERAPI",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Pilihan Terapi:**\r\n   - **Antibiotik: Azithromycin.** Golongan makrolida merupakan lini pertama terapi empiris pneumonia komunitas (CAP) rawat jalan karena mencakup patogen tipikal (*Streptococcus pneumoniae*, *Haemophilus influenzae*) sekaligus atipikal (*Mycoplasma pneumoniae*, *Chlamydia pneumoniae*, *Legionella pneumophila*). Penetrasi jaringan paru sangat tinggi dan waktu paruh panjang sehingga dosis cukup 1x sehari selama 3–5 hari.\r\n   - **Obat Batuk: Ambroxol.** Pasien mengalami batuk produktif dengan sputum kental kehijauan. Ambroxol bekerja langsung mengencerkan viskositas mukus dan merangsang surfaktan sehingga mempermudah klirens sekret jalan napas.\r\nb. **Alasan Eksklusi Obat:**\r",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi ke-3 Oral (Beta-Laktam).\nb. Pengobatan infeksi kuman Gram Negatif pada saluran napas (faringitis, bronkitis, pneumonia) dan Infeksi Saluran Kemih (ISK) tanpa komplikasi.",
       "jawaban_lengkap": "a. **Pilihan Terapi:**\r\n   - **Antibiotik: Azithromycin.** Golongan makrolida merupakan lini pertama terapi empiris pneumonia komunitas (CAP) rawat jalan karena mencakup patogen tipikal (*Streptococcus pneumoniae*, *Haemophilus influenzae*) sekaligus atipikal (*Mycoplasma pneumoniae*, *Chlamydia pneumoniae*, *Legionella pneumophila*). Penetrasi jaringan paru sangat tinggi dan waktu paruh panjang sehingga dosis cukup 1x sehari selama 3–5 hari.\r\n   - **Obat Batuk: Ambroxol.** Pasien mengalami batuk produktif dengan sputum kental kehijauan. Ambroxol bekerja langsung mengencerkan viskositas mukus dan merangsang surfaktan sehingga mempermudah klirens sekret jalan napas.\r\nb. **Alasan Eksklusi Obat:**\r\n   - **Ciprofloxacin:** Bukan *respiratory fluoroquinolone*; aktivitasnya terhadap kuman penyebab utama pneumonia komunitas (*Streptococcus pneumoniae*) buruk/tidak memadai.\r\n   - **Dextromethorphan:** Merupakan antitusif penekan refleks batuk sentral. Pemberian antitusif pada batuk berdahak kental purulen dikontraindikasikan karena menyebabkan retensi sputum (*sputum retention*), memperberat sumbatan jalan napas, atelektasis, dan memperluas superinfeksi bakteri.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5476,7 +5665,9 @@
         "pemilihan",
         "terapi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi ke-3 Oral (Beta-Laktam).",
+      "jawaban_b": "Pengobatan infeksi kuman Gram Negatif pada saluran napas (faringitis, bronkitis, pneumonia) dan Infeksi Saluran Kemih (ISK) tanpa komplikasi."
     },
     {
       "id": 295,
@@ -5484,9 +5675,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)",
       "prompt": "[PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)]\n\na. Tuliskan resep lengkap dan rasional untuk pasien kasus pneumonia (Ny. A, 40 tahun, Alamat: Gumberg) berisi antibiotik Azithromycin dan mukolitik Ambroxol sesuai format resmi kedokteran!\n\nb. Sebutkan aturan penting penulisan signa antibiotik dan rincikan 6 unsur kelengkapan resep standar!",
-      "stimulus": "PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)",
-      "soal_a": "Tuliskan resep lengkap dan rasional untuk pasien kasus pneumonia (Ny. A, 40 tahun, Alamat: Gumberg) berisi antibiotik Azithromycin dan mukolitik Ambroxol sesuai format resmi kedokteran!",
-      "soal_b": "Sebutkan aturan penting penulisan signa antibiotik dan rincikan 6 unsur kelengkapan resep standar!",
+      "stimulus": "Diberikan sediaan Amoksisilin tablet 500 mg",
+      "soal_a": "Bagaimana mekanisme kerja dari obat tersebut?",
+      "soal_b": "Tuliskan resep obat tersebut jika diminum 3 kali sehari selama 7 hari!",
       "diagnosis": "PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)",
@@ -5510,7 +5701,7 @@
         "**Golongan:** PENULISAN RESEP LENGKAP PNEUMONIA (SLIDE 30)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Format Penulisan Resep Lengkap:**\r\n```text\r\ndr. Ojan\r\nSIP: 20062024\r",
+      "jawaban_ringkas": "a. Antibiotik Beta-Laktam. Berikatan dengan *Penicillin-Binding Proteins* (PBPs) → menghambat reaksi transpeptidasi sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).\nb. ```text R/ Amoxicillin tab 500 mg No. XXI S. 3 d.d tab 1 p.c. (habiskan) ----------------------------- paraf ```",
       "jawaban_lengkap": "a. **Format Penulisan Resep Lengkap:**\r\n\r\n```text\r\ndr. Ojan\r\nSIP: 20062024\r\nJl. Sama Dia No. 13\r\nTelp: 0825537583493\r\n============================================================\r\n                                       Purwokerto, 30 September 2026\r\n\r\nR/ Azithromycin tab 500 mg no. III\r\n   s. 1. d.d tab 1 (habiskan)\r\n   ------------------------------------------------- paraf dokter\r\n\r\nR/ Ambroxol tab 30 mg no. IX\r\n   s. 3 d.d tab 1\r\n   ------------------------------------------------- paraf dokter\r\n\r\nPro      : Ny. A\r\nUsia     : 40 Tahun\r\nAlamat   : Gumberg\r\n```\r\n\r\nb. **Aturan Signa & Unsur Kelengkapan Resep:**\r\n   - **Signa Antibiotik:** Wajib mencantumkan instruksi **\"(habiskan)\"** (*signa semel de die tabulam unam / habiskan*) untuk memastikan eradikasi total bakteri patogen dan mencegah timbulnya resistensi antimikroba.\r\n   - **6 Unsur Kelengkapan Resep:**\r\n     1. *Inscriptio:* Identitas dokter (nama, SIP, alamat, no. telepon) serta kota dan tanggal penulisan resep.\r\n     2. *Invocatio:* Tanda `R/` (*recipe* = ambillah).\r\n     3. *Praescriptio / Ordinatio:* Nama obat, bentuk sediaan, kekuatan dosis obat, dan jumlah obat dengan angka Romawi.\r\n     4. *Signa / Signatura:* Petunjuk pemakaian obat (frekuensi harian, jumlah tablet per minum, waktu pemberian, instruksi khusus).\r\n     5. *Subscriptio:* Garis penutup dan tanda tangan/paraf sah dokter penulis resep.\r\n     6. *Pro:* Identitas lengkap pasien (nama, usia/berat badan, alamat tinggal).\r\n\r\n---\r\n\r\n## BAGIAN II: PRINSIP DASAR & FARMAKOLOGI KLINIK ANTIBIOTIK",
       "resep_teks": "dr. Ojan\r\nSIP: 20062024\r\nJl. Sama Dia No. 13\r\nTelp: 0825537583493\r\n============================================================\r\n                                       Purwokerto, 30 September 2026\r\n\r\nR/ Azithromycin tab 500 mg no. III\r\n   s. 1. d.d tab 1 (habiskan)\r\n   ------------------------------------------------- paraf dokter\r\n\r\nR/ Ambroxol tab 30 mg no. IX\r\n   s. 3 d.d tab 1\r\n   ------------------------------------------------- paraf dokter\r\n\r\nPro      : Ny. A\r\nUsia     : 40 Tahun\r\nAlamat   : Gumberg",
       "tips_klinis": "",
@@ -5532,7 +5723,9 @@
         "lengkap",
         "slide"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Beta-Laktam. Berikatan dengan *Penicillin-Binding Proteins* (PBPs) → menghambat reaksi transpeptidasi sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).",
+      "jawaban_b": "```text R/ Amoxicillin tab 500 mg No. XXI S. 3 d.d tab 1 p.c. (habiskan) ----------------------------- paraf ```"
     },
     {
       "id": 296,
@@ -5540,9 +5733,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK",
       "prompt": "[PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK]\n\na. Jelaskan perbedaan mendasar mekanisme kerja bakterisidal dan bakteriostatik pada infeksi bakteri pneumonia!\n\nb. Kelompokkan seluruh antibiotik pada materi pneumonia ke dalam sifat bakterisidal vs bakteriostatik serta sebutkan 3 target molekuler utamanya!",
-      "stimulus": "PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK",
-      "soal_a": "Jelaskan perbedaan mendasar mekanisme kerja bakterisidal dan bakteriostatik pada infeksi bakteri pneumonia!",
-      "soal_b": "Kelompokkan seluruh antibiotik pada materi pneumonia ke dalam sifat bakterisidal vs bakteriostatik serta sebutkan 3 target molekuler utamanya!",
+      "stimulus": "Diberikan kasus: Ny. A, 40 tahun, didiagnosis Pneumonia Komunitas (CAP) dengan batuk berdahak kental kehijauan",
+      "soal_a": "Apa antibiotik lini pertama rawat jalan dan obat batuk pilihannya?",
+      "soal_b": "Tuliskan resep lengkap kombinasi kedua obat tersebut!",
       "diagnosis": "PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK",
@@ -5564,7 +5757,7 @@
         "**Golongan:** PRINSIP UMUM ANTIBIOTIK - BAKTERISIDAL VS BAKTERIOSTATIK",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Perbedaan Bakterisidal vs Bakteriostatik:**\r\n   - **Bakterisidal:** Membunuh bakteri target secara langsung melalui penghambatan sintesis dinding sel atau perusakan DNA/membran sel.\r\n   - **Bakteriostatik:** Menghambat pertumbuhan, replikasi, dan multiplikasi bakteri (misal menghambat sintesis protein atau sintesis folat) tanpa langsung membunuhnya; eliminasi akhir patogen membutuhkan bantuan sistem imun inang.\r\nb. **Klasifikasi Sifat & Target Molekuler:**\r",
+      "jawaban_ringkas": "a. Antibiotik: Azithromycin 500 mg 1x/hari (cakup kuman tipikal & atipikal); Obat batuk: Ambroxol 30 mg 3x/hari (mukolitik pengencer dahak).\nb. ```text R/ Azithromycin tab 500 mg no. III s. 1. d.d tab 1 (habiskan) --------------------------------- paraf R/ Ambroxol tab 30 mg no. IX s. 3 d.d tab 1 p.c. --------------------------------- paraf Pro   : Ny. A (40 tahun) ```",
       "jawaban_lengkap": "a. **Perbedaan Bakterisidal vs Bakteriostatik:**\r\n   - **Bakterisidal:** Membunuh bakteri target secara langsung melalui penghambatan sintesis dinding sel atau perusakan DNA/membran sel.\r\n   - **Bakteriostatik:** Menghambat pertumbuhan, replikasi, dan multiplikasi bakteri (misal menghambat sintesis protein atau sintesis folat) tanpa langsung membunuhnya; eliminasi akhir patogen membutuhkan bantuan sistem imun inang.\r\nb. **Klasifikasi Sifat & Target Molekuler:**\r\n   - **Bakterisidal:** Penisilin (Amoksisilin, Ampisilin), Sefalosporin (Cefadroxil, Cefprozil, Cefixime, Cefepime), Fluoroquinolon (Ciprofloxacin, Levofloxacin, Moxifloxacin), dan Kotrimoksazol kombinasi (Sulfametoksazol + Trimetoprim).\r\n   - **Bakteriostatik:** Makrolida (Azitromisin, Eritromisin, Klaritromisin), Sulfonamid tunggal, Trimetoprim tunggal.\r\n   - **3 Target Molekuler Utama:**\r\n     1. Sintesis Dinding Sel Bakteri (Beta-laktam).\r\n     2. Sintesis DNA Bakteri & Asam Folat (Fluoroquinolon, Antifolat).\r\n     3. Sintesis Protein Bakteri pada Ribosom (Makrolida).\r\n\r\n---\r\n\r\n## BAGIAN III: STASI IDENTIFIKASI OBAT ANTIBIOTIK (MEJA IDENTIFIKASI)",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5586,7 +5779,9 @@
         "bakterisidal",
         "bakteriostatik"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik: Azithromycin 500 mg 1x/hari (cakup kuman tipikal & atipikal); Obat batuk: Ambroxol 30 mg 3x/hari (mukolitik pengencer dahak).",
+      "jawaban_b": "```text R/ Azithromycin tab 500 mg no. III s. 1. d.d tab 1 (habiskan) --------------------------------- paraf R/ Ambroxol tab 30 mg no. IX s. 3 d.d tab 1 p.c. --------------------------------- paraf Pro   : Ny. A (40 tahun) ```"
     },
     {
       "id": 297,
@@ -5594,9 +5789,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Amoksisilin (Amoxicillin)",
       "prompt": "[Amoksisilin (Amoxicillin)]\n\na. Jelaskan mekanisme kerja molekuler dan target bakteri dari Amoksisilin!\n\nb. Sebutkan golongan obat, mnemonik PPT, 2-3 contoh obat sekelompok, indikasi klinis, dan kontraindikasi mutlaknya!",
-      "stimulus": "Amoksisilin (Amoxicillin)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler dan target bakteri dari Amoksisilin!",
-      "soal_b": "Sebutkan golongan obat, mnemonik PPT, 2-3 contoh obat sekelompok, indikasi klinis, dan kontraindikasi mutlaknya!",
+      "stimulus": "Diberikan sediaan Amoksisilin tablet 500 mg",
+      "soal_a": "Bagaimana mekanisme kerja dari obat tersebut?",
+      "soal_b": "Tuliskan resep obat tersebut jika diminum 3 kali sehari selama 7 hari!",
       "diagnosis": "Amoksisilin (Amoxicillin)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Penisilin / Beta-Laktam",
@@ -5620,7 +5815,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Target Bakteri:**\r\n   - Berikatan secara kovalen dengan *Penicillin-Binding Proteins* (PBPs) pada membran sitoplasma bakteri.\r\n   - Menghambat reaksi **transpeptidasi** (pembentukan ikatan silang silang / *cross-linking* peptidoglikan).\r\n   - Mengakibatkan dinding sel bakteri lisis dan rapuh akibat tekanan osmotik intraseluler (efek bakterisidal).\r",
+      "jawaban_ringkas": "a. Antibiotik Beta-Laktam. Berikatan dengan *Penicillin-Binding Proteins* (PBPs) → menghambat reaksi transpeptidasi sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).\nb. ```text R/ Amoxicillin tab 500 mg No. XXI S. 3 d.d tab 1 p.c. (habiskan) ----------------------------- paraf ```",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Target Bakteri:**\r\n   - Berikatan secara kovalen dengan *Penicillin-Binding Proteins* (PBPs) pada membran sitoplasma bakteri.\r\n   - Menghambat reaksi **transpeptidasi** (pembentukan ikatan silang silang / *cross-linking* peptidoglikan).\r\n   - Mengakibatkan dinding sel bakteri lisis dan rapuh akibat tekanan osmotik intraseluler (efek bakterisidal).\r\nb. **Golongan, Mnemonik, Contoh, Indikasi, & Kontraindikasi:**\r\n   - **Golongan:** Antibiotik Beta-Laktam subkelas Aminopenisilin (Penisilin spektrum diperluas).\r\n   - **Mnemonik PPT:** *\"AMO dan AMPI nonton CGV\"*.\r\n   - **Contoh Obat Sejenis:** Ampisilin, Penisilin G, Penisilin V.\r\n   - **Indikasi Klinis:** Infeksi bakteri Gram positif sensitif (*Streptococcus*, *Enterococcus*) dan beberapa kuman Gram negatif (*Haemophilus influenzae*, *Neisseria meningitidis*).\r\n   - **Kontraindikasi:** Riwayat hipersensitivitas / reaksi anafilaksis terhadap penisilin atau cincin beta-laktam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5639,7 +5834,9 @@
         "amoksisilin",
         "amoxicillin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Beta-Laktam. Berikatan dengan *Penicillin-Binding Proteins* (PBPs) → menghambat reaksi transpeptidasi sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).",
+      "jawaban_b": "```text R/ Amoxicillin tab 500 mg No. XXI S. 3 d.d tab 1 p.c. (habiskan) ----------------------------- paraf ```"
     },
     {
       "id": 298,
@@ -5647,9 +5844,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Ampisilin (Ampicillin)",
       "prompt": "[Ampisilin (Ampicillin)]\n\na. Jelaskan mekanisme kerja molekuler Ampisilin pada sintesis peptidoglikan bakteri!\n\nb. Sebutkan golongan obat, perbedaan rute/bioavailabilitas dibanding amoksisilin, serta kontraindikasinya!",
-      "stimulus": "Ampisilin (Ampicillin)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Ampisilin pada sintesis peptidoglikan bakteri!",
-      "soal_b": "Sebutkan golongan obat, perbedaan rute/bioavailabilitas dibanding amoksisilin, serta kontraindikasinya!",
+      "stimulus": "Diberikan sediaan Ampisilin",
+      "soal_a": "Ampisilin termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Mengapa sediaan oral Ampisilin harus diminum saat perut kosong dibanding Amoksisilin?",
       "diagnosis": "Ampisilin (Ampicillin)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Penisilin / Beta-Laktam",
@@ -5672,7 +5869,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan spesifik pada *Penicillin-Binding Proteins* (PBPs) bakteri → menghambat enzim transpeptidase → menghambat ikatan silang peptidoglikan → dinding sel lisis dan mati (bakterisidal).\r\nb. **Golongan, Perbedaan Farmakokinetik, & Kontraindikasi:**\r\n   - **Golongan:** Antibiotik Beta-Laktam (Penisilin spektrum luas).\r",
+      "jawaban_ringkas": "a. Golongan Antibiotik Beta-Laktam (Aminopenisilin). Menghambat enzim transpeptidase dinding sel peptidoglikan via ikatan pada PBPs bakteri (bakterisidal).\nb. Karena absorpsi oralnya terhambat signifikan oleh adanya makanan di lambung (bioavailabilitas oral hanya ~40% vs Amoksisilin >80%), sehingga wajib diminum 1 jam sebelum atau 2 jam sesudah makan.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan spesifik pada *Penicillin-Binding Proteins* (PBPs) bakteri → menghambat enzim transpeptidase → menghambat ikatan silang peptidoglikan → dinding sel lisis dan mati (bakterisidal).\r\nb. **Golongan, Perbedaan Farmakokinetik, & Kontraindikasi:**\r\n   - **Golongan:** Antibiotik Beta-Laktam (Penisilin spektrum luas).\r\n   - **Perbedaan Farmakokinetik:** Absorpsi oral ampisilin dipengaruhi oleh adanya makanan di lambung (bioavailabilitas oral lebih rendah ≈ 40% dibanding amoksisilin yang mencapai ≥ 75-90%), sehingga sediaan oral ampisilin wajib diminum saat perut kosong (*1 jam sebelum atau 2 jam sesudah makan*), atau lebih sering diberikan via rute parenteral (IV/IM).\r\n   - **Kontraindikasi:** Hipersensitivitas terhadap penisilin/beta-laktam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5691,7 +5888,9 @@
         "ampisilin",
         "ampicillin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Antibiotik Beta-Laktam (Aminopenisilin). Menghambat enzim transpeptidase dinding sel peptidoglikan via ikatan pada PBPs bakteri (bakterisidal).",
+      "jawaban_b": "Karena absorpsi oralnya terhambat signifikan oleh adanya makanan di lambung (bioavailabilitas oral hanya ~40% vs Amoksisilin >80%), sehingga wajib diminum 1 jam sebelum atau 2 jam sesudah makan."
     },
     {
       "id": 299,
@@ -5699,7 +5898,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Cefadroxil",
       "prompt": "[Cefadroxil]\n\na. Cefadroxil termasuk golongan apa?\n\nb. Bagaimana mekanisme kerja dan spektrum kuman utamanya?",
-      "stimulus": "Cefadroxil",
+      "stimulus": "Diberikan preparat Cefadroxil kapsul 500 mg",
       "soal_a": "Cefadroxil termasuk golongan apa?",
       "soal_b": "Bagaimana mekanisme kerja dan spektrum kuman utamanya?",
       "diagnosis": "Cefadroxil",
@@ -5723,7 +5922,7 @@
         "**Mnemonik:** a. Mekanisme Kerja Molekuler:",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 1 (golongan Beta-Laktam).\nb. Menghambat transpeptidasi sintesis peptidoglikan dinding sel via ikatan pada PBPs (bakterisidal); spektrum dominan aktif terhadap kuman Gram Positif (*Streptococcus*, *Staphylococcus aureus* sensitif metisilin).\r\n\r\n---\r\n\r\n### 4. Cefixime (Sefiksim)",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 1 (golongan Beta-Laktam).\nb. Menghambat transpeptidasi sintesis peptidoglikan dinding sel via ikatan pada PBPs (bakterisidal); spektrum dominan aktif terhadap kuman Gram Positif (*Streptococcus*, *Staphylococcus aureus* sensitif metisilin).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan dengan *Penicillin-Binding Proteins* (PBPs) → menghambat reaksi transpeptidasi sintesis peptidoglikan dinding sel → memicu autolisis dinding sel kuman (bakterisidal).\r\nb. **Golongan, Mnemonik, Spektrum, Dosis, & Kontraindikasi:**\r\n   - **Golongan:** Sefalosporin Generasi 1 (Beta-Laktam).\r\n   - **Mnemonik PPT:** *\"DROne PROfessor XIap PIndah\"* (**DROne** = Cefa**dro**xil).\r\n   - **Spektrum Antibakteri:** Dominan aktif terhadap kuman Gram Positif (misal *Streptococcus*, *Staphylococcus aureus* sensitif metisilin), aktivitas terhadap kuman Gram negatif terbatas.\r\n   - **Sediaan & Dosis Lazim:** Kapsul 500 mg, Sirup kering 125 mg/5 mL dan 250 mg/5 mL. Dosis dewasa: 500–1000 mg tiap 12 jam (2 kali sehari).\r\n   - **Kontraindikasi:** Hipersensitivitas terhadap sefalosporin atau riwayat anafilaksis berat terhadap antibiotik beta-laktam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5740,7 +5939,9 @@
         "bakterisidal",
         "cefadroxil"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi 1 (golongan Beta-Laktam).",
+      "jawaban_b": "Menghambat transpeptidasi sintesis peptidoglikan dinding sel via ikatan pada PBPs (bakterisidal); spektrum dominan aktif terhadap kuman Gram Positif (*Streptococcus*, *Staphylococcus aureus* sensitif metisilin)."
     },
     {
       "id": 300,
@@ -5748,7 +5949,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Cefprozil",
       "prompt": "[Cefprozil]\n\na. Cefprozil termasuk golongan apa?\n\nb. Bagaimana mekanisme kerjanya?",
-      "stimulus": "Cefprozil",
+      "stimulus": "Diberikan preparat Cefprozil",
       "soal_a": "Cefprozil termasuk golongan apa?",
       "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "Cefprozil",
@@ -5771,7 +5972,7 @@
         "**Mnemonik:** a. Mekanisme Kerja Molekuler:",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 2 (Beta-Laktam).\nb. Menghambat transpeptidasi sintesis dinding sel peptidoglikan bakteri via PBP (bakterisidal), dengan perluasan aktivitas terhadap kuman Gram Negatif dibanding generasi 1.\r\n\r\n---\r\n\r\n### 15. Klaritromisin (Clarithromycin)",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 2 (Beta-Laktam).\nb. Menghambat transpeptidasi sintesis dinding sel peptidoglikan bakteri via PBP (bakterisidal), dengan perluasan aktivitas terhadap kuman Gram Negatif dibanding generasi 1.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan dengan PBP bakteri → menghambat transpeptidasi dinding sel peptidoglikan → lisis dinding sel bakteri (bakterisidal).\r\nb. **Golongan, Karakteristik Spektrum, Mnemonik, & Kontraindikasi:**\r\n   - **Golongan:** Sefalosporin Generasi 2.\r\n   - **Mnemonik PPT:** *\"DROne PROfessor XIap PIndah\"* (**PROfessor** = Cef**pro**zil).\r\n   - **Spektrum Antibakteri:** Mempertahankan aktivitas terhadap kuman Gram Positif namun memiliki aktivitas yang lebih baik terhadap kuman Gram Negatif tertentu (*Haemophilus influenzae*, *Moraxella catarrhalis*) dibanding generasi 1.\r\n   - **Kontraindikasi:** Hipersensitivitas terhadap antibiotik sefalosporin.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5787,7 +5988,9 @@
         "bakterisidal",
         "cefprozil"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi 2 (Beta-Laktam).",
+      "jawaban_b": "Menghambat transpeptidasi sintesis dinding sel peptidoglikan bakteri via PBP (bakterisidal), dengan perluasan aktivitas terhadap kuman Gram Negatif dibanding generasi 1."
     },
     {
       "id": 301,
@@ -5795,7 +5998,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Cefixime",
       "prompt": "[Cefixime]\n\na. Termasuk golongan apakah obat ini berasal?\n\nb. Sebutkan indikasi klinis utama dari obat ini!",
-      "stimulus": "Cefixime",
+      "stimulus": "Diberikan sediaan Cefixime kapsul 100 mg",
       "soal_a": "Termasuk golongan apakah obat ini berasal?",
       "soal_b": "Sebutkan indikasi klinis utama dari obat ini!",
       "diagnosis": "Cefixime",
@@ -5822,7 +6025,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi ke-3 Oral (Beta-Laktam).\nb. Pengobatan infeksi kuman Gram Negatif pada saluran napas (faringitis, bronkitis, pneumonia) dan Infeksi Saluran Kemih (ISK) tanpa komplikasi.\r\n\r\n---\r\n\r\n### 5. Cefepime",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi ke-3 Oral (Beta-Laktam).\nb. Pengobatan infeksi kuman Gram Negatif pada saluran napas (faringitis, bronkitis, pneumonia) dan Infeksi Saluran Kemih (ISK) tanpa komplikasi.",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik Molekuler:**\r\n   - Mengikat PBP membran sitoplasma bakteri → menghambat pembentukan ikatan silang transpeptidase dinding sel peptidoglikan → lisis osmotik kuman (bakterisidal).\r\nb. **Golongan, Pergeseran Spektrum, Mnemonik, Dosis, & Kontraindikasi:**\r\n   - **Golongan:** Sefalosporin Generasi 3 oral.\r\n   - **Mnemonik PPT:** *\"DROne PROfessor XIap PIndah\"* (**XIap** = Cefi**xi**me).\r\n   - **Pergeseran Spektrum:** Sangat poten dan dominan terhadap bakteri **Gram Negatif** (*Enterobacteriaceae*, *H. influenzae*, *N. gonorrhoeae*), stabil terhadap hidrolisis enzim beta-laktamase; namun aktivitasnya terhadap beberapa Gram positif tertentu lebih rendah dibanding generasi 1.\r\n   - **Sediaan & Dosis Lazim:** Kapsul 100 mg dan 200 mg; sirup kering 100 mg/5 mL. Dosis dewasa: 200–400 mg per hari (diberikan 100–200 mg tiap 12 jam).\r\n   - **Kontraindikasi:** Hipersensitivitas terhadap sefalosporin/beta-laktam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5841,7 +6044,9 @@
         "bakterisidal",
         "cefixime"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi ke-3 Oral (Beta-Laktam).",
+      "jawaban_b": "Pengobatan infeksi kuman Gram Negatif pada saluran napas (faringitis, bronkitis, pneumonia) dan Infeksi Saluran Kemih (ISK) tanpa komplikasi."
     },
     {
       "id": 302,
@@ -5849,7 +6054,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Cefepime",
       "prompt": "[Cefepime]\n\na. Cefepime termasuk golongan apa dan bagaimana rute pemberiannya?\n\nb. Bagaimana mekanisme kerja dan karakteristik spektrumnya?",
-      "stimulus": "Cefepime",
+      "stimulus": "Diberikan sediaan Cefepime vial 1 gram injeksi",
       "soal_a": "Cefepime termasuk golongan apa dan bagaimana rute pemberiannya?",
       "soal_b": "Bagaimana mekanisme kerja dan karakteristik spektrumnya?",
       "diagnosis": "Cefepime",
@@ -5875,7 +6080,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 4; diberikan khusus via rute parenteral (injeksi IV / IM).\nb. Menghambat sintesis peptidoglikan dinding sel bakteri via PBP (bakterisidal); spektrum sangat luas (*broad-spectrum*) mencakup Gram Positif dan Gram Negatif berat termasuk *Pseudomonas aeruginosa*.\r\n\r\n---\r\n\r\n### 6. Azitromisin (Azithromycin)",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi 4; diberikan khusus via rute parenteral (injeksi IV / IM).\nb. Menghambat sintesis peptidoglikan dinding sel bakteri via PBP (bakterisidal); spektrum sangat luas (*broad-spectrum*) mencakup Gram Positif dan Gram Negatif berat termasuk *Pseudomonas aeruginosa*.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan dengan target transpeptidase PBP dinding sel bakteri → inhibisi sintesis peptidoglikan → lisis dinding sel (bakterisidal). Penetrasi menembus dinding porin luar bakteri Gram negatif sangat cepat.\r\nb. **Golongan, Spektrum, Mnemonik, Rute, & Kontraindikasi:**\r\n   - **Golongan:** Sefalosporin Generasi 4.\r\n   - **Mnemonik PPT:** *\"DROne PROfessor XIap PIndah\"* (**PIndah** = Cefe**pi**me).\r\n   - **Karakteristik Spektrum:** Spektrum luas seimbang (*broad-spectrum* sejati) mencakup kuman **Gram Positif** (*Staphylococcus*, *Streptococcus*) DAN **Gram Negatif** berat, termasuk *Pseudomonas aeruginosa* serta kuman penghasil AmpC beta-laktamase.\r\n   - **Rute Pemberian:** Parenteral murni (Injeksi IV/IM).\r\n   - **Kontraindikasi:** Riwayat hipersensitivitas terhadap sefalosporin/beta-laktam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5893,7 +6098,9 @@
         "bakterisidal",
         "cefepime"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi 4; diberikan khusus via rute parenteral (injeksi IV / IM).",
+      "jawaban_b": "Menghambat sintesis peptidoglikan dinding sel bakteri via PBP (bakterisidal); spektrum sangat luas (*broad-spectrum*) mencakup Gram Positif dan Gram Negatif berat termasuk *Pseudomonas aeruginosa*."
     },
     {
       "id": 303,
@@ -5901,9 +6108,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Azithromycin (Azitromisin)",
       "prompt": "[Azithromycin (Azitromisin)]\n\na. Jelaskan mekanisme kerja molekuler Azithromycin pada ribosom bakteri!\n\nb. Sebutkan golongan, 2 contoh obat sekelompok, indikasi klinis, alasan pemilihan pada CAP, kontraindikasi utama, dan efek sampingnya!",
-      "stimulus": "Azithromycin (Azitromisin)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Azithromycin pada ribosom bakteri!",
-      "soal_b": "Sebutkan golongan, 2 contoh obat sekelompok, indikasi klinis, alasan pemilihan pada CAP, kontraindikasi utama, dan efek sampingnya!",
+      "stimulus": "Diberikan preparat Azitromisin tablet 500 mg",
+      "soal_a": "Azitromisin termasuk golongan apa?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "Azithromycin (Azitromisin)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Makrolida",
@@ -5927,7 +6134,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan secara reversibel pada **subunit 50S RNA ribosom** bakteri (khususnya 23S rRNA).\r\n   - Menghambat translokasi peptidil-tRNA dan perpanjangan rantai peptida → menghambat sintesis protein bakteri (bersifat bakteriostatik).\r\nb. **Golongan, Contoh Sejenis, Indikasi, Alasan Pemilihan CAP, Kontraindikasi, & ESO:**\r",
+      "jawaban_ringkas": "a. Antibiotik golongan Makrolida (Macrolide / subkelas Azalida).\nb. Menghambat sintesis protein bakteri dengan berikatan secara reversibel pada subunit ribosom 50S (mencegah translokasi peptidil-tRNA, bersifat bakteriostatik).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan secara reversibel pada **subunit 50S RNA ribosom** bakteri (khususnya 23S rRNA).\r\n   - Menghambat translokasi peptidil-tRNA dan perpanjangan rantai peptida → menghambat sintesis protein bakteri (bersifat bakteriostatik).\r\nb. **Golongan, Contoh Sejenis, Indikasi, Alasan Pemilihan CAP, Kontraindikasi, & ESO:**\r\n   - **Golongan:** Antibiotik Makrolida (subkelas Azalida).\r\n   - **Contoh Obat Sejenis:** Eritromisin (*Erythromycin*), Klaritromisin (*Clarithromycin*).\r\n   - **Indikasi Klinis:** Infeksi saluran napas atas (ISPA) dan bawah (ISPB), infeksi klamidia, serta infeksi *Corynebacterium* (difteri, eritrasma).\r\n   - **Keunggulan CAP:** Efektif membunuh patogen tipikal dan atipikal (*Mycoplasma*, *Legionella*), penetrasi konsentrasi jaringan paru sangat tinggi, waktu paruh panjang (\\sim 68 jam), terapi ringkas 3–5 hari (dosis lazim: 500 mg 1x/hari).\r\n   - **Kontraindikasi:** Gangguan fungsi hepar berat dan riwayat hipersensitivitas terhadap makrolida.\r\n   - **Efek Samping:** Gangguan saluran cerna (kram perut, mual, diare), pemanjangan interval QT, peningkatan enzim transaminase hepar.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -5947,7 +6154,9 @@
         "azithromycin",
         "azitromisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik golongan Makrolida (Macrolide / subkelas Azalida).",
+      "jawaban_b": "Menghambat sintesis protein bakteri dengan berikatan secara reversibel pada subunit ribosom 50S (mencegah translokasi peptidil-tRNA, bersifat bakteriostatik)."
     },
     {
       "id": 304,
@@ -5955,9 +6164,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Erythromycin (Eritromisin)",
       "prompt": "[Erythromycin (Eritromisin)]\n\na. Jelaskan mekanisme farmakodinamik molekuler dari Erythromycin!\n\nb. Sebutkan golongan obat, indikasi spesifik (Slide 19), kontraindikasi utama, serta efek samping / interaksi enzim heparnya!",
-      "stimulus": "Erythromycin (Eritromisin)",
-      "soal_a": "Jelaskan mekanisme farmakodinamik molekuler dari Erythromycin!",
-      "soal_b": "Sebutkan golongan obat, indikasi spesifik (Slide 19), kontraindikasi utama, serta efek samping / interaksi enzim heparnya!",
+      "stimulus": "Diberikan sediaan Eritromisin kapsul 250 mg",
+      "soal_a": "Eritromisin termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan efek samping penting dan kontraindikasi utamanya!",
       "diagnosis": "Erythromycin (Eritromisin)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Makrolida",
@@ -5981,7 +6190,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Farmakodinamik Molekuler:**\r\n   - Mengikat subunit ribosom 50S bakteri → menghambat reaksi sintesis protein bakteri (bakteriostatik).\r\nb. **Golongan, Indikasi, Kontraindikasi, ESO, & Interaksi:**\r\n   - **Golongan:** Antibiotik Makrolida.\r",
+      "jawaban_ringkas": "a. Antibiotik golongan Makrolida; menghambat sintesis rantai polipeptida/protein bakteri pada subunit ribosom 50S (bakteriostatik).\nb. Efek samping: kram saluran cerna hebat (agonis reseptor motilin lambung) dan hepatotoksisitas kolestatik; kontraindikasi mutlak: gangguan fungsi hepar berat.",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik Molekuler:**\r\n   - Mengikat subunit ribosom 50S bakteri → menghambat reaksi sintesis protein bakteri (bakteriostatik).\r\nb. **Golongan, Indikasi, Kontraindikasi, ESO, & Interaksi:**\r\n   - **Golongan:** Antibiotik Makrolida.\r\n   - **Indikasi Spesifik PPT:** Infeksi *Corynebacterium* (difteri, eritrasma), infeksi saluran pernapasan (ISPA & ISPB), alternatif pasien alergi penisilin.\r\n   - **Kontraindikasi:** **Gangguan fungsi hepar** berat dan hipersensitivitas makrolida.\r\n   - **Efek Samping & Interaksi:** Hepatotoksisitas / ikterus kolestatik (terutama bentuk estolat), motilitas lambung berlebih (agonis reseptor motilin → kram lambung), serta inhibitor kuat enzim CYP3A4 di hepar (meningkatkan toksisitas obat lain seperti teofilin, warfarin, statin).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6002,7 +6211,9 @@
         "erythromycin",
         "eritromisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik golongan Makrolida; menghambat sintesis rantai polipeptida/protein bakteri pada subunit ribosom 50S (bakteriostatik).",
+      "jawaban_b": "Efek samping: kram saluran cerna hebat (agonis reseptor motilin lambung) dan hepatotoksisitas kolestatik; kontraindikasi mutlak: gangguan fungsi hepar berat."
     },
     {
       "id": 305,
@@ -6010,9 +6221,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Clarithromycin (Klaritromisin)",
       "prompt": "[Clarithromycin (Klaritromisin)]\n\na. Jelaskan mekanisme kerja molekuler Clarithromycin!\n\nb. Sebutkan golongan, 2 obat sekelompok, kontraindikasi utama, dan keunggulan stabilitas asam lambungnya!",
-      "stimulus": "Clarithromycin (Klaritromisin)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Clarithromycin!",
-      "soal_b": "Sebutkan golongan, 2 obat sekelompok, kontraindikasi utama, dan keunggulan stabilitas asam lambungnya!",
+      "stimulus": "Diberikan preparat Klaritromisin tablet 500 mg",
+      "soal_a": "Klaritromisin termasuk golongan apa?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "Clarithromycin (Klaritromisin)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Makrolida",
@@ -6035,7 +6246,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan dengan RNA subunit ribosom 50S bakteri → menghambat elongasi sintesis protein bakteri (bakteriostatik).\r\nb. **Golongan, Contoh Sejenis, Kontraindikasi, & Keunggulan:**\r\n   - **Golongan:** Antibiotik Makrolida.\r",
+      "jawaban_ringkas": "a. Antibiotik golongan Makrolida.\nb. Menghambat sintesis protein bakteri dengan berikatan pada subunit ribosom 50S (bakteriostatik); metabolit aktifnya (14-hidroksiklaritromisin) bekerja sinergis membunuh bakteri.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Berikatan dengan RNA subunit ribosom 50S bakteri → menghambat elongasi sintesis protein bakteri (bakteriostatik).\r\nb. **Golongan, Contoh Sejenis, Kontraindikasi, & Keunggulan:**\r\n   - **Golongan:** Antibiotik Makrolida.\r\n   - **Contoh Obat Sekelompok:** Azitromisin, Eritromisin.\r\n   - **Kontraindikasi:** Gangguan fungsi hati berat, gangguan ginjal berat, penggunaan bersama obat pemanjang interval QT.\r\n   - **Keunggulan Farmakokinetik:** Lebih stabil terhadap asam lambung dibanding eritromisin, bioavailabilitas oral lebih tinggi, dan metabolisme hepar menghasilkan metabolit aktif 14-hidroksi-klaritromisin yang sinergis terhadap *H. influenzae*.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6054,7 +6265,9 @@
         "clarithromycin",
         "klaritromisin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik golongan Makrolida.",
+      "jawaban_b": "Menghambat sintesis protein bakteri dengan berikatan pada subunit ribosom 50S (bakteriostatik); metabolit aktifnya (14-hidroksiklaritromisin) bekerja sinergis membunuh bakteri."
     },
     {
       "id": 306,
@@ -6062,7 +6275,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Ciprofloxacin",
       "prompt": "[Ciprofloxacin]\n\na. Bagaimana mekanisme kerja Ciprofloxacin?\n\nb. Sebutkan kontraindikasi obat tersebut!",
-      "stimulus": "Ciprofloxacin",
+      "stimulus": "Diberikan preparat Ciprofloxacin tablet 500 mg",
       "soal_a": "Bagaimana mekanisme kerja Ciprofloxacin?",
       "soal_b": "Sebutkan kontraindikasi obat tersebut!",
       "diagnosis": "Ciprofloxacin",
@@ -6088,7 +6301,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2021",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. Fluoroquinolon; menghambat enzim DNA Girase (Topoisomerase II pada Gram -) dan Topoisomerase IV (pada Gram +) → menghambat relaksasi dan replikasi DNA bakteri (bakterisidal).\nb. Anak-anak < 18 tahun dan ibu hamil/menyusui (risiko artropati & kerusakan tulang rawan sendi), serta riwayat tendinitis / ruptur tendon.\r\n\r\n---\r\n\r\n### 9. Levofloksasin (Levofloxacin)",
+      "jawaban_ringkas": "a. Fluoroquinolon; menghambat enzim DNA Girase (Topoisomerase II pada Gram -) dan Topoisomerase IV (pada Gram +) → menghambat relaksasi dan replikasi DNA bakteri (bakterisidal).\nb. Anak-anak < 18 tahun dan ibu hamil/menyusui (risiko artropati & kerusakan tulang rawan sendi), serta riwayat tendinitis / ruptur tendon.",
       "jawaban_lengkap": "a. **Mekanisme Aksi Molekuler:**\r\n   - **Bakteri Gram Negatif:** Menghambat enzim **DNA Gyrase (Topoisomerase II)** → mencegah relaksasi supercoiling DNA yang diperlukan untuk replikasi dan transkripsi.\r\n   - **Bakteri Gram Positif:** Menghambat enzim **Topoisomerase IV** → mengganggu pemisahan/dekatenasi kromosom anak saat replikasi DNA.\r\n   - Efek: Kerusakan replikasi materi genetik bakteri secara ireversibel (bakterisidal).\r\nb. **Golongan, Mnemonik, Contoh, Kontraindikasi, & Karakteristik CAP:**\r\n   - **Golongan:** Fluoroquinolon (Quinolon generasi 2).\r\n   - **Mnemonik PPT:** *\"CiMOL - acin\"*.\r\n   - **Contoh Obat Sejenis:** Moxifloxacin, Ofloxacin, Levofloxacin.\r\n   - **Kontraindikasi Mutlak/Penting:**\r\n     1. **Anak-anak < 18 tahun (masa pertumbuhan)** dan **Ibu hamil/menyusui:** Risiko atropati dan kerusakan/erosi kartilago sendi (*cartilage damage*).\r\n     2. Riwayat tendinitis / tendinopati / ruptur tendon (*Achilles tendon rupture*).\r\n     3. Hipersensitivitas fluoroquinolon.\r\n   - **Karakteristik CAP:** Tidak dipilih untuk pneumonia komunitas umum karena aktivitasnya terhadap *Streptococcus pneumoniae* dan kuman atipikal tidak memadai (bukan *respiratory quinolone*).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6106,7 +6319,9 @@
         "bakterisidal",
         "ciprofloxacin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Fluoroquinolon; menghambat enzim DNA Girase (Topoisomerase II pada Gram -) dan Topoisomerase IV (pada Gram +) → menghambat relaksasi dan replikasi DNA bakteri (bakterisidal).",
+      "jawaban_b": "Anak-anak < 18 tahun dan ibu hamil/menyusui (risiko artropati & kerusakan tulang rawan sendi), serta riwayat tendinitis / ruptur tendon."
     },
     {
       "id": 307,
@@ -6114,9 +6329,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Levofloxacin & Moxifloxacin",
       "prompt": "[Levofloxacin & Moxifloxacin]\n\na. Jelaskan mekanisme kerja molekuler Levofloxacin dan Moxifloxacin!\n\nb. Sebutkan golongan obat, sebutan khusus pada infeksi pernapasan, kontraindikasi, dan efek samping berat (*Black Box Warning*)!",
-      "stimulus": "Levofloxacin & Moxifloxacin",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Levofloxacin dan Moxifloxacin!",
-      "soal_b": "Sebutkan golongan obat, sebutan khusus pada infeksi pernapasan, kontraindikasi, dan efek samping berat (*Black Box Warning*)!",
+      "stimulus": "Diberikan preparat Levofloksasin tablet 500 mg",
+      "soal_a": "Levofloksasin termasuk golongan apa dan mengapa dijuluki \"respiratory fluoroquinolone\"?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "Levofloxacin & Moxifloxacin",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Fluoroquinolone Respirasi",
@@ -6136,7 +6351,7 @@
         "**Golongan:** Antibiotik Fluoroquinolone Respirasi",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Menghambat ganda enzim DNA Gyrase (topoisomerase II) dan Topoisomerase IV bakteri → fragmentasi rantai DNA dan kematian bakteri (bakterisidal).\r\nb. **Golongan, Peran Respirasi, Kontraindikasi, & Black Box Warning:**\r\n   - **Golongan:** Fluoroquinolon (generasi 3 & 4).\r",
+      "jawaban_ringkas": "a. Fluoroquinolon generasi 3; dijuluki *respiratory fluoroquinolone* karena memiliki penetrasi paru tinggi dan aktivitas sangat kuat terhadap patogen utama pneumonia (*Streptococcus pneumoniae* dan kuman atipikal).\nb. Menghambat enzim ganda DNA Girase dan Topoisomerase IV → menghambat proses replikasi dan pembelahan DNA kuman (bakterisidal).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Menghambat ganda enzim DNA Gyrase (topoisomerase II) dan Topoisomerase IV bakteri → fragmentasi rantai DNA dan kematian bakteri (bakterisidal).\r\nb. **Golongan, Peran Respirasi, Kontraindikasi, & Black Box Warning:**\r\n   - **Golongan:** Fluoroquinolon (generasi 3 & 4).\r\n   - **Sebutan Khusus:** *\"Respiratory Fluoroquinolones\"* karena memiliki penetrasi paru luar biasa dan aktivitas bakterisidal kuat terhadap *Streptococcus pneumoniae* (termasuk galur resisten penisilin/PRSP) serta patogen atipikal pneumonia.\r\n   - **Kontraindikasi:** Anak usia < 18 tahun, ibu hamil/menyusui, gangguan konduksi jantung / pemanjangan interval QT.\r\n   - **Efek Samping Berat (Black Box Warning):** Tendinitis dan ruptur tendo Achilles, neuropati perifer, efek neurotoksik SSP (konvulsi, psikosis), disglikemia berat, dan diseksi aneurisma aorta.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6153,7 +6368,9 @@
         "levofloxacin",
         "moxifloxacin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Fluoroquinolon generasi 3; dijuluki *respiratory fluoroquinolone* karena memiliki penetrasi paru tinggi dan aktivitas sangat kuat terhadap patogen utama pneumonia (*Streptococcus pneumoniae* dan kuman atipikal).",
+      "jawaban_b": "Menghambat enzim ganda DNA Girase dan Topoisomerase IV → menghambat proses replikasi dan pembelahan DNA kuman (bakterisidal)."
     },
     {
       "id": 308,
@@ -6161,9 +6378,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Cotrimoxazole (Kotrimoksazol)",
       "prompt": "[Cotrimoxazole (Kotrimoksazol)]\n\na. Jelaskan mekanisme kerja molekuler ganda sinergis dari kombinasi Sulfametoksazol dan Trimetoprim!\n\nb. Sebutkan golongan, mengapa kombinasi keduanya mengubah sifat bakteriostatik menjadi bakterisidal, indikasi PPT, dan 2 kontraindikasi pentingnya!",
-      "stimulus": "Cotrimoxazole (Kotrimoksazol)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler ganda sinergis dari kombinasi Sulfametoksazol dan Trimetoprim!",
-      "soal_b": "Sebutkan golongan, mengapa kombinasi keduanya mengubah sifat bakteriostatik menjadi bakterisidal, indikasi PPT, dan 2 kontraindikasi pentingnya!",
+      "stimulus": "Diberikan preparat Kotrimoksazol tablet 480 mg",
+      "soal_a": "Kotrimoksazol merupakan kombinasi dari obat apa saja?",
+      "soal_b": "Bagaimana mekanisme kerja sinergis dari obat tersebut?",
       "diagnosis": "Cotrimoxazole (Kotrimoksazol)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antibiotik Kombinasi Antifolat",
@@ -6187,7 +6404,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Molekuler Sekuensial Sinergis:**\r\n   - **Sulfametoksazol (Sulfonamid):** Bekerja sebagai analog struktural / antagonis kompetitif PABA (*para-aminobenzoic acid*) → menghambat enzim **dihydropteroate synthetase** → menghambat pembentukan asam dihidrofolat.\r\n   - **Trimetoprim:** Menginhibisi secara poten enzim **dihidrofolat reduktase (DHFR)** bakteri → menghambat reduksi asam dihidrofolat menjadi asam tetrahidrofolat aktif.\r\nb. **Perubahan Sifat Sinergis, Indikasi, & Kontraindikasi:**\r",
+      "jawaban_ringkas": "a. Kombinasi Sulfametoksazol (golongan Sulfonamid) dan Trimetoprim dengan perbandingan rasio tetap 5 : 1.\nb. Menghambat sintesis asam folat bakteri secara sekuensial ganda (Sulfametoksazol menghambat enzim *dihidropteroat sintetase*, Trimetoprim menghambat enzim *dihidrofolat reduktase*), menghasilkan efek bakterisidal sinergis.",
       "jawaban_lengkap": "a. **Mekanisme Molekuler Sekuensial Sinergis:**\r\n   - **Sulfametoksazol (Sulfonamid):** Bekerja sebagai analog struktural / antagonis kompetitif PABA (*para-aminobenzoic acid*) → menghambat enzim **dihydropteroate synthetase** → menghambat pembentukan asam dihidrofolat.\r\n   - **Trimetoprim:** Menginhibisi secara poten enzim **dihidrofolat reduktase (DHFR)** bakteri → menghambat reduksi asam dihidrofolat menjadi asam tetrahidrofolat aktif.\r\nb. **Perubahan Sifat Sinergis, Indikasi, & Kontraindikasi:**\r\n   - **Perubahan Sifat:** Jika digunakan secara **tunggal / terpisah**, masing-masing obat hanya bersifat **bakteriostatik**. Namun bila diberikan **bersama-sama dalam kombinasi (Kotrimoksazol)**, terjadi blokade sekuensial pada dua tahap enzimatik berurutan sintesis folat, menghasilkan efek bunuh sinergis yang bersifat **Bakterisidal**.\r\n   - **Indikasi PPT:** Infeksi Saluran Kemih (ISK), Infeksi *Nocardia*, serta pneumonia oportunistik (*Pneumocystis jirovecii* / PCP).\r\n   - **Kontraindikasi Penting (Slide 14):**\r\n     1. **Ibu Hamil:** Risiko efek teratogenik akibat defisiensi folat (gangguan penutupan *neural tube defect*) dan risiko kernikterus pada janin trimester 3.\r\n     2. **Bayi usia < 2 bulan:** Risiko **kernikterus** hebat karena sulfonamid mendesak bilirubin dari ikatan albumin plasma sehingga bilirubin bebas menembus sawar darah otak bayi.\r\n\r\n---\r\n\r\n## BAGIAN IV: STASI IDENTIFIKASI OBAT RESPIRASI / SIMTOMATIS BATUK",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6208,7 +6425,9 @@
         "cotrimoxazole",
         "kotrimoksazol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Kombinasi Sulfametoksazol (golongan Sulfonamid) dan Trimetoprim dengan perbandingan rasio tetap 5 : 1.",
+      "jawaban_b": "Menghambat sintesis asam folat bakteri secara sekuensial ganda (Sulfametoksazol menghambat enzim *dihidropteroat sintetase*, Trimetoprim menghambat enzim *dihidrofolat reduktase*), menghasilkan efek bakterisidal sinergis."
     },
     {
       "id": 309,
@@ -6216,9 +6435,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Ambroxol",
       "prompt": "[Ambroxol]\n\na. Jelaskan mekanisme kerja farmakodinamik molekuler Ambroxol pada sekret saluran napas!\n\nb. Sebutkan golongan obat, mnemonik PPT, 2-3 contoh obat sekelompok, indikasi klinis, dosis harian lazim (Slide 27), dan kontraindikasinya!",
-      "stimulus": "Ambroxol",
-      "soal_a": "Jelaskan mekanisme kerja farmakodinamik molekuler Ambroxol pada sekret saluran napas!",
-      "soal_b": "Sebutkan golongan obat, mnemonik PPT, 2-3 contoh obat sekelompok, indikasi klinis, dosis harian lazim (Slide 27), dan kontraindikasinya!",
+      "stimulus": "Diberikan sediaan Ambroksol tablet 30 mg",
+      "soal_a": "Ambroksol termasuk golongan apa dan sebutkan 2 contoh obat lain satu golongan?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "Ambroxol",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6243,7 +6462,7 @@
         "**Mnemonik:** a. Mekanisme Kerja Farmakodinamik Molekuler:",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Farmakodinamik Molekuler:**\r\n   - Bekerja secara langsung pada mukus dengan memecah ikatan serat mukopolisakarida / mukoprotein.\r\n   - Merangsang sintesis dan sekresi surfaktan alveolar oleh sel pneumosit tipe II serta meningkatkan frekuensi denyut silia epitel bronkus → viskositas dahak menurun drastis dan pembersihan mukosiliar (*mucociliary clearance*) meningkat.\r\nb. **Golongan, Mnemonik, Contoh, Indikasi, Dosis, & Kontraindikasi:**\r",
+      "jawaban_ringkas": "a. Golongan Mukolitik. Contoh lain: Bromheksin, N-Asetilsistein, Erdostein, Karbosistein.\nb. Memecah serat mukopolisakarida dahak dan menstimulasi sekresi surfaktan alveolar paru → menurunkan viskositas lendir dan mempermudah bersihan jalan napas (*mucociliary clearance*).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Farmakodinamik Molekuler:**\r\n   - Bekerja secara langsung pada mukus dengan memecah ikatan serat mukopolisakarida / mukoprotein.\r\n   - Merangsang sintesis dan sekresi surfaktan alveolar oleh sel pneumosit tipe II serta meningkatkan frekuensi denyut silia epitel bronkus → viskositas dahak menurun drastis dan pembersihan mukosiliar (*mucociliary clearance*) meningkat.\r\nb. **Golongan, Mnemonik, Contoh, Indikasi, Dosis, & Kontraindikasi:**\r\n   - **Golongan:** Mukolitik.\r\n   - **Mnemonik PPT:** *\"AMBRO beli MERAK di BROMo\"*.\r\n   - **Contoh Obat Sejenis:** Mesistein, Erdostein, Acetylcystein, Carbocistein, Bromheksin.\r\n   - **Indikasi Klinis:** Batuk berdahak / batuk produktif dengan sputum kental pada bronkitis, emfisema, dan pneumonia.\r\n   - **Dosis Lazim (Slide 27):** Dewasa: **60 – 120 mg per hari**, dibagi menjadi **2 – 3 dosis terbagi** (contoh sediaan tablet 30 mg: diminum 3 kali sehari 1 tablet).\r\n   - **Kontraindikasi:** Hipersensitivitas terhadap ambroxol; kehati-hatian pada ulkus peptikum aktif.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6263,7 +6482,9 @@
         "th-2021",
         "ambroxol"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mukolitik. Contoh lain: Bromheksin, N-Asetilsistein, Erdostein, Karbosistein.",
+      "jawaban_b": "Memecah serat mukopolisakarida dahak dan menstimulasi sekresi surfaktan alveolar paru → menurunkan viskositas lendir dan mempermudah bersihan jalan napas (*mucociliary clearance*)."
     },
     {
       "id": 310,
@@ -6271,9 +6492,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Bromheksin (Bromhexine)",
       "prompt": "[Bromheksin (Bromhexine)]\n\na. Jelaskan mekanisme farmakodinamik Bromheksin dan hubungannya dengan Ambroxol!\n\nb. Sebutkan golongan obat, kontraindikasi organ spesifik yang sering keluar di ujian, serta efek sampingnya!",
-      "stimulus": "Bromheksin (Bromhexine)",
-      "soal_a": "Jelaskan mekanisme farmakodinamik Bromheksin dan hubungannya dengan Ambroxol!",
-      "soal_b": "Sebutkan golongan obat, kontraindikasi organ spesifik yang sering keluar di ujian, serta efek sampingnya!",
+      "stimulus": "Diberikan sediaan Bromheksin tablet 8 mg",
+      "soal_a": "Bromheksin termasuk golongan apa dan apa hubungannya dengan Ambroksol?",
+      "soal_b": "Sebutkan kontraindikasi organ spesifik dari obat ini!",
       "diagnosis": "Bromheksin (Bromhexine)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6296,7 +6517,7 @@
         "**Golongan:** Mukolitik / Pengencer Dahak",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Farmakodinamik & Hubungan Kimia:**\r\n   - Merupakan senyawa mukolitik turunan sintetik dari vasisine. Bekerja mengencerkan sekret bronkus dengan mendepolimerisasi serat mukopolisakarida dahak.\r\n   - Hubungan dengan Ambroxol: **Ambroxol adalah metabolit aktif metabolit VIII dari Bromheksin**.\r\nb. **Golongan, Kontraindikasi Spesifik, & Efek Samping:**\r",
+      "jawaban_ringkas": "a. Golongan Mukolitik; Ambroksol merupakan metabolit aktif utama (metabolit VIII) dari Bromheksin.\nb. Kontraindikasi: Ulkus Peptikum / Tukak Lambung aktif (karena dapat mengikis barier pertahanan mukosa lambung).",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik & Hubungan Kimia:**\r\n   - Merupakan senyawa mukolitik turunan sintetik dari vasisine. Bekerja mengencerkan sekret bronkus dengan mendepolimerisasi serat mukopolisakarida dahak.\r\n   - Hubungan dengan Ambroxol: **Ambroxol adalah metabolit aktif metabolit VIII dari Bromheksin**.\r\nb. **Golongan, Kontraindikasi Spesifik, & Efek Samping:**\r\n   - **Golongan:** Mukolitik.\r\n   - **Kontraindikasi Organ Spesifik (Slide 27):** **Ulkus Peptikum / Tukak Lambung aktif** (karena dapat merusak barier mukosa lambung).\r\n   - **Efek Samping:** Rasa tidak nyaman di perut, mual, kenaikan transien serum transaminase.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6316,7 +6537,9 @@
         "bromheksin",
         "bromhexine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mukolitik; Ambroksol merupakan metabolit aktif utama (metabolit VIII) dari Bromheksin.",
+      "jawaban_b": "Kontraindikasi: Ulkus Peptikum / Tukak Lambung aktif (karena dapat mengikis barier pertahanan mukosa lambung)."
     },
     {
       "id": 311,
@@ -6324,9 +6547,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Erdostein (Erdosteine)",
       "prompt": "[Erdostein (Erdosteine)]\n\na. Jelaskan mekanisme kerja molekuler dari Erdostein!\n\nb. Sebutkan golongan obat, kontraindikasi spesifik mutlak (Slide 27), dan peran metabolit SH bebasnya!",
-      "stimulus": "Erdostein (Erdosteine)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler dari Erdostein!",
-      "soal_b": "Sebutkan golongan obat, kontraindikasi spesifik mutlak (Slide 27), dan peran metabolit SH bebasnya!",
+      "stimulus": "Diberikan sediaan Erdostein kapsul 300 mg",
+      "soal_a": "Erdostein termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan kontraindikasi mutlak dari obat ini!",
       "diagnosis": "Erdostein (Erdosteine)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6345,7 +6568,7 @@
       "struktur_khas": [
         "**Golongan:** Mukolitik / Pengencer Dahak"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Merupakan *prodrug* yang memiliki gugus tiol tertutup; setelah metabolisme in vivo akan membuka gugus sulfhidril (-SH) bebas yang memutus jembatan disulfida makromolekul musin → menurunkan viskositas dan elastisitas dahak.\r\nb. **Golongan, Kontraindikasi Mutlak, & Peran Gugus Bebas:**\r\n   - **Golongan:** Mukolitik.\r",
+      "jawaban_ringkas": "a. Golongan Mukolitik (*prodrug*); gugus tiol aktif membuka ikatan sulfhidril (-SH) bebas yang memecah jembatan disulfida dahak sehingga viskositas dahak turun.\nb. Kontraindikasi: Sirosis Hati / gangguan fungsi hepar berat dan gagal ginjal berat (GFR < 25 mL/menit).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Merupakan *prodrug* yang memiliki gugus tiol tertutup; setelah metabolisme in vivo akan membuka gugus sulfhidril (-SH) bebas yang memutus jembatan disulfida makromolekul musin → menurunkan viskositas dan elastisitas dahak.\r\nb. **Golongan, Kontraindikasi Mutlak, & Peran Gugus Bebas:**\r\n   - **Golongan:** Mukolitik.\r\n   - **Kontraindikasi Mutlak (Slide 27):** **Sirosis Hati / Gangguan Fungsi Hepar Berat** serta insufisiensi ginjal berat (GFR < 25 mL/min).\r\n   - **Peran Gugus SH Bebas:** Selain mencairkan dahak, metabolit aktifnya berfungsi sebagai pemulung radikal bebas (*antioxidant/free radical scavenger*) dan menghambat adhesi bakteri pada epitel saluran napas.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6361,7 +6584,9 @@
         "erdostein",
         "erdosteine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mukolitik (*prodrug*); gugus tiol aktif membuka ikatan sulfhidril (-SH) bebas yang memecah jembatan disulfida dahak sehingga viskositas dahak turun.",
+      "jawaban_b": "Kontraindikasi: Sirosis Hati / gangguan fungsi hepar berat dan gagal ginjal berat (GFR < 25 mL/menit)."
     },
     {
       "id": 312,
@@ -6369,9 +6594,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Karbosistein (Carbocisteine) & Mesistein",
       "prompt": "[Karbosistein (Carbocisteine) & Mesistein]\n\na. Jelaskan mekanisme kerja mukolitik dari Karbosistein!\n\nb. Sebutkan golongan obat, kontraindikasi klinis pentingnya (Slide 27), dan perbedaan kerjanya dibanding mukolitik pereduksi klasik!",
-      "stimulus": "Karbosistein (Carbocisteine) & Mesistein",
-      "soal_a": "Jelaskan mekanisme kerja mukolitik dari Karbosistein!",
-      "soal_b": "Sebutkan golongan obat, kontraindikasi klinis pentingnya (Slide 27), dan perbedaan kerjanya dibanding mukolitik pereduksi klasik!",
+      "stimulus": "Diberikan sediaan Karbosistein kapsul 375 mg",
+      "soal_a": "Karbosistein termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan kontraindikasi pentingnya!",
       "diagnosis": "Karbosistein (Carbocisteine) & Mesistein",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6390,7 +6615,7 @@
       "struktur_khas": [
         "**Golongan:** Mukolitik / Pengencer Dahak"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Mukolitik:**\r\n   - Mengatur sekresi glikoprotein mukus saluran napas dengan menstimulasi enzim sialiltransferase → memulihkan rasio sialomusin dan fukomusin normal → memperbaiki rheologi dan viskositas mukus.\r\nb. **Golongan & Kontraindikasi Penting:**\r\n   - **Golongan:** Mukolitik / Mukoregulator.\r",
+      "jawaban_ringkas": "a. Golongan Mukolitik / Mukoregulator; menstimulasi enzim sialiltransferase untuk memulihkan rasio normal sialomusin terhadap fukomusin lendir bronkus.\nb. Kontraindikasi: Tukak Lambung / Ulkus Peptikum aktif.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Mukolitik:**\r\n   - Mengatur sekresi glikoprotein mukus saluran napas dengan menstimulasi enzim sialiltransferase → memulihkan rasio sialomusin dan fukomusin normal → memperbaiki rheologi dan viskositas mukus.\r\nb. **Golongan & Kontraindikasi Penting:**\r\n   - **Golongan:** Mukolitik / Mukoregulator.\r\n   - **Kontraindikasi Klinis Penting (Slide 27):** **Ulkus Peptikum aktif** (karena dapat mengikis integritas barier mukosa gastrointestinal).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6407,7 +6632,9 @@
         "carbocisteine",
         "mesistein"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mukolitik / Mukoregulator; menstimulasi enzim sialiltransferase untuk memulihkan rasio normal sialomusin terhadap fukomusin lendir bronkus.",
+      "jawaban_b": "Kontraindikasi: Tukak Lambung / Ulkus Peptikum aktif."
     },
     {
       "id": 313,
@@ -6415,9 +6642,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Asetilsistein (Acetylcysteine)",
       "prompt": "[Asetilsistein (Acetylcysteine)]\n\na. Jelaskan mekanisme kerja molekuler Asetilsistein dalam mencairkan sputum kental!\n\nb. Sebutkan golongan obat, indikasi non-respirasi antidotum khususnya, serta efek sampingnya!",
-      "stimulus": "Asetilsistein (Acetylcysteine)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Asetilsistein dalam mencairkan sputum kental!",
-      "soal_b": "Sebutkan golongan obat, indikasi non-respirasi antidotum khususnya, serta efek sampingnya!",
+      "stimulus": "Diberikan sediaan Asetilsistein kapsul 200 mg",
+      "soal_a": "Asetilsistein termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan indikasi khusus non-respirasi dari obat ini!",
       "diagnosis": "Asetilsistein (Acetylcysteine)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6439,7 +6666,7 @@
         "**Golongan:** Mukolitik / Pengencer Dahak",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Memiliki gugus sulfhidril (-SH) bebas yang bereaksi langsung memecah ikatan disulfida inter- dan intramolekuler pada agregat mukoprotein dan DNA dalam dahak purulen → sputum menjadi encer dan mudah dibatukkan.\r\nb. **Golongan, Indikasi Antidotum, & ESO:**\r\n   - **Golongan:** Mukolitik.\r",
+      "jawaban_ringkas": "a. Golongan Mukolitik; gugus sulfhidril (-SH) bebas memutus jembatan disulfida pada makromolekul mukoprotein dahak sehingga dahak mencair secara langsung.\nb. Antidotum spesifik lini pertama untuk intoksikasi / keracunan Parasetamol (Acetaminophen) melalui pengisian kembali cadangan glutation hepar.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Memiliki gugus sulfhidril (-SH) bebas yang bereaksi langsung memecah ikatan disulfida inter- dan intramolekuler pada agregat mukoprotein dan DNA dalam dahak purulen → sputum menjadi encer dan mudah dibatukkan.\r\nb. **Golongan, Indikasi Antidotum, & ESO:**\r\n   - **Golongan:** Mukolitik.\r\n   - **Indikasi Antidotum Khusus:** Merupakan antidotum spesifik lini pertama untuk **intoksikasi/keracunan Parasetamol (Acetaminophen)** melalui pemulihan cadangan glutation hepar.\r\n   - **Efek Samping:** Bronkospasme (pada pasien riwayat asma bronkial), mual, muntah, bau belerang/sulfur khas.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6457,7 +6684,9 @@
         "asetilsistein",
         "acetylcysteine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Mukolitik; gugus sulfhidril (-SH) bebas memutus jembatan disulfida pada makromolekul mukoprotein dahak sehingga dahak mencair secara langsung.",
+      "jawaban_b": "Antidotum spesifik lini pertama untuk intoksikasi / keracunan Parasetamol (Acetaminophen) melalui pengisian kembali cadangan glutation hepar."
     },
     {
       "id": 314,
@@ -6465,9 +6694,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Guaifenesin (Gliseril Guaiakolat / GG)",
       "prompt": "[Guaifenesin (Gliseril Guaiakolat / GG)]\n\na. Jelaskan mekanisme farmakodinamik Guaifenesin dalam mengatasi batuk produktif!\n\nb. Sebutkan golongan obat, mnemonik PPT, contoh sekelompok, indikasi klinis, efek samping obat (ESO), dan dosis lazimnya (Slide 29)!",
-      "stimulus": "Guaifenesin (Gliseril Guaiakolat / GG)",
-      "soal_a": "Jelaskan mekanisme farmakodinamik Guaifenesin dalam mengatasi batuk produktif!",
-      "soal_b": "Sebutkan golongan obat, mnemonik PPT, contoh sekelompok, indikasi klinis, efek samping obat (ESO), dan dosis lazimnya (Slide 29)!",
+      "stimulus": "Diberikan sediaan Guaifenesin tablet 100 mg",
+      "soal_a": "Termasuk golongan apakah obat tersebut dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Tuliskan resep obat tersebut jika diminum 3 kali sehari selama 7 hari!",
       "diagnosis": "Guaifenesin (Gliseril Guaiakolat / GG)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6493,7 +6722,7 @@
         "**Mnemonik:** a. Mekanisme Farmakodinamik:",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Farmakodinamik:**\r\n   - Merangsang reseptor mukosa lambung yang melalui refleks vagal meningkatkan sekresi cairan saluran napas, atau bekerja langsung menghidrasi kelenjar sekretori bronkus → volume cairan saluran pernapasan meningkat → viskositas dahak menurun secara mekanis sehingga silia mudah mendorong dahak keluar.\r\nb. **Golongan, Mnemonik, Contoh, Indikasi, ESO, & Dosis:**\r\n   - **Golongan:** Ekspektoran.\r",
+      "jawaban_ringkas": "a. Golongan Ekspektoran; bekerja meningkatkan volume sekresi cairan saluran pernapasan → mengencerkan dahak secara mekanis sehingga silia mudah mendorong sputum keluar.\nb. ```text R/ Guaifenesin tab 100 mg No. XXI S. 3 d.d tab 1 p.c. ------------------------ paraf ```",
       "jawaban_lengkap": "a. **Mekanisme Farmakodinamik:**\r\n   - Merangsang reseptor mukosa lambung yang melalui refleks vagal meningkatkan sekresi cairan saluran napas, atau bekerja langsung menghidrasi kelenjar sekretori bronkus → volume cairan saluran pernapasan meningkat → viskositas dahak menurun secara mekanis sehingga silia mudah mendorong dahak keluar.\r\nb. **Golongan, Mnemonik, Contoh, Indikasi, ESO, & Dosis:**\r\n   - **Golongan:** Ekspektoran.\r\n   - **Mnemonik PPT:** *\"GUA di AMOK\"* (**GUA** = Guaifenesin, **AMOK** = Amonium Klorida).\r\n   - **Contoh Sejenis:** Amonium Klorida (*Ammonium Chloride*).\r\n   - **Indikasi Klinis (Slide 29):** Batuk akibat infeksi saluran napas atas (batuk produktif).\r\n   - **Efek Samping Obat (ESO Slide 29):** Sakit kepala, pusing, mual, rasa tidak nyaman di epigastrium.\r\n   - **Dosis Lazim (Slide 29):** Dewasa: **200 – 400 mg**, dapat diberikan hingga **6x sehari** (maksimal 2400 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6517,7 +6746,9 @@
         "gliseril",
         "guaiakolat"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Ekspektoran; bekerja meningkatkan volume sekresi cairan saluran pernapasan → mengencerkan dahak secara mekanis sehingga silia mudah mendorong sputum keluar.",
+      "jawaban_b": "```text R/ Guaifenesin tab 100 mg No. XXI S. 3 d.d tab 1 p.c. ------------------------ paraf ```"
     },
     {
       "id": 315,
@@ -6525,9 +6756,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Kodein (Codeine)",
       "prompt": "[Kodein (Codeine)]\n\na. Jelaskan mekanisme kerja sentral molekuler dari Kodein sebagai antitusif!\n\nb. Sebutkan golongan obat, efek samping khas saluran cerna dan sistem saraf pusat, kekurangan/risiko PPT, serta kontraindikasinya pada pneumonia!",
-      "stimulus": "Kodein (Codeine)",
-      "soal_a": "Jelaskan mekanisme kerja sentral molekuler dari Kodein sebagai antitusif!",
-      "soal_b": "Sebutkan golongan obat, efek samping khas saluran cerna dan sistem saraf pusat, kekurangan/risiko PPT, serta kontraindikasinya pada pneumonia!",
+      "stimulus": "Diberikan sediaan Kodein tablet 10 mg",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan efek samping khas dan kontraindikasinya pada pneumonia!",
       "diagnosis": "Kodein (Codeine)",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antitusif / Penekan Batuk",
@@ -6549,7 +6780,7 @@
         "**Golongan:** Antitusif / Penekan Batuk",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Sentral Molekuler:**\r\n   - Bekerja sebagai agonis reseptor opioid (μ-opioid receptor) di Sistem Saraf Pusat.\r\n   - Menekan langsung pusat refleks batuk yang terletak di **medulla oblongata** dan memiliki efek analgesik ringan-sedang.\r\nb. **Golongan, ESO, Kekurangan/Risiko PPT, & Kontraindikasi Pneumonia:**\r",
+      "jawaban_ringkas": "a. Antitusif Sentral golongan Narkotik / Opioid; bekerja menekan pusat refleks batuk di medulla oblongata via stimulasi reseptor μ-opioid di SSP.\nb. Efek samping: konstipasi/obstipasi berat, kantuk/sedasi, mual, potensi adiksi; kontraindikasi: batuk produktif berdahak kental pada pneumonia (memicu retensi dahak berbahaya).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Sentral Molekuler:**\r\n   - Bekerja sebagai agonis reseptor opioid (μ-opioid receptor) di Sistem Saraf Pusat.\r\n   - Menekan langsung pusat refleks batuk yang terletak di **medulla oblongata** dan memiliki efek analgesik ringan-sedang.\r\nb. **Golongan, ESO, Kekurangan/Risiko PPT, & Kontraindikasi Pneumonia:**\r\n   - **Golongan:** Antitusif Sentral Golongan Opioid.\r\n   - **Efek Samping Khas (Slide 24):** Rasa pahit di mulut, mual, muntah, serta **penurunan peristaltik usus → konstipasi/obstipasi**.\r\n   - **Kekurangan / Risiko PPT (Slide 24):**\r\n     1. Tidak selektif terhadap reseptor opioid.\r\n     2. Memicu pelepasan histamin (*histamine release*) → inflamasi berlebih atau bronkospasme.\r\n     3. Efek SSP berlebih: **Sedasi, Euphoria, Halusinasi, dan sifat Adiktif (ketergantungan/adiksi)**.\r\n   - **Kontraindikasi Pneumonia:** Dikontraindikasikan pada batuk produktif berdahak kental karena menekan refleks protektif pengeluaran dahak sehingga memicu retensi dahak dan obstruksi jalan napas.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6567,7 +6798,9 @@
         "kodein",
         "codeine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antitusif Sentral golongan Narkotik / Opioid; bekerja menekan pusat refleks batuk di medulla oblongata via stimulasi reseptor μ-opioid di SSP.",
+      "jawaban_b": "Efek samping: konstipasi/obstipasi berat, kantuk/sedasi, mual, potensi adiksi; kontraindikasi: batuk produktif berdahak kental pada pneumonia (memicu retensi dahak berbahaya)."
     },
     {
       "id": 316,
@@ -6575,9 +6808,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Dekstrometorfan (Dextromethorphan / DMP) & Noskapin",
       "prompt": "[Dekstrometorfan (Dextromethorphan / DMP) & Noskapin]\n\na. Jelaskan mekanisme kerja molekuler dari Dextromethorphan (DMP) dalam menekan batuk!\n\nb. Sebutkan golongan obat, perbedaan sifat analgesik/adiksi dibanding kodein, indikasi klinis, dan bahaya penyalahgunaannya!",
-      "stimulus": "Dekstrometorfan (Dextromethorphan / DMP) & Noskapin",
-      "soal_a": "Jelaskan mekanisme kerja molekuler dari Dextromethorphan (DMP) dalam menekan batuk!",
-      "soal_b": "Sebutkan golongan obat, perbedaan sifat analgesik/adiksi dibanding kodein, indikasi klinis, dan bahaya penyalahgunaannya!",
+      "stimulus": "Diberikan sediaan Dextromethorphan tablet 15 mg",
+      "soal_a": "Dekstrometorfan termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Mengapa obat ini dikontraindikasikan pada batuk berdahak pneumonia?",
       "diagnosis": "Dekstrometorfan (Dextromethorphan / DMP) & Noskapin",
       "organ": "Parenkim Paru (Alveolus & Saluran Napas Bawah)",
       "sifat": "Antitusif / Penekan Batuk",
@@ -6599,7 +6832,7 @@
         "**Golongan:** Antitusif / Penekan Batuk",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Bekerja secara sentral meningkatkan ambang rangsang batuk di **medulla oblongata** (antagonis reseptor NMDA dan agonis sigma-1 reseptor non-opioid).\r\nb. **Golongan, Perbandingan Kodein, Indikasi, & Bahaya:**\r\n   - **Golongan:** Antitusif Sentral Non-Opioid.\r",
+      "jawaban_ringkas": "a. Antitusif Sentral Non-Opioid; bekerja meningkatkan ambang rangsang batuk di medulla oblongata (antagonis reseptor NMDA).\nb. Karena menekan refleks batuk sehingga menyebabkan retensi dahak kental (*sputum retention*), memperburuk sumbatan saluran napas dan atelektasis.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Bekerja secara sentral meningkatkan ambang rangsang batuk di **medulla oblongata** (antagonis reseptor NMDA dan agonis sigma-1 reseptor non-opioid).\r\nb. **Golongan, Perbandingan Kodein, Indikasi, & Bahaya:**\r\n   - **Golongan:** Antitusif Sentral Non-Opioid.\r\n   - **Perbedaan dibanding Kodein:** Pada dosis terapi standar tidak memiliki efek analgesik signifikan, tidak mendepresi pernapasan secara kuat, dan ketergantungan fisik jauh lebih rendah.\r\n   - **Indikasi Klinis:** Batuk kering non-produktif yang sangat mengiritasi dan mengganggu tidur.\r\n   - **Bahaya Penyalahgunaan:** Pada dosis supraterapeutik/overdosis masif dapat menimbulkan efek disosiatif, **halusinasi**, eksitasi SSP, dan adiksi psikologis.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6619,7 +6852,9 @@
         "dmp",
         "noskapin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antitusif Sentral Non-Opioid; bekerja meningkatkan ambang rangsang batuk di medulla oblongata (antagonis reseptor NMDA).",
+      "jawaban_b": "Karena menekan refleks batuk sehingga menyebabkan retensi dahak kental (*sputum retention*), memperburuk sumbatan saluran napas dan atelektasis."
     },
     {
       "id": 317,
@@ -6627,7 +6862,7 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "Benzonatate",
       "prompt": "[Benzonatate]\n\na. Benzonatate termasuk golongan apa dan bagaimana mekanisme kerjanya?\n\nb. Bagaimana cara konsumsi obat ini yang benar dan apa risikonya bila dikunyah?",
-      "stimulus": "Benzonatate",
+      "stimulus": "Diberikan preparat Benzonatate kapsul 100 mg",
       "soal_a": "Benzonatate termasuk golongan apa dan bagaimana mekanisme kerjanya?",
       "soal_b": "Bagaimana cara konsumsi obat ini yang benar dan apa risikonya bila dikunyah?",
       "diagnosis": "Benzonatate",
@@ -6654,7 +6889,7 @@
         "**Golongan:** Antitusif / Penekan Batuk",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. Golongan Antitusif Perifer; bekerja memberi efek anestesi lokal pada reseptor regang (*stretch receptors*) serabut saraf vagal saluran napas paru.\nb. Kapsul harus ditelan utuh; dilarang dikunyah/dihisap karena dapat memicu baal/anestesi mukosa mulut dan orofaring yang berisiko laringospasme.\r\n\r\n---\r\n\r\n## BAGIAN III: STASI KASUS & RESEP PNEUMONIA KOMUNITAS (SLIDE 30 PPT)\r\n\r\n---\r\n\r\n### 23. Kasus Klinis CAP: Resep Kombinasi Antibiotik & Mukolitik",
+      "jawaban_ringkas": "a. Golongan Antitusif Perifer; bekerja memberi efek anestesi lokal pada reseptor regang (*stretch receptors*) serabut saraf vagal saluran napas paru.\nb. Kapsul harus ditelan utuh; dilarang dikunyah/dihisap karena dapat memicu baal/anestesi mukosa mulut dan orofaring yang berisiko laringospasme.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Perifer:**\r\n   - Bekerja secara anestesi lokal (anestesi perifer) pada reseptor regang (*stretch receptors*) serabut saraf vagal di saluran napas, paru-paru, dan pleura → meredam transmisi aferen refleks batuk ke batang otak.\r\nb. **Golongan, Efek Samping, & Cara Konsumsi:**\r\n   - **Golongan:** Antitusif Perifer.\r\n   - **3 Efek Samping Khas (Slide 25):**\r\n     1. **Hipersensitivitas** / reaksi alergi berat.\r\n     2. **Konvulsi** (kejang).\r\n     3. ***Confusion*** (kebingungan mental / disorientasi).\r\n   - **Cara Konsumsi:** Kapsul harus ditelan utuh dengan air; dilarang keras dikunyah, digigit, atau dihisap di mulut karena dapat menimbulkan baal/anestesi mukosa orofaring dan laringospasme fatal.\r\n\r\n---\r\n\r\n## BAGIAN V: TABEL RINGKASAN MEJA IDENTIFIKASI OSPE FARMAKOLOGI BLOK 3.2\r\n\r\n| No | Nama Obat | Golongan Farmakologi | Target Molekuler / Mekanisme | Sifat Aksi | Catatan Khusus & Kontraindikasi Khas |\r\n| :-: | :--- | :--- | :--- | :-: | :--- |\r\n| **1** | **Amoksisilin** | Penisilin (Beta-laktam) | PBP → hambat transpeptidase dinding sel | Bakterisidal | Alergi penisilin; ruam pada mononukleosis |\r\n| **2** | **Ampisilin** | Penisilin (Beta-laktam) | PBP → hambat transpeptidase dinding sel | Bakterisidal | Absorpsi terhambat makanan (perut kosong) |\r\n| **3** | **Cefadroxil** | Sefalosporin Gen 1 | PBP → hambat transpeptidase dinding sel | Bakterisidal | Dominan Gram positif |\r\n| **4** | **Cefprozil** | Sefalosporin Gen 2 | PBP → hambat transpeptidase dinding sel | Bakterisidal | Gram positif & Gram negatif tertentu |\r\n| **5** | **Cefixime** | Sefalosporin Gen 3 | PBP → hambat transpeptidase dinding sel | Bakterisidal | Dominan Gram negatif; resisten beta-laktamase |\r\n| **6** | **Cefepime** | Sefalosporin Gen 4 | PBP → hambat transpeptidase dinding sel | Bakterisidal | Gram positif & Gram negatif luas (*Pseudomonas*) |\r\n| **7** | **Azitromisin** | Makrolida | Ribosom subunit 50S → hambat sintesis protein | Bakteriostatik | Lini 1 CAP; KI gangguan hepar berat |\r\n| **8** | **Eritromisin** | Makrolida | Ribosom subunit 50S → hambat sintesis protein | Bakteriostatik | KI gangguan hepar; inhibitor CYP3A4 kuat |\r\n| **9** | **Klaritromisin** | Makrolida | Ribosom subunit 50S → hambat sintesis protein | Bakteriostatik | KI gangguan hepar berat; metabolit aktif 14-OH |\r\n| **10** | **Ciprofloxacin** | Fluoroquinolon | DNA Girase (Gram -) & Topoisomerase IV (Gram +) | Bakterisidal | Bukan lini 1 CAP; KI <18 th & hamil (kartilago) |\r\n| **11** | **Levofloxacin** | Fluoroquinolon (*Respiratory*) | DNA Girase & Topoisomerase IV | Bakterisidal | S. pneumoniae poten; KI <18 th & hamil |\r\n| **12** | **Moxifloxacin** | Fluoroquinolon (*Respiratory*) | DNA Girase & Topoisomerase IV | Bakterisidal | S. pneumoniae & atipikal; KI <18 th & hamil |\r\n| **13** | **Kotrimoksazol** | Sulfonamid + Trimetoprim | Dihidropteroat sintetase + DHFR (Sekuensial) | Bakterisidal (kombinasi) | KI Ibu Hamil & Bayi <2 bulan (Kernikterus) |\r\n| **14** | **Ambroxol** | Mukolitik | Memecah mukopolisakarida & rangsang surfaktan | Simtomatis | Dosis 60-120 mg/hari; metabolit Bromheksin |\r\n| **15** | **Bromheksin** | Mukolitik | Depolimerisasi mukoprotein mukus | Simtomatis | **KI: Ulkus Peptikum** |\r\n| **16** | **Erdostein** | Mukolitik | Membuka ikatan disulfida mukus via gugus -SH | Simtomatis | **KI: Sirosis Hati** |\r\n| **17** | **Karbosistein** | Mukolitik / Mukoregulator | Normalisasi rasio sialomusin/fukomusin | Simtomatis | **KI: Ulkus Peptikum** |\r\n| **18** | **Asetilsistein** | Mukolitik | Memutus jembatan disulfida via gugus -SH bebas | Simtomatis | Antidotum intoksikasi Parasetamol |\r\n| **19** | **Guaifenesin** | Ekspektoran | Menstimulasi hidrasi sekresi jalan napas | Simtomatis | Dosis 200-400 mg sampai 6x sehari |\r\n| **20** | **Kodein** | Antitusif Sentral Opioid | Reseptor μ-opioid di medulla oblongata | Simtomatis | KI batuk berdahak; obstipasi, adiksi, euforia |\r\n| **21** | **DMP** | Antitusif Sentral Non-Opioid | Pusat batuk medulla oblongata (NMDA/Sigma) | Simtomatis | Batuk kering; dosis tinggi memicu halusinasi |\r\n| **22** | **Benzonatate** | Antitusif Perifer | Reseptor regang aferen vagal jalan napas | Simtomatis | KI dikunyah; ESO: konvulsi, *confusion* |\r\n\r\n\r\n---\r\n\r\n## 2.4. Farmakoterapi Faringitis & Gejala Saluran Napas (Mukolitik, Ekspektoran, Antitusif, Dekongestan, Antihistamin)\r\n\r\n# BANK SOAL-JAWAB IDENTIFIKASI MEJA / OSPE FARMAKOLOGI BLOK 3.2\r\n## TOPIK: FARINGITIS AKUT & FARMAKOTERAPI SALURAN NAPAS ATAS (SLIDE 1–30)\r\n\r\nDokumen ini disusun 100% PERSIS mengikuti **ALGORITMA UJIAN IDENTIFIKASI MEJA / OSPE FARMAKOLOGI BLOK 3.2 FK**.\r\nSetiap nomor/stasi merepresentasikan 1 preparat obat uji nyata dengan format standar:\r\n- **q:** [STASI: Nama Obat] [Status Prioritas Ujian]  \r\n  a. [Sub-pertanyaan 1: Mekanisme kerja molekuler / seluler / fisiologis]  \r\n  b. [Sub-pertanyaan 2: Golongan & 2-3 contoh sejenis / Farmakokinetik / Kontraindikasi & ESO / Dosis / Resep]\r\n- **a:**  \r\n  a. [Jawaban sub-pertanyaan 1]  \r\n  b. [Jawaban sub-pertanyaan 2]\r\n\r\n---\r\n\r\n## BAGIAN I: IDENTIFIKASI PREPARAT OBAT (STASI MEJA UJIAN)\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6676,7 +6911,9 @@
         "th-2021",
         "benzonatate"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Golongan Antitusif Perifer; bekerja memberi efek anestesi lokal pada reseptor regang (*stretch receptors*) serabut saraf vagal saluran napas paru.",
+      "jawaban_b": "Kapsul harus ditelan utuh; dilarang dikunyah/dihisap karena dapat memicu baal/anestesi mukosa mulut dan orofaring yang berisiko laringospasme."
     },
     {
       "id": 318,
@@ -6684,9 +6921,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "AMOXICILLIN (SIRUP & TABLET)",
       "prompt": "[Amoxicillin]\n\na. Jelaskan mekanisme kerja molekuler Amoxicillin dalam membunuh bakteri penyebab faringitis (*Streptococcus pyogenes* / GABHS)!\n\nb. Sebutkan golongan obat, 2-3 contoh obat sejenis/sekelas, farmakokinetik penting (ADME), kontraindikasi khas (termasuk interaksi dengan virus EBV), serta efek samping utamanya!",
-      "stimulus": "Amoxicillin",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Amoxicillin dalam membunuh bakteri penyebab faringitis (*Streptococcus pyogenes* / GABHS)!",
-      "soal_b": "Sebutkan golongan obat, 2-3 contoh obat sejenis/sekelas, farmakokinetik penting (ADME), kontraindikasi khas (termasuk interaksi dengan virus EBV), serta efek samping utamanya!",
+      "stimulus": "Diberikan preparat Amoksisilin",
+      "soal_a": "Termasuk golongan apa dan sebutkan 2 contoh obat lain sekelasnya?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "AMOXICILLIN (SIRUP & TABLET)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antibiotik Penisilin / Beta-Laktam",
@@ -6710,7 +6947,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Amoxicillin berikatan secara kovalen pada sisi aktif enzim **Penicillin-Binding Proteins (PBPs)** (terutama transpeptidase) yang terletak pada membran sitoplasma bakteri.\r\n   - Menginhibisi reaksi **transpeptidasi** (tahap akhir sintesis ikatan silang peptidoglikan).\r\n   - Menghalangi pembentukan dan integritas dinding sel bakteri, memicu aktivasi enzim autolitik (autolisin/murein hidrolase), menyebabkan dinding sel rapuh, dan bakteri mengalami lisis osmotik (efek **bakterisidal**).\r",
+      "jawaban_ringkas": "a. Antibiotik Beta-Laktam, subkelas Aminopenisilin (contoh lain: Ampisilin, Co-amoxiclav / Amoksisilin-Klavulanat).\nb. Berikatan pada Penicillin-Binding Proteins (PBPs) → menghambat transpeptidasi dinding peptidoglikan → autolisis & lisis osmotik bakteri (bakterisidal). *(Catatan ujian: Kontraindikasi pada Mononukleosis EBV karena memicu ruam makulopapular)*",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Amoxicillin berikatan secara kovalen pada sisi aktif enzim **Penicillin-Binding Proteins (PBPs)** (terutama transpeptidase) yang terletak pada membran sitoplasma bakteri.\r\n   - Menginhibisi reaksi **transpeptidasi** (tahap akhir sintesis ikatan silang peptidoglikan).\r\n   - Menghalangi pembentukan dan integritas dinding sel bakteri, memicu aktivasi enzim autolitik (autolisin/murein hidrolase), menyebabkan dinding sel rapuh, dan bakteri mengalami lisis osmotik (efek **bakterisidal**).\r\n\r\nb. **Golongan, Farmakokinetik, Kontraindikasi, & ESO:**\r\n   - **Golongan:** Antibiotik Beta-Laktam, subkelas Aminopenisilin (Penicillin spektrum luas).\r\n   - **Contoh Obat Sejenis/Sekelas:** Ampisilin (*Ampicillin*), Amoksisilin-Klavulanat (*Co-amoxiclav*), Bakampisilin.\r\n   - **Farmakokinetik (ADME):**\r\n     - *Absorpsi (A):* Diabsorpsi cepat dan baik di saluran cerna; bioavailabilitas oral tinggi (75–90%) dan stabil terhadap asam lambung (tidak terganggu makanan).\r\n     - *Distribusi (D):* Ikatan protein plasma rendah (\\sim 20%). Terdistribusi luas ke cairan tubuh, menembus plasenta.\r\n     - *Metabolisme (M):* Dimetabolisme sebagian kecil di hepar menjadi asam penisiloat inaktif.\r\n     - *Ekskresi (E):* Eliminasi terutama melalui ginjal (filtrasi glomerulus & sekresi tubulus aktif) ke dalam urin dalam bentuk utuh.\r\n   - **Kontraindikasi:**\r\n     - Riwayat hipersensitivitas / anafilaksis terhadap penisilin atau antibiotik beta-laktam.\r\n     - **Mononukleosis Infeksiosa (Epstein-Barr Virus):** Pasien dengan infeksi EBV atau CMV yang diberikan amoksisilin hampir selalu memicu erupsi ruam makulopapular kemerahan menyeluruh non-alergi (*amoxicillin-induced maculopapular rash*).\r\n   - **Efek Samping Obat (ESO):** Diare (*antibiotic-associated diarrhea*), mual, muntah, reaksi alergi kutaneus (ruam, urtikaria), dan risiko kolitis pseudomembranosa (*Clostridioides difficile*).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6732,7 +6969,9 @@
         "sirup",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Beta-Laktam, subkelas Aminopenisilin (contoh lain: Ampisilin, Co-amoxiclav / Amoksisilin-Klavulanat).",
+      "jawaban_b": "Berikatan pada Penicillin-Binding Proteins (PBPs) → menghambat transpeptidasi dinding peptidoglikan → autolisis & lisis osmotik bakteri (bakterisidal). *(Catatan ujian: Kontraindikasi pada Mononukleosis EBV karena memicu ruam makulopapular)*"
     },
     {
       "id": 319,
@@ -6740,9 +6979,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "CEFADROXIL (KAPSUL & SIRUP)",
       "prompt": "[Cefadroxil]\n\na. Jelaskan mekanisme kerja molekuler Cefadroxil dan mengapa obat ini dipilih sebagai alternatif faringitis streptokokus pada pasien yang tidak toleran terhadap penisilin non-anafilaksis!\n\nb. Sebutkan golongan obat, 2-3 contoh sekelasnya, interaksi obat yang meningkatkan efek nefrotoksisitasnya, serta dosis lazim dewasa dan anak!",
-      "stimulus": "Cefadroxil",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Cefadroxil dan mengapa obat ini dipilih sebagai alternatif faringitis streptokokus pada pasien yang tidak toleran terhadap penisilin non-anafilaksis!",
-      "soal_b": "Sebutkan golongan obat, 2-3 contoh sekelasnya, interaksi obat yang meningkatkan efek nefrotoksisitasnya, serta dosis lazim dewasa dan anak!",
+      "stimulus": "Diberikan preparat Cefadroxil",
+      "soal_a": "Termasuk golongan apa dan sebutkan 2 contoh obat lain sekelasnya?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "CEFADROXIL (KAPSUL & SIRUP)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antibiotik Sefalosporin",
@@ -6767,7 +7006,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Cefadroxil berikatan secara spesifik pada **Penicillin-Binding Proteins (PBPs)** membran bakteri.\r\n   - Menghambat tahap transpeptidasi sintesis peptidoglikan dinding sel kuman.\r\n   - Menghasilkan dinding sel yang cacat dan memicu autolisis bakteri (bakterisidal poten terhadap kokus Gram-positif seperti *Streptococcus pyogenes*).\r",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi Pertama / Beta-Laktam (contoh lain: Sefaleksin, Sefazolin).\nb. Berikatan kovalen pada Penicillin-Binding Proteins (PBPs) → menghambat sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal). *(Catatan ujian: Alternatif lini pertama faringitis jika alergi penisilin non-anafilaksis; nefrotoksisitas meningkat bila digabung Furosemid/Gentamisin)*",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Cefadroxil berikatan secara spesifik pada **Penicillin-Binding Proteins (PBPs)** membran bakteri.\r\n   - Menghambat tahap transpeptidasi sintesis peptidoglikan dinding sel kuman.\r\n   - Menghasilkan dinding sel yang cacat dan memicu autolisis bakteri (bakterisidal poten terhadap kokus Gram-positif seperti *Streptococcus pyogenes*).\r\n   - Dipilih sebagai terapi alternatif faringitis GABHS karena memiliki spektrum kuman yang serupa penisilin terhadap Gram-positif, waktu paruh lebih panjang (cukup 1–2 kali sehari sehingga *compliance* baik), dan tolerabilitas saluran cerna yang baik pada pasien tanpa riwayat reaksi alergi tipe cepat/anafilaksis terhadap penisilin.\r\n\r\nb. **Golongan, Contoh Sejenis, Interaksi Nefrotoksik, & Dosis:**\r\n   - **Golongan:** Antibiotik Sefalosporin Generasi Pertama (*1st Generation Cephalosporin*, Beta-Laktam).\r\n   - **Contoh Sejenis:** Sefaleksin (*Cephalexin*), Sefazolin (*Cefazolin*), Sefradin (*Cephradine*).\r\n   - **Interaksi Obat (Nefrotoksisitas):**\r\n     - Toksisitas ginjal (nefrotoksisitas) meningkat secara sinergis jika dikombinasikan dengan: **Loop Diuretic dosis tinggi (Furosemid)**, antibiotik **Aminoglikosida (Gentamisin, Amikasin)**, serta **Polimiksin B / Kolistin**.\r\n   - **Dosis:**\r\n     - *Dewasa:* 1000 mg/hari (diberikan 500 mg 2 kali sehari / 2dd caps. I, atau 1000 mg dosis tunggal) selama 10 hari.\r\n     - *Anak-anak:* 30–50 mg/kgBB/hari dibagi dalam 1–2 dosis terbagi (maksimal 1000 mg/hari) selama 10 hari.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6790,7 +7029,9 @@
         "kapsul",
         "sirup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi Pertama / Beta-Laktam (contoh lain: Sefaleksin, Sefazolin).",
+      "jawaban_b": "Berikatan kovalen pada Penicillin-Binding Proteins (PBPs) → menghambat sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal). *(Catatan ujian: Alternatif lini pertama faringitis jika alergi penisilin non-anafilaksis; nefrotoksisitas meningkat bila digabung Furosemid/Gentamisin)*"
     },
     {
       "id": 320,
@@ -6798,9 +7039,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "CEFIXIME (TABLET & SIRUP)",
       "prompt": "[Cefixime]\n\na. Jelaskan mekanisme kerja farmakodinamik molekuler Cefixime dan spektrum aktivitas antimikrobanya dibanding sefalosporin generasi pertama!\n\nb. Sebutkan golongan obat, farmakokinetik eliminasi uniknya, efek samping berat SSP yang dapat ditimbulkannya, serta interaksi penting dengan obat antikoagulan!",
-      "stimulus": "Cefixime",
-      "soal_a": "Jelaskan mekanisme kerja farmakodinamik molekuler Cefixime dan spektrum aktivitas antimikrobanya dibanding sefalosporin generasi pertama!",
-      "soal_b": "Sebutkan golongan obat, farmakokinetik eliminasi uniknya, efek samping berat SSP yang dapat ditimbulkannya, serta interaksi penting dengan obat antikoagulan!",
+      "stimulus": "Diberikan preparat Cefixime",
+      "soal_a": "Termasuk golongan apa dan bagaimana keunikan eliminasinya?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "CEFIXIME (TABLET & SIRUP)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antibiotik Sefalosporin",
@@ -6824,7 +7065,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024",
         "**Aksi Farmakologis:** BAKTERISIDAL"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Spektrum:**\r\n   - Berikatan dengan **Penicillin-Binding Proteins (PBPs)** bakteri → menghambat sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).\r\n   - *Perbandingan Spektrum:* Cefixime adalah generasi ke-3 oral yang memiliki stabilitas tinggi terhadap degradasi enzim beta-laktamase dan aktivitas Gram-negatif yang jauh lebih luas (*Haemophilus influenzae*, *Moraxella catarrhalis*), namun aktivitasnya terhadap kuman kokus Gram-positif (*Streptococcus pyogenes*, *Streptococcus pneumoniae*) relatif lebih rendah dibandingkan sefalosporin generasi pertama (Cefadroxil) atau penisilin.\r\nb. **Golongan, Eliminasi, ESO SSP, & Interaksi:**\r",
+      "jawaban_ringkas": "a. Antibiotik Sefalosporin Generasi Ketiga Oral. Eliminasi ganda via ginjal (urin) dan bilier (feses) dalam bentuk utuh.\nb. Menghambat Penicillin-Binding Proteins (PBPs) → menghambat sintesis dinding sel bakteri → lisis osmotik (bakterisidal, spektrum luas Gram-negatif).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Spektrum:**\r\n   - Berikatan dengan **Penicillin-Binding Proteins (PBPs)** bakteri → menghambat sintesis peptidoglikan dinding sel bakteri → lisis osmotik (bakterisidal).\r\n   - *Perbandingan Spektrum:* Cefixime adalah generasi ke-3 oral yang memiliki stabilitas tinggi terhadap degradasi enzim beta-laktamase dan aktivitas Gram-negatif yang jauh lebih luas (*Haemophilus influenzae*, *Moraxella catarrhalis*), namun aktivitasnya terhadap kuman kokus Gram-positif (*Streptococcus pyogenes*, *Streptococcus pneumoniae*) relatif lebih rendah dibandingkan sefalosporin generasi pertama (Cefadroxil) atau penisilin.\r\n\r\nb. **Golongan, Eliminasi, ESO SSP, & Interaksi:**\r\n   - **Golongan:** Antibiotik Sefalosporin Generasi Ketiga Oral (*3rd Generation Cephalosporin*).\r\n   - **Contoh Sejenis:** Seftriakson (*Ceftriaxone* - IV), Sefotaksim (*Cefotaxime* - IV), Sefpodoksim (*Cefpodoxime* - Oral).\r\n   - **Farmakokinetik Eliminasi:**\r\n     - Berbeda dari beta-laktam lain yang murni renal, Cefixime dieliminasi secara ganda melalui **urin (ginjal)** dan **feses (jalur bilier)** dalam bentuk utuh (tidak dimetabolisme di hepar, M = -).\r\n   - **Efek Samping Berat (SSP):**\r\n     - **Ensefalopati** neurotoksik (dapat bermanifestasi sebagai kejang, gangguan kesadaran/ensefalopati, mioklonus, dan gangguan gerakan involunter), terutama pada pasien dengan penurunan fungsi ginjal tanpa penyesuaian dosis.\r\n     - ESO lain: Diare hebat, mual, muntah.\r\n   - **Interaksi dengan Antikoagulan:**\r\n     - Pemberian bersama **Warfarin** dapat memperpanjang nilai PT/INR dan meningkatkan efek antikoagulan (risiko perdarahan) akibat penekanan flora usus normal penghasil vitamin K.\r\n   - **Dosis:** Dewasa 200–400 mg/hari (dosis tunggal atau dibagi 2 dosis); Anak >6 bulan: 8 mg/kgBB/hari.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6845,7 +7086,9 @@
         "tablet",
         "sirup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Sefalosporin Generasi Ketiga Oral. Eliminasi ganda via ginjal (urin) dan bilier (feses) dalam bentuk utuh.",
+      "jawaban_b": "Menghambat Penicillin-Binding Proteins (PBPs) → menghambat sintesis dinding sel bakteri → lisis osmotik (bakterisidal, spektrum luas Gram-negatif)."
     },
     {
       "id": 321,
@@ -6853,9 +7096,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "ERITROMISIN / MAKROLIDA (ALTERNATIF ALERGI PENISILIN)",
       "prompt": "[Eritromisin / Makrolida]\n\na. Jelaskan mekanisme kerja molekuler Eritromisin pada ribosom bakteri dan indikasinya pada kasus faringitis streptokokus!\n\nb. Sebutkan golongan obat, 2-3 contoh makrolida generasi baru, efek samping khas saluran cerna dan kardiak, serta interaksi farmakokinetik enzim sitokrom P450!",
-      "stimulus": "Eritromisin / Makrolida",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Eritromisin pada ribosom bakteri dan indikasinya pada kasus faringitis streptokokus!",
-      "soal_b": "Sebutkan golongan obat, 2-3 contoh makrolida generasi baru, efek samping khas saluran cerna dan kardiak, serta interaksi farmakokinetik enzim sitokrom P450!",
+      "stimulus": "Diberikan preparat Eritromisin",
+      "soal_a": "Termasuk golongan apa dan sebutkan indikasinya pada faringitis?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "ERITROMISIN / MAKROLIDA (ALTERNATIF ALERGI PENISILIN)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antibiotik Makrolida",
@@ -6880,7 +7123,7 @@
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021",
         "**Aksi Farmakologis:** BAKTERIOSTATIK"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Indikasi:**\r\n   - Eritromisin berikatan secara reversibel pada **subunit 50S ribosom bakteri** (dekat dengan *peptidyl transferase center*).\r\n   - Menghambat translokasi peptidil-tRNA dari situs A (*acceptor site*) ke situs P (*donor/peptidyl site*), sehingga menghambat sintesis protein bakteri (bersifat **bakteriostatik**, dapat bakterisidal pada konsentrasi tinggi).\r\n   - **Indikasi pada Faringitis:** Pilihan utama (*drug of choice*) lini pertama pada pasien faringitis streptokokus GABHS yang memiliki riwayat **alergi berat/anafilaksis terhadap penisilin dan sefalosporin**.\r",
+      "jawaban_ringkas": "a. Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.\nb. Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Indikasi:**\r\n   - Eritromisin berikatan secara reversibel pada **subunit 50S ribosom bakteri** (dekat dengan *peptidyl transferase center*).\r\n   - Menghambat translokasi peptidil-tRNA dari situs A (*acceptor site*) ke situs P (*donor/peptidyl site*), sehingga menghambat sintesis protein bakteri (bersifat **bakteriostatik**, dapat bakterisidal pada konsentrasi tinggi).\r\n   - **Indikasi pada Faringitis:** Pilihan utama (*drug of choice*) lini pertama pada pasien faringitis streptokokus GABHS yang memiliki riwayat **alergi berat/anafilaksis terhadap penisilin dan sefalosporin**.\r\n\r\nb. **Golongan, Contoh Sejenis, ESO, & Interaksi CYP450:**\r\n   - **Golongan:** Antibiotik Makrolida (*Macrolides*).\r\n   - **Contoh Sejenis:** Azitromisin (*Azithromycin*), Klaritromisin (*Clarithromycin*), Roksitromisin.\r\n   - **Efek Samping Obat (ESO):**\r\n     - Saluran cerna: Kram perut, nyeri epigastrium, mual, muntah, diare (akibat stimulasi reseptor motilin di traktus gastrointestinal).\r\n     - Kardiovaskular: **Pemanjangan interval QT (prolonged QT interval)** yang berisiko memicu aritmia ventrikel fatal (*Torsades de Pointes*).\r\n     - Hepatotoksisitas: Hepatitis kolestatik (terutama sediaan estolat).\r\n   - **Interaksi Obat:**\r\n     - Eritromisin merupakan **inhibitor poten CYP3A4** di hepar. Menghambat metabolisme teofilin, karbamazepin, warfarin, dan statin, sehingga meningkatkan kadar plasma obat-obat tersebut dan memicu toksisitas.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6905,7 +7148,9 @@
         "alergi",
         "penisilin"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.",
+      "jawaban_b": "Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*"
     },
     {
       "id": 322,
@@ -6913,9 +7158,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PARASETAMOL / ACETAMINOPHEN (SIRUP & TABLET)",
       "prompt": "[Parasetamol]\n\na. Jelaskan mekanisme kerja molekuler Parasetamol sebagai antipiretik dan analgetik sentral, serta bandingkan efek antiinflamasinya terhadap NSAID!\n\nb. Jelaskan jalur metabolisme toksik Parasetamol (pembentukan metabolit reaktif hepatotoksik), antidotum spesifik pada intoksikasi akut, dan dosis terapi untuk kasus faringitis anak & dewasa!",
-      "stimulus": "Parasetamol",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Parasetamol sebagai antipiretik dan analgetik sentral, serta bandingkan efek antiinflamasinya terhadap NSAID!",
-      "soal_b": "Jelaskan jalur metabolisme toksik Parasetamol (pembentukan metabolit reaktif hepatotoksik), antidotum spesifik pada intoksikasi akut, dan dosis terapi untuk kasus faringitis anak & dewasa!",
+      "stimulus": "Diberikan preparat Parasetamol",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Apa metabolit toksik penyebab nekrosis hepar dan apa antidotum spesifiknya?",
       "diagnosis": "PARASETAMOL / ACETAMINOPHEN (SIRUP & TABLET)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "PARASETAMOL / ACETAMINOPHEN (SIRUP & TABLET)",
@@ -6937,7 +7182,7 @@
         "**Golongan:** PARASETAMOL / ACETAMINOPHEN (SIRUP & TABLET)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Perbandingan Efek:**\r\n   - Menghambat sintesis prostaglandin secara selektif pada **Sistem Saraf Pusat (SSP / Sentral)** melalui inhibisi enzim Siklooksigenase (COX-1, COX-2, dan varian COX-3/splice variant di otak) serta modulasi jalur serotonergik desenden dan kanabinoid endogen (AM404).\r\n   - Efek antipiretik dicapai melalui hambatan sintesis PGE₂ di hipotalamus anterior, meregulasi kembali termostat suhu tubuh ke tingkat normal.\r\n   - *Perbandingan dengan NSAID:* Parasetamol memiliki efek antiinflamasi perifer yang sangat lemah/minimal karena dihambat oleh peroksida tinggi yang terdapat pada jaringan perifer yang mengalami inflamasi aktif. Keunggulannya: tidak mengiritasi mukosa lambung dan tidak mengganggu agregasi trombosit.\r",
+      "jawaban_ringkas": "a. Analgetik-Antipiretik Non-NSAID (para-aminofenol). Menghambat enzim Siklooksigenase (COX) secara selektif di Sistem Saraf Pusat (SSP / Sentral) → meregulasi termostat hipotalamus anterior.\nb. Metabolit toksik: NAPQI (N-acetyl-p-benzoquinone imine via CYP2E1). Antidotum spesifik: N-Asetilsistein (NAC) oral/IV (donor glutation).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Perbandingan Efek:**\r\n   - Menghambat sintesis prostaglandin secara selektif pada **Sistem Saraf Pusat (SSP / Sentral)** melalui inhibisi enzim Siklooksigenase (COX-1, COX-2, dan varian COX-3/splice variant di otak) serta modulasi jalur serotonergik desenden dan kanabinoid endogen (AM404).\r\n   - Efek antipiretik dicapai melalui hambatan sintesis PGE₂ di hipotalamus anterior, meregulasi kembali termostat suhu tubuh ke tingkat normal.\r\n   - *Perbandingan dengan NSAID:* Parasetamol memiliki efek antiinflamasi perifer yang sangat lemah/minimal karena dihambat oleh peroksida tinggi yang terdapat pada jaringan perifer yang mengalami inflamasi aktif. Keunggulannya: tidak mengiritasi mukosa lambung dan tidak mengganggu agregasi trombosit.\r\n\r\nb. **Metabolisme NAPQI, Antidotum, & Dosis:**\r\n   - **Metabolisme Hepatotoksik:**\r\n     - Pada dosis terapi, 90–95% parasetamol dikonjugasi di hepar via glukuronidasi dan sulfatasi menjadi metabolit non-toksik.\r\n     - Sekitar 5–10% dimetabolisme oleh **CYP2E1** (dan CYP1A2) menghasilkan metabolit antara yang sangat reaktif dan toksik, yaitu **NAPQI (*N-acetyl-p-benzoquinone imine*)**.\r\n     - Pada kondisi normal, NAPQI segera didetoksifikasi oleh cadangan glutation (**Glutathione/GSH**) hepar.\r\n     - Pada overdosis (>4 g/hari dewasa atau >150 mg/kg anak), cadangan glutation habis, NAPQI bebas berikatan kovalen dengan makromolekul hepatosit, menyebabkan nekrosis sentrilobular hepar masif (*acute liver failure*).\r\n   - **Antidotum Spesifik:** **N-asetilsistein (NAC)** oral atau IV. NAC bekerja sebagai donor gugus sulfhidril (-SH) untuk mensintesis kembali glutation dan mengikat langsung NAPQI.\r\n   - **Dosis Terapi:**\r\n     - *Dewasa:* 500–1000 mg tiap 4–6 jam (maksimal 4000 mg/hari).\r\n     - *Anak-anak:* 10–15 mg/kgBB/kali tiap 4–6 jam (maksimal 60 mg/kgBB/hari atau 4 kali pemberian).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -6957,7 +7202,9 @@
         "sirup",
         "tablet"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Analgetik-Antipiretik Non-NSAID (para-aminofenol). Menghambat enzim Siklooksigenase (COX) secara selektif di Sistem Saraf Pusat (SSP / Sentral) → meregulasi termostat hipotalamus anterior.",
+      "jawaban_b": "Metabolit toksik: NAPQI (N-acetyl-p-benzoquinone imine via CYP2E1). Antidotum spesifik: N-Asetilsistein (NAC) oral/IV (donor glutation)."
     },
     {
       "id": 323,
@@ -6965,9 +7212,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "AMBROXOL (TABLET & SIRUP)",
       "prompt": "[Ambroxol]\n\na. Jelaskan mekanisme kerja molekuler Ambroxol sebagai mukolitik dan sekretolitik pada saluran pernapasan!\n\nb. Sebutkan golongan obat, 2-3 contoh obat mukolitik pemecah ikatan mukus lainnya, efek interaksi uniknya dengan antibiotik, serta dosis lazim dewasa dan anak!",
-      "stimulus": "Ambroxol",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Ambroxol sebagai mukolitik dan sekretolitik pada saluran pernapasan!",
-      "soal_b": "Sebutkan golongan obat, 2-3 contoh obat mukolitik pemecah ikatan mukus lainnya, efek interaksi uniknya dengan antibiotik, serta dosis lazim dewasa dan anak!",
+      "stimulus": "Diberikan preparat Ambroksol",
+      "soal_a": "Termasuk golongan apa dan sebutkan contoh obat sekelasnya?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "AMBROXOL (TABLET & SIRUP)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -6991,7 +7238,7 @@
         "**Golongan:** Mukolitik / Pengencer Dahak",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Ambroxol (metabolit aktif bromheksin) bekerja memecah serat asam mukopolisakarida pada dahak/mukus bronkus menjadi fragmen yang lebih kecil.\r\n   - Menstimulasi sintesis dan pelepasan **surfaktan** oleh sel pneumosit tipe II alveolus dan sel Clara pada bronkiolus.\r\n   - Meningkatkan motilitas dan frekuensi denyut silia epitel respiratorius (*mucociliary clearance*).\r",
+      "jawaban_ringkas": "a. Agen Mukolitik & Sekretolitik (contoh lain: Asetilsistein, Karbosistein, Erdostein, Bromheksin).\nb. Memecah fragmen-fragmen serat mukus + memicu sintesis surfaktan alveolus → menurunkan viskositas sekret → dahak mudah dikeluarkan. *(Catatan ujian: Meningkatkan penetrasi dan konsentrasi antibiotik di jaringan paru)*",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Ambroxol (metabolit aktif bromheksin) bekerja memecah serat asam mukopolisakarida pada dahak/mukus bronkus menjadi fragmen yang lebih kecil.\r\n   - Menstimulasi sintesis dan pelepasan **surfaktan** oleh sel pneumosit tipe II alveolus dan sel Clara pada bronkiolus.\r\n   - Meningkatkan motilitas dan frekuensi denyut silia epitel respiratorius (*mucociliary clearance*).\r\n   - Menurunkan viskositas/kekentalan dahak dan mempermudah ekspektorasi sekret dari saluran napas.\r\n\r\nb. **Golongan, Contoh Mukolitik Lain, Interaksi, & Dosis:**\r\n   - **Golongan:** Mukolitik dan Sekretolitik.\r\n   - **Contoh Mukolitik Lainnya:**\r\n     1. **Asetilsistein (*N-acetylcysteine*):** Memecah ikatan disulfida (-S-S-) antar molekul mukoprotein secara kimiawi.\r\n     2. **Karbosistein (*Carbocisteine*):** Memodifikasi sintesis glikoprotein mukus dengan meningkatkan sintesis sialomusin (mengurangi viskositas).\r\n     3. **Erdostein (*Erdosteine*):** Membuka gugus sulfhidril bebas setelah metabolisme untuk membuka jembatan disulfida mukus.\r\n   - **Interaksi Unik dengan Antibiotik:**\r\n     - Ambroxol dilaporkan dapat **meningkatkan konsentrasi dan penetrasi antibiotik** (seperti amoksisilin, sefuroksim, eritromisin) di dalam jaringan paru, cairan mukosa, dan sekret bronkus.\r\n   - **Dosis:**\r\n     - *Dewasa:* 30 mg, diminum 2–3 kali sehari (maksimal 120 mg/hari).\r\n     - *Anak 2–5 tahun:* 7,5 mg, diminum 3 kali sehari (atau 15 mg/hari).\r\n     - *Anak 6–12 tahun:* 15 mg, diminum 2–3 kali sehari.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7014,7 +7261,9 @@
         "tablet",
         "sirup"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Agen Mukolitik & Sekretolitik (contoh lain: Asetilsistein, Karbosistein, Erdostein, Bromheksin).",
+      "jawaban_b": "Memecah fragmen-fragmen serat mukus + memicu sintesis surfaktan alveolus → menurunkan viskositas sekret → dahak mudah dikeluarkan. *(Catatan ujian: Meningkatkan penetrasi dan konsentrasi antibiotik di jaringan paru)*"
     },
     {
       "id": 324,
@@ -7022,9 +7271,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "N-ASETILSISTEIN / ACETYLCYSTEINE",
       "prompt": "[Asetilsistein / Acetylcysteine]\n\na. Jelaskan mekanisme kerja kimiawi Asetilsistein dalam mencairkan sputum kental pada infeksi saluran napas!\n\nb. Sebutkan indikasi klinis ganda obat ini (respiratorius vs toksikologi), efek samping khas pada pasien asma (bronkospasme), serta kontraindikasinya!",
-      "stimulus": "Asetilsistein / Acetylcysteine",
-      "soal_a": "Jelaskan mekanisme kerja kimiawi Asetilsistein dalam mencairkan sputum kental pada infeksi saluran napas!",
-      "soal_b": "Sebutkan indikasi klinis ganda obat ini (respiratorius vs toksikologi), efek samping khas pada pasien asma (bronkospasme), serta kontraindikasinya!",
+      "stimulus": "Diberikan preparat N-Asetilsistein",
+      "soal_a": "Termasuk golongan apa dan sebutkan 2 indikasi klinis utamanya?",
+      "soal_b": "Bagaimana mekanisme kerjanya dalam mengencerkan dahak?",
       "diagnosis": "N-ASETILSISTEIN / ACETYLCYSTEINE",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -7046,7 +7295,7 @@
         "**Golongan:** Mukolitik / Pengencer Dahak",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Kimiawi:**\r\n   - Asetilsistein memiliki gugus **sulfhidril bebas (-SH)** yang bertindak sebagai pemecah ikatan kimia.\r\n   - Gugus sulfhidril bebas ini bereaksi secara langsung memutuskan **jembatan ikatan disulfida (-S-S-)** yang menghubungkan rantai-rantai oligomer mukoprotein dan DNA dalam mukus bronkus yang purulen.\r\n   - Rantai mukoprotein terurai menjadi subunit yang lebih pendek dan sederhana → viskositas dan elastisitas dahak turun secara drastis → dahak menjadi encer dan mudah dibatukkan.\r",
+      "jawaban_ringkas": "a. Agen Mukolitik. Indikasi: (1) Mukolitik pengencer dahak saluran napas, (2) Antidotum spesifik keracunan akut parasetamol.\nb. Gugus sulfhidril bebas (-SH) memutuskan jembatan ikatan disulfida (-S-S-) pada mukoprotein dahak → dahak terurai dan encer. *(Catatan ujian: Efek samping memicu bronkospasme pada pasien asma bila diberikan via nebulisasi)*",
       "jawaban_lengkap": "a. **Mekanisme Kerja Kimiawi:**\r\n   - Asetilsistein memiliki gugus **sulfhidril bebas (-SH)** yang bertindak sebagai pemecah ikatan kimia.\r\n   - Gugus sulfhidril bebas ini bereaksi secara langsung memutuskan **jembatan ikatan disulfida (-S-S-)** yang menghubungkan rantai-rantai oligomer mukoprotein dan DNA dalam mukus bronkus yang purulen.\r\n   - Rantai mukoprotein terurai menjadi subunit yang lebih pendek dan sederhana → viskositas dan elastisitas dahak turun secara drastis → dahak menjadi encer dan mudah dibatukkan.\r\n\r\nb. **Indikasi Ganda, ESO Bronkospasme, & Kontraindikasi:**\r\n   - **Indikasi Ganda:**\r\n     1. *Sistem Pernapasan:* Mukolitik pada penyakit bronkopulmonal akut/kronik dengan hipersekresi mukus kental (faringitis purulen, bronkitis akut, PPOK, bronkiektasis, *cystic fibrosis*).\r\n     2. *Toksikologi:* **Antidotum spesifik intoksikasi parasetamol** (donor glutation untuk detoksifikasi NAPQI).\r\n   - **Efek Samping Khas Bronkospasme:**\r\n     - Terutama pada pemberian inhalasi/nebulisasi atau pasien dengan hipereaktivitas bronkus (asma), aerosol NAC dapat memicu **bronkospasme akut / batuk iritatif** hebat dan bau belerang yang menyengat (sehingga sering perlu dipremedikasi dengan bronkodilator beta-2 agonis).\r\n     - ESO oral: Mual, muntah, pirosis/heartburn (iritasi mukosa lambung).\r\n   - **Kontraindikasi:** Riwayat alergi asetilsistein, ulkus peptikum aktif (hati-hati karena merusak barier mukus lambung), serta serangan asma bronkial aktif.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7064,7 +7313,9 @@
         "n-asetilsistein",
         "acetylcysteine"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Agen Mukolitik. Indikasi: (1) Mukolitik pengencer dahak saluran napas, (2) Antidotum spesifik keracunan akut parasetamol.",
+      "jawaban_b": "Gugus sulfhidril bebas (-SH) memutuskan jembatan ikatan disulfida (-S-S-) pada mukoprotein dahak → dahak terurai dan encer. *(Catatan ujian: Efek samping memicu bronkospasme pada pasien asma bila diberikan via nebulisasi)*"
     },
     {
       "id": 325,
@@ -7072,9 +7323,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "GUAIFENESIN / GLISERIL GUAIKOLAT (GG)",
       "prompt": "[Guaifenesin / Gliseril Guaikolat]\n\na. Jelaskan mekanisme kerja refleks fisiologis Guaifenesin dalam meningkatkan volume sekret saluran napas!\n\nb. Sebutkan golongan obat, efek samping khas metabolik urin/asam urat, kontraindikasi umur, serta interaksi farmakokinetiknya dengan barbiturat!",
-      "stimulus": "Guaifenesin / Gliseril Guaikolat",
-      "soal_a": "Jelaskan mekanisme kerja refleks fisiologis Guaifenesin dalam meningkatkan volume sekret saluran napas!",
-      "soal_b": "Sebutkan golongan obat, efek samping khas metabolik urin/asam urat, kontraindikasi umur, serta interaksi farmakokinetiknya dengan barbiturat!",
+      "stimulus": "Diberikan preparat Guaifenesin / GG",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan efek samping metabolik khasnya dan anjuran cara minumnya!",
       "diagnosis": "GUAIFENESIN / GLISERIL GUAIKOLAT (GG)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Mukolitik / Pengencer Dahak",
@@ -7099,7 +7350,7 @@
         "**Golongan:** Mukolitik / Pengencer Dahak",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Refleks Fisiologis:**\r\n   - Guaifenesin diserap di traktus digestivus dan menstimulasi reseptor sensoris pada **mukosa lambung**.\r\n   - Stimulasi iritasi lambung ringan ini memicu **refleks nervus vagus (efektor parasimpatis)** eferen menuju kelenjar submukosa di traktus respiratorius.\r\n   - Akibatnya, sekresi kelenjar serosa saluran napas meningkat drastis (volume cairan traktus respiratorius meningkat).\r",
+      "jawaban_ringkas": "a. Agen Ekspektoran (Secretomotoric). Menstimulasi reseptor mukosa lambung → refleks vagal parasimpatis → sekresi cairan kelenjar serosa saluran napas meningkat → mengencerkan sekret secara mekanis.\nb. Efek samping metabolik khas: Hipourisemia (efek urikosurik ringan). Diminum sesudah makan (p.c.) bersama segelas air putih.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Refleks Fisiologis:**\r\n   - Guaifenesin diserap di traktus digestivus dan menstimulasi reseptor sensoris pada **mukosa lambung**.\r\n   - Stimulasi iritasi lambung ringan ini memicu **refleks nervus vagus (efektor parasimpatis)** eferen menuju kelenjar submukosa di traktus respiratorius.\r\n   - Akibatnya, sekresi kelenjar serosa saluran napas meningkat drastis (volume cairan traktus respiratorius meningkat).\r\n   - Viskositas mukus berkurang secara mekanis melalui pengenceran air, gerakan mukosiliar lancar, dan batuk kering menjadi batuk berdahak yang produktif.\r\n\r\nb. **Golongan, Efek Samping Metabolik, Kontraindikasi, & Interaksi:**\r\n   - **Golongan:** Ekspektoran (*Secretomotoric Expectorant*).\r\n   - **Efek Samping Metabolik Khas:**\r\n     - **Hipourisemia:** Guaifenesin memiliki efek urikosurik ringan (meningkatkan ekskresi asam urat di tubulus ginjal), sehingga dapat menurunkan kadar asam urat serum (*uric acid*).\r\n     - ESO lain: Mual, muntah (pada dosis tinggi karena rangsangan lambung), pusing, diare.\r\n   - **Kontraindikasi:** Hipersensitivitas, anak usia <6 tahun (sediaan OTC murni tanpa supervisi medis ketat), wanita hamil trimester I dan menyusui.\r\n   - **Interaksi Obat:**\r\n     - Penggunaan bersama obat golongan **Barbiturat** dapat menurunkan waktu paruh (*half-life*) dan efektivitas guaifenesin akibat induksi enzim mikrosom hepar.\r\n   - **Dosis:** Dewasa: 200–400 mg tiap 4 jam (maksimal 2400 mg/hari); Anak 6–12 tahun: 100 mg tiap 6 jam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7123,7 +7374,9 @@
         "gliseril",
         "guaikolat"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Agen Ekspektoran (Secretomotoric). Menstimulasi reseptor mukosa lambung → refleks vagal parasimpatis → sekresi cairan kelenjar serosa saluran napas meningkat → mengencerkan sekret secara mekanis.",
+      "jawaban_b": "Efek samping metabolik khas: Hipourisemia (efek urikosurik ringan). Diminum sesudah makan (p.c.) bersama segelas air putih."
     },
     {
       "id": 326,
@@ -7131,9 +7384,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "DEKSAMETASON / DEXAMETHASONE (TABLET & INJEKSI)",
       "prompt": "[Deksametason]\n\na. Jelaskan mekanisme kerja molekuler intraseluler Deksametason dalam menekan inflamasi dan edema mukosa faring/laring pada faringitis berat!\n\nb. Sebutkan golongan obat, kontraindikasi pada infeksi sistemik/imunosupresi, efek samping akibat penggunaan jangka panjang, serta interaksinya dengan NSAID!",
-      "stimulus": "Deksametason",
-      "soal_a": "Jelaskan mekanisme kerja molekuler intraseluler Deksametason dalam menekan inflamasi dan edema mukosa faring/laring pada faringitis berat!",
-      "soal_b": "Sebutkan golongan obat, kontraindikasi pada infeksi sistemik/imunosupresi, efek samping akibat penggunaan jangka panjang, serta interaksinya dengan NSAID!",
+      "stimulus": "Diberikan preparat Deksametason",
+      "soal_a": "Termasuk golongan apa dan sebutkan indikasi utamanya pada faringitis?",
+      "soal_b": "Bagaimana mekanisme kerja molekulernya?",
       "diagnosis": "DEKSAMETASON / DEXAMETHASONE (TABLET & INJEKSI)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Kortikosteroid (Inhalasi / Sistemik)",
@@ -7154,7 +7407,7 @@
         "**Golongan:** Kortikosteroid (Inhalasi / Sistemik)",
         "**Aksi Farmakologis:** CONTROLLER"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler Intraseluler:**\r\n   - Deksametason berdifusi melintasi membran sel dan berikatan dengan **Glucocorticoid Receptor (GR)** di sitoplasma.\r\n   - Kompleks ligan-reseptor mengalami translokasi ke nukleus sel dan mengikat *Glucocorticoid Response Elements* (GRE) pada DNA (*transactivation*), serta berikatan menghambat faktor transkripsi proinflamasi utama seperti **NF-\\kappaB** dan **AP-1** (*transrepression*).\r\n   - Menginduksi sintesis **Lipokortin-1 (Annexin A1)** → menghambat enzim **Fosfolipase A₂ (PLA₂)** → sintesis asam arakidonat terhambat → pembentukan prostaglandin dan leukotrien berhenti total.\r",
+      "jawaban_ringkas": "a. Kortikosteroid Sistemik / Glukokortikoid Sintetis Poten (Long-acting). Indikasi: Meredakan edema laring/faring hebat, odinofagia berat, atau ancaman obstruksi jalan napas.\nb. Berikatan dengan Glucocorticoid Receptor (GR) intrasel → menghambat transkripsi NF-kB dan enzim Fosfolipase A2 (PLA2) via Annexin-1 → sintesis prostaglandin dan sitokin proinflamasi ditekan total.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler Intraseluler:**\r\n   - Deksametason berdifusi melintasi membran sel dan berikatan dengan **Glucocorticoid Receptor (GR)** di sitoplasma.\r\n   - Kompleks ligan-reseptor mengalami translokasi ke nukleus sel dan mengikat *Glucocorticoid Response Elements* (GRE) pada DNA (*transactivation*), serta berikatan menghambat faktor transkripsi proinflamasi utama seperti **NF-\\kappaB** dan **AP-1** (*transrepression*).\r\n   - Menginduksi sintesis **Lipokortin-1 (Annexin A1)** → menghambat enzim **Fosfolipase A₂ (PLA₂)** → sintesis asam arakidonat terhambat → pembentukan prostaglandin dan leukotrien berhenti total.\r\n   - Menghambat pelepasan sitokin proinflamasi (IL-1, IL-6, TNF-α, IFN-γ), menurunkan rekrutmen dan migrasi neutrofil, menurunkan permeabilitas kapiler, sehingga secara cepat meredakan **edema laring/faring, eritema, dan spasme saluran napas atas**.\r\n\r\nb. **Golongan, Kontraindikasi, ESO Jangka Panjang, & Interaksi:**\r\n   - **Golongan:** Kortikosteroid Sistemik / Glukokortikoid Sintetis Poten (*Long-Acting*, tanpa aktivitas mineralokortikoid).\r\n   - **Kontraindikasi:**\r\n     - Hipersensitivitas.\r\n     - Pasien dengan imunodefisiensi / imunosupresi berat.\r\n     - **Infeksi jamur sistemik, infeksi virus aktif (herpes simpleks), atau infeksi bakteri berat tanpa cakupan antibiotik yang adekuat** (karena menekan respons pertahanan imun pejamu).\r\n     - Ulkus lambung aktif.\r\n   - **Efek Samping Penggunaan (Jangka Panjang):**\r\n     - Sindrom Cushing iatrogenik (wajah bulat/moon face, obesitas sentral, buffalo hump).\r\n     - Hiperglikemia / eksaserbasi diabetes melitus, hipertensi, retensi natrium/air.\r\n     - **Osteoporosis**, miopati otot proksimal, kerentanan infeksi oportunistik, atrofi kelenjar adrenal (supresi aksis HPA).\r\n   - **Interaksi Obat:**\r\n     - Penggunaan bersama obat golongan **NSAID** (misal Ibuprofen, Asam Mefenamat) secara dramatis meningkatkan risiko **erosi mukosa lambung, ulkus peptikum, dan perdarahan gastrointestinal**.\r\n   - **Dosis:** Dewasa: 0,5–10 mg/hari; Anak: 0,02–0,3 mg/kgBB/hari dibagi tiap 6–12 jam (jangka pendek 1–3 hari untuk meredakan odinofagia berat / *airway compromise*).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7174,7 +7427,9 @@
         "tablet",
         "injeksi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Kortikosteroid Sistemik / Glukokortikoid Sintetis Poten (Long-acting). Indikasi: Meredakan edema laring/faring hebat, odinofagia berat, atau ancaman obstruksi jalan napas.",
+      "jawaban_b": "Berikatan dengan Glucocorticoid Receptor (GR) intrasel → menghambat transkripsi NF-kB dan enzim Fosfolipase A2 (PLA2) via Annexin-1 → sintesis prostaglandin dan sitokin proinflamasi ditekan total."
     },
     {
       "id": 327,
@@ -7182,9 +7437,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "PSEUDOEFEDRIN / PSEUDOEPHEDRINE (ORAL)",
       "prompt": "[Pseudoefedrin]\n\na. Jelaskan mekanisme kerja reseptor Pseudoefedrin dalam mengatasi kongesti nasal pada faringitis/rhinosinusitis!\n\nb. Sebutkan golongan obat, kontraindikasi utama kardiovaskular, serta efek samping sistemik simpatomimetik yang dapat timbul!",
-      "stimulus": "Pseudoefedrin",
-      "soal_a": "Jelaskan mekanisme kerja reseptor Pseudoefedrin dalam mengatasi kongesti nasal pada faringitis/rhinosinusitis!",
-      "soal_b": "Sebutkan golongan obat, kontraindikasi utama kardiovaskular, serta efek samping sistemik simpatomimetik yang dapat timbul!",
+      "stimulus": "Diberikan preparat Pseudoefedrin",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan kontraindikasi utama kardiovaskular dan efek samping yang dapat timbul!",
       "diagnosis": "PSEUDOEFEDRIN / PSEUDOEPHEDRINE (ORAL)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Dekongestan Simpatomimetik",
@@ -7208,7 +7463,7 @@
         "**Golongan:** Dekongestan Simpatomimetik",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Reseptor:**\r\n   - Pseudoefedrin adalah agonis adrenergik kerja campuran (*direct & indirect acting sympathomimetic*).\r\n   - Bekerja langsung mengaktivasi **Reseptor Adrenergik α₁** (dan α₂) pada otot polos arteriol mukosa konka hidung dan nasofaring, serta memicu pelepasan norepinefrin endogen dari vesikel saraf simpatis.\r\n   - Stimulasi reseptor α₁ menginduksi **vasokonstriksi pembuluh darah arteriol dan venula mukosa nasal** → aliran darah lokal turun → eksudasi plasma dan edema interstitial mukosa hidung berkurang → lumen jalan napas hidung terbuka dan drainase sinus meningkat.\r",
+      "jawaban_ringkas": "a. Dekongestan Oral Sistemik / Agonis Adrenergik Simpatomimetik. Mengaktivasi reseptor α₁ adrenergik pada arteriol mukosa konka hidung → vasokonstriksi lokal → edema mukosa hidung mengempis → lumen hidung lapang.\nb. Kontraindikasi: Hipertensi berat/tidak terkontrol, Penyakit Jantung Koroner (PJK), aritmia, MAOI. Efek samping: Palpitasi, takikardia, insomnia, gelisah.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Reseptor:**\r\n   - Pseudoefedrin adalah agonis adrenergik kerja campuran (*direct & indirect acting sympathomimetic*).\r\n   - Bekerja langsung mengaktivasi **Reseptor Adrenergik α₁** (dan α₂) pada otot polos arteriol mukosa konka hidung dan nasofaring, serta memicu pelepasan norepinefrin endogen dari vesikel saraf simpatis.\r\n   - Stimulasi reseptor α₁ menginduksi **vasokonstriksi pembuluh darah arteriol dan venula mukosa nasal** → aliran darah lokal turun → eksudasi plasma dan edema interstitial mukosa hidung berkurang → lumen jalan napas hidung terbuka dan drainase sinus meningkat.\r\n\r\nb. **Golongan, Kontraindikasi, & ESO:**\r\n   - **Golongan:** Dekongestan Sistemik / Agonis Adrenergik Oral (*Sympathomimetic Decongestant*).\r\n   - **Kontraindikasi:**\r\n     - **Hipertensi berat atau hipertensi tidak terkontrol**.\r\n     - **Penyakit Jantung Koroner (PJK) / riwayat infark miokard akut**.\r\n     - Aritmia jantung berat.\r\n     - Hipertiroidisme (sensitivitas katekolamin meningkat).\r\n     - Glaukoma sudut tertutup.\r\n     - Pasien yang sedang menggunakan atau dalam 14 hari pasca penghentian *Monoamine Oxidase Inhibitor* (MAOI) → risiko krisis hipertensi fatal.\r\n   - **Efek Samping Obat (ESO):** Takikardia, palpitasi, aritmia, peningkatan tekanan darah sistemik, insomnia, kegelisahan, tremor, ansietas, dan retensi urin (pada pasien BPH).\r\n   - **Dosis:** Dewasa: 30–60 mg tiap 4–6 jam (maksimal 240 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7230,7 +7485,9 @@
         "pseudoephedrine",
         "oral"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Dekongestan Oral Sistemik / Agonis Adrenergik Simpatomimetik. Mengaktivasi reseptor α₁ adrenergik pada arteriol mukosa konka hidung → vasokonstriksi lokal → edema mukosa hidung mengempis → lumen hidung lapang.",
+      "jawaban_b": "Kontraindikasi: Hipertensi berat/tidak terkontrol, Penyakit Jantung Koroner (PJK), aritmia, MAOI. Efek samping: Palpitasi, takikardia, insomnia, gelisah."
     },
     {
       "id": 328,
@@ -7238,9 +7495,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "OKSIMETAZOLIN / OXYMETAZOLINE (TOPIKAL NASAL SPRAY/DROP)",
       "prompt": "[Oksimetazolin Topikal]\n\na. Jelaskan mekanisme kerja farmakodinamik molekuler Oksimetazolin topikal dalam melegakan hidung tersumbat!\n\nb. Sebutkan golongan sediaan, komplikasi patognomonik akibat penggunaan >3–5 hari beserta mekanisme terjadinya, serta batas durasi pakai yang aman!",
-      "stimulus": "Oksimetazolin Topikal",
-      "soal_a": "Jelaskan mekanisme kerja farmakodinamik molekuler Oksimetazolin topikal dalam melegakan hidung tersumbat!",
-      "soal_b": "Sebutkan golongan sediaan, komplikasi patognomonik akibat penggunaan >3–5 hari beserta mekanisme terjadinya, serta batas durasi pakai yang aman!",
+      "stimulus": "Diberikan preparat Oksimetazolin",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Apa komplikasi patognomonik akibat penggunaan >3–5 hari dan berapa batas durasi pemakaian yang aman?",
       "diagnosis": "OKSIMETAZOLIN / OXYMETAZOLINE (TOPIKAL NASAL SPRAY/DROP)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Dekongestan Simpatomimetik",
@@ -7259,7 +7516,7 @@
       "struktur_khas": [
         "**Golongan:** Dekongestan Simpatomimetik"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler:**\r\n   - Oksimetazolin merupakan agonis kuat selektif reseptor **Adrenergik α₁ dan parsial α₂** sintetik turunan imidazolin.\r\n   - Diberikan secara topikal langsung pada mukosa kavum nasi.\r\n   - Pengikatan pada reseptor α₁ vaskular lokal memicu konstriksi cepat dan kuat pada pleksus pembuluh darah kapasitans (*capacitance vessels*) di stroma konka nasalis inferior dan media.\r",
+      "jawaban_ringkas": "a. Dekongestan Topikal Nasal (Agonis selektif α₁ adrenergik turunan imidazolin). Bekerja langsung memicu vasokonstriksi cepat (<5 menit) pada pleksus pembuluh darah kapasitans konka hidung → hidung tersumbat segera lega.\nb. Komplikasi khas: Rebound Congestion / Rhinitis Medicamentosa (akibat desensitisasi reseptor alfa dan paralisis vasomotor kompensatorik). Batas aman: Maksimal 3–5 hari berturut-turut.",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler:**\r\n   - Oksimetazolin merupakan agonis kuat selektif reseptor **Adrenergik α₁ dan parsial α₂** sintetik turunan imidazolin.\r\n   - Diberikan secara topikal langsung pada mukosa kavum nasi.\r\n   - Pengikatan pada reseptor α₁ vaskular lokal memicu konstriksi cepat dan kuat pada pleksus pembuluh darah kapasitans (*capacitance vessels*) di stroma konka nasalis inferior dan media.\r\n   - Menghasilkan penurunan kongesti mukosa dalam hitungan menit (<5 menit) dengan durasi kerja panjang (*long-acting*, 8–12 jam).\r\n\r\nb. **Golongan, Durasi Pakai, & Rhinitis Medicamentosa:**\r\n   - **Golongan:** Dekongestan Topikal Nasal (*Topical Nasal Decongestant*, Long-Acting).\r\n   - **Batas Durasi Pakai Maksimal:** Maksimal digunakan **3 hingga 5 hari saja berturut-turut**.\r\n   - **Komplikasi Patognomonik:** **Rebound Congestion / Rhinitis Medicamentosa**.\r\n   - **Mekanisme Rhinitis Medicamentosa:**\r\n     - Pemakaian topikal yang melampaui 3–5 hari memicu desensitisasi dan *down-regulation* masif reseptor alfa-adrenergik lokal.\r\n     - Iskemia mikrovaskular kronik akibat vasokonstriksi berkepanjangan memicu paralisis vasomotor dan vasodilatasi kompensatorik sekunder yang persisten.\r\n     - Akibatnya mukosa hidung menjadi semakin membengkak, edema hebat refrakter, hipertrofi, dan toleransi obat, sehingga pasien terjebak siklus ketergantungan semprotan hidung.\r\n   - **ESO Lain:** Iritasi/rasa kering mukosa hidung, bersin, rasa terbakar lokal, dan efek sistemik minimal (palpitasi, sakit kepala).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7279,7 +7536,9 @@
         "spray",
         "drop"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Dekongestan Topikal Nasal (Agonis selektif α₁ adrenergik turunan imidazolin). Bekerja langsung memicu vasokonstriksi cepat (<5 menit) pada pleksus pembuluh darah kapasitans konka hidung → hidung tersumbat segera lega.",
+      "jawaban_b": "Komplikasi khas: Rebound Congestion / Rhinitis Medicamentosa (akibat desensitisasi reseptor alfa dan paralisis vasomotor kompensatorik). Batas aman: Maksimal 3–5 hari berturut-turut."
     },
     {
       "id": 329,
@@ -7287,9 +7546,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "DEKSTROMETORFAN / DEXTROMETHORPHAN (DMP)",
       "prompt": "[Dekstrometorfan (DMP)]\n\na. Jelaskan mekanisme kerja farmakodinamik Dekstrometorfan pada susunan saraf pusat dalam menekan refleks batuk kering!\n\nb. Sebutkan golongan obat, perbandingannya dengan antitusif narkotik (Kodein) terkait efek analgesia & ketergantungan, serta tanda toksisitas dosis tinggi!",
-      "stimulus": "Dekstrometorfan (DMP)",
-      "soal_a": "Jelaskan mekanisme kerja farmakodinamik Dekstrometorfan pada susunan saraf pusat dalam menekan refleks batuk kering!",
-      "soal_b": "Sebutkan golongan obat, perbandingannya dengan antitusif narkotik (Kodein) terkait efek analgesia & ketergantungan, serta tanda toksisitas dosis tinggi!",
+      "stimulus": "Diberikan preparat Dekstrometorfan (DMP)",
+      "soal_a": "Termasuk golongan apa dan sebutkan keunggulannya dibanding antitusif opioid (Kodein)!",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "DEKSTROMETORFAN / DEXTROMETHORPHAN (DMP)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antitusif / Penekan Batuk",
@@ -7312,7 +7571,7 @@
         "**Golongan:** Antitusif / Penekan Batuk",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Sentral:**\r\n   - Dekstrometorfan adalah isomer D- dari analog kodein (levorfanol) yang bekerja sentral pada **Pusat Pengatur Batuk di Medula Oblongata**.\r\n   - Bekerja sebagai agonis reseptor **Sigma-1 (σ₁)** serta antagonis non-kompetitif reseptor **NMDA (N-methyl-D-aspartate)** di medula.\r\n   - Menghambat transmisi aferen stimulus batuk di nukleus traktus solitarius → meningkatkan ambang batas ambang rangsang batuk (*cough threshold*) → menekan frekuensi dan intensitas batuk non-produktif/iritatif.\r",
+      "jawaban_ringkas": "a. Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.\nb. Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Sentral:**\r\n   - Dekstrometorfan adalah isomer D- dari analog kodein (levorfanol) yang bekerja sentral pada **Pusat Pengatur Batuk di Medula Oblongata**.\r\n   - Bekerja sebagai agonis reseptor **Sigma-1 (σ₁)** serta antagonis non-kompetitif reseptor **NMDA (N-methyl-D-aspartate)** di medula.\r\n   - Menghambat transmisi aferen stimulus batuk di nukleus traktus solitarius → meningkatkan ambang batas ambang rangsang batuk (*cough threshold*) → menekan frekuensi dan intensitas batuk non-produktif/iritatif.\r\n\r\nb. **Golongan, Perbandingan dengan Kodein, & Toksisitas:**\r\n   - **Golongan:** Antitusif Non-Narkotik Sentral.\r\n   - **Perbandingan dengan Kodein:**\r\n     - DMP *tidak* memiliki efek analgetik dan *tidak* mengikat reseptor mu-opioid pada dosis terapi.\r\n     - *Tidak menyebabkan konstipasi/obstipasi* yang sering ditemukan pada kodein.\r\n     - Potensi adiksi/ketergantungan dan sedasi jauh lebih rendah dibandingkan kodein.\r\n     - Tidak menyebabkan depresi pernapasan pada dosis terapi lazim.\r\n   - **Toksisitas Dosis Tinggi (*Abuse*):**\r\n     - Pada dosis supraterapeutik / penyalahgunaan, metabolit dekstrorfan memblokir reseptor NMDA (mirip ketamin/PCP), menyebabkan efek disosiatif, halusinasi, ataksia, euforia, sindrom serotonin (jika dikombinasi dengan SSRI/MAOI), depresi SSP, dan depresi napas.\r\n   - **Dosis:** Dewasa: 10–20 mg tiap 4 jam atau 30 mg tiap 6–8 jam (maksimal 120 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7332,7 +7591,9 @@
         "dextromethorphan",
         "dmp"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.",
+      "jawaban_b": "Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold)."
     },
     {
       "id": 330,
@@ -7340,9 +7601,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KODEIN / CODEINE (ANTITUSIF NARKOTIK)",
       "prompt": "[Kodein HCl / Fosfat]\n\na. Jelaskan mekanisme kerja molekuler Kodein dalam menekan refleks batuk dan biotransformasinya di hepar!\n\nb. Sebutkan golongan obat, efek samping khas saluran cerna dan SSP, serta kontraindikasi absolut pada populasi anak!",
-      "stimulus": "Kodein HCl / Fosfat",
-      "soal_a": "Jelaskan mekanisme kerja molekuler Kodein dalam menekan refleks batuk dan biotransformasinya di hepar!",
-      "soal_b": "Sebutkan golongan obat, efek samping khas saluran cerna dan SSP, serta kontraindikasi absolut pada populasi anak!",
+      "stimulus": "Diberikan preparat Dekstrometorfan (DMP)",
+      "soal_a": "Termasuk golongan apa dan sebutkan keunggulannya dibanding antitusif opioid (Kodein)!",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "KODEIN / CODEINE (ANTITUSIF NARKOTIK)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antitusif / Penekan Batuk",
@@ -7365,7 +7626,7 @@
         "**Golongan:** Antitusif / Penekan Batuk",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2022"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & Biotransformasi:**\r\n   - Kodein (metilmorfin) berikatan secara langsung pada **reseptor μ-opioid (MOR)** di pusat batuk medula oblongata batang otak.\r\n   - Menghambat pelepasan neurotransmiter eksitatori (substansi P, glutamat) dan menghambat transmisi sinyal refleks batuk dari nervus vagus.\r\n   - Mengalami bioaktivasi di hepar oleh enzim **CYP2D6** menjadi bentuk aktifnya yaitu **Morfin** (sekitar 10%), yang bertanggung jawab atas efek analgetik dan penekanan sentralnya.\r",
+      "jawaban_ringkas": "a. Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.\nb. Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & Biotransformasi:**\r\n   - Kodein (metilmorfin) berikatan secara langsung pada **reseptor μ-opioid (MOR)** di pusat batuk medula oblongata batang otak.\r\n   - Menghambat pelepasan neurotransmiter eksitatori (substansi P, glutamat) dan menghambat transmisi sinyal refleks batuk dari nervus vagus.\r\n   - Mengalami bioaktivasi di hepar oleh enzim **CYP2D6** menjadi bentuk aktifnya yaitu **Morfin** (sekitar 10%), yang bertanggung jawab atas efek analgetik dan penekanan sentralnya.\r\n\r\nb. **Golongan, Efek Samping, & Kontraindikasi Anak:**\r\n   - **Golongan:** Antitusif Narkotik / Analgetik Opioid Lemah (Narkotika Golongan III).\r\n   - **Efek Samping Obat (ESO):**\r\n     - **Obstipasi / Konstipasi hebat** (karena inhibisi peristaltik usus via reseptor opioid pleksus mienterikus Auerbach).\r\n     - Sedasi, mengantuk, pusing, mual, muntah, retensi urin, depresi pernapasan (*respiratory depression*), toleransi, dan ketergantungan fisik/psikis.\r\n   - **Kontraindikasi Absolut pada Anak:**\r\n     - Kontraindikasi keras pada anak usia <12 tahun, serta usia 12–18 tahun pasca tonsilektomi/adenoidektomi untuk *sleep apnea* → risiko fatal depresi napas dan kematian terutama pada anak dengan fenotipe **Ultra-Rapid Metabolizer CYP2D6**.\r\n     - Kontraindikasi lain: Asma bronkial berat, depresi pernapasan akut, ileus paralitik.\r\n   - **Dosis:** Dewasa: 10–20 mg tiap 4–6 jam p.r.n (maksimal 120 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7385,7 +7646,9 @@
         "codeine",
         "narkotik"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.",
+      "jawaban_b": "Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold)."
     },
     {
       "id": 331,
@@ -7393,9 +7656,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "BENZONATAT / BENZONATATE (ANTITUSIF PERIFER)",
       "prompt": "[Benzonatat]\n\na. Jelaskan mekanisme kerja fisiologis perifer Benzonatat dalam menekan batuk non-produktif!\n\nb. Sebutkan golongan obat, keunggulannya dibanding antitusif sentral, instruksi cara minum yang krusial, dan bahaya fatal jika kapsul dikunyah!",
-      "stimulus": "Benzonatat",
-      "soal_a": "Jelaskan mekanisme kerja fisiologis perifer Benzonatat dalam menekan batuk non-produktif!",
-      "soal_b": "Sebutkan golongan obat, keunggulannya dibanding antitusif sentral, instruksi cara minum yang krusial, dan bahaya fatal jika kapsul dikunyah!",
+      "stimulus": "Diberikan preparat Dekstrometorfan (DMP)",
+      "soal_a": "Termasuk golongan apa dan sebutkan keunggulannya dibanding antitusif opioid (Kodein)!",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "BENZONATAT / BENZONATATE (ANTITUSIF PERIFER)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antitusif / Penekan Batuk",
@@ -7414,7 +7677,7 @@
       "struktur_khas": [
         "**Golongan:** Antitusif / Penekan Batuk"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Fisiologis Perifer:**\r\n   - Benzonatat secara kimiawi berkerabat dengan anestesi lokal ester (tetrakain).\r\n   - Bekerja secara perifer dengan cara memblokir kanal ion natrium (*voltage-gated Na⁺ channels*) pada **reseptor regang mekanis serabut aferen saraf vagal (*stretch receptors*)** yang terletak di mukosa laring, trakea, bronkus, dan alveoli paru.\r\n   - Menghambat inisiasi impuls refleks batuk dari reseptor regang saluran napas perifer menuju medula oblongata.\r",
+      "jawaban_ringkas": "a. Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.\nb. Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Fisiologis Perifer:**\r\n   - Benzonatat secara kimiawi berkerabat dengan anestesi lokal ester (tetrakain).\r\n   - Bekerja secara perifer dengan cara memblokir kanal ion natrium (*voltage-gated Na⁺ channels*) pada **reseptor regang mekanis serabut aferen saraf vagal (*stretch receptors*)** yang terletak di mukosa laring, trakea, bronkus, dan alveoli paru.\r\n   - Menghambat inisiasi impuls refleks batuk dari reseptor regang saluran napas perifer menuju medula oblongata.\r\n\r\nb. **Golongan, Keunggulan, & Bahaya Pengunyahan Kapsul:**\r\n   - **Golongan:** Antitusif Perifer Non-Narkotik.\r\n   - **Keunggulan:** Tidak menimbulkan sedasi sentral, tidak menimbulkan depresi napas, tidak menyebabkan obstipasi/adiksi, dan tidak mengganggu ambang SSP.\r\n   - **Instruksi Cara Minum & Bahaya Pengunyahan:**\r\n     - Kapsul harus **ditelan utuh** dengan air, tidak boleh dikunyah, digigit, atau dihisap.\r\n     - *Bahaya fatal jika dikunyah:* Pelepasan zat aktif di rongga mulut memicu anestesi lokal cepat pada mukosa orofaring, laring, dan pita suara → memicu baal/kebas mulut, laringospasme, spasme bronkus, hilangnya refleks menelan, risiko aspirasi paru, serta absorpsi cepat dosis masif yang dapat memicu kejang dan henti jantung (*cardiac arrest*) fatal.\r\n   - **Dosis:** Dewasa dan anak >10 tahun: 100–200 mg 3 kali sehari p.r.n (maksimal 600 mg/hari).\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7430,7 +7693,9 @@
         "benzonatate",
         "perifer"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antitusif Sentral Non-Narkotik. Keunggulan: Tidak memiliki efek analgetik, tidak menyebabkan konstipasi/obstipasi, dan potensi adiksi serta sedasi jauh lebih rendah dibanding kodein.",
+      "jawaban_b": "Bekerja sentral menekan pusat batuk di medula oblongata via agonis reseptor Sigma-1 (σ1) dan antagonis non-kompetitif NMDA → meningkatkan ambang rangsang batuk (cough threshold)."
     },
     {
       "id": 332,
@@ -7438,9 +7703,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "KLORFENIRAMIN MALEAT / CTM (ANTIHISTAMIN GENERASI 1)",
       "prompt": "[Klorfeniramin Maleat (CTM)]\n\na. Jelaskan mekanisme kerja molekuler reseptor CTM dan kemampuannya menembus sawar darah otak!\n\nb. Sebutkan golongan obat, efek samping antikolinergik patognomonik, serta peringatan keselamatan terkait aktivitas harian pasien!",
-      "stimulus": "Klorfeniramin Maleat (CTM)",
-      "soal_a": "Jelaskan mekanisme kerja molekuler reseptor CTM dan kemampuannya menembus sawar darah otak!",
-      "soal_b": "Sebutkan golongan obat, efek samping antikolinergik patognomonik, serta peringatan keselamatan terkait aktivitas harian pasien!",
+      "stimulus": "Diberikan preparat Klorfeniramin Maleat (CTM)",
+      "soal_a": "Termasuk golongan apa dan bagaimana mekanisme kerjanya?",
+      "soal_b": "Sebutkan efek samping antikolinergik khas serta efek samping utamanya pada SSP!",
       "diagnosis": "KLORFENIRAMIN MALEAT / CTM (ANTIHISTAMIN GENERASI 1)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antihistamin H1",
@@ -7460,7 +7725,7 @@
       "struktur_khas": [
         "**Golongan:** Antihistamin H1"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Molekuler & SDO:**\r\n   - CTM bertindak sebagai antagonis kompetitif / *inverse agonist* pada **Reseptor Histamin H₁**.\r\n   - Menghambat pengikatan histamin endogen pada sel endotel kapiler, otot polos bronkus, dan ujung saraf sensibel → menurunkan permeabilitas kapiler vaskular, meredakan rhinorrhea (ingus meler), bersin-bersin, dan pruritus mukosa.\r\n   - CTM memiliki struktur lipofilik tinggi dengan berat molekul kecil, sehingga **mudah menembus Sawar Darah Otak (Blood-Brain Barrier / BBB)** dan memblokade reseptor H₁ sentral di korteks serebri.\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi Pertama (H1-Bloker Klasik / Sedatif). Antagonis kompetitif reseptor Histamin H1 (lipofilik tinggi, menembus sawar darah otak/BBB) → menekan rhinorrhea, bersin, dan gatal.\nb. Efek samping antikolinergik: Mulut kering (xerostomia), pandangan kabur, retensi urin. Efek samping SSP: Sedasi berat / rasa kantuk hebat (dilarang mengemudi atau mengoperasikan mesin).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Molekuler & SDO:**\r\n   - CTM bertindak sebagai antagonis kompetitif / *inverse agonist* pada **Reseptor Histamin H₁**.\r\n   - Menghambat pengikatan histamin endogen pada sel endotel kapiler, otot polos bronkus, dan ujung saraf sensibel → menurunkan permeabilitas kapiler vaskular, meredakan rhinorrhea (ingus meler), bersin-bersin, dan pruritus mukosa.\r\n   - CTM memiliki struktur lipofilik tinggi dengan berat molekul kecil, sehingga **mudah menembus Sawar Darah Otak (Blood-Brain Barrier / BBB)** dan memblokade reseptor H₁ sentral di korteks serebri.\r\n\r\nb. **Golongan, Efek Antikolinergik, & Peringatan Keselamatan:**\r\n   - **Golongan:** Antihistamin Generasi Pertama (*1st Generation H₁-Receptor Antagonist* / Sedatif).\r\n   - **Contoh Sejenis:** Difenhidramin (*Diphenhydramine*), Dimenhidrinat, Prometasin.\r\n   - **Efek Samping Antikolinergik (Anti-Muskarinik):**\r\n     - Mulut kering (*xerostomia*), pandangan kabur (*blurred vision*), retensi urin (pada lansia/BPH), konstipasi, dan takikardia (akibat blokade reseptor muskarinik M3).\r\n   - **Efek Samping Sedatif & Peringatan:**\r\n     - Menyebabkan **sedasi berat, rasa kantuk hebat (*drowsiness*), penurunan koordinasi motorik, dan gangguan konsentrasi**.\r\n     - *Peringatan Keras:* Pasien dilarang mengemudikan kendaraan bermotor, mengoperasikan mesin berat, atau meminum alkohol selama terapi.\r\n   - **Dosis:** Dewasa: 4 mg tiap 4–6 jam (maksimal 24 mg/hari); Anak 2–5 tahun: 1 mg tiap 4–6 jam.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7479,7 +7744,9 @@
         "ctm",
         "generasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi Pertama (H1-Bloker Klasik / Sedatif). Antagonis kompetitif reseptor Histamin H1 (lipofilik tinggi, menembus sawar darah otak/BBB) → menekan rhinorrhea, bersin, dan gatal.",
+      "jawaban_b": "Efek samping antikolinergik: Mulut kering (xerostomia), pandangan kabur, retensi urin. Efek samping SSP: Sedasi berat / rasa kantuk hebat (dilarang mengemudi atau mengoperasikan mesin)."
     },
     {
       "id": 333,
@@ -7487,9 +7754,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "LORATADIN / LORATADINE (ANTIHISTAMIN GENERASI 2)",
       "prompt": "[Loratadin]\n\na. Jelaskan mekanisme kerja reseptor Loratadin dan alasan farmakologis mengapa obat ini diklasifikasikan sebagai *non-sedating* antihistamine!\n\nb. Sebutkan golongan obat, 2-3 contoh sekelasnya, keunggulannya dalam terapi rinitis/faringitis alergi dibanding CTM, serta dosis lazim harian!",
-      "stimulus": "Loratadin",
-      "soal_a": "Jelaskan mekanisme kerja reseptor Loratadin dan alasan farmakologis mengapa obat ini diklasifikasikan sebagai *non-sedating* antihistamine!",
-      "soal_b": "Sebutkan golongan obat, 2-3 contoh sekelasnya, keunggulannya dalam terapi rinitis/faringitis alergi dibanding CTM, serta dosis lazim harian!",
+      "stimulus": "Diberikan preparat Loratadin",
+      "soal_a": "Termasuk golongan apa dan sebutkan 2 contoh lain sekelasnya!",
+      "soal_b": "Bagaimana mekanisme kerjanya dan mengapa tergolong non-sedating?",
       "diagnosis": "LORATADIN / LORATADINE (ANTIHISTAMIN GENERASI 2)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antihistamin H1",
@@ -7514,7 +7781,7 @@
         "**Golongan:** Antihistamin H1",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja Reseptor & Alasan Non-Sedating:**\r\n   - Loratadin adalah *inverse agonist* selektif pada **Reseptor Histamin H₁ perifer**.\r\n   - Menghambat pelepasan mediator alergi dan menghambat aktivasi reseptor H₁ pada pleksus pembuluh darah hidung dan faring.\r\n   - *Alasan Non-Sedating:*\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi Kedua / Non-Sedatif (contoh lain: Setirizin, Feksofenadin, Desloratadin).\nb. Antagonis selektif reseptor Histamin H1 perifer. Non-sedating karena polaritas tinggi & afinitas substrat P-glikoprotein → penetrasi menembus sawar darah otak (BBB) minimal dan tanpa efek antimuskarinik. Dosis cukup 1x sehari (durasi 24 jam).",
       "jawaban_lengkap": "a. **Mekanisme Kerja Reseptor & Alasan Non-Sedating:**\r\n   - Loratadin adalah *inverse agonist* selektif pada **Reseptor Histamin H₁ perifer**.\r\n   - Menghambat pelepasan mediator alergi dan menghambat aktivasi reseptor H₁ pada pleksus pembuluh darah hidung dan faring.\r\n   - *Alasan Non-Sedating:*\r\n     1. Memiliki polaritas lebih tinggi dan afinitas ikatan protein plasma yang tinggi (\\sim 98%), sehingga **penetrasi melintasi sawar darah otak (BBB) sangat minimal / rendah**.\r\n     2. Menjadi substrat bagi efflux pump P-glikoprotein pada endotel kapiler otak yang memompa obat kembali ke sirkulasi sistemik.\r\n     3. Memiliki afinitas yang sangat rendah terhadap reseptor muskarinik kolinergik dan reseptor adrenergik sentral.\r\n\r\nb. **Golongan, Contoh Sejenis, Keunggulan, & Dosis:**\r\n   - **Golongan:** Antihistamin Generasi Kedua (*2nd Generation H₁-Receptor Antagonist* / Non-Sedatif).\r\n   - **Contoh Sejenis:** Setirizin (*Cetirizine*), Feksofenadin (*Fexofenadine*), Desloratadin (*Desloratadine*).\r\n   - **Keunggulan Dibanding CTM:**\r\n     - Tidak menyebabkan kantuk bermakna pada dosis terapi (*daytime alert safe*).\r\n     - Tidak memiliki efek samping antikolinergik (tidak menyebabkan mulut kering atau retensi urin).\r\n     - Durasi kerja panjang (\\sim 24 jam) sehingga cukup dikonsumsi **1 kali sehari** → kepatuhan (*compliance*) pasien jauh lebih baik.\r\n     - Sering dikombinasikan dengan Pseudoefedrin untuk mengatasi gejala rinitis alergi dan kongesti hidung secara bersamaan tanpa mengganggu aktivitas harian.\r\n   - **Dosis:** Dewasa dan anak >12 tahun (atau BB >30 kg): 10 mg 1 kali sehari; Anak 2–12 tahun (BB ≤ 30 kg): 5 mg 1 kali sehari.\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7538,7 +7805,9 @@
         "loratadine",
         "generasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi Kedua / Non-Sedatif (contoh lain: Setirizin, Feksofenadin, Desloratadin).",
+      "jawaban_b": "Antagonis selektif reseptor Histamin H1 perifer. Non-sedating karena polaritas tinggi & afinitas substrat P-glikoprotein → penetrasi menembus sawar darah otak (BBB) minimal dan tanpa efek antimuskarinik. Dosis cukup 1x sehari (durasi 24 jam)."
     },
     {
       "id": 334,
@@ -7546,9 +7815,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "SETIRIZIN / CETIRIZINE (ANTIHISTAMIN GENERASI 2)",
       "prompt": "[Setirizin]\n\na. Jelaskan mekanisme kerja farmakodinamik molekuler Setirizin pada reseptor histamin dan efek stabilisasi sel mast!\n\nb. Sebutkan golongan obat, jalur eliminasi utamanya, perbandingan potensi sedasinya terhadap loratadin, serta dosis sediaan sirup untuk anak!",
-      "stimulus": "Setirizin",
-      "soal_a": "Jelaskan mekanisme kerja farmakodinamik molekuler Setirizin pada reseptor histamin dan efek stabilisasi sel mast!",
-      "soal_b": "Sebutkan golongan obat, jalur eliminasi utamanya, perbandingan potensi sedasinya terhadap loratadin, serta dosis sediaan sirup untuk anak!",
+      "stimulus": "Diberikan preparat Setirizin",
+      "soal_a": "Termasuk golongan apa dan bagaimana jalur eliminasi utamanya?",
+      "soal_b": "Bagaimana mekanisme kerja serta efek tambahannya pada reaksi alergi?",
       "diagnosis": "SETIRIZIN / CETIRIZINE (ANTIHISTAMIN GENERASI 2)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "Antihistamin H1",
@@ -7571,7 +7840,7 @@
         "**Golongan:** Antihistamin H1",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024"
       ],
-      "jawaban_ringkas": "a. **Mekanisme Kerja & Stabilisasi Alergi:**\r\n   - Setirizin (metabolit karboksilat aktif dari hidroksizin) bekerja menghambat reseptor **Histamin H₁ perifer** secara selektif dan kompetitif.\r\n   - Selain blokade reseptor H₁, setirizin juga menghambat migrasi eosinofil pada fase lambat respon alergi serta menekan degranulasi sel mast dan pelepasan leukotrien/leukosit.\r\n   - Efektif meredakan gejala rhinorrhea, lakrimasi, bersin, dan gatal tenggorokan pada faringitis akut yang disertai rinitis alergi.\r",
+      "jawaban_ringkas": "a. Antihistamin Generasi Kedua. Eliminasi utama via ginjal/urin dalam bentuk utuh (~70%) → memerlukan penyesuaian dosis pada gangguan fungsi ginjal.\nb. Antagonis selektif reseptor Histamin H1 perifer + menghambat kemotaksis eosinofil fase lambat serta pelepasan mediator sel mast → meredakan gejala rinitis alergi dan gatal faring.",
       "jawaban_lengkap": "a. **Mekanisme Kerja & Stabilisasi Alergi:**\r\n   - Setirizin (metabolit karboksilat aktif dari hidroksizin) bekerja menghambat reseptor **Histamin H₁ perifer** secara selektif dan kompetitif.\r\n   - Selain blokade reseptor H₁, setirizin juga menghambat migrasi eosinofil pada fase lambat respon alergi serta menekan degranulasi sel mast dan pelepasan leukotrien/leukosit.\r\n   - Efektif meredakan gejala rhinorrhea, lakrimasi, bersin, dan gatal tenggorokan pada faringitis akut yang disertai rinitis alergi.\r\n\r\nb. **Golongan, Eliminasi, Sedasi, & Dosis Anak:**\r\n   - **Golongan:** Antihistamin Generasi Kedua Oral.\r\n   - **Eliminasi Farmakokinetik:**\r\n     - Sebagian besar dieliminasi dalam bentuk tidak berubah melalui **ginjal / urin (sekitar 70%)**, sehingga memerlukan penyesuaian dosis pada pasien insufisiensi ginjal (*renal impairment*).\r\n   - **Perbandingan Sedasi:**\r\n     - Walaupun tergolong generasi ke-2, setirizin memiliki potensi sedasi sedikit lebih tinggi dibanding loratadin atau feksofenadin pada sebagian kecil pasien sensitif (~10%), namun jauh lebih rendah dibanding CTM.\r\n   - **Dosis:**\r\n     - *Dewasa & Anak >6 tahun:* 10 mg 1 kali sehari (atau 5 mg 2 kali sehari).\r\n     - *Anak 2–6 tahun:* Sirup 5 mg/5 mL, dosis 2,5 mg (2,5 mL) 1–2 kali sehari atau 5 mg sekali sehari.\r\n\r\n---\r\n\r\n## BAGIAN II: PREPARAT RACIKAN & PENULISAN RESEP FARINGITIS\r\n\r\n---",
       "resep_teks": "",
       "tips_klinis": "",
@@ -7591,7 +7860,9 @@
         "cetirizine",
         "generasi"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antihistamin Generasi Kedua. Eliminasi utama via ginjal/urin dalam bentuk utuh (~70%) → memerlukan penyesuaian dosis pada gangguan fungsi ginjal.",
+      "jawaban_b": "Antagonis selektif reseptor Histamin H1 perifer + menghambat kemotaksis eosinofil fase lambat serta pelepasan mediator sel mast → meredakan gejala rinitis alergi dan gatal faring."
     },
     {
       "id": 335,
@@ -7599,9 +7870,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "RESEP LENGKAP KASUS FARINGITIS ANAK (BB 15 KG, 4 TAHUN)",
       "prompt": "[Penulisan Resep Faringitis Akut Anak]\n\na. Sebutkan indikasi klinis, perhitungan dosis akurat untuk masing-masing obat (Antibiotik, Antipiretik, dan Mukolitik) pada anak usia 4 tahun dengan BB 15 kg!\n\nb. Tuliskan lembar resep resmi (*Prescription Form*) lengkap yang memuat unsur *Inscriptio, Praescriptio, Signatura, dan Subscriptio* secara legal dan rasional!",
-      "stimulus": "Penulisan Resep Faringitis Akut Anak",
-      "soal_a": "Sebutkan indikasi klinis, perhitungan dosis akurat untuk masing-masing obat (Antibiotik, Antipiretik, dan Mukolitik) pada anak usia 4 tahun dengan BB 15 kg!",
-      "soal_b": "Tuliskan lembar resep resmi (*Prescription Form*) lengkap yang memuat unsur *Inscriptio, Praescriptio, Signatura, dan Subscriptio* secara legal dan rasional!",
+      "stimulus": "Diberikan preparat Eritromisin",
+      "soal_a": "Termasuk golongan apa dan sebutkan indikasinya pada faringitis?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "RESEP LENGKAP KASUS FARINGITIS ANAK (BB 15 KG, 4 TAHUN)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "RESEP LENGKAP KASUS FARINGITIS ANAK (BB 15 KG, 4 TAHUN)",
@@ -7625,7 +7896,7 @@
         "**Golongan:** RESEP LENGKAP KASUS FARINGITIS ANAK (BB 15 KG, 4 TAHUN)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Indikasi Klinis & Perhitungan Dosis Anak 15 kg:**\r\n   - **Diagnosis:** Faringitis Akut Bakterial (etiologi dicurigai *Streptococcus pyogenes* / GABHS).\r\n   - **Terapi 1 (Kausatif):** Amoxicillin sirup forte 250 mg/5 mL.\r\n     - Dosis pedoman faringitis GABHS: 50 mg/kgBB/hari dibagi 3 dosis.\r",
+      "jawaban_ringkas": "a. Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.\nb. Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*",
       "jawaban_lengkap": "a. **Indikasi Klinis & Perhitungan Dosis Anak 15 kg:**\r\n   - **Diagnosis:** Faringitis Akut Bakterial (etiologi dicurigai *Streptococcus pyogenes* / GABHS).\r\n   - **Terapi 1 (Kausatif):** Amoxicillin sirup forte 250 mg/5 mL.\r\n     - Dosis pedoman faringitis GABHS: 50 mg/kgBB/hari dibagi 3 dosis.\r\n     - Total dosis harian: 15 kg × 50 mg/kg/hari = 750 mg/hari.\r\n     - Dosis per kali minum: 750 / 3 = 250 mg (setara 5 mL / 1 sendok teh takar).\r\n     - Durasi: Wajib 10 hari (eradikasi total untuk mencegah Demam Rematik). Butuh 3 × 5 mL × 10 = 150 mL (3 botol @ 60 mL).\r\n   - **Terapi 2 (Simptomatis Demam/Nyeri):** Paracetamol sirup 120 mg/5 mL.\r\n     - Dosis: 10–15 mg/kgBB/kali = 15 kg × 15 mg = 225 mg per kali pemberian.\r\n     - Volume sirup per kali: 225 / 120 × 5 mL ≈ 9,37 mL ≈ 2 sendok teh takar (10 mL = 240 mg). Diberikan p.r.n (bila demam/nyeri) tiap 6–8 jam.\r\n   - **Terapi 3 (Mukolitik):** Ambroxol sirup 15 mg/5 mL.\r\n     - Dosis usia 4 tahun: 7,5 mg 3 kali sehari.\r\n     - Volume per kali: 7,5 / 15 × 5 mL = 2,5 mL (setengah sendok teh takar).\r\n\r\nb. **Format Lembar Resep Resmi:**\r\n\r\n```text\r\ndr. Antigravity, Sp.A\r\nSIP: 123/SIP/2026\r\nPraktik Mandiri: Jl. Salemba Raya No. 4, Jakarta\r\nTelp: (021) 555-9876\r\n---------------------------------------------------------------------\r\nJakarta, 4 Oktober 2026\r\n\r\nR/ Amoxicillin sirup forte 250 mg/5 mL fl. No. III\r\n   S. 3. d. d. cth 1 (habiskan!)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Paracetamol sirup 120 mg/5 mL fl. No. I\r\n   S. p. r. n. 3-4. d. d. cth 2 (bila demam/nyeri)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Ambroxol sirup 15 mg/5 mL fl. No. I\r\n   S. 3. d. d. cth 1/2\r\n   -------------------------------------------------------------- §\r\n\r\nPro    : An. Zahra (4 tahun)\r\nBB     : 15 kg\r\nAlamat : Jl. Diponegoro No. 10, Jakarta\r\n```\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.A\r\nSIP: 123/SIP/2026\r\nPraktik Mandiri: Jl. Salemba Raya No. 4, Jakarta\r\nTelp: (021) 555-9876\r\n---------------------------------------------------------------------\r\nJakarta, 4 Oktober 2026\r\n\r\nR/ Amoxicillin sirup forte 250 mg/5 mL fl. No. III\r\n   S. 3. d. d. cth 1 (habiskan!)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Paracetamol sirup 120 mg/5 mL fl. No. I\r\n   S. p. r. n. 3-4. d. d. cth 2 (bila demam/nyeri)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Ambroxol sirup 15 mg/5 mL fl. No. I\r\n   S. 3. d. d. cth 1/2\r\n   -------------------------------------------------------------- §\r\n\r\nPro    : An. Zahra (4 tahun)\r\nBB     : 15 kg\r\nAlamat : Jl. Diponegoro No. 10, Jakarta",
       "tips_klinis": "",
@@ -7650,7 +7921,9 @@
         "kg,",
         "tahun"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.",
+      "jawaban_b": "Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*"
     },
     {
       "id": 336,
@@ -7658,9 +7931,9 @@
       "category": "FARMAKOLOGI KLINIS",
       "title": "RESEP LENGKAP FARINGITIS DEWASA (ALERGI PENISILIN + KONGESTI)",
       "prompt": "[Penulisan Resep Faringitis Akut Dewasa]\n\na. Sebutkan rasionalitas pemilihan antibiotik pada pasien dewasa faringitis dengan riwayat alergi penisilin non-anafilaksis, serta pertimbangan penambahan dekongestan oral!\n\nb. Tuliskan lembar resep resmi (*Prescription Form*) lengkap untuk pasien dewasa yang mencakup antibiotik oral, analgesik, dan kapsul kombinasi dekongestan-antihistamin!",
-      "stimulus": "Penulisan Resep Faringitis Akut Dewasa",
-      "soal_a": "Sebutkan rasionalitas pemilihan antibiotik pada pasien dewasa faringitis dengan riwayat alergi penisilin non-anafilaksis, serta pertimbangan penambahan dekongestan oral!",
-      "soal_b": "Tuliskan lembar resep resmi (*Prescription Form*) lengkap untuk pasien dewasa yang mencakup antibiotik oral, analgesik, dan kapsul kombinasi dekongestan-antihistamin!",
+      "stimulus": "Diberikan preparat Eritromisin",
+      "soal_a": "Termasuk golongan apa dan sebutkan indikasinya pada faringitis?",
+      "soal_b": "Bagaimana mekanisme kerjanya?",
       "diagnosis": "RESEP LENGKAP FARINGITIS DEWASA (ALERGI PENISILIN + KONGESTI)",
       "organ": "Mukosa Saluran Napas Atas & Batang Otak (Batuk)",
       "sifat": "RESEP LENGKAP FARINGITIS DEWASA (ALERGI PENISILIN + KONGESTI)",
@@ -7686,7 +7959,7 @@
         "**Golongan:** RESEP LENGKAP FARINGITIS DEWASA (ALERGI PENISILIN + KONGESTI)",
         "**Arsip Ujian:** Keluar pada Ujian Tahun 2024, Tahun 2022, Tahun 2021"
       ],
-      "jawaban_ringkas": "a. **Rasionalitas Terapi:**\r\n   - **Kausatif:** Pasien memiliki riwayat ruam ringan terhadap amoksisilin, sehingga dipilih antibiotik **Cefadroxil kapsul 500 mg** (sefalosporin generasi 1) diminum 2 kali sehari selama 10 hari. Jika alergi berupa anafilaksis berat, pilihan wajib beralih ke makrolida (Azitromisin / Eritromisin).\r\n   - **Analgetik-Antipiretik:** **Paracetamol tablet 500 mg** diminum 3–4 kali sehari jika nyeri tenggorokan atau demam.\r\n   - **Dekongestan & Antihistamin:** Kombinasi **Pseudoefedrin 30 mg** (dekongestan oral pelega mukosa) dan **Loratadin 5 mg** (antihistamin generasi 2 non-drowsy) dalam bentuk racikan kapsul untuk meredakan kongesti hidung tanpa memicu rasa kantuk di tempat kerja. Pastikan pasien tidak memiliki riwayat hipertensi tidak terkontrol.\r",
+      "jawaban_ringkas": "a. Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.\nb. Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*",
       "jawaban_lengkap": "a. **Rasionalitas Terapi:**\r\n   - **Kausatif:** Pasien memiliki riwayat ruam ringan terhadap amoksisilin, sehingga dipilih antibiotik **Cefadroxil kapsul 500 mg** (sefalosporin generasi 1) diminum 2 kali sehari selama 10 hari. Jika alergi berupa anafilaksis berat, pilihan wajib beralih ke makrolida (Azitromisin / Eritromisin).\r\n   - **Analgetik-Antipiretik:** **Paracetamol tablet 500 mg** diminum 3–4 kali sehari jika nyeri tenggorokan atau demam.\r\n   - **Dekongestan & Antihistamin:** Kombinasi **Pseudoefedrin 30 mg** (dekongestan oral pelega mukosa) dan **Loratadin 5 mg** (antihistamin generasi 2 non-drowsy) dalam bentuk racikan kapsul untuk meredakan kongesti hidung tanpa memicu rasa kantuk di tempat kerja. Pastikan pasien tidak memiliki riwayat hipertensi tidak terkontrol.\r\n\r\nb. **Format Lembar Resep Resmi:**\r\n\r\n```text\r\ndr. Antigravity, Sp.A\r\nSIP: 123/SIP/2026\r\nPraktik Mandiri: Jl. Salemba Raya No. 4, Jakarta\r\nTelp: (021) 555-9876\r\n---------------------------------------------------------------------\r\nJakarta, 4 Oktober 2026\r\n\r\nR/ Cefadroxil caps. 500 mg No. XIV\r\n   S. 2. d. d. caps. I (habiskan!)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Paracetamol tab. 500 mg No. X\r\n   S. p. r. n. 3. d. d. tab. I (bila nyeri/demam)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Pseudoephedrine tab. 30 mg\r\n   Loratadine tab. 5 mg\r\n   m. f. pulv. d. t. d. in caps. No. X\r\n   S. 2. d. d. caps. I\r\n   -------------------------------------------------------------- §\r\n\r\nPro    : Tn. Bambang (29 tahun)\r\nAlamat : Jl. Cikini Raya No. 15, Jakarta\r\n```\r\n\r\n---\r\n\r\n## BAGIAN III: TABEL SINTESIS KOMPARASI OBAT CEPAT MEJA OSPE\r\n\r\n| Nama Obat Preparat | Golongan Farmakologi | Target Molekuler / Reseptor | Karakteristik Kunci / Efek Samping Unik | Indikasi Klinis / Catatan Resep |\r\n| :--- | :--- | :--- | :--- | :--- |\r\n| **Amoxicillin** `[PRIORITAS]` | Beta-Laktam (Aminopenisilin) | PBPs (Transpeptidase) | Ruam makulopapular jika kena EBV (*Mononucleosis*) | Lini 1 Faringitis GABHS (Wajib 10 hari) |\r\n| **Cefadroxil** `[PRIORITAS]` | Sefalosporin Gen-1 | PBPs (Transpeptidase) | Sinergis nefrotoksik dengan loop diuretic / aminoglikosida | Alternatif penisilin (alergi non-tipe I) |\r\n| **Cefixime** `[PRIORITAS]` | Sefalosporin Gen-3 Oral | PBPs (Transpeptidase) | Ensefalopati SSP, interaksi perdarahan (+Warfarin) | Infeksi saluran napas resisten / ISK |\r\n| **Eritromisin** `[PRIORITAS]` | Makrolida | Subunit 50S Ribosom | Pemanjangan interval QT, kram motilin lambung, inhibisi CYP3A4 | Lini 1 pada alergi berat/anafilaksis penisilin |\r\n| **Parasetamol** `[PRIORITAS]` | Analgetik-Antipiretik Non-NSAID | Hambatan COX Sentral (SSP) | Toksisitas NAPQI sentrilobular hepar (Antidotum: NAC) | Nyeri menelan & demam faringitis |\r\n| **Ambroksol** `[PRIORITAS]` | Mukolitik & Sekretolitik | Sintesis surfaktan + lisis mukus | Meningkatkan penetrasi antibiotik di saluran napas | Batuk berdahak kental faringitis |\r\n| **Asetilsistein** `[PRIORITAS]` | Mukolitik (-SH donor) | Memecah jembatan disulfida (-S-S-) | Bronkospasme pada asma; Antidotum overdosis parasetamol | Pengencer sputum mukopurulen kental |\r\n| **Guaifenesin (GG)** `[PRIORITAS]` | Ekspektoran | Refleks vagal mukosa lambung | Hipourisemia (urikosurik), hindari anak <6 th | Batuk kering membandel agar produktif |\r\n| **Deksametason** `[PRIORITAS]` | Kortikosteroid Sintetis | Glucocorticoid Receptor (NF-\\kappaB, PLA₂) | Cushingoid, osteoporosis; ulkus lambung (+NSAID) | Faringitis berat / edema laring / *croup* |\r\n| **Pseudoefedrin** `[PRIORITAS]` | Dekongestan Oral | Agonis Adrenergik α₁ & α₂ | Takikardia, aritmia, KI hipertensi & PJK | Hidung tersumbat sistemik |\r\n| **Oksimetazolin** `[PRIORITAS]` | Dekongestan Topikal | Agonis Adrenergik α₁ topikal | *Rebound congestion* (*Rhinitis medicamentosa*) jika >3–5 hari | Pelega napas cepat topikal |\r\n| **Dekstrometorfan** `[PRIORITAS]` | Antitusif Sentral Non-Narkotik | Reseptor σ₁ & NMDA medula | Bebas obstipasi, disosiasi/halusinasi jika overdosis | Batuk kering iritatif saluran napas |\r\n| **Kodein** `[PRIORITAS]` | Antitusif Narkotik | Reseptor μ-opioid medula | Obstipasi berat, depresi napas, KI anak <12 th | Batuk kering nyeri berat refrakter |\r\n| **Benzonatat** | Antitusif Perifer | Reseptor regang vagal perifer | Bahaya fatal laringospasme jika kapsul dikunyah | Batuk non-produktif tanpa sedasi sentral |\r\n| **CTM** `[PRIORITAS]` | Antihistamin Gen-1 | Antagonis H₁ (menembus BBB) | Sedasi kuat, antikolinergik (mulut kering, retensi urin) | Rinitis akut / alergi malam hari |\r\n| **Loratadin** `[PRIORITAS]` | Antihistamin Gen-2 | Antagonis H₁ perifer selektif | *Non-drowsy*, durasi 24 jam (1x/hari), aman siang hari | Rinitis alergi penyerta faringitis |\r\n| **Setirizin** `[PRIORITAS]` | Antihistamin Gen-2 | Antagonis H₁ perifer selektif | Eliminasi ginjal (70% utuh), sedasi ringan minimal | Alergi pernapasan akut anak & dewasa |\r\n\r\n\r\n---",
       "resep_teks": "dr. Antigravity, Sp.A\r\nSIP: 123/SIP/2026\r\nPraktik Mandiri: Jl. Salemba Raya No. 4, Jakarta\r\nTelp: (021) 555-9876\r\n---------------------------------------------------------------------\r\nJakarta, 4 Oktober 2026\r\n\r\nR/ Cefadroxil caps. 500 mg No. XIV\r\n   S. 2. d. d. caps. I (habiskan!)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Paracetamol tab. 500 mg No. X\r\n   S. p. r. n. 3. d. d. tab. I (bila nyeri/demam)\r\n   -------------------------------------------------------------- §\r\n\r\nR/ Pseudoephedrine tab. 30 mg\r\n   Loratadine tab. 5 mg\r\n   m. f. pulv. d. t. d. in caps. No. X\r\n   S. 2. d. d. caps. I\r\n   -------------------------------------------------------------- §\r\n\r\nPro    : Tn. Bambang (29 tahun)\r\nAlamat : Jl. Cikini Raya No. 15, Jakarta",
       "tips_klinis": "",
@@ -7714,7 +7987,10 @@
         "penisilin",
         "kongesti"
       ],
-      "image": ""
+      "image": "",
+      "jawaban_a": "Antibiotik Makrolida (contoh lain: Azitromisin, Klaritromisin). Pilihan utama (DOC) pada faringitis streptokokus dengan riwayat alergi anafilaksis penisilin.",
+      "jawaban_b": "Berikatan reversibel pada subunit 50S ribosom bakteri → menghambat translokasi peptidil-tRNA → menghambat sintesis protein (bakteriostatik). *(Catatan ujian: Efek samping pemanjangan interval QT & kram lambung via reseptor motilin)*"
     }
   ]
 };
+})();

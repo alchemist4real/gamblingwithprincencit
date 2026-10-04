@@ -6661,43 +6661,69 @@ ${card.resep_teks}
                 </div>
               </div>
 
-              <!-- Poin Kunci / Ciri Khas -->
-              ${ciriList ? `
+              ${isFarmako ? `
+                <!-- KUNCI JAWABAN PERSIS UJIAN (1-2 BARIS TO-THE-POINT) -->
                 <div class="review-info-section">
-                  <div class="review-info-heading">${isFarmako ? 'POIN KUNCI • GOLONGAN, SEDIAAN & DOSIS' : 'CIRI KHAS IDENTIFIKASI'}</div>
-                  <div class="review-info-box">
-                    <ul class="review-point-list">${ciriList}</ul>
+                  <div class="review-info-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
+                    🎯 KUNCI JAWABAN PERSIS UJIAN (TO-THE-POINT)
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
+                    <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:8px; padding:9px 12px;">
+                      <div style="font-size:10.5px; font-weight:800; color:var(--primary); margin-bottom:3px;">[A] ${formatQuestionText(card.soal_a || 'Mekanisme Kerja')}</div>
+                      <div style="font-size:13px; line-height:1.5; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
+                    </div>
+                    ${card.jawaban_b ? `
+                    <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:8px; padding:9px 12px;">
+                      <div style="font-size:10.5px; font-weight:800; color:#1b5e20; margin-bottom:3px;">[B] ${formatQuestionText(card.soal_b || 'Golongan / Dosis / Resep')}</div>
+                      <div style="font-size:13px; line-height:1.5; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
+                    </div>
+                    ` : ''}
                   </div>
                 </div>
-              ` : ''}
 
-              <!-- Etiologi / Jawaban Lengkap / Mekanisme -->
-              ${(isFarmako && card.jawaban_lengkap) ? `
-                <div class="review-info-section">
-                  <div class="review-info-heading">PEMBAHASAN LENGKAP &amp; MEKANISME KERJA</div>
-                  <div class="review-info-box">
-                    <div style="font-size: 13px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${formatBold(card.jawaban_lengkap)}</div>
+                <!-- COLLAPSIBLE PEMBAHASAN LENGKAP & RESEP (OPSIONAL) -->
+                ${(card.jawaban_lengkap || card.resep_teks) ? `
+                  <details style="margin-top:10px; background:#f7f9ff; border:1px solid #c9d7ff; border-radius:8px; padding:7px 11px;">
+                    <summary style="cursor:pointer; font-size:11.5px; font-weight:700; color:var(--primary-deep); user-select:none;">
+                      📖 Pembahasan Lengkap &amp; Resep Resmi (Klik untuk Membuka)
+                    </summary>
+                    <div style="margin-top:8px; font-size:12.5px; line-height:1.55; color:#172b7a; white-space:pre-line;">
+                      ${card.resep_teks ? `
+                        <div style="background:#ffffff; border:1px solid #c2cff2; border-radius:6px; padding:7px 9px; margin-bottom:8px; font-family:monospace; font-size:11px;">
+                          ${card.resep_teks}
+                        </div>
+                      ` : ''}
+                      ${formatBold(card.jawaban_lengkap || '')}
+                    </div>
+                  </details>
+                ` : ''}
+              ` : `
+                <!-- CIRI KHAS HISTOPATOLOGI / NON-FARMAKO -->
+                ${ciriList ? `
+                  <div class="review-info-section">
+                    <div class="review-info-heading">CIRI KHAS IDENTIFIKASI</div>
+                    <div class="review-info-box">
+                      <ul class="review-point-list">${ciriList}</ul>
+                    </div>
                   </div>
-                </div>
-              ` : (mekanismeList ? `
-                <div class="review-info-section">
-                  <div class="review-info-heading">${isFarmako ? 'MEKANISME KERJA MOLEKULER' : 'ETIOLOGI & PATOGENESIS'}</div>
-                  <div class="review-info-box">
-                    <ul class="review-point-list">${mekanismeList}</ul>
+                ` : ''}
+
+                ${mekanismeList ? `
+                  <div class="review-info-section">
+                    <div class="review-info-heading">ETIOLOGI &amp; PATOGENESIS</div>
+                    <div class="review-info-box">
+                      <ul class="review-point-list">${mekanismeList}</ul>
+                    </div>
                   </div>
-                </div>
-              ` : '')}
+                ` : ''}
 
-              ${resepSectionHtml}
-              ${tipsSectionHtml}
-
-              <!-- Kata Kunci Cepat -->
-              ${keywordsStr ? `
-                <div class="review-info-section">
-                  <div class="review-info-heading">${isFarmako ? 'TAG IDENTIFIKASI & PENCARIAN' : 'KATA KUNCI CEPAT'}</div>
-                  <div class="review-keywords-wrap">${keywordsStr}</div>
-                </div>
-              ` : ''}
+                ${keywordsStr ? `
+                  <div class="review-info-section">
+                    <div class="review-info-heading">KATA KUNCI CEPAT</div>
+                    <div class="review-keywords-wrap">${keywordsStr}</div>
+                  </div>
+                ` : ''}
+              `}
             </div>
           </div>
         `;
@@ -8270,30 +8296,69 @@ ${card.resep_teks}
           </div>
         </div>
 
-        <!-- CIRI KHAS / JAWABAN B -->
-        <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'POIN KUNCI • GOLONGAN, SEDIAAN & DOSIS' : 'CIRI KHAS HISTOPATOLOGI'}</div>
-          <div class="highlight-box">
-            <ul class="point-list">${ciriList}</ul>
+        ${isFarmako ? `
+          <!-- KUNCI JAWABAN PERSIS UJIAN (1-2 BARIS TO-THE-POINT) -->
+          <div class="section-block" style="margin-bottom:14px;">
+            <div class="section-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
+              🎯 KUNCI JAWABAN PERSIS UJIAN (TO-THE-POINT)
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
+              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:9px; padding:11px 14px;">
+                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Mekanisme Kerja')}</div>
+                <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
+              </div>
+              ${card.jawaban_b ? `
+              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:9px; padding:11px 14px;">
+                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Golongan / Dosis / Resep')}</div>
+                <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
+              </div>
+              ` : ''}
+            </div>
           </div>
-        </div>
 
-        <!-- JAWABAN LENGKAP / MEKANISME -->
-        <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'PEMBAHASAN LENGKAP & MEKANISME KERJA' : 'ETIOLOGI & PATOGENESIS'}</div>
-          <div class="highlight-box">
-            ${isFarmako && card.jawaban_lengkap ? `<div style="font-size: 13.5px; line-height: 1.6; white-space: pre-line; color: var(--primary-deep); font-weight: 500;">${formatBold(card.jawaban_lengkap)}</div>` : `<ul class="point-list">${mekanismeList}</ul>`}
+          <!-- COLLAPSIBLE PEMBAHASAN LENGKAP & RESEP (OPSIONAL / REFERENSI) -->
+          ${(card.jawaban_lengkap || card.resep_teks) ? `
+            <details style="background:#f7f9ff; border:1px solid #c9d7ff; border-radius:9px; padding:10px 14px; margin-bottom:14px;">
+              <summary style="cursor:pointer; font-size:12px; font-weight:700; color:var(--primary-deep); user-select:none;">
+                📖 Pembahasan Lengkap &amp; Resep Resmi (Klik untuk Membuka)
+              </summary>
+              <div style="margin-top:10px; font-size:13px; line-height:1.6; color:#172b7a; white-space:pre-line;">
+                ${card.resep_teks ? `
+                  <div style="background:#ffffff; border:1px solid #c2cff2; border-radius:6px; padding:10px 12px; margin-bottom:10px; font-family:monospace; font-size:11.5px;">
+                    ${card.resep_teks}
+                  </div>
+                ` : ''}
+                ${formatBold(card.jawaban_lengkap || '')}
+              </div>
+            </details>
+          ` : ''}
+          ${tipsSectionHtml}
+        ` : `
+          <!-- CIRI KHAS / JAWABAN B -->
+          <div class="section-block">
+            <div class="section-heading">CIRI KHAS HISTOPATOLOGI</div>
+            <div class="highlight-box">
+              <ul class="point-list">${ciriList}</ul>
+            </div>
           </div>
-        </div>
 
-        ${resepSectionHtml}
-        ${tipsSectionHtml}
+          <!-- JAWABAN LENGKAP / MEKANISME -->
+          <div class="section-block">
+            <div class="section-heading">ETIOLOGI & PATOGENESIS</div>
+            <div class="highlight-box">
+              <ul class="point-list">${mekanismeList}</ul>
+            </div>
+          </div>
 
-        <!-- KATA KUNCI IDENTIFIKASI -->
-        <div class="section-block">
-          <div class="section-heading">${isFarmako ? 'TAG IDENTIFIKASI & PENCARIAN' : 'KATA KUNCI IDENTIFIKASI'}</div>
-          <div class="keyword-capsule-box">${keywordsStr}</div>
-        </div>
+          ${resepSectionHtml}
+          ${tipsSectionHtml}
+
+          <!-- KATA KUNCI IDENTIFIKASI -->
+          <div class="section-block">
+            <div class="section-heading">KATA KUNCI IDENTIFIKASI</div>
+            <div class="keyword-capsule-box">${keywordsStr}</div>
+          </div>
+        `}
       `;
     }
 
