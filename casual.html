@@ -320,6 +320,9 @@
       cursor: grab;
       position: relative;
       overflow: visible;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .viewport-3d:active {
       cursor: grabbing;
@@ -331,6 +334,45 @@
       height: var(--card-h);
       transform-style: preserve-3d;
       transition: width 0.3s ease, height 0.3s ease;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* TOUCH NAVIGATION AFFORDANCE & HOLD FEEDBACK HINTS */
+    .touch-nav-hint {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.40);
+      background: rgba(12, 24, 68, 0.28);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      pointer-events: none;
+      z-index: 60;
+      opacity: 0;
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease, background-color 0.2s ease;
+    }
+    .touch-nav-hint.hint-left { left: 8px; }
+    .touch-nav-hint.hint-right { right: 8px; }
+    body.is-touch-holding-left .touch-nav-hint.hint-left {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.12);
+      background: rgba(49, 79, 186, 0.88);
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    body.is-touch-holding-right .touch-nav-hint.hint-right {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.12);
+      background: rgba(49, 79, 186, 0.88);
+      color: #ffffff;
+      border-color: #ffffff;
     }
 
     /* =======================================================
@@ -353,6 +395,9 @@
       display: flex;
       flex-direction: row;
       padding: 10px 12px 10px 10px;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       -webkit-font-smoothing: antialiased;
@@ -2470,8 +2515,10 @@
       .modal-nav-btn:active {
         transform: scale(0.90);
       }
+      .viewport-3d,
+      .card-stage-container,
       .big-card {
-        touch-action: pan-y;
+        touch-action: none;
       }
     }
 
@@ -4365,8 +4412,18 @@
        ======================================================= -->
   <section class="carousel-stage">
     <div class="viewport-3d" id="viewport3D">
+      <div class="touch-nav-hint hint-left" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </div>
       <div class="card-stage-container" id="stage3D">
         <!-- Big Cards inserted dynamically via JS -->
+      </div>
+      <div class="touch-nav-hint hint-right" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
       </div>
     </div>
   </section>
@@ -5606,6 +5663,7 @@
     let currentIndex = 0;
     let isModalOpen = false;
     let isShuffling = false;
+    let suppressCardClick = false;
 
     const stage3D = document.getElementById('stage3D');
     const viewport3D = document.getElementById('viewport3D');
@@ -7095,7 +7153,11 @@ ${card.resep_teks}
         `;
 
         cardEl.addEventListener('click', () => {
-          if (isShuffling) return;
+          if (isShuffling || isReviewActive) return;
+          if (suppressCardClick) {
+            suppressCardClick = false;
+            return;
+          }
           if (idx === currentIndex) {
             openRevealModal();
           } else {
@@ -7207,7 +7269,7 @@ ${card.resep_teks}
 
       activeIndicatorTitle.textContent = `${labelText} // ${String(total).padStart(2, '0')} • ${categoryDesc}`;
       activeIndicatorDesc.textContent = isTouch
-        ? 'Tap or swipe up to flip card • Swipe left/right to browse'
+        ? 'Tap sides to browse (hold to stream) • Tap center or swipe up to flip'
         : 'Click or press Space to flip card • Left/Right or A/D to browse';
 
       if (barTrackName) barTrackName.textContent = labelText;
@@ -7913,11 +7975,17 @@ ${card.resep_teks}
     let rapidSpeed = 140;
 
     function startRapidHold(dir, sourceElement = null) {
-      if (isShuffling || isModalOpen) return;
+      if (isShuffling || isModalOpen || isReviewActive) return;
       stopRapidHold();
 
       rapidDirection = dir;
       rapidSpeed = 140;
+
+      if (dir === 'prev') {
+        document.body.classList.add('is-touch-holding-left');
+      } else {
+        document.body.classList.add('is-touch-holding-right');
+      }
 
       // Execute initial step immediately
       if (dir === 'next') nextCard(false);
@@ -7963,6 +8031,7 @@ ${card.resep_teks}
       clearTimeout(rapidStreamTimer);
       rapidHoldDelayTimer = null;
       rapidStreamTimer = null;
+      document.body.classList.remove('is-touch-holding-left', 'is-touch-holding-right');
 
       if (isRapidStreaming) {
         isRapidStreaming = false;
@@ -8493,7 +8562,8 @@ ${card.resep_teks}
     let mouseStartX = 0;
     let isMouseDragging = false;
     viewport3D.addEventListener('mousedown', (e) => {
-      if (isShuffling) return;
+      if (isShuffling || isModalOpen || isReviewActive) return;
+      if (e.target.closest('button, a, input, select')) return;
       isMouseDragging = true;
       mouseStartX = e.clientX;
       stage3D.style.transition = 'none';
@@ -8501,17 +8571,21 @@ ${card.resep_teks}
     window.addEventListener('mouseup', () => {
       if (isMouseDragging) {
         isMouseDragging = false;
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 300);
         stage3D.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
         stage3D.style.transform = '';
       }
     });
     viewport3D.addEventListener('mousemove', (e) => {
-      if (!isMouseDragging || isShuffling) return;
+      if (!isMouseDragging || isShuffling || isModalOpen || isReviewActive) return;
       const diff = e.clientX - mouseStartX;
       if (Math.abs(diff) > 40) {
         if (diff < 0) nextCard();
         else prevCard();
         isMouseDragging = false;
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 300);
         stage3D.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
         stage3D.style.transform = '';
       } else {
@@ -8519,90 +8593,218 @@ ${card.resep_teks}
       }
     });
 
-    // Mobile & Tablet Real-time Touch Dragging & Flick Up to Reveal
+    // Mobile & Tablet Touch Navigation Engine
+    // Tap Zones (Left: Prev, Right: Next, Center: Flip)
+    // Hold to Stream (Hold Left: Rapid Prev, Hold Right: Rapid Next)
+    // Real-time Swiping (Swipe Left: Next, Swipe Right: Prev, Flick Up: Flip)
     let touchStartX = 0;
     let touchStartY = 0;
     let touchStartTime = 0;
     let isTouching = false;
     let isDraggingX = false;
     let isDraggingY = false;
+    let touchHoldTimer = null;
+    let isTouchHolding = false;
+    let hasTouchMoved = false;
+    let touchZone = null; // 'left' | 'right' | 'center'
 
     viewport3D.addEventListener('touchstart', (e) => {
-      if (isShuffling) return;
+      if (isShuffling || isModalOpen || isReviewActive) return;
       if (e.touches.length !== 1) return;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
+
+      // Do not intercept interactive buttons inside the viewport (e.g. reveal/remove buttons)
+      if (e.target.closest('button, a, input, select')) return;
+
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
       touchStartTime = Date.now();
       isTouching = true;
       isDraggingX = false;
       isDraggingY = false;
+      hasTouchMoved = false;
+      isTouchHolding = false;
+
+      // Calculate relative touch X position across the viewport
+      const rect = viewport3D.getBoundingClientRect();
+      const relX = (touchStartX - rect.left) / Math.max(rect.width, 1);
+      if (relX < 0.42) {
+        touchZone = 'left';
+      } else if (relX > 0.58) {
+        touchZone = 'right';
+      } else {
+        touchZone = 'center';
+      }
+
+      if (touchHoldTimer) {
+        clearTimeout(touchHoldTimer);
+        touchHoldTimer = null;
+      }
+
+      // HOLD DETECTION: Holding left or right for >= 220ms triggers Rapid Stream
+      if (touchZone === 'left' || touchZone === 'right') {
+        touchHoldTimer = setTimeout(() => {
+          if (!isTouching || hasTouchMoved || isDraggingX || isDraggingY) return;
+          isTouchHolding = true;
+          suppressCardClick = true;
+          triggerHaptic(18);
+          if (touchZone === 'left') {
+            startRapidHold('prev', btnPrev);
+          } else {
+            startRapidHold('next', btnNext);
+          }
+        }, 220);
+      }
+
       stage3D.style.transition = 'none';
-    }, { passive: true });
+    }, { passive: false });
 
     viewport3D.addEventListener('touchmove', (e) => {
-      if (!isTouching || isShuffling) return;
+      if (!isTouching || isShuffling || isModalOpen || isReviewActive) return;
       const currentX = e.touches[0].clientX;
       const currentY = e.touches[0].clientY;
       const deltaX = currentX - touchStartX;
       const deltaY = currentY - touchStartY;
 
+      // If finger moves noticeably, cancel hold
+      if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
+        hasTouchMoved = true;
+        if (touchHoldTimer) {
+          clearTimeout(touchHoldTimer);
+          touchHoldTimer = null;
+        }
+        if (isTouchHolding) {
+          isTouchHolding = false;
+          stopRapidHold(btnPrev);
+          stopRapidHold(btnNext);
+        }
+      }
+
       if (!isDraggingX && !isDraggingY) {
-        if (Math.abs(deltaX) > 8 && Math.abs(deltaX) >= Math.abs(deltaY)) {
+        if (Math.abs(deltaX) > 10 && Math.abs(deltaX) >= Math.abs(deltaY)) {
           isDraggingX = true;
-        } else if (deltaY < -10 && Math.abs(deltaY) > Math.abs(deltaX)) {
+          suppressCardClick = true;
+        } else if (deltaY < -12 && Math.abs(deltaY) > Math.abs(deltaX)) {
           isDraggingY = true;
+          suppressCardClick = true;
         }
       }
 
       if (isDraggingX) {
-        // Real-time responsive stage dragging with physics damping & 3D tilt
+        if (e.cancelable) e.preventDefault(); // Prevent browser horizontal scroll / gesture back
         const clampedDelta = deltaX * 0.45;
         const tiltY = -deltaX * 0.07;
         stage3D.style.transform = `translateX(${clampedDelta}px) rotateY(${tiltY}deg)`;
       } else if (isDraggingY && deltaY < 0) {
-        // Flick up gesture on active card
+        if (e.cancelable) e.preventDefault();
         const activeCard = stage3D.querySelector('.big-card.is-active');
         if (activeCard) {
           const liftY = Math.max(deltaY * 0.65, -85);
-          activeCard.style.transform = `translateX(0px) translateY(${liftY}px) translateZ(30px) rotateX(${-liftY * 0.15}deg) scale(1.08)`;
+          activeCard.style.transform = `translateX(0px) translateY(${liftY}px) translateZ(30px) rotateX(${-liftY * 0.15}deg) scale(1.04)`;
         }
       }
-    }, { passive: true });
+    }, { passive: false });
 
     viewport3D.addEventListener('touchend', (e) => {
-      if (!isTouching || isShuffling) return;
+      if (!isTouching) return;
       isTouching = false;
+
+      if (touchHoldTimer) {
+        clearTimeout(touchHoldTimer);
+        touchHoldTimer = null;
+      }
+
+      // If holding rapid stream, release cleanly
+      if (isTouchHolding) {
+        isTouchHolding = false;
+        stopRapidHold(btnPrev);
+        stopRapidHold(btnNext);
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 320);
+        return;
+      }
+
       stage3D.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
       stage3D.style.transform = '';
 
-      const touchEndX = e.changedTouches[0].clientX;
-      const touchEndY = e.changedTouches[0].clientY;
+      const touch = e.changedTouches ? e.changedTouches[0] : null;
+      const touchEndX = touch ? touch.clientX : touchStartX;
+      const touchEndY = touch ? touch.clientY : touchStartY;
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
       const deltaTime = Math.max(Date.now() - touchStartTime, 1);
       const velocityX = deltaX / deltaTime;
 
-      if (isDraggingY && deltaY < -45) {
-        // SWIPE UP ON ACTIVE CARD: REVEAL MODAL!
+      // Flick up to reveal modal
+      if (isDraggingY && deltaY < -40) {
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 320);
         triggerHaptic([15, 20]);
         openRevealModal();
-      } else if (isDraggingX) {
-        const threshold = window.innerWidth <= 600 ? 30 : 45;
-        if (deltaX < -threshold || velocityX < -0.30) {
+        isDraggingX = false;
+        isDraggingY = false;
+        return;
+      }
+
+      // Horizontal swipe
+      if (isDraggingX) {
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 320);
+        const threshold = window.innerWidth <= 600 ? 25 : 35;
+        if (deltaX < -threshold || velocityX < -0.22) {
           triggerHaptic(12);
           nextCard();
-        } else if (deltaX > threshold || velocityX > 0.30) {
+        } else if (deltaX > threshold || velocityX > 0.22) {
           triggerHaptic(12);
           prevCard();
         } else {
           updateCardPositions(true);
         }
-      } else {
-        updateCardPositions(true);
+        isDraggingX = false;
+        isDraggingY = false;
+        return;
       }
+
+      // Tap without drag (Zones: Right = Next, Left = Prev, Center = Flip)
+      if (!hasTouchMoved && Math.abs(deltaX) < 12 && Math.abs(deltaY) < 12 && deltaTime < 350) {
+        suppressCardClick = true;
+        setTimeout(() => { suppressCardClick = false; }, 320);
+        if (touchZone === 'right') {
+          triggerHaptic(12);
+          nextCard();
+        } else if (touchZone === 'left') {
+          triggerHaptic(12);
+          prevCard();
+        } else {
+          triggerHaptic(15);
+          openRevealModal();
+        }
+      }
+
       isDraggingX = false;
       isDraggingY = false;
-    }, { passive: true });
+    }, { passive: false });
+
+    viewport3D.addEventListener('touchcancel', () => {
+      isTouching = false;
+      isDraggingX = false;
+      isDraggingY = false;
+      hasTouchMoved = false;
+      suppressCardClick = true;
+      setTimeout(() => { suppressCardClick = false; }, 320);
+      if (touchHoldTimer) {
+        clearTimeout(touchHoldTimer);
+        touchHoldTimer = null;
+      }
+      if (isTouchHolding) {
+        isTouchHolding = false;
+        stopRapidHold(btnPrev);
+        stopRapidHold(btnNext);
+      }
+      stage3D.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      stage3D.style.transform = '';
+      updateCardPositions(true);
+    });
 
     // TOUCH GESTURES INSIDE REVEAL MODAL (PULL DOWN TO CLOSE, SWIPE HORIZONTAL TO BROWSE)
     let modalTouchStartX = 0;
