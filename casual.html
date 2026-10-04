@@ -86,7 +86,7 @@
       padding-top: max(8px, env(safe-area-inset-top));
       padding-left: max(10px, env(safe-area-inset-left));
       padding-right: max(10px, env(safe-area-inset-right));
-      padding-bottom: max(18px, env(safe-area-inset-bottom));
+      padding-bottom: max(22px, calc(env(safe-area-inset-bottom) + 12px));
       gap: clamp(4px, 1vh, 10px);
     }
 
@@ -1118,7 +1118,7 @@
       letter-spacing: 0.5px;
     }
 
-    .dock-shuffle-btn, .dock-audio-btn {
+    .dock-mode-btn, .dock-shuffle-btn, .dock-audio-btn {
       width: 40px;
       height: 40px;
       padding: 0;
@@ -1134,17 +1134,23 @@
       flex-shrink: 0;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .dock-shuffle-btn::after, .dock-audio-btn::after {
+    .dock-mode-btn::after, .dock-shuffle-btn::after, .dock-audio-btn::after {
       content: '';
       position: absolute;
       inset: -4px;
     }
-    .dock-shuffle-btn:hover, .dock-audio-btn:hover {
+    .dock-mode-btn:hover, .dock-shuffle-btn:hover, .dock-audio-btn:hover {
       background-color: var(--primary-deep);
       color: var(--white);
       transform: scale(1.06);
     }
-    .dock-shuffle-btn svg, .dock-audio-btn svg {
+    .dock-mode-btn.active, .dock-shuffle-btn.active {
+      background-color: var(--primary-deep);
+      color: var(--white);
+      border-color: var(--primary-deep);
+      box-shadow: 0 0 0 2px rgba(49, 79, 186, 0.28);
+    }
+    .dock-mode-btn svg, .dock-shuffle-btn svg, .dock-audio-btn svg {
       width: 17px;
       height: 17px;
       stroke-width: 2.2;
@@ -2167,7 +2173,7 @@
       }
       body {
         padding-top: max(10px, env(safe-area-inset-top));
-        padding-bottom: max(16px, env(safe-area-inset-bottom));
+        padding-bottom: max(22px, calc(env(safe-area-inset-bottom) + 12px));
         padding-left: max(14px, env(safe-area-inset-left));
         padding-right: max(14px, env(safe-area-inset-right));
         gap: clamp(6px, 1.2vh, 12px);
@@ -2202,6 +2208,7 @@
         height: 48px;
         padding: 4px 10px;
         flex-shrink: 0;
+        margin-bottom: max(4px, env(safe-area-inset-bottom));
       }
       .btn-ctrl-round {
         width: 36px;
@@ -2218,9 +2225,9 @@
         --card-w: min(355px, 92vw);
         --card-h: min(235px, 34vh);
       }
-      html, body {
+      body {
         padding-top: max(6px, env(safe-area-inset-top));
-        padding-bottom: max(18px, env(safe-area-inset-bottom));
+        padding-bottom: max(24px, calc(env(safe-area-inset-bottom) + 14px));
         padding-left: max(8px, env(safe-area-inset-left));
         padding-right: max(8px, env(safe-area-inset-right));
         gap: 4px;
@@ -2363,25 +2370,26 @@
         width: auto;
         max-width: calc(100vw - 12px);
         height: 46px;
-        padding: 3px 8px;
+        padding: 3px 6px;
         border-radius: 999px;
-        gap: 4px;
+        gap: clamp(2px, 1vw, 5px);
         flex-shrink: 0;
+        margin-bottom: max(4px, env(safe-area-inset-bottom));
       }
       .dock-section {
-        gap: 4px;
+        gap: clamp(2px, 0.8vw, 4px);
       }
       .btn-ctrl-round {
-        width: 36px;
-        height: 36px;
+        width: clamp(32px, 8vw, 36px);
+        height: clamp(32px, 8vw, 36px);
       }
       .btn-ctrl-round svg {
-        width: 15px;
-        height: 15px;
+        width: 14px;
+        height: 14px;
       }
       .dock-flip-btn {
-        height: 36px;
-        padding: 0 10px;
+        height: clamp(32px, 8vw, 36px);
+        padding: 0 clamp(6px, 2vw, 10px);
         font-size: 11px;
         gap: 4px;
       }
@@ -2390,11 +2398,11 @@
         height: 13px;
       }
       .dock-track-info {
-        height: 34px;
-        padding: 0 8px;
+        height: clamp(30px, 7.5vw, 34px);
+        padding: 0 clamp(4px, 1.5vw, 8px);
       }
       .dock-track-count {
-        font-size: 10.5px;
+        font-size: 10px;
       }
 
       /* FULLSCREEN NATIVE APP SHEET MODAL ON MOBILE */
@@ -4495,8 +4503,21 @@
         <span class="dock-filter-badge" id="dockFilterBadge">ALL</span>
       </button>
 
+      <!-- Sequential Sort Mode Button -->
+      <button class="btn-ctrl-round dock-mode-btn" id="btnDockSequential" onclick="setPlayMode('sequential')" title="Sequential Order [U]" aria-label="Sequential Order">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span class="gamepad-badge" title="Hotkey: U">U</span>
+      </button>
+
       <!-- Dedicated Shuffle Deck Button -->
-      <button class="btn-ctrl-round dock-shuffle-btn" id="btnShuffleDeck" onclick="startRealisticShuffle()" title="Shuffle Deck [S]" aria-label="Shuffle Deck">
+      <button class="btn-ctrl-round dock-mode-btn dock-shuffle-btn" id="btnShuffleDeck" onclick="setPlayMode('shuffle')" title="Shuffle Deck [S]" aria-label="Shuffle Deck">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="16 3 21 3 21 8"></polyline>
           <line x1="4" y1="20" x2="21" y2="3"></line>
@@ -5705,8 +5726,8 @@
     const activeIndicatorDesc = document.getElementById('activeIndicatorDesc');
     const barTrackName = document.getElementById('barTrackName');
     const barSubCount = document.getElementById('barSubCount');
-    const btnModeUrut = document.getElementById('btnModeUrut');
-    const btnModeAcak = document.getElementById('btnModeAcak');
+    const btnModeUrut = document.getElementById('btnDockSequential') || document.getElementById('btnModeUrut');
+    const btnModeAcak = document.getElementById('btnShuffleDeck') || document.getElementById('btnModeAcak');
     const popupModal = document.getElementById('popupModal');
     const modalLeftPane = document.getElementById('modalLeftPane');
     const modalRightPane = document.getElementById('modalRightPane');
@@ -7310,6 +7331,23 @@ ${card.resep_teks}
       if (barSubCount) barSubCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
     }
 
+    // =======================================================
+    // DEALER & MAGICIAN CARDISTRY SHUFFLE SUITE (5 STYLES)
+    // 1. Riffle & Waterfall Bridge
+    // 2. Casino Table Wash (Chemmy / Croupier Scramble)
+    // 3. Card Spring & Pressure Fan
+    // 4. Triple Packet False Cut & Swivel Assembly
+    // 5. Helix Cyclone & Ribbon Whirlpool
+    // =======================================================
+    let shuffleStyleIndex = 0;
+    const SHUFFLE_STYLES = [
+      { id: 'riffle', name: 'Riffle Shuffle', fn: runRiffleBridgeShuffle },
+      { id: 'wash', name: 'Table Wash', fn: runTableWashShuffle },
+      { id: 'spring', name: 'Card Spring', fn: runCardSpringShuffle },
+      { id: 'cut', name: 'Triple Cut', fn: runTripleCutShuffle },
+      { id: 'helix', name: 'Cyclone Shuffle', fn: runHelixCycloneShuffle }
+    ];
+
     function startRealisticShuffle(forcedStyleIndex = null) {
       if (isShuffling) return;
       isShuffling = true;
@@ -7319,17 +7357,7 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      const styleToRun = forcedStyleIndex !== null 
-        ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
-        : SHUFFLE_STYLES[shuffleStyleIndex % SHUFFLE_STYLES.length];
-      
-      shuffleStyleIndex = (shuffleStyleIndex + 1) % SHUFFLE_STYLES.length;
-
-      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
-      const isMobile = window.innerWidth <= 600;
-      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
-
-      styleToRun.fn(cards, isMobile, isTablet, () => {
+      const finishShuffle = () => {
         const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
         let shuffled = shuffleCardsArray(availableCards);
         if (shuffled.length > 1 && shuffled[0].id === sessionCards[currentIndex]?.id) {
@@ -7345,7 +7373,29 @@ ${card.resep_teks}
         triggerControllerRumble(130, 0.45, 0.85);
         isShuffling = false;
         showToast('Card Shuffled', `${sessionCards.length} Cards`);
-      });
+      };
+
+      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
+      if (!cards.length) {
+        finishShuffle();
+        return;
+      }
+
+      const styleToRun = forcedStyleIndex !== null 
+        ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
+        : SHUFFLE_STYLES[shuffleStyleIndex % SHUFFLE_STYLES.length];
+      
+      shuffleStyleIndex = (shuffleStyleIndex + 1) % SHUFFLE_STYLES.length;
+
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+
+      try {
+        styleToRun.fn(cards, isMobile, isTablet, finishShuffle);
+      } catch (err) {
+        console.error('Shuffle animation error:', err);
+        finishShuffle();
+      }
     }
 
     // STYLE 1: RIFFLE SHUFFLE & WATERFALL BRIDGE CASCADE
@@ -7628,17 +7678,7 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      const styleToRun = forcedStyleIndex !== null 
-        ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
-        : SEQUENTIAL_STYLES[sequentialStyleIndex % SEQUENTIAL_STYLES.length];
-      
-      sequentialStyleIndex = (sequentialStyleIndex + 1) % SEQUENTIAL_STYLES.length;
-
-      const cards = Array.from(stage3D.querySelectorAll('.big-card'));
-      const isMobile = window.innerWidth <= 600;
-      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
-
-      styleToRun.fn(cards, isMobile, isTablet, () => {
+      const finishSequential = () => {
         const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
         sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
         currentIndex = 0;
@@ -7649,7 +7689,29 @@ ${card.resep_teks}
         triggerControllerRumble(120, 0.4, 0.8);
         isShuffling = false;
         showToast('Sequential Mode', `01 to ${sessionCards.length}`);
-      });
+      };
+
+      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
+      if (!cards.length) {
+        finishSequential();
+        return;
+      }
+
+      const styleToRun = forcedStyleIndex !== null 
+        ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
+        : SEQUENTIAL_STYLES[sequentialStyleIndex % SEQUENTIAL_STYLES.length];
+      
+      sequentialStyleIndex = (sequentialStyleIndex + 1) % SEQUENTIAL_STYLES.length;
+
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+
+      try {
+        styleToRun.fn(cards, isMobile, isTablet, finishSequential);
+      } catch (err) {
+        console.error('Sequential sort animation error:', err);
+        finishSequential();
+      }
     }
 
     // STYLE 1: TABLE SQUARE-UP, DOUBLE TABLE TAP & DOMINO TURNOVER WAVE
@@ -9000,7 +9062,7 @@ ${card.resep_teks}
       } else if (e.key === 'u' || e.key === 'U' || e.key === 'o' || e.key === 'O') {
         setPlayMode('sequential');
       } else if (e.key === 's' || e.key === 'S') {
-        startRealisticShuffle();
+        setPlayMode('shuffle');
       } else if (e.key === 'r' || e.key === 'R' || e.key === 'g' || e.key === 'G') {
         pickRandomCard();
       } else if (e.key === 'f' || e.key === 'F') {
@@ -9152,7 +9214,7 @@ ${card.resep_teks}
         });
 
         onEdgePress(2, () => setPlayMode('sequential')); // Square (□) - Mode Urut
-        onEdgePress(3, () => startRealisticShuffle());  // Triangle (△) - Mode Acak / Shuffle
+        onEdgePress(3, () => setPlayMode('shuffle'));    // Triangle (△) - Mode Acak / Shuffle
         onEdgePress(12, () => openRevealModal());        // D-Pad Up
         onEdgePress(13, () => closeModal());             // D-Pad Down
         onEdgePress(9, () => toggleFullScreen());        // Options / Start
