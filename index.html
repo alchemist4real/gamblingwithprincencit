@@ -182,7 +182,7 @@
        ======================================================= */
     main.arcade-console-wrap {
       width: 100%;
-      max-width: 660px;
+      max-width: 580px;
       z-index: 5;
       display: flex;
       flex-direction: column;
@@ -195,10 +195,10 @@
       border: 3.5px solid var(--primary-deep);
       border-radius: 24px;
       box-shadow: 0 8px 0 var(--primary-deep);
-      padding: clamp(20px, 3.2vh, 32px) clamp(18px, 3.2vw, 32px);
+      padding: clamp(20px, 3vh, 32px) clamp(18px, 3vw, 28px);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
       color: var(--primary-deep);
       box-sizing: border-box;
       position: relative;
@@ -347,108 +347,53 @@
       stroke-width: 2.5;
     }
 
-    /* Dynamic Mission Briefing & Telemetry Box */
-    .arcade-briefing-box {
-      background-color: #f6f8fe;
-      border: 2px solid var(--primary-deep);
-      border-radius: 16px;
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .briefing-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .briefing-title {
-      font-family: var(--font-display);
-      font-size: 13px;
-      letter-spacing: 1px;
-      font-weight: 700;
-      color: var(--primary-deep);
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .briefing-badge {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 800;
-      padding: 2px 9px;
-      border-radius: 999px;
-      background-color: var(--primary-deep);
-      color: var(--white);
-      letter-spacing: 0.5px;
-    }
-
-    .briefing-desc {
-      font-size: 12.5px;
-      line-height: 1.5;
-      font-weight: 600;
-      color: rgba(23, 43, 122, 0.85);
-    }
-
-    .briefing-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding-top: 10px;
-      border-top: 1.5px dashed rgba(23, 43, 122, 0.2);
-    }
-
-    .briefing-stat-item {
+    /* Dynamic Summary Sentence (Clean, Symmetrical, No Box) */
+    .console-sentence-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 8px 4px;
-      background-color: var(--white);
-      border: 1.5px solid var(--primary-deep);
-      border-radius: 10px;
+      gap: 5px;
+      padding: 2px 4px;
+      width: 100%;
     }
 
-    .briefing-stat-val {
-      font-family: var(--font-mono);
-      font-size: clamp(16px, 2.2vw, 19px);
-      font-weight: 900;
-      color: var(--primary-deep);
-      line-height: 1.1;
-    }
-
-    .briefing-stat-lbl {
+    .console-sentence-meta {
       font-family: var(--font-main);
-      font-size: 9.5px;
+      font-size: clamp(13px, 1.8vw, 15px);
       font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-top: 3px;
+      color: var(--primary-deep);
+      letter-spacing: 0.3px;
+      line-height: 1.4;
     }
 
-    /* THE BIG ARCADE START BUTTON ("tombolnya aga gede") */
+    .console-sentence-mode {
+      font-family: var(--font-main);
+      font-size: clamp(11.5px, 1.4vw, 12.5px);
+      font-weight: 600;
+      color: rgba(23, 43, 122, 0.72);
+      line-height: 1.4;
+    }
+
+    /* THE BIG ARCADE START BUTTON */
     .btn-arcade-start {
       width: 100%;
-      height: clamp(64px, 8.5vh, 74px);
+      height: clamp(58px, 7.8vh, 68px);
+      min-height: 52px;
       background-color: var(--primary);
       color: var(--white);
       border: 3.5px solid var(--primary-deep);
       border-radius: 18px;
-      box-shadow: 0 8px 0 var(--primary-deep);
+      box-shadow: 0 7px 0 var(--primary-deep);
       font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
       letter-spacing: 2px;
       text-transform: uppercase;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       cursor: pointer;
       text-decoration: none;
       user-select: none;
@@ -458,18 +403,18 @@
 
     .btn-arcade-start:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 0 var(--primary-deep);
+      box-shadow: 0 9px 0 var(--primary-deep);
       background-color: #3b5dd6;
     }
 
     .btn-arcade-start:active {
       transform: translateY(4px);
-      box-shadow: 0 4px 0 var(--primary-deep);
+      box-shadow: 0 3px 0 var(--primary-deep);
     }
 
     .btn-arcade-start svg {
-      width: clamp(20px, 2.6vw, 26px);
-      height: clamp(20px, 2.6vw, 26px);
+      width: clamp(20px, 2.6vw, 24px);
+      height: clamp(20px, 2.6vw, 24px);
       stroke-width: 3;
       transition: transform 0.2s ease;
       flex-shrink: 0;
@@ -1195,7 +1140,7 @@
         <span class="title-tone-2">PRINCE NCIT</span>
       </h1>
     </div>
-    <div class="sub-meta">Latihan Soal &amp; Identifikasi Ujian</div>
+    <div class="sub-meta">PRACTICE &amp; EXAM SIMULATION</div>
   </header>
 
   <!-- MAIN ARCADE CONSOLE -->
@@ -1207,19 +1152,19 @@
         <div class="console-badge-group">
           <span class="console-badge-main">LOBBY</span>
         </div>
-        <span class="console-packs-detected" id="consolePacksDetected">PILIH DECK</span>
+        <span class="console-packs-detected" id="consolePacksDetected">DECKS</span>
       </div>
 
       <!-- CONTROL 1: DECK SELECTION DROPDOWN -->
       <div class="game-field-group">
         <label class="game-field-label" for="deckSelect">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          <span>Pilih Deck</span>
+          <span>Deck</span>
         </label>
         <div class="game-select-wrap">
           <select id="deckSelect" class="game-select" onchange="onDeckDropdownChange()">
             <!-- Dynamically populated from CARD_PACKS -->
-            <option value="all">Semua Deck</option>
+            <option value="all">All Decks</option>
           </select>
           <div class="game-select-arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1231,7 +1176,7 @@
       <div class="game-field-group">
         <label class="game-field-label" for="modeSelect">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span>Pilih Mode</span>
+          <span>Mode</span>
         </label>
         <div class="game-select-wrap">
           <select id="modeSelect" class="game-select" onchange="onModeDropdownChange()">
@@ -1244,40 +1189,21 @@
         </div>
       </div>
 
-      <!-- DYNAMIC STATS BOX -->
-      <div class="arcade-briefing-box">
-        <div class="briefing-header">
-          <div class="briefing-title" id="briefingModeTitle">Casual Practice</div>
-          <span class="briefing-badge" id="briefingDeckBadge">Semua Deck</span>
-        </div>
-        <p class="briefing-desc" id="briefingModeDesc">
-          Mode santai untuk mempelajari sediaan dan pembahasan.
-        </p>
-        <div class="briefing-stats-row">
-          <div class="briefing-stat-item">
-            <span class="briefing-stat-val" id="statTotalSpecimens">0</span>
-            <span class="briefing-stat-lbl">Total Kartu</span>
-          </div>
-          <div class="briefing-stat-item">
-            <span class="briefing-stat-val" id="statHistopathology">0</span>
-            <span class="briefing-stat-lbl">Preparat</span>
-          </div>
-          <div class="briefing-stat-item">
-            <span class="briefing-stat-val" id="statTheoryCases">0</span>
-            <span class="briefing-stat-lbl">Teori</span>
-          </div>
-        </div>
+      <!-- DYNAMIC SUMMARY SENTENCE (NO BOX) -->
+      <div class="console-sentence-wrap">
+        <div class="console-sentence-meta" id="deckSentence">0 cards</div>
+        <div class="console-sentence-mode" id="modeSentence">Untimed study mode with full explanations.</div>
       </div>
 
       <!-- THE BIG START BUTTON -->
       <button class="btn-arcade-start" id="btnArcadeStart" onclick="launchActiveMode()">
-        <span id="startBtnText">MULAI [ENTER]</span>
+        <span id="startBtnText">START</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       </button>
 
       <!-- Keyboard shortcuts hint -->
       <div class="console-shortcuts-row">
-        <span class="shortcut-chip"><span class="shortcut-key">ENTER</span> Mulai</span>
+        <span class="shortcut-chip"><span class="shortcut-key">ENTER</span> Start</span>
         <span class="shortcut-chip"><span class="shortcut-key">1</span> Casual</span>
         <span class="shortcut-chip"><span class="shortcut-key">2</span> Exam</span>
       </div>
@@ -1344,13 +1270,13 @@
 
       let html = '';
       // Option 1: All Decks Combined
-      html += `<option value="all">Semua Deck • ${totalAllCards} Kartu</option>`;
+      html += `<option value="all">All Decks • ${totalAllCards} Cards</option>`;
 
       // Options for each individual deck
       for (const [id, pack] of Object.entries(packs)) {
         const cardCount = pack.cards ? pack.cards.length : (pack.cardCount || 0);
         const name = pack.packName || pack.title || id;
-        html += `<option value="${id}">${name} • ${cardCount} Kartu</option>`;
+        html += `<option value="${id}">${name} • ${cardCount} Cards</option>`;
       }
 
       deckSelect.innerHTML = html;
@@ -1366,7 +1292,7 @@
 
       const packsDetectedEl = document.getElementById('consolePacksDetected');
       if (packsDetectedEl) {
-        packsDetectedEl.textContent = `${allPackKeys.length} DECK TERSEDIA`;
+        packsDetectedEl.textContent = `${allPackKeys.length} DECKS`;
       }
     }
 
@@ -1380,10 +1306,10 @@
       const val = deckSelect.value;
       if (val === 'all') {
         selectedPackIds = [...allPackKeys];
-        showToast('Deck Dipilih', `Semua Deck (${allPackKeys.length} Decks) diaktifkan.`);
+        showToast('Deck', `All Decks (${allPackKeys.length}) activated`);
       } else if (packs[val]) {
         selectedPackIds = [val];
-        showToast('Deck Dipilih', `${packs[val].badge || packs[val].packName || val} diaktifkan.`);
+        showToast('Deck', `${packs[val].badge || packs[val].packName || val} activated`);
       }
 
       saveSelectedPacks();
@@ -1400,7 +1326,7 @@
         localStorage.setItem('selectedGameMode', selectedMode);
       } catch (e) {}
 
-      showToast('Mode Dipilih', selectedMode === 'casual.html' ? 'Casual Practice' : 'Exam Simulation');
+      showToast('Mode', selectedMode === 'casual.html' ? 'Casual Practice' : 'Exam Simulation');
       updateLobbyUI();
     }
 
@@ -1413,70 +1339,153 @@
       } catch (e) {}
     }
 
+    function getAdaptiveSentence(packIds) {
+      const packs = window.CARD_PACKS || {};
+      if (!packIds || packIds.length === 0) {
+        return '0 cards';
+      }
+
+      // Case 1: Multiple decks selected ("All Decks")
+      if (packIds.length > 1) {
+        let total = 0;
+        const deckParts = [];
+        packIds.forEach(id => {
+          const pack = packs[id];
+          if (!pack) return;
+          const count = pack.cards ? pack.cards.length : (pack.cardCount || 0);
+          total += count;
+
+          let name = pack.badge || pack.packName || id;
+          if (id === 'blok-3.1' || /patologi|anatomi|histopatologi/i.test(name)) {
+            name = 'Pathology';
+          } else if (id === 'farmako-3.2' || /farmakologi|farmako/i.test(name)) {
+            name = 'Pharmacology';
+          }
+          deckParts.push(`${count} ${name}`);
+        });
+
+        return `${total} cards across ${packIds.length} decks: ${deckParts.join(', ')}`;
+      }
+
+      // Case 2: Single deck selected
+      const pack = packs[packIds[0]];
+      if (!pack) return '0 cards';
+      const cards = pack.cards || [];
+      const total = cards.length || pack.cardCount || 0;
+      if (total === 0) return '0 cards';
+
+      // 2a. Check card types (e.g. 'preparat' vs 'teori' in Pathology)
+      const typeCounts = {};
+      cards.forEach(c => {
+        if (c.type) {
+          typeCounts[c.type] = (typeCounts[c.type] || 0) + 1;
+        }
+      });
+
+      if (Object.keys(typeCounts).length > 1) {
+        const parts = Object.entries(typeCounts).map(([type, count]) => {
+          let label = type.toLowerCase();
+          if (label === 'preparat') label = 'slides';
+          else if (label === 'teori' || label === 'theory') label = 'theory';
+          else if (label === 'resep') label = 'prescriptions';
+          else if (label === 'kasus' || label === 'case') label = 'cases';
+          return `${count} ${label}`;
+        });
+        return `${total} cards: ${parts.join(', ')}`;
+      }
+
+      // 2b. Check sections (e.g. Kardiovaskular vs Respirasi in Pharmacology)
+      const sectionCounts = {};
+      cards.forEach(c => {
+        if (c.section) {
+          sectionCounts[c.section] = (sectionCounts[c.section] || 0) + 1;
+        }
+      });
+
+      if (Object.keys(sectionCounts).length > 1) {
+        const parts = Object.entries(sectionCounts).map(([sec, count]) => {
+          let label = sec.toLowerCase();
+          if (label.includes('kardio')) label = 'cardio';
+          else if (label.includes('respirasi')) label = 'respiratory';
+          else if (label.includes('infeksi')) label = 'infections';
+          else if (label.includes('ginjal')) label = 'renal';
+          return `${count} ${label}`;
+        });
+        return `${total} cards: ${parts.join(', ')}`;
+      }
+
+      // 2c. Check filters with grouping or non-all filters (if defined in pack)
+      if (Array.isArray(pack.filters)) {
+        const groupFilters = pack.filters.filter(f => f.id !== 'all' && f.group === 'sistem' && f.count > 0);
+        const candidateFilters = groupFilters.length > 1 ? groupFilters : pack.filters.filter(f => f.id !== 'all' && !f.group && f.count > 0);
+        const sumCount = candidateFilters.reduce((sum, f) => sum + (f.count || 0), 0);
+        if (candidateFilters.length > 1 && sumCount === total) {
+          const parts = candidateFilters.map(f => {
+            let label = (f.badge || f.label || f.id).toLowerCase();
+            if (f.id === 'kardio') label = 'cardio';
+            else if (f.id === 'respirasi') label = 'respiratory';
+            else if (f.id === 'preparat') label = 'slides';
+            else if (f.id === 'teori') label = 'theory';
+            return `${f.count} ${label}`;
+          });
+          return `${total} cards: ${parts.join(', ')}`;
+        }
+      }
+
+      // 2d. Check category on cards
+      const catCounts = {};
+      cards.forEach(c => {
+        if (c.category) {
+          catCounts[c.category] = (catCounts[c.category] || 0) + 1;
+        }
+      });
+      if (Object.keys(catCounts).length > 1) {
+        const parts = Object.entries(catCounts).map(([cat, count]) => {
+          return `${count} ${cat.toLowerCase()}`;
+        });
+        return `${total} cards: ${parts.join(', ')}`;
+      }
+
+      return `${total} cards`;
+    }
+
     function updateLobbyUI() {
       const packs = window.CARD_PACKS || {};
       let totalCards = 0;
-      let totalPrep = 0;
-      let totalTeori = 0;
-      const selectedPacksList = [];
 
       selectedPackIds.forEach(id => {
         const pack = packs[id];
         if (pack) {
-          selectedPacksList.push(pack);
-          if (pack.cards) {
-            totalCards += pack.cards.length;
-            totalPrep += pack.cards.filter(c => c.type === 'preparat').length;
-            totalTeori += pack.cards.filter(c => c.type === 'teori').length;
-          }
+          totalCards += pack.cards ? pack.cards.length : (pack.cardCount || 0);
         }
       });
 
-      // Update Briefing Box
-      const modeTitleEl = document.getElementById('briefingModeTitle');
-      const modeDescEl = document.getElementById('briefingModeDesc');
-      const deckBadgeEl = document.getElementById('briefingDeckBadge');
-
-      if (selectedMode === 'casual.html') {
-        if (modeTitleEl) modeTitleEl.textContent = 'Casual Practice';
-        if (modeDescEl) {
-          modeDescEl.textContent = 'Mode santai untuk mempelajari sediaan dan pembahasan.';
-        }
-      } else {
-        if (modeTitleEl) modeTitleEl.textContent = 'Exam Simulation';
-        if (modeDescEl) {
-          modeDescEl.textContent = 'Simulasi ujian praktikum berwaktu 60 detik per stasi.';
-        }
+      // Update Adaptive Sentence (NO BOX)
+      const deckSentenceEl = document.getElementById('deckSentence');
+      if (deckSentenceEl) {
+        deckSentenceEl.textContent = getAdaptiveSentence(selectedPackIds);
       }
 
-      if (deckBadgeEl) {
-        if (selectedPackIds.length > 1) {
-          deckBadgeEl.textContent = `${selectedPackIds.length} Deck Aktif`;
-        } else if (selectedPackIds.length === 1 && selectedPacksList[0]) {
-          deckBadgeEl.textContent = selectedPacksList[0].packName || selectedPacksList[0].badge || '1 Deck';
+      // Update Mode Sentence
+      const modeSentenceEl = document.getElementById('modeSentence');
+      if (modeSentenceEl) {
+        if (selectedMode === 'casual.html') {
+          modeSentenceEl.textContent = 'Untimed study mode with full explanations.';
         } else {
-          deckBadgeEl.textContent = 'Pilih Deck';
+          modeSentenceEl.textContent = 'Timed exam simulation: 60 seconds per station.';
         }
       }
-
-      // Update Briefing Stats
-      const elTotal = document.getElementById('statTotalSpecimens');
-      if (elTotal) elTotal.textContent = totalCards;
-      const elPrep = document.getElementById('statHistopathology');
-      if (elPrep) elPrep.textContent = totalPrep;
-      const elTeori = document.getElementById('statTheoryCases');
-      if (elTeori) elTeori.textContent = totalTeori;
 
       // Update The Big Start Button Text
       const startBtnText = document.getElementById('startBtnText');
       if (startBtnText) {
-        startBtnText.textContent = `MULAI (${totalCards} KARTU)`;
+        startBtnText.textContent = totalCards > 0 ? `START (${totalCards})` : 'START';
       }
     }
 
     function launchActiveMode() {
       playLaunchSound();
-      showToast('Launching', `Memulai ${selectedMode === 'casual.html' ? 'Casual 3D Practice' : 'Exam Simulation'}...`);
+      showToast('Starting', selectedMode === 'casual.html' ? 'Casual Practice...' : 'Exam Simulation...');
       setTimeout(() => {
         window.location.href = selectedMode;
       }, 160);
@@ -1504,7 +1513,7 @@
       if (!isAudioMuted) {
         initAudioContext();
         playSelectSound();
-        showToast('Audio', 'Sound Effects Aktif');
+        showToast('Audio', 'Sound Effects Enabled');
       } else {
         showToast('Audio', 'Sound Effects Muted');
       }

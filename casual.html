@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -25,7 +25,6 @@
        STRICT ZERO BLACK SHADOWS: NO AI SLOP SHADOWS
        STRICT ZERO TRANSPARENCY: ALL CARDS 100% SOLID
        STRICT ZERO OVERFLOW & ZERO CARD COLLISION
-       STRICT ALL BUTTONS: PURE SVG ICONS ONLY, ZERO TEXT
        ======================================================= */
 
     :root {
@@ -43,6 +42,8 @@
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Special Elite', cursive, monospace, sans-serif;
+      --card-w: clamp(400px, 38vw, 580px);
+      --card-h: clamp(260px, 25vw, 375px);
     }
 
     * {
@@ -71,8 +72,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between; /* 3-ZONE PROPORTIONAL DISTRIBUTION: TOP, CENTER, BOTTOM */
-      padding: clamp(34px, 5.5vh, 56px) clamp(16px, 3vw, 36px) clamp(22px, 3.8vh, 40px);
+      justify-content: space-between;
+      padding: clamp(12px, 1.8vh, 20px) clamp(12px, 2vw, 24px) clamp(12px, 2vh, 20px);
       user-select: none;
       box-sizing: border-box;
       width: 100vw;
@@ -292,10 +293,11 @@
 
     /* =======================================================
        3D STAGE (SPACIOUS, ZERO COLLISION, HIGH IMPACT)
+       MAX BIGGER ACTIVE CARD OCCUPYING MAXIMUM VIEWPORT REAL ESTATE
        ======================================================= */
     .carousel-stage {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1400px;
       flex: 1;
       min-height: 0;
       display: flex;
@@ -303,20 +305,21 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: visible;
+      overflow: hidden;
     }
 
     .viewport-3d {
       width: 100%;
-      max-width: 1100px;
-      height: clamp(280px, 42vh, 370px);
-      perspective: 1000px;
+      max-width: 100vw;
+      height: clamp(280px, 52vh, 480px);
+      perspective: 1100px;
       perspective-origin: 50% 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: grab;
       position: relative;
+      overflow: visible;
     }
     .viewport-3d:active {
       cursor: grabbing;
@@ -324,8 +327,8 @@
 
     .card-stage-container {
       position: relative;
-      width: 360px;
-      height: 240px;
+      width: var(--card-w);
+      height: var(--card-h);
       transform-style: preserve-3d;
       transition: width 0.3s ease, height 0.3s ease;
     }
@@ -336,24 +339,24 @@
        ======================================================= */
     .big-card {
       position: absolute;
-      width: 360px;
-      height: 240px;
+      width: var(--card-w);
+      height: var(--card-h);
       left: 0;
       top: 0;
       border-radius: 20px;
       overflow: hidden;
       background-color: var(--white);
-      border: 2.5px solid var(--primary-deep);
+      border: 3px solid var(--primary-deep);
       box-shadow: none;
       transform-origin: 50% 50%;
       cursor: pointer;
       display: flex;
       flex-direction: row;
-      padding: 9px 10px 9px 8px;
+      padding: 10px 12px 10px 10px;
       backface-visibility: hidden;
       opacity: 1;
       user-select: none;
-      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
                   border-color 0.25s ease,
                   box-shadow 0.25s ease;
     }
@@ -884,21 +887,21 @@
     }
 
     /* =======================================================
-       SOLID & CONSOLIDATED CONSOLE DOCK (NOT SLIM, NOT TOO LONG)
-       HEIGHT 56PX, 36PX HARMONIZED TARGETS, CRISP TACTILE SHADOW
+       SOLID & CONSOLIDATED CONSOLE DOCK (SYMMETRICAL & CLEAN)
+       STREAMLINED TO ESSENTIAL CONTROLS ONLY (MIN 44-48PX TOUCH TARGETS)
        ======================================================= */
     .bottom-player-bar {
       width: auto;
-      max-width: fit-content;
-      height: 56px;
-      border: 3px solid var(--primary-deep);
+      max-width: calc(100vw - 24px);
+      height: 54px;
+      border: 2.5px solid var(--primary-deep);
       border-radius: 999px;
       background-color: var(--white);
-      padding: 5px 12px;
+      padding: 4px 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: clamp(6px, 1.2vw, 12px);
       box-shadow: 0 4px 0 var(--primary-deep);
       flex-shrink: 0;
       z-index: 100;
@@ -908,58 +911,52 @@
     .dock-section {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
     .dock-left {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .dock-center {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .dock-right {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
-    /* COMPACT COUNTER PILL (REDUNDANT "CARD 01" REMOVED TO CONSOLIDATE WIDTH) */
+    /* COMPACT COUNTER PILL */
     .dock-track-info {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 36px;
+      height: 38px;
       padding: 0 12px;
       background-color: #f6f8fe;
       border: 2px solid var(--primary-deep);
       border-radius: 999px;
       user-select: none;
     }
-    .dock-track-name {
-      display: none;
-    }
-    .dock-divider {
-      display: none;
-    }
     .dock-track-count {
       font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
       color: var(--primary-deep);
       white-space: nowrap;
       letter-spacing: 0.5px;
     }
 
     .btn-ctrl-round {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       border: 2px solid var(--primary-deep);
       background-color: var(--white);
@@ -975,6 +972,11 @@
       position: relative;
       flex-shrink: 0;
     }
+    .btn-ctrl-round::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+    }
     .btn-ctrl-round:hover, .btn-ctrl-round.active {
       background-color: var(--primary-deep);
       color: var(--white);
@@ -988,7 +990,7 @@
       background-color: var(--primary-deep) !important;
       color: var(--white) !important;
       border-color: var(--primary-deep) !important;
-      transform: scale(1.14);
+      transform: scale(1.12);
       box-shadow: 0 0 0 3px var(--primary);
     }
     .btn-ctrl-round.is-holding-rapid svg {
@@ -999,46 +1001,66 @@
       100% { transform: scale(1.24); }
     }
     .btn-ctrl-round svg {
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
       stroke-width: 2.2;
     }
 
-    /* RANDOM PICK & REVEAL BUTTONS (ICON-ONLY 36PX ROUND BUTTONS) */
-    .dock-random-btn {
-      width: 36px;
-      height: 36px;
-      padding: 0;
+    /* CENTER FLIP / INSPECT BUTTON */
+    .dock-flip-btn {
+      height: 40px;
+      padding: 0 16px;
       border-radius: 999px;
       border: 2px solid var(--primary-deep);
-      background-color: #f6f8fe;
-      color: var(--primary-deep);
+      background-color: var(--primary);
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 6px;
       cursor: pointer;
-      position: relative;
+      transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.16s ease;
+      user-select: none;
+      -webkit-user-select: none;
       flex-shrink: 0;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 0 var(--primary-deep);
+      position: relative;
     }
-    .dock-random-btn:hover {
+    .dock-flip-btn::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+    }
+    .dock-flip-btn:hover {
       background-color: var(--primary-deep);
       color: var(--white);
-      transform: scale(1.06);
+      transform: translateY(-1px);
     }
-    .dock-random-btn svg {
-      width: 16px;
-      height: 16px;
+    .dock-flip-btn:active {
+      transform: scale(0.95);
+    }
+    .dock-flip-btn svg {
+      width: 15px;
+      height: 15px;
       stroke-width: 2.2;
+    }
+    .dock-flip-label {
+      font-family: var(--font-main);
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
 
     .dock-shuffle-btn, .dock-audio-btn {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       padding: 0;
       border-radius: 999px;
       border: 2px solid var(--primary-deep);
-      background-color: #f6f8fe;
+      background-color: var(--white);
       color: var(--primary-deep);
       display: inline-flex;
       align-items: center;
@@ -1047,6 +1069,11 @@
       position: relative;
       flex-shrink: 0;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dock-shuffle-btn::after, .dock-audio-btn::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
     }
     .dock-shuffle-btn:hover, .dock-audio-btn:hover {
       background-color: var(--primary-deep);
@@ -1054,24 +1081,13 @@
       transform: scale(1.06);
     }
     .dock-shuffle-btn svg, .dock-audio-btn svg {
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
       stroke-width: 2.2;
     }
     .dock-audio-btn.is-muted {
       opacity: 0.65;
       border-style: dashed;
-    }
-
-    /* RIGHT UTILITY PILL (NO EXTRA WRAPPER BORDER, CLEAN BUTTON) */
-    .dock-utility-group {
-      display: inline-flex;
-      align-items: center;
-      background: transparent;
-      padding: 0;
-      border: none;
-      height: 36px;
-      flex-shrink: 0;
     }
     .utility-icon-btn {
       background: transparent;
@@ -2078,22 +2094,20 @@
     }
 
     /* =======================================================
-       MODE TABLET (iPad & Android Tablets: 601px - 1024px)
+       MODE TABLET (iPad & Tablets: 601px - 1024px)
        ======================================================= */
     @media (min-width: 601px) and (max-width: 1024px) {
+      :root {
+        --card-w: clamp(360px, 52vw, 480px);
+        --card-h: clamp(235px, 34vw, 315px);
+      }
       body {
-        padding: max(18px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
-        gap: clamp(10px, 1.8vh, 16px);
+        padding: max(12px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
+        gap: clamp(8px, 1.5vh, 14px);
       }
       .viewport-3d {
-        height: clamp(260px, 35vh, 310px);
+        height: clamp(260px, 44vh, 370px);
       }
-      .card-stage-container, .big-card {
-        width: 320px;
-        height: 220px;
-        border-radius: 18px;
-      }
-
       .modal-card {
         width: 94vw;
         height: 88vh;
@@ -2107,86 +2121,84 @@
       }
       .bottom-player-bar {
         max-width: fit-content;
-        height: 48px;
+        height: 50px;
+        padding: 4px 10px;
       }
-      .btn-ctrl-round, .btn-ctrl-mode {
-        width: 30px;
-        height: 30px;
+      .btn-ctrl-round {
+        width: 38px;
+        height: 38px;
       }
     }
 
     /* =======================================================
-       MODE ANDROID SMARTPHONE (max-width: 600px)
-       TOUCHSCREEN INTUITIVE & SEAMLESS ERGONOMICS
+       MODE SMARTPHONE (max-width: 600px)
+       TOUCHSCREEN INTUITIVE & SEAMLESS ERGONOMICS (ZERO OVERFLOW)
        ======================================================= */
     @media (max-width: 600px) {
+      :root {
+        --card-w: min(340px, 88vw);
+        --card-h: min(228px, 33vh);
+      }
       html, body {
-        padding: max(10px, env(safe-area-inset-top)) 10px max(14px, env(safe-area-inset-bottom));
-        gap: 8px;
+        padding: max(8px, env(safe-area-inset-top)) 8px max(12px, env(safe-area-inset-bottom));
+        gap: 6px;
       }
 
       header.app-header {
         max-width: 100%;
       }
       h1.main-title {
-        font-size: clamp(1.15rem, 5.2vw, 1.45rem);
-        letter-spacing: 2px;
+        font-size: clamp(1.2rem, 5.5vw, 1.55rem);
+        letter-spacing: 1.5px;
         line-height: 1.15;
         margin-bottom: 2px;
       }
       .sub-meta {
         font-size: 0.68rem;
         letter-spacing: 0.4px;
-        margin-bottom: 4px;
-      }
-      .header-filters {
-        padding: 2px 6px;
-        gap: 6px;
-      }
-      .filter-icon-btn {
-        width: 28px;
-        height: 28px;
-      }
-      .filter-icon-btn svg {
-        width: 14px;
-        height: 14px;
+        margin-bottom: 2px;
       }
 
-      /* 3D STAGE & CARDS FOR ANDROID SCREEN (LANDSCAPE) */
+      .header-filter-hub-btn {
+        height: 30px;
+        padding: 0 12px;
+        font-size: 10.5px;
+        gap: 6px;
+      }
+
+      /* 3D STAGE & CARDS FOR MOBILE */
       .carousel-stage {
         max-width: 100vw;
       }
       .viewport-3d {
         max-width: 100vw;
-        height: clamp(230px, 34vh, 260px);
+        height: clamp(230px, 38vh, 280px);
       }
       .card-stage-container, .big-card {
-        width: min(310px, 86vw);
-        height: min(205px, 30vh);
         border-radius: 16px;
-        padding: 7px 8px 7px 5px;
+        padding: 7px 8px 7px 6px;
       }
       .card-left-rail {
-        width: 18px;
-        margin-right: 5px;
+        width: 20px;
+        margin-right: 6px;
       }
       .card-pip {
-        width: 9px;
-        height: 9px;
+        width: 10px;
+        height: 10px;
       }
       .card-vertical-title {
-        font-size: 8px;
+        font-size: 9px;
         letter-spacing: 1.5px;
       }
       .card-bottom-banner {
-        height: 32px;
+        height: 34px;
         left: -8px;
-        padding: 0 6px 0 36px;
-        bottom: 4px;
+        padding: 0 8px 0 38px;
+        bottom: 5px;
       }
       .card-emblem-badge {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
         left: -4px;
       }
       .card-emblem-icon {
@@ -2194,19 +2206,19 @@
         height: 18px;
       }
       .card-banner-title {
-        font-size: 11px;
+        font-size: 12px;
       }
       .card-banner-actions {
         padding: 1px 2px;
         gap: 2px;
       }
       .card-banner-btn {
-        width: 19px;
-        height: 19px;
+        width: 21px;
+        height: 21px;
       }
       .card-banner-btn svg {
-        width: 10px;
-        height: 10px;
+        width: 11px;
+        height: 11px;
       }
 
       .card-content-window:has(.theory-window-wrap),
@@ -2214,25 +2226,25 @@
         margin-bottom: 38px;
       }
       .theory-window-wrap {
-        padding: 4px 6px 3px 6px;
+        padding: 5px 7px 4px 7px;
       }
       .theory-q-row .q-text {
-        font-size: 9.4px;
+        font-size: 9.6px;
         line-height: 1.25;
       }
       .theory-window-wrap.is-dense-text .theory-q-row .q-text {
-        font-size: 8.6px;
+        font-size: 8.8px;
         line-height: 1.18;
       }
       .theory-window-wrap.is-compact-text .theory-q-row .q-text {
-        font-size: 8px;
+        font-size: 8.2px;
         line-height: 1.14;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row {
         padding: 1px 3px;
       }
       .theory-window-wrap.is-ultra-compact .theory-q-row .q-text {
-        font-size: 7.4px;
+        font-size: 7.6px;
         line-height: 1.10;
       }
 
@@ -2250,58 +2262,43 @@
 
       /* UNIFIED BOTTOM PLAYER DOCK ON MOBILE */
       .bottom-player-bar {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        padding: 6px 8px;
-        border-radius: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
+        width: auto;
+        max-width: calc(100vw - 12px);
+        height: 48px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        gap: 4px;
       }
       .dock-section {
         gap: 4px;
       }
-      .pack-badge-btn {
-        padding: 3px 8px 3px 6px;
-        font-size: 9.5px;
+      .btn-ctrl-round {
+        width: 36px;
+        height: 36px;
       }
-      .header-filters {
-        padding: 2px 4px;
-        gap: 3px;
+      .btn-ctrl-round svg {
+        width: 15px;
+        height: 15px;
       }
-      .filter-icon-btn {
-        width: 24px;
-        height: 24px;
+      .dock-flip-btn {
+        height: 36px;
+        padding: 0 10px;
+        font-size: 11px;
+        gap: 4px;
       }
-      .filter-icon-btn svg {
-        width: 12px;
-        height: 12px;
-      }
-      .btn-reset-removed {
-        height: 28px;
-        padding: 0 6px;
-        font-size: 9.5px;
-        gap: 3px;
-      }
-      .btn-reset-removed svg {
-        width: 11px;
-        height: 11px;
-      }
-      .btn-reset-removed .reset-count-badge {
-        padding: 1px 4px;
-        font-size: 9px;
+      .dock-flip-btn svg {
+        width: 13px;
+        height: 13px;
       }
       .dock-track-info {
-        padding: 2px 8px;
-      }
-      .dock-track-name {
-        font-size: 9.5px;
+        height: 34px;
+        padding: 0 8px;
       }
       .dock-track-count {
-        font-size: 9.5px;
+        font-size: 10.5px;
       }
-      /* FULLSCREEN NATIVE APP SHEET MODAL ON ANDROID */
+
+      /* FULLSCREEN NATIVE APP SHEET MODAL ON MOBILE */
       .modal-overlay {
         padding: 0;
         align-items: flex-end;
@@ -2376,57 +2373,61 @@
         width: 30px;
         height: 30px;
       }
-      .modal-action-btn {
-        padding: 5px 12px;
-        font-size: 12px;
-      }
+    }
 
-      /* ARCADE GAME LOBBY ON MOBILE */
-      .pack-modal-card {
-        border-radius: 18px;
-        width: 100vw;
-        max-height: 94vh;
+    /* MOBILE LANDSCAPE OPTIMIZATION */
+    @media (max-height: 520px) and (orientation: landscape) {
+      :root {
+        --card-w: clamp(280px, 46vw, 380px);
+        --card-h: clamp(170px, 52vh, 230px);
       }
-      .pack-modal-header {
-        padding: 10px 14px;
-        min-height: 52px;
+      body {
+        padding: 4px 12px 6px;
+        gap: 2px;
       }
-      .pack-modal-title {
-        font-size: 16px;
+      h1.main-title {
+        font-size: 1.15rem;
       }
-      .pack-lobby-ticker {
-        padding: 6px 14px;
-        font-size: 9.5px;
+      .sub-meta {
+        display: none;
       }
-      .pack-item {
-        grid-template-columns: 60px 1fr;
-        padding: 12px 14px;
-        gap: 12px;
+      .header-filter-row {
+        margin-top: 2px;
       }
-      .pack-cartridge-box {
-        width: 60px;
-        height: 72px;
+      .header-filter-hub-btn {
+        height: 26px;
+        padding: 0 10px;
+        font-size: 10px;
       }
-      .cartridge-crest svg {
-        width: 20px;
-        height: 20px;
+      .viewport-3d {
+        height: clamp(175px, 56vh, 240px);
       }
-      .cartridge-badge {
-        font-size: 7.5px;
-        padding: 0 4px;
+      .active-specimen-indicator {
+        margin: 1px 0;
       }
-      .cartridge-label {
-        font-size: 8.5px;
+      .active-specimen-title {
+        font-size: 0.85rem;
       }
-      .pack-cartridge-action {
-        grid-column: 1 / -1;
-        width: 100%;
+      .active-specimen-desc {
+        display: none;
       }
-      .pack-deploy-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 8px 14px;
-        font-size: 11px;
+      .bottom-player-bar {
+        height: 40px;
+        padding: 2px 8px;
+        gap: 4px;
+      }
+      .btn-ctrl-round {
+        width: 32px;
+        height: 32px;
+      }
+      .dock-flip-btn {
+        height: 32px;
+        padding: 0 8px;
+        font-size: 10px;
+      }
+      .dock-track-info {
+        height: 30px;
+        padding: 0 6px;
       }
     }
 
@@ -4011,120 +4012,59 @@
       color: var(--primary-deep);
     }
     /* =======================================================
-       QUICK FILTER BAR (HORIZONTAL SCROLLABLE CHIPS)
+       SINGLE FILTER HUB BUTTON IN HEADER
        ======================================================= */
-    .quick-filter-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 6px auto 4px auto;
+    .header-filter-row {
+      margin-top: clamp(6px, 1vh, 10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-filter-hub-btn {
+      height: 34px;
       padding: 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      position: relative;
-      z-index: 10;
-    }
-    .quick-filter-container.is-compact {
-      justify-content: center;
-    }
-    .quick-filter-scroll {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 3px 2px;
-      flex: 1;
-    }
-    .quick-filter-container.is-compact .quick-filter-scroll {
-      flex: 0 1 auto;
-      justify-content: center;
-    }
-    .quick-filter-scroll::-webkit-scrollbar {
-      display: none;
-    }
-    .quick-filter-chip {
-      height: 30px;
-      box-sizing: border-box;
-      background-color: var(--white-15);
-      color: var(--white);
-      border: 1.5px solid var(--white-25);
-      border-radius: 999px;
-      padding: 0 12px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.15s ease;
-      user-select: none;
-    }
-    .quick-filter-chip:hover {
-      background-color: var(--white-25);
-      border-color: var(--white);
-      transform: translateY(-1px);
-    }
-    .quick-filter-chip.active {
       background-color: var(--white);
       color: var(--primary-deep);
-      border-color: var(--white);
-      font-weight: 800;
-      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.3);
-    }
-    .quick-filter-chip .chip-badge {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      padding: 1px 5px;
+      border: 2px solid var(--primary-deep);
       border-radius: 999px;
-      background-color: var(--white-25);
-      color: inherit;
-    }
-    .quick-filter-chip.active .chip-badge {
-      background-color: var(--primary-deep);
-      color: var(--white);
-    }
-    .quick-filter-hub-btn {
-      height: 30px;
-      box-sizing: border-box;
-      background-color: rgba(255, 255, 255, 0.16);
-      color: #ffffff;
-      border: 1.5px solid rgba(255, 255, 255, 0.35);
-      border-radius: 999px;
-      padding: 0 12px;
-      font-size: 11px;
+      font-family: var(--font-main);
+      font-size: 11.5px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.18s ease;
-      flex-shrink: 0;
+      gap: 8px;
+      box-shadow: 0 3px 0 var(--primary-deep);
+      transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      -webkit-user-select: none;
     }
-    .quick-filter-hub-btn:hover {
-      background-color: #ffffff;
-      color: var(--primary-deep);
-      border-color: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.25);
-    }
-    .quick-filter-hub-btn .chip-badge {
-      background-color: rgba(255, 255, 255, 0.22);
-      color: inherit;
-      font-family: var(--font-mono);
-      font-size: 9.5px;
-      font-weight: 800;
-      padding: 1px 6px;
-      border-radius: 999px;
-    }
-    .quick-filter-hub-btn:hover .chip-badge {
+    .header-filter-hub-btn:hover {
       background-color: var(--primary-deep);
-      color: #ffffff;
+      color: var(--white);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 0 var(--white);
+    }
+    .header-filter-hub-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke-width: 2.2;
+    }
+    .header-filter-hub-btn .hub-count-badge {
+      background-color: var(--primary);
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+    .header-filter-hub-btn:hover .hub-count-badge {
+      background-color: var(--white);
+      color: var(--primary-deep);
     }
 
     /* =======================================================
@@ -4382,18 +4322,15 @@
     <div class="title-row">
       <h1 class="main-title" id="appMainTitle"><span class="title-tone-1">GAMBLING WITH</span> <span class="title-tone-2">PRINCE NCIT</span></h1>
     </div>
-    <div class="sub-meta" id="appSubMeta">Persiapan Ujian Identifikasi &amp; Praktikum Kedokteran</div>
-    <!-- Quick Filter Chips Row (Horizontal Scroll) -->
-    <div class="quick-filter-container" id="quickFilterContainer">
-      <div class="quick-filter-scroll" id="quickFilterScroll">
-        <!-- Rendered dynamically via renderQuickFilterBar() -->
-      </div>
-      <button class="quick-filter-hub-btn" id="btnOpenFilterHub" onclick="openFilterHubModal()" title="Buka Filter Hub Lengkap [F]">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <div class="sub-meta" id="appSubMeta">CASUAL MODE • MEDICAL FLASHCARDS</div>
+    <!-- Exactly 1 Clean Filter Hub Button: No Quick-Filter Clutter -->
+    <div class="header-filter-row">
+      <button class="header-filter-hub-btn" id="btnOpenFilterHub" onclick="openFilterHubModal()" title="Filter Hub [F]" aria-label="Filter Hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
         <span>FILTER HUB</span>
-        <span class="chip-badge" id="quickFilterHubCountBadge">51</span>
+        <span class="hub-count-badge" id="quickFilterHubCountBadge">ALL (136)</span>
       </button>
     </div>
   </header>
@@ -4410,22 +4347,23 @@
   </section>
 
   <!-- =======================================================
-       ACTIVE SPECIMEN INDICATOR (CENTERED UNDER 3D CARDS)
+       ACTIVE CARD INDICATOR (CENTERED UNDER 3D CARDS)
        ======================================================= -->
   <div class="active-specimen-indicator">
-    <div class="active-specimen-title" id="activeIndicatorTitle">SEDIAAN 01 &bull; HISTOPATOLOGI</div>
-    <div class="active-specimen-desc" id="activeIndicatorDesc">Amati sediaan mikroskopik &bull; Klik atau tekan Spasi untuk melihat diagnosis &amp; pembahasan</div>
+    <div class="active-specimen-title" id="activeIndicatorTitle">CARD 01 // 40 • HISTOPATHOLOGY</div>
+    <div class="active-specimen-desc" id="activeIndicatorDesc">Inspect card • Tap or press Space to flip</div>
   </div>
 
   <!-- =======================================================
-       BOTTOM PILL PLAYER BAR (CONSOLIDATED & STREAMLINED)
-       CORE NAVIGATION & ACTIONS • LESS PRIORITIES IN SETTINGS [O]
+       CONSOLIDATED SYMMETRICAL PLAYER DOCK (7 ESSENTIAL BUTTONS)
+       LEFT: [LOBBY] [FILTER] [SHUFFLE]
+       CENTER: [PREV] [FLIP] [NEXT]
+       RIGHT: [COUNTER] [AUDIO]
        ======================================================= -->
   <nav class="bottom-player-bar" id="bottomPlayerDock">
-    <!-- Left Section: Lobby Home, Deck Pack Selector & Filter Cycle -->
+    <!-- Left Section: Lobby, Filter Hub, Shuffle -->
     <div class="dock-section dock-left">
-      <!-- Return to Lobby Button -->
-      <a class="btn-ctrl-round dock-lobby-btn" id="btnDockLobby" href="index.html" title="Return to Lobby [H / Esc]" aria-label="Return to Lobby" style="text-decoration: none;">
+      <a class="btn-ctrl-round dock-lobby-btn" id="btnDockLobby" href="index.html" title="Lobby [H / Esc]" aria-label="Lobby" style="text-decoration: none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
           <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -4433,37 +4371,15 @@
         <span class="gamepad-badge" title="Hotkey: H">H</span>
       </a>
 
-      <a class="pack-badge-btn" id="btnPackDisplay" href="index.html" title="Active Deck: Change in Lobby [H]" aria-label="Active Deck (Change in Lobby [H])" style="text-decoration: none;">
-        <svg class="pack-badge-emblem" viewBox="0 0 64 64" fill="currentColor" width="15" height="15" aria-hidden="true" style="flex-shrink: 0;">
-          <path d="M32 12 C29 20 17 28 17 37 C17 43.5 22.5 47 28 45.8 C27 48.5 24.5 51 22 52 L42 52 C39.5 51 37 48.5 36 45.8 C41.5 47 47 43.5 47 37 C47 28 35 20 32 12 Z"/>
-        </svg>
-        <span class="pack-name-text" id="headerPackName">IDENT DECK</span>
-      </a>
-
-      <!-- Filter Button (Icon-Only, Deck-Driven: Cycle Filter if <= 6, Open Filter Hub if > 6) -->
-      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="handleDockFilterClick()" title="Ganti Filter [Klik / F]" aria-label="Ganti Filter">
-        <svg id="dockFilterIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <!-- 1 Filter Hub Button in Dock -->
+      <button class="btn-ctrl-round dock-filter-btn" id="btnDockFilter" onclick="openFilterHubModal()" title="Filter Hub [F]" aria-label="Filter Hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
-        <span class="dock-filter-badge" id="dockFilterBadge" title="Filter Hub">ALL</span>
-      </button>
-    </div>
-
-    <!-- Center Section: Play Modes (Sequential & Shuffle) + Track Counter + Pick Random -->
-    <div class="dock-section dock-center">
-      <!-- Sequential Mode Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-seq-btn active" id="btnDockSequential" onclick="startSequentialSort()" title="Sequential Order [U]" aria-label="Sequential Order">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="3" y1="6" x2="15" y2="6"></line>
-          <line x1="3" y1="12" x2="12" y2="12"></line>
-          <line x1="3" y1="18" x2="9" y2="18"></line>
-          <polyline points="16 10 19 7 22 10"></polyline>
-          <line x1="19" y1="7" x2="19" y2="17"></line>
-        </svg>
-        <span class="gamepad-badge" title="Hotkey: U">U</span>
+        <span class="dock-filter-badge" id="dockFilterBadge">ALL</span>
       </button>
 
-      <!-- Dedicated Shuffle Deck Button (Icon-Only) -->
+      <!-- Dedicated Shuffle Deck Button -->
       <button class="btn-ctrl-round dock-shuffle-btn" id="btnShuffleDeck" onclick="startRealisticShuffle()" title="Shuffle Deck [S]" aria-label="Shuffle Deck">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="16 3 21 3 21 8"></polyline>
@@ -4474,45 +4390,51 @@
         </svg>
         <span class="gamepad-badge" title="Hotkey: S">S</span>
       </button>
+    </div>
 
-      <!-- Track Name & Counter -->
-      <div class="dock-track-info">
-        <span class="dock-track-name" id="barTrackName">SEDIAAN 01</span>
-        <span class="dock-track-count" id="barSubCount">01 / 40</span>
-      </div>
-
-      <!-- Dedicated Pick Random Card Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-random-btn" id="btnPickRandom" onclick="pickRandomCard()" title="Acak Sediaan [R / G]" aria-label="Acak Sediaan">
+    <!-- Center Section: Prev, Flip/Inspect, Next -->
+    <div class="dock-section dock-center">
+      <!-- Previous Card Button -->
+      <button class="btn-ctrl-round dock-prev-btn" id="btnPrev" onclick="prevCard()" title="Prev [A / Left]" aria-label="Previous Card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-          <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle>
-          <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle>
-          <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
-          <circle cx="8" cy="16" r="1.5" fill="currentColor"></circle>
-          <circle cx="16" cy="16" r="1.5" fill="currentColor"></circle>
+          <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
-        <span class="gamepad-badge" title="Gamepad: R2">R2</span>
+        <span class="gamepad-badge" title="Gamepad: L1">L1</span>
+      </button>
+
+      <!-- Flip / Inspect Card Button -->
+      <button class="dock-flip-btn" id="btnFlipInspect" onclick="openRevealModal()" title="Flip Card [Space]" aria-label="Flip Card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="dock-flip-label">FLIP</span>
+        <span class="gamepad-badge" title="Hotkey: Space">␣</span>
+      </button>
+
+      <!-- Next Card Button -->
+      <button class="btn-ctrl-round dock-next-btn" id="btnNext" onclick="nextCard()" title="Next [D / Right]" aria-label="Next Card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <span class="gamepad-badge" title="Gamepad: R1">R1</span>
       </button>
     </div>
 
-    <!-- Right Section: (🔊 Sound) + (⚙️ Settings) (ICON-ONLY 36PX ROUND BUTTONS) -->
+    <!-- Right Section: Counter & Audio Mute -->
     <div class="dock-section dock-right">
-      <!-- Dedicated Sound Effects Mute Toggle Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-audio-btn" id="btnToggleAudio" onclick="toggleAudioMute()" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
+      <!-- Track Position Counter -->
+      <div class="dock-track-info" id="dockTrackInfo" title="Card Position">
+        <span class="dock-track-count" id="barSubCount">01 / 40</span>
+      </div>
+
+      <!-- Audio Mute Button -->
+      <button class="btn-ctrl-round dock-audio-btn" id="btnToggleAudio" onclick="toggleAudioMute()" title="Audio Mute / Unmute" aria-label="Toggle Audio">
         <svg id="audioIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
         </svg>
-        <span class="gamepad-badge" title="Sound">FX</span>
-      </button>
-
-      <!-- Settings Button (Icon-Only) -->
-      <button class="btn-ctrl-round dock-settings-btn" id="btnSettings" onclick="toggleSettingsModal()" title="Settings & Preferences [O]" aria-label="Settings & Preferences">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-        <span class="gamepad-badge" title="Hotkey: O">O</span>
+        <span class="gamepad-badge" title="Audio">FX</span>
       </button>
     </div>
   </nav>
@@ -4528,8 +4450,8 @@
       <!-- Header -->
       <div class="modal-header">
         <div class="modal-header-left">
-          <span class="modal-type-badge" id="modalTypeBadge">SEDIAAN HISTOPATOLOGI</span>
-          <span class="modal-card-idx" id="modalIndexText">SEDIAAN 01 / 40</span>
+          <span class="modal-type-badge" id="modalTypeBadge">HISTOPATHOLOGY SPECIMEN</span>
+          <span class="modal-card-idx" id="modalIndexText">CARD 01 / 40</span>
         </div>
         <div style="display: flex; align-items: center;">
           <!-- Remove from Deck Button (Inside Modal) -->
@@ -5165,11 +5087,11 @@
       <!-- Header -->
       <div class="filter-hub-header">
         <div class="filter-hub-title-wrap">
-          <span class="filter-hub-badge" id="filterHubBadge">KATALOG FILTER RESMI</span>
-          <h2 class="filter-hub-title" id="filterHubTitle">Filter Hub Bank Soal</h2>
-          <span class="filter-hub-subtitle">Pilih modul spesifik, sub-golongan obat, tipe soal, atau arsip tahun ujian</span>
+          <span class="filter-hub-badge" id="filterHubBadge">FILTER HUB</span>
+          <h2 class="filter-hub-title" id="filterHubTitle">Filter Catalog</h2>
+          <span class="filter-hub-subtitle">Select category, module, or topic filter</span>
         </div>
-        <button class="modal-close-btn" onclick="closeFilterHubModal()" title="Tutup [Esc]" aria-label="Tutup">
+        <button class="modal-close-btn" onclick="closeFilterHubModal()" title="Close [Esc]" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -5177,16 +5099,16 @@
         </button>
       </div>
 
-      <!-- Controls: Search & Category Tabs -->
+      <!-- Controls: Search & Category Tabs (Strictly No Emojis) -->
       <div class="filter-hub-controls">
-        <input type="text" id="filterHubSearchInput" class="filter-hub-search" placeholder="🔍 Ketik nama obat, golongan, resep, 2024, asma, diuretik..." oninput="handleFilterHubSearch(this.value)">
+        <input type="text" id="filterHubSearchInput" class="filter-hub-search" placeholder="Search cards, topics, drugs, years..." oninput="handleFilterHubSearch(this.value)">
         <div class="filter-hub-tabs-row" id="filterHubTabsRow">
-          <button class="filter-hub-tab-btn active" data-tab="all" onclick="setFilterHubTab('all')">Semua Filter</button>
-          <button class="filter-hub-tab-btn" data-tab="sistem" onclick="setFilterHubTab('sistem')">🏥 Modul Sistem</button>
-          <button class="filter-hub-tab-btn" data-tab="subclass" onclick="setFilterHubTab('subclass')">💊 Golongan Obat</button>
-          <button class="filter-hub-tab-btn" data-tab="tipe" onclick="setFilterHubTab('tipe')">📋 Tipe Soal &amp; Algoritma</button>
-          <button class="filter-hub-tab-btn" data-tab="arsip" onclick="setFilterHubTab('arsip')">📅 Arsip Ujian</button>
-          <button class="filter-hub-tab-btn" data-tab="role" onclick="setFilterHubTab('role')">🎯 Peran Terapi</button>
+          <button class="filter-hub-tab-btn active" data-tab="all" onclick="setFilterHubTab('all')">All Filters</button>
+          <button class="filter-hub-tab-btn" data-tab="sistem" onclick="setFilterHubTab('sistem')">Systems</button>
+          <button class="filter-hub-tab-btn" data-tab="subclass" onclick="setFilterHubTab('subclass')">Drug Classes</button>
+          <button class="filter-hub-tab-btn" data-tab="tipe" onclick="setFilterHubTab('tipe')">Question Types</button>
+          <button class="filter-hub-tab-btn" data-tab="arsip" onclick="setFilterHubTab('arsip')">Exam Archives</button>
+          <button class="filter-hub-tab-btn" data-tab="role" onclick="setFilterHubTab('role')">Clinical Roles</button>
         </div>
       </div>
 
@@ -5198,13 +5120,13 @@
       <!-- Footer -->
       <div class="filter-hub-footer">
         <button class="filter-hub-btn-reset" onclick="selectFilterFromHub('all')">
-          🔄 Tampilkan Semua Kartu
+          Show All Cards
         </button>
         <span class="filter-hub-status-text" id="filterHubStatusText">
-          Menampilkan <strong id="filterHubCountCurrent">136</strong> kartu
+          Showing <strong id="filterHubCountCurrent">136</strong> cards
         </span>
         <button class="filter-hub-btn-close" onclick="closeFilterHubModal()">
-          Selesai [Esc]
+          Done [Esc]
         </button>
       </div>
     </div>
@@ -5293,45 +5215,42 @@
       if (currentPack && Array.isArray(currentPack.filters) && currentPack.filters.length > 0) {
         return currentPack.filters.map(f => {
           const count = cards.filter(c => isCardMatchingFilter(c, f.id)).length;
-          return { ...f, count };
+          // Clean emoji characters from label
+          const cleanLabel = (f.label || '').replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]|[\u2600-\u26FF]|[\u2700-\u27BF]/g, '').trim();
+          return { ...f, label: cleanLabel || f.id, count };
         }).filter(f => f.id === 'all' || f.count > 0);
       }
 
-      // Fallback combined list
+      // Fallback combined list (Strictly No Emojis, English labels)
       const list = [
-        { id: 'all', label: `Semua Kartu (${cards.length})`, count: cards.length, badge: 'ALL', group: 'sistem' }
+        { id: 'all', label: `All Cards (${cards.length})`, count: cards.length, badge: 'ALL', group: 'sistem' }
       ];
       const pCount = cards.filter(c => c.is_priority || c.prioritas_tinggi).length;
-      if (pCount > 0) list.push({ id: 'prioritas', label: `⭐ Prioritas Tinggi (${pCount})`, count: pCount, badge: 'STAR', group: 'arsip' });
+      if (pCount > 0) list.push({ id: 'prioritas', label: `High Priority (${pCount})`, count: pCount, badge: 'PRIO', group: 'arsip' });
 
       const kCount = cards.filter(c => isCardMatchingFilter(c, 'kardio')).length;
-      if (kCount > 0) list.push({ id: 'kardio', label: `Kardio & Ginjal (${kCount})`, count: kCount, badge: 'KARD', group: 'sistem' });
+      if (kCount > 0) list.push({ id: 'kardio', label: `Cardiovascular & Renal (${kCount})`, count: kCount, badge: 'CARD', group: 'sistem' });
 
       const rCount = cards.filter(c => isCardMatchingFilter(c, 'respirasi')).length;
-      if (rCount > 0) list.push({ id: 'respirasi', label: `Respirasi & Infeksi (${rCount})`, count: rCount, badge: 'RESP', group: 'sistem' });
+      if (rCount > 0) list.push({ id: 'respirasi', label: `Respiratory & Infection (${rCount})`, count: rCount, badge: 'RESP', group: 'sistem' });
 
       const prepCount = cards.filter(c => c.type === 'preparat').length;
-      if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Sediaan Mikroskopik (${prepCount})`, count: prepCount, badge: 'PREP', group: 'sistem' });
+      if (prepCount > 0 && prepCount !== cards.length) list.push({ id: 'preparat', label: `Specimens (${prepCount})`, count: prepCount, badge: 'SPEC', group: 'sistem' });
 
       const teoriCount = cards.filter(c => c.type === 'teori' || c.type === 'theory').length;
-      if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Soal Teori (${teoriCount})`, count: teoriCount, badge: 'THRY', group: 'tipe' });
+      if (teoriCount > 0 && teoriCount !== cards.length) list.push({ id: 'teori', label: `Theory Cards (${teoriCount})`, count: teoriCount, badge: 'THRY', group: 'tipe' });
 
       return list;
     }
 
     // =======================================================
-    // FILTER HUB ENGINE (DECK-DRIVEN: 3-51+ MULTI-LEVEL FILTERS)
+    // FILTER HUB ENGINE (1 BUTTON ACCESS)
     // =======================================================
     let filterHubSearchQuery = '';
     let filterHubActiveTab = 'all';
 
     function handleDockFilterClick() {
-      const filters = getActiveFiltersList();
-      if (filters.length <= 6) {
-        cycleFilter();
-      } else {
-        openFilterHubModal();
-      }
+      openFilterHubModal();
     }
 
     function openFilterHubModal() {
@@ -5343,20 +5262,14 @@
         searchInput.value = '';
       }
 
-      const filters = getActiveFiltersList();
-      const isCompact = filters.length <= 6;
-      const tabsRow = document.getElementById('filterHubTabsRow');
       const hubBadge = document.getElementById('filterHubBadge');
-
-      if (tabsRow) tabsRow.style.display = isCompact ? 'none' : 'flex';
-      if (searchInput) searchInput.style.display = isCompact ? 'none' : 'block';
       if (hubBadge) {
-        hubBadge.textContent = currentPack ? (currentPack.badge || currentPack.packName || 'KATALOG FILTER') : 'KATALOG FILTER';
+        hubBadge.textContent = 'FILTER HUB';
       }
 
       renderFilterHubChips();
       modal.classList.add('active');
-      if (searchInput && !isCompact) {
+      if (searchInput) {
         setTimeout(() => searchInput.focus(), 120);
       }
       playSelectSound();
@@ -5395,7 +5308,7 @@
       closeFilterHubModal();
       const filters = getActiveFiltersList();
       const current = filters.find(f => f.id === filterId) || { label: filterId, count: filteredBase.length };
-      showToast('Filter Aktif', `${current.label} • ${filteredBase.length} Kartu`);
+      showToast('Filter Applied', `${current.label} • ${filteredBase.length} Cards`);
     }
 
     function renderFilterHubChips() {
@@ -5428,8 +5341,8 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Tidak ada filter yang cocok</div>
-            <div style="font-size: 12px;">Coba gunakan kata kunci lain seperti "resep", "preparat", "2024", atau "teori".</div>
+            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">No filters match your search</div>
+            <div style="font-size: 12px;">Try a different keyword such as topic, drug, or year.</div>
           </div>
         `;
         return;
@@ -5438,18 +5351,17 @@
       let html = '';
 
       if (!hasGroups || filters.length <= 6) {
-        // Flat/Ungrouped list for decks like PA 3.1
+        // Flat/Ungrouped list (Strictly No Emojis)
         html += `
           <div class="filter-hub-group">
             <div class="filter-hub-group-title">
-              <span>📚 Filter Sediaan &amp; Topik</span>
+              <span>Categories &amp; Topics</span>
               <span style="font-size: 10px; color: #7788aa; font-weight: 600;">(${filteredFilters.length})</span>
             </div>
             <div class="filter-hub-chips-grid">
               ${filteredFilters.map(f => `
                 <button class="filter-hub-chip ${activeFilter === f.id ? 'active' : ''}" onclick="selectFilterFromHub('${f.id}')" title="${f.label}">
-                  <span>${f.icon === 'microscope' ? '🔬' : f.icon === 'book' ? '📖' : f.icon === 'grid' ? '▦' : f.icon === 'star' ? '⭐' : '•'}</span>
-                  <span>${f.label}</span>
+                  <span>${f.label.replace(/^[^\w\s]+/, '').trim()}</span>
                   <span class="chip-count">${f.count}</span>
                 </button>
               `).join('')}
@@ -5460,24 +5372,23 @@
         return;
       }
 
-      // Group definitions for multi-category decks (e.g. Farmakologi 3.2)
+      // Group definitions (Strictly No Emojis, English labels)
       const groups = [
-        { key: 'sistem', title: '🏥 Modul & Sistem Utama', desc: 'Sistem kardiovaskular, ginjal, respirasi, dan modul stasi praktikum' },
-        { key: 'subclass', title: '💊 Sub-Golongan Farmakologis (Target Molekuler)', desc: 'Golongan obat spesifik, reseptor, dan target enzim' },
-        { key: 'tipe', title: '📋 Tipe Pertanyaan & Algoritma Klinis', desc: 'Resep dokter, mekanisme kerja, efek samping, dan perhitungan dosis' },
-        { key: 'arsip', title: '📅 Arsip Soal Ujian & Prioritas', desc: 'Bank soal tahun 2024 (Tablet Costae), 2022 (Artedium), 2021 (Alveliola)' },
-        { key: 'role', title: '🎯 Peran Terapi & Aksi Biologis', desc: 'Reliever vs Controller, Bakterisidal vs Bakteriostatik' }
+        { key: 'sistem', title: 'Main Modules & Systems', desc: 'Cardiovascular, renal, respiratory, and clinical systems' },
+        { key: 'subclass', title: 'Pharmacology & Drug Classes', desc: 'Drug classes, receptors, and molecular targets' },
+        { key: 'tipe', title: 'Question Types & Clinical Tasks', desc: 'Prescriptions, mechanisms of action, adverse effects, dosing' },
+        { key: 'arsip', title: 'Exam Archives & High-Yield', desc: 'Exam questions from 2024, 2022, 2021, and high priority' },
+        { key: 'role', title: 'Therapeutic Roles & Actions', desc: 'Reliever vs controller, bactericidal vs bacteriostatic' }
       ];
 
-      // Special top section for "Semua Stasi"
+      // Special top section for "All Cards"
       const allFilter = filteredFilters.find(f => f.id === 'all');
       if (allFilter && (!filterHubActiveTab || filterHubActiveTab === 'all' || filterHubActiveTab === 'sistem')) {
         html += `
           <div class="filter-hub-group">
             <div class="filter-hub-chips-grid">
               <button class="filter-hub-chip ${activeFilter === 'all' ? 'active' : ''}" onclick="selectFilterFromHub('all')" style="font-weight: 800; border-width: 2px;">
-                <span>🌐</span>
-                <span>${allFilter.label}</span>
+                <span>${allFilter.label.replace(/^[^\w\s]+/, '').trim()}</span>
                 <span class="chip-count">${allFilter.count}</span>
               </button>
             </div>
@@ -5499,8 +5410,7 @@
             <div class="filter-hub-chips-grid">
               ${groupFilters.map(f => `
                 <button class="filter-hub-chip ${activeFilter === f.id ? 'active' : ''}" onclick="selectFilterFromHub('${f.id}')" title="${f.label}">
-                  <span>${f.icon === 'grid' ? '▦' : f.icon === 'heart' ? '♥' : f.icon === 'droplet' ? '💧' : f.icon === 'feather' ? '🪶' : f.icon === 'shield' ? '🛡️' : f.icon === 'crosshair' ? '🎯' : f.icon === 'thermometer' ? '🌡️' : f.icon === 'archive' ? '📦' : f.icon === 'star' ? '⭐' : f.icon === 'calendar' ? '📅' : f.icon === 'edit' ? '📝' : f.icon === 'zap' ? '⚡' : '•'}</span>
-                  <span>${f.label}</span>
+                  <span>${f.label.replace(/^[^\w\s]+/, '').trim()}</span>
                   <span class="chip-count">${f.count}</span>
                 </button>
               `).join('')}
@@ -5512,52 +5422,16 @@
       body.innerHTML = html;
     }
 
+    // Updates the single Filter Hub button badge
     function renderQuickFilterBar() {
-      const containerEl = document.querySelector('.quick-filter-container');
-      const scrollEl = document.getElementById('quickFilterScroll');
       const badgeEl = document.getElementById('quickFilterHubCountBadge');
-      const hubBtn = document.getElementById('btnOpenFilterHub');
-      if (!scrollEl) return;
-
       const filters = getActiveFiltersList();
-      const isCompact = filters.length <= 6;
-
-      if (containerEl) {
-        containerEl.classList.toggle('is-compact', isCompact);
+      const current = filters.find(f => f.id === activeFilter) || { label: 'All', count: filteredBase.length };
+      if (badgeEl) {
+        badgeEl.textContent = activeFilter === 'all' 
+          ? `ALL (${filteredBase.length})` 
+          : `${(current.badge || activeFilter).substring(0, 5).toUpperCase()} (${filteredBase.length})`;
       }
-
-      if (badgeEl) badgeEl.textContent = filters.length;
-      if (hubBtn) {
-        hubBtn.style.display = isCompact ? 'none' : 'inline-flex';
-        hubBtn.title = `Buka Filter Hub Lengkap (${filters.length} Kategori) [F]`;
-      }
-
-      let quickFilters = [];
-
-      if (isCompact) {
-        // When deck has <= 6 filters (e.g. PA 3.1 with 3 filters), show all filters directly on the quick bar
-        quickFilters = [...filters];
-      } else {
-        // Select top key filters for the quick horizontal scroll (e.g. Farmako 3.2 with 51 filters)
-        const popularIds = ['all', 'prioritas', 'resep', 'th-2024', 'kardio', 'respirasi', 'diuretik', 'asma-ppok', 'oat', 'pneumonia', 'faringitis-batuk-flu', 'loop', 'beta-blocker', 'ccb', 'acei', 'arb'];
-        popularIds.forEach(pid => {
-          const found = filters.find(f => f.id === pid);
-          if (found) quickFilters.push(found);
-        });
-
-        // Also ensure current active filter is visible in the quick scroll if not already
-        if (!quickFilters.some(f => f.id === activeFilter)) {
-          const cur = filters.find(f => f.id === activeFilter);
-          if (cur) quickFilters.splice(1, 0, cur);
-        }
-      }
-
-      scrollEl.innerHTML = quickFilters.map(f => `
-        <button class="quick-filter-chip ${activeFilter === f.id ? 'active' : ''}" onclick="setFilter('${f.id}')" title="${f.label}">
-          <span>${f.label.split('(')[0].trim()}</span>
-          <span class="chip-badge">${f.count}</span>
-        </button>
-      `).join('');
     }
 
     function applyDeckFilterAndMode(resetIndex = true) {
@@ -5766,6 +5640,13 @@
       }
     }
 
+    
+    function playClickSound() {
+      playTone(420, 'sine', 0.05);
+    }
+    function playSelectSound() {
+      playTone(560, 'sine', 0.08);
+    }
     function toggleAudioMute() {
       isAudioMuted = !isAudioMuted;
       try {
@@ -6416,7 +6297,7 @@
               <div class="review-study-theory-content">
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                   <span class="review-study-theory-badge">${badgeText}</span>
-                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:var(--white); color:var(--primary-deep); padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:var(--white); color:var(--primary-deep); padding:2px 8px; border-radius:999px;">HIGH PRIORITY</span>` : ''}
                 </div>
                 <div style="font-size: clamp(1rem, 1.8vw, 1.22rem); font-weight: 800; color: #ffffff; line-height: 1.4; margin-top: 4px;">
                   ${card.stimulus ? escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim()) : (card.diagnosis || '')}
@@ -6611,7 +6492,7 @@
               <div class="review-reveal-theory-content">
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                   <span class="review-reveal-theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS'}</span>
-                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:var(--white); color:var(--primary-deep); padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+                  ${card.prioritas_tinggi ? `<span style="font-size:9.5px; font-weight:800; background:var(--white); color:var(--primary-deep); padding:2px 8px; border-radius:999px;">HIGH PRIORITY</span>` : ''}
                 </div>
                 <div style="font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 800; color: #ffffff; line-height: 1.4; margin-top: 4px;">
                   ${card.stimulus ? escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim()) : (card.diagnosis || '')}
@@ -6635,7 +6516,7 @@
           resepSectionHtml = `
             <div class="review-info-section">
               <div class="review-info-heading" style="color: #172b7a; display: flex; align-items: center; justify-content: space-between;">
-                <span>📝 RESEP LENGKAP DOKTER</span>
+                <span>OFFICIAL PRESCRIPTION</span>
                 <span style="font-size: 9px; background: #e0ebff; color: #172b7a; padding: 2px 7px; border-radius: 999px;">OFFICIAL PRESCRIPTION</span>
               </div>
               <div style="background-color: #f7f9ff; border: 1.5px solid #c2cff2; border-radius: 9px; padding: 10px 12px; font-family: monospace; font-size: 11.5px; line-height: 1.45; white-space: pre-wrap; color: #172b7a;">
@@ -6649,7 +6530,7 @@ ${card.resep_teks}
         if (card.tips_klinis) {
           tipsSectionHtml = `
             <div class="review-info-section">
-              <div class="review-info-heading" style="color: var(--primary-deep);">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</div>
+              <div class="review-info-heading" style="color: var(--primary-deep);">CLINICAL WARNINGS &amp; EXAM TIPS</div>
               <div style="background-color: #f6f8fe; border: 1.5px solid var(--primary-deep); border-radius: 9px; padding: 10px 12px; font-size: 12px; line-height: 1.5; color: var(--primary-deep);">
                 ${formatBold(card.tips_klinis)}
               </div>
@@ -6680,7 +6561,7 @@ ${card.resep_teks}
                 <!-- KUNCI JAWABAN PERSIS UJIAN (1-2 BARIS TO-THE-POINT) -->
                 <div class="review-info-section">
                   <div class="review-info-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
-                    🎯 KUNCI JAWABAN PERSIS UJIAN (TO-THE-POINT)
+                    EXAM KEY ANSWERS
                   </div>
                   <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
                     <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:8px; padding:9px 12px;">
@@ -6700,7 +6581,7 @@ ${card.resep_teks}
                 ${(card.jawaban_lengkap || card.resep_teks) ? `
                   <details style="margin-top:10px; background:#f7f9ff; border:1px solid #c9d7ff; border-radius:8px; padding:7px 11px;">
                     <summary style="cursor:pointer; font-size:11.5px; font-weight:700; color:var(--primary-deep); user-select:none;">
-                      📖 Pembahasan Lengkap &amp; Resep Resmi (Klik untuk Membuka)
+                      Full Clinical Notes &amp; Prescription (Klik untuk Membuka)
                     </summary>
                     <div style="margin-top:8px; font-size:12.5px; line-height:1.55; color:#172b7a; white-space:pre-line;">
                       ${card.resep_teks ? `
@@ -7034,7 +6915,7 @@ ${card.resep_teks}
 
     function renderTheoryCardContent(card) {
       const isFarmako = card.category && card.category.includes('FARMAKO');
-      let badgeLabel = isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI PRAKTIKUM';
+      let badgeLabel = isFarmako ? (card.asal || 'PHARMACOLOGY') : 'THEORY PRACTICE';
       if (isFarmako && card.asal) {
         badgeLabel = card.asal.replace(/\s*•\s*Stasi\s*\d+/i, '').trim();
       }
@@ -7062,12 +6943,12 @@ ${card.resep_teks}
                 <span class="theory-window-badge">${badgeLabel}</span>
                 ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
               </div>
-              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
+              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="High Priority Exam Station">PRIORITY</span>` : ''}
             </div>
 
             ${stimulusText ? `
               <div class="theory-stimulus-bar">
-                <span class="stimulus-tag">SEDIAAN</span>
+                <span class="stimulus-tag">PROMPT</span>
                 <span class="stimulus-text">${escapeHtml(stimulusText)}</span>
               </div>
             ` : ''}
@@ -7099,12 +6980,12 @@ ${card.resep_teks}
                 <span class="theory-window-badge">${badgeLabel}</span>
                 ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
               </div>
-              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="Soal Prioritas Tinggi Meja Ujian">★ PRIORITAS</span>` : ''}
+              ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="High Priority Exam Station">PRIORITY</span>` : ''}
             </div>
 
             ${stimulusText ? `
               <div class="theory-stimulus-bar">
-                <span class="stimulus-tag">SEDIAAN</span>
+                <span class="stimulus-tag">PROMPT</span>
                 <span class="stimulus-text">${escapeHtml(stimulusText)}</span>
               </div>
             ` : ''}
@@ -7141,14 +7022,14 @@ ${card.resep_teks}
         let contentWindowHtml = '';
         const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
         const isFarmako = card.category && card.category.includes('FARMAKO');
-        let bannerLabel = card.type === 'preparat' ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`;
+        let bannerLabel = card.type === 'preparat' ? `CARD ${cardNum}` : `THEORY ${cardNum}`;
         if (isFarmako) {
-          bannerLabel = `STASI ${cardNum} • FARMAKO`;
+          bannerLabel = `STATION ${cardNum}`;
         }
 
         if (card.type === 'preparat' && card.image) {
           contentWindowHtml = `
-            <img src="${card.image}" alt="Sediaan" class="card-specimen-img">
+            <img src="${card.image}" alt="Card" class="card-specimen-img">
           `;
         } else {
           contentWindowHtml = renderTheoryCardContent(card);
@@ -7171,7 +7052,7 @@ ${card.resep_teks}
               </div>
               <div class="card-banner-title">${bannerLabel}</div>
               <div class="card-banner-actions">
-                <button class="card-banner-btn btn-reveal" onclick="openRevealModal(); event.stopPropagation();" title="Reveal Details [Space]" aria-label="Reveal Details">
+                <button class="card-banner-btn btn-reveal" onclick="openRevealModal(); event.stopPropagation();" title="Flip Card [Space]" aria-label="Flip Card">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -7201,12 +7082,6 @@ ${card.resep_teks}
       });
     }
 
-    // =======================================================
-    // CONTROLLED 3D FAN POSITIONS (ZERO OVERFLOW, ZERO COLLISION)
-    // - Active card in center: Large (scale 1.08), thick border, z-index 50
-    // - Neighbor cards flank seamlessly with precise 70px overlap (no gaps!)
-    // - All cards 100% solid (opacity: 1), zero black shadows
-    // =======================================================
     function updateCardPositions(animate = true, isRapid = false, rapidDir = null) {
       const total = sessionCards.length;
       if (total === 0) return;
@@ -7214,7 +7089,6 @@ ${card.resep_teks}
       const cards = Array.from(stage3D.querySelectorAll('.big-card'));
 
       cards.forEach((cardEl, idx) => {
-        // Calculate shortest circular offset from currentIndex: -total/2 to +total/2
         let offset = idx - currentIndex;
         while (offset > total / 2) offset -= total;
         while (offset < -total / 2) offset += total;
@@ -7222,26 +7096,23 @@ ${card.resep_teks}
         if (!animate) {
           cardEl.style.transition = 'none';
         } else if (isRapid) {
-          // Snappy dynamic transition during rapid riffle streaming (60-120fps sync)
           cardEl.style.transition = 'transform 0.075s linear, border-color 0.1s ease';
         } else {
-          // Elastic spring settle on resting release
           cardEl.style.transition = 'transform 0.45s cubic-bezier(0.16, 1.15, 0.3, 1), border-color 0.25s ease';
         }
 
-        // Display only cards within visible fan distance (-3 to +3)
         if (Math.abs(offset) > 3) {
           cardEl.style.opacity = '0';
           cardEl.style.pointerEvents = 'none';
           cardEl.style.visibility = 'hidden';
           const dir = offset > 0 ? 1 : -1;
-          cardEl.style.transform = `translateX(${dir * 520}px) translateZ(-280px) rotateY(${-dir * 45}deg) scale(0.55)`;
+          cardEl.style.transform = `translateX(${dir * 540}px) translateZ(-280px) rotateY(${-dir * 45}deg) scale(0.55)`;
           cardEl.style.zIndex = '1';
           cardEl.classList.remove('is-active');
           return;
         }
 
-        cardEl.style.opacity = '1'; /* ALL CARDS 100% SOLID - ZERO TRANSPARENCY */
+        cardEl.style.opacity = '1';
         cardEl.style.pointerEvents = 'auto';
         cardEl.style.visibility = 'visible';
 
@@ -7249,12 +7120,12 @@ ${card.resep_teks}
         const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
 
         if (offset === 0) {
-          // ACTIVE CARD: Significantly enlarged, prominent hero display
+          // ACTIVE CARD: MAX BIGGER, HERO DISPLAY
           cardEl.classList.add('is-active');
           cardEl.style.zIndex = '50';
 
-          const activeScale = isMobile ? 1.15 : (isTablet ? 1.20 : 1.25);
-          const activeZ = isMobile ? 32 : 52;
+          const activeScale = isMobile ? 1.05 : (isTablet ? 1.07 : 1.10);
+          const activeZ = isMobile ? 30 : 48;
 
           if (isRapid && rapidDir === 'next') {
             cardEl.style.transform = `translateX(0px) translateY(-5px) translateZ(${activeZ + 8}px) rotateY(-8deg) rotateZ(2deg) scale(${activeScale + 0.02})`;
@@ -7270,22 +7141,22 @@ ${card.resep_teks}
 
           let tx, tz, ry, sc, zi;
           if (absOff === 1) {
-            tx = dir * (isMobile ? 140 : (isTablet ? 180 : 225));
-            tz = isMobile ? -45 : -60;
+            tx = dir * (isMobile ? 140 : (isTablet ? 210 : 280));
+            tz = isMobile ? -50 : -70;
             ry = -dir * (isMobile ? 16 : 22);
-            sc = isMobile ? 0.78 : (isTablet ? 0.80 : 0.82);
+            sc = isMobile ? 0.76 : (isTablet ? 0.78 : 0.80);
             zi = 40;
           } else if (absOff === 2) {
-            tx = dir * (isMobile ? 235 : (isTablet ? 300 : 365));
-            tz = isMobile ? -90 : -130;
+            tx = dir * (isMobile ? 240 : (isTablet ? 340 : 450));
+            tz = isMobile ? -100 : -140;
             ry = -dir * (isMobile ? 26 : 34);
-            sc = isMobile ? 0.64 : (isTablet ? 0.66 : 0.68);
+            sc = isMobile ? 0.60 : (isTablet ? 0.63 : 0.66);
             zi = 30;
           } else {
-            tx = dir * (isMobile ? 315 : (isTablet ? 395 : 480));
-            tz = isMobile ? -140 : -190;
+            tx = dir * (isMobile ? 320 : (isTablet ? 450 : 580));
+            tz = isMobile ? -150 : -200;
             ry = -dir * (isMobile ? 34 : 42);
-            sc = isMobile ? 0.50 : (isTablet ? 0.53 : 0.55);
+            sc = isMobile ? 0.46 : (isTablet ? 0.50 : 0.52);
             zi = 20;
           }
 
@@ -7305,42 +7176,21 @@ ${card.resep_teks}
       const isFarmako = curCard.category && curCard.category.includes('FARMAKO');
       const isPrep = curCard.type === 'preparat' && !isFarmako;
       const cardNum = curCard.id ? String(curCard.id).padStart(2, '0') : String(currentIndex + 1).padStart(2, '0');
-      const labelText = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
+      const labelText = isFarmako ? `STATION ${cardNum}` : (isPrep ? `CARD ${cardNum}` : `THEORY ${cardNum}`);
       const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-      if (isFarmako) {
-        activeIndicatorTitle.textContent = `${labelText} • ${curCard.sub_class || curCard.sifat || 'FARMAKOLOGI'}`;
-        activeIndicatorDesc.textContent = isTouch
-          ? 'Ketuk untuk melihat kunci jawaban, mekanisme & resep'
-          : 'Klik atau tekan Spasi untuk melihat kunci jawaban, mekanisme & resep';
-      } else {
-        activeIndicatorTitle.textContent = `${labelText} • ${isPrep ? 'HISTOPATOLOGI' : 'TEORI & KASUS'}`;
-        activeIndicatorDesc.textContent = isPrep 
-          ? (isTouch ? 'Geser sediaan • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati sediaan mikroskopik • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan')
-          : (isTouch ? 'Soal teori praktikum • Ketuk untuk melihat diagnosis & pembahasan' : 'Amati soal kasus/teori • Klik atau tekan Spasi untuk melihat diagnosis & pembahasan');
-      }
+      const categoryDesc = isFarmako 
+        ? (curCard.sub_class || curCard.sifat || 'PHARMACOLOGY') 
+        : (isPrep ? 'HISTOPATHOLOGY' : 'THEORY & CLINICAL');
 
-      barTrackName.textContent = labelText;
-      barSubCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+      activeIndicatorTitle.textContent = `${labelText} // ${String(total).padStart(2, '0')} • ${categoryDesc}`;
+      activeIndicatorDesc.textContent = isTouch
+        ? 'Tap or swipe up to flip card • Swipe left/right to browse'
+        : 'Click or press Space to flip card • Left/Right or A/D to browse';
+
+      if (barTrackName) barTrackName.textContent = labelText;
+      if (barSubCount) barSubCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
     }
-
-    // =======================================================
-    // VARIED CASINO & CARDISTRY SHUFFLE SUITE (5 DIVERSE STYLES)
-    // 1. Riffle & Waterfall Bridge (Classic Vegas Deck Shuffle)
-    // 2. Casino Felt Table Wash & Swirl Vortex
-    // 3. Cardistry Parabolic Deck Spring
-    // 4. Overhand Triple Packet Cut & Stripping
-    // 5. 3D Helix Cyclone Tornado
-    // =======================================================
-    let shuffleStyleIndex = 0;
-
-    const SHUFFLE_STYLES = [
-      { id: 'riffle', name: 'Riffle Shuffle', fn: runRiffleBridgeShuffle },
-      { id: 'wash', name: 'Table Wash', fn: runTableWashShuffle },
-      { id: 'spring', name: 'Card Spring', fn: runCardSpringShuffle },
-      { id: 'cut', name: 'Triple Cut', fn: runTripleCutShuffle },
-      { id: 'helix', name: 'Cyclone Shuffle', fn: runHelixCycloneShuffle },
-    ];
 
     function startRealisticShuffle(forcedStyleIndex = null) {
       if (isShuffling) return;
@@ -7868,37 +7718,27 @@ ${card.resep_teks}
       if (!btn) return;
 
       const filters = getActiveFiltersList();
-      const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'Semua Kartu', badge: 'ALL' };
+      const current = filters.find(f => f.id === activeFilter) || filters[0] || { id: 'all', label: 'All Cards', badge: 'ALL' };
       const shortBadge = current.badge || activeFilter.substring(0, 4).toUpperCase();
-      const isCompact = filters.length <= 6;
 
       if (activeFilter === 'all') {
         btn.classList.remove('active');
-        btn.title = isCompact 
-          ? `Ganti Filter [Klik / F] • Aktif: Semua Kartu (${filteredBase.length})` 
-          : `Buka Filter Hub (${filters.length} Kategori) [F] • Aktif: Semua Kartu (${filteredBase.length})`;
+        btn.title = `Filter Hub [F] • Active: All Cards (${filteredBase.length})`;
         if (badge) badge.textContent = 'ALL';
       } else {
         btn.classList.add('active');
-        btn.title = isCompact 
-          ? `Ganti Filter [Klik / F] • Aktif: ${current.label} (${filteredBase.length})` 
-          : `Buka Filter Hub (${filters.length} Kategori) [F] • Aktif: ${current.label} (${filteredBase.length})`;
+        btn.title = `Filter Hub [F] • Active: ${current.label} (${filteredBase.length})`;
         if (badge) badge.textContent = shortBadge;
       }
+
+      // Also sync single header filter hub badge
+      renderQuickFilterBar();
     }
 
     function cycleFilter() {
-      if (isShuffling) return;
-      const filters = getActiveFiltersList();
-      if (!filters || filters.length === 0) return;
-      let curIdx = filters.findIndex(f => f.id === activeFilter);
-      if (curIdx === -1) curIdx = 0;
-      const nextIdx = (curIdx + 1) % filters.length;
-      const nextFilter = filters[nextIdx];
-      setFilter(nextFilter.id);
+      openFilterHubModal();
     }
 
-    // Toggle between Mode Urut (Sequential) and Mode Acak (Shuffle / Gambling)
     function setPlayMode(mode) {
       if (isShuffling) return;
       if (mode === 'sequential') {
@@ -7911,17 +7751,11 @@ ${card.resep_teks}
     function setFilter(filterType) {
       if (isShuffling) return;
       activeFilter = filterType;
-      const btnAll = document.getElementById('btnFilterAll');
-      const btnPrep = document.getElementById('btnFilterPrep');
-      const btnTeori = document.getElementById('btnFilterTeori');
-      if (btnAll) btnAll.classList.toggle('active', filterType === 'all');
-      if (btnPrep) btnPrep.classList.toggle('active', filterType === 'preparat');
-      if (btnTeori) btnTeori.classList.toggle('active', filterType === 'teori');
 
       applyDeckFilterAndMode(true);
       const filters = getActiveFiltersList();
       const curF = filters.find(f => f.id === filterType);
-      showToast('Filter Aktif', curF ? `${curF.label} • ${sessionCards.length} Kartu` : `${sessionCards.length} Kartu`);
+      showToast('Filter Applied', curF ? `${curF.label} • ${sessionCards.length} Cards` : `${sessionCards.length} Cards`);
       updateSettingsUI();
       updateDockFilterUI();
       renderQuickFilterBar();
@@ -8180,19 +8014,19 @@ ${card.resep_teks}
       const isFarmako = card.category && card.category.includes('FARMAKO');
       const isPrep = card.type === 'preparat' && !isFarmako;
       const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
-      const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
-      modalTypeBadge.textContent = isFarmako ? 'STASI FARMAKOLOGI' : (isPrep ? 'SEDIAAN HISTOPATOLOGI' : 'SOAL TEORI & KASUS');
+      const cardLabel = isFarmako ? `STATION ${cardNum}` : (isPrep ? `CARD ${cardNum}` : `THEORY ${cardNum}`);
+      modalTypeBadge.textContent = isFarmako ? 'PHARMACOLOGY' : (isPrep ? 'HISTOPATHOLOGY' : 'THEORY & CLINICAL');
       modalIndexText.textContent = `${cardLabel} • ${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
-      // LEFT COLUMN: High-res image or Theory vignette box
+      // LEFT COLUMN: High-res image or Theory prompt box
       if (card.type === 'preparat' && card.image) {
         modalLeftPane.innerHTML = `
           <div class="specimen-image-container">
-            <img class="specimen-img" src="${card.image}" alt="Sediaan Histopatologi" onclick="openLightbox('${card.image}')">
+            <img class="specimen-img" src="${card.image}" alt="Specimen Image" onclick="openLightbox('${card.image}')">
           </div>
           <div class="image-sub-bar">
-            <span>Sediaan Histopatologi</span>
-            <button class="zoom-btn" onclick="openLightbox('${card.image}')" title="Perbesar Gambar" aria-label="Perbesar Gambar">
+            <span>Histopathology Specimen</span>
+            <button class="zoom-btn" onclick="openLightbox('${card.image}')" title="Zoom Image" aria-label="Zoom Image">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -8208,26 +8042,26 @@ ${card.resep_teks}
           questionsHtml = `
             ${card.stimulus ? `
               <div style="background:#f4f7fe; border:1.5px solid #c9d7ff; border-radius:10px; padding:10px 14px; margin-bottom:14px;">
-                <span style="font-size:10px; font-weight:800; color:var(--primary-deep); letter-spacing:1px; display:block; margin-bottom:3px;">STIMULUS &amp; SEDIAAN OBAT</span>
+                <span style="font-size:10px; font-weight:800; color:var(--primary-deep); letter-spacing:1px; display:block; margin-bottom:3px;">CLINICAL STIMULUS &amp; DRUG</span>
                 <div style="font-size:14px; font-weight:700; color:#172b7a;">${escapeHtml(card.stimulus.replace(/^\[|\]$/g, ''))}</div>
               </div>
             ` : ''}
 
             <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:10px; padding:12px 14px;">
-                <div style="font-size:11px; font-weight:800; color:var(--primary-deep); margin-bottom:4px; letter-spacing:0.8px;">PERTANYAAN A // MEKANISME KERJA MOLEKULER</div>
+                <div style="font-size:11px; font-weight:800; color:var(--primary-deep); margin-bottom:4px; letter-spacing:0.8px;">QUESTION A // MECHANISM OF ACTION</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a;">${formatQuestionText(card.soal_a)}</div>
               </div>
 
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:10px; padding:12px 14px;">
-                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px; letter-spacing:0.8px;">PERTANYAAN B // GOLONGAN, SEDIAAN, EFEK SAMPING &amp; RESEP</div>
+                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px; letter-spacing:0.8px;">QUESTION B // CLASS, FORMULATION, ADVERSE EFFECTS &amp; RX</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a;">${formatQuestionText(card.soal_b)}</div>
               </div>
             </div>
           `;
         } else {
           questionsHtml = `
-            <p style="margin-bottom: 12px;"><strong>${isFarmako ? 'Stimulus & Pertanyaan Ujian:' : 'Kasus / Skenario Soal:'}</strong></p>
+            <p style="margin-bottom: 12px;"><strong>${isFarmako ? 'Stimulus & Question:' : 'Clinical Scenario & Question:'}</strong></p>
             <div style="font-size: 14.5px; line-height: 1.6; margin-bottom: 16px; white-space: pre-line;">${formatQuestionText(card.prompt)}</div>
           `;
         }
@@ -8235,15 +8069,15 @@ ${card.resep_teks}
         modalLeftPane.innerHTML = `
           <div class="theory-station-box">
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
-              <span class="theory-badge">${isFarmako ? (card.asal || 'STASI FARMAKOLOGI') : 'SOAL TEORI & KASUS PRAKTIKUM'}</span>
+              <span class="theory-badge">${isFarmako ? (card.asal || 'PHARMACOLOGY') : 'THEORY & CLINICAL PRACTICE'}</span>
               ${card.sub_class ? `<span style="font-size:10.5px; font-weight:700; background:#e8f0fe; color:var(--primary-deep); padding:2px 9px; border-radius:999px;">${escapeHtml(card.sub_class)}</span>` : ''}
-              ${card.prioritas_tinggi ? `<span style="font-size:10px; font-weight:800; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:999px;">★ PRIORITAS TINGGI</span>` : ''}
+              ${card.prioritas_tinggi ? `<span style="font-size:10px; font-weight:800; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:999px;">HIGH PRIORITY</span>` : ''}
             </div>
             <div class="theory-station-title">${card.diagnosis}</div>
             <div class="theory-station-text">
               ${questionsHtml}
               <p style="font-size: 13.5px; color: var(--primary); font-weight: 600;">
-                ${currentPack?.subtitle || currentPack?.packName || 'Stasiun soal teori & identifikasi praktikum.'}
+                ${currentPack?.subtitle || currentPack?.packName || 'Clinical identification & practical question drill.'}
               </p>
             </div>
           </div>
@@ -8272,8 +8106,8 @@ ${card.resep_teks}
         resepSectionHtml = `
           <div class="section-block">
             <div class="section-heading" style="color: #172b7a; display: flex; align-items: center; justify-content: space-between;">
-              <span>📝 RESEP LENGKAP DOKTER</span>
-              <span style="font-size: 10px; background: #e0ebff; color: #172b7a; padding: 2px 7px; border-radius: 999px;">OFFICIAL PRESCRIPTION</span>
+              <span>OFFICIAL PRESCRIPTION</span>
+              <span style="font-size: 10px; background: #e0ebff; color: #172b7a; padding: 2px 7px; border-radius: 999px;">FORMULA</span>
             </div>
             <div style="background-color: #f7f9ff; border: 1.5px solid #c2cff2; border-radius: 10px; padding: 12px 14px; font-family: monospace; font-size: 12.5px; line-height: 1.5; white-space: pre-wrap; color: #172b7a;">
 ${card.resep_teks}
@@ -8286,7 +8120,7 @@ ${card.resep_teks}
       if (card.tips_klinis) {
         tipsSectionHtml = `
           <div class="section-block">
-            <div class="section-heading" style="color: var(--primary-deep);">⚠️ TIPS MEJA UJIAN &amp; PERINGATAN KLINIS</div>
+            <div class="section-heading" style="color: var(--primary-deep);">CLINICAL WARNINGS &amp; EXAM TIPS</div>
             <div style="background-color: #f6f8fe; border: 1.5px solid var(--primary-deep); border-radius: 10px; padding: 10px 14px; font-size: 13px; line-height: 1.55; color: var(--primary-deep);">
               ${formatBold(card.tips_klinis)}
             </div>
@@ -8297,45 +8131,45 @@ ${card.resep_teks}
       modalRightPane.innerHTML = `
         <div class="diag-title-row">
           <div class="diag-heading">${card.diagnosis}</div>
-          <div class="diag-organ">${isFarmako ? 'Target Organ / Reseptor' : 'Organ / Lokasi'}: ${card.organ}</div>
+          <div class="diag-organ">${isFarmako ? 'Target Organ / Receptor' : 'Organ / Location'}: ${card.organ}</div>
         </div>
 
         <div class="id-grid-box">
           <div class="id-grid-cell">
-            <div class="cell-label">${isFarmako ? 'Golongan & Klasifikasi' : 'Klasifikasi / Sifat Jejas'}</div>
+            <div class="cell-label">${isFarmako ? 'Class & Classification' : 'Lesion Nature'}</div>
             <div class="cell-value">${card.sifat}</div>
           </div>
           <div class="id-grid-cell">
-            <div class="cell-label">${isFarmako ? 'Modul / Praktikum' : 'Asal Jaringan / Organ'}</div>
+            <div class="cell-label">${isFarmako ? 'Module' : 'Tissue / Origin'}</div>
             <div class="cell-value">${card.asal}</div>
           </div>
         </div>
 
         ${isFarmako ? `
-          <!-- KUNCI JAWABAN PERSIS UJIAN (1-2 BARIS TO-THE-POINT) -->
+          <!-- EXAM KEY ANSWERS -->
           <div class="section-block" style="margin-bottom:14px;">
             <div class="section-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
-              🎯 KUNCI JAWABAN PERSIS UJIAN (TO-THE-POINT)
+              EXAM KEY ANSWERS (HIGH YIELD)
             </div>
             <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Mekanisme Kerja')}</div>
+                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Mechanism of Action')}</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
               </div>
               ${card.jawaban_b ? `
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Golongan / Dosis / Resep')}</div>
+                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Class / Dosing / Prescription')}</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
               </div>
               ` : ''}
             </div>
           </div>
 
-          <!-- COLLAPSIBLE PEMBAHASAN LENGKAP & RESEP (OPSIONAL / REFERENSI) -->
+          <!-- COLLAPSIBLE FULL NOTES & RX -->
           ${(card.jawaban_lengkap || card.resep_teks) ? `
             <details style="background:#f7f9ff; border:1px solid #c9d7ff; border-radius:9px; padding:10px 14px; margin-bottom:14px;">
               <summary style="cursor:pointer; font-size:12px; font-weight:700; color:var(--primary-deep); user-select:none;">
-                📖 Pembahasan Lengkap &amp; Resep Resmi (Klik untuk Membuka)
+                Full Clinical Notes &amp; Official Prescription (Click to Open)
               </summary>
               <div style="margin-top:10px; font-size:13px; line-height:1.6; color:#172b7a; white-space:pre-line;">
                 ${card.resep_teks ? `
@@ -8349,17 +8183,17 @@ ${card.resep_teks}
           ` : ''}
           ${tipsSectionHtml}
         ` : `
-          <!-- CIRI KHAS / JAWABAN B -->
+          <!-- KEY HISTOPATHOLOGY FEATURES -->
           <div class="section-block">
-            <div class="section-heading">CIRI KHAS HISTOPATOLOGI</div>
+            <div class="section-heading">KEY HISTOPATHOLOGIC FEATURES</div>
             <div class="highlight-box">
               <ul class="point-list">${ciriList}</ul>
             </div>
           </div>
 
-          <!-- JAWABAN LENGKAP / MEKANISME -->
+          <!-- ETIOLOGY & PATHOGENESIS -->
           <div class="section-block">
-            <div class="section-heading">ETIOLOGI & PATOGENESIS</div>
+            <div class="section-heading">ETIOLOGY &amp; PATHOGENESIS</div>
             <div class="highlight-box">
               <ul class="point-list">${mekanismeList}</ul>
             </div>
@@ -8368,9 +8202,9 @@ ${card.resep_teks}
           ${resepSectionHtml}
           ${tipsSectionHtml}
 
-          <!-- KATA KUNCI IDENTIFIKASI -->
+          <!-- KEYWORDS -->
           <div class="section-block">
-            <div class="section-heading">KATA KUNCI IDENTIFIKASI</div>
+            <div class="section-heading">IDENTIFICATION KEYWORDS</div>
             <div class="keyword-capsule-box">${keywordsStr}</div>
           </div>
         `}
@@ -8444,7 +8278,7 @@ ${card.resep_teks}
         isShuffling = false;
         const targetCard = sessionCards[targetIdx];
         const cardNum = targetCard && targetCard.id ? String(targetCard.id).padStart(2, '0') : String(targetIdx + 1).padStart(2, '0');
-        showToast('Picked Random Card', `Sediaan ${cardNum}`);
+        showToast('Picked Random Card', `Card ${cardNum}`);
       });
     }
 
@@ -8845,7 +8679,7 @@ ${card.resep_teks}
       if (e.key === 'h' || e.key === 'H') { window.location.href = 'index.html'; return; }
       if (e.key === 'o' || e.key === 'O') { openSettingsModal(); return; }
       if (e.key === 'p' || e.key === 'P') {
-        showToast('Deck Selection', 'Pilih atau gabungkan deck di Lobby [H]');
+        showToast('Deck Selection', 'Select or merge decks in Lobby [H]');
         return;
       }
       if (e.key === 'Escape') {
