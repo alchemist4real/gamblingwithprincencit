@@ -42,7 +42,7 @@
     },
     {
       "id": "diuretik",
-      "label": "Modul 1.1: Diuretik",
+      "label": "Diuretik",
       "icon": "droplet",
       "group": "sistem",
       "badge": "DIUR",
@@ -50,7 +50,7 @@
     },
     {
       "id": "simpatolitik-ccb",
-      "label": "Modul 1.2: Simpatolitik & CCB",
+      "label": "Simpatolitik & CCB",
       "icon": "activity",
       "group": "sistem",
       "badge": "CCB",
@@ -58,7 +58,7 @@
     },
     {
       "id": "raas",
-      "label": "Modul 1.3: RAAS Inhibitors",
+      "label": "RAAS Inhibitors",
       "icon": "shield",
       "group": "sistem",
       "badge": "RAAS",
@@ -66,7 +66,7 @@
     },
     {
       "id": "vasodilator",
-      "label": "Modul 1.4: Vasodilator & Nitrat",
+      "label": "Vasodilator & Nitrat",
       "icon": "zap",
       "group": "sistem",
       "badge": "VASO",
@@ -74,7 +74,7 @@
     },
     {
       "id": "asma-ppok",
-      "label": "Modul 2.1: Asma & PPOK",
+      "label": "Asma & PPOK",
       "icon": "feather",
       "group": "sistem",
       "badge": "ASMA",
@@ -82,7 +82,7 @@
     },
     {
       "id": "oat",
-      "label": "Modul 2.2: Obat Anti Tuberkulosis (OAT)",
+      "label": "Obat TB",
       "icon": "archive",
       "group": "sistem",
       "badge": "OAT",
@@ -90,7 +90,7 @@
     },
     {
       "id": "pneumonia",
-      "label": "Modul 2.3: Pneumonia & Antibiotik",
+      "label": "Pneumonia & Antibiotik",
       "icon": "crosshair",
       "group": "sistem",
       "badge": "PNEU",
@@ -98,7 +98,7 @@
     },
     {
       "id": "faringitis-batuk-flu",
-      "label": "Modul 2.4: Faringitis, Batuk & Flu",
+      "label": "Faringitis & Batuk",
       "icon": "thermometer",
       "group": "sistem",
       "badge": "FARI",
@@ -106,7 +106,7 @@
     },
     {
       "id": "loop",
-      "label": "Loop Diuretic (Diuretik Kuat)",
+      "label": "Diuretik Loop",
       "icon": "droplet",
       "group": "subclass",
       "badge": "LOOP",
@@ -114,7 +114,7 @@
     },
     {
       "id": "tiazid",
-      "label": "Diuretik Tiazid & Tiazid-Like",
+      "label": "Diuretik Tiazid",
       "icon": "droplet",
       "group": "subclass",
       "badge": "TIAZ",
@@ -122,7 +122,7 @@
     },
     {
       "id": "k-sparing",
-      "label": "Diuretik Hemat Kalium (K+-Sparing)",
+      "label": "Diuretik Hemat K⁺",
       "icon": "shield",
       "group": "subclass",
       "badge": "K-SP",
@@ -130,7 +130,7 @@
     },
     {
       "id": "beta-blocker",
-      "label": "Beta-Adrenergic Blocker (β-Blocker)",
+      "label": "Beta-Blocker",
       "icon": "heart",
       "group": "subclass",
       "badge": "BETA",
@@ -138,7 +138,7 @@
     },
     {
       "id": "alfa-blocker",
-      "label": "Alfa-1 Blocker (α-Blocker)",
+      "label": "Alfa-Blocker",
       "icon": "activity",
       "group": "subclass",
       "badge": "ALFA",
@@ -146,7 +146,7 @@
     },
     {
       "id": "ccb",
-      "label": "Calcium Channel Blocker (CCB)",
+      "label": "CCB",
       "icon": "shield",
       "group": "subclass",
       "badge": "CCB",
@@ -154,7 +154,7 @@
     },
     {
       "id": "ccb-dhp",
-      "label": "CCB Dihidropiridin (Vaskular)",
+      "label": "CCB Dihidropiridin",
       "icon": "shield",
       "group": "subclass",
       "badge": "DHP",
@@ -162,7 +162,7 @@
     },
     {
       "id": "ccb-nondhp",
-      "label": "CCB Non-DHP (Kardiodepresan)",
+      "label": "CCB Non-DHP",
       "icon": "heart",
       "group": "subclass",
       "badge": "NDHP",
@@ -170,7 +170,7 @@
     },
     {
       "id": "acei",
-      "label": "ACE Inhibitor (ACEi)",
+      "label": "ACE Inhibitor",
       "icon": "shield",
       "group": "subclass",
       "badge": "ACEI",
@@ -178,7 +178,7 @@
     },
     {
       "id": "arb",
-      "label": "Angiotensin Receptor Blocker (ARB)",
+      "label": "ARB",
       "icon": "shield",
       "group": "subclass",
       "badge": "ARB",
@@ -186,7 +186,7 @@
     },
     {
       "id": "nitrat",
-      "label": "Vasodilator Nitrat & Relaksan Vaskular",
+      "label": "Nitrat Vasodilator",
       "icon": "zap",
       "group": "subclass",
       "badge": "NITR",
@@ -194,7 +194,7 @@
     },
     {
       "id": "saba",
-      "label": "SABA (Agonis β2 Aksi Singkat)",
+      "label": "SABA",
       "icon": "feather",
       "group": "subclass",
       "badge": "SABA",
@@ -202,7 +202,7 @@
     },
     {
       "id": "laba",
-      "label": "LABA (Agonis β2 Aksi Panjang)",
+      "label": "LABA",
       "icon": "feather",
       "group": "subclass",
       "badge": "LABA",
@@ -210,7 +210,7 @@
     },
     {
       "id": "antimuskarinik",
-      "label": "Antimuskarinik Saluran Napas (SAMA/LAMA)",
+      "label": "Antimuskarinik",
       "icon": "wind",
       "group": "subclass",
       "badge": "ANTI",
@@ -218,7 +218,7 @@
     },
     {
       "id": "metilxantin",
-      "label": "Metilxantin / Inhibitor PDE (Teofilin)",
+      "label": "Metilxantin",
       "icon": "zap",
       "group": "subclass",
       "badge": "METL",
@@ -226,7 +226,7 @@
     },
     {
       "id": "ics",
-      "label": "Kortikosteroid Inhalasi & Sistemik",
+      "label": "Kortikosteroid",
       "icon": "shield",
       "group": "subclass",
       "badge": "ICS",
@@ -234,7 +234,7 @@
     },
     {
       "id": "ltra",
-      "label": "Leukotriene Receptor Antagonist (LTRA)",
+      "label": "LTRA",
       "icon": "feather",
       "group": "subclass",
       "badge": "LTRA",
@@ -242,7 +242,7 @@
     },
     {
       "id": "oat-1",
-      "label": "OAT Lini Pertama (RHZES & FDC)",
+      "label": "OAT Lini 1",
       "icon": "archive",
       "group": "subclass",
       "badge": "OAT1",
@@ -250,7 +250,7 @@
     },
     {
       "id": "oat-2",
-      "label": "OAT Lini Kedua / MDR-TB",
+      "label": "OAT Lini 2",
       "icon": "archive",
       "group": "subclass",
       "badge": "OAT2",
@@ -258,7 +258,7 @@
     },
     {
       "id": "penisilin",
-      "label": "Penisilin & Spektrum Luas (Beta-Laktam)",
+      "label": "Penisilin",
       "icon": "crosshair",
       "group": "subclass",
       "badge": "PENI",
@@ -266,7 +266,7 @@
     },
     {
       "id": "sefalosporin",
-      "label": "Sefalosporin Generasi 1–4",
+      "label": "Sefalosporin",
       "icon": "crosshair",
       "group": "subclass",
       "badge": "SEFA",
@@ -274,7 +274,7 @@
     },
     {
       "id": "makrolida",
-      "label": "Antibiotik Makrolida",
+      "label": "Makrolida",
       "icon": "crosshair",
       "group": "subclass",
       "badge": "MAKR",
@@ -282,7 +282,7 @@
     },
     {
       "id": "quinolone",
-      "label": "Fluoroquinolone Respirasi",
+      "label": "Fluoroquinolon",
       "icon": "crosshair",
       "group": "subclass",
       "badge": "QUIN",
@@ -290,7 +290,7 @@
     },
     {
       "id": "antifolat",
-      "label": "Antifolat (Kotrimoksazol)",
+      "label": "Kotrimoksazol",
       "icon": "crosshair",
       "group": "subclass",
       "badge": "FOLT",
@@ -298,7 +298,7 @@
     },
     {
       "id": "mukolitik",
-      "label": "Mukolitik & Ekspektoran Pengencer Dahak",
+      "label": "Mukolitik",
       "icon": "wind",
       "group": "subclass",
       "badge": "MUKO",
@@ -306,7 +306,7 @@
     },
     {
       "id": "antitusif",
-      "label": "Antitusif Penekan Batuk Kering",
+      "label": "Antitusif",
       "icon": "wind",
       "group": "subclass",
       "badge": "TUSI",
@@ -314,7 +314,7 @@
     },
     {
       "id": "dekongestan",
-      "label": "Dekongestan Hidung (Oral & Topikal)",
+      "label": "Dekongestan",
       "icon": "thermometer",
       "group": "subclass",
       "badge": "DEKO",
@@ -322,7 +322,7 @@
     },
     {
       "id": "antihistamin",
-      "label": "Antihistamin H1 Generasi 1 & 2",
+      "label": "Antihistamin",
       "icon": "shield",
       "group": "subclass",
       "badge": "HIST",
@@ -330,7 +330,7 @@
     },
     {
       "id": "resep",
-      "label": "📝 Kaidah Penulisan Resep Dokter",
+      "label": "Resep Dokter",
       "icon": "edit",
       "group": "tipe",
       "badge": "RESP",
@@ -338,7 +338,7 @@
     },
     {
       "id": "mekanisme",
-      "label": "🔬 Mekanisme Kerja Molekuler",
+      "label": "Mekanisme Kerja",
       "icon": "cpu",
       "group": "tipe",
       "badge": "MEKA",
@@ -346,7 +346,7 @@
     },
     {
       "id": "efek-samping",
-      "label": "⚠️ Efek Samping Khas & Kontraindikasi",
+      "label": "Efek Samping",
       "icon": "alert-triangle",
       "group": "tipe",
       "badge": "ESO",
@@ -354,7 +354,7 @@
     },
     {
       "id": "dosis",
-      "label": "⚖️ Dosis & Perhitungan Konversi Hewan",
+      "label": "Dosis Obat",
       "icon": "compass",
       "group": "tipe",
       "badge": "DOSI",
@@ -362,7 +362,7 @@
     },
     {
       "id": "prioritas",
-      "label": "⭐ Prioritas Tinggi / High-Yield",
+      "label": "Prioritas",
       "icon": "star",
       "group": "arsip",
       "badge": "STAR",
@@ -370,7 +370,7 @@
     },
     {
       "id": "th-2024",
-      "label": "📅 Ujian 2024 (Tablet Farmako Costae)",
+      "label": "Ujian 2024",
       "icon": "calendar",
       "group": "arsip",
       "badge": "2024",
@@ -378,7 +378,7 @@
     },
     {
       "id": "th-2022",
-      "label": "📅 Ujian 2022 (Artedium)",
+      "label": "Ujian 2022",
       "icon": "calendar",
       "group": "arsip",
       "badge": "2022",
@@ -386,7 +386,7 @@
     },
     {
       "id": "th-2021",
-      "label": "📅 Ujian 2021 (Alveliola)",
+      "label": "Ujian 2021",
       "icon": "calendar",
       "group": "arsip",
       "badge": "2021",
@@ -394,7 +394,7 @@
     },
     {
       "id": "reliever",
-      "label": "⚡ Reliever (Pelega Serangan Akut)",
+      "label": "Reliever",
       "icon": "zap",
       "group": "role",
       "badge": "RELI",
@@ -402,7 +402,7 @@
     },
     {
       "id": "controller",
-      "label": "🛡️ Controller (Rumatan Jangka Panjang)",
+      "label": "Controller",
       "icon": "shield",
       "group": "role",
       "badge": "CONT",
@@ -410,7 +410,7 @@
     },
     {
       "id": "bakterisidal",
-      "label": "💥 Antibiotik Bakterisidal (Membunuh)",
+      "label": "Bakterisidal",
       "icon": "crosshair",
       "group": "role",
       "badge": "SIDL",
@@ -418,7 +418,7 @@
     },
     {
       "id": "bakteriostatik",
-      "label": "🛑 Antibiotik Bakteriostatik (Menghambat)",
+      "label": "Bakteriostatik",
       "icon": "minus-circle",
       "group": "role",
       "badge": "STAT",

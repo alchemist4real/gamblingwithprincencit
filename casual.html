@@ -4090,26 +4090,41 @@
     .quick-filter-hub-btn {
       height: 30px;
       box-sizing: border-box;
-      background-color: var(--white);
-      color: var(--primary-deep);
-      border: 1.5px solid var(--white);
+      background-color: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
       border-radius: 999px;
       padding: 0 12px;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       white-space: nowrap;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       transition: all 0.18s ease;
-      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.25);
       flex-shrink: 0;
     }
     .quick-filter-hub-btn:hover {
-      background-color: #f0f4ff;
+      background-color: #ffffff;
+      color: var(--primary-deep);
+      border-color: #ffffff;
       transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(23, 43, 122, 0.25);
+    }
+    .quick-filter-hub-btn .chip-badge {
+      background-color: rgba(255, 255, 255, 0.22);
+      color: inherit;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+    .quick-filter-hub-btn:hover .chip-badge {
+      background-color: var(--primary-deep);
+      color: #ffffff;
     }
 
     /* =======================================================
