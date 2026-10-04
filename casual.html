@@ -7297,9 +7297,24 @@ ${card.resep_teks}
     }
 
     // =======================================================
-    // ULTRA-CLEAN SNAPPY CAROUSEL SHUFFLE & SEQUENTIAL SORT
+    // DEALER & MAGICIAN CARDISTRY SHUFFLE SUITE (5 STYLES)
+    // 1. Riffle & Waterfall Bridge Cascade
+    // 2. Casino Felt Table Wash & Swirl Vortex
+    // 3. Cardistry Parabolic Deck Spring
+    // 4. Overhand Triple Packet Cut & Stripping
+    // 5. 3D Helix Cyclone Tornado
     // =======================================================
-    function startRealisticShuffle() {
+    let shuffleStyleIndex = 0;
+
+    const SHUFFLE_STYLES = [
+      { id: 'riffle', name: 'Riffle Shuffle', fn: runRiffleBridgeShuffle },
+      { id: 'wash', name: 'Table Wash', fn: runTableWashShuffle },
+      { id: 'spring', name: 'Card Spring', fn: runCardSpringShuffle },
+      { id: 'cut', name: 'Triple Cut', fn: runTripleCutShuffle },
+      { id: 'helix', name: 'Cyclone Shuffle', fn: runHelixCycloneShuffle }
+    ];
+
+    function startRealisticShuffle(forcedStyleIndex = null) {
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'shuffle';
@@ -7308,17 +7323,11 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      if (typeof playRiffleSound === 'function') playRiffleSound();
-      if (typeof triggerHaptic === 'function') triggerHaptic([15, 25]);
-      if (typeof triggerControllerRumble === 'function') triggerControllerRumble(80, 0.4, 0.7);
-
-      const activeCard = stage3D ? stage3D.querySelector('.big-card.is-active') : null;
-      if (activeCard) {
-        activeCard.style.transition = 'transform 0.12s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.12s ease';
-        activeCard.style.transform = 'translateY(-24px) translateZ(40px) rotateZ(-2deg) scale(0.98)';
-      }
-
-      setTimeout(() => {
+      let finished = false;
+      const finishShuffle = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(safetyTimer);
         try {
           const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
           let shuffled = shuffleCardsArray(availableCards);
@@ -7330,18 +7339,360 @@ ${card.resep_teks}
           currentIndex = 0;
           rebuildStageCards();
           updateCardPositions(true);
-          if (typeof playDeckSlap === 'function') playDeckSlap();
-          if (typeof playChimeSound === 'function') playChimeSound();
-        } catch (e) {
-          console.error('Shuffle error:', e);
+          playChimeSound();
+          triggerHaptic([15, 30, 20]);
+          triggerControllerRumble(100, 0.45, 0.8);
+        } catch (err) {
+          console.error('Shuffle completion error:', err);
         } finally {
           isShuffling = false;
           showToast('Card Shuffled', `${sessionCards.length} Cards`);
         }
-      }, 130);
+      };
+
+      // Safety timeout so UI never hangs
+      const safetyTimer = setTimeout(() => {
+        if (isShuffling) finishShuffle();
+      }, 1500);
+
+      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
+      if (!cards.length) {
+        finishShuffle();
+        return;
+      }
+
+      const styleToRun = forcedStyleIndex !== null 
+        ? SHUFFLE_STYLES[forcedStyleIndex % SHUFFLE_STYLES.length]
+        : SHUFFLE_STYLES[shuffleStyleIndex % SHUFFLE_STYLES.length];
+      
+      shuffleStyleIndex = (shuffleStyleIndex + 1) % SHUFFLE_STYLES.length;
+
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+
+      try {
+        styleToRun.fn(cards, isMobile, isTablet, finishShuffle);
+      } catch (err) {
+        console.error('Cardistry shuffle error:', err);
+        finishShuffle();
+      }
     }
 
-    function startSequentialSort() {
+    // STYLE 1: RIFFLE SHUFFLE & WATERFALL BRIDGE CASCADE
+    function runRiffleBridgeShuffle(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 16);
+      const animatedCards = cards.slice(0, packetSize);
+
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.15s';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Split into left and right angled packets
+      setTimeout(() => {
+        const splitDist = isMobile ? 55 : (isTablet ? 75 : 95);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.2, 0.9, 0.3, 1)';
+          const isLeft = i % 2 === 0;
+          const tx = isLeft ? -splitDist : splitDist;
+          const rz = isLeft ? -5 : 5;
+          const ry = isLeft ? -8 : 8;
+          card.style.transform = `translateX(${tx}px) translateY(0px) translateZ(${(i % 8) * 0.6}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(0.96)`;
+        });
+      }, 200);
+
+      // Cascade interlocking waterfall
+      setTimeout(() => {
+        playRiffleSound();
+        animatedCards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.14s cubic-bezier(0.15, 0.9, 0.25, 1)';
+            card.style.transform = `translateX(0px) translateY(-10px) translateZ(${14 + i * 0.5}px) rotateY(0deg) rotateZ(0deg) scale(0.97)`;
+          }, i * 11);
+        });
+      }, 420);
+
+      // Waterfall bridge snap & table slap
+      setTimeout(() => {
+        playDeckSlap();
+        triggerHaptic([20, 35]);
+        triggerControllerRumble(80, 0.4, 0.7);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.12s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+        });
+      }, 680);
+
+      setTimeout(onComplete, 820);
+    }
+
+    // STYLE 2: CASINO FELT TABLE WASH & SWIRL VORTEX
+    function runTableWashShuffle(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 16);
+      const animatedCards = cards.slice(0, packetSize);
+      const total = animatedCards.length;
+
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.18s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Swirl outward into circular table wash pattern
+      setTimeout(() => {
+        playWashSwirlSound();
+        triggerControllerRumble(160, 0.3, 0.5);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.26s cubic-bezier(0.16, 0.9, 0.28, 1)';
+          const angle = (i / total) * Math.PI * 4;
+          const radius = isMobile ? (38 + (i % 4) * 14) : (58 + (i % 5) * 20);
+          const tx = Math.cos(angle) * radius;
+          const ty = Math.sin(angle) * (radius * 0.42);
+          const rz = ((i * 47) % 50) - 25;
+          const ry = ((i * 29) % 26) - 13;
+          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${(i % 6) * 2}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(0.90)`;
+        });
+      }, 180);
+
+      // Reverse swirl sweeping motion
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.22s ease-in-out';
+          const angle = (i / total) * Math.PI * 4 + Math.PI * 0.8;
+          const radius = isMobile ? (32 + (i % 4) * 12) : (48 + (i % 5) * 16);
+          const tx = Math.cos(angle) * radius;
+          const ty = Math.sin(angle) * (radius * 0.42);
+          const rz = -(((i * 47) % 50) - 25);
+          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${(i % 6) * 2}px) rotateZ(${rz}deg) scale(0.92)`;
+        });
+      }, 440);
+
+      // Vacuum gather back to center deck
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.14s cubic-bezier(0.2, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+          }, i * 5);
+        });
+        playDeckSlap();
+        triggerHaptic([20, 30]);
+      }, 660);
+
+      setTimeout(onComplete, 820);
+    }
+
+    // STYLE 3: CARDISTRY PARABOLIC DECK SPRING
+    function runCardSpringShuffle(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 14);
+      const animatedCards = cards.slice(0, packetSize);
+      const leftX = isMobile ? -75 : -100;
+
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.18s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(${leftX}px) translateY(24px) translateZ(${i * 0.4}px) rotateZ(-12deg) scale(0.92)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Spring cards one by one across high parabolic arc
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.12s ease-out';
+            const midY = isMobile ? -55 : -75;
+            card.style.transform = `translateX(0px) translateY(${midY}px) translateZ(${40 + i * 2}px) rotateY(${-10 + (i % 20)}deg) rotateZ(0deg) scale(1.01)`;
+            playRiffleTick(i);
+            if (i % 3 === 0) triggerControllerRumble(25, 0.2, 0.35);
+
+            setTimeout(() => {
+              card.style.transition = 'transform 0.11s ease-in';
+              const rightX = isMobile ? 75 : 100;
+              card.style.transform = `translateX(${rightX}px) translateY(24px) translateZ(${i * 0.4}px) rotateZ(12deg) scale(0.93)`;
+            }, 110);
+          }, i * 14);
+        });
+      }, 180);
+
+      // Slide gathered right packet squarely into center
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.16s cubic-bezier(0.18, 1, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+        });
+        playDeckSlap();
+        triggerHaptic([25, 35]);
+      }, 640);
+
+      setTimeout(onComplete, 820);
+    }
+
+    // STYLE 4: OVERHAND TRIPLE PACKET CUT & STRIPPING
+    function runTripleCutShuffle(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 16);
+      const animatedCards = cards.slice(0, packetSize);
+
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.16s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Split into 3 distinct floating packets
+      setTimeout(() => {
+        playTone(380, 'triangle', 0.08);
+        triggerHaptic(18);
+        const cutX = isMobile ? 75 : 105;
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.16, 0.9, 0.28, 1)';
+          if (i >= 10) {
+            // Top packet flies high left
+            card.style.transform = `translateX(${-cutX}px) translateY(-42px) translateZ(28px) rotateZ(-8deg) scale(0.94)`;
+          } else if (i >= 5) {
+            // Middle packet floats center
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(55px) scale(0.98)`;
+          } else {
+            // Bottom packet slides low right
+            card.style.transform = `translateX(${cutX}px) translateY(42px) translateZ(18px) rotateZ(8deg) scale(0.94)`;
+          }
+        });
+      }, 160);
+
+      // Mid-air packet crossover
+      setTimeout(() => {
+        playTone(490, 'triangle', 0.08);
+        triggerHaptic(18);
+        const cutX = isMobile ? 75 : 105;
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.18, 1, 0.3, 1)';
+          if (i >= 10) {
+            card.style.transform = `translateX(${cutX}px) translateY(36px) translateZ(18px) rotateZ(6deg) scale(0.94)`;
+          } else if (i >= 5) {
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(80px) scale(1.01)`;
+          } else {
+            card.style.transform = `translateX(${-cutX}px) translateY(-36px) translateZ(28px) rotateZ(-6deg) scale(0.94)`;
+          }
+        });
+      }, 380);
+
+      // Triple packet slam into central deck
+      setTimeout(() => {
+        playDeckSlap();
+        triggerHaptic([25, 45]);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.15s cubic-bezier(0.15, 0.9, 0.25, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        });
+      }, 600);
+
+      setTimeout(onComplete, 760);
+    }
+
+    // STYLE 5: 3D HELIX CYCLONE TORNADO
+    function runHelixCycloneShuffle(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 16);
+      const animatedCards = cards.slice(0, packetSize);
+      const total = animatedCards.length;
+
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.16s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Expand into 3D cylindrical helix spiral
+      setTimeout(() => {
+        playWashSwirlSound();
+        triggerControllerRumble(180, 0.35, 0.6);
+        const rad = isMobile ? 65 : 95;
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.26s cubic-bezier(0.12, 0.9, 0.25, 1)';
+          const angle = (i / total) * Math.PI * 4;
+          const tx = Math.sin(angle) * rad;
+          const tz = Math.cos(angle) * (isMobile ? 80 : 120) - 45;
+          const ty = ((i / total) - 0.5) * (isMobile ? 70 : 110);
+          const ry = (angle * 180 / Math.PI) + 90;
+          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${tz}px) rotateY(${ry}deg) scale(0.88)`;
+        });
+      }, 160);
+
+      // Vortex spin 180 degrees around Y axis
+      setTimeout(() => {
+        const rad = isMobile ? 65 : 95;
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.22s ease-in-out';
+          const angle = (i / total) * Math.PI * 4 + Math.PI;
+          const tx = Math.sin(angle) * rad;
+          const tz = Math.cos(angle) * (isMobile ? 80 : 120) - 45;
+          const ty = ((i / total) - 0.5) * (isMobile ? 70 : 110);
+          const ry = (angle * 180 / Math.PI) + 270;
+          card.style.transform = `translateX(${tx}px) translateY(${ty}px) translateZ(${tz}px) rotateY(${ry}deg) scale(0.88)`;
+        });
+      }, 440);
+
+      // Implosion collapse into central stack
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.15s cubic-bezier(0.15, 0.9, 0.25, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+          }, i * 4);
+        });
+        playDeckSlap();
+        triggerHaptic([25, 40]);
+      }, 670);
+
+      setTimeout(onComplete, 840);
+    }
+
+    // =======================================================
+    // DEALER & MAGICIAN SEQUENTIAL CARDISTRY SORT SUITE
+    // 1. Table Square-Up, Double Tap & Domino Turnover Wave
+    // 2. Triple Packet Stripping & Ordered Assembly
+    // =======================================================
+    let sequentialStyleIndex = 0;
+
+    const SEQUENTIAL_STYLES = [
+      { id: 'wave', name: 'Double Tap & Turnover Wave', fn: runRibbonTurnoverWaveSort },
+      { id: 'triple', name: 'Triple Packet Assembly', fn: runTriplePacketAssemblySort }
+    ];
+
+    function startSequentialSort(forcedStyleIndex = null) {
       if (isShuffling) return;
       isShuffling = true;
       currentPlayMode = 'sequential';
@@ -7350,31 +7701,221 @@ ${card.resep_teks}
       updateSettingsUI();
       updatePlayModeButtonsUI();
 
-      if (typeof playGatherSound === 'function') playGatherSound();
-      if (typeof triggerHaptic === 'function') triggerHaptic(15);
-
-      const activeCard = stage3D ? stage3D.querySelector('.big-card.is-active') : null;
-      if (activeCard) {
-        activeCard.style.transition = 'transform 0.12s cubic-bezier(0.2, 0.9, 0.3, 1)';
-        activeCard.style.transform = 'translateY(18px) translateZ(-20px) scale(0.97)';
-      }
-
-      setTimeout(() => {
+      let finished = false;
+      const finishSequential = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(safetyTimer);
         try {
           const availableCards = filteredBase.filter(c => !removedCardIds.has(c.id));
           sessionCards = [...availableCards].sort((a, b) => (a.id || 0) - (b.id || 0));
           currentIndex = 0;
           rebuildStageCards();
           updateCardPositions(true);
-          if (typeof playDeckSlap === 'function') playDeckSlap();
-          if (typeof playChimeSound === 'function') playChimeSound();
-        } catch (e) {
-          console.error('Sort error:', e);
+          playChimeSound();
+          triggerHaptic([15, 30, 20]);
+          triggerControllerRumble(100, 0.4, 0.8);
+        } catch (err) {
+          console.error('Sequential sort completion error:', err);
         } finally {
           isShuffling = false;
           showToast('Sequential Mode', `01 to ${sessionCards.length}`);
         }
-      }, 120);
+      };
+
+      // Safety timeout so UI never hangs
+      const safetyTimer = setTimeout(() => {
+        if (isShuffling) finishSequential();
+      }, 1500);
+
+      const cards = Array.from(stage3D ? stage3D.querySelectorAll('.big-card') : []);
+      if (!cards.length) {
+        finishSequential();
+        return;
+      }
+
+      const styleToRun = forcedStyleIndex !== null 
+        ? SEQUENTIAL_STYLES[forcedStyleIndex % SEQUENTIAL_STYLES.length]
+        : SEQUENTIAL_STYLES[sequentialStyleIndex % SEQUENTIAL_STYLES.length];
+      
+      sequentialStyleIndex = (sequentialStyleIndex + 1) % SEQUENTIAL_STYLES.length;
+
+      const isMobile = window.innerWidth <= 600;
+      const isTablet = window.innerWidth > 600 && window.innerWidth <= 1024;
+
+      try {
+        styleToRun.fn(cards, isMobile, isTablet, finishSequential);
+      } catch (err) {
+        console.error('Sequential sort error:', err);
+        finishSequential();
+      }
+    }
+
+    // STYLE 1: TABLE SQUARE-UP, DOUBLE TABLE TAP & DOMINO TURNOVER WAVE
+    function runRibbonTurnoverWaveSort(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 14);
+      const animatedCards = cards.slice(0, packetSize);
+      const total = animatedCards.length;
+
+      // Phase 1: Cards gather into a tight vertical stack at center
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.15s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.15s';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Phase 2: Lift deck off table
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.10s ease-out';
+          card.style.transform = `translateX(0px) translateY(-20px) translateZ(${i * 0.4}px) scale(0.97)`;
+        });
+      }, 150);
+
+      // Phase 3: KNOCK 1 down sharp against the table felt! (Tap 1)
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic([20, 30]);
+        triggerControllerRumble(60, 0.5, 0.75);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.07s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        });
+      }, 260);
+
+      // Phase 4: Lift deck (Tap 2 prep)
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.08s ease-out';
+          card.style.transform = `translateX(0px) translateY(-12px) translateZ(${i * 0.4}px) scale(0.97)`;
+        });
+      }, 340);
+
+      // Phase 5: KNOCK 2 down sharp against table felt! (Tap 2)
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic([25, 35]);
+        triggerControllerRumble(75, 0.6, 0.85);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.07s cubic-bezier(0.2, 0, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        });
+      }, 430);
+
+      // Phase 6: Dealer spreads the deck into a wide horizontal ribbon across the felt
+      setTimeout(() => {
+        playWhooshSound();
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.16, 1, 0.3, 1)';
+          const offset = i - (total / 2);
+          const tx = Math.max(-150, Math.min(150, offset * (isMobile ? 8 : 13)));
+          const rz = (i % 2 === 0 ? 1 : -1) * (isMobile ? 2 : 3);
+          card.style.transform = `translateX(${tx}px) translateY(${i % 2 === 0 ? -4 : 4}px) translateZ(${i * 0.4}px) rotateZ(${rz}deg) scale(0.93)`;
+        });
+      }, 510);
+
+      // Phase 7: Domino Turnover Ripple Wave from card 01 to card N!
+      const stepInterval = 10;
+      setTimeout(() => {
+        animatedCards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'transform 0.10s ease-out';
+            const offset = i - (total / 2);
+            const tx = Math.max(-150, Math.min(150, offset * (isMobile ? 8 : 13)));
+            card.style.transform = `translateX(${tx}px) translateY(-20px) translateZ(${16 + i * 0.5}px) rotateX(18deg) rotateZ(0deg) scale(0.97)`;
+            playRiffleTick(i);
+
+            setTimeout(() => {
+              card.style.transition = 'transform 0.10s ease-in';
+              card.style.transform = `translateX(${tx}px) translateY(0px) translateZ(${i * 0.4}px) rotateX(0deg) scale(0.94)`;
+            }, 90);
+          }, i * stepInterval);
+        });
+      }, 680);
+
+      // Phase 8: Scoop ribbon squarely together and settle
+      setTimeout(() => {
+        playDeckSlap();
+        triggerHaptic([30, 45]);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.14s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateY(0deg) rotateZ(0deg) scale(0.96)`;
+        });
+      }, 800);
+
+      setTimeout(onComplete, 880);
+    }
+
+    // STYLE 2: TRIPLE PACKET STRIPPING & ORDERED ASSEMBLY
+    function runTriplePacketAssemblySort(cards, isMobile, isTablet, onComplete) {
+      playGatherSound();
+      const packetSize = Math.min(cards.length, 16);
+      const animatedCards = cards.slice(0, packetSize);
+      const splitX = isMobile ? 80 : 120;
+
+      // Phase 1: Gather to center
+      cards.forEach((card, i) => {
+        if (i < packetSize) {
+          card.style.transition = 'transform 0.15s cubic-bezier(0.2, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.visibility = 'visible';
+          card.style.zIndex = `${i + 1}`;
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) scale(0.96)`;
+        } else {
+          card.style.opacity = '0';
+        }
+      });
+
+      // Phase 2: Split into 3 ordered packets across the felt
+      setTimeout(() => {
+        playTone(340, 'triangle', 0.08);
+        triggerHaptic(18);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.20s cubic-bezier(0.16, 0.9, 0.28, 1)';
+          if (i >= 10) {
+            // Packet 3 (High): Right
+            card.style.transform = `translateX(${splitX}px) translateY(-12px) translateZ(18px) rotateZ(7deg) scale(0.93)`;
+          } else if (i >= 5) {
+            // Packet 2 (Mid): Center
+            card.style.transform = `translateX(0px) translateY(14px) translateZ(45px) scale(0.97)`;
+          } else {
+            // Packet 1 (Low 01): Left
+            card.style.transform = `translateX(${-splitX}px) translateY(-12px) translateZ(18px) rotateZ(-7deg) scale(0.93)`;
+          }
+        });
+      }, 160);
+
+      // Phase 3: Packet 3 slides squarely under Packet 2
+      setTimeout(() => {
+        playDeckTapSound();
+        triggerHaptic(15);
+        animatedCards.forEach((card, i) => {
+          if (i >= 5) {
+            card.style.transition = 'transform 0.16s cubic-bezier(0.18, 1, 0.3, 1)';
+            card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateZ(0deg) scale(0.96)`;
+          }
+        });
+      }, 380);
+
+      // Phase 4: Packet 1 (Sediaan 01) lands boldly on top of the stack!
+      setTimeout(() => {
+        playDeckSlap();
+        triggerHaptic([30, 45]);
+        triggerControllerRumble(80, 0.5, 0.8);
+        animatedCards.forEach((card, i) => {
+          card.style.transition = 'transform 0.16s cubic-bezier(0.15, 0, 0.25, 1)';
+          card.style.transform = `translateX(0px) translateY(0px) translateZ(${i * 0.4}px) rotateZ(0deg) scale(0.96)`;
+        });
+      }, 550);
+
+      setTimeout(onComplete, 740);
     }
 
     function updatePlayModeButtonsUI() {
