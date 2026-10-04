@@ -746,7 +746,7 @@
     }
     .prompts-card-title {
       font-family: var(--font-display);
-      font-size: 12px;
+      font-size: 14.5px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 700;
@@ -755,27 +755,27 @@
     .prompt-box {
       background-color: var(--surface-light);
       border: 2px solid var(--primary-deep);
-      border-radius: 12px;
-      padding: 10px 14px;
+      border-radius: 14px;
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 7px;
     }
     .prompt-box-badge {
       font-family: var(--font-display);
-      font-size: 9.5px;
+      font-size: 11.5px;
       letter-spacing: 1px;
       background-color: var(--primary-deep);
       color: var(--white);
-      padding: 3px 8px;
+      padding: 3.5px 10px;
       border-radius: 6px;
-      font-weight: 700;
+      font-weight: 800;
       align-self: flex-start;
       text-transform: uppercase;
     }
     .prompt-box-text {
-      font-size: 13px;
-      line-height: 1.45;
+      font-size: 16px;
+      line-height: 1.55;
       font-weight: 600;
       color: var(--primary-deep);
       white-space: pre-wrap;
@@ -784,10 +784,10 @@
       background: #060e28;
       border: 1.5px solid rgba(255, 255, 255, 0.2);
       border-radius: 8px;
-      padding: 8px 12px;
+      padding: 10px 14px;
       font-family: monospace;
-      font-size: 11px;
-      line-height: 1.4;
+      font-size: 13px;
+      line-height: 1.5;
       color: #dce5ff;
       white-space: pre;
       overflow-x: auto;
@@ -837,7 +837,7 @@
     }
     .reveal-main-title {
       font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.4rem, 2.8vw, 2.1rem);
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--primary-deep);
@@ -846,15 +846,15 @@
     .reveal-tags-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 7px;
     }
     .reveal-tag {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       background-color: var(--surface-light);
       border: 1.5px solid var(--primary-deep);
       border-radius: 6px;
-      padding: 3px 10px;
+      padding: 3.5px 11px;
       color: var(--primary-deep);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -890,47 +890,74 @@
     .reveal-details-col {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
     .reveal-info-box {
       background-color: var(--surface-light);
       border: 2px solid var(--primary-deep);
-      border-radius: 12px;
-      padding: 12px 14px;
+      border-radius: 14px;
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
+    }
+    .reveal-info-box.reveal-answer-a {
+      background-color: #ffffff;
+      border-left: 5px solid var(--primary);
+    }
+    .reveal-info-box.reveal-answer-b {
+      background-color: #ffffff;
+      border-left: 5px solid #2e7d32;
+    }
+    .reveal-info-box.reveal-answer-rx {
+      background-color: #f7f9ff;
+      border-left: 5px solid #172b7a;
     }
     .reveal-info-title {
       font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 13.5px;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--primary-deep);
-      font-weight: 700;
+      font-weight: 800;
+    }
+    .reveal-answer-a .reveal-info-title {
+      color: var(--primary);
+    }
+    .reveal-answer-b .reveal-info-title {
+      color: #1b5e20;
     }
     .reveal-info-content {
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: var(--primary-deep);
+      font-size: 15.5px;
+      line-height: 1.55;
+      font-weight: 600;
+      color: #172b7a;
+    }
+    .reveal-info-content strong {
+      color: #0c1844;
+      font-weight: 800;
     }
     .reveal-bullet-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
     }
     .reveal-bullet-item {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 10px;
+    }
+    .reveal-bullet-item .reveal-info-content {
+      font-size: 15px;
+      line-height: 1.5;
     }
     .reveal-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
       background-color: var(--primary-deep);
-      margin-top: 6px;
+      margin-top: 7px;
       flex-shrink: 0;
     }
 
@@ -2004,24 +2031,21 @@
                 <div class="prompt-box-text">${formatExamPromptText(card.soal_b || 'State the drug class, hallmark side effects, and write the prescription.')}</div>
               </div>
             ` : `
+              ${card.prompt ? `
+                <div class="prompt-box">
+                  <span class="prompt-box-badge">Clinical Scenario &amp; Instructions</span>
+                  <div class="prompt-box-text">${formatExamPromptText(card.prompt)}</div>
+                </div>
+              ` : ''}
+
               <div class="prompt-box">
                 <span class="prompt-box-badge">Question 1 // Identification</span>
                 <div class="prompt-box-text">Identify the specimen and pathological diagnosis.</div>
               </div>
 
               <div class="prompt-box">
-                <span class="prompt-box-badge">Question 2 // Key Structure</span>
-                <div class="prompt-box-text">Name the hallmark cell type or microscopic structure.</div>
-              </div>
-
-              <div class="prompt-box">
-                <span class="prompt-box-badge">Question 3 // Histological Features</span>
-                <div class="prompt-box-text">Describe the primary architectural or histological hallmarks.</div>
-              </div>
-
-              <div class="prompt-box">
-                <span class="prompt-box-badge">Question 4 // Pathophysiology</span>
-                <div class="prompt-box-text">What biological function or pathogenesis underlies this condition?</div>
+                <span class="prompt-box-badge">Question 2 // Microscopic Hallmarks</span>
+                <div class="prompt-box-text">Describe the key microscopic features and diagnostic structures.</div>
               </div>
             `}
           </div>
@@ -2076,51 +2100,36 @@
             <!-- Right: Official Key & Findings -->
             <div class="reveal-details-col">
               ${card.category && card.category.includes('FARMAKO') ? `
-                <div class="reveal-info-box">
-                  <span class="reveal-info-title">Answer B // Class, Dosage & Prescription</span>
-                  <ul class="reveal-bullet-list">
-                    ${ciriList.map(item => `
-                      <li class="reveal-bullet-item">
-                        <div class="reveal-dot"></div>
-                        <div class="reveal-info-content">${item}</div>
-                      </li>
-                    `).join('')}
-                  </ul>
+                <div class="reveal-info-box reveal-answer-a">
+                  <span class="reveal-info-title">[A] ${card.soal_a || 'Molecular Mechanism & Target'}</span>
+                  <div class="reveal-info-content">
+                    <strong>${formatExamPromptText(card.jawaban_a || card.jawaban_ringkas || card.mekanisme || etiologiText)}</strong>
+                  </div>
                 </div>
 
-                <div class="reveal-info-box">
-                  <span class="reveal-info-title">Answer A // Molecular Mechanism & Receptor</span>
-                  <div class="reveal-info-content" style="white-space: pre-line; line-height: 1.55;">${formatExamPromptText(card.jawaban_lengkap || card.full_jawaban_a || etiologiText)}</div>
-                </div>
+                ${card.soal_b || card.jawaban_b ? `
+                  <div class="reveal-info-box reveal-answer-b">
+                    <span class="reveal-info-title">[B] ${card.soal_b || 'Class, Dosage & Prescription'}</span>
+                    <div class="reveal-info-content">
+                      <strong>${formatExamPromptText(card.jawaban_b || (Array.isArray(card.struktur_khas) ? card.struktur_khas.slice(0, 3).join(' • ') : card.sifat))}</strong>
+                    </div>
+                  </div>
+                ` : ''}
 
                 ${card.resep_teks ? `
-                  <div class="reveal-info-box" style="background-color: #f7f9ff;">
+                  <div class="reveal-info-box reveal-answer-rx">
                     <span class="reveal-info-title">Official Prescription</span>
-                    <div class="reveal-info-content" style="font-family: monospace; font-size: 11.5px; white-space: pre-wrap;">${card.resep_teks}</div>
-                  </div>
-                ` : ''}
-
-                ${card.tips_klinis ? `
-                  <div class="reveal-info-box">
-                    <span class="reveal-info-title">Clinical Exam Tips</span>
-                    <div class="reveal-info-content">${formatExamPromptText(card.tips_klinis)}</div>
-                  </div>
-                ` : ''}
-
-                ${card.keywords || (card.tags && card.tags.length > 0) ? `
-                  <div class="reveal-info-box">
-                    <span class="reveal-info-title">Diagnostic Keywords</span>
-                    <div class="reveal-info-content"><strong>${card.keywords || card.tags.slice(0, 10).join(' • ')}</strong></div>
+                    <div class="exam-rx-block">${escapeHtml(card.resep_teks)}</div>
                   </div>
                 ` : ''}
               ` : `
                 <div class="reveal-info-box">
                   <span class="reveal-info-title">Diagnostic Hallmarks</span>
                   <ul class="reveal-bullet-list">
-                    ${ciriList.map(item => `
+                    ${ciriList.slice(0, 4).map(item => `
                       <li class="reveal-bullet-item">
                         <div class="reveal-dot"></div>
-                        <div class="reveal-info-content">${item}</div>
+                        <div class="reveal-info-content">${formatExamPromptText(item)}</div>
                       </li>
                     `).join('')}
                   </ul>
@@ -2128,15 +2137,15 @@
 
                 ${etiologiText ? `
                   <div class="reveal-info-box">
-                    <span class="reveal-info-title">Etiology & Pathophysiology</span>
-                    <div class="reveal-info-content">${etiologiText}</div>
+                    <span class="reveal-info-title">Etiology & Mechanism</span>
+                    <div class="reveal-info-content">${formatExamPromptText(etiologiText)}</div>
                   </div>
                 ` : ''}
 
                 ${card.keywords ? `
                   <div class="reveal-info-box">
                     <span class="reveal-info-title">Diagnostic Keywords</span>
-                    <div class="reveal-info-content"><strong>${card.keywords}</strong></div>
+                    <div class="reveal-info-content"><strong>${escapeHtml(card.keywords)}</strong></div>
                   </div>
                 ` : ''}
               `}
@@ -2302,24 +2311,36 @@
                     </div>
                   ` : ''}
 
-                  ${ciriList.length > 0 ? `
-                    <div>
-                      <strong>Key Findings:</strong>
-                      <ul style="padding-left:18px; margin-top:4px;">
-                        ${ciriList.map(c => `<li>${c}</li>`).join('')}
-                      </ul>
+                  ${card.category && card.category.includes('FARMAKO') ? `
+                    <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:8px; padding:10px 12px; margin-top:6px;">
+                      <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:2px;">[A] Molecular Mechanism</div>
+                      <div style="font-size:13.5px; font-weight:600; color:#172b7a;">${card.jawaban_a || card.jawaban_ringkas || card.mekanisme || etiologiText}</div>
                     </div>
-                  ` : ''}
+                    ${card.soal_b || card.jawaban_b ? `
+                      <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:8px; padding:10px 12px; margin-top:6px;">
+                        <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:2px;">[B] Class & Prescription</div>
+                        <div style="font-size:13.5px; font-weight:600; color:#172b7a;">${card.jawaban_b || (Array.isArray(card.struktur_khas) ? card.struktur_khas.slice(0, 3).join(' • ') : card.sifat)}</div>
+                      </div>
+                    ` : ''}
+                    ${card.resep_teks ? `
+                      <div style="background:#060e28; color:#dce5ff; font-family:monospace; padding:8px 12px; border-radius:8px; font-size:11.5px; white-space:pre-wrap; margin-top:6px;">
+                        ${card.resep_teks}
+                      </div>
+                    ` : ''}
+                  ` : `
+                    ${ciriList.length > 0 ? `
+                      <div style="margin-top:6px;">
+                        <strong>Key Findings:</strong>
+                        <ul style="padding-left:18px; margin-top:4px;">
+                          ${ciriList.slice(0, 4).map(c => `<li>${c}</li>`).join('')}
+                        </ul>
+                      </div>
+                    ` : ''}
 
-                  ${etiologiText ? `
-                    <div><strong>Mechanism / Pathogenesis:</strong> ${etiologiText}</div>
-                  ` : ''}
-
-                  ${card.resep_teks ? `
-                    <div style="background:#060e28; color:#dce5ff; font-family:monospace; padding:8px 12px; border-radius:8px; font-size:11px; white-space:pre-wrap;">
-                      ${card.resep_teks}
-                    </div>
-                  ` : ''}
+                    ${etiologiText ? `
+                      <div style="margin-top:6px;"><strong>Etiology &amp; Mechanism:</strong> ${etiologiText}</div>
+                    ` : ''}
+                  `}
                 </div>
               </div>
             `;
