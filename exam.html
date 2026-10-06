@@ -2021,18 +2021,18 @@
           <div class="study-prompts-card">
             <div class="prompts-card-header">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span class="prompts-card-title">${isFarmako ? 'OSPE Pharmacology Prompts' : 'Practical Exam Questions'}</span>
+              <span class="prompts-card-title">${isFarmako ? 'OSPE Pharmacology Prompts' : (card.asal && card.asal.includes('Mikro') ? 'OSPE Mikrobiologi Prompts' : 'Practical Exam Questions')}</span>
             </div>
 
             ${card.soal_a || card.soal_b ? `
               <div class="prompt-box">
-                <span class="prompt-box-badge">Question A // Molecular Mechanism</span>
-                <div class="prompt-box-text">${formatExamPromptText(card.soal_a || 'Explain the molecular mechanism of this drug.')}</div>
+                <span class="prompt-box-badge">Question A // ${isFarmako ? 'Molecular Mechanism' : 'Visual Characteristics & Key Findings'}</span>
+                <div class="prompt-box-text">${formatExamPromptText(card.soal_a || 'Explain the characteristics and diagnosis of this specimen.')}</div>
               </div>
 
               <div class="prompt-box">
-                <span class="prompt-box-badge">Question B // Class, Dosage & Prescription</span>
-                <div class="prompt-box-text">${formatExamPromptText(card.soal_b || 'State the drug class, hallmark side effects, and write the prescription.')}</div>
+                <span class="prompt-box-badge">Question B // ${isFarmako ? 'Class, Dosage & Prescription' : 'Biochemistry, Mechanism & Identification'}</span>
+                <div class="prompt-box-text">${formatExamPromptText(card.soal_b || 'State the mechanism, composition, or differential diagnosis.')}</div>
               </div>
             ` : `
               ${card.prompt ? `
@@ -2103,9 +2103,9 @@
 
             <!-- Right: Official Key & Findings -->
             <div class="reveal-details-col">
-              ${card.category && card.category.includes('FARMAKO') ? `
+              ${(card.category && card.category.includes('FARMAKO')) || (card.jawaban_a && card.jawaban_b) ? `
                 <div class="reveal-info-box reveal-answer-a">
-                  <span class="reveal-info-title">[A] ${card.soal_a || 'Molecular Mechanism & Target'}</span>
+                  <span class="reveal-info-title">[A] ${card.soal_a || 'Karakteristik Visual & Diagnosis'}</span>
                   <div class="reveal-info-content">
                     <strong>${formatExamPromptText(card.jawaban_a || card.jawaban_ringkas || card.mekanisme || etiologiText)}</strong>
                   </div>
@@ -2113,7 +2113,7 @@
 
                 ${card.soal_b || card.jawaban_b ? `
                   <div class="reveal-info-box reveal-answer-b">
-                    <span class="reveal-info-title">[B] ${card.soal_b || 'Class, Dosage & Prescription'}</span>
+                    <span class="reveal-info-title">[B] ${card.soal_b || 'Komposisi, Mekanisme & Interpretasi'}</span>
                     <div class="reveal-info-content">
                       <strong>${formatExamPromptText(card.jawaban_b || (Array.isArray(card.struktur_khas) ? card.struktur_khas.slice(0, 3).join(' • ') : card.sifat))}</strong>
                     </div>

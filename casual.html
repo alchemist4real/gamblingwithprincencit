@@ -6331,15 +6331,16 @@
       if (counter) counter.textContent = `CARD ${String(reviewCurrentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
       const isFarmako = card.category && card.category.includes('FARMAKO');
+      const isMikro = (card.category && card.category.includes('MIKRO')) || (card.asal && card.asal.includes('Mikro')) || (currentPackId && currentPackId.includes('mikro'));
       const isPrep = card.type === 'preparat' && !isFarmako && card.image;
       const cardNum = card.id ? String(card.id).padStart(2, '0') : String(reviewCurrentIndex + 1).padStart(2, '0');
-      const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`);
+      const cardLabel = isFarmako ? `STASI ${cardNum} • FARMAKO` : (isMikro ? `STASI ${cardNum} • MIKRO` : (isPrep ? `SEDIAAN ${cardNum}` : `SOAL TEORI ${cardNum}`));
 
       let leftMediaHtml = '';
       let questionsBoxHtml = '';
       const hasStructuredQA = !!(card.soal_a || card.soal_b);
 
-      if (isPrep) {
+      if (isPrep && !hasStructuredQA) {
         leftMediaHtml = `
           <div class="review-study-left">
             <div class="review-reveal-card-header">
@@ -6392,6 +6393,54 @@
                   <div class="review-q-text">Apa etiologi atau mekanisme patogenesis yang mendasari?</div>
                 </div>
               </div>
+            </div>
+            <div class="review-q-card-footer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>Tuliskan poin jawaban di lembar kertas. Kunci jawaban terbuka di fase reveal!</span>
+            </div>
+          </div>
+        `;
+      } else if (isPrep && hasStructuredQA) {
+        leftMediaHtml = `
+          <div class="review-study-left">
+            <div class="review-reveal-card-header">
+              <span class="review-specimen-badge">${cardLabel} // ${isMikro ? 'MIKROBIOLOGI' : 'SPESIMEN PRAKTIKUM'}</span>
+              <span class="review-specimen-badge" style="opacity: 0.85; font-size: 10.5px;">60 DETIK</span>
+            </div>
+            <div class="review-study-media">
+              <img src="${card.image}" class="review-specimen-img" alt="Specimen ${card.id || ''}">
+            </div>
+          </div>
+        `;
+        questionsBoxHtml = `
+          <div class="review-study-right">
+            <div class="review-q-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <span class="review-q-title">${isMikro ? 'PANDUAN PERTANYAAN MIKROBIOLOGI' : 'PANDUAN PERTANYAAN PRAKTIKUM'}</span>
+            </div>
+            <div class="review-q-card-body" style="overflow-y: auto;">
+              <div class="review-q-item">
+                <div class="review-q-badge" style="background:var(--white); color:var(--primary-deep);">A</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">PERTANYAAN [A]</div>
+                  <div class="review-q-text" style="font-size:12.5px; line-height:1.5;">${formatQuestionText(card.soal_a || 'Sebutkan karakteristik visual / identifikasi sediaan ini!')}</div>
+                </div>
+              </div>
+              ${card.soal_b ? `
+              <div class="review-q-item">
+                <div class="review-q-badge" style="background:rgba(255,255,255,0.75); color:var(--primary-deep);">B</div>
+                <div class="review-q-content">
+                  <div class="review-q-label">PERTANYAAN [B]</div>
+                  <div class="review-q-text" style="font-size:12.5px; line-height:1.5;">${formatQuestionText(card.soal_b)}</div>
+                </div>
+              </div>
+              ` : ''}
             </div>
             <div class="review-q-card-footer">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -6666,7 +6715,7 @@ ${card.resep_teks}
             <div class="review-reveal-right">
               <!-- Hero Diagnosis Box -->
               <div class="review-diag-hero">
-                <span class="review-diag-badge">${isFarmako ? 'NAMA OBAT / DIAGNOSIS' : 'DIAGNOSIS UTAMA'}</span>
+                <span class="review-diag-badge">${(isFarmako || (card.jawaban_a && card.jawaban_b)) ? 'NAMA OBAT / PATOGEN / DIAGNOSIS' : 'DIAGNOSIS UTAMA'}</span>
                 <div class="review-diag-title">${card.diagnosis || ''}</div>
                 <div class="review-diag-meta">
                   <span class="review-meta-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px; margin-right: 3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>${card.organ || '-'}</span>
@@ -6675,7 +6724,7 @@ ${card.resep_teks}
                 </div>
               </div>
 
-              ${isFarmako ? `
+              ${(isFarmako || (card.jawaban_a && card.jawaban_b)) ? `
                 <!-- KUNCI JAWABAN PERSIS UJIAN (1-2 BARIS TO-THE-POINT) -->
                 <div class="review-info-section">
                   <div class="review-info-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
@@ -6683,12 +6732,12 @@ ${card.resep_teks}
                   </div>
                   <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
                     <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:8px; padding:9px 12px;">
-                      <div style="font-size:10.5px; font-weight:800; color:var(--primary); margin-bottom:3px;">[A] ${formatQuestionText(card.soal_a || 'Mekanisme Kerja')}</div>
+                      <div style="font-size:10.5px; font-weight:800; color:var(--primary); margin-bottom:3px;">[A] ${formatQuestionText(card.soal_a || 'Mekanisme / Karakteristik')}</div>
                       <div style="font-size:13px; line-height:1.5; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
                     </div>
                     ${card.jawaban_b ? `
                     <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:8px; padding:9px 12px;">
-                      <div style="font-size:10.5px; font-weight:800; color:#1b5e20; margin-bottom:3px;">[B] ${formatQuestionText(card.soal_b || 'Golongan / Dosis / Resep')}</div>
+                      <div style="font-size:10.5px; font-weight:800; color:#1b5e20; margin-bottom:3px;">[B] ${formatQuestionText(card.soal_b || 'Komposisi / Mekanisme / Resep')}</div>
                       <div style="font-size:13px; line-height:1.5; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
                     </div>
                     ` : ''}
@@ -8248,10 +8297,11 @@ ${card.resep_teks}
       const total = sessionCards.length;
 
       const isFarmako = card.category && card.category.includes('FARMAKO');
+      const isMikro = (card.category && card.category.includes('MIKRO')) || (card.asal && card.asal.includes('Mikro')) || (currentPackId && currentPackId.includes('mikro'));
       const isPrep = card.type === 'preparat' && !isFarmako;
       const cardNum = card.id ? String(card.id).padStart(2, '0') : String(idx + 1).padStart(2, '0');
-      const cardLabel = isFarmako ? `STATION ${cardNum}` : (isPrep ? `CARD ${cardNum}` : `THEORY ${cardNum}`);
-      modalTypeBadge.textContent = isFarmako ? 'PHARMACOLOGY' : (isPrep ? 'HISTOPATHOLOGY' : 'THEORY & CLINICAL');
+      const cardLabel = isFarmako ? `STATION ${cardNum}` : (isMikro ? `STASI ${cardNum}` : (isPrep ? `CARD ${cardNum}` : `THEORY ${cardNum}`));
+      modalTypeBadge.textContent = isFarmako ? 'PHARMACOLOGY' : (isMikro ? 'MIKROBIOLOGI' : (isPrep ? 'HISTOPATHOLOGY' : 'THEORY & CLINICAL'));
       modalIndexText.textContent = `${cardLabel} • ${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
 
       // LEFT COLUMN: High-res image or Theory prompt box
@@ -8261,7 +8311,7 @@ ${card.resep_teks}
             <img class="specimen-img" src="${card.image}" alt="Specimen Image" onclick="openLightbox('${card.image}')">
           </div>
           <div class="image-sub-bar">
-            <span>Histopathology Specimen</span>
+            <span>${isMikro ? 'Spesimen Mikrobiologi' : 'Histopathology Specimen'}</span>
             <button class="zoom-btn" onclick="openLightbox('${card.image}')" title="Zoom Image" aria-label="Zoom Image">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -8381,7 +8431,7 @@ ${card.resep_teks}
           </div>
         </div>
 
-        ${isFarmako ? `
+        ${(isFarmako || (card.jawaban_a && card.jawaban_b)) ? `
           <!-- EXAM KEY ANSWERS -->
           <div class="section-block" style="margin-bottom:14px;">
             <div class="section-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
@@ -8389,12 +8439,12 @@ ${card.resep_teks}
             </div>
             <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Mechanism of Action')}</div>
+                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Karakteristik Visual / Pertanyaan A')}</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
               </div>
               ${card.jawaban_b ? `
               <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Class / Dosing / Prescription')}</div>
+                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Komposisi / Mekanisme / Resep')}</div>
                 <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
               </div>
               ` : ''}
