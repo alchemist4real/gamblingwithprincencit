@@ -42,8 +42,8 @@
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Special Elite', cursive, monospace, sans-serif;
-      --card-w: clamp(440px, 44vw, 650px);
-      --card-h: clamp(285px, 29vw, 420px);
+      --card-w: clamp(520px, 54vw, 800px);
+      --card-h: clamp(330px, 34vw, 470px);
     }
 
     * {
@@ -555,9 +555,10 @@
     .card-specimen-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain !important;
       object-position: center;
       display: block;
+      background-color: #060c22;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: high-quality;
       backface-visibility: hidden;
@@ -570,6 +571,116 @@
     }
     .big-card:hover .card-specimen-img {
       transform: none;
+    }
+
+    /* HYBRID STAGE CARD: SPECIMEN PHOTO + STRUCTURED QUESTIONS BEFORE REVEAL */
+    .card-hybrid-specimen-qa {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: stretch;
+      background-color: #060c22;
+      border-radius: 12px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .card-hybrid-media {
+      position: relative;
+      background-color: #060c22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      height: 100%;
+      cursor: zoom-in;
+    }
+    .card-hybrid-media .card-specimen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain !important;
+      display: block;
+      cursor: zoom-in;
+    }
+    .card-img-zoom-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(8, 18, 54, 0.88);
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.75);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.6px;
+      cursor: zoom-in;
+      transition: background 0.15s, transform 0.15s;
+      z-index: 5;
+    }
+    .card-img-zoom-tag:hover {
+      background: var(--primary);
+      transform: scale(1.05);
+    }
+    .card-hybrid-qa {
+      background-color: #ffffff;
+      color: var(--primary-deep);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    .card-hybrid-qa .theory-qa-flow {
+      margin-top: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-hybrid-qa .theory-q-row {
+      background-color: #f7f9fe;
+      border: 1.5px solid #d0dcf5;
+      border-left: 3.5px solid var(--primary);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .card-hybrid-qa .theory-q-row.q-row-b {
+      border-left-color: #2e7d32;
+    }
+    .card-hybrid-qa .q-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .card-hybrid-qa .q-row-a .q-badge {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .card-hybrid-qa .q-row-b .q-badge {
+      background: #2e7d32;
+      color: #ffffff;
+    }
+    .card-hybrid-qa .q-text {
+      font-size: 12.5px;
+      line-height: 1.45;
+      font-weight: 600;
+      color: #172b7a;
+    }
+    @media (max-width: 600px) {
+      .card-hybrid-specimen-qa {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.1fr 1fr;
+      }
     }
 
     /* THEORY CARD INSIDE CONTENT WINDOW - 100% COMPLETE TEXT READABILITY & ZERO SCROLL */
@@ -7179,9 +7290,67 @@ ${card.resep_teks}
           bannerLabel = `STATION ${cardNum}`;
         }
 
-        if (card.type === 'preparat' && card.image) {
+        const hasImageAndQA = !!(card.image && (card.soal_a || card.soal_b || card.prompt));
+
+        if (hasImageAndQA) {
+          const isMikro = (card.category && card.category.includes('MIKRO')) || (card.asal && card.asal.includes('Mikro')) || (currentPackId && currentPackId.includes('mikro'));
+          let badgeLabel = isMikro ? 'MIKROBIOLOGI' : (card.asal || 'PRAKTIKUM');
+          let subLabel = card.sub_class || '';
+          if (subLabel) {
+            subLabel = subLabel.replace(/[-_]/g, ' ').toUpperCase();
+          }
+          const stimulusText = card.stimulus ? card.stimulus.replace(/^\[|\]$/g, '').trim() : '';
+
           contentWindowHtml = `
-            <img src="${card.image}" alt="Specimen" class="card-specimen-img" loading="eager" decoding="sync">
+            <div class="card-hybrid-specimen-qa">
+              <div class="card-hybrid-media" onclick="openLightbox('${card.image}'); event.stopPropagation();">
+                <img src="${card.image}" alt="Specimen" class="card-specimen-img" loading="eager" decoding="sync">
+                <div class="card-img-zoom-tag" onclick="openLightbox('${card.image}'); event.stopPropagation();" title="Click to view full image in 100% HD">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                  <span>ZOOM FULL</span>
+                </div>
+              </div>
+              <div class="card-hybrid-qa">
+                <div class="theory-header-bar" style="margin-bottom: 4px;">
+                  <div class="theory-badge-cluster">
+                    <span class="theory-window-badge">${badgeLabel}</span>
+                    ${subLabel ? `<span class="theory-subclass-badge">${escapeHtml(subLabel)}</span>` : ''}
+                  </div>
+                  ${card.prioritas_tinggi || card.is_priority ? `<span class="theory-star-badge" title="High Priority Exam Station">PRIORITY</span>` : ''}
+                </div>
+
+                ${stimulusText ? `
+                  <div class="theory-stimulus-bar" style="margin-bottom: 4px;">
+                    <span class="stimulus-tag">PROMPT</span>
+                    <span class="stimulus-text">${escapeHtml(stimulusText)}</span>
+                  </div>
+                ` : ''}
+
+                <div class="theory-qa-flow" style="overflow-y: auto;">
+                  ${card.soal_a ? `
+                    <div class="theory-q-row q-row-a">
+                      <span class="q-badge">A</span>
+                      <div class="q-text">${formatQuestionText(card.soal_a)}</div>
+                    </div>
+                  ` : ''}
+
+                  ${card.soal_b ? `
+                    <div class="theory-q-row q-row-b">
+                      <span class="q-badge">B</span>
+                      <div class="q-text">${formatQuestionText(card.soal_b)}</div>
+                    </div>
+                  ` : ''}
+
+                  ${(!card.soal_a && !card.soal_b && card.prompt) ? `
+                    <div class="theory-prompt-full-text">${formatQuestionText(card.prompt)}</div>
+                  ` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (card.type === 'preparat' && card.image) {
+          contentWindowHtml = `
+            <img src="${card.image}" alt="Specimen" class="card-specimen-img" onclick="openLightbox('${card.image}'); event.stopPropagation();" loading="eager" decoding="sync">
           `;
         } else {
           contentWindowHtml = renderTheoryCardContent(card);
@@ -8430,6 +8599,13 @@ ${card.resep_teks}
             <div class="cell-value">${card.asal}</div>
           </div>
         </div>
+
+        ${card.stimulus ? `
+          <div style="background:#f4f7fe; border:1.5px solid #c9d7ff; border-radius:10px; padding:9px 13px; margin-bottom:12px;">
+            <span style="font-size:10px; font-weight:800; color:var(--primary-deep); letter-spacing:1px; display:block; margin-bottom:2px;">CLINICAL STIMULUS &amp; SPECIMEN</span>
+            <div style="font-size:13.5px; font-weight:700; color:#172b7a;">${escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim())}</div>
+          </div>
+        ` : ''}
 
         ${(isFarmako || (card.jawaban_a && card.jawaban_b)) ? `
           <!-- EXAM KEY ANSWERS -->
