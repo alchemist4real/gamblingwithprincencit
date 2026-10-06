@@ -586,7 +586,7 @@
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
+      grid-template-columns: 0.95fr 1.25fr;
       align-items: stretch;
       background-color: #ffffff;
       border-radius: 12px;
@@ -645,10 +645,11 @@
     .card-hybrid-qa {
       background-color: #ffffff;
       color: var(--primary-deep);
-      padding: 8px 10px 6px 10px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 6px;
       overflow: hidden !important;
       scrollbar-width: none !important;
       -ms-overflow-style: none !important;
@@ -665,7 +666,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       flex-shrink: 0;
     }
     .hybrid-badge-purple {
@@ -710,9 +711,9 @@
       gap: 6px;
       background: #f0f4ff;
       border-left: 3px solid var(--primary-deep);
-      padding: 3.5px 7px;
+      padding: 3px 6px;
       border-radius: 4px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       flex-shrink: 0;
     }
     .hybrid-stimulus-tag {
@@ -738,10 +739,10 @@
     .hybrid-qa-flow {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
       flex: 1;
       min-height: 0;
-      justify-content: space-evenly;
+      justify-content: center;
       overflow: hidden !important;
       scrollbar-width: none !important;
     }
@@ -758,15 +759,16 @@
       padding: 5px 8px;
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
+      gap: 2px;
       box-sizing: border-box;
       min-height: 0;
+      box-shadow: 0 1px 3px rgba(23, 43, 122, 0.03);
     }
     .hybrid-q-item.item-a {
-      border-left: 3.5px solid var(--primary);
+      border-left: 4px solid var(--primary);
     }
     .hybrid-q-item.item-b {
-      border-left: 3.5px solid var(--primary-deep);
+      border-left: 4px solid var(--primary-deep);
     }
 
     .hybrid-q-top {
@@ -793,15 +795,12 @@
     }
 
     .hybrid-q-text {
-      font-size: clamp(11.5px, 1.02vw, 13px) !important;
+      font-size: clamp(11.5px, 0.98vw, 13px) !important;
       line-height: 1.34 !important;
       font-weight: 700 !important;
       color: var(--primary-deep) !important; /* UNGU KITA #172b7a */
       word-break: break-word;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
+      overflow: visible !important;
     }
     .hybrid-q-text * {
       color: var(--primary-deep) !important;
@@ -4646,9 +4645,109 @@
       background-color: var(--primary-deep);
       transform: translateY(-1px);
     }
+
+    /* TRANSPARENT DECK LOADER OVERLAY */
+    .deck-loader-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: rgba(10, 20, 56, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      pointer-events: all;
+    }
+    .deck-loader-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .deck-loader-card {
+      background: #ffffff;
+      border: 3px solid var(--primary-deep);
+      border-radius: 18px;
+      padding: 24px 32px;
+      box-shadow: 0 16px 40px rgba(13, 26, 69, 0.45);
+      text-align: center;
+      max-width: 360px;
+      width: 88%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: deckLoaderPop 0.3s cubic-bezier(0.16, 1.2, 0.3, 1);
+    }
+    @keyframes deckLoaderPop {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .deck-loader-ring {
+      width: 36px;
+      height: 36px;
+      border: 3.5px solid #dce6fa;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: deckLoaderSpin 0.75s linear infinite;
+      margin-bottom: 12px;
+    }
+    @keyframes deckLoaderSpin {
+      to { transform: rotate(360deg); }
+    }
+    .deck-loader-title {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--primary-deep);
+      text-transform: uppercase;
+    }
+    .deck-loader-pack {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+    .deck-loader-bar-wrap {
+      width: 100%;
+      height: 6px;
+      background: #e6eefc;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+    .deck-loader-bar {
+      height: 100%;
+      width: 45%;
+      background: linear-gradient(90deg, var(--primary), #3b82f6);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+    .deck-loader-sub {
+      font-size: 11.5px;
+      color: #60739f;
+      margin-top: 8px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
+
+  <!-- TRANSPARENT DECK LOADER OVERLAY -->
+  <div id="deckLoaderOverlay" class="deck-loader-overlay">
+    <div class="deck-loader-card">
+      <div class="deck-loader-ring"></div>
+      <div class="deck-loader-title">MEMUAT DECK KARTU</div>
+      <div class="deck-loader-pack" id="deckLoaderPack">Praktikum Mikrobiologi 3.2 Exact</div>
+      <div class="deck-loader-bar-wrap">
+        <div class="deck-loader-bar" id="deckLoaderBar"></div>
+      </div>
+      <div class="deck-loader-sub" id="deckLoaderSub">Mengoptimalkan spesimen &amp; media...</div>
+    </div>
+  </div>
 
   <!-- =======================================================
        CENTERED HEADER (PURE SVG FILTER BUTTONS, ZERO TEXT ON BUTTONS)
@@ -8729,48 +8828,59 @@ ${card.resep_teks}
         `;
       }
 
-      modalRightPane.innerHTML = `
-        <div class="diag-title-row">
-          <div class="diag-heading">${card.diagnosis}</div>
-          <div class="diag-organ">${isFarmako ? 'Target Organ / Receptor' : 'Organ / Location'}: ${card.organ}</div>
-        </div>
+      const hasQA = isFarmako || card.soal_a || card.jawaban_a || card.soal_b || card.jawaban_b;
 
-        <div class="id-grid-box">
-          <div class="id-grid-cell">
-            <div class="cell-label">${isFarmako ? 'Class & Classification' : 'Lesion Nature'}</div>
-            <div class="cell-value">${card.sifat}</div>
-          </div>
-          <div class="id-grid-cell">
-            <div class="cell-label">${isFarmako ? 'Module' : 'Tissue / Origin'}</div>
-            <div class="cell-value">${card.asal}</div>
-          </div>
-        </div>
-
-        ${card.stimulus ? `
-          <div style="background:#f4f7fe; border:1.5px solid #c9d7ff; border-radius:10px; padding:9px 13px; margin-bottom:12px;">
-            <span style="font-size:10px; font-weight:800; color:var(--primary-deep); letter-spacing:1px; display:block; margin-bottom:2px;">CLINICAL STIMULUS &amp; SPECIMEN</span>
-            <div style="font-size:13.5px; font-weight:700; color:#172b7a;">${escapeHtml(card.stimulus.replace(/^\[|\]$/g, '').trim())}</div>
-          </div>
-        ` : ''}
-
-        ${(isFarmako || (card.jawaban_a && card.jawaban_b)) ? `
-          <!-- EXAM KEY ANSWERS -->
-          <div class="section-block" style="margin-bottom:14px;">
-            <div class="section-heading" style="color:var(--primary-deep); font-weight:800; letter-spacing:0.8px;">
-              EXAM KEY ANSWERS (HIGH YIELD)
+      if (hasQA) {
+        modalRightPane.innerHTML = `
+          <!-- CLEAN HEADER: DIAGNOSIS & MODULE -->
+          <div style="margin-bottom: 12px; border-bottom: 2px solid #e0ebff; padding-bottom: 8px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+              <span style="background:var(--primary-deep); color:#ffffff; font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; letter-spacing:0.8px; text-transform:uppercase;">
+                ${card.sifat ? escapeHtml(card.sifat.split('(')[0].trim()) : (isFarmako ? 'FARMAKOLOGI' : 'MIKROBIOLOGI')}
+              </span>
+              ${card.asal ? `<span style="font-size:11px; font-weight:700; color:#5a6e9a;">${escapeHtml(card.asal)}</span>` : ''}
             </div>
-            <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
-              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid var(--primary); border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:4px;">[A] ${formatQuestionText(card.soal_a || 'Karakteristik Visual / Pertanyaan A')}</div>
-                <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}</div>
-              </div>
-              ${card.jawaban_b ? `
-              <div style="background:#ffffff; border:1.5px solid #d0dcf5; border-left:4px solid #2e7d32; border-radius:9px; padding:11px 14px;">
-                <div style="font-size:11px; font-weight:800; color:#1b5e20; margin-bottom:4px;">[B] ${formatQuestionText(card.soal_b || 'Komposisi / Mekanisme / Resep')}</div>
-                <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">${formatBold(card.jawaban_b)}</div>
-              </div>
-              ` : ''}
+            <div class="diag-heading" style="font-size: clamp(17px, 1.4vw, 22px); font-weight: 900; color: var(--primary-deep); line-height: 1.25;">
+              ${card.diagnosis}
             </div>
+            ${card.organ ? `<div class="diag-organ" style="font-size: 12px; color: #5a6e9a; font-weight: 600; margin-top: 3px;">${isFarmako ? 'Target' : 'Sistem / Lokasi'}: ${escapeHtml(card.organ)}</div>` : ''}
+          </div>
+
+          <!-- SOAL DAN KUNCI JAWABAN (FRONT AND CENTER) -->
+          <div style="display:flex; flex-direction:column; gap:11px; margin-bottom:14px;">
+            <!-- BLOCK SOAL A & JAWABAN A -->
+            <div style="background:#ffffff; border:1.5px solid #c9d8fa; border-left:5px solid var(--primary); border-radius:10px; padding:11px 14px; box-shadow: 0 1px 4px rgba(23,43,122,0.06);">
+              <div style="font-size:11px; font-weight:900; color:var(--primary); letter-spacing:0.8px; text-transform:uppercase; margin-bottom:4px;">
+                SOAL [A]
+              </div>
+              <div style="font-size:13px; font-weight:700; color:#0e1b4d; margin-bottom:7px; line-height:1.42;">
+                ${formatQuestionText(card.soal_a || 'Karakteristik Visual / Pertanyaan A')}
+              </div>
+              <div style="font-size:10.5px; font-weight:800; color:#1e3a8a; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:3px;">
+                KUNCI JAWABAN:
+              </div>
+              <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">
+                ${formatBold(card.jawaban_a || card.jawaban_ringkas || '')}
+              </div>
+            </div>
+
+            <!-- BLOCK SOAL B & JAWABAN B -->
+            ${(card.jawaban_b || card.soal_b) ? `
+            <div style="background:#ffffff; border:1.5px solid #c4e4cd; border-left:5px solid #2e7d32; border-radius:10px; padding:11px 14px; box-shadow: 0 1px 4px rgba(46,125,50,0.06);">
+              <div style="font-size:11px; font-weight:900; color:#1b5e20; letter-spacing:0.8px; text-transform:uppercase; margin-bottom:4px;">
+                SOAL [B]
+              </div>
+              <div style="font-size:13px; font-weight:700; color:#0e1b4d; margin-bottom:7px; line-height:1.42;">
+                ${formatQuestionText(card.soal_b || 'Komposisi / Mekanisme / Resep')}
+              </div>
+              <div style="font-size:10.5px; font-weight:800; color:#155724; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:3px;">
+                KUNCI JAWABAN:
+              </div>
+              <div style="font-size:13.5px; line-height:1.55; color:#172b7a; font-weight:600;">
+                ${formatBold(card.jawaban_b || '')}
+              </div>
+            </div>
+            ` : ''}
           </div>
 
           <!-- COLLAPSIBLE FULL NOTES & RX -->
@@ -8790,7 +8900,25 @@ ${card.resep_teks}
             </details>
           ` : ''}
           ${tipsSectionHtml}
-        ` : `
+        `;
+      } else {
+        modalRightPane.innerHTML = `
+          <div class="diag-title-row">
+            <div class="diag-heading">${card.diagnosis}</div>
+            <div class="diag-organ">Organ / Location: ${card.organ}</div>
+          </div>
+
+          <div class="id-grid-box">
+            <div class="id-grid-cell">
+              <div class="cell-label">Lesion Nature</div>
+              <div class="cell-value">${card.sifat}</div>
+            </div>
+            <div class="id-grid-cell">
+              <div class="cell-label">Tissue / Origin</div>
+              <div class="cell-value">${card.asal}</div>
+            </div>
+          </div>
+
           <!-- KEY HISTOPATHOLOGY FEATURES -->
           <div class="section-block">
             <div class="section-heading">KEY HISTOPATHOLOGIC FEATURES</div>
@@ -8815,8 +8943,8 @@ ${card.resep_teks}
             <div class="section-heading">IDENTIFICATION KEYWORDS</div>
             <div class="keyword-capsule-box">${keywordsStr}</div>
           </div>
-        `}
-      `;
+        `;
+      }
     }
 
     function closeModal() {
@@ -9701,6 +9829,19 @@ ${card.resep_teks}
     }
     requestAnimationFrame(pollGamepad);
 
+    function dismissDeckLoader() {
+      const loader = document.getElementById('deckLoaderOverlay');
+      if (!loader) return;
+      const bar = document.getElementById('deckLoaderBar');
+      if (bar) bar.style.width = '100%';
+      setTimeout(function() {
+        loader.classList.add('hidden');
+        setTimeout(function() {
+          if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 350);
+      }, 120);
+    }
+
     function initCasualApp() {
       loadSelectedCardPacks(false);
       currentPlayMode = 'sequential';
@@ -9710,7 +9851,25 @@ ${card.resep_teks}
       renderQuickFilterBar();
       updatePlayModeButtonsUI();
       updateCardPositions(false);
+      dismissDeckLoader();
+      try {
+        if (new URLSearchParams(window.location.search).get('reveal') === '1') {
+          setTimeout(openRevealModal, 250);
+        }
+      } catch (e) {}
     }
+
+    // Real-time progress update for transparent loader
+    window.addEventListener('cardPackProgress', function(e) {
+      const detail = e.detail || {};
+      const bar = document.getElementById('deckLoaderBar');
+      const sub = document.getElementById('deckLoaderSub');
+      if (detail.total) {
+        const pct = Math.min(100, Math.round((detail.loaded / detail.total) * 100));
+        if (bar) bar.style.width = pct + '%';
+        if (sub) sub.textContent = `Memuat modul (${detail.loaded}/${detail.total})...`;
+      }
+    });
 
     if (window.whenPacksReady) {
       window.whenPacksReady(function(packs) {
